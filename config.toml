@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://bright-hummingbird-cf02c5.netlify.app"
+baseURL = "https://test.mcflypartages.fr"
 title = "Hugo Theme MemE"
 languageCode = "fr"
 hasCJKLanguage = false
