@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://example.com/"
+baseURL = "https://bright-hummingbird-cf02c5.netlify.app"
 title = "Hugo Theme MemE"
 languageCode = "fr"
 hasCJKLanguage = false
