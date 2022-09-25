@@ -14,43 +14,89 @@ public_folder: "/images/uploads" # Chemin de vos images une fois le site publié
 
 collections:
 # Article en 1 fichier
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "content/blog" # Chemin du dossier contenant les articles de blog.
-    create: true # Autoriser les utilisateur a créer du contenus dans cette collection.
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # Differents parametres du Front Matter se terminant par le body permettant de creer du contenu.
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
-# Articles en dossier
-  - name: "blog2" # Used in routes, e.g., /admin/collections/post
-    label: "Blog avec Dossier" # Used in the UI
-    folder: "content/posts" # The path to the folder where the documents are stored
-    path: "{{slug}}/index"
-    media_folder: "" # Save images in the post's own folder instead of the static folder
-    public_folder: ""
-    create: true 
-    fields: 
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+#  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+#    label: "Blog" # Used in the UI
+#    folder: "content/blog" # Chemin du dossier contenant les articles de blog.
+#    create: true # Autoriser les utilisateur a créer du contenus dans cette collection.
+#    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+
+## Articles en dossier
+#  - name: "blog2" # Used in routes, e.g., /admin/collections/post
+#    label: "Blog avec Dossier" # Used in the UI
+#    folder: "content/posts" # The path to the folder where the documents are stored
+#    path: "{{slug}}/index"
+#    media_folder: "" # Save images in the post's own folder instead of the static folder
+#    public_folder: ""
+
 # Articles avec dossier img
-  - name: "blog3" # Used in routes, e.g., /admin/collections/post
-    label: "Blog avec Dossier img" # Used in the UI
-    folder: "content/posts_img" # The path to the folder where the documents are stored
-    path: "{{slug}}/index"
-    media_folder: "img/" # Save images in the post's own folder instead of the static folder
+  - name: "blog" # Used in routes, e.g., /admin/collections/post
+    #layout: blog  # Si layout personalisé
+    label: "Articles / Tutoriels" # Used in the UI
+    label_singular: 'article' # Used in the UI, ie: "New Post"
+    description: >
+      Ajouter un article a la communauté.
+    folder: "content/blog" # Dossier ou sont stocké les articles
+    path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
+    #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
-    create: true 
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    view_filters:
+      - label: Posts With Index
+        field: title
+        pattern: 'This is post #'
+      - label: Posts Without Index
+        field: title
+        pattern: front matter post
+      - label: Drafts
+        field: draft
+        pattern: true
+    view_groups:
+      - label: Year
+        field: date
+        pattern: \d{4}
+      - label: Drafts
+        field: draft
     fields: 
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
+      - {
+          label: 'Date de publication',
+          name: 'date',
+          widget: 'datetime',
+          date_format: 'DD-MM-YY',
+          time_format: 'HH:mm',
+          format: 'DD-MM-YY HH:mm',
+        }
+      - {
+          label: 'Date de modification',
+          name: 'lastmod',
+          widget: 'datetime',
+          date_format: 'DD-MM-YY',
+          time_format: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+        }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
+      - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
+      - {
+          label: 'Categorie(s)',
+          name: 'categories',
+          widget: 'select',
+          multiple: true,
+          min: 1,
+          options: ['categorie 1', 'Categorie 2', 'Catégorie 3'],
+          
+        }
+      - label: "Auteur(s)"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
+
       - { label: "Body", name: "body", widget: "markdown" }
 # Modifier page index et About
   - name: "pages"
@@ -81,7 +127,7 @@ collections:
           - { label: "Body", name: "body", widget: "text" }
 
 # Add author
-  - name: "author"
+  - name: "authors"
     label: "Ajouter un Auteur"
     extension: "json"
     format: "json"

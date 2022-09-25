@@ -41,4 +41,9 @@ Si vous souhaitez en savoir plus sur l'utilisation de Netlify CMS avec Hugo, il 
 
 Sources :
 
-Ce ci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurphyxyz/hugo-starter-netlify-cms)
+Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurphyxyz/hugo-starter-netlify-cms)
+
+
+## Chose a faire:
+Mettre les pattern dans collection netlifycms https://www.coderstool.com/regex-patterns
+Date time juste mois année pour les mises a jour.
