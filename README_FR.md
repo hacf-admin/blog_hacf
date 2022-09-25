@@ -45,5 +45,12 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 
 
 ## Chose a faire:
-Mettre les pattern dans collection netlifycms https://www.coderstool.com/regex-patterns
-Date time juste mois année pour les mises a jour.
+* [ ] **config.yml** *NetiflyCMS* Mettre les pattern dans collection netlifycms https://www.coderstool.com/regex-patterns
+* [ ] **config.yml** *NetiflyCMS* Modiier Date time sur collection blog,juste mois année pour les mises a jour.
+* [ ] **config.yml** *NetiflyCMS* Modifier les fonctions de recherche Netlify CMS.
+* [ ] **config.yml** *NetiflyCMS* Ajouter avatar sur collection auteurs et verifier dans quelle dossier ca va (assets).
+* [ ] **config.yml** *NetiflyCMS* Ajouter TAG collection blog
+* [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum collection blog
+* [ ] **config.yml** *NetiflyCMS* Ajouter type ? collection blog
+
+* [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum off collection Actualité

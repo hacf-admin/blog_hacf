@@ -6,6 +6,7 @@ local_backend: true
 
 # Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
 # Peut etre desactivé en commantant la ligne ci-dessous.
+## ATTENTION non disponible en local.
 publish_mode: editorial_workflow
 
 # These lines should *not* be indented
@@ -85,8 +86,15 @@ collections:
           widget: 'select',
           multiple: true,
           min: 1,
-          options: ['categorie 1', 'Categorie 2', 'Catégorie 3'],
-          
+          options: ['Installation','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself'],
+        }
+      - {
+          label: 'Série(s)',
+          name: 'series',
+          widget: 'select',
+          multiple: true,
+          min: 1,
+          options: ['HA les Bases','Débuter'],
         }
       - label: "Auteur(s)"
         name: "author"
