@@ -58,7 +58,7 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    create: true
+    create: false
     files:
       - file: "content/_index.md"
         label: "Home Page"
