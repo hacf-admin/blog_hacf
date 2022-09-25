@@ -216,6 +216,18 @@ uglyURLs = false
         pre = "internal"
         post = "archive"
     [[menu.main]]
+        pageref = "/blog/"
+        name = "Blog"
+        weight = 2
+        pre = "internal"
+        post = "archive"
+    [[menu.main]]
+        pageref = "/posts_img/"
+        name = "Posts IMG"
+        weight = 2
+        pre = "internal"
+        post = "archive"
+    [[menu.main]]
         pageref = "/categories/"
         name = "Categories"
         weight = 3
