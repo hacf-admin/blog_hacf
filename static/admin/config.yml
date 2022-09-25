@@ -86,15 +86,22 @@ collections:
 # Add author
   - name: "author"
     label: "Ajouter un Auteur"
+    extension: "json"
+    format: "json"
     folder: "data/authors"
     slug: "{{slug}}"
-    files:
-      - file: "data/authors.json"
-        label: "Navigation"
-        name: "navigation"
-        extension: "json"
-        format: "json"
-        editor:
-          preview: false
-        fields:
-          - { name: body, label: Body, widget: code }
+    editor:
+      preview: false
+    fields:
+      - { label: "Nom / Pseudo", name: "name", widget: "string" }
+      - { label: "Fonction", name: "fonction", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Réseaux Sociaux",
+              name: "social_network",
+              widget: "object",
+              fields:
+                [
+                  { label: "Pseudo facebook", name: "facebook", widget: "string" }
+                ],
+            }
