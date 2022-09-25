@@ -82,3 +82,19 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "text" }
+
+# Add author
+  - name: "author"
+    label: "Ajouter un Auteur"
+    folder: "data/authors"
+    slug: "{{slug}}"
+    files:
+      - file: "data/authors.json"
+        label: "Navigation"
+        name: "navigation"
+        extension: "json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - { name: body, label: Body, widget: code }
