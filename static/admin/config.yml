@@ -85,13 +85,12 @@ collections:
     label: "Ajouter un Auteur"
     extension: "json"
     format: "json"
-    folder: "data/authors/{{name}}"
-    #slug: "{{slug}}"
+    folder: "data/authors"
     create: true
     editor:
       preview: false
     fields:
-      - { label: "Pseudo", name: "pseudos", widget: "string" }
+      - { label: "Pseudos", name: "title", widget: "string" }
       - { label: "Fonction", name: "fonction", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - {
@@ -100,7 +99,7 @@ collections:
           widget: "object",
           fields:
             [
-              { label: "Profil Facebook", name: "facebook", widget: "string" }
+              { label: "Profil Facebook", name: "facebook", widget: "string" },
               { label: "Profil Twitter", name: "twitter", widget: "string" }
-            ],
+            ]
         }
