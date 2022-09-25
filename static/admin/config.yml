@@ -13,7 +13,6 @@ media_folder: "static/images/uploads" # Chemin ou sont stocké les medias upload
 public_folder: "/images/uploads" # Chemin de vos images une fois le site publié /images/uploads
 
 collections:
-
 # Article en 1 fichier
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -27,7 +26,6 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
-
 # Articles en dossier
   - name: "blog2" # Used in routes, e.g., /admin/collections/post
     label: "Blog avec Dossier" # Used in the UI
@@ -41,7 +39,6 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-
 # Articles avec dossier img
   - name: "blog3" # Used in routes, e.g., /admin/collections/post
     label: "Blog avec Dossier img" # Used in the UI
@@ -55,7 +52,7 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
-
+# Modifier page index et About
   - name: "pages"
     label: "Pages"
     create: false
@@ -88,20 +85,22 @@ collections:
     label: "Ajouter un Auteur"
     extension: "json"
     format: "json"
-    folder: "data/authors"
-    slug: "{{slug}}"
+    folder: "data/authors/{{name}}"
+    #slug: "{{slug}}"
+    create: true
     editor:
       preview: false
     fields:
       - { label: "Pseudo", name: "pseudos", widget: "string" }
       - { label: "Fonction", name: "fonction", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-          - {
-              label: "Réseaux Sociaux",
-              name: "social_network",
-              widget: "object",
-              fields:
-                [
-                  { label: "Pseudo facebook", name: "facebook", widget: "string" }
-                ],
-            }
+      - {
+          label: "Réseaux Sociaux",
+          name: "social_network",
+          widget: "object",
+          fields:
+            [
+              { label: "Profil Facebook", name: "facebook", widget: "string" }
+              { label: "Profil Twitter", name: "twitter", widget: "string" }
+            ],
+        }
