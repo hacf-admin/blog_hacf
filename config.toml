@@ -204,7 +204,7 @@ uglyURLs = false
 [menu]
     ## Menu bar
     [[menu.main]]
-        pageref = "/admin"
+        pageref = "https://bright-hummingbird-cf02c5.netlify.app/admin"
         name = "Admin"
         weight = 1
         pre = "internal"
