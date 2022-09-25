@@ -48,7 +48,7 @@ collections:
       - label: Posts Without Index
         field: title
         pattern: front matter post
-      - label: Drafts
+      - label: Brouillon
         field: draft
         pattern: true
     view_groups:
