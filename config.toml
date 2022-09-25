@@ -96,19 +96,19 @@ uglyURLs = false
     keepWhitespace = false
 
 # Author’s information
-[author]
+#[author]
     # Name
-    name = "reuixiy"
+#    name = "reuixiy"
     # Email
-    email = "reuixiy@gmail.com"
+#    email = "reuixiy@gmail.com"
     # Motto or introduction
-    motto = "Viva La Vida"
+#    motto = "Viva La Vida"
     # Avatar
-    avatar = "/icons/apple-touch-icon.png"
+#    avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
-    website = "https://io-oi.me/"
+#    website = "https://io-oi.me/"
     # Twitter
-    twitter = "reuixiy"
+#    twitter = "reuixiy"
 
 # Related content
 [related]
