@@ -2,20 +2,23 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-# This line should *not* be indented
+# Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
+# Peut etre desactivé en commantant la ligne ci-dessous.
 publish_mode: editorial_workflow
 
 # These lines should *not* be indented
-media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "static/images/uploads" # Chemin ou sont stocké les medias uploadés, dans Hugo par defaut c'est static/images/uploads ou assets/images/uploads pour pouvoir utiliser le resize.image.
+public_folder: "/images/uploads" # Chemin de vos images une fois le site publié /images/uploads
 
 collections:
+
+# Article en 1 fichier
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
-    folder: "content/blog" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
+    folder: "content/blog" # Chemin du dossier contenant les articles de blog.
+    create: true # Autoriser les utilisateur a créer du contenus dans cette collection.
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    fields: # Differents parametres du Front Matter se terminant par le body permettant de creer du contenu.
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -23,7 +26,57 @@ collections:
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-Description: >
-  ceci est un commantaire
-  long
-  qu'en penses tu
+# Articles en dossier
+  - name: "blog2" # Used in routes, e.g., /admin/collections/post
+    label: "Blog avec Dossier" # Used in the UI
+    folder: "content/posts" # The path to the folder where the documents are stored
+    path: "{{slug}}/index"
+    media_folder: "" # Save images in the post's own folder instead of the static folder
+    public_folder: ""
+    create: true 
+    fields: 
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+# Articles avec dossier img
+  - name: "blog3" # Used in routes, e.g., /admin/collections/post
+    label: "Blog avec Dossier img" # Used in the UI
+    folder: "content/posts_img" # The path to the folder where the documents are stored
+    path: "{{slug}}/index"
+    media_folder: "img/" # Save images in the post's own folder instead of the static folder
+    public_folder: "img/"
+    create: true 
+    fields: 
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    create: true
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Blurb", name: "blurb", widget: "text" }
+          - {
+              label: "Section",
+              name: "section",
+              widget: "object",
+              fields:
+                [
+                  { label: "Heading", name: "heading", widget: string },
+                  { label: "Text", name: "text", widget: "text" },
+                ],
+            }
+      - file: "content/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
