@@ -93,7 +93,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Nom / Pseudo", name: "name", widget: "string" }
+      - { label: "Pseudo", name: "pseudos", widget: "string" }
       - { label: "Fonction", name: "fonction", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
           - {
