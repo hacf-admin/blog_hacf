@@ -203,12 +203,12 @@ uglyURLs = false
 
 [menu]
     ## Menu bar
-    [[menu.main]]
-        pageref = "/"
-        name = "Home"
-        weight = 1
-        pre = "internal"
-        post = "home"
+    #[[menu.main]]
+    #    pageref = "/"
+    #    name = "Home"
+    #    weight = 1
+    #    pre = "internal"
+    #    post = "home"
     [[menu.main]]
         pageref = "/posts/"
         name = "Posts"
