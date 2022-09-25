@@ -23,8 +23,8 @@ YVous pouvez maintenant ajouter et modifier du contenu en naviguant sur your.app
 ## Développement local
 
 * Clonez ce Dépot,
-* Se rendre a l'interieur du dépot,
-* lancer la commande suivante ``,
+* Se rendre a l'interieur du dossier du dépot,
+* lancer la commande suivante `npx netlify-cms-proxy-server`,
 * Démarrez le serveur de développement avec `hugo serve`,
 
 

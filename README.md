@@ -22,8 +22,8 @@ You can now add and edit content by navigating to your.app/admin.
 ## Local Development
 
 * Clone this repository and start the development server with `hugo serve`,
-* Go to the folder,
-* run this command ``,
+* Go to inside the repository folder,
+* run this command `npx netlify-cms-proxy-server`,
 * Run hugo serve with `hugo serve`
 
 The Netlify CMS configuration file can be found in `static/admin/config.yml`.
