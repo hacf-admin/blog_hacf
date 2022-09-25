@@ -1,3 +1,5 @@
+>Ce fichier est disponnible en [francais](README_FR.md).
+
 # Run a satic website with Hugo and Netlify CMS for Headless.
 
 Dead-simple Hugo theme with Netlify CMS integration. Intended to be a starter for creating your own theme with an out-of-the-box Netlify CMS integration.
