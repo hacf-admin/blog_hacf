@@ -1,12 +1,18 @@
 {{ define "main" }}
   {{ $sections:= site.Data.sections }}
-  {{ range sort $sections "section.weight" }}
-      {{ if .section.template }}
-        {{- partial .section.template . -}}
-      {{ else }}
-        {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
-      {{ end }}
-  {{ end }}
+    {{ range sort $sections "section.weight" }}
+      {{ if .section.active }}
+        {{ if .section.template }}
+          {{- partial .section.template . -}}
+        {{ else }}
+          {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
+        {{ end }}
+        {{ end }}
+    {{ end }}
+
+
+
+  <!-- Script pour Netlify-->
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {

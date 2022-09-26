@@ -2,6 +2,7 @@ section:
   name: Historique
   id: historique
   weight: 2
+  active: false
   template: sections/historique.html
 
 title: HACF en dates

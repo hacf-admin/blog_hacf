@@ -3,6 +3,7 @@ section:
   name: Home Assistant
   id: haoff
   weight: 4
+  active: false
   template: sections/haoff.html
 
 name: "Home Assistant"
