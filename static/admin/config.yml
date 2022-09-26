@@ -106,6 +106,7 @@ collections:
         hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
 
       - { label: "Body", name: "body", widget: "markdown" }
+      
 # Modifier page index et About
   - name: "pages"
     label: "Pages"
