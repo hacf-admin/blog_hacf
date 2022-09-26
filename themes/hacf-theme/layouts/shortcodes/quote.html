@@ -1,0 +1,12 @@
+{{- $type := default "left" (.Get 2) -}}
+{{- $align := dict "left" "text-start" "center" "text-center" "right" "text-end"}}
+{{- $textalign := default "text-start" (index $align $type) -}}
+
+<figure class="alert alert-secondary {{ $textalign }}" role="alert">
+  <blockquote class="blockquote">
+    <p>{{.Get 0 | markdownify}}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <cite title="Source Title">{{.Get 1 | markdownify}}</cite>
+  </figcaption>
+</figure>

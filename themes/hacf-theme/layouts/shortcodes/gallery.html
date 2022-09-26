@@ -1,0 +1,24 @@
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js">
+</script>
+
+
+{{ with (.Page.Resources.ByType "image").Match (printf "%s**" (.Get "folder")) }}
+<div class="row justify-content-center">
+   {{ range $image := . }}
+
+   <div class="col col-lg-4 py-1 align-self-center">
+    {{ $thumbnail := $image.Resize "200x webp q50" }}
+    {{ $thumbnailjpg := $image.Resize "200x jpg" }}
+        <a href="{{ .Permalink }}" data-lightbox="x">
+            <picture>
+                <source srcset="{{ $thumbnail.Permalink }}" type="image/webp">
+                <img src="{{ $thumbnailjpg.Permalink }}" type="image/jpg" alt="{{ .Permalink }}">
+            </picture> 
+        </a>  
+   </div>
+   {{ end }}
+</div>
+{{ end }}
