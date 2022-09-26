@@ -56,3 +56,6 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 * [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum off collection Actualité
 
 * [ ] Optimisation CSS (PostCSS purge plus minify.) https://romain.therrat.fr/posts/2020/04/hugo-supprimer-le-css-inutilise/
+* * Installer NodeJS `sudo apt install nodejs` et verifier avec `nodejs -v`
+* * Installer npm via `sudo apt install npm`
+* * Lancer `npm install postcss postcss-cli @fullhuman/postcss-purgecss`
