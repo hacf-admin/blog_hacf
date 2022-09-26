@@ -1,0 +1,6 @@
+[markup]
+#  defaultMarkdownHandler = 'goldmark' ## Utile si besoinde passer par l'ancien moteur markdown Blackfriday
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 2

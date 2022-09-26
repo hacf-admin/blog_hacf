@@ -1,0 +1,216 @@
+[[main]]
+  name = "HACF"
+  identifier = "hacf"
+  weight = 1
+  [[main]]
+    name = "A propos"
+    identifier = "propos"
+    parent = "hacf"
+    url = "/a-propos"
+    weight = 1
+  [[main]]
+    name = "Contribuer"
+    identifier = "contribuer"
+    parent = "hacf"
+    url = "/contribuer"
+    weight = 2
+  [[main]]
+    name = "Pourquoi Home Assistant"
+    identifier = "pourquoi"
+    parent = "hacf"
+    url = "/home-assistant"
+    weight = 3
+
+[[main]]
+  name = "Association"
+  identifier = "association"
+  weight = 2
+  [[main]]
+    name = "Présentation"
+    identifier = "presentation"
+    parent = "association"
+    url = "/association"
+    weight = 1
+  [[main]]
+    name = "Statuts"
+    parent = "association"
+    identifier = "statuts"
+    url = "/asso-statuts"
+    weight = 2
+  [[main]]
+    name = "Règlement"
+    parent = "association"
+    identifier = "reglement"
+    url = "/asso-reglement"
+    weight = 3
+
+[[main]]
+  name = "Articles / Nouvelles / Guides"
+  identifier = "sujets"
+  weight = 3
+  [[main]]
+    name = "News"
+    identifier = "news"
+    parent = "sujets"
+    url = "/news"
+    weight = 2
+  [[main]]
+    name = "Articles"
+    identifier = "articles"
+    parent = "sujets"
+    url = "/articles"
+    weight = 1
+  #[[main]]
+  #  name = "Séries"
+  #  identifier = "series"
+  #  parent = "sujets"
+  #  url = "/series"
+  #  weight = 1
+  [[main]]
+    name = "Awesome"
+    identifier = "awesome"
+    parent = "sujets"
+    url = "/awesome"
+    weight = 4
+  [[main]]
+    name = "Guide du Dev"
+    identifier = "guidedev"
+    parent = "sujets"
+    url = "/guide-dev"
+    weight = 5
+[[main]]
+  name = "Contact"
+  identifier = "contact"
+  url = "https://contact.hacf.fr"
+  weight = 4
+
+
+
+[[footer]]
+name = "A propos"
+url = "/a-propos"
+[[footer]]
+name = "Protection des données"
+url = "/protection-des-donnees"
+
+
+
+[[hacf]]
+name = "Email"
+url = "https://contact.hacf.fr"
+pre = 'fa-envelope'
+weight = 1
+[[hacf]]
+name = "Forum"
+url = "https://forum.hacf.fr"
+pre = 'fa-discourse'
+weight = 2
+[[hacf]]
+name = "Discord"
+url = "https://discord.hacf.fr"
+pre = 'fa-discord'
+weight = 3
+[[hacf]]
+name = "Groupe Facebook"
+url = "https://groupe-facebook.hacf.fr"
+pre = 'fa-facebook-messenger'
+weight = 4
+[[hacf]]
+name = "GitHub"
+url = "https://github.hacf.fr"
+pre = 'fa-github'
+weight = 5
+[[hacf]]
+name = "YouTube"
+url = "https://youtube.hacf.fr"
+pre = 'fa-youtube'
+weight = 6
+[[hacf]]
+name = "Twitter"
+url = "https://twitter.hacf.fr"
+pre = 'fa-twitter'
+weight = 7
+[[hacf]]
+name = "Facebook"
+url = "https://facebook.hacf.fr"
+pre = 'fa-facebook'
+weight = 8
+
+[[haoff]]
+name = "Site Web"
+url = "https://www.home-assistant.io/"
+pre = 'fa-home'
+weight = 1
+[[haoff]]
+name = "Discourse"
+url = "https://community.home-assistant.io/"
+pre = 'fa-discourse'
+weight = 2
+[[haoff]]
+name = "Discord"
+url = "https://discord.com/invite/c5DvZ4e"
+pre = 'fa-discord'
+weight = 3
+[[haoff]]
+name = "Github"
+url = "https://github.com/home-assistant/"
+pre = 'fa-github'
+weight = 6
+[[haoff]]
+name = "Facebook Group"
+url = "https://www.facebook.com/groups/HomeAssistant/"
+pre = 'fa-facebook'
+weight = 4
+[[haoff]]
+name = "Reddit"
+url = "https://www.reddit.com/r/homeassistant/"
+pre = 'fareddit'
+weight = 5
+[[haoff]]
+name = "Twitter"
+url = "https://twitter.com/home_assistant"
+pre = 'fa-twitter'
+weight = 7
+[[haoff]]
+name = "Facebook"
+url = "https://www.facebook.com/homeassistantio"
+pre = 'fa-facebook'
+weight = 8
+
+
+[[aidehacf]]
+name = "Discourse"
+url = "https://forum.hacf.fr"
+pre = 'fa-discourse'
+weight = 1
+[[aidehacf]]
+name = "Discord"
+url = "http://discord.hacf.fr"
+pre = 'fa-discord'
+weight = 2
+[[aidehacf]]
+name = "Facebook Group"
+url = "http://groupe-facebook.hacf.fr"
+pre = 'fa-facebook'
+weight = 3
+
+[[aidehaoff]]
+name = "Discourse"
+url = "https://community.home-assistant.io/"
+pre = 'fa-discourse'
+weight = 1
+[[aidehaoff]]
+name = "Discord"
+url = "https://discord.com/invite/c5DvZ4e"
+pre = 'fa-discord'
+weight = 2
+[[aidehaoff]]
+name = "Reddit"
+url = "https://www.reddit.com/r/homeassistant/"
+pre = 'fa-reddit'
+weight = 3
+[[aidehaoff]]
+name = "Facebook Group"
+url = "https://www.facebook.com/groups/HomeAssistant/"
+pre = 'fa-facebook'
+weight = 4
