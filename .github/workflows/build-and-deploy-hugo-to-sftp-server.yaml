@@ -1,0 +1,86 @@
+name: Deploy Hugo to Github Page and SFTP serveur
+
+# run when a commit is pushed to "source" branch
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+    # checkout to the commit that has been pushed
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive  # Fetch Hugo themes (true OR recursive)
+        fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+    
+    # install Hugo
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+    
+    # Add postCSS https://github.com/peaceiris/actions-hugo#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli
+    #- name: Setup Node
+    #  uses: actions/setup-node@v3
+    #  with:
+    #    node-version: '14'
+
+    #- name: Cache dependencies
+    #  uses: actions/cache@v2
+    #  with:
+    #    path: ~/.npm
+    #    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    #    restore-keys: |
+    #      ${{ runner.os }}-node-
+
+    #- run: npm ci
+
+
+    # build website
+    - name: Build
+      run: hugo --gc --minify --cleanDestinationDir --destination "public-integration/"
+
+    # Permet le deployement sur la branche main pour GitHub Page (plus utilisé)
+    #- name: Deploy
+    #  uses: peaceiris/actions-gh-pages@v3
+    #  with:
+    #    github_token: ${{ secrets.GITHUB_TOKEN }}
+    #    publish_branch: main # if your main branch is `master` use that here.
+    #    publish_dir: ./public
+
+#    # https://github.com/marketplace/actions/sftp-deploy
+#    - name: Upload file
+#      uses: wlixcc/SFTP-Deploy-Action@v1.0
+#      with:
+#        server: ${{ secrets.SFTP_HOST }}
+#        username: ${{ secrets.SFTP_USER }}
+#        port: ${{ secrets.SFTP_PORT }}
+#        ssh_private_key: ${{ secrets.SFTP_SSH_KEY }} 
+#        local_path: 'public/*'
+#        remote_path: '/www'
+
+
+
+  #  uses: mxschmitt/action-tmate@v2
+  # https://frigi.ch/en/2021/10/automatically-update-site-created-with-hugo/
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.1
+      with:
+        switches: -avzr --delete
+        path: public-integration/
+        remote_path: www/
+        remote_host: ${{ secrets.SFTP_HOST }}
+        remote_user: ${{ secrets.SFTP_USER }}
+        remote_key: ${{ secrets.SFTP_SSH_KEY }}
+        remote_port: ${{ secrets.SFTP_PORT }}
+
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist-without-markdown
+        path: public-integration
