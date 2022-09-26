@@ -1,0 +1,8 @@
+{{- $type := default "hacf" (.Get 1) -}}
+{{- $links := dict "hacf" "https://forum.hacf.fr/u/" "haoff" "https://community.home-assistant.io/u/"}}
+{{- $communitys := dict "hacf" "Francophone" "haoff" "Anglophone"}}
+{{- $link := (index $links $type) -}}
+{{- $community := (index $communitys $type) -}}
+
+<a href="{{ $link }}{{.Get 0}}" title="Lien vers le profil de {{.Get 0}} sur la Communuté {{$community}}">{{.Get 0}}</a>
+

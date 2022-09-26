@@ -1,0 +1,6 @@
+{{- $type := (.Get 0) -}}
+{{- $buttons := dict "depot" "repository_import" "bp" "blueprint_import"}}
+{{- $button := (index $buttons $type) -}}
+{{- $link := (.Get 1) -}}
+
+<a href="{{ $link }}"><img src="/images/ha/{{ $button }}.svg" alt="Ajouter directement dans Home Assistant"></a>
