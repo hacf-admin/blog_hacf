@@ -3,10 +3,14 @@
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
+.fa {
+  font-family: var(--fa-style-family, "Font Awesome 6 Free");
+  font-weight: var(--fa-style, 900); }
 
-
+.fa,
 .fa-solid,
 .far,
+.fab,
 .fa-brands {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -19,33 +23,11 @@
 .fa-2x {
   font-size: 2em; }
 
-@-webkit-keyframes fa-beat {
-  0%, 90% {
-    transform: scale(1); }
-  45% {
-    transform: scale(var(--fa-beat-scale, 1.25)); } }
-
 @keyframes fa-beat {
   0%, 90% {
     transform: scale(1); }
   45% {
     transform: scale(var(--fa-beat-scale, 1.25)); } }
-
-@-webkit-keyframes fa-bounce {
-  0% {
-    transform: scale(1, 1) translateY(0); }
-  10% {
-    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0); }
-  30% {
-    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em)); }
-  50% {
-    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0); }
-  57% {
-    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em)); }
-  64% {
-    transform: scale(1, 1) translateY(0); }
-  100% {
-    transform: scale(1, 1) translateY(0); } }
 
 @keyframes fa-bounce {
   0% {
@@ -63,21 +45,9 @@
   100% {
     transform: scale(1, 1) translateY(0); } }
 
-@-webkit-keyframes fa-fade {
-  50% {
-    opacity: var(--fa-fade-opacity, 0.4); } }
-
 @keyframes fa-fade {
   50% {
     opacity: var(--fa-fade-opacity, 0.4); } }
-
-@-webkit-keyframes fa-beat-fade {
-  0%, 100% {
-    opacity: var(--fa-beat-fade-opacity, 0.4);
-    transform: scale(1); }
-  50% {
-    opacity: 1;
-    transform: scale(var(--fa-beat-fade-scale, 1.125)); } }
 
 @keyframes fa-beat-fade {
   0%, 100% {
@@ -87,33 +57,9 @@
     opacity: 1;
     transform: scale(var(--fa-beat-fade-scale, 1.125)); } }
 
-@-webkit-keyframes fa-flip {
-  50% {
-    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg)); } }
-
 @keyframes fa-flip {
   50% {
     transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg)); } }
-
-@-webkit-keyframes fa-shake {
-  0% {
-    transform: rotate(-15deg); }
-  4% {
-    transform: rotate(15deg); }
-  8%, 24% {
-    transform: rotate(-18deg); }
-  12%, 28% {
-    transform: rotate(18deg); }
-  16% {
-    transform: rotate(-22deg); }
-  20% {
-    transform: rotate(22deg); }
-  32% {
-    transform: rotate(-12deg); }
-  36% {
-    transform: rotate(12deg); }
-  40%, 100% {
-    transform: rotate(0deg); } }
 
 @keyframes fa-shake {
   0% {
@@ -135,12 +81,6 @@
   40%, 100% {
     transform: rotate(0deg); } }
 
-@-webkit-keyframes fa-spin {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
-
 @keyframes fa-spin {
   0% {
     transform: rotate(0deg); }
@@ -158,6 +98,9 @@ readers do not read off random characters that represent icons */
 
 .fa-envelope::before {
   content: "\f0e0"; }
+
+.fa-globe::before {
+  content: "\f0ac"; }
 :root, :host {
   --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands"; }
 
@@ -168,7 +111,7 @@ readers do not read off random characters that represent icons */
   font-display: block;
   src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype"); }
 
-
+.fab,
 .fa-brands {
   font-family: 'Font Awesome 6 Brands';
   font-weight: 400; }
@@ -196,6 +139,9 @@ readers do not read off random characters that represent icons */
 
 .fa-facebook-messenger:before {
   content: "\f39f"; }
+
+.fa-facebook-square:before {
+  content: "\f082"; }
 
 .fa-github:before {
   content: "\f09b"; }

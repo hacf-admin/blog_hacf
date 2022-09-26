@@ -2,7 +2,7 @@
 section:
   name: A Propos
   id: a-propos
-  weight: 1
+  weight: 2
   template: sections/hacf.html
 
 #Voir si possibilité d'integrer le resize image.

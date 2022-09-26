@@ -1,7 +1,7 @@
 section:
   name: Nouvelles & Articles
   id: news-articles
-  weight: 5
+  weight: 1
   template: sections/news-articles.html
   nbPost: 3
 

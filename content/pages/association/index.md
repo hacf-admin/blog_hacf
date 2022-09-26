@@ -1,9 +1,6 @@
 ---
-title: "About"
-date: 2022-09-24T09:47:46+02:00
-draft: true
+title: Association
 ---
-
 # Ceci est une page a propos
 
 ## Ceci est un sous-titre
@@ -16,7 +13,6 @@ draft: true
 
 ## Voici une image
 
-![](/geometric-polygon-abstract-myybkpq9l5i2xeo6.jpg)
 
 ## Ceci est un tableau
 

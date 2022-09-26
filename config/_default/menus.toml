@@ -1,94 +1,52 @@
-[[main]]
-  name = "HACF"
-  identifier = "hacf"
-  weight = 1
-  [[main]]
-    name = "A propos"
-    identifier = "propos"
-    parent = "hacf"
-    url = "/a-propos"
-    weight = 1
-  [[main]]
-    name = "Contribuer"
-    identifier = "contribuer"
-    parent = "hacf"
-    url = "/contribuer"
-    weight = 2
-  [[main]]
-    name = "Pourquoi Home Assistant"
-    identifier = "pourquoi"
-    parent = "hacf"
-    url = "/home-assistant"
-    weight = 3
+#[[main]]
+#  name = "HACF"
+#  identifier = "hacf"
+#  weight = 1
+#  [[main]]
+#    name = "A propos"
+#    identifier = "propos"
+#    parent = "hacf"
+#    url = "/a-propos"
+#    weight = 1
+#  [[main]]
+#    name = "Contribuer"
+#    identifier = "contribuer"
+#    parent = "hacf"
+#    url = "/contribuer"
+#    weight = 2
 
+[[main]]
+  name = "Accueil"
+  identifier = "home"
+  url = "/"
+  weight = 1
+[[main]]
+  name = "Actualités"
+  identifier = "news"
+  url = "news"
+  weight = 2
+[[main]]
+  name = "Articles"
+  identifier = "post"
+  url = "/blog"
+  weight = 3
 [[main]]
   name = "Association"
   identifier = "association"
-  weight = 2
-  [[main]]
-    name = "Présentation"
-    identifier = "presentation"
-    parent = "association"
-    url = "/association"
-    weight = 1
-  [[main]]
-    name = "Statuts"
-    parent = "association"
-    identifier = "statuts"
-    url = "/asso-statuts"
-    weight = 2
-  [[main]]
-    name = "Règlement"
-    parent = "association"
-    identifier = "reglement"
-    url = "/asso-reglement"
-    weight = 3
-
-[[main]]
-  name = "Articles / Nouvelles / Guides"
-  identifier = "sujets"
-  weight = 3
-  [[main]]
-    name = "News"
-    identifier = "news"
-    parent = "sujets"
-    url = "/news"
-    weight = 2
-  [[main]]
-    name = "Articles"
-    identifier = "articles"
-    parent = "sujets"
-    url = "/articles"
-    weight = 1
-  #[[main]]
-  #  name = "Séries"
-  #  identifier = "series"
-  #  parent = "sujets"
-  #  url = "/series"
-  #  weight = 1
-  [[main]]
-    name = "Awesome"
-    identifier = "awesome"
-    parent = "sujets"
-    url = "/awesome"
-    weight = 4
-  [[main]]
-    name = "Guide du Dev"
-    identifier = "guidedev"
-    parent = "sujets"
-    url = "/guide-dev"
-    weight = 5
-[[main]]
-  name = "Contact"
-  identifier = "contact"
-  url = "https://contact.hacf.fr"
+  url = "pages/association"
   weight = 4
-
-
+[[main]]
+  name = "Liens Utiles"
+  identifier = "awesome"
+  weight = 5
+[[main]]
+  name = "Nos Médias"
+  identifier = "medias"
+  weight = 6
 
 [[footer]]
 name = "A propos"
-url = "/a-propos"
+url = "/pages/about"
 [[footer]]
 name = "Protection des données"
 url = "/protection-des-donnees"
