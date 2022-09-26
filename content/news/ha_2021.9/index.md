@@ -161,7 +161,7 @@ Grâce à [@raman325,](https://github.com/raman325) vous pouvez désormais [cré
 
 Comme un exemple en dit plus que mille mots, voici deux exemples qui sont tous deux basés sur une bande LED WLED. Il peut être utilisé pour extraire des caractéristiques de la bande WLED dans leurs propres entités.
 
-{{< highlight yaml >}}
+```
 # Example number entity that represents the effect speed on a WLED LED strip
 # between 0 and 100%, translating it from an 0 to 255 scale.
 template:
@@ -176,9 +176,9 @@ template:
           entity_id: light.wled
         data:
           speed: "{{ (255 / 100) * value }}"
-{{< /highlight >}}
+```
 
-{{< highlight yaml >}}
+```
 # Example select entity that extracts effects from a light.
 # When you change the selected option, the effect of the light changes.
 template:
@@ -192,7 +192,7 @@ template:
           entity_id: light.wled
         data:
           effect: "{{ option }}"
-{{< /highlight >}}
+```
 
 Oh! Et ils peuvent également être utilisés avec les nouveaux modèles de déclencheurs ! Consultez [la documentation](https://www.home-assistant.io/integrations/template) pour toutes les options disponibles.
 
