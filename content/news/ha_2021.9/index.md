@@ -12,10 +12,6 @@ description: "Traduction de la mise à jour de Home Assistant en version 2021.9.
 # Simple ou multi auteurs, il faut remplir l'auteur principal.
 author: pulpy
 
-# Recherche par auteurs et si multi auteurs.
-authors:
-- pulpy
-
 #socialshare: true # Active l'option de partage
 article_ha: true # Ajoute les boutton du forum et les medias des deux communautés Home Assistant (Off et HACF)
 
