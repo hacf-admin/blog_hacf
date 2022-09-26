@@ -10,12 +10,19 @@
 
         {{- partial "head.html" . -}}
     </head>
+    <header>
+        {{- partial "header.html" . -}}
+    </header>
 
     <body>
-        {{- partial "header.html" . -}}
+
         <div id="content">
         {{- block "main" . }}{{- end }}
         </div>
-        {{- partial "footer.html" . -}}
+        
     </body>
+    
+    <footer>
+        {{- partial "footer.html" . -}}
+    </footer>
 </html>
