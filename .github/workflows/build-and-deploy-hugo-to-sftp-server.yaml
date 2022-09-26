@@ -23,21 +23,21 @@ jobs:
         hugo-version: 'latest'
         extended: true
     
-    # Add postCSS https://github.com/peaceiris/actions-hugo#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '14'
+#    # Add postCSS https://github.com/peaceiris/actions-hugo#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli
+#    - name: Setup Node
+#      uses: actions/setup-node@v3
+#      with:
+#        node-version: '14'
 
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+#    - name: Cache dependencies
+#      uses: actions/cache@v2
+#      with:
+#        path: ~/.npm
+#        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#        restore-keys: |
+#          ${{ runner.os }}-node-
 
-    - run: npm ci
+#    - run: npm ci
 
 
     # build website
