@@ -74,6 +74,6 @@ disableLatLong = true
   [privacy.youtube]
     disable = true
 
-## Permet de supprimer les classe s inutilisées dans le CSS et ainsi reduire sa taille. https://gohugo.io/hugo-pipes/postprocess/
+## Permet de supprimer les classes inutilisées dans le CSS et ainsi reduire sa taille. https://gohugo.io/hugo-pipes/postprocess/
 [build]
   writeStats = true
