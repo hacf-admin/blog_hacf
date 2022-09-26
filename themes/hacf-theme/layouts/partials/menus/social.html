@@ -1,0 +1,17 @@
+<h5 class="">Nos Médias</h5>
+<br>
+<ul class="list-inline">
+  {{ range .Site.Menus.hacf }}
+  <li class="list-inline-item">
+    {{ if eq .Name "Email" }}
+    <a href="{{ .URL }}" target="_blank" rel="noreferrer" alt="{{ .Name }}" title="{{ .URL }}">
+      <i class="far {{ .Pre }} fa-2x"></i>
+    </a>
+    {{ else }}
+    <a href="{{ .URL }}" target="_blank" rel="noreferrer" alt="{{ .Name }}" title="{{ .URL }}">
+      <i class="fa-brands {{ .Pre }} fa-2x"></i>
+    </a>
+    {{end}}
+  </li>
+  {{ end }}
+</ul>

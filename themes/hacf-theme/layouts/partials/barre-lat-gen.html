@@ -1,0 +1,21 @@
+
+<div class="card m-1">
+    <div class="card-header text-center text-uppercase text-secondary border rounded-top m-1">
+        <a class="text-decoration-none text-dark" href="/categories">categories</a>
+    </div>
+    <div class="card-body text-center text-capitalize">
+            {{ range .Site.Taxonomies.categories }}
+            <a class="btn btn-outline-primary p-1 m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} <span class="badge bg-primary">{{ .Count }}</span></a>
+            {{ end }}
+    </div>
+</div>
+<div class="card m-1">
+    <div class="card-header text-center text-uppercase text-secondary border rounded-top m-1">
+        <a class="text-decoration-none text-dark" href="/tags">tags</a>
+    </div>
+    <div class="card-body text-center text-lowercase">
+            {{ range .Site.Taxonomies.tags }}
+            <a class="btn btn-link p-0 m-0" href="{{ .Page.Permalink }}" role="button">#{{ .Page.Title }}</a>
+            {{ end }}
+    </div>
+</div>

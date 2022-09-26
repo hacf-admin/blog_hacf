@@ -1,0 +1,49 @@
+    <div class="card p-1 mb-2"> 
+        <a class="card-header link-dark text-decoration-none" href="{{ .Permalink }}">
+            <h4 class="card-title">{{ .Title }}</h4>
+        </a>
+
+        <div class="card-body">
+            <div class="row">
+                <!--<div class="col-2">
+                    <img class="card-img" src="{{ .Site.Params.article }}" alt="Card image cap" style="width: 50px;" >
+                </div> -->
+                <div class="col">
+                    <div class="row">
+                        <div class="col-6">
+                            {{ partial "helpers/date" . }}
+                        </div>
+                        <div class="col-6">
+                            <h6 class="card-subtitle mb-2 text-muted text-center">Temps de lecture {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</h6>
+                        </div>
+                        
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-6">
+                            <h6 class="card-subtitle mb-2 text-muted text-center text-capitalize text-trucate">
+                                {{ range $idx, $category := .Params.categories }}
+                                {{- if ne $idx 0 }}, {{ end }}
+                                    <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                                {{- end }}</h6>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="card-subtitle mb-2 text-muted text-center text-lowercase text-truncate">
+                                {{ range $idx, $tag := .Params.tags }}
+                                {{- if ne $idx 0 }}, {{ end }}
+                                    <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
+                                {{- end }}</h6>
+                        </div>
+                    </div>
+                    {{ if .Params.description }}
+                        <p class="card-text">{{ .Params.description }}</p>
+                    {{ else }}
+                        <p class="card-text">{{ .Summary }}</p>   
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-muted text-center pl-5">
+            <a href="{{ .Permalink }}" class="btn btn-primary">Lire l'article</a>
+        </div>
+    </div>      

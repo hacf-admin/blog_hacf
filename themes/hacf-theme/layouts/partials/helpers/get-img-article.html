@@ -1,0 +1,13 @@
+
+{{ $imgPost := resources.Get "images/articles/background-dark.png" }}
+{{ .Scratch.Set "heroScratch" $imgPost }}
+
+{{ $imgPost := .Scratch.Get "heroScratch" }}
+
+{{/* Redimenssionner l'image Hero sauf si elle est en SVG */}}
+{{ if and $imgPost (ne $imgPost.MediaType.SubType "svg") }}
+  {{ $imgPost := $imgPost.Resize "148x webp" }}
+{{ end }}
+
+{{/*  Il renvoit le lien de l'image  */}}
+{{ return $imgPost.RelPermalink }}

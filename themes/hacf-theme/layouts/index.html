@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ $sections:= site.Data.sections }}
+  {{ range sort $sections "section.weight" }}
+      {{ if .section.template }}
+        {{- partial .section.template . -}}
+      {{ else }}
+        {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
+      {{ end }}
+  {{ end }}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+</script>
+{{ end }}

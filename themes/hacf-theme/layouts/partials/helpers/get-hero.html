@@ -1,0 +1,24 @@
+{{/* Verifie s'il y a un fichier hero dans le meme dossier que le fichier Markdown */}}
+{{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,svg,webp}"}}
+
+{{/*  Si une image Hero est specifiée dans le Front Matter alors il utilise celle-ci  */}}
+{{ if .Params.hero }}
+  {{ $heroImage = .Page.Resources.GetMatch .Params.hero }}
+{{ end }}
+{{ .Scratch.Set "heroScratch" $heroImage }}
+
+{{/* Doit récuperer une image par defaut */}}
+{{ if not $heroImage }}
+  {{ $heroImage := resources.Get "images/articles/article-hacf-vierge.webp"}}
+  {{ .Scratch.Set "heroScratch" $heroImage }}
+{{ end }}
+
+{{ $heroImage := .Scratch.Get "heroScratch" }}
+
+{{/* Redimenssionner l'image Hero sauf si elle est en SVG */}}
+{{ if and $heroImage (ne $heroImage.MediaType.SubType "svg") }}
+  {{ $heroImage := $heroImage.Resize "148x webp" }}
+{{ end }}
+
+{{/*  Il renvoit le lien de l'image  */}}
+{{ return $heroImage.RelPermalink }}

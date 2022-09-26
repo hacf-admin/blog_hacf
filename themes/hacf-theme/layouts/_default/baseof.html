@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Site.Title }}</title>
+    <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ delimit .Keywords ", " }}{{end}}" />
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+    <meta name="author" content="{{ .Site.Author.name}}">
+    <head>
+
+        {{- partial "head.html" . -}}
+    </head>
+
     <body>
         {{- partial "header.html" . -}}
         <div id="content">

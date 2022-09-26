@@ -1,0 +1,19 @@
+<footer class="bg-light">
+  <div class="container">
+    <div class="row pt-3">
+      <div class="col-12 col-md-6 text-center">
+        {{ partial "articles/socialshare" . }}
+      </div>
+      <div class="col-12 col-md-6 text-center">
+        {{ partial "menus/social" . }}
+      </div>
+    </div>
+    
+    <ul class="nav justify-content-end">
+      {{ range  .Site.Menus.footer }}
+      <li class="nav-item"><a href="{{ .URL }}" class="nav-link px-2 text-muted">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ partial "copyright" . }}
+</footer>

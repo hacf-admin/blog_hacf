@@ -1,0 +1,7 @@
+{{ if eq .Params.type "awesome" }}
+{{ partial "articles/git/gitrepoawesome.html" . }}
+{{ else if eq .Params.type "guidedev" }}
+{{ partial "articles/git/gitrepoguidedev.html" . }}
+{{ else }}
+{{ partial "articles/git/gitrepo.html" . }}
+{{ end }}

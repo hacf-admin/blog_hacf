@@ -1,0 +1,26 @@
+{{ $author := index .Site.Data.authors (.Params.author | default "default") }}
+<div class="card m-1">
+    <div class="row card-header m-0">
+        <div class="col-2">
+            <img src="{{ $author.avatar | relURL }}" class="rounded-circle " alt="{{ $author.name }}-avatar" width="60px">
+        </div>
+        <div class="col-5">
+            <h4 class="">{{ $author.name }}</h4>
+            <p class="text-secondary">{{ $author.fonction }}</p>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <p class="card-text text-secondary">{{ $author.bio }}</p>
+      </div>
+
+      <div class="card-body text-center">
+          {{ if $author.pseudo_hacf }}
+          <a class="btn btn-outline-primary" href="https://forum.hacf.fr/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HACF</a>  
+          {{ end }}
+          {{ if $author.pseudo_haoff }}
+          <a class="btn btn-outline-primary" href="https://community.home-assistant.io/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HAOff</a>
+          {{ end }}
+        
+      </div>
+</div>   

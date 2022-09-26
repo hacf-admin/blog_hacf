@@ -1,0 +1,12 @@
+{
+    "id": "hacf",
+    "name": "L'Equipe HACF",
+    "fonction": "Travailleurs Acharnés",
+    "bio": "Composé de plusieurs personnes, l'équipe HACF vous partage sa passion pour la domotique et Home Assistant tout en participant à la gestion des medias en passant par le maintien et a la création de contenus.",
+    "avatar": "/images/hacf/logo-hacf-100px.webp",
+    "social": {
+        "facebook": "https://facebook.hacf.fr",
+        "twitter": "https://twitter.hacf.fr"
+
+    }
+}

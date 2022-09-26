@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    
+ 
+    <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center text-dark text-decoration-none">
+      <img src="{{ .Site.Params.logo }}" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
+      <span class="fs-4 m-1">{{ .Site.Title }}</span>
+    </a>
+
+    <input type="checkbox" id="navbar-toggle-cbox">
+    <label for="navbar-toggle-cbox" class="navbar-toggler d-block d-md-none" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </label>
+    
+    <div class="collapse navbar-collapse justify-content-end " id="navbar">
+      <ul class="navbar-nav text-center">
+        {{ range .Site.Menus.main }}
+          {{ if .HasChildren }} {{ $id := print "navbarDropdownMenuLink" .Identifier }}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-black" href="#" id="{{ $id }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ .Name }}
+            </a>
+            <ul class="dropdown-menu bg-light text-center" aria-labelledby="{{ $id }}">
+              {{ range .Children }}
+              <li>
+                <a class="dropdown-item text-secondary" href="{{ .URL }}" {{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+            <a class="nav-link text-black" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

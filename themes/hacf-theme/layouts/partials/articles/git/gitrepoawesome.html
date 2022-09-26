@@ -1,0 +1,10 @@
+{{ if site.Params.GitRepoAwesome }}
+    {{ if site.Params.GitBranchAwesome }}
+      {{ .Scratch.Set "GitBranch" site.Params.GitBranchAwesome }}
+    {{ else }}
+      {{ .Scratch.Set "GitBranch" "main" }}
+    {{ end }}
+        <a class="text-decoration-none" href="{{ site.Params.GitRepoAwesome }}/edit/{{ .Scratch.Get "GitBranch" }}/{{ .File.LogicalName }}" title="Corriger/Modifier cette page" target="_blank" rel="noopener">
+            <i class="fa-solid fa-code-branch"></i> Proposer une correction
+        </a>
+{{ end }}

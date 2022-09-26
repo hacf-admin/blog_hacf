@@ -1,0 +1,43 @@
+<!-- Social Share Button HTML -->
+{{ $title := .Title }}
+{{ $url := printf "%s" .Permalink }}
+{{ $body := print $title ", par " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+<div class="row">
+  <div class="col-12 text-center">
+    <h5>Partagez</h5>
+    <br>
+  <ul class="list-inline">
+    <!-- Twitter -->
+    <li class="list-inline-item">
+      <a href="https://twitter.com/intent/tweet?hashtags=codingnconcepts&amp;url={{ .Permalink }}&amp;text={{ .Title }}" target="_blank" rel="noreferrer" alt="Partager sur Twitter" title="Partager sur Twitter">
+          <i class="fa-brands fa-twitter fa-2x"></i>
+      </a>
+    </li>
+    <!-- Facebook -->
+    <li class="list-inline-item">
+      <a href="https://www.facebook.com/sharer.php?u={{ $url }}" target="_blank" rel="noreferrer" alt="Partager sur Facebook" title="Partager sur Facebook">
+          <i class="fa-brands fa-facebook fa-2x"></i>
+        </a>
+    </li>
+    <!-- WhatsApp -->
+    <li class="list-inline-item">
+      <a href="https://api.whatsapp.com/send?text={{ $body }}" target="_blank" rel="noreferrer"  alt="Partager via WhatApp" title="Partager via WhatApp">
+          <i class="fa-brands fa-whatsapp fa-2x"></i>
+      </a>
+    </li>
+    <!-- Telegram -->
+    <li class="list-inline-item">
+      <a href="https://telegram.me/share/url?text={{ $body }}&amp;url={{ $url }}" target="_blank" rel="noreferrer" alt="Partager via Telegram" title="Partager via Telegram">
+          <i class="fa-brands fa-telegram fa-2x"></i>
+      </a>
+    </li>
+    <!-- Email -->
+    <li class="list-inline-item">
+      <a href="mailto:?subject={{ .Site.Title }} - {{ $title }}.&amp;body={{ $body }}" target="_blank" rel="noreferrer" alt="Partager par Email" title="Partager par Email">
+          <i class="far fa-envelope fa-2x"></i>
+      </a>
+    </li>
+  </ul>
+  </div>
+</div>  
+

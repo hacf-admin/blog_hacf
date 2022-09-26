@@ -1,0 +1,28 @@
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center text-secondary mb-5">{{ .title }}</h2>
+    <div class="main-timeline">
+      {{ range .historique }}
+      <!-- start experience section-->
+      <div class="timeline">
+          <div class="icon"></div>
+          <div class="date-content">
+              <div class="date-outer">
+                  <span class="date">
+                          <span class="month">{{ .mois }}</span>
+                  <span class="year">{{ .year }}</span>
+                  </span>
+              </div>
+          </div>
+          <div class="timeline-content">
+              <h5 class="title">{{ .name }}</h5>
+              <p class="description">
+                {{ .description | markdownify }}
+              </p>
+          </div>
+      </div>
+      <!-- end experience section-->
+      {{ end }}
+    </div>
+  </div>
+</section>

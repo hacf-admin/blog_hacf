@@ -1,0 +1,8 @@
+section:
+  name: Nouvelles & Articles
+  id: news-articles
+  weight: 5
+  template: sections/news-articles.html
+  nbPost: 3
+
+title : Nouvelles & Articles

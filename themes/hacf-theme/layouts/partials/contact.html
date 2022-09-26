@@ -1,0 +1,2 @@
+{{ $url := printf "%s" .Permalink }}
+<a class="text-decoration-none" href="mailto:{{ .Site.Params.contact }}?subject=Problème avec l'article '{{ .Title }}'&body={{ $url }}" title="Signaler un problème par E-mail"><p class="text-center"><i class="bi bi-envelope"></i> Problème avec l'article <i class="bi bi-envelope"></i></p></a>

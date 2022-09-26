@@ -1,0 +1,30 @@
+
+  <div class="card shadow-sm h-100">
+    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
+      <img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="hero-{{ .Title }}">
+    </a>
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted text-center text-capitalize text-trucate">
+        {{ range $idx, $category := .Params.categories }}
+        {{- if ne $idx 0 }}, {{ end }}
+            <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+        {{- end }}</h6>
+      <h5 class="card-title">{{ .Title }}</h5>
+      <p class="text-muted text-end">{{ .ReadingTime }} min de lecture</p>
+      <p class="card-text text-secondary">{{ .Description }}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <a href="{{ .RelPermalink }}" title="Lire" type="button" class="btn btn-sm btn-outline-secondary">Lire</a>
+        </div>
+        <small class="text-muted">{{ partial "helpers/date" . }}</small>
+      </div>
+    </div class="card-footer">
+      <h6 class="card-subtitle mb-2 text-muted text-center text-lowercase text-truncate">
+          {{ range $idx, $tag := .Params.tags }}
+          {{- if ne $idx 0 }}, {{ end }}
+              <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
+          {{- end }}</h6>
+    <div>
+
+    </div>
+  </div>

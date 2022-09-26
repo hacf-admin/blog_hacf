@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="container">
+    <div class="section">
+        <div class="content">
+            <h1 class="text-center m-5">Accés aux articles par {{ .Title }}</h1>
+        </div>
+
+        <div class="row">
+            {{ range .Data.Terms.Alphabetical }}
+                <a type="button" class="btn btn-outline-primary position-relative m-1 text-uppercase" href="{{ .Page.Permalink }}">
+                    {{ .Page.Title }}
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{ $pageCount := len .Pages }}
+                        {{ $pageCount }}
+                        
+                    </span>
+                </a>
+
+                <div class="row pt-3">
+                    <div class="col-12">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col-8"><p class="text-start">Titre</p></th>
+                                    <th scope="col-2"><p class="text-center">Mise à jour</p></th>
+                                    <th scope="col-2"><p class="text-center">Temps de Lecture</p></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {{ range .Pages }}
+                                <tr>
+                                    <th><a class="text-decoration-none text-secondary" href="{{ .Permalink }}">{{ .Title }}</a></th>
+                                    <td class="text-center">{{ .Lastmod.Format "01/2006" }}</td>
+                                    <td class="text-center">{{ .ReadingTime }} min</td>
+                                </tr>
+                            {{ end }}
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

@@ -54,3 +54,5 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 * [ ] **config.yml** *NetiflyCMS* Ajouter type ? collection blog
 
 * [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum off collection Actualité
+
+* [ ] Optimisation CSS (PostCSS purge plus minify.) https://romain.therrat.fr/posts/2020/04/hugo-supprimer-le-css-inutilise/

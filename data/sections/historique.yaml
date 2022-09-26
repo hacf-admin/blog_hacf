@@ -1,0 +1,37 @@
+section:
+  name: Historique
+  id: historique
+  weight: 2
+  template: sections/historique.html
+
+title: HACF en dates
+
+historique:
+- name : Idée / Réflexion
+  number : 1
+  date : Avril 2020
+  mois : Avril
+  year : 2020
+  description : Naissance dans la tête de six personnes suite au manque observé d’une véritable communauté francophone autour de Home Assistant.
+
+- name : Ouverture
+  number : 2
+  date : Juillet 2020
+  mois : Juillet
+  year : 2020
+  description : HACF devient accessible à tous les francophones désirant partager, échanger ou apprendre sur la solution Home Assistant.
+
+- name : Union
+  number : 3
+  date : Février 2021
+  mois : Février
+  year : 2021
+  description : Union avec le groupe Facebook [Home Assistant France](https://groupe-facebook.hacf.fr)
+
+
+- name : Association
+  number : 4
+  date : Juin 2021
+  mois : Juin
+  year : 2021
+  description : Création de l’association [Communauté Francophone autour de Home Assistant](../association/) dans un soucis de transparence et de résilience.

@@ -1,0 +1,49 @@
+# section information
+section:
+  name: Home Assistant
+  id: haoff
+  weight: 4
+  template: sections/haoff.html
+
+name: "Home Assistant"
+subtitle: "Pourquoi ?"
+
+summary:
+- description: "Home Assistant est une application <span>gratuite</span> et **open source** pour la mise en place d’une solution domotique à votre domicile."
+- description: "Elle bénéficie d’une **excellente communauté** à travers le **monde** entier, ce qui lui permet d’évoluer très rapidement avec des **mises à jour fréquentes** et régulières et l’ajout de **nombreux matériels** connus et moins connus du grand public."
+- description: "Avec plus de **1700 intégrations** prises en charge, Home Assistant est une **solution** domotique **évolutive** et **pérenne**."
+
+button:
+- name: 'Site Officiel'
+- name: 'Découvrez Home Assistant'
+- name: 'Démo'
+
+
+socialLinks:
+- name: Site
+  url: "https://www.home-assistant.io/"
+  icon: "fa fa-globe"
+
+- name: Forum
+  url: "https://community.home-assistant.io/"
+  icon: "fab fa-discourse"
+
+- name: Discord
+  url: "https://discord.gg/c5DvZ4e"
+  icon: "fab fa-discord"
+
+- name: Groupe Facebook
+  url: "https://www.facebook.com/homeassistantio"
+  icon: "fab fa-facebook"
+
+- name: GitHub
+  url: "https://github.com/home-assistant/"
+  icon: "fab fa-github"
+
+- name: Reddit
+  url: "https://reddit.com/r/homeassistant"
+  icon: "fab fa-reddit"
+
+- name: Twitter
+  url: "https://twitter.com/home_assistant"
+  icon: "fab fa-twitter"

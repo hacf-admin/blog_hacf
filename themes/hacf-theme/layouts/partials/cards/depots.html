@@ -1,0 +1,28 @@
+<div class="col-sm-12 col-md-6 col-lg-4 p-2 filtr-item" data-category='all, {{ delimit  .tags ","}}'>
+  <div class="card text-center h-100"> 
+      <div class="card-header row m-0">
+          <h5 class="col-12 text-start text-dark">{{ .name }}</h5>
+          <p class="col-6 mb-0 text-start text-secondary fs-6">{{ .role }}</p>
+          <p class="col-6 mb-0 text-end text-secondary fs-6">{{ .timeline }}</p>
+      </div>
+    <div class="card-body row">
+      <p class="card-text col-12">{{ .summary | markdownify }}</p>
+
+      <div class="card-text col-6">
+        {{ range $index,$tag:= .tags }}
+          <span class="badge rounded-pill bg-primary">
+            {{ $tag }}
+          </span>
+        {{ end }}
+      </div>
+      <div class="card-text col-6">
+        <a class="btn btn-outline-secondary btn-sm" href="{{ .depot }}" title="Accéder au dépot" target="_blank" rel="noopener">
+          <i class="bi bi-git"></i>
+          Voir le dépot
+        </a>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+# section information
+section:
+  name: A Propos
+  id: a-propos
+  weight: 1
+  template: sections/hacf.html
+
+#Voir si possibilité d'integrer le resize image.
+#logo: /images/logo-hacf-70px.webp
+name: "HACF"
+subtitle: "Communauté Francophone autour de Home Assistant"
+
+summary:
+- description: "***HACF** est née de l'envie de réunir une Communauté Francophone autour de Home Assistant.*"
+- description: "Son **but** est de rendre **visible** et **accessible**, la solution domotique **gratuite** et **open source**, Home Assistant mais aussi de réunir le maximum d'utilisateurs en un seul endroit."
+- description: "Une **association** a été créé toujours dans un but de **transparence** et de **pérennisation**."
+
+button:
+- name: 'En savoir plus'
+  url: a-propos
+- name: 'Association'
+  url: association
+
+socialLinks:
+- name: Email
+  icon: "far fa-envelope"
+  url: "https://contact.hacf.fr"
+
+- name: Site
+  url: "https://www.hacf.fr/"
+  icon: "fa fa-globe"
+
+- name: Forum
+  icon: "fab fa-discourse"
+  url: "https://forum.hacf.fr"
+
+- name: Discord
+  icon: "fab fa-discord"
+  url: "https://discord.hacf.fr"
+
+- name: Groupe Facebook
+  icon: "fab fa-facebook-messenger"
+  url: "https://groupe-facebook.hacf.fr"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.hacf.fr"
+
+- name: YouTube
+  icon: "fab fa-youtube"
+  url: "https://youtube.hacf.fr"
+
+- name: Page Facebook
+  icon: "fab fa-facebook-square"
+  url: "https://page-facebook.hacf.fr"
+
+- name: Twitter
+  icon: "fab fa-twitter"
+  url: "https://twitter.hacf.fr"
+
+- name: Facebook
+  icon: "fab fa-facebook"
+  url: "https://facebook.hacf.fr"
+
+  
+  
