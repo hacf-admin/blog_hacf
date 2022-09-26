@@ -5,6 +5,10 @@
 #navbar-toggle-cbox:checked ~ .collapse {
       display: block;
   }
+.dropdown:hover > .dropdown-menu {
+    display: block;
+    border: none;
+  }
 label[for=navbar-toggle-cbox] {
     cursor: pointer;
   }
