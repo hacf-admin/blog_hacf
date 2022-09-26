@@ -48,12 +48,7 @@
   ],
   "frontMatter.framework.id": "hugo",
   "frontMatter.content.publicFolder": "static",
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "about",
-      "path": "[[workspace]]/content/about"
-    }
-  ],
+  "frontMatter.content.pageFolders": [],
   "frontMatter.taxonomy.tags": [],
   "frontMatter.taxonomy.categories": []
 }
