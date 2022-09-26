@@ -3,6 +3,6 @@ section:
   id: news-articles
   weight: 1
   template: sections/news-articles.html
-  nbPost: 3
+  nbPost: 1
 
 title : Nouvelles & Articles
