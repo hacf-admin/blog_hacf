@@ -50,10 +50,6 @@
   "frontMatter.content.publicFolder": "static",
   "frontMatter.content.pageFolders": [
     {
-      "path": "[[workspace]]/content/posts",
-      "title": "posts"
-    },
-    {
       "title": "about",
       "path": "[[workspace]]/content/about"
     }
