@@ -67,8 +67,9 @@ jobs:
 
   #  uses: mxschmitt/action-tmate@v2
   # https://frigi.ch/en/2021/10/automatically-update-site-created-with-hugo/
+  # Generer la cle avec `ssh-keygen -t ed25519 -C "your_github_email@example.com"` https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
     - name: rsync deployments
-      uses: burnett01/rsync-deployments@5.1
+      uses: burnett01/rsync-deployments@5.2.1
       with:
         switches: -avzr --delete
         path: public-integration/
