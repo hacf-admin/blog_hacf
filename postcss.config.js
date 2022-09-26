@@ -1,5 +1,8 @@
 const purgecss = require('@fullhuman/postcss-purgecss')({
     content: ['./hugo_stats.json'],
+    whitelist: [
+        'img'
+    ],
     defaultExtractor: content => {
       const els = JSON.parse(content).htmlElements;
       return [
