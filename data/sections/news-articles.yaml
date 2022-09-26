@@ -4,6 +4,6 @@ section:
   weight: 1
   active: true
   template: sections/news-articles.html
-  nbPost: 1
+  nbPost: 3
 
 title : Nouvelles & Articles
