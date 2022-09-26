@@ -62,3 +62,4 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 
 
 * Ameliorer le .gitignore https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore
+* Ajouter la compressiopn des fichiers js
