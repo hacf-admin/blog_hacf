@@ -62,4 +62,10 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 
 
 * Ameliorer le .gitignore https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore
-* Ajouter la compressiopn des fichiers js
+* Ajouter la compression des fichiers js
+
+
+A explorer :
+https://discourse.gohugo.io/t/how-to-get-the-path-to-the-assets-directory-without-hardcoding/28217/3
+https://mertbakir.gitlab.io/hugo/image-processing-in-hugo/
+https://www.markusantonwolf.com/blog/guide-for-different-ways-to-access-your-image-resources/
