@@ -23,7 +23,7 @@
 [[main]]
   name = "Actualités"
   identifier = "news"
-  url = "news"
+  url = "/news"
   weight = 2
 [[main]]
   name = "Articles"
@@ -33,15 +33,15 @@
 [[main]]
   name = "Association"
   identifier = "association"
-  url = "pages/association"
+  url = "/pages/association"
   weight = 4
 [[main]]
   name = "Liens Utiles"
-  identifier = "awesome"
+  identifier = "/pages/awesome"
   weight = 5
 [[main]]
   name = "Nos Médias"
-  identifier = "medias"
+  identifier = "/pages/medias"
   weight = 6
 
 [[footer]]

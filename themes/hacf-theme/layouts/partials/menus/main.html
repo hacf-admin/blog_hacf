@@ -1,3 +1,24 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>-->
+      <img src="{{ .Site.Params.logo }}" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
+      <span class="fs-4 m-1">{{ .Site.Title }}</span>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL }}" class="nav-link px-2 link-secondary">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <a href="{{ .Site.BaseURL }}/admin" role="button" class="btn btn-outline-primary me-2">Participer</a>
+    </div>
+  </header>
+</div>
+
+<!-- OLD MENU WITHOUT JS AND WITH DROPDOWN
 <nav class="navbar navbar-expand-md navbar-light bg-light">
   <div class="container-fluid">
     
@@ -38,3 +59,4 @@
     </div>
   </div>
 </nav>
+-->

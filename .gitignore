@@ -1,4 +1,4 @@
 node_modules/
-ressources/*
-public/
+/ressources
+/public
 hugo_stats.json
