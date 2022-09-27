@@ -4,8 +4,8 @@ Theme Hugo basé sur Bootstrap 5, Font-Awesome et sur le respect des données.
 Pas de JavaScript, de traceurs, etc.
 
 ### Gestion.
-* [X] Bootstrap local
-* [X] Réduire le CSS Bootstrap ou le packager.
+* [ ] Bootstrap local
+* [ ] Réduire le CSS Bootstrap ou le packager.
 https://romain.therrat.fr/posts/2020/04/hugo-supprimer-le-css-inutilise/ (FR)
 https://zwbetz.com/how-to-use-purgecss-with-hugo/ 
 https://gohugo.io/hugo-pipes/postprocess/ 
@@ -13,7 +13,7 @@ https://www.tzeyiing.com/posts/adding-postcss-to-a-hugo-static-site/
 https://ricard.dev/how-to-add-purgecss-to-hugo/
 https://janaksingh.com/blog/hugo-css-concat-minify-purgecss-tutorial/
 https://romain.therrat.fr/posts/2020/04/hugo-supprimer-le-css-inutilise/
-* [X] Font Awesome local (A nettoyer)
+* [ ] Font Awesome local (A nettoyer)
 * [X] Workflow : Géneration, transfert vers FTP/SFTP.
 * [X] Multi Author (https://codingnconcepts.com/hugo/multiple-authors-hugo/)
 * [ ] Ajout menu social de l'auteur
