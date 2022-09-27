@@ -15,7 +15,7 @@ enableGitInfo = true
 [params]
   description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
-  logo = "images/logo-hacf-30px.webp"
+  #logo = "images/logo-hacf-30px.webp"
   article =  "/images/articles-vierge.webp"
   contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
   mainSections = ["blog", "news"] #https://gohugo.io/functions/where/#mainsections
