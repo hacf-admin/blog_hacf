@@ -10,10 +10,9 @@
         <li class="nav-item"><a href="{{ .URL }}" class="nav-link" aria-current="page">{{ .Name }}</a></li>
         {{ end }}
       </ul>
-    </div>
-  
-    <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        
+      <div class="col-md-3 text-end">
+        <a class="btn btn-primary" href="{{ .Site.BaseURL }}/admin" role="button">Se connecter</a>
+      </div>
     </div>
  </nav>
