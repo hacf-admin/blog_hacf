@@ -1,22 +1,3 @@
-<nav class="container-fluid">
-    <div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <img src="images/logo-hacf-30px.webp" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
-        <span class="fs-4 m-1">{{ .Site.Title }}</span>
-      </a>
-
-      <ul class="nav nav-pills">
-        {{ range .Site.Menus.main }}
-        <li class="nav-item"><a href="{{ .URL }}" class="nav-link" aria-current="page">{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
-        
-      <div class="col-md-3 text-end">
-        <a class="btn btn-primary" href="{{ .Site.BaseURL }}/admin" role="button">Se connecter</a>
-      </div>
-    </div>
- </nav>
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
     <div class="container-fluid">
       <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
@@ -28,7 +9,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
+      <div class="collapse navbar-collapse" id="navbarsExample04 text-center">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           {{ range .Site.Menus.main }}
               {{ if .HasChildren }}
@@ -47,9 +28,9 @@
               {{ end }}
           {{ end }}
         </ul>
-        <form role="search">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        </form>
+        <div class="text-end">
+          <a href="{{ .Site.BaseURL }}/admin" role="button" class="btn btn-outline-primary btn-sm me-2 d-none d-sm-block">Participer</a>
+        </div>
       </div>
     </div>
   </nav>
