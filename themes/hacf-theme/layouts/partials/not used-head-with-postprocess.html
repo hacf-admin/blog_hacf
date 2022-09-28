@@ -1,0 +1,75 @@
+<!--
+<link rel="stylesheet" media="all" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" media="all" type="text/css" href="/css/fa-all.css">
+-->
+{{ if .Site.Params.netlify }}
+    <link rel="stylesheet" media="all" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" media="all" type="text/css" href="/css/fa-all.css">
+    <link rel="stylesheet" media="all" type="text/css" href="/css/customcss.css">
+{{ else }}
+
+<!--
+Suppresion des class inutilisées et minification
+bootstrap
+-->
+
+
+{{ $cssbootstrap := resources.Get "/css/bootstrap.min.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssbootstrap = $cssbootstrap | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssbootstrap.RelPermalink }}" integrity="{{ $cssbootstrap.Data.Integrity }}" media="all" type="text/css">
+
+<!--FontAwesome-->
+{{ $cssfontawesome := resources.Get "/css/fa-all.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssfontawesome = $cssfontawesome | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssfontawesome.RelPermalink }}" integrity="{{ $cssfontawesome.Data.Integrity }}" media="all" type="text/css">
+
+<!--Styles-->
+{{ $csscustomstyles := resources.Get "/css/customcss.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $csscustomstyles = $csscustomstyles | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $csscustomstyles.RelPermalink }}" integrity="{{ $csscustomstyles.Data.Integrity }}" media="all" type="text/css">    
+{{ end }}
+{{ $cssbootstrap := resources.Get "/css/bootstrap.min.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssbootstrap = $cssbootstrap | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssbootstrap.RelPermalink }}" integrity="{{ $cssbootstrap.Data.Integrity }}" media="all" type="text/css">
+
+<!--FontAwesome-->
+{{ $cssfontawesome := resources.Get "/css/fa-all.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssfontawesome = $cssfontawesome | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssfontawesome.RelPermalink }}" integrity="{{ $cssfontawesome.Data.Integrity }}" media="all" type="text/css">
+
+<!--Styles-->
+{{ $csscustomstyles := resources.Get "/css/customcss.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $csscustomstyles = $csscustomstyles | minify | fingerprint | resources.PostProcess }}
+
+<link rel="stylesheet" href="{{ $csscustomstyles.RelPermalink }}" integrity="{{ $csscustomstyles.Data.Integrity }}" media="all" type="text/css">
+
+{{ end }}
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<!--<link rel="stylesheet" media="all" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" media="all" type="text/css" href="/css/fa-all.css">
+
+
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>-->
+
+
+<!-- Matomo -->
+
+<!-- End Matomo Code -->
+
