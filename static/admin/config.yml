@@ -89,6 +89,8 @@ collections:
           min: 1,
           options: ['Installation','Add-on','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself'],
         }
+      - { label: "Tags", name: "tags", widget: "list", allow_add: false, required: true }
+
       - {
           label: 'Série(s)',
           name: 'series',
@@ -103,6 +105,7 @@ collections:
         collection: "authors"
         searchFields: ["title"]
         valueField: "title"
+        required: false
         multiple: true
         hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
 
