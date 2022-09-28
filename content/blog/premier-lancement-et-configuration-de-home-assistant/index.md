@@ -3,6 +3,7 @@ title: Premier lancement et configuration de Home Assistant
 draft: false
 date: 18-09-22 15:49
 lastmod: 2022-09-28 15:49
+image: img/imagebf_image_hero.jpg
 description: >
   Vous venez d’installer Home Assistant ? Nous allons balayer ensemble la
   première configuration. Elle vous permet de définir la position de votre
@@ -23,7 +24,6 @@ Vous arrivez sur une page vous disant d'attendre. Cela peut prendre jusqu'à 20 
 
 ![Ecran d'attente du premier lancement de Home Assistant](img/installation_prepring_home_assistant.jpg "Ecran d'attente du premier lancement de Home Assistant")
 
-
 Une fois sa préparation terminée, il va vous demander quelques paramétrages :
 Sur la première page.
 
@@ -31,16 +31,15 @@ Sur la première page.
 * Un nom d'utilisateur,
 * Un mot de passe et sa confirmation.
 
-&gt;Cet utilisateur sera l'utilisateur avec tous les droits, alors ne pas hésiter à mettre un bon mot de passe.
+\>Cet utilisateur sera l'utilisateur avec tous les droits, alors ne pas hésiter à mettre un bon mot de passe.
 
-</div>
+
 La seconde page concerne votre domicile.
 \* Donner un nom votre installation,
 \* Définir la localisation de votre domicile,
 \* Choisir le fuseau horaire,
-\* Rentrer l'\[altitude de son domicile](https://www.calcmaps.com/fr/map-elevation/)
+\* Rentrer l'\\[altitude de son domicile](https://www.calcmaps.com/fr/map-elevation/)
 * Choisir le système métrique.
-
 
 ![Configuration de votre domicile dans Home Assistant](img/installation_position_gps_domicile.png "Configuration de votre domicile dans Home Assistant")
 
@@ -50,7 +49,6 @@ La dernière concerne les matériels détectés automatiquement par Home Assista
 Vous pouvez passer cette étape, on y reviendra plus tard. Ils peuvent être retrouvés dans `Paramètres` -&gt; `Appareils et Services`
 
 ![Détection automatique des matériels présents sur votre réseau](img/installation_detection_automatique_materiels.png "Détection automatique des matériels présents sur votre réseau")
-
 
 Vous voilà enfin sur l'interface de Home Assistant.
 
