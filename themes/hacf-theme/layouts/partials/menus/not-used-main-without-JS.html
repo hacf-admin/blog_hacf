@@ -3,7 +3,7 @@
     
  
     <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center text-dark text-decoration-none">
-      <img src="images/logo-hacf-30px.webp" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
+      <img src="{{ .Site.Params.logo }}" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
       <span class="fs-4 m-1">{{ .Site.Title }}</span>
     </a>
 
@@ -12,7 +12,7 @@
       <i class="fa-solid fa-bars-staggered"></i>
     </label>
     
-    <div class="collapse navbar-collapse justify-content-end " id="navbar">
+    <div class="collapse navbar-collapse justify-content-center " id="navbar">
       <ul class="navbar-nav text-center">
         {{ range .Site.Menus.main }}
           {{ if .HasChildren }} {{ $id := print "navbarDropdownMenuLink" .Identifier }}
@@ -36,5 +36,10 @@
         {{ end }}
       </ul>
     </div>
+
+    <div class="text-end">
+      <a href="{{ .Site.BaseURL }}/admin" role="button" class="btn btn-outline-primary btn-sm me-2 d-none d-sm-block">Participer</a>
+    </div>
+
   </div>
 </nav>
