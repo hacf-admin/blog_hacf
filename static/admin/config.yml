@@ -97,7 +97,7 @@ collections:
         widget: "list",
         allow_add: true,
         hint: Séparer vos tags par une virgule
-        }
+        }     
 
       - {
           label: 'Série(s)',
