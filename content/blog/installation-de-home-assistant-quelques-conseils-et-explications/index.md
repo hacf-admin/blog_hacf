@@ -12,6 +12,19 @@ description: "Avant de vous lancer dans l'installation de Home Assistant, il est
 socialshare: true
 categories:
   - Installation
+tags:
+  - ha-container
+  - ha-os
+  - ha-core
+  - docker
+  - ha-supervised
+  - linux
+  - windows
+  - mac-os
+  - nuc
+  - odroid
+  - raspbery-pi
+  - vm
 series:
   - HA les Bases
   - Débuter
