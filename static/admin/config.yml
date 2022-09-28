@@ -89,7 +89,13 @@ collections:
           min: 1,
           options: ['Installation','Add-on','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself'],
         }
-      - { label: "Tags", name: "tags", widget: "list", allow_add: false, required: true }
+
+      - {
+        label: "Tags",
+        name: "tags",
+        widget: "list",
+        allow_add: true
+        }
 
       - {
           label: 'Série(s)',
