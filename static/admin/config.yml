@@ -77,8 +77,9 @@ collections:
           date_format: 'DD-MM-YY',
           time_format: 'HH:mm',
           format: 'YYYY-MM-DD HH:mm',
+          required: false
         }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
       - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
       - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
       - {
@@ -94,7 +95,8 @@ collections:
         label: "Tags",
         name: "tags",
         widget: "list",
-        allow_add: true
+        allow_add: true,
+        hint: Séparer vos tags par une virgule
         }
 
       - {
@@ -115,35 +117,168 @@ collections:
         multiple: true
         hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
 
+      - {label: "Liens vers sujet du forum", name: "url_hacf", widget: "string", required: false }
+      - {label: "Liens vers sujet du forum", name: "url_haoff", widget: "string", required: false }
+
       - { label: "Body", name: "body", widget: "markdown" }
       
-# Modifier page index et About
+# Modifier les pages
   - name: "pages"
+    #layout: blog  # Si layout personalisé
     label: "Pages"
+    label_singular: 'page' # Used in the UI, ie: "New Post"
     create: false
+    media_folder: "img/" # Endroit ou sont stocké les images de l'article
+    public_folder: "img/"
     files:
-      - file: "content/_index.md"
-        label: "Home Page"
-        name: "home"
+      - file: "content/pages/awesome/index.md"
+        label: "Liens utiles"
+        name: "awesome"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Blurb", name: "blurb", widget: "text" }
+          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
+          - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+          - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
+          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
           - {
-              label: "Section",
-              name: "section",
-              widget: "object",
-              fields:
-                [
-                  { label: "Heading", name: "heading", widget: string },
-                  { label: "Text", name: "text", widget: "text" },
-                ],
+              label: 'Date de modification',
+              name: 'lastmod',
+              widget: 'datetime',
+              date_format: 'DD-MM-YY',
+              time_format: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+              required: false
             }
-      - file: "content/about/index.md"
-        label: "About"
-        name: "about"
+          - {
+            label: "Tags",
+            name: "tags",
+            widget: "list",
+            allow_add: true,
+            hint: Séparer vos tags par une virgule
+            }
+          
+          - { label: "Body", name: "body", widget: "markdown" }
+
+          - label: 'Liens utiles'
+            name: 'liens_utiles'
+            widget: 'list'
+            fields:
+              - {label: "Nom", name: "title", widget: "string"}
+              - {label: "Url", name: "url", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {
+                  label: "Logo",
+                  name: "logo",
+                  widget: "image",
+                  choose_url: false,
+                  media_folder: "img",
+                  public_folder: "img",
+                  default: "images/author/hacf.webp",
+                  media_library:
+                    [
+                    config:
+                      [
+                        multiple: false
+                      ]  
+                    ]
+                    
+                }
+              - {
+                  label: "Type de contenu",
+                  name: "type",
+                  widget: "select",
+                  multiple: true,
+                  options: ["blog", "videos", "podcast", "documentations", "diy", "autres"]
+                }
+
+                      
+
+      - file: "content/pages/association/index.md"
+        label: "Association"
+        name: "association"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "text" }
+          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
+          - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+          - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
+          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
+          - {
+              label: 'Date de modification',
+              name: 'lastmod',
+              widget: 'datetime',
+              date_format: 'DD-MM-YY',
+              time_format: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+              required: false
+            }
+
+          - {
+            label: "Tags",
+            name: "tags",
+            widget: "list",
+            allow_add: true,
+            hint: Séparer vos tags par une virgule
+            }
+
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "content/pages/reglement/index.md"
+        label: "Réglement Association"
+        name: "reglement"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
+          - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+          - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
+          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
+          - {
+              label: 'Date de modification',
+              name: 'lastmod',
+              widget: 'datetime',
+              date_format: 'DD-MM-YY',
+              time_format: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+              required: false
+            }
+
+          - {
+            label: "Tags",
+            name: "tags",
+            widget: "list",
+            allow_add: true,
+            hint: Séparer vos tags par une virgule
+            }
+
+          - { label: "Body", name: "body", widget: "markdown" }
+
+      - file: "content/pages/statuts/index.md"
+        label: "Statuts de l'association"
+        name: "statuts"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
+          - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+          - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
+          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
+          - {
+              label: 'Date de modification',
+              name: 'lastmod',
+              widget: 'datetime',
+              date_format: 'DD-MM-YY',
+              time_format: 'HH:mm',
+              format: 'YYYY-MM-DD HH:mm',
+              required: false
+            }
+
+          - {
+            label: "Tags",
+            name: "tags",
+            widget: "list",
+            allow_add: true,
+            hint: Séparer vos tags par une virgule
+            }
+
+          - { label: "Body", name: "body", widget: "markdown" }
 
 # Add author
   - name: "authors"
@@ -157,14 +292,41 @@ collections:
     fields:
       - { label: "Pseudos", name: "title", widget: "string" }
       - { label: "Fonction", name: "fonction", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - {
+          label: "Avatar",
+          name: "avatar",
+          widget: "image",
+          choose_url: false,
+          media_folder: "/static/images/author",
+          public_folder: "images/author",
+          default: "images/author/hacf.webp",
+          media_library:
+            [
+            config:
+              [
+                multiple: false
+              ]  
+            ]
+        }
       - {
           label: "Réseaux Sociaux",
           name: "social_network",
           widget: "object",
           fields:
             [
-              { label: "Profil Facebook", name: "facebook", widget: "string" },
-              { label: "Profil Twitter", name: "twitter", widget: "string" }
+              { label: "Profil Facebook", name: "facebook", widget: "string", required: false },
+              { label: "Profil Twitter", name: "twitter", widget: "string", required: false }
             ]
         }
+# ARCHIVE pour les sections du dossier data
+#          - {
+#              label: "Section",
+#              name: "section",
+#              widget: "object",
+#              fields:
+#                [
+#                  { label: "Heading", name: "heading", widget: string },
+#                  { label: "Text", name: "text", widget: "text" },
+#                ],
+#            }
