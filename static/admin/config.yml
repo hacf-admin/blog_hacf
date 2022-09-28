@@ -87,7 +87,7 @@ collections:
           widget: 'select',
           multiple: true,
           min: 1,
-          options: ['Installation','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself'],
+          options: ['Installation','Add-on','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself'],
         }
       - {
           label: 'Série(s)',
@@ -95,7 +95,7 @@ collections:
           widget: 'select',
           multiple: true,
           min: 1,
-          options: ['HA les Bases','Débuter'],
+          options: ['HA les Bases','Débuter avec Home Assistant'],
         }
       - label: "Auteur(s)"
         name: "author"
