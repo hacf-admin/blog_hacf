@@ -26,14 +26,14 @@ enableGitInfo = true
   enableTOC = true
 
   # GitHub repo du site
-  gitRepo = "https://github.com/McFlyPartages/hacf-blog"
-  gitBranch = "main"
+  gitRepo = "https://github.com/McFlyPartages/hugo_with_cms"
+  gitBranch = "postpub"
 
-  gitRepoAwesome = "https://github.com/McFlyPartages/awesome-francophone-home-assistant"
-  gitBranchAwesome = "main"
+  #gitRepoAwesome = "https://github.com/McFlyPartages/awesome-francophone-home-assistant"
+  #gitBranchAwesome = "main"
 
-  gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
-  gitBranchGuideDev = "main"
+  #gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
+  #gitBranchGuideDev = "main"
   
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
