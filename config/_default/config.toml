@@ -1,4 +1,4 @@
-baseURL = 'https://test.hacf.fr'
+baseURL = 'https://dev.hacf.fr'
 languageCode = 'fr-fr'
 title = 'HACF'
 
