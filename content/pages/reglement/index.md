@@ -1,6 +1,14 @@
 ---
-title: Réglement de l'association
+title: Réglement de l'association Communauté Francophone autour de Home Assistant
 subttitle: Le Réglement de l'association "Communauté Francophone autour de Home Assistant"
+draft: false
+description: Consulter le règlement de l'association communauté Francophone
+  autour de Home Assistant
+socialshare: true
+lastmod: 2022-09-28 23:52
+tags:
+  - reglement
+  - association
 ---
 >Adopté par l’assemblée générale du 28/04/2021
 

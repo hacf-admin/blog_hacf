@@ -1,16 +1,14 @@
 ---
-title: Association
-
-#boutons: 
-#  - name : adherer
-#    url : "https://adherer.hacf.fr"
-#    icone : 
-#  - name : 
-#    url : "https://adherer.hacf.fr"
-#    icone : 
-#  - name : adherer
-#    url : "https://adherer.hacf.fr"
-#    icone :    
+title: Association "Communauté Francophone autour de Home Assistant"
+draft: false
+description: Venez découvrir l'association communauté francophone autour de Home
+  Assistant, son but et ses objectifs.
+socialshare: true
+lastmod: 2022-09-28 23:48
+tags:
+  - association
+  - statuts
+  - reglement
 ---
 AFFICHER UN SHORTCODE OU PARTIAL 3 BOUTONS
 
