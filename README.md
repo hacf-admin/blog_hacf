@@ -74,3 +74,8 @@ A explorer :
 https://discourse.gohugo.io/t/how-to-get-the-path-to-the-assets-directory-without-hardcoding/28217/3
 https://mertbakir.gitlab.io/hugo/image-processing-in-hugo/
 https://www.markusantonwolf.com/blog/guide-for-different-ways-to-access-your-image-resources/
+
+
+Quelques commandes :
+
+Supprimer un submodule Git `git rm <path-to-submodule>` puis commit, il supprimera aussi les traces dans le fichier gitsubmodule.
