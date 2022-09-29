@@ -1,6 +1,14 @@
 ---
-title: Statuts de l'association
+title: Statuts de l'association Communauté Francophone autour de Home Assistant
 subttitle: Les Statuts de l'association "Communauté Francophone autour de Home Assistant"
+draft: false
+description: Consulter les statuts de l'association communauté Francophone
+  autour de Home Assistant
+socialshare: true
+lastmod: 2022-09-28 23:53
+tags:
+  - statuts
+  - association
 ---
 ## ARTICLE PREMIER - Nom.
 Il est fondé entre les adhérents aux présents statuts une association régie par la loi du 1er juillet 1901 et le décret du 16 août 1901, ayant pour titre : Communauté Francophone autour de Home Assistant. L’association pourra être désignée par le sigle : HACF.
