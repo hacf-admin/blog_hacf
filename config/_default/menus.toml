@@ -37,12 +37,14 @@
   weight = 4
 [[main]]
   name = "Liens Utiles"
-  identifier = "/pages/awesome"
+  identifier = "awesome"
+  url = "/pages/awesome"
   weight = 5
-[[main]]
-  name = "Nos Médias"
-  identifier = "/pages/medias"
-  weight = 6
+#[[main]]
+#  name = "Nos Médias"
+#  identifier = "medias"
+#  url = "/pages/medias"
+#  weight = 6
 
 [[footer]]
 name = "A propos"
