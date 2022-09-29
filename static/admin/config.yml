@@ -30,7 +30,11 @@ collections:
 #    media_folder: "" # Save images in the post's own folder instead of the static folder
 #    public_folder: ""
 
-# Articles avec dossier img
+###############################################
+###############################################
+# COLLECTION ARTICLE BLOG
+###############################################
+###############################################
   - name: "blog" # Used in routes, e.g., /admin/collections/post
     #layout: blog  # Si layout personalisé
     label: "Articles / Tutoriels" # Used in the UI
@@ -54,14 +58,16 @@ collections:
         field: draft
         pattern: true
     view_groups:
-      - label: Year
+      - label: Par années
         field: date
         pattern: \d{4}
-      - label: Drafts
+      - label: Brouillons
         field: draft
+      - label: Catégories
+        field: categories
     fields: 
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
+      - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: true }
       - {
           label: 'Date de publication',
           name: 'date',
@@ -121,8 +127,98 @@ collections:
       - {label: "Liens vers sujet du forum", name: "url_haoff", widget: "string", required: false }
 
       - { label: "Body", name: "body", widget: "markdown" }
+
+    
+###############################################
+###############################################
+# COLLECTION NEWS
+###############################################
+###############################################
+
+  - name: "news" # Used in routes, e.g., /admin/collections/post
+    #layout: blog  # Si layout personalisé
+    label: "Actualités" # Used in the UI
+    label_singular: 'article' # Used in the UI, ie: "New Post"
+    description: >
+      Ajouter une actualité domotique ou sur Home Assistant.
+    folder: "content/news" # Dossier ou sont stocké les articles
+    path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
+    #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    media_folder: "img/" # Endroit ou sont stocké les images de l'article
+    public_folder: "img/"
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    view_filters:
+      - label: Posts With Index
+        field: title
+        pattern: 'This is post #'
+      - label: Posts Without Index
+        field: title
+        pattern: front matter post
+      - label: Brouillon
+        field: draft
+        pattern: true
+    view_groups:
+      - label: Par années
+        field: date
+        pattern: \d{4}
+      - label: Brouillons
+        field: draft
+      - label: Catégories
+        field: categories
+    fields: 
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: true }
+      - {
+          label: 'Date de publication',
+          name: 'date',
+          widget: 'datetime',
+          date_format: 'DD-MM-YY',
+          time_format: 'HH:mm',
+          format: 'DD-MM-YY HH:mm',
+        }
+      - {
+          label: 'Date de modification',
+          name: 'lastmod',
+          widget: 'datetime',
+          date_format: 'DD-MM-YY',
+          time_format: 'HH:mm',
+          format: 'YYYY-MM-DD HH:mm',
+          required: false
+        }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, choose_url: true, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+      - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
+      - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
+      - {label: "Catégories", name: "categories", widget: "hidden", default: "actualités"}
+
+      - {
+        label: "Tags",
+        name: "tags",
+        widget: "list",
+        allow_add: true,
+        hint: Séparer vos tags par une virgule
+        }     
+
+      - label: "Auteur(s)"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        searchFields: ["title"]
+        valueField: "title"
+        required: false
+        multiple: true
+        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
+
+      - {label: "Lien vers sujet du forum Francophone", name: "url_hacf", widget: "string", required: false }
+      - {label: "Lien vers sujet du forum Officiel", name: "url_haoff", widget: "string", required: false }
+
+      - { label: "Body", name: "body", widget: "markdown" }
+
       
-# Modifier les pages
+###############################################
+
+# COLLECTION PAGES
+
+###############################################
   - name: "pages"
     #layout: blog  # Si layout personalisé
     label: "Pages"

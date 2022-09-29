@@ -45,24 +45,29 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 
 
 ## Chose a faire:
+* [ ] **render-img.html** *Render Hook img* Differencier image et liens URL pour autoriser les import d'image via URL.
+
 * [ ] **config.yml** *NetiflyCMS* Mettre les pattern dans collection netlifycms https://www.coderstool.com/regex-patterns
 * [ ] **config.yml** *NetiflyCMS* Modiier Date time sur collection blog,juste mois année pour les mises a jour.
 * [ ] **config.yml** *NetiflyCMS* Modifier les fonctions de recherche Netlify CMS.
-* [ ] **config.yml** *NetiflyCMS* Ajouter avatar sur collection auteurs et verifier dans quelle dossier ca va (assets).
-* [ ] **config.yml** *NetiflyCMS* Ajouter TAG collection blog
+* [X] **config.yml** *NetiflyCMS* Ajouter avatar sur collection auteurs et verifier dans quelle dossier ca va (assets) **Ils vont dans static image**.
+* [X] **config.yml** *NetiflyCMS* Ajouter TAG collection blog
+* [ ] **config.yam** *NetlifyCMS* Ameliorer les tags avec possibilités de rechercher dans ceux deja present.
 * [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum collection blog
 * [ ] **config.yml** *NetiflyCMS* Ajouter type ? collection blog
+* [ ] **config.yml** *NetiflyCMS* Ameliorer les filtres de recherche pour blog/articles et actualités.
 
-* [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum off collection Actualité
+* [X] **config.yml** *NetiflyCMS* Ajouter URL Forum HACF collection Actualité et Articles
+* [X] **config.yml** *NetiflyCMS* Ajouter URL Forum off collection Actualité et Articles
 
-* [ ] Optimisation CSS (PostCSS purge plus minify.) https://purgecss.com/guides/hugo.html (https://romain.therrat.fr/posts/2020/04/hugo-supprimer-le-css-inutilise/ comment mettre des balises en liste blanche)
+* [ ] **PAS POSSIBLE AVEC DEPLOIEMENT VIA NETLIFY** *il le fait tout seul* Optimisation CSS (PostCSS purge plus minify.) https://purgecss.com/guides/hugo.html (https://romain.therrat.fr/posts/2020/04/hugo-supprimer-le-css-inutilise/ comment mettre des balises en liste blanche)
 * * Installer NodeJS `sudo apt install nodejs` et verifier avec `nodejs -v`
 * * Installer npm via `sudo apt install npm`
 * * Lancer `npm install postcss postcss-cli @fullhuman/postcss-purgecss`
 
 
 * Ameliorer le .gitignore https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore
-* Ajouter la compression des fichiers js
+* [ ] **PAS POSSIBLE AVEC DEPLOIEMENT VIA NETLIFY** *il le fait tout seul ?* Ajouter la compression des fichiers js
 
 
 A explorer :
