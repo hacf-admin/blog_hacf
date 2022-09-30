@@ -38,8 +38,8 @@ De plus, il n’y a pas de gestion des **plages horaires** permettant de défini
 
 Pour gérer les différents modes, par exemple pour moduler la température sur les périodes de présences et absences, il n’y a donc pas d’autres choix que de redévelopper des automations. 
 
-&gt; **Automatisation HA ou Node-RED ?**
-Comme pour tout développement d'automatisations, le choix entre node red ou les automatisations HA. Les 2 méthodes se discutent et ont chacune leurs avantages et inconvénients. Personnellement j’utilise les 2 : node red pour les flux (http et mqtt en particulier) ou pour bénéficier de nœuds spécifiques, et les automatisations HA pour la manipulation d’entités et des logiques type si-alors. L’avantage de ce dernier choix est d’être très bien intégré à HA, d’avoir avec les traces une capacité de contrôler ce qui se passe (mis en place depuis 2 mois et très puissant), d’avoir une forme YAML compact et facilement partageable. Mais un gros avantage est l’utilisation de blueprints : une automatisation de chauffage est créée dans un modèle, puis réutilisée pour chaque radiateur ou pièce de la maison. C’est ce que je vous propose d’utiliser ici.
+> **Automatisation HA ou Node-RED ?**\
+> Comme pour tout développement d'automatisations, le choix entre node red ou les automatisations HA. Les 2 méthodes se discutent et ont chacune leurs avantages et inconvénients. Personnellement j’utilise les 2 : node red pour les flux (http et mqtt en particulier) ou pour bénéficier de nœuds spécifiques, et les automatisations HA pour la manipulation d’entités et des logiques type si-alors. L’avantage de ce dernier choix est d’être très bien intégré à HA, d’avoir avec les traces une capacité de contrôler ce qui se passe (mis en place depuis 2 mois et très puissant), d’avoir une forme YAML compact et facilement partageable. Mais un gros avantage est l’utilisation de blueprints : une automatisation de chauffage est créée dans un modèle, puis réutilisée pour chaque radiateur ou pièce de la maison. C’est ce que je vous propose d’utiliser ici.
 
 ## 2. Proposition d’implémentation
 
@@ -63,7 +63,8 @@ La puissance doit être de 100% quand la température de la pièce est loin de l
 **Tout d'abord, on calcul la puissance en pourcentage**
 
 Le calcul de la puissance en %, est assuré par la formule :
-&gt; Puissance = coeff_c  *(T consigne - T intérieure) + coeff_t*  (T consigne - T extérieure)
+
+> Puissance = coeff_c * *(T consigne - T intérieure) + coeff_t*   (T consigne - T extérieure) 
 
  avec un min a 0% et un max a 100%
 
@@ -72,7 +73,7 @@ Le calcul de la puissance en %, est assuré par la formule :
 
 Pour une installation standard au norme on a coeff_c = 0,6 et coeff_t = 0,01
 
-&gt; Exemple : Tint = 19°C Text = 10°C et consigne a 20°C alors puissance = 70%
+> Exemple : Tint = 19°C Text = 10°C et consigne a 20°C alors puissance = 70%
 
 Le fait de considérer la température extérieure est donc indispensable pour compenser les pertes de chaleur et garder une température très constante, ce qui n'est pas assuré par le thermostat standard de HA.
 
@@ -102,9 +103,7 @@ La création ou édition d’un nouveau thermostat revient alors à renseigner l
 
 Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le blueprint devrait être adapté.
 
-&gt; **Attention** : si le format des nombres sur votre système est avec des virgules et non des points, il faut changer dans le blueprint les
-&gt; valeurs min - max - step de coeff_c et coeff_t, et remplacer les
-&gt; points en virgules.
+> **Attention** : si le format des nombres sur votre système est avec des virgules et non des points, il faut changer dans le blueprint les valeurs min - max - step de coeff_c et coeff_t, et remplacer les points en virgules.
 
 ## 4. La carte lovelace
 
@@ -492,9 +491,7 @@ La gestion de l’alarme est :
 
 En général, pour faire simple, les températures du mode ECO sont en général les températures du mode confort mois 1.5 degrés.
 
-&gt; L’automatisation n’a pas été reportée ici, mais elle est basique. Il
-&gt; est également possible de gérer la présence de chaque membre de la
-&gt; famille par son portable.
+> L’automatisation n’a pas été reportée ici, mais elle est basique. Il est également possible de gérer la présence de chaque membre de la famille par son portable.
 
 ## 8. Quel matériel utiliser
 
