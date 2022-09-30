@@ -182,13 +182,11 @@ La planification est basée sur le scheduler proposé dans HACS, composé d'un c
 
 Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a un icone « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la scheduler card.
 
-
 ![](img/listethermostats.png)
 
 La vue réglage contient une seule scheduler card affichant la planification de tous les radiateurs. 
 
 Chaque radiateur a 2 planifications : une CONFORT et une ECO. Malheureusement, la scheduler card les affichent ici dans le désordre (en fait en fonction des plages horaires).
-
 
 ![](img/planificationliste.png)
 
@@ -507,9 +505,7 @@ Le module Fil Pilote Wifi - Heatzy est interessant et peut se trouver dans des m
 
 Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zigbee pourra convenir pour gérer le fil pilote. Mais il faut mettre en série une diode : 
 
-
 ![](img/filpilote.png)
-
 
 La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilote est faible. 
 
@@ -554,7 +550,6 @@ binary_sensor:
 ## 9. Afficher des courbes de suivi
 
 Il est pertinent de contrôler le fonctionnement et éventuellement affiner les paramètres.  Voici à titre indicatif le code pour afficher des graphiques du fonctionnement de thermostat.
-
 
 ![](img/courbe.png)
 
