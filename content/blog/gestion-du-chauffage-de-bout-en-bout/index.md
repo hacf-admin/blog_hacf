@@ -22,12 +22,14 @@ author:
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 ---
 ## Avant propos
+
 Cet article traite de l'implémentation d'un thermostat plus efficient que le thermostat virtuel de HA, une solution de planification du chauffage suivant des plages horaires, la gestion de différents modes de chauffage(manuel, éco, confort...), et enfin un exemple de carte lovelace pour afficher le tout.
 
 Ce post s'adresse tout particulièrement aux personnes **n'utilisant pas un thermostat physique** (type nest, heatit, netatmo ou même celui intégré au chauffage) et ayant un **mode de chauffage pilotable en on-off** (typiquement des convecteurs avec module on-off ou fil pilote).
 L'implémentation fait appel à pas mal de concepts, ce qui peut s'avérer complexe pour les personnes débutants avec HA.
 
 ## 1. Le chauffage dans Home Assistant
+
 S’il y a un domaine source de confort et d’économie dans une maison domotisée, c’est bien le chauffage. Home Assistant est un système domotique incroyable, offrant énormément de possibilités. Et pourtant, le sujet du chauffage est plutôt mal traité (pour l’instant).
 
 Un thermostat générique (intégration et carte lovelace) est proposé par HA pour piloter un chauffage en ON-OFF, mais il est de type **hystéresis** : il chauffe a 100% jusqu’a atteindre la température + un seuil, puis arrête. Le convecteur sera alors soit bouillant, soit froid, ce qui crée des **oscillations de température** et des **chaud-froid** inconfortables, et cela consomme plus. C’est probablement adapté aux climatiseurs réversibles américaines mais pas du tout à nos convecteurs et autres modes de chauffage. La **température extérieure** n’est même pas prise en compte, pas plus que la coupure du chauffage quand une **fenêtre est ouverte**.
@@ -42,6 +44,7 @@ Comme pour tout développement d'automatisations, le choix entre node red ou les
 ## 2. Proposition d’implémentation
 
 L’article qui suit propose de mettre en place :
+
 * Un **thermostat de type TPI** (Time Propostional &amp; Integration) basé sur les températures intérieure et extérieure, avec arrêt quand une fenêtre est ouverte.
 * Une **gestion des modes** : auto-confort, auto-éco, manuel, hors gel, arrêt, absences.
 * Une gestion des **plages horaires** pour les modes auto-confort et auto-eco.
@@ -53,14 +56,14 @@ J’utilise ce type de thermostat TPI pour 8 convecteur et depuis 5 ans (avec un
 ## 3. Le thermostat TPI
 
 ### 3.1 Le principe
+
 L’objectif du thermostat est de calculer une **puissance de chauffe** en fonction d’une **consigne** donnée, de la **température intérieure** et de la **température extérieure**.
 La puissance doit être de 100% quand la température de la pièce est loin de la consigne, puis baisser doucement jusqu’à atteindre la consigne. Ensuite le radiateur doit rester légèrement tiède pour compenser les pertes thermiques, ce en fonction de la température extérieure.
-
 
 **Tout d'abord, on calcul la puissance en pourcentage**
 
 Le calcul de la puissance en %, est assuré par la formule :
-&gt; Puissance = coeff_c * (T consigne - T intérieure) + coeff_t * (T consigne - T extérieure)
+&gt; Puissance = coeff_c  *(T consigne - T intérieure) + coeff_t*  (T consigne - T extérieure)
 
  avec un min a 0% et un max a 100%
 
@@ -73,7 +76,6 @@ Pour une installation standard au norme on a coeff_c = 0,6 et coeff_t = 0,01
 
 Le fait de considérer la température extérieure est donc indispensable pour compenser les pertes de chaleur et garder une température très constante, ce qui n'est pas assuré par le thermostat standard de HA.
 
-
 **Ensuite, on transforme la puissance exprimée en % par une séquence de ON-OFF de notre chauffage.**
 
 L’implémentation proposée ici est pour des convecteurs avec un fil pilote (Qubino). Mais une adaptation est possible pour d’autres types de chauffage.
@@ -85,8 +87,9 @@ La périodicité dépend de l’inertie : 30mn à 1 heure pour une chaudière, 1
 Le thermostat prend en charge la fenêtre et il coupe le radiateur quand cette dernière est ouverte.
 
 ### 3.2 Code du thermostat
+
 Le code du thermostat est dans un **blueprint** qui peut être téléchargé via cette url :
-[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml)
+<https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml>
 
 Pour le charger dans Home Assistant, aller dans configuration, blueprints puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'url précédente.
 Ensuite une automatisation « thermostat » peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
@@ -94,6 +97,8 @@ Ensuite une automatisation « thermostat » peut être facilement créée pour c
 La puissance et la consigne sont dans des input number définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des sensors et la fenêtre un binary sensor. Enfin le radiateur est piloté par un switch.
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
+
+
 ![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_NouveauThermonstat_20220907164738_20220907145030.png)
 
 Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le blueprint devrait être adapté.
@@ -113,24 +118,20 @@ Voici les différents modes proposés (champs de type input select):
 ![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_CarteThermostatmode_20220907164738_20220907144906.png)
 
 * **Mode « auto-confort » :** quand la pièce est occupée. Ajuste automatiquement la température suivant des plages horaires définies dans le scheduler (planification « auto-confort »)
-
 * **Mode « auto-eco » :** quand la pièce est inoccupée (par exemple la semaine ou quand l’alarme est mise). Ajuste automatiquement la température suivant des plages horaires défini dans le scheduler (planification « auto-eco »). 
-Une solution simple pour définir les températures du mode ECO sera de prendre les heures et les températures de CONFORT en les abaissants de 2 degrés.
-
+  Une solution simple pour définir les températures du mode ECO sera de prendre les heures et les températures de CONFORT en les abaissants de 2 degrés.
 * **Mode « manuel » :** la consigne est gérée manuellement et non par une planification du scheduler. Dans ce mode, la carte affiche une ligne supplémentaire permettant d’ajuster la consigne.
-
 * **Mode « hors gel » :** règle la consigne sur une température donnée (en fait 10°C pour moi)
-
 * **Mode « stop » :** tout est arrêté, y compris le thermostat. C’est le mode été.
-
 * **Mode « absent » :** n’est pas censé être sélectionné manuellement, mais automatiquement mis quand une personne est absente et que le chauffage était en CONFORT. Met alors le chauffage en mode ECO. Le fait d’avoir un état dédié permet de remettre en CONFORT quand la pièce est de nouveau occupée.
 
 La carte utilise plusieurs cartes de la communauté, qu’il faut installer au préalable : button-card, hui-element et number-box.
-[https://www.home-assistant.io/lovelace/button/](https://www.home-assistant.io/lovelace/button/)
-[https://github.com/thomasloven/lovelace-hui-element](https://github.com/thomasloven/lovelace-hui-element)
+<https://www.home-assistant.io/lovelace/button/>
+<https://github.com/thomasloven/lovelace-hui-element>
 [Input Number - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/input_number/)
 
 Voici le code de la carte
+
 ```
 type: entities
 entities:
@@ -173,8 +174,9 @@ entities:
 ```
 
 ## 5. La planification (scheduler)
+
 La planification est basée sur le scheduler proposé dans HACS, composé d'un composant et une carte.
-[https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)
+<https://community.home-assistant.io/t/scheduler-card-custom-component/217458>
 
 Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a un icone « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la scheduler card.
 ![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_ListeThermostats_20220907164738_20220907145014.png)
@@ -191,6 +193,7 @@ Il est possible si on est administrateur d'éditer chaque planification, puis s�
 ![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_PlanificationDetail_20220907164738_20220907145043.png)
 
 Voici le code de l'implémentation de la scheduler card
+
 ```
 type: 'custom:scheduler-card'
 include:
@@ -209,9 +212,11 @@ style: |
   }
 discover_existing: false
 ```
+
 Une fois la carte scheduler créée, elle est vide. Il faut utiliser l'interface pour créer les différentes planifications (type schema - 2 planifications : auto-eco et auto-confort pour chaque radiateur). 
 
 Ci-dessous également le code du bandeau d'entête de la vue principale, avec l'icone pour accéder à la vue de paramétrage.
+
 ```
 type: 'custom:vertical-stack-in-card'
 horizontal: true
@@ -266,6 +271,7 @@ cards:
       action: navigate
       navigation_path: chauffage-config
 ```
+
 **Avertissement** : sur certains devices, la carte numberbox-card peut mal fonctionner : Il faut alors cliquer au dessus et non sur les + et -. Si cela arrive, il est possible de juste supprimer la ligne *type: 'custom:numberbox-card'* pour revenir au champs input-number standard.
 
 ## 6. L’automatisation des modes
@@ -276,7 +282,7 @@ La consigne est changée pour une valeur en dure si le mode n’est pas auto-eco
 Pour ce faire, une dernière automatisation, codée également dans un blueprint, permet de prendre en charge cette sélection du mode par chaque radiateur. Elle prend en entrée le mode de chauffage désiré, la consigne et les 3 automatisations à piloter (thermostat, auto-confort et auto-eco).
 
 Le code du blueprint de gestion des modes peut être téléchargé via cette url :
-[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml)
+<https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml>
 
 Pour le charger dans Home Assistant, comme précédemment, aller dans configuration, blueprint puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'url précédente.
 
@@ -291,33 +297,39 @@ Enfin le thermostat met la consigne à 0 si la fenêtre est ouverte, et remet la
 Voyons maintenant chacun des modes, et comment le changement de mode active ou désactive les 3 automatisations thermostat, auto-confort, auto-eco :
 
 **Mode "auto-confort"**
+
 * Automatisation thermostat : ON
 * Automatisation auto-confort : ON
 * Automatisation auto-eco : OFF
 
 **Mode "auto-eco"**
+
 * Automatisation thermostat : ON
 * Automatisation auto-confort : OFF
 * Automatisation auto-eco : ON
 
 **Mode "Hors-gel"**
+
 * Automatisation thermostat : ON
 * Automatisation auto-confort : OFF
 * Automatisation auto-eco : OFF
 * Consigne forcée à 10°C (bon un peu plus qu’un hors gel…"
 
 **Mode "Manuel"**
+
 * Automatisation thermostat : ON
 * Automatisation auto-confort : OFF
 * Automatisation auto-eco : OFF
 
 **Mode "Arrêt"**
+
 * Automatisation thermostat : OFF
 * Automatisation auto-confort : OFF
 * Automatisation auto-eco : OFF
 * Consigne et puissance a 0.
 
 **Mode "Absence"**
+
 * Automatisation thermostat : ON
 * Automatisation auto-confort : OFF
 * Automatisation auto-eco : ON
@@ -325,6 +337,7 @@ Voyons maintenant chacun des modes, et comment le changement de mode active ou d
 Le thermostat fonctionne en ECO. Le mode absence n’est pas censé être activé manuellement, mais automatiquement par la détection d’une absence (l’alarme mise dans mon cas).
 
 Voici le code du blueprint de gestion des modes.
+
 ```
 blueprint:
   name: Pilotage chauffage
@@ -462,7 +475,6 @@ action:
         target:
           entity_id: !input entity_thermostat_tpi
 mode: single
-
 ```
 
 ## 7. Gestion des absences
@@ -470,6 +482,7 @@ mode: single
 J’utilise actuellement le marche-arrêt de l’alarme pour détecter les absences. Pour information, j’ai une alarme MyFox qui voit HA comme un actionneur 433MHz (type Chacon). Cela permet d’avertir HA quand l’alarme est mise ou enlevée sans avoir à passer par une API web..
 
 La gestion de l’alarme est :
+
 * Si **alarme mise**, mettre les chauffages qui sont en mode auto-confort en absence.
 * Si **alarme enlevée**, mettre les chauffages qui sont en mode absence en auto-confort.
 
@@ -491,6 +504,7 @@ Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zi
 La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilote est faible. 
 
 Il est aussi possible de faire des on-off avec un thermostat physique (type heatit pilotant des cables chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
+
 ```
 switch:
   - platform: template
@@ -506,9 +520,10 @@ switch:
           target:
             entity_id: climate.heatit_thermostat_bureau
 ```
+
 Le même principe de template peut être utilisé si un micromodule nécessite d'inverser la commande : "on" pour éteindre et "off" pour allumer.
 
-Pour les capteurs de température, j'utilise et recommande des capteurs zigbee aqara ( WSDCGQ11LM) : ils sont fiables, petits et peu chers. Pour ceux qui veulent un afficheur, les capteurs Orvibo sont aussi très bien.  
+Pour les capteurs de température, j'utilise et recommande des capteurs zigbee aqara ( WSDCGQ11LM) : ils sont fiables, petits et peu chers. Pour ceux qui veulent un afficheur, les capteurs Orvibo sont aussi très bien.\
 J'ai aussi historiquement des capteurs avec afficheurs Oregon THGR228N en 433mhz, très précis et dont les piles AAA tiennent 4 ans. Mais ils sont maintenant difficilement trouvables, ce qui est dommage.
 
 Pour les capteurs de fenêtre, la aussi je recommande les Xiaomi aqara ( MCCGQ11LM). 
