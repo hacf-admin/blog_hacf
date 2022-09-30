@@ -89,7 +89,7 @@ Le thermostat prend en charge la fenêtre et il coupe le radiateur quand cette d
 ### 3.2 Code du thermostat
 
 Le code du thermostat est dans un **blueprint** qui peut être téléchargé via cette url :
-<https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml>
+https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml
 
 Pour le charger dans Home Assistant, aller dans configuration, blueprints puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'url précédente.
 Ensuite une automatisation « thermostat » peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
@@ -98,8 +98,7 @@ La puissance et la consigne sont dans des input number définis spécifiquement 
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
 
-
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_NouveauThermonstat_20220907164738_20220907145030.png)
+![](img/blueprint.png "Blueprint")
 
 Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le blueprint devrait être adapté.
 
@@ -112,10 +111,13 @@ Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de l
 Une carte assez basique permet de visualiser pour chaque radiateur le mode de chauffage, la température de consigne, de la pièce, la puissance et l’état de la fenêtre.
 
 Elle remplace la carte thermostat de HA.
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_CarteThermostat_20220907164738_20220907144851.png)
+
+![enter image description here](img/cartethermostat.png)
 
 Voici les différents modes proposés (champs de type input select):
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_CarteThermostatmode_20220907164738_20220907144906.png)
+![](<>)
+
+![](img/cartethermostat-mode.png)
 
 * **Mode « auto-confort » :** quand la pièce est occupée. Ajuste automatiquement la température suivant des plages horaires définies dans le scheduler (planification « auto-confort »)
 * **Mode « auto-eco » :** quand la pièce est inoccupée (par exemple la semaine ou quand l’alarme est mise). Ajuste automatiquement la température suivant des plages horaires défini dans le scheduler (planification « auto-eco »). 
@@ -132,7 +134,7 @@ La carte utilise plusieurs cartes de la communauté, qu’il faut installer au p
 
 Voici le code de la carte
 
-```
+```yaml
 type: entities
 entities:
   - type: 'custom:button-card'
@@ -179,12 +181,16 @@ La planification est basée sur le scheduler proposé dans HACS, composé d'un c
 <https://community.home-assistant.io/t/scheduler-card-custom-component/217458>
 
 Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a un icone « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la scheduler card.
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_ListeThermostats_20220907164738_20220907145014.png)
+
+
+![](img/listethermostats.png)
 
 La vue réglage contient une seule scheduler card affichant la planification de tous les radiateurs. 
 
 Chaque radiateur a 2 planifications : une CONFORT et une ECO. Malheureusement, la scheduler card les affichent ici dans le désordre (en fait en fonction des plages horaires).
-![enter image description here](https://forum.hacf.fr/uploads/default/original/2X/0/08a7a84b929e0ba3eb9b8c0d5c50518ed59034dd.png)
+
+
+![](img/planificationliste.png)
 
 La planification sera bien entendue active ou non en fonction du mode choisi dans le thermostat. La température de consigne va automatiquement changer en fonction de l’heure et du programme quand la planification est activée (le scheduler gère cela automatiquement pour nous).
 
@@ -194,7 +200,7 @@ Il est possible si on est administrateur d'éditer chaque planification, puis s�
 
 Voici le code de l'implémentation de la scheduler card
 
-```
+```yaml
 type: 'custom:scheduler-card'
 include:
   - input_number.chauffage_*_consigne
@@ -217,7 +223,7 @@ Une fois la carte scheduler créée, elle est vide. Il faut utiliser l'interface
 
 Ci-dessous également le code du bandeau d'entête de la vue principale, avec l'icone pour accéder à la vue de paramétrage.
 
-```
+```yaml
 type: 'custom:vertical-stack-in-card'
 horizontal: true
 cards:
@@ -288,7 +294,7 @@ Pour le charger dans Home Assistant, comme précédemment, aller dans configurat
 
 Ensuite une automatisation peut être facilement créée pour chaque radiateur en cliquant sur le  bouton "créer une automatisation". Il faut alors renseigner chaque valeur en entrée du blueprint.
 
-![https://wiki.hacf.fr/files/ChauffageBoutEnBout_Blueprint_20220907164738_20220907144821.png](https://wiki.hacf.fr/files/ChauffageBoutEnBout_Blueprint_20220907164738_20220907144821.png)
+![https://wiki.hacf.fr/files/ChauffageBoutEnBout_Blueprint_20220907164738_20220907144821.png](img/blueprint.png)
 
 **Point important** : comme déjà évoqué, si par exemple on passe du mode confort au mode eco, le scheduler ajuste automatiquement la consigne en fonction de sa planification et de l’heure qu’il est. Cela permet de se passer d’un deamon dynamique comme shedy.
 
@@ -338,7 +344,7 @@ Le thermostat fonctionne en ECO. Le mode absence n’est pas censé être activ�
 
 Voici le code du blueprint de gestion des modes.
 
-```
+```yaml
 blueprint:
   name: Pilotage chauffage
   description: Gestion des différents modes de chauffage - Stop  Hors-gel  Auto confort Auto eco 
@@ -500,12 +506,16 @@ J'utilise personnellement des qubino zwave ZMNHJD1 spécialement faits pour le f
 Le module Fil Pilote Wifi - Heatzy est interessant et peut se trouver dans des magasins de bricolage.
 
 Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zigbee pourra convenir pour gérer le fil pilote. Mais il faut mettre en série une diode : 
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_FilPilote_20220907164738_20220907145001.png)
+
+
+![](img/filpilote.png)
+
+
 La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilote est faible. 
 
 Il est aussi possible de faire des on-off avec un thermostat physique (type heatit pilotant des cables chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
 
-```
+```yaml
 switch:
   - platform: template
     switches:
@@ -530,7 +540,7 @@ Pour les capteurs de fenêtre, la aussi je recommande les Xiaomi aqara ( MCCGQ11
 
 Le thermostat TPI demande un capteur d'ouverture que l'on a pas forcément : il est possible de le simuler avec le code suivant :
 
-```
+```yaml
 # Fenêtre virtuelle toujours fermée, pour chauffage
 binary_sensor:
   - platform: template
@@ -544,9 +554,11 @@ binary_sensor:
 ## 9. Afficher des courbes de suivi
 
 Il est pertinent de contrôler le fonctionnement et éventuellement affiner les paramètres.  Voici à titre indicatif le code pour afficher des graphiques du fonctionnement de thermostat.
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_Courbe_20220907164738_20220907144942.png)
 
-```
+
+![](img/courbe.png)
+
+```yaml
 type: custom:apexcharts-card
 header:
   show: true
