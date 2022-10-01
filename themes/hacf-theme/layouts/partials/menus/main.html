@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary justify-content-center" aria-label="Fourth navbar example">
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top" aria-label="Navbar Main">
     <div class="container-fluid">
       <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="images/logo-hacf-30px.webp" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
-        <span class="fs-4 m-1">{{ .Site.Title }}</span>
+        <span class="fs-4 m-1 text-white">{{ .Site.Title }}</span>
       </a>
         
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 justify-content-center">
           {{ range .Site.Menus.main }}
               {{ if .HasChildren }}
               <li class="nav-item dropdown">
