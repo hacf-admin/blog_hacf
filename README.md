@@ -45,7 +45,15 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 
 
 ## Chose a faire:
-* [ ] **render-img.html** *Render Hook img* Differencier image et liens URL pour autoriser les import d'image via URL.
+* [ ] **render-img.html** *Render Hook img* Differencier image et liens URL pour autoriser les import d'image via URL. https://github.com/gohugoio/hugo/releases/tag/v0.91.0
+```
+{{ resource := "" }}
+{{ if (urls.Parse $url).IsAbs }}
+ {{ $resource = resources.GetRemote $url }}
+{{ else }}
+ {{ $resource = resources.Get $url }}
+{{ end }}
+```
 
 * [ ] **config.yml** *NetiflyCMS* Mettre les pattern dans collection netlifycms https://www.coderstool.com/regex-patterns
 * [ ] **config.yml** *NetiflyCMS* Modiier Date time sur collection blog,juste mois année pour les mises a jour.
