@@ -1,54 +1,34 @@
-{{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
+{{- $Permalink := .Destination | relURL | safeURL -}}
+{{- $alt := .PlainText | safeHTML -}}
+{{- $Width := 0 -}}
+{{- $Height := 0 -}}
+{{- $Srcset := "" -}}
 
-{{ if and $image (ne $image.MediaType.SubType "svg") }}
-  {{ $small := $image.Resize "100x webp picture" }}
-  {{ $medium := $image.Resize "200x webp picture" }}
-  {{ $large := $image.Resize "400x webp picture" }}
-  {{ $xlarge := $image.Resize "600x webp picture" }}
+{{/* SVG and external images won't work with gallery layout, because their width and height attributes are unknown */}}
+{{- $galleryImage := false -}}
 
-  {{ $xlargejpg := $image.Resize "600x jpg picture" }}
+{{- if $image -}}
+	{{- $notSVG := ne (path.Ext .Destination) ".svg" -}}
+	{{- $Permalink = $image.RelPermalink -}}
 
+	{{- if $notSVG -}}
+		{{- $Width = $image.Width -}}
+		{{- $Height = $image.Height -}}
 
-{{ $alt := .PlainText | safeHTML }}
+			{{- $small := $image.Resize `480x` -}}
+			{{- $big := $image.Resize `1024x` -}}
+			{{- $Srcset = printf `%s 480w, %s 1024w` $small.RelPermalink $big.RelPermalink -}}
 
-{{ $caption := "" }}
-{{ with .Title }}
-  {{ $caption = . | safeHTML }}
-{{ end }}
+	{{- end -}}
+{{- end -}}
 
-<div class="row text-center">
-  <img 
-    src="{{ $xlargejpg.RelPermalink }}"
-    srcset="{{ $small.RelPermalink }} 100px,
-            {{ $medium.RelPermalink }} 200px,
-            {{ $large.RelPermalink }} 400px,
-            {{ $xlargejpg.RelPermalink }} 100px"
-    type="image/webp"
-    sizes="(max-width: 576px) 100px, (max-width: 768px) 200px, (max-width: 992px) 300px, (max-width: 1200px) 400px, 600px"
-    alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
-    {{ with .Title}} 
-      title="{{ . }}"
-    {{ end }}
-  />
-</div>
-{{ else }}
-
-
-
-{{ $alt := .PlainText | safeHTML }}
-
-{{ $caption := "" }}
-{{ with .Title }}
-  {{ $caption = . | safeHTML }}
-{{ end }}
-
-<div class="row text-center">
-  <img 
-    src="{{ $image.RelPermalink }}"
-    alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
-    {{ with .Title}} 
-      title="{{ . }}"
-    {{ end }}
-  />
-</div>
-{{ end }}
+<img src="{{ $Permalink }}"
+	{{ with $Width }}width="{{ . }}"{{ end }}
+	{{ with $Height }}height="{{ . }}"{{ end }}
+	{{ with $Srcset }}srcset="{{ . }}"{{ end }}
+	loading="lazy"
+	{{ with $alt }}
+		alt="{{ . }}"
+	{{ end }}
+/>
