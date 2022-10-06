@@ -29,7 +29,7 @@ series:
   - HA les Bases
   - Débuter
 author:
-  - tata
+  - mcfly
 ---
 >Pour commencer, sachez que ce guide est une base de réflexion pour votre future installation domotique. Ce qui est écrit, est à adapter en fonction de vos connaissances, de votre matériel disponible et du temps que vous voulez constater à sa gestion (hors domotique). 
 

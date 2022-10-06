@@ -1,6 +1,7 @@
 {
-  "title": "Pulpy",
+  "title": "pulpy",
   "fonction": "Membres d'Honneur",
   "bio": "Après 4 ans sous Jeedom et une domotique qui fonctionne, je suis curieux de voir si Home Assistant sait faire de même, idéalement faire mieux même. Proxmox sur un NUC8I5BEK avec les protocoles Zwave, Zigbee, Rfxcom, Broadlink, MQTT",
-  "avatar": "/images/authors/pulpy.webp"
+  "avatar": "/images/authors/pulpy.webp",
+  "pseudos": "Pulpy"
 }

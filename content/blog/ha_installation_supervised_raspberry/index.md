@@ -1,74 +1,44 @@
 ---
-title: "Installer Home Assistant sur un Raspberry Pi (méthode officielle)" # Titre article explicite
-date: 2022-01-17 # Date format YYYY-MM-DD
-lastmod:   # Date format YYYY-MM-DD   SI rine n'est rentré il prendra la modification GIT.
 draft: false
-#layout: pages 
-type: # Types existant : pages; news; awesome; guidedev;etc. Laisser vide pour les articles
-
-description: "Comment installer Home Assistant sur Raspberry Pi avec HAOS sur MicroSD et déplacer le dossier utilisateur sur un disque dur externe ou interne." # Description du sujet.
-# hero: /path/image.ext # Recherche un fichier hero.(webp;jpg;png;svg) a la racine du dossier OU si un hero est defini ici SINON il prend un hero par defaut.
-
-# Simple ou multi auteurs, il faut remplir l'auteur principal.
-author: mcfly
-
-# Recherche par auteurs et si multi auteurs.
+article_ha: true
 authors:
+  - pulpy
+keywords:
+  - raspberry pi
+  - haos
+  - installation
+  - ha-supervised
+  - home assistant
+  - domotique
+  - supervisor
+  - odroid
+  - sbc
+title: Installer Home Assistant sur un Raspberry Pi (méthode officielle)
+date: 2022-01-17
+lastmod: null
+socialshare: true
+tags:
+  - raspberry pi
+  - haos
+  - installation
+  - ha-supervised
+  - odroid
+  - SBC
+series:
+  - home assistant
+author:
   - mcfly
-
-#socialshare: true # Active l'option de partage
-article_ha: true # Ajoute les boutton du forum et les medias des deux communautés Home Assistant (Off et HACF)
-
-hacf: 
-- "https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201"     # Liens vers le post du forum HACF.
-- "https://forum.hacf.fr/t/home-assistant-premiere-configuration/679"
-url_off:            # Liens vers le post du forum Officiel.
-
-categories: # Categories atuelles : domotique; home assistant; news; nodered;....
-- home assistant
-- domotique
-
-series: # En cours permet de reunir des series d'articles autour d'un meme sujet (ex : bien debuter avec HA; ou les addons essentiels pour commencer).
-- home assistant
-  
-tags: # Mettre ce qui est en relation avec l'article NE PAS REMETTRE les categories.
-- raspberry pi
-- haos
-- installation
-- ha-supervised
-- odroid
-- SBC
-
-keywords: # Mettre tous les mots definissant votre article, ils sont utilisés pour le referencement. PAS de limitation.
-- raspberry pi
-- haos
-- installation
-- ha-supervised
-- home assistant
-- domotique
-- supervisor
-- odroid
-- sbc
-
-##################################################
-##################################################
-
-# Toutes ne sont pas a remplir (ex : pour les pages), il suffit pour cela de ne rien  mettre apres les : ou alors de commenter la ligne avec un # devant.
-
-##################################################
-##################################################
-
-###################
-# Non fonctionnel
-###################
-
-
-#menu:
-#  sidebar:
-#    name: HA 2021.9.X
-#    identifier: ha-2021-9-X
-#    parent: news-home-assistant
-#    weight: 10
+type: null
+categories:
+  - home assistant
+  - domotique
+hacf:
+  - https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
+  - https://forum.hacf.fr/t/home-assistant-premiere-configuration/679
+description: Comment installer Home Assistant sur Raspberry Pi avec HAOS sur
+  MicroSD et déplacer le dossier utilisateur sur un disque dur externe ou
+  interne.
+url_off: null
 ---
 
 Home Assistant est à l'heure actuel, le meilleur système domotique sur le marché (ok, c'est mon avis, mais peu de personne ayant quitté leur ancien système domotique pour Home Assistant y sont revenus).
