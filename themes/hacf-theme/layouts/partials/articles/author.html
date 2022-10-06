@@ -3,14 +3,13 @@
     <div class="card-header text-secondary border rounded-top p-0 m-1">
         <div class="row p-0 m-0">
             <div class="col-3">
-                <img src="{{ $author.avatar | relURL }}" class="rounded-circle p-0" alt="{{ $author.title }}-avatar" width="50px">
+                <img src="{{ $author.avatar | relURL }}" class="rounded-circle p-0" alt="{{ $author.pseudos }}-avatar" width="50px">
             </div>
-            <div class="col-9 p-0">
-                <a href="/authors/{{ $author.id }}" title="Voir tous les articles de {{ $author.title }}">{{ $author.name }}</a>
+            <div class="col-9 p-0 text-center">
+                <a href="/authors/{{ $author.title }}" title="Voir tous les articles de {{ $author.pseudos }}">{{ $author.pseudos }}</a>
                 <p class="text-secondary fs-6">{{ $author.fonction }}</p>
             </div>
         </div>
-        
     </div>
 
     <div class="card-body">
