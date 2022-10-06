@@ -13,7 +13,7 @@ categories:
 series:
   - Débuter avec Home Assistant
 author:
-  - tata
+  - mcfly
 ---
 Pour préserver la carte Micro SD, tout en gardant un système rapide ou si la taille de votre mémoire interne devient trop juste, Home Assistant permet de déplacer les données utilisateurs sur un support externe (il peut être interne avec un boitier adapté).
 
