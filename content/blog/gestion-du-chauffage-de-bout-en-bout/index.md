@@ -18,7 +18,7 @@ tags:
 series:
   - Débuter avec Home Assistant
 author:
-  - Argonaute
+  - argonaute
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 ---
 ## Avant propos

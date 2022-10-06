@@ -23,7 +23,7 @@ tags:
 series:
   - home assistant
 author:
-  - McFly
+  - mcfly
 type: null
 categories:
   - Intégration

@@ -16,7 +16,7 @@ series:
   - HA les Bases
   - Débuter
 author:
-  - tata
+  - mcfly
 ---
 Dans cet article, nous allons parler des **add-ons**.
 

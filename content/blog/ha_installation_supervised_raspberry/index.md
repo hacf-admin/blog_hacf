@@ -9,9 +9,6 @@ type: # Types existant : pages; news; awesome; guidedev;etc. Laisser vide pour l
 description: "Comment installer Home Assistant sur Raspberry Pi avec HAOS sur MicroSD et déplacer le dossier utilisateur sur un disque dur externe ou interne." # Description du sujet.
 # hero: /path/image.ext # Recherche un fichier hero.(webp;jpg;png;svg) a la racine du dossier OU si un hero est defini ici SINON il prend un hero par defaut.
 
-# Simple ou multi auteurs, il faut remplir l'auteur principal.
-author: mcfly
-
 # Recherche par auteurs et si multi auteurs.
 authors:
   - mcfly
