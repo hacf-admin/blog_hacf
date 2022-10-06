@@ -120,7 +120,7 @@ collections:
         searchFields: ["title"]
         valueField: "title"
         required: false
-        multiple: true
+        multiple: false
         hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
 
       - {label: "Liens vers sujet du forum", name: "url_hacf", widget: "string", required: false }
@@ -205,7 +205,7 @@ collections:
         searchFields: ["title"]
         valueField: "title"
         required: false
-        multiple: true
+        multiple: false
         hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
 
       - {label: "Lien vers sujet du forum Francophone", name: "url_hacf", widget: "string", required: false }
