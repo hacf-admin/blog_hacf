@@ -42,21 +42,11 @@
           {{ partial "contact" . }}
       </div>
       -->
-      {{ if ne .Params.type "pages" }}
-      <div class="row justify-content-evenly pt-2">
-        <div class="col-12">
-        {{ if .Params.article_ha }}
-            {{ partial "articles/aide-ha.html" . }}
-        {{ end }}
-        </div>
-      </div>
-      {{ else }}
       <div class="row justify-content-evenly pt-2">
         <div class="col-12">
           {{ partial "pages/author.html" . }}
         </div>
       </div>
-      {{ end }}
 
   </div>
 </section>
