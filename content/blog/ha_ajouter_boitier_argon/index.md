@@ -8,7 +8,7 @@ keywords:
   - Argon One Add-on
   - HassOS I2C Configurator
   - add-on ha
-title: Installer le boitier Argon One sur Home Assistant et le controler
+title: "Installer le boitier Argon One sur Home Assistant et le controler"
 date: 2022-01-07
 lastmod: null
 socialshare: true
@@ -20,7 +20,7 @@ tags:
 series:
   - home assistant
 author:
-  - McFly
+  - mcfly
 type: null
 categories:
   - Add-on
