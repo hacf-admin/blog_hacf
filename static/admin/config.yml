@@ -386,7 +386,8 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: "Pseudos", name: "title", widget: "string" }
+      - { label: "Id", name: "title", widget: "string", hint: "pseudos en minisucule et sans espace" }
+      - { label: "Pseudos", name: "pseudos", widget: "string" }
       - { label: "Fonction", name: "fonction", widget: "string" }
       - { label: "Bio", name: "bio", widget: "text" }
       - {
