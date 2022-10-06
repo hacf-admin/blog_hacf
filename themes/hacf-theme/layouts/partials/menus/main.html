@@ -1,6 +1,26 @@
+<div class="container-fluid">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom border-primary bg-light">
+    <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center col-md-1 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img src="images/logo-hacf-30px.webp" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
+        <span class="fs-4 m-1">{{ .Site.Title }}</span>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL }}" class="nav-link px-2 link-secondary text-primary">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+
+    <div class="col-md-1 text-end">
+      <a href="{{ .Site.BaseURL }}/admin" role="button" class="btn btn-outline-primary btn-sm me-2 d-none d-sm-block ">Participer</a>
+    </div>  
+  </header>
+</div>
+
+<!--
 <nav class="container-fluid mt-5">
-    <div class="navbar navbar-expand-md navbar-dark bg-secondary justify-content-center fixed-top" aria-label="Navbar Main">
-      <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+    <div class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top" aria-label="Navbar Main">
+      <a href="{{ .Site.BaseURL }}" class="d-flex align-items-center  mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="images/logo-hacf-30px.webp" width="30" height="30" class="d-inline-block align-top" alt="{{ .Site.Title }}-logo" title="{{ .Site.Title }}-logo">
         <span class="fs-4 m-1 text-white">{{ .Site.Title }}</span>
       </a>
@@ -10,7 +30,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="mainMenu">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0 justify-content-center">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
           {{ range .Site.Menus.main }}
               {{ if .HasChildren }}
               <li class="nav-item dropdown">
@@ -29,8 +49,9 @@
           {{ end }}
         </ul>
         <div class="text-end">
-          <a href="{{ .Site.BaseURL }}/admin" role="button" class="btn btn-outline-primary btn-sm me-2 d-none d-sm-block">Participer</a>
+          <a href="{{ .Site.BaseURL }}/admin" role="button" class="btn btn-outline-primary btn-sm me-2 d-none d-sm-block text-white">Participer</a>
         </div>
       </div>
     </div>
 </nav>
+-->
