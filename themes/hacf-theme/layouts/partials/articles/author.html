@@ -14,14 +14,14 @@
 
     <div class="card-body">
         <p class="card-text text-secondary fs-6">{{ $author.bio }}</p>
-      </div>
+    </div>
 
-      <div class="card-body text-center">
-          {{ if $author.pseudo_hacf }}
-          <a class="btn btn-outline-primary btn-sm" href="https://forum.hacf.fr/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HACF</a>  
-          {{ end }}
-          {{ if $author.pseudo_haoff }}
-          <a class="btn btn-outline-primary btn-sm" href="https://community.home-assistant.io/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HAOff</a>
-          {{ end }}
-      </div>
+    <div class="card-body text-center">
+        {{ if $author.pseudo_hacf }}
+        <a class="btn btn-outline-primary btn-sm" href="https://forum.hacf.fr/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HACF</a>  
+        {{ end }}
+        {{ if $author.pseudo_haoff }}
+        <a class="btn btn-outline-primary btn-sm" href="https://community.home-assistant.io/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HAOff</a>
+        {{ end }}
+    </div>
 </div>
