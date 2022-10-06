@@ -1,0 +1,64 @@
+{{ define "main" }}
+<section class="position-relative pt-48 pb-40 bg-dark bg-cover bg-size--cover" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
+  <!-- Overlay -->
+  <span class="position-absolute top-0 start-0 w-full h-full bg-dark opacity-80"></span>
+  <!-- Content -->
+  <div class="container-lg max-w-screen-xl position-relative overlap-10 text-center text-lg-start pt-5 pb-5 pt-lg-6">
+      <div class="row row-grid align-items-center">
+          <div class="col-lg-8 text-center text-lg-start">
+              <!-- Title -->
+              <h1 class="ls-tight font-bolder display-5 text-white mb-5">
+                  {{ .Title }}
+              </h1>
+              <!-- Text -->
+              <p class="lead text-white text-opacity-80 mb-10 w-lg-2/3">
+                  {{ .Description }}
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="bg-light py-2">
+
+      {{ partial "articles/socialshare.html" . }}
+</section>
+
+<section class="container">
+  <div class="row my-4">
+    <article class="row justify-content-center">
+<!-- Mise en page pour les pages -->
+      <div class="col-12 col-xl-10">
+        <div>
+          {{ .Content }}
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="mb-5">
+  <div class="container ">
+      <!--
+      <div class="col-12 border-top border-secondary pt-3" >
+          {{ partial "contact" . }}
+      </div>
+      -->
+      {{ if ne .Params.type "pages" }}
+      <div class="row justify-content-evenly pt-2">
+        <div class="col-12">
+        {{ if .Params.article_ha }}
+            {{ partial "articles/aide-ha.html" . }}
+        {{ end }}
+        </div>
+      </div>
+      {{ else }}
+      <div class="row justify-content-evenly pt-2">
+        <div class="col-12">
+          {{ partial "pages/author.html" . }}
+        </div>
+      </div>
+      {{ end }}
+
+  </div>
+</section>
+{{ end }}
