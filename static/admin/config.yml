@@ -112,7 +112,7 @@ collections:
           multiple: true,
           min: 1,
           required: false,
-          options: ['HA les Bases','Débuter avec Home Assistant'],
+          options: ['Les Bases de Home Assistant','Débuter avec Home Assistant','Débuter en Domotique'],
         }
       - label: "Auteur(s)"
         name: "author"

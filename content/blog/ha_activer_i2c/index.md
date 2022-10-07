@@ -15,15 +15,12 @@ lastmod: 2022-03-02 22:44
 socialshare: true
 tags:
   - i2c
-  - HassOS I2C Configurator
-  - add-on ha
-  - HAOS
-  - supervised
-  - Raspberry Pi
+  - ha-os
+  - ha-supervised
+  - raspberry-pi
 series:
-  - home assistant
-author:
-  - mcfly
+  - Débuter avec Home Assistant
+author: mcfly
 type: null
 categories:
   - Intégration
@@ -33,7 +30,7 @@ description: Comment activer l'I2C sur Home Assistant OS sur un Raspberry Pi via
   l'add-on HAOS I2C Configurator de @Adamoutier
 url_off: https://community.home-assistant.io/t/add-on-hassos-i2c-configurator/264167
 ---
-{{< quote "I2C (Inter-Integrated Circuit) est un bus informatique qui a émergé de la « guerre des standards » lancée par les acteurs du monde électronique. Conçu par Philips pour les applications de domotique et d’électronique domestique, il permet de relier facilement un microprocesseur et différents circuits, notamment ceux d’un téléviseur moderne : récepteur de la télécommande, réglages des amplificateurs basses fréquences, tuner, horloge, gestion de la prise péritel, etc. " "[Wikipédia](https://fr.wikipedia.org/wiki/I2C)" >}}
+\>I2C (Inter-Integrated Circuit) est un bus informatique qui a émergé de la « guerre des standards » lancée par les acteurs du monde électronique. Conçu par Philips pour les applications de domotique et d’électronique domestique, il permet de relier facilement un microprocesseur et différents circuits, notamment ceux d’un téléviseur moderne : récepteur de la télécommande, réglages des amplificateurs basses fréquences, tuner, horloge, gestion de la prise péritel, etc. [Wikipédia](https://fr.wikipedia.org/wiki/I2C)
 
 En gros, il a l'avantage de pouvoir faire passer plusieurs capteurs ou infos sur un nombre de fils restreint et c'est le protocole qui gère l'ordre d'envoi des capteurs pour éviter que deux capteurs parle en même temps. Cela a l'avantage de ne nécessiter que deux câbles :
 
@@ -48,7 +45,7 @@ Il est présent aussi sur certain boitier de Raspberry (Ex: Argon One) mais vous
 
 ![Add-on HAOS i2C Configurator](img/addon_haos_i2c_configurator.png "Add-on HOS i2C Configurator")
 
-* Ajouter le dépôt externe via {{< haautoconfig depot "https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fadamoutler%2FHassOSConfigurator" >}} ou [manuellement](./../ha_addon/) (url du dépot : https://github.com/adamoutler/HassOSConfigurator).
+* Ajouter le dépôt externe en cliquant \[ici](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fadamoutler%2FHassOSConfigurator) ou [manuellement](./../ha_addon/) (url du dépot : https://github.com/adamoutler/HassOSConfigurator).
 * Recharger les dépôts ou faites `F5`,
 * Installer l'add-on HAOS i2C Configurator,
 * Désactiver le `Protection Mode`
