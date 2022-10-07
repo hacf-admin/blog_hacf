@@ -111,6 +111,7 @@ collections:
           widget: 'select',
           multiple: true,
           min: 1,
+          required: false,
           options: ['HA les Bases','Débuter avec Home Assistant'],
         }
       - label: "Auteur(s)"

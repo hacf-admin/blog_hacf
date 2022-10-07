@@ -99,7 +99,7 @@ La puissance et la consigne sont dans des input number définis spécifiquement 
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
 
-![](img/blueprint.png "Blueprint")
+![blueprint](img/blueprint.png "Blueprint")
 
 Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le blueprint devrait être adapté.
 
@@ -111,12 +111,11 @@ Une carte assez basique permet de visualiser pour chaque radiateur le mode de ch
 
 Elle remplace la carte thermostat de HA.
 
-![enter image description here](img/cartethermostat.png)
+![enter image description here](img/cartethermostat.png "carte themostat ")
 
 Voici les différents modes proposés (champs de type input select):
-![](<>)
 
-![](img/cartethermostat-mode.png)
+![carte thermostat mode](img/cartethermostat-mode.png "carte thermostat mode")
 
 * **Mode « auto-confort » :** quand la pièce est occupée. Ajuste automatiquement la température suivant des plages horaires définies dans le scheduler (planification « auto-confort »)
 * **Mode « auto-eco » :** quand la pièce est inoccupée (par exemple la semaine ou quand l’alarme est mise). Ajuste automatiquement la température suivant des plages horaires défini dans le scheduler (planification « auto-eco »). 
