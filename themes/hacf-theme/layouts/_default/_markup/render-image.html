@@ -1,34 +1,39 @@
-{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
-{{- $Permalink := .Destination | relURL | safeURL -}}
-{{- $alt := .PlainText | safeHTML -}}
-{{- $Width := 0 -}}
-{{- $Height := 0 -}}
-{{- $Srcset := "" -}}
+{{ if hasPrefix .Destination "http" }}
+  {{- $src := .Destination | relURL | safeURL -}}
+  {{- $alt := .PlainText | safeHTML -}}
 
-{{/* SVG and external images won't work with gallery layout, because their width and height attributes are unknown */}}
-{{- $galleryImage := false -}}
+  {{ $alt := .PlainText | safeHTML }}
+    <img 
+      src="{{ $src }}" 
+      alt="{{ $alt }}" 
+    />
+{{ else }}
 
-{{- if $image -}}
-	{{- $notSVG := ne (path.Ext .Destination) ".svg" -}}
-	{{- $Permalink = $image.RelPermalink -}}
+  {{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+  {{ $alt := .PlainText | safeHTML }}
+  {{ $caption := "" }}
+  {{ with .Title }}
+    {{ $caption = . | safeHTML }}
+  {{ end }}
 
-	{{- if $notSVG -}}
-		{{- $Width = $image.Width -}}
-		{{- $Height = $image.Height -}}
-
-			{{- $small := $image.Resize `480x` -}}
-			{{- $big := $image.Resize `1024x` -}}
-			{{- $Srcset = printf `%s 480w, %s 1024w` $small.RelPermalink $big.RelPermalink -}}
-
-	{{- end -}}
-{{- end -}}
-
-<img src="{{ $Permalink }}"
-	{{ with $Width }}width="{{ . }}"{{ end }}
-	{{ with $Height }}height="{{ . }}"{{ end }}
-	{{ with $Srcset }}srcset="{{ . }}"{{ end }}
-	loading="lazy"
-	{{ with $alt }}
-		alt="{{ . }}"
-	{{ end }}
-/>
+  {{ if and $image (ne $image.MediaType.SubType "svg" "gif") }}
+  
+    <div class="row text-center">
+        <img 
+        src="{{ $image.RelPermalink }}" 
+        alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}" 
+        width="auto"
+        height="auto"
+        >
+    </div>
+  {{ else }}
+    <div class="row text-center">
+        <img 
+        src="{{ $image.RelPermalink }}" 
+        alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}" 
+        width="auto"
+        height="auto"
+        >
+    </div>
+  {{ end }}
+{{ end }}
