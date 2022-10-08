@@ -1,5 +1,5 @@
 
-{{ $url_hacf = .Page.Resources.GetMatch .Params.url_hacf }}
+{{ $url_hacf = printf "%s" .Params.url_hacf }}
 {{ $url := printf "%s" .Permalink }}
 
 {{ if .Params.url_hacf }}
