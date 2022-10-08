@@ -4,7 +4,7 @@ title = 'HACF'
 
 theme = 'hacf-theme'
 
-paginate = 12
+paginate = 6
 
 enableRobotsTXT = true
 enableEmoji = true
