@@ -49,7 +49,7 @@ L’article qui suit propose de mettre en place :
 * Une **gestion des modes** : auto-confort, auto-éco, manuel, hors gel, arrêt, absences.
 * Une gestion des **plages horaires** pour les modes auto-confort et auto-eco.
 * Une **carte lovelace** permettant de gérer le tout, dont l’affichage de la puissance en cours.
-* L'affichage de **graphiques** permettant de controler les paramètres
+* L'affichage de **graphiques** permettant de contrôler les paramètres
 
 J’utilise ce type de thermostat TPI pour 8 convecteur et depuis 5 ans (avec une autre box) et c’est vraiment très performant, avec une chaleur très douce de la pièce et des radiateurs, sans grandes variations.
 
@@ -190,7 +190,7 @@ Chaque radiateur a 2 planifications : une CONFORT et une ECO. Malheureusement, l
 
 La planification sera bien entendue active ou non en fonction du mode choisi dans le thermostat. La température de consigne va automatiquement changer en fonction de l’heure et du programme quand la planification est activée (le scheduler gère cela automatiquement pour nous).
 
-Il est possible si on est administrateur d'éditer chaque planification, puis sélectionner la température de consigne par plage horaire 
+Il est possible si on est administrateur d'éditer chaque planification, puis sélectionner la température de consigne par plage horaire.
 
 ![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_PlanificationDetail_20220907164738_20220907145043.png)
 
