@@ -1,18 +1,24 @@
 ---
-title: Installer une intégration dans Home Assistant
 draft: true
 date: 07-10-22 16:08
-lastmod: 2022-10-07 16:08
+lastmod: 08-10-822 08:00
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/comment-ajouter-une-integration-dans-home-assistant-t/2073
+socialshare: true
+title: Ajouter une intégration dans Home Assistant
 description: Les intégrations vous permettent d’ajouter facilement du matériel,
   des capteurs, des fonctions au sein de votre système domotique. Nous allons
   voir comment ajouter une intégration.
-socialshare: true
 categories:
   - Intégration
+tags:
+  - ha-core
+  - ha-os
+  - ha-supervised
+  - ha-docker
 series:
   - Les Bases de Home Assistant
   - Débuter avec Home Assistant
-author: mcfly
 ---
 Les intégrations vous permettent d’ajouter facilement du matériel, des capteurs, des fonctions au sein de votre système domotique.
 
