@@ -7,8 +7,6 @@ image:
 description: Sortie de la version 2022.8 de Home Assistant, traduction française
   de la communauté Francophone HACF
 socialshare: true
-categories:
-  - actualites
 tags:
   - traduction
   - release
