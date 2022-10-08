@@ -1,11 +1,5 @@
 
 {{ $url_hacf = printf "%s" .Params.url_hacf }}
 {{ $url := printf "%s" .Permalink }}
-
-{{ if .Params.url_hacf }}
-<p>url : {{ $url_hacf }}</p>
-{{ else }}
+<p>url_hacf : {{ $url_hacf }}</p>
 <p>url : {{ $url }}</p>
-{{ end }}
- 
-
