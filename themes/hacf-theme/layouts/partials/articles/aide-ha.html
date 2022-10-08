@@ -1,9 +1,7 @@
 {{ if .Params.url_hacf }}
 {{ $url = .Page.Resources.GetMatch .Params.url_hacf }}
-          <p>hacf : {{ $url }}</p>
-  {{ else }}
+{{ else }}
 {{ $url := printf "%s" .Permalink }}
-<p>url article {{ $url }}
-  
-  {{ end }}
+{{ end }}
  
+<p>url : {{ $url }}
