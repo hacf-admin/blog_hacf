@@ -26,8 +26,6 @@
 <section class="container">
   <div class="row my-4">
     <article class="row justify-content-center">
-<!-- Mise en page pour tous sauf les pages -->
-      {{ if ne .Params.type "pages" }}
       <div class="col-10 col-xl-8 m-4">
         <div>
           {{ .Content }}
@@ -36,20 +34,11 @@
       <div class="col-xl-3 d-none d-xl-block">
         {{ partial "articles/barre-lat-articles.html" . }}
       </div>
-      {{ else }}
-<!-- Mise en page pour les pages -->
-      <div class="col-12 col-xl-10">
-        <div>
-          {{ .Content }}
-        </div>
-      </div>
-      {{ end }}
     </article>
 
     <div class="text-end">
       {{ partial "articles/participer.html" . }}
     </div>
-
   </div>
 </section>
 
@@ -60,25 +49,15 @@
           {{ partial "contact" . }}
       </div>
       -->
-      {{ if ne .Params.type "pages" }}
       <div class="row justify-content-evenly pt-2">
         <div class="col-6">
           {{ partial "pages/author.html" . }}
         </div>
 
         <div class="col-6">
-        {{ if .Params.article_ha }}
             {{ partial "articles/aide-ha.html" . }}
-        {{ end }}
         </div>
       </div>
-      {{ else }}
-      <div class="row justify-content-evenly pt-2">
-        <div class="col-12">
-          {{ partial "pages/author.html" . }}
-        </div>
-      </div>
-      {{ end }}
 
   </div>
 </section>
