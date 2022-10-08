@@ -67,7 +67,6 @@ collections:
         field: categories
     fields: 
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: true }
       - {
           label: 'Date de publication',
           name: 'date',
@@ -87,7 +86,6 @@ collections:
         }
       - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
       - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
-      - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
       - {
           label: 'Categorie(s)',
           name: 'categories',
@@ -168,7 +166,6 @@ collections:
         field: categories
     fields: 
       - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: true }
       - {
           label: 'Date de publication',
           name: 'date',
@@ -186,10 +183,8 @@ collections:
           format: 'YYYY-MM-DD HH:mm',
           required: false
         }
-      - { label: "Featured Image", name: "image", widget: "image", required: false, choose_url: true, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, choose_url: true, hint: "Laisser vide pour prendre celle par défaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
       - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
-      - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
-      - {label: "Catégories", name: "categories", widget: "hidden", default: "actualités"}
 
       - {
         label: "Tags",
@@ -233,10 +228,8 @@ collections:
         name: "awesome"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
           - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
           - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
-          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
           - {
               label: 'Date de modification',
               name: 'lastmod',
@@ -286,19 +279,15 @@ collections:
                   widget: "select",
                   multiple: true,
                   options: ["blog", "videos", "podcast", "documentations", "diy", "autres"]
-                }
-
-                      
+                }         
 
       - file: "content/pages/association/index.md"
         label: "Association"
         name: "association"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
           - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
           - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
-          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
           - {
               label: 'Date de modification',
               name: 'lastmod',
@@ -324,10 +313,8 @@ collections:
         name: "reglement"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
           - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
           - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
-          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
           - {
               label: 'Date de modification',
               name: 'lastmod',
@@ -353,10 +340,8 @@ collections:
         name: "statuts"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: 'Brouillon', name: 'draft', widget: 'boolean', default: false }
           - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
           - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
-          - { label: "Partager sur les réseaux sociaux", name: "socialshare", widget: "boolean", default: true }
           - {
               label: 'Date de modification',
               name: 'lastmod',
