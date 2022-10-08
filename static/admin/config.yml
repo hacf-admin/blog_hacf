@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: postpub # Branch to update (optional; defaults to master)
+  branch: netlify # Branch to update (optional; defaults to master)
   site_domain: https://bright-hummingbird-cf02c5.netlify.app/
   
 local_backend: true
