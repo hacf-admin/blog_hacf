@@ -1,0 +1,68 @@
+{{ define "main" }}
+<section class="py-5 text-center bg-light" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light text-capitalize text-white">{{ .Title }}</h1>
+      <h3 class="fw-light text-white">{{ .Description }}</h3>
+      <p class="lead text-muted"> {{ .Content }}</p>
+    </div>
+  </div>
+</section>
+
+<div class="container p-5">
+  <h5 class="text-center">Tutotiels pour bien démarrer</h5>
+  <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+	<div class="col">
+	  <a class="btn btn-primary" href="/blog/installation-de-home-assistant-quelques-conseils-et-explications/" role="button"><i class="fa-solid fa-server"></i> Installation</a>
+	</div>
+	<div class="col">
+	  <a class="btn btn-primary" href="/categories/integration" role="button">NOK Intégrations</a>
+	</div>
+	<div class="col">
+	  <a class="btn btn-primary" href="/blog/installer-un-add-on-officiel-ou-non-officiel-sur-home-assistant/" role="button"><i class="fa-solid fa-cart-circle-plus"></i> Add-on</a>
+	</div>
+	<div class="col">
+	  <a class="btn btn-primary" href="/categories/automatisation" role="button">NOK Automatisation</a>
+	</div>
+	<div class="col">
+	  <a class="btn btn-primary" href="/series/débuter-avec-home-assistant/" role="button">Débuter avec Home Assistant</a>
+	</div>
+	<div class="col">
+	  <a class="btn btn-primary" href="/series/les-bases-de-home-assistant" role="button">Les bases de Home Assistant</a>
+	</div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+	<div class="col-12 col-lg-2 p-5 order-1">
+		<div class="d-grid gap-2 col-3 col-lg-12 mx-auto sticky-top" style="top: 80px">
+		<h5 class="text-center">Catégories</h5>
+		{{ range .Site.Taxonomies.categories }}
+		<a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
+			<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
+				<span class="visually-hidden">unread messages</span>
+			</span>
+		</a>
+		{{ end }}
+		</div>
+	</div>
+	
+	<div class="col-12 col-lg-9 order-2">
+		<div class="album py-5 bg-light">
+		  <div class="container">
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
+			  {{ range .Paginator.Pages }}
+			  <div class="col">
+				{{ partial "cards/post-list" . }}
+			  </div>
+			  {{ end }}
+			</div>
+		  </div>
+		</div>
+	</div>
+</div>	
+
+<div>
+  {{ partial "pagination" . }}
+</div>
+{{ end }}
