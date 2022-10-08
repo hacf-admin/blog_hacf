@@ -36,7 +36,11 @@
 	<div class="col-2 p-5 sticky-top">
 		<div class="d-grid gap-2">
 		{{ range .Site.Taxonomies.categories }}
-		  <a class="btn btn-outline-primary position-relative p-1 m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}</span></a>
+		<a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
+			<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
+				<span class="visually-hidden">unread messages</span>
+			</span>
+		</a>
 		{{ end }}
 		</div>
 	</div>
