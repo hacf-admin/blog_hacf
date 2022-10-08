@@ -41,13 +41,11 @@
 
 <div class="row">
 	<div class="col-2 offset-md-1">
-	    <div class="row">
+		<div class="d-grid gap-2">
 		{{ range .Site.Taxonomies.categories }}
-		    <div class="col-12">
-			<a class="btn btn-outline-primary p-1 m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} <span class="badge bg-primary">{{ .Count }}</span></a>	
-		    </div>
+		  <a class="btn btn-outline-primary p-1 m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} <span class="badge bg-primary">{{ .Count }}</span></a>
 		{{ end }}
-	    </div>
+		</div>
 	</div>
 	
 	<div class="col-9">
