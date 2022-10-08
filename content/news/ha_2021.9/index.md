@@ -19,18 +19,9 @@ hacf: "https://forum.hacf.fr/t/mise-a-jour-du-portail-hacf-pas-du-forum/5988/5" 
 url_off: "https://www.home-assistant.io/blog/2021/09/01/release-20219/"             # Liens vers le post du forum Officiel.
 
 
-categories: # Categories atuelles : domotique; home assistant; news; nodered;....
-- news
-- home assistant
-
 series: # En cours permet de reunir des series d'articles autour d'un meme sujet (ex : bien debuter avec HA; ou les addons essentiels pour commencer).
   
 tags: # Mettre ce qui est en relation avec l'article NE PAS REMETTRE les categories.
-- traduction
-- release
-
-keywords: # Mettre tous les mots definissant votre article, ils sont utilisés pour le referencement. PAS de limitation.
-- home assistant
 - traduction
 - release
 
