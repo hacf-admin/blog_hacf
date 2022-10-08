@@ -1,8 +1,46 @@
+<div class="card h-100 m-1">
+    <div class="row card-header align-items-center m-0">
+        <div class="col-12 text-center">
+            <h4 class="text-center" >Besoin d'aide ?</h4>
+            <p class="text-center text-secondary" >La communauté se fera un plaisir de vous aider.</p>
+        </div>
+    </div>
 
-{{ if .Params.url_hacf }}
-<p>url_hacf : {{ printf "%s" $.Params.url_hacf }}</p>
-{{ else }}
-<p>url : {{ printf "%s" .Permalink }}</p>
-{{ end }}
-
+    <div class="card-body text-center">
+      <div class="row">
+        <div class="col-12 text-center mb-2">
+        {{ if .Params.url_hacf }}
+          <a type="button" class="btn btn-outline-primary" href="{{ printf "%s" $.Params.url_hacf }}" title="Demander de l'aide sur le forum de la Communauté Francophone" target="_blank">
+            <img src="/images/logo-hacf-30px.webp" alt="Liens vers l'article HACF" > Demander de l'aide sur le forum HACF
+          </a>
+        {{ else }}
+          <a type="button" class="btn btn-outline-primary" href="https://forum.hacf.fr/new-topic?title=titre&body=%23%23%20Mon%20probl%C3%A8me%0A%0A%2ARenseigner%20votre%20probl%C3%A8me%2A%0A%0A%23%23%20Le%20tutoriel%20d%27origine%0A{{ printf "%s" .Permalink }}%0A%23%23%20Ma%20configuration%0A___%0A%5Bcenter%5DTexte%20%C3%A0%20remplacer%20par%20votre%20configuration%5B%2Fcenter%5D%0AComment%20r%C3%A9cup%C3%A9rer%20ma%20configuration%20%3A%0ADans%20votre%20HA%2C%20Menu%20lat%C3%A9ral%20%60Param%C3%A8tres%60%20%3E%20%60Syst%C3%A8me%60%20%3E%20%60Corrections%60%20puis%20les%20trois%20petits%20points%20en%20haut%20a%20droite%20%3E%20%60Informations%20Syst%C3%A8me%60%20puis%20une%20fois%20en%20bas%20%60Copier%60%0A___&category=entraide-home-assistant&tags=aide" title="Demander de l'aide sur le forum de la Communauté Francophone" target="_blank">
+            <img src="/images/logo-hacf-30px.webp" alt="Liens vers l'article HACF" > Demander de l'aide sur le forum HACF
+          </a>          
+        {{ end }}
+        </div>
+        <div class="col-6 text-center ">
+          <p><em>Communauté Francophone HACF</em></p>
+          <ul class="list-inline">
+            {{ range .Site.Menus.aidehacf }}
+            <li class="list-inline-item">
+              <a href="{{ .URL }}" title="{{ .URL }}" target="_blank"><i class="fa-brands {{ .Pre }} fa-2x"></i></a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        
+        <div class="col-6 text-center ">
+          <p><em>Communauté Officielle HA</em></p>
+          <ul class="list-inline">
+            {{ range .Site.Menus.aidehaoff }}
+            <li class="list-inline-item">
+              <a href="{{ .URL }}" title="{{ .URL }}" target="_blank"><i class="fa-brands {{ .Pre }} fa-2x"></i></a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      </div>
+  </div>
 
