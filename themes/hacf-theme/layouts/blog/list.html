@@ -33,8 +33,8 @@
 </div>
 
 <div class="row">
-	<div class="col-2 p-5 sticky-top">
-		<div class="d-grid gap-2">
+	<div class="col-2 p-5 ">
+		<div class="d-grid gap-2 sticky-top">
 		{{ range .Site.Taxonomies.categories }}
 		<a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
 			<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
