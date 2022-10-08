@@ -81,7 +81,7 @@ collections:
           widget: 'datetime',
           date_format: 'DD-MM-YY',
           time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
+          format: 'DD-MM-DYY HH:mm',
           required: false
         }
       - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
@@ -180,7 +180,7 @@ collections:
           widget: 'datetime',
           date_format: 'DD-MM-YY',
           time_format: 'HH:mm',
-          format: 'YYYY-MM-DD HH:mm',
+          format: 'DD-MM-YY HH:mm',
           required: false
         }
       - { label: "Featured Image", name: "image", widget: "image", required: false, choose_url: true, hint: "Laisser vide pour prendre celle par défaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
@@ -236,7 +236,7 @@ collections:
               widget: 'datetime',
               date_format: 'DD-MM-YY',
               time_format: 'HH:mm',
-              format: 'YYYY-MM-DD HH:mm',
+              format: 'DD-MM-YY HH:mm',
               required: false
             }
           - {
@@ -294,7 +294,7 @@ collections:
               widget: 'datetime',
               date_format: 'DD-MM-YY',
               time_format: 'HH:mm',
-              format: 'YYYY-MM-DD HH:mm',
+              format: 'DD-MM-YY HH:mm',
               required: false
             }
 
@@ -321,7 +321,7 @@ collections:
               widget: 'datetime',
               date_format: 'DD-MM-YY',
               time_format: 'HH:mm',
-              format: 'YYYY-MM-DD HH:mm',
+              format: 'DD-MM-YY HH:mm',
               required: false
             }
 
@@ -348,7 +348,7 @@ collections:
               widget: 'datetime',
               date_format: 'DD-MM-YY',
               time_format: 'HH:mm',
-              format: 'YYYY-MM-DD HH:mm',
+              format: 'DD-MM-YY HH:mm',
               required: false
             }
 
