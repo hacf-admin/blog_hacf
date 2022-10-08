@@ -6,6 +6,8 @@
   {{ $url = https://forum.hacf.fr/new-topic?title=titre&body=%23%23%20Mon%20probl%C3%A8me%0A%0A%2ARenseigner%20votre%20probl%C3%A8me%2A%0A%0A%23%23%20Le%20tutoriel%20d%27origine%0A{{ $url_article }}%0A%23%23%20Ma%20configuration%0A___%0A%5Bcenter%5DTexte%20%C3%A0%20remplacer%20par%20votre%20configuration%5B%2Fcenter%5D%0AComment%20r%C3%A9cup%C3%A9rer%20ma%20configuration%20%3A%0ADans%20votre%20HA%2C%20Menu%20lat%C3%A9ral%20%60Param%C3%A8tres%60%20%3E%20%60Syst%C3%A8me%60%20%3E%20%60Corrections%60%20puis%20les%20trois%20petits%20points%20en%20haut%20a%20droite%20%3E%20%60Informations%20Syst%C3%A8me%60%20puis%20une%20fois%20en%20bas%20%60Copier%60%0A___&category=entraide-home-assistant&tags=aide }}
 {{ end }}
 
+{{ return $url.RelPermalink }}
+
 
   <div class="card h-100 m-1">
     <div class="row card-header align-items-center m-0">
