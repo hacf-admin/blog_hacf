@@ -8,7 +8,6 @@ image: img/ha2022_9.png
 description: "Une nouvelle version de Home Assistant est sortie pour ses 9 ans.
   Nous vous proposons la traduction du sujet original. "
 socialshare: true
-categories: actualités
 tags:
   - release
   - traduction
