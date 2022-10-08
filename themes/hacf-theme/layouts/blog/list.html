@@ -42,16 +42,11 @@
 </div>
 
 <div class="row">
-	<div class="col-2 offset-1">
-		<div class="card m-1">
-			<div class="card-header text-center text-uppercase text-secondary border rounded-top m-1">
-				<a class="text-decoration-none text-dark" href="/categories">categories</a>
-			</div>
-			<div class="card-body text-center text-capitalize">
-					{{ range .Site.Taxonomies.categories }}
-					<a class="btn btn-outline-primary p-1 m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} <span class="badge bg-primary">{{ .Count }}</span></a>
-					{{ end }}
-			</div>
+	<div class="col-2">
+		<div class="col-12">
+			{{ range .Site.Taxonomies.categories }}
+			<a class="btn btn-outline-primary p-1 m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} <span class="badge bg-primary">{{ .Count }}</span></a>
+			{{ end }}
 		</div>
 	</div>
 	
@@ -68,7 +63,6 @@
 		  </div>
 		</div>
 	</div>
-	
 </div>	
 
 <div>
