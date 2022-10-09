@@ -1,5 +1,5 @@
 ---
-title: Concepts Home Assistant
+title: Architecture et concepts Home Assistant
 date: 09-10-22 14:34
 lastmod: 09-10-922 14:35
 image: img/accueil.png
