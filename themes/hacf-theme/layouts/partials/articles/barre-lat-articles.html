@@ -1,6 +1,10 @@
 
 {{ partial "articles/author.html" . }}
+
+{{ if .Params.url_hacf }}
 {{ partial "articles/help_forum.html" . }}
+{{ end }}
+
 <div class="card m-1">
     <div class="card-header text-center text-uppercase text-secondary border rounded-top m-1">
         <a class="text-decoration-none text-dark">Sommaire</a>
