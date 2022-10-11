@@ -47,6 +47,20 @@ enableGitInfo = true
   series = 'series'
   author = 'authors'
 
+
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+[[related.indices]]
+  name = 'tags'
+  weight = 100
+[[related.indices]]
+  name = 'categories'
+  weight = 60
+
+
 [imaging]
 # Default resample filter used for resizing. Default is Box,
 # a simple and fast averaging filter appropriate for downscaling.
