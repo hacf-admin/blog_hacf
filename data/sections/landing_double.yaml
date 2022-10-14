@@ -2,7 +2,7 @@
 section:
   name: Presentation HACF et HA off
   id: presentation
-  weight: 2
+  weight: 1
   active: true
   template: sections/landing_double.html
 
