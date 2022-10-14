@@ -2,8 +2,8 @@
 {{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,svg,webp}"}}
 
 {{/*  Si une image Hero est specifiée dans le Front Matter alors il utilise celle-ci  */}}
-{{ if .Params.hero }}
-  {{ $heroImage = .Page.Resources.GetMatch .Params.hero }}
+{{ if .Params.image }}
+  {{ $heroImage = .Page.Resources.GetMatch .Params.image }}
 {{ end }}
 {{ .Scratch.Set "heroScratch" $heroImage }}
 
@@ -16,8 +16,8 @@
 {{ $heroImage := .Scratch.Get "heroScratch" }}
 
 {{/* Redimenssionner l'image Hero sauf si elle est en SVG */}}
-{{ if and $heroImage (ne $heroImage.MediaType.SubType "svg") }}
-  {{ $heroImage := $heroImage.Resize "148x webp" }}
+{{ if ne $heroImage.MediaType.SubType "svg" }}
+  {{ $heroImage := $heroImage.Resize "50x50 webp" }}
 {{ end }}
 
 {{/*  Il renvoit le lien de l'image  */}}
