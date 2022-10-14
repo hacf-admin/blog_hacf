@@ -7,10 +7,8 @@
         {{ else }}
           {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
         {{ end }}
-        {{ end }}
+      {{ end }}
     {{ end }}
-
-
 
   <!-- Script pour Netlify-->
   <script>
