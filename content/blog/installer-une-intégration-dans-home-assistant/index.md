@@ -19,6 +19,7 @@ tags:
 series:
   - Les Bases de Home Assistant
   - Débuter avec Home Assistant
+image:
 ---
 Les intégrations vous permettent d’ajouter facilement du matériel, des capteurs, des fonctions au sein de votre système domotique.
 

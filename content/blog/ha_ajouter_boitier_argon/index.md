@@ -24,7 +24,7 @@ categories:
 hacf: null
 description: Ajouter et commander son boitier Argon One M.2 avec Home Assistant
 url_off: null
-image: ""
+image:
 ---
 Pré-requis :
 
