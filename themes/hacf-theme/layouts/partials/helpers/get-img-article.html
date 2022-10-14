@@ -6,7 +6,7 @@
 
 {{/* Redimenssionner l'image Hero sauf si elle est en SVG */}}
 {{ if and $imgPost (ne $imgPost.MediaType.SubType "svg") }}
-  {{ $imgPost := $imgPost.Resize "148x webp" }}
+  {{/* $imgPost := $imgPost.Resize "x50 webp" */}}
 {{ end }}
 
 {{/*  Il renvoit le lien de l'image  */}}
