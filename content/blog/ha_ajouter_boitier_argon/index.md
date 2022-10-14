@@ -14,7 +14,6 @@ lastmod: null
 socialshare: true
 tags:
   - argon
-  - ""
 series:
   - home assistant
 author: mcfly
@@ -25,6 +24,7 @@ categories:
 hacf: null
 description: Ajouter et commander son boitier Argon One M.2 avec Home Assistant
 url_off: null
+image: ""
 ---
 Pré-requis :
 
