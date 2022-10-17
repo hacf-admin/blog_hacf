@@ -1,13 +1,13 @@
-#[[main]]
-#  name = "HACF"
-#  identifier = "hacf"
-#  weight = 1
-#  [[main]]
-#    name = "A propos"
-#    identifier = "propos"
-#    parent = "hacf"
-#    url = "/a-propos"
-#    weight = 1
+[[main]]
+  name = "HACF"
+  identifier = "hacf"
+  weight = 1
+  [[main]]
+    name = "A propos"
+    identifier = "propos"
+    parent = "hacf"
+    url = "/a-propos"
+    weight = 1
 #  [[main]]
 #    name = "Contribuer"
 #    identifier = "contribuer"
