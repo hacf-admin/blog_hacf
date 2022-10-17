@@ -13,22 +13,22 @@
       
         <div class="collapse navbar-collapse justify-content-end justify-content-md-center text-center" id="navbarNavDropdown">
             <ul class="navbar-nav">
-            {{ $currentPage := . }}
+            {{ $current := . }}
             {{ range .Site.Menus.main }}
                 {{ if .HasChildren }}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle " href="{{ .URL }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ .Name }}
                     </a>
                     <ul class="dropdown-menu">
                     {{ range .Children }}
-                        <li><a class="dropdown-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a></li>
+                        <li><a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                     </ul>
                 </li>
                 {{ else }} 
-                <li class="nav-item">
-                <a class="nav-link {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                <li class="nav-item ">
+                <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
             {{ end }}
