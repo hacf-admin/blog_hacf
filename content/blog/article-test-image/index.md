@@ -1,6 +1,6 @@
 ---
 title: Article test image
-draft: true
+draft: false
 date: 06-10-22 22:25
 lastmod: 2022-10-06 22:25
 image: https://www.hugopublishing.fr/wp-content/uploads/2020/09/2020_Site_Bannieres_Image-1500x500.jpg
