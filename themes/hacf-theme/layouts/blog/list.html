@@ -42,17 +42,13 @@
 	
 	<h5 class="text-center">{{ .Params.contentTitle }}</h5>
 	<p class="text-center font-italic">{{ .Params.contentDescription }}</p>
-	<div class="col-12 col-lg-9 order-2">
-		<div class="album py-5 bg-light">
-		  <div class="container">
-			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
-			  {{ range .Paginator.Pages }}
-			  <div class="col">
-				{{ partial "cards/post-list" . }}
-			  </div>
-			  {{ end }}
+	<div class="col-12 col-lg-9 order-2 m-3">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
+			{{ range .Paginator.Pages }}
+			<div class="col">
+			{{ partial "cards/post-list" . }}
 			</div>
-		  </div>
+			{{ end }}
 		</div>
 	</div>
 </div>	
