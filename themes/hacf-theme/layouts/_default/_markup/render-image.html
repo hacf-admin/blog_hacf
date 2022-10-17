@@ -18,14 +18,57 @@
 
   {{ if and $image (ne $image.MediaType.SubType "svg" "gif") }}
   
-    <div class="row text-center">
-        <img 
-        src="{{ $image.RelPermalink }}" 
-        alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}" 
-        width="auto"
-        height="auto"
-        >
-    </div>
+    {{ if ge $image.Width "800" }}
+      
+      {{ $small := $image.Resize "200x" }}
+      {{ $medium := $image.Resize "500x" }}
+      {{ $big := $image.Resize "800x" }}
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="(max-width: 800px) 500px, 200px,100vw"
+            srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w, {{ $big.RelPermalink }} 1024w"
+            src="{{ $image.RelPermalink }}"
+
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+
+    {{ else }}
+      {{ $small := $image.Resize "200x" }}
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="100vw"
+            srcset="{{ $small.RelPermalink }} 480w"
+            src="{{ $image.RelPermalink }}"
+            width="{{ $image.Width }}"
+            height="{{ $image.Height }}"
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+
   {{ else }}
     <div class="row text-center">
         <img 
