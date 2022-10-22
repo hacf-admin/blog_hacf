@@ -35,7 +35,7 @@
             sizes="(max-width: 200px) 100px,
                    ((min-width: 200px) and (max-width: 500px)) 200px,
                    ((min-width: 500px) and (max-width: 1200px)) 500px,
-                   (max-width: 1200em) 800px"
+                   (max-width: 1200px) 800px"
             srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w, {{ $big.RelPermalink }} 1024w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
@@ -60,8 +60,8 @@
         <a href="{{ $image.RelPermalink }}">
           <img
             sizes="(max-width: 200px) 100px,
-                   ((min-width: 200px) and (max-width: 500px)) 200px,
-                   (max-width: 500px) 500px"
+                   ((min-width: 201px) and (max-width: 500px)) 200px,
+                   (max-width: 501px) 500px"
             srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
@@ -84,7 +84,7 @@
         <a href="{{ $image.RelPermalink }}">
           <img
             sizes="(max-width: 200px) 100px,
-                   (max-width: 200epx) 200px"
+                   (max-width: 200px) 200px"
             srcset="{{ $small.RelPermalink }} 480w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
