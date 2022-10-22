@@ -55,7 +55,7 @@
       </figure>
 
 
-    {{ if ge $image.Width "700" }}
+    {{ else if ge $image.Width "700" }}
 
       {{ $XS := $image.Resize "250x" }}
       {{ $SM := $image.Resize "300x" }}
@@ -91,7 +91,7 @@
         {{ end }}
       </figure>
 
-    {{ if ge $image.Width "500" }}
+    {{ else if ge $image.Width "500" }}
 
       {{ $XS := $image.Resize "250x" }}
       {{ $SM := $image.Resize "300x" }}
@@ -124,7 +124,7 @@
         {{ end }}
       </figure>
 
-    {{ if ge $image.Width "400" }}
+    {{ else if ge $image.Width "400" }}
 
       {{ $XS := $image.Resize "250x" }}
       {{ $SM := $image.Resize "300x" }}
@@ -154,7 +154,7 @@
         {{ end }}
       </figure>
 
-    {{ if ge $image.Width "300" }}
+    {{ else if ge $image.Width "300" }}
 
       {{ $XS := $image.Resize "250x" }}
       {{ $SM := $image.Resize "300x" }}
@@ -182,7 +182,7 @@
       </figure>
 
 
-    {{ if ge $image.Width "250" }}
+    {{ else if ge $image.Width "250" }}
 
       {{ $XS := $image.Resize "250x" }}
 
