@@ -184,6 +184,31 @@
         {{ end }}
       </figure>
 
+
+    {{ else }}
+
+      {{ $XS := $image.Resize "250x" }}
+
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="300px"
+            srcset="{{ $XS.RelPermalink }} 250w"
+            src="{{ $image.RelPermalink }}"
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+
   {{ else }}
     <div class="row text-center">
         <img 
