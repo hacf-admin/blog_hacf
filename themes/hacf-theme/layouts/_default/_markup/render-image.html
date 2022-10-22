@@ -46,7 +46,7 @@
         {{ end }}
       </figure>
 
-    {{ else if ge $image.Width "500" }}
+    {{ if ge $image.Width "500" }}
       
       {{ $small := $image.Resize "200x" }}
       {{ $medium := $image.Resize "500x" }}
