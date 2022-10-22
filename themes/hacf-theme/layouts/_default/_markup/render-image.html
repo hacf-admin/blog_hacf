@@ -14,7 +14,7 @@
     {{ $caption = . | safeHTML }}
   {{ end }}
 
-  {{ if and $image (ne $image.MediaType.SubType "svg" "gif") }}
+  {{ if and $image (ne $image.MediaType.SubType "svg") }}
 
     {{ if ge $image.Width "800" }}
 
