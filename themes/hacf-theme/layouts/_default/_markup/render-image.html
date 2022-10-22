@@ -39,8 +39,6 @@
             srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w, {{ $big.RelPermalink }} 1024w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
-            width="{{ $image.Width }}"
-            height="{{ $image.Height }}"
             >
         </a>
         {{ with $caption }}
@@ -67,8 +65,6 @@
             srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
-            width="{{ $image.Width }}"
-            height="{{ $image.Height }}"
             >
         </a>
         {{ with $caption }}
@@ -91,8 +87,6 @@
                    (max-width: 200epx) 200px"
             srcset="{{ $small.RelPermalink }} 480w"
             src="{{ $image.RelPermalink }}"
-            width="{{ $image.Width }}"
-            height="{{ $image.Height }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
         </a>
