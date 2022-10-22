@@ -72,7 +72,7 @@
         {{ end }}
       </figure>
 
-    {{ else }}
+    {{ if ge $image.Width "200" }}
       {{ $small := $image.Resize "200x" }}
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
