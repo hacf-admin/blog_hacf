@@ -13,13 +13,17 @@
   {{ with .Title }}
     {{ $caption = . | safeHTML }}
   {{ end }}
+
   {{ if and $image (ne $image.MediaType.SubType "svg" "gif") }}
-  
+
     {{ if ge $image.Width "800" }}
-      
-      {{ $small := $image.Resize "200x" }}
-      {{ $medium := $image.Resize "500x" }}
-      {{ $big := $image.Resize "800x" }}
+
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+      {{ $LG := $image.Resize "500x" }}
+      {{ $XL := $image.Resize "700x" }}
+      {{ $XXL := $image.Resize "800x" }}
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -29,11 +33,18 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-            sizes="(max-width: 200px) 100px,
-                   ((min-width: 200px) and (max-width: 500px)) 200px,
-                   ((min-width: 500px) and (max-width: 1200px)) 500px,
-                   (max-width: 1200px) 800px"
-            srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 500w, {{ $big.RelPermalink }} 1200w"
+            sizes="(max-width: 400px) 250px,
+                   (max-width: 500px) 300px,
+                   (max-width: 768px) 400px,
+                   (max-width: 992px) 500px,
+                   (max-width: 1440px) 700px,
+                   800px"
+            srcset="{{ $XS.RelPermalink }} 250w, 
+                    {{ $SM.RelPermalink }} 300w, 
+                    {{ $MD.RelPermalink }} 400w, 
+                    {{ $LG.RelPermalink }} 500w, 
+                    {{ $XL.RelPermalink }} 700w, 
+                    {{ $XXL.RelPermalink }} 800w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
@@ -42,10 +53,16 @@
           <figcaption>{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
-    {{ else if ge $image.Width "500" }}
-      
-      {{ $small := $image.Resize "200x" }}
-      {{ $medium := $image.Resize "500x" }}
+
+
+    {{ if ge $image.Width "700" }}
+
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+      {{ $LG := $image.Resize "500x" }}
+      {{ $XL := $image.Resize "700x" }}
+
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -55,10 +72,16 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-            sizes="(max-width: 200px) 100px,
-                   ((min-width: 201px) and (max-width: 500px)) 200px,
-                   (max-width: 501px) 500px"
-            srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 500w"
+            sizes="(max-width: 400px) 250px,
+                   (max-width: 500px) 300px,
+                   (max-width: 768px) 400px,
+                   (max-width: 992px) 500px,
+                   700px"
+            srcset="{{ $XS.RelPermalink }} 250w, 
+                    {{ $SM.RelPermalink }} 300w, 
+                    {{ $MD.RelPermalink }} 400w, 
+                    {{ $LG.RelPermalink }} 500w, 
+                    {{ $XL.RelPermalink }} 700w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
@@ -67,8 +90,14 @@
           <figcaption>{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
-    {{ else if ge $image.Width "200" }}
-      {{ $small := $image.Resize "200x" }}
+
+    {{ if ge $image.Width "500" }}
+
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+      {{ $LG := $image.Resize "500x" }}
+
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -78,9 +107,14 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-            sizes="(max-width: 200px) 100px,
-                   (max-width: 200px) 200px"
-            srcset="{{ $small.RelPermalink }} 200w"
+            sizes="(max-width: 400px) 250px,
+                   (max-width: 500px) 300px,
+                   (max-width: 768px) 400px,
+                   500px"
+            srcset="{{ $XS.RelPermalink }} 250w, 
+                    {{ $SM.RelPermalink }} 300w, 
+                    {{ $MD.RelPermalink }} 400w, 
+                    {{ $LG.RelPermalink }} 500w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
@@ -89,6 +123,89 @@
           <figcaption>{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
+
+    {{ if ge $image.Width "400" }}
+
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="(max-width: 400px) 250px,
+                   (max-width: 500px) 300px,
+                   400px"
+            srcset="{{ $XS.RelPermalink }} 250w, 
+                    {{ $SM.RelPermalink }} 300w, 
+                    {{ $MD.RelPermalink }} 400w"
+            src="{{ $image.RelPermalink }}"
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+
+    {{ if ge $image.Width "300" }}
+
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="(max-width: 400px) 250px,
+                   300px"
+            srcset="{{ $XS.RelPermalink }} 250w, 
+                    {{ $SM.RelPermalink }} 300w"
+            src="{{ $image.RelPermalink }}"
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+
+
+    {{ if ge $image.Width "250" }}
+
+      {{ $XS := $image.Resize "250x" }}
+
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="300px"
+            srcset="{{ $XS.RelPermalink }} 250w"
+            src="{{ $image.RelPermalink }}"
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+
     {{ end }}
   {{ else }}
     <div class="row text-center">
