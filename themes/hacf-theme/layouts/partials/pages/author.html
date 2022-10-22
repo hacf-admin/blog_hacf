@@ -2,10 +2,10 @@
 <div class="card m-1">
     <div class="row card-header m-0">
         <div class="col-2">
-            <img src="{{ $author.avatar | relURL }}" class="rounded-circle " alt="{{ $author.title }}-avatar" width="60px">
+            <img src="{{ $author.avatar | relURL }}" class="rounded-circle " alt="{{ $author.pseudos }}-avatar" width="60px">
         </div>
         <div class="col-5">
-            <h4 class="">{{ $author.title }}</h4>
+            <h4 class="">{{ $author.pseudos }}</h4>
             <p class="text-secondary">{{ $author.fonction }}</p>
         </div>
     </div>
@@ -16,10 +16,10 @@
 
       <div class="card-body text-center">
           {{ if $author.pseudo_hacf }}
-          <a class="btn btn-outline-primary" href="https://forum.hacf.fr/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HACF</a>  
+          <a class="btn btn-outline-primary" href="https://forum.hacf.fr/u/{{ $author.pseudos }}/summary" target="_blank" rel="noreferrer">Profil HACF</a>  
           {{ end }}
           {{ if $author.pseudo_haoff }}
-          <a class="btn btn-outline-primary" href="https://community.home-assistant.io/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HAOff</a>
+          <a class="btn btn-outline-primary" href="https://community.home-assistant.io/u/{{ $author.pseudos }}/summary" target="_blank" rel="noreferrer">Profil HAOff</a>
           {{ end }}
       </div>
 </div>   
