@@ -33,10 +33,10 @@
         <a href="{{ $image.RelPermalink }}">
           <img
             sizes="(max-width: 200px) 100px,
-                   ((min-width: 200px) and (max-width: 500px)) 200px,
-                   ((min-width: 500px) and (max-width: 1200px)) 500px,
-                   (max-width: 1200px) 800px"
-            srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 500w, {{ $big.RelPermalink }} 1200w"
+                   (max-width: 500px) 200px,
+                   (max-width: 1024px) 500px,
+                   800px"
+            srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 500w, {{ $big.RelPermalink }} 800w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
@@ -60,8 +60,8 @@
         <a href="{{ $image.RelPermalink }}">
           <img
             sizes="(max-width: 200px) 100px,
-                   ((min-width: 201px) and (max-width: 500px)) 200px,
-                   (max-width: 501px) 500px"
+                   (max-width: 500px) 200px,
+                   500px"
             srcset="{{ $small.RelPermalink }} 200w, {{ $medium.RelPermalink }} 500w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
@@ -83,8 +83,7 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-            sizes="(max-width: 200px) 100px,
-                   (max-width: 200px) 200px"
+            sizes="200px"
             srcset="{{ $small.RelPermalink }} 200w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
