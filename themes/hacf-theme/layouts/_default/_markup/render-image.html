@@ -184,7 +184,7 @@
         {{ end }}
       </figure>
 
-    {{ if lt $image.Width "300" }}
+    {{ else }}
 
       {{ $XS := $image.Resize "250x" }}
 
