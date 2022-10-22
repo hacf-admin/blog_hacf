@@ -185,7 +185,7 @@
       </figure>
 
 
-    {{ if ge $image.Width "250" }}
+    {{ if lt $image.Width "300" }}
 
       {{ $XS := $image.Resize "250x" }}
 
@@ -208,6 +208,8 @@
           <figcaption>{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
+    {{ end }}
+
 
   {{ else }}
     <div class="row text-center">
