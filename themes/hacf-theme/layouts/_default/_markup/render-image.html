@@ -14,16 +14,16 @@
     {{ $caption = . | safeHTML }}
   {{ end }}
 
-  {{ if and $image (ne $image.MediaType.SubType "svg") }}
+  {{ if and $image (ne $image.MediaType.SubType "svg" "gif") }}
 
     {{ if ge $image.Width "800" }}
 
-      {{ $XS := $image.Resize "250x " }}
-      {{ $SM := $image.Resize "300x " }}
-      {{ $MD := $image.Resize "400x " }}
-      {{ $LG := $image.Resize "500x " }}
-      {{ $XL := $image.Resize "700x " }}
-      {{ $XXL := $image.Resize "800x " }}
+      {{ $XS := $image.Resize "250x webp" }}
+      {{ $SM := $image.Resize "300x webp" }}
+      {{ $MD := $image.Resize "400x webp" }}
+      {{ $LG := $image.Resize "500x webp" }}
+      {{ $XL := $image.Resize "700x webp" }}
+      {{ $XXL := $image.Resize "800x webp" }}
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -57,11 +57,11 @@
 
     {{ else if ge $image.Width "700" }}
 
-      {{ $XS := $image.Resize "250x " }}
-      {{ $SM := $image.Resize "300x " }}
-      {{ $MD := $image.Resize "400x " }}
-      {{ $LG := $image.Resize "500x " }}
-      {{ $XL := $image.Resize "700x " }}
+      {{ $XS := $image.Resize "250x webp" }}
+      {{ $SM := $image.Resize "300x webp" }}
+      {{ $MD := $image.Resize "400x webp" }}
+      {{ $LG := $image.Resize "500x webp" }}
+      {{ $XL := $image.Resize "700x webp" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -93,10 +93,10 @@
 
     {{ else if ge $image.Width "500" }}
 
-      {{ $XS := $image.Resize "250x " }}
-      {{ $SM := $image.Resize "300x " }}
-      {{ $MD := $image.Resize "400x " }}
-      {{ $LG := $image.Resize "500x " }}
+      {{ $XS := $image.Resize "250x webp" }}
+      {{ $SM := $image.Resize "300x webp" }}
+      {{ $MD := $image.Resize "400x webp" }}
+      {{ $LG := $image.Resize "500x webp" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -126,9 +126,9 @@
 
     {{ else if ge $image.Width "400" }}
 
-      {{ $XS := $image.Resize "250x " }}
-      {{ $SM := $image.Resize "300x " }}
-      {{ $MD := $image.Resize "400x " }}
+      {{ $XS := $image.Resize "250x webp" }}
+      {{ $SM := $image.Resize "300x webp" }}
+      {{ $MD := $image.Resize "400x webp" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -156,8 +156,8 @@
 
     {{ else if ge $image.Width "300" }}
 
-      {{ $XS := $image.Resize "250x " }}
-      {{ $SM := $image.Resize "300x " }}
+      {{ $XS := $image.Resize "250x webp" }}
+      {{ $SM := $image.Resize "300x webp" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -184,7 +184,7 @@
 
     {{ else if ge $image.Width "250" }}
 
-      {{ $XS := $image.Resize "250x " }}
+      {{ $XS := $image.Resize "250x webp" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
