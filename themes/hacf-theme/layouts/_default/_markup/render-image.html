@@ -44,6 +44,31 @@
         {{ end }}
       </figure>
 
+    {{ else if ge $image.Width "500" }}
+      
+      {{ $small := $image.Resize "200x" }}
+      {{ $medium := $image.Resize "500x" }}
+      {{ $alt := .PlainText | safeHTML }}
+      {{ $caption := "" }}
+      {{ with .Title }}
+        {{ $caption = . | safeHTML }}
+      {{ end }}
+      
+      <figure>
+        <a href="{{ $image.RelPermalink }}">
+          <img
+            sizes="(max-width: 800px) 500px, 200px,100vw"
+            srcset="{{ $small.RelPermalink }} 480w, {{ $medium.RelPermalink }} 768w"
+            src="{{ $image.RelPermalink }}"
+
+            alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            >
+        </a>
+        {{ with $caption }}
+          <figcaption>{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
+
     {{ else }}
       {{ $small := $image.Resize "200x" }}
       {{ $alt := .PlainText | safeHTML }}
@@ -55,7 +80,7 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-            sizes="100vw"
+            sizes="(max-width: 500px) 200px, 100px,100vw"
             srcset="{{ $small.RelPermalink }} 480w"
             src="{{ $image.RelPermalink }}"
             width="{{ $image.Width }}"
