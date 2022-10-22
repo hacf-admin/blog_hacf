@@ -46,7 +46,7 @@
         {{ end }}
       </figure>
 
-    {{ if ge $image.Width "500" }}
+    {{ else if ge $image.Width "500" }}
       
       {{ $small := $image.Resize "200x" }}
       {{ $medium := $image.Resize "500x" }}
@@ -72,7 +72,7 @@
         {{ end }}
       </figure>
 
-    {{ if ge $image.Width "200" }}
+    {{ else if ge $image.Width "200" }}
       {{ $small := $image.Resize "200x" }}
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
