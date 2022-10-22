@@ -208,7 +208,7 @@
 
     {{ end }}
 
-  {{ if and $image (ne $image.MediaType.SubType "svg") }}
+  {{ else if and $image (ne $image.MediaType.SubType "svg") }}
 
     {{ if ge $image.Width "800" }}
 
