@@ -1,0 +1,16 @@
+{{ if .Params.image }}
+    {{ if hasPrefix .Params.image "http" }}
+    {{- $src := .Params.image | relURL | safeURL -}}
+        <img src="{{ $src }}" height="200px" width="100%" />
+    {{ else }}
+    {{ $hero := .Params.image }}
+    {{ $image := .Resources.Get $hero }}
+    {{ $image := $image.Resize "400x200 webp q100" }}
+
+    <img src="{{ $image.Permalink }}" class="card-img-top" alt="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"/>
+    {{ end }}
+{{ else }}
+  {{ $image := resources.Get "images/articles/article-hacf-vierge.webp" }}
+  {{ $image := $image.Resize "400x200 webp q100" }}
+  <img src="{{ $image.Permalink }}" class="card-img-top" alt="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"/>
+{{ end }}
