@@ -1,12 +1,8 @@
 
 <div class="col">
-    <div class="card h-100">
     <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
-        <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
-        <div class="card">
-            
+    <div class="card h-100">
            <img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="hero-{{ .Title }}" height="200px" width="auto">
-        </a>
             <div class="card-body">
         <div class="card-body">
                 <h5 class="card-title">{{ .Title }}</h5>
@@ -27,5 +23,6 @@
             <a href="{{ .RelPermalink }}" title="Lire" class="float-md-end btn btn-outline-primary btn-sm">Lire</a>
             </div> 
           </div> 
-        </div>   
-    </div>   
+    </div> 
+    </a>
+</div>
