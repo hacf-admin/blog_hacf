@@ -5,7 +5,7 @@
         <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
         <div class="card">
             
-            {{ partial "cards/image-list.html" . }}
+           <img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="hero-{{ .Title }}" height="200px" width="auto">
         </a>
             <div class="card-body">
         <div class="card-body">
