@@ -1,14 +1,16 @@
 ---
-title: Installer Home Assistant OS sur Raspberry, Odroid, NUC ou autres
 draft: false
 date: 07-10-22 15:40
 lastmod: 2022-10-07 15:53
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
+socialshare: true
+title: Installer Home Assistant OS sur Raspberry, Odroid, NUC ou autres
 image: img/imagebf_image_rpihaos.jpg
 description: "Installons ensemble Home Assistant OS sur Raspberry Pi, Odroid,
   Tinkerboard, NUC ou autres, de manière simple et rapide. Commençons dans la
   domotique avec un système Open source, gratuit, international et évolutif avec
   plus de 1900 intégrations et des centaines d'add-ons. "
-socialshare: true
 categories:
   - Installation
 tags:
@@ -22,8 +24,6 @@ tags:
 series:
   - Débuter avec Home Assistant
   - Les Bases de Home Assistant
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
 ---
 Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de Home Assistant OS sur un matériel dédié ? Vous avez fait le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
 
@@ -41,11 +41,11 @@ Nous allons voir comment installer Home Assistant OS sur l'un de ces SBC (single
 
 **Installation sur Raspberry Pi : Pourquoi il utilise une carte Micro SD alors que, sur le net, tout le monde parle de problèmes avec les cartes SD ?** Parce que [Home Assistant le recommande](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk).
 
-> Dans ce type d'installation, toutes les actions provoquant des écritures à répétitions sur le support SD sont déplacées vers le disque dur. Fini les cartes SD corrompues tout en conservant un démarrage rapide de votre systeme et eviter les problemes de disque non reconnu.
+>Dans ce type d'installation, toutes les actions provoquant des écritures à répétitions sur le support SD sont déplacées vers le disque dur. Fini les cartes SD corrompues tout en conservant un démarrage rapide de votre système et éviter les problèmes de disque non reconnu.
 
 Le système d'exploitation Home Assistant permet de stocker la plupart des données sur un support de stockage externe (par exemple, un SSD ou un disque dur connecté par USB). Ce disque de données contient non seulement les données de l'utilisateur, mais aussi la plupart des logiciels de Home Assistant (Core, Supervisor, etc.). Cela signifie qu'un disque de données rapide rendra le système global beaucoup plus rapide.
 
-![Image du Shéma expliquant le support des données en externe.](img/ha_usbdatadisk.png "Shéma expliquant le support des données en externe.")
+![Image du Schéma expliquant le support des données en externe.](img/ha_usbdatadisk.png "Schéma expliquant le support des données en externe.")
 
 La [fonction de disque de données](/blog/déplacer-les-données-utilisateurs-de-home-assistant-vers-un-support-externe-et-préserver-votre-carte-micro-sd/) peut être utilisée sur une installation existante sans perdre de données : Le système déplacera automatiquement les données existantes vers le disque de données externe. Toutefois, il est recommandé de [créer et de télécharger une sauvegarde](https://www.home-assistant.io/common-tasks/os/#backups) complète avant de procéder !
 
@@ -95,7 +95,7 @@ Une fois votre image transférée par la méthode de votre choix, insérer votre
 
 Rendez-vous, depuis votre navigateur, sur `[homeassistant.local:8123](http://homeassistant.local:8123)` ou sur `ipdevotremateriel:8123`
 
-![Image d'attente du premier lancement de Home Assistant](img/installation_prepring_home_assistant-1-.jpg "Ecran d'attente lors du premier lancement de Home Assistant")
+![Image d'attente du premier lancement de Home Assistant](img/installation_prepring_home_assistant-1-.jpg "Écran d'attente lors du premier lancement de Home Assistant")
 
 > Il peut falloir 2-3 minutes avant que cette page s'affiche.
 
