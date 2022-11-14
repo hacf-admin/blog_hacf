@@ -8,7 +8,7 @@
 	<div class="col-4">
 		<div class="card h-100">
 			<a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
-				<img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="{{ .Description }}">
+				{{ partial "cards/image-list.html" . }}
 			</a>
 			<div class="card-body">
 				<h5 class="card-title">{{ .Title }}</h5>
