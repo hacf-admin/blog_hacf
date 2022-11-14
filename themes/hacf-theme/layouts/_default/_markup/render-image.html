@@ -30,23 +30,6 @@
         {{ $caption = . | safeHTML }}
       {{ end }}
       
-
-      {{ $xs := $image.Resize "200x webp q100" }}
-      {{ $sm := $image.Resize "300x webp q100" }}
-      {{ $md := $image.Resize "500x webp q100" }}
-      {{ $xl:= $image.Resize "800x webp q100" }}
-
-    {{ else if ge $image.Width "500" }}
-      
-      {{ $xs := $image.Resize "200x webp q100" }}
-      {{ $sm := $image.Resize "300x webp q100" }}
-      {{ $md := $image.Resize "500x webp q100" }}
-    
-      {{ else if ge $image.Width "300" }}
-      
-      {{ $xs := $image.Resize "200x webp q100" }}
-      {{ $sm := $image.Resize "300x webp q100" }}
-
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
@@ -80,7 +63,6 @@
       {{ $LG := $image.Resize "500x webp" }}
       {{ $XL := $image.Resize "700x webp" }}
 
-
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -90,19 +72,6 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-
-            {{ if ge $image.Width "800" }}
-            sizes="(max-width: 440px) 200px, (max-width: 576px) 300px, (max-width: 768px) 500px, (max-width: 1200px) 500px, 800px"
-            srcset="{{ $xs.RelPermalink }} 200w, {{ $sm.RelPermalink }} 576w, {{ $md.RelPermalink }} 768w, {{ $xl.RelPermalink }} 1200w"
-            {{ else if ge $image.Width "500" }}
-            sizes="(max-width: 440px) 200px, (max-width: 576px) 300px, (max-width: 768px) 500px, 500px"
-            srcset="{{ $xs.RelPermalink }} 200w, {{ $sm.RelPermalink }} 576w, {{ $md.RelPermalink }} 768w"
-            {{ else if ge $image.Width "300" }}
-            sizes="(max-width: 440px) 200px, (max-width: 576px) 300px, 300px"
-            srcset="{{ $xs.RelPermalink }} 200w, {{ $sm.RelPermalink }} 576w"
-            {{ end }}
-
-
             sizes="(max-width: 400px) 250px,
                    (max-width: 500px) 300px,
                    (max-width: 768px) 400px,
@@ -113,7 +82,6 @@
                     {{ $MD.RelPermalink }} 400w, 
                     {{ $LG.RelPermalink }} 500w, 
                     {{ $XL.RelPermalink }} 700w"
-
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
@@ -156,9 +124,6 @@
         {{ end }}
       </figure>
 
-
-    {{ else }}
-
     {{ else if ge $image.Width "400" }}
 
       {{ $XS := $image.Resize "250x webp" }}
@@ -194,7 +159,6 @@
       {{ $XS := $image.Resize "250x webp" }}
       {{ $SM := $image.Resize "300x webp" }}
 
-
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -204,12 +168,10 @@
       <figure>
         <a href="{{ $image.RelPermalink }}">
           <img
-
             sizes="(max-width: 400px) 250px,
                    300px"
             srcset="{{ $XS.RelPermalink }} 250w, 
                     {{ $SM.RelPermalink }} 300w"
-
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
             >
