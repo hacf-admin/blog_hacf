@@ -1,28 +1,30 @@
 
 <div class="col">
-    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
-    <div class="card h-100">
-           <img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="hero-{{ .Title }}" height="200px" width="auto">
+    
+        <div class="card h-100">
+            <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
+               <img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="hero-{{ .Title }}" height="200px" width="auto">
+            </a>
             <div class="card-body">
-        <div class="card-body">
+            <div class="card-body">
+                    <h5 class="card-title">{{ .Title }}</h5>
                 <h5 class="card-title">{{ .Title }}</h5>
-            <h5 class="card-title">{{ .Title }}</h5>
+                    <p class="card-text text-secondary">{{ .Description }}</p>
                 <p class="card-text text-secondary">{{ .Description }}</p>
-            <p class="card-text text-secondary">{{ .Description }}</p>
+                </div>
             </div>
-        </div>
-            <div class="card-footer text-center">
-        <div class="card-footer">
-                <span class=" float-none float-lg-start pt-2">
-            <span class="float-start">
+                <div class="card-footer text-center">
+            <div class="card-footer">
+                    <span class=" float-none float-lg-start pt-2">
+                <span class="float-start">
+                        {{ partial "helpers/date" . }}
                     {{ partial "helpers/date" . }}
-                {{ partial "helpers/date" . }}
+                    </span>
                 </span>
-            </span>
-                <a href="{{ .RelPermalink }}" title="Lire" class="float-none float-lg-end btn btn-outline-primary btn-sm">Lire</a>
-            <a href="{{ .RelPermalink }}" title="Lire" class="float-md-end btn btn-outline-primary btn-sm">Lire</a>
-            </div> 
-          </div> 
-    </div> 
-    </a>
+                    <a href="{{ .RelPermalink }}" title="Lire" class="float-none float-lg-end btn btn-outline-primary btn-sm">Lire</a>
+                <a href="{{ .RelPermalink }}" title="Lire" class="float-md-end btn btn-outline-primary btn-sm">Lire</a>
+                </div> 
+              </div> 
+        </div> 
+
 </div>
