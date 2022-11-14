@@ -60,7 +60,7 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 * [ ] **config.yml** *NetiflyCMS* Modifier les fonctions de recherche Netlify CMS.
 * [X] **config.yml** *NetiflyCMS* Ajouter avatar sur collection auteurs et verifier dans quelle dossier ca va (assets) **Ils vont dans static image**.
 * [X] **config.yml** *NetiflyCMS* Ajouter TAG collection blog
-* [ ] **config.yam** *NetlifyCMS* Ameliorer les tags avec possibilités de rechercher dans ceux deja present.
+* [ ] **config.yam** *NetlifyCMS* Ameliorer les tags avec possibilités de rechercher dans ceux deja present.https://answers.netlify.com/t/display-existing-tags-in-cms-widget/38270/2
 * [ ] **config.yml** *NetiflyCMS* Ajouter URL Forum collection blog
 * [ ] **config.yml** *NetiflyCMS* Ajouter type ? collection blog
 * [ ] **config.yml** *NetiflyCMS* Ameliorer les filtres de recherche pour blog/articles et actualités.
