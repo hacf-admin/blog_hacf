@@ -211,8 +211,8 @@
   {{ else }}
     <div class="row text-center">
         <img 
-        src="{{ $image.RelPermalink }}" 
-        alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}" 
+        src="{{ $image.RelPermalink }}"
+        alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
         width="auto"
         height="auto"
         >
