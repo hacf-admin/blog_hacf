@@ -1,0 +1,83 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>{{ .Title }}</title>
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}{{ end }}" />
+    <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}{{end}}" />
+    <meta name="author" content="{{ if .IsHome }}{{ $.Site.Author.name }}{{ else }}{{ with .Params.authors }}{{ delimit . ", "}}{{ else }}{{ .Params.author }}{{end}}{{end}}" />
+
+
+    
+    <!--{{ with .OutputFormats.Get "RSS" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+    {{- end }}
+    -->
+
+<!--
+    Suppresion des classes CSS inutilisées et minification des ichiers CSS et JS
+-->
+<!--
+    Ajoute Bootstrap en local
+-->
+{{ $cssbootstrap := resources.Get "/css/bootstrap.min.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssbootstrap = $cssbootstrap | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssbootstrap.RelPermalink }}" integrity="{{ $cssbootstrap.Data.Integrity }}" media="all" type="text/css">
+
+<!--
+    Ajoute FontAwesome en local
+-->
+{{ $cssfontawesome := resources.Get "/css/fontawesome.min.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssfontawesome = $cssfontawesome | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssfontawesome.RelPermalink }}" integrity="{{ $cssfontawesome.Data.Integrity }}" media="all" type="text/css">
+
+{{ $cssbrands := resources.Get "/css/brands.min.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssbrands = $cssbrands | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssbrands.RelPermalink }}" integrity="{{ $cssbrands.Data.Integrity }}" media="all" type="text/css">
+
+{{ $csssolid := resources.Get "/css/solid.min.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $csssolid = $csssolid | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $csssolid.RelPermalink }}" integrity="{{ $csssolid.Data.Integrity }}" media="all" type="text/css">
+
+
+<!--
+    Ajoute custom.css
+-->
+{{ $csscustom := resources.Get "/css/custom.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $csscustom = $csscustom | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $csscustom.RelPermalink }}" integrity="{{ $csscustom.Data.Integrity }}" media="all" type="text/css">
+
+
+<!--
+    Ajoute Boostrap JS en local
+-->
+{{ $jsbootstrap := resources.Get "/js/bootstrap.bundle.min.js" | minify }}
+<script defer src="{{ $jsbootstrap.RelPermalink }}"></script>
+
+
+<!--
+    Ajoute Netlify JS
+-->
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+
+<!-- Matomo -->
+
+<!-- End Matomo Code -->
+
+</head>
