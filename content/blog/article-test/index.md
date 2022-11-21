@@ -26,14 +26,11 @@ description: Article de test
 url_off: null
 ---
 ## Test Keyboard
+
 {{< keyboard kbd="CTRL, ALT" >}}
 
 ## Test Gallery
-{{< galleryjs >}}
-![enter image description here](img/cartethermostat.png "carte themostat ")
-![blueprint](img/blueprint.png "Blueprint")
-![carte thermostat mode](img/cartethermostat-mode.png "carte thermostat mode")
-{{< /galleryjs >}}
+
 
 
 # Markdown Cheat Sheet
@@ -49,7 +46,9 @@ These are the elements outlined in John Gruber’s original design document. All
 ### Heading
 
 # H1
+
 ## H2
+
 ### H3
 
 ### Bold
@@ -72,9 +71,9 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Unordered List
 
-- First item
-- Second item
-- Third item
+* First item
+* Second item
+* Third item
 
 ### Code
 
@@ -82,7 +81,7 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Horizontal Rule
 
----
+- - -
 
 ### Link
 
@@ -98,10 +97,10 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 
 ### Table
 
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
 
 ### Fenced Code Block
 
@@ -134,9 +133,9 @@ term
 
 ### Task List
 
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
+* Write the press release
+* Update the website
+* Contact the media
 
 ### Emoji
 
@@ -150,7 +149,7 @@ I need to highlight these ==very important words==.
 
 ### Subscript
 
-H~2~O
+H\~2\~O
 
 ### Superscript
 
@@ -158,9 +157,7 @@ X^2^
 
 ![Image GIF](img/ajouter_addon_officiel.gif)
 
-
 ![Image SVG](img/blueprint_import.svg)
-
 
 ![Image Gif animé](img/image-png-animé.gif)
 
@@ -171,4 +168,3 @@ X^2^
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 
 ![Image PNG](img/profil_utilisateur.png)
-
