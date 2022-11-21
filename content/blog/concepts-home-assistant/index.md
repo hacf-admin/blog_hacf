@@ -1,7 +1,8 @@
 ---
 title: Architecture et concepts Home Assistant
-date: 09-10-22 14:34
-lastmod: 09-10-922 14:35
+date: 2022-10-09
+draft: false
+lastmod: 
 image: img/accueil.png
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est

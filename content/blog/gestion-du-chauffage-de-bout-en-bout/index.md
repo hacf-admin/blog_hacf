@@ -1,7 +1,7 @@
 ---
 draft: false
-date: 30-09-22 15:58
-lastmod: 2022-09-30 15:58
+date: 2022-09-30
+lastmod: 
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 socialshare: true
@@ -213,6 +213,8 @@ style: |
   }
 discover_existing: false
 ```
+
+
 
 Une fois la carte scheduler créée, elle est vide. Il faut utiliser l'interface pour créer les différentes planifications (type schema - 2 planifications : auto-eco et auto-confort pour chaque radiateur). 
 

@@ -1,0 +1,15 @@
+<div class="col ">
+    <div class="card h-100">
+        {{ partial "cards/image-list.html" . }}
+        <div class="card-body">
+            <h5 class="card-title text-center">{{ .Title }}</h5>
+            <p class="card-text text-secondary">{{ .Description }}</p>
+        </div>
+        <div class="card-footer text-center">
+            <span class=" float-none float-lg-start pt-2">
+                {{ partial "common/date" . }}
+            </span>
+            <a href="{{ .RelPermalink }}" title="Lire" class="float-none float-lg-end btn btn-outline-primary btn-sm">Lire</a>
+        </div> 
+    </div>   
+</div>

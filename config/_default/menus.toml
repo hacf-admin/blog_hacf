@@ -1,6 +1,9 @@
 #[[main]]
-#  name = "HACF"
-#  identifier = "hacf"
+#  name = "Home"
+#  identifier = "home"
+#  url = "/"
+#  pre = "<i class='fa fa-home'></i>"
+#  post = "<span>News !</span>"
 #  weight = 1
 #  [[main]]
 #    name = "A propos"
@@ -19,26 +22,32 @@
   name = "Accueil"
   identifier = "home"
   url = "/"
+  pre = ""
+  post = ""
   weight = 1
 [[main]]
   name = "Actualités"
   identifier = "news"
   url = "/news"
+  pre = ""
   weight = 2
 [[main]]
   name = "Articles"
   identifier = "post"
   url = "/blog"
+  pre = ""
   weight = 3
 [[main]]
   name = "Association"
   identifier = "association"
   url = "/pages/association"
+  pre = ""
   weight = 4
 [[main]]
   name = "Liens Utiles"
   identifier = "awesome"
   url = "/pages/awesome"
+  pre = ""
   weight = 5
 #[[main]]
 #  name = "Nos Médias"

@@ -1,7 +1,7 @@
 ---
 draft: true
-date: 07-10-22 16:08
-lastmod: 08-10-822 08:00
+date: 2022-10-07
+lastmod: 
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/comment-ajouter-une-integration-dans-home-assistant-t/2073
 socialshare: true
@@ -19,7 +19,7 @@ tags:
 series:
   - Les Bases de Home Assistant
   - Débuter avec Home Assistant
-image:
+image: ""
 ---
 Les intégrations vous permettent d’ajouter facilement du matériel, des capteurs, des fonctions au sein de votre système domotique.
 

@@ -1,0 +1,31 @@
+<!--
+    Ajoute BS5 Lightbox JS en local
+    https://github.com/trvswgnr/bs5-lightbox
+-->
+{{- with .Inner }}
+  {{- $inner := replaceRE `\r` "" . }}
+  {{- $inner = trim $inner " \n" }}
+  {{- $lines := split $inner "\n" }}
+  {{- range $lines }}
+    {{- if . }}
+      <p>{{- . | $.Page.RenderString }}</p>
+    {{- end }}
+  {{- end }}
+{{- end -}}
+
+{{ $jsgallery := resources.Get "/js/gallery.min.js" | minify }}
+<script defer src="{{ $jsgallery.RelPermalink }}"></script>
+
+<!--
+<div class="row">
+	<a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="https://unsplash.it/600.jpg?image=251" class="img-fluid">
+	</a>
+	<a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="https://unsplash.it/600.jpg?image=252" class="img-fluid">
+	</a>
+	<a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+		<img src="https://unsplash.it/600.jpg?image=253" class="img-fluid">
+	</a>
+</div>
+-->

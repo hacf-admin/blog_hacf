@@ -2,8 +2,6 @@ baseURL = 'https://dev.hacf.fr'
 languageCode = 'fr-fr'
 title = 'HACF'
 
-theme = 'hacf-theme'
-
 paginate = 6
 
 enableRobotsTXT = true
@@ -15,14 +13,15 @@ enableGitInfo = true
 [params]
   description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
-  #logo = "images/logo-hacf-30px.webp"
-  article =  "/images/articles-vierge.webp"
+  logo = "/images/logo.webp"
+  #defaulthero =  "/images/articles/article.webp" #NON FONCTIONNEL
   contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
   mainSections = ["blog", "news"] #https://gohugo.io/functions/where/#mainsections
   customcss = true
   # Background image du jumbotron
   # background = '/images/site/background-dark.jpg'
 
+  heightCode = "300px" # Recuperer la valeur a appliquer sur es blocs de code
   enableTOC = true
 
   # GitHub repo du site

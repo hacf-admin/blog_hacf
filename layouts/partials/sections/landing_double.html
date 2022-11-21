@@ -1,0 +1,104 @@
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <div class="row row-cols-1 row-cols-md-2 justify-content-evenly">
+      <div class="col">
+        <div class="card h-100 border border-opacity-50 border-3 border-secondary rounded pt-3 text-center mx-auto" style="max-width: 30rem;">
+          <img
+            class="card-img-top mx-auto"
+            style="max-height: 150px;max-width: 150px"
+            src="images/sections/logo-hacf.webp"
+            srcset="images/sections/logo-hacf-100px.webp 100w,
+                    images/sections/logo-hacf-200px.webp 200w,
+                    images/sections/logo-hacf-200px.webp 400w"
+            sizes="(max-width: 576px) 100px, (max-width: 992px) 200px, 400px"
+            alt="Logo de HACF la communauté Francophone autour de Home Assistant"
+            title="Logo de HACF la communauté Francophone autour de Home Assistant"
+          />
+          <div class="card-body">
+            <h2 class="card-title text-secondary">{{ .name }}</h2>
+            <p class="card-subtitle fst-italic text-primary fs-4">{{ .subtitle }}</p>
+            <p class="card-text">
+              {{ range .summary }}
+              <p>
+                {{ .description | markdownify }}
+              </p>
+              {{ end }}
+            </p>
+          </div>
+          
+          <div class="card-body text-center">
+            <ul class="list-inline">
+              {{ range .socialLinks }}
+              <li class="list-inline-item">
+                {{ if eq .name "Email" }}
+                  <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+                {{ else if eq .name (i18n "phone") }}
+                  <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+                {{ else }}
+                  <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+                {{ end }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+    
+          <div class="card-body">
+            {{ range .button }}
+            <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="card h-100 border border-opacity-50 border-3 border-secondary rounded pt-3 text-center mx-auto" style="max-width: 30rem;">
+          <img
+            class="card-img-top mx-auto"
+            style="max-height: 200px;max-width: 200px"
+            src="images/sections/dashbord-home-assistant.webp"
+            srcset="images/sections/dashbord-home-assistant-200px.wepb 100w,
+                    images/sections/dashbord-home-assistant-200px.webp 200w,
+                    images/sections/dashbord-home-assistant-300px.webp 400w"
+            sizes="(max-width: 576px) 100px, (max-width: 992px) 300px, 400px"
+            alt="Tableau de bord Home Assistant"
+            title="Tableau de bord Home Assistant"
+            />
+          <div class="card-body">
+            <h2 class="card-title text-secondary">{{ .name2 }}</h2>
+            <p class="card-subtitle fst-italic text-primary fs-4">{{ .subtitle2 }}</p>
+            <p class="card-text">
+              {{ range .summary2 }}
+              <p>
+                {{ .description | markdownify }}
+              </p>
+              {{ end }}
+            </p>
+          </div>
+          
+          <div class="card-body text-center">
+            <ul class="list-inline">
+              {{ range .socialLinks2 }}
+              <li class="list-inline-item">
+                {{ if eq .name "Email" }}
+                  <a href="mailto:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+                {{ else if eq .name (i18n "phone") }}
+                  <a href="tel:{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+                {{ else }}
+                  <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+                {{ end }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+    
+          <div class="card-body">
+            {{ range .button2 }}
+            <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,8 +6,8 @@ authors:
   - pulpy
 title: Déplacer les données utilisateurs de Home Assistant vers un support
   externe et préserver votre carte Micro SD
-date: 19-09-22 16:01
-lastmod: 2022-09-28 16:01
+date: 2022-09-19
+lastmod:
 image: ""
 description: "Préserver votre carte Micro SD en déplaçant les données
   utilisateurs de Home Assistant vers un support externe. "
@@ -18,6 +18,8 @@ tags:
   - ha-os
   - micro-sd
   - raspberry-pi
+  - tag1
+  - tag2
 series:
   - Débuter avec Home Assistant
 author: mcfly

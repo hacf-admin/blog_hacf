@@ -1,7 +1,7 @@
 ---
 draft: false
-date: 07-10-22 16:02
-lastmod: 2022-10-07 16:02
+date: 2022-10-07
+lastmod: 2022-10-07
 author: mcfly
 url_hacf: ""
 socialshare: true
@@ -16,7 +16,7 @@ tags:
 series:
   - Les Bases de Home Assistant
   - Débuter avec Home Assistant
-image:
+image: img/hero.jpg
 ---
 
 

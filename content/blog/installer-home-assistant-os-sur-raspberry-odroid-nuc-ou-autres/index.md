@@ -1,7 +1,7 @@
 ---
 draft: false
-date: 07-10-22 15:40
-lastmod: 2022-10-07 15:53
+date: 2022-10-07
+lastmod:
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
 socialshare: true

@@ -1,7 +1,7 @@
 ---
 title: "Release Note : Home Assistant Core Version 2021.9.X" # Titre article explicite
 date: 2022-03-03 # Date format YYYY-MM-DD
-lastmod:   # Date format YYYY-MM-DD   SI rine n'est rentré il prendra la modification GIT.
+lastmod: 2022-03-27 #Date format YYYY-MM-DD   Si rien n'est rentré il prendra la modification GIT.
 draft: false
 #layout: pages 
 type: # Types existant : pages; news; awesome; guidedev;etc. Laisser vide pour les articles
@@ -24,7 +24,6 @@ series: # En cours permet de reunir des series d'articles autour d'un meme sujet
 tags: # Mettre ce qui est en relation avec l'article NE PAS REMETTRE les categories.
 - traduction
 - release
-
 
 
 ##################################################

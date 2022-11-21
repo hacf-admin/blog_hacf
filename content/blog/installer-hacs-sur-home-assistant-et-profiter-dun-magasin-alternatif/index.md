@@ -1,7 +1,7 @@
 ---
 draft: false
-date: 06-10-22 15:22
-lastmod: 2022-10-07 15:22
+date: 2022-10-06
+lastmod:
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true

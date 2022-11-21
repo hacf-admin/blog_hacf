@@ -1,7 +1,7 @@
 ---
 draft: false
-date: 28-09-22 14:44
-lastmod: 2022-09-28 14:44
+date: 2022-09-28
+lastmod:
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
 socialshare: true
@@ -65,9 +65,9 @@ Elle a l’avantage d’être la moins énergivore et la plus simple d’utilisa
 
 Mais, avec certains matériels, elle a l’inconvénient d’une installation sur un support micro SD qui, à force d’écriture, peut être plus fragile. (Une solution peut être de remplacer la carte Micro SD par un disque SSD).
 
-**AJOUTER SHORTCODE/PARTIAL CATEGORIE INSTALLATION ET TAGS HAOS**
+{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="tag1, tag2" cat="Installation" >}}
 
-> Nous vous conseillons cette installation sur un Odroid ou Raspberry, mais sur ceux derniers, il faudra prévoir un SSD en supplément.
+>Nous vous conseillons cette installation sur un Odroid ou Raspberry, mais sur ceux derniers, il faudra prévoir un SSD en supplément.
 
 ### Home Assistant Container (*Raspberry PI, Odroid, Tinkerboard, NUC, Linux*).
 
@@ -75,13 +75,14 @@ Cette solution permet l’utilisation de votre matériel pour d'autres choses qu
 Vous installez Home Assistant **core** dans votre propre environnement de conteneurs, que vous gérez vous-même.
 &gt;Sous Linux cette [installation est aussi possible avec le Superviseur](https://github.com/home-assistant/supervised-installer). Cette façon de gérer Home Assistant est celle qui exige le plus de vous. Elle a également des exigences strictes que vous devez respecter. À moins que vous n'ayez vraiment besoin de ce type d'installation, vous devriez installer Home Assistant OS (qui peut aussi être une machine virtuelle), ou Home Assistant Container.
 
-</div>""
+{{< selected_post title="Articles concernant l'installation de Home Assistant Container" tag="ha-container" cat="Installation" >}}
 
-**SHORTCODE PARTTIAL ARTICLES INSTALLATION HA CONTAINER**
 
 ### Home Assistant Core (*Raspberry PI, Odroid, Tinkerboard, NUC, Linux, Windows, MacOS*).
 
 Cette solution est **réellement** réservée aux personnes expérimentées et ne sera pas abordée pour le moment.
+
+{{< selected_post title="Articles concernant l'installation de Home Assistant Core" tag="ha-core" cat="Installation" >}}
 
 ## Résumé des installations
 

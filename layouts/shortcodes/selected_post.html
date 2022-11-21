@@ -1,0 +1,26 @@
+{{ $title := (.Get "title" | markdownify) }}
+{{ $tag := (.Get "tag") }}
+{{ $cat := (.Get "cat") }}
+
+{{/* Generate slice of tags
+  1. split by `,` comma
+  2. trim any whitespaces i.e. "tag1, tag2" <-- tag2 has whitespace prefix
+*/}}
+ {{ $tags := apply (split $tag ",") "trim" "." "\r\n\t "}}
+ {{ $cats := apply (split $cat ",") "trim" "." "\r\n\t " }}
+
+
+<p>{{ $title }}</p>
+<p>{{ $cat }}</p>
+<p>{{ $tag }}</p>
+
+<div class="container bg-light border border-2 rounded p-3">
+  <h5 class="text-center" >{{ $title }}</h5>
+  <ul class="list-unstyled">
+      {{ range where (where .Site.RegularPages ".Params.categories" "intersect" $cats) ".Params.tags" "intersect" $tags }}
+      <li >
+        <a class="text-decoration-none" href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+</div>

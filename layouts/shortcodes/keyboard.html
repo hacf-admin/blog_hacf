@@ -1,0 +1,4 @@
+{{ $kbd := (.Get "kbd") }}
+{{ $kbd := apply (split $kbd ",") "trim" "." "\r\n\t " }}
+
+<kbd>{{ $kbd }}</kbd>

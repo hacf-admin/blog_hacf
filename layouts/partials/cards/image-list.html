@@ -1,0 +1,36 @@
+{{/* check if there is any hero image in the same folder as the markdown file */}}
+{{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,svg,webp}"}}
+
+{{/*  if hero image is specified in the page front-matter, then use that  */}}
+{{ if .Params.image }}
+  {{/*  try to read from the page bundle  */}}
+  {{ $heroImage = .Resources.Get .Params.image }}
+  {{/*  if the image does not exist in the page bundle,try looking in the assets folder  */}}
+{{ end }}
+{{ .Scratch.Set "heroScratch" $heroImage }}
+
+{{/* if hero image is not provided, then use the default hero image */}}
+{{ if not $heroImage }}
+  {{ $heroImage := resources.Get "/images/articles/article.webp"}}
+  {{ .Scratch.Set "heroScratch" $heroImage }}
+{{ end }}
+
+
+{{ $heroImage := .Scratch.Get "heroScratch" }}
+
+{{/* resize hero image. don't resize if the image is an svg */}}
+
+{{ if hasPrefix $heroImage "http" }}
+<img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
+{{ else }}
+  {{ if and $heroImage (ne $heroImage.MediaType.SubType "svg") }}
+    {{ $heroImage := $heroImage.Resize "400x200 webp q100" }}
+    <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"/>
+
+  {{ else }}
+    <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
+  {{ end }}
+{{ end }}
+
+{{/*  return the hero image  */}}
+{{/* return $heroImage.RelPermalink */}}
