@@ -8,23 +8,22 @@ keywords:
   - Argon One Add-on
   - HassOS I2C Configurator
   - add-on ha
-title: Article Test
-date: 2022-11-07
-lastmod:
+date: 21-11-22 14:44
+lastmod: 21-11-2122 14:44
+author: mcfly
 socialshare: true
+title: Article Test
+image: null
+categories:
+  - Add-on
+  - Intégration
 tags:
   - argon
 series:
   - home assistant
-author: mcfly
-#type: 
-categories:
-  - Add-on
-  - Intégration
-hacf: 
+hacf: null
 description: Article de test
-url_off:
-image:
+url_off: null
 ---
 ## Test Keyboard
 {{< keyboard kbd="CTRL, ALT" >}}

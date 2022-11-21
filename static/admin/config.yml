@@ -47,6 +47,9 @@ collections:
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    ###################################
+    ## FILTRE DE L INTERFACE NETLIFYCMS
+    ###################################
     view_filters:
       - label: Posts With Index
         field: title
@@ -65,8 +68,12 @@ collections:
         field: draft
       - label: Catégories
         field: categories
+    ##########################
+    ## DEBUT REDACTION ARTICLE
+    ##########################
     fields: 
       - { label: "Title", name: "title", widget: "string", required: true }
+      - {label: "Brouillon", name: "draft", widget: "boolean", default: true}
       - {
           label: 'Date de publication',
           name: 'date',
@@ -84,7 +91,15 @@ collections:
           format: 'DD-MM-DYY HH:mm',
           required: false
         }
-      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" }
+      - { 
+          label: "Image de l'article", 
+          name: "image", 
+          widget: "image", 
+          required: false,
+          allow_multiple: false,
+          choose_url: false,
+          hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+        }
       - { label: "Description", name: "description", widget: "text",  hint: "Description devant faire entre x et xx caracteres "}
       - {
           label: 'Categorie(s)',
