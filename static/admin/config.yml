@@ -77,20 +77,23 @@ collections:
         widget: "string" 
         required: true
 
-#      - label: "Gallerie"
-#        name: "gallery"
-#        widget: "object"
-#        fields:
-#          - { label: "Dossier", name: "folder", widget: "string" }
-#          - label: "Images Gallerie"
-#            name: "image_gallery"
-#            widget: "image"
-#            choose_url: false
-#            media_folder: "{{field.folder}}/"
-#            allow_multiple: true
-#            media_library:
-#              config:
-#                multiple: true
+      # - label: "Gallerie"
+      #   name: "gallery"
+      #   widget: 'list'
+      #   fields:
+      #     - label: "Dossier"
+      #       name: "dossier"
+      #       widget: "string"
+
+      #     - label: "Images Gallerie"
+      #       name: "image_gallery"
+      #       widget: "image"
+      #       choose_url: false
+      #       allow_multiple: true
+      #       media_folder: "{{fields.dossier}}/"
+      #       media_library:
+      #         config:
+      #           multiple: true
 
       - label: "Brouillon"
         name: "draft"

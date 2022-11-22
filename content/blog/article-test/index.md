@@ -12,9 +12,7 @@ lastmod: 21-11-2122 15:48
 author: mcfly
 socialshare: true
 title: Article Test
-gallery:
-  folder: essai12
-  image_gallery: article-test/installation_home_assistant_raspberrypi_imager.gif
+
 image: null
 categories:
   - Add-on
