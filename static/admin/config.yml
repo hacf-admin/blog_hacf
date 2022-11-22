@@ -77,6 +77,21 @@ collections:
         widget: "string" 
         required: true
 
+#      - label: "Gallerie"
+#        name: "gallery"
+#        widget: "object"
+#        fields:
+#          - { label: "Dossier", name: "folder", widget: "string" }
+#          - label: "Images Gallerie"
+#            name: "image_gallery"
+#            widget: "image"
+#            choose_url: false
+#            media_folder: "{{field.folder}}/"
+#            allow_multiple: true
+#            media_library:
+#              config:
+#                multiple: true
+
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
@@ -329,33 +344,40 @@ collections:
             name: 'liens_utiles'
             widget: 'list'
             fields:
-              - {label: "Nom", name: "title", widget: "string"}
-              - {label: "Url", name: "url", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {
-                  label: "Logo",
-                  name: "logo",
-                  widget: "image",
-                  choose_url: false,
-                  media_folder: "img",
-                  public_folder: "img",
-                  default: "images/author/hacf.webp",
-                  media_library:
-                    [
-                    config:
-                      [
-                        multiple: false
-                      ]  
-                    ]
+              - label: "Nom"
+                name: "title"
+                widget: "string"
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+
+              - label: "Logo"
+                name: "logo"
+                widget: "image"
+                choose_url: false
+                media_folder: "img"
+                public_folder: "img"
+                default: "images/author/hacf.webp"
+                media_library:
+                  config:
+                    multiple: false
                     
-                }
-              - {
-                  label: "Type de contenu",
-                  name: "type",
-                  widget: "select",
-                  multiple: true,
-                  options: ["blog", "videos", "podcast", "documentations", "diy", "autres"]
-                }         
+              - label: "Type de contenu"
+                name: "type"
+                widget: "select"
+                multiple: true
+                options:
+                - blog
+                - videos
+                - podcast
+                - documentations
+                - diy
+                - autres
 
       - file: "content/pages/association/index.md"
         label: "Association"
@@ -544,20 +566,22 @@ collections:
         public_folder: "images/author"
         default: "images/author/hacf.webp"
         media_library:
-            [
-            config:
-              [
-                multiple: false
-              ]  
-            ]
+          config:
+            multiple: false
+
       - label: "Réseaux Sociaux"
         name: "social_network"
         widget: "object"
         fields:
-          [
-            { label: "Profil Facebook", name: "facebook", widget: "string", required: false },
-            { label: "Profil Twitter", name: "twitter", widget: "string", required: false }
-          ]
+          - label: "Profil Facebook"
+            name: "facebook"
+            widget: "string"
+            required: false
+          - label: "Profil Twitter"
+            name: "twitter"
+            widget: "string"
+            required: false 
+
 # ARCHIVE pour les sections du dossier data
 #          - {
 #              label: "Section",
