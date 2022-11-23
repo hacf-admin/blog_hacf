@@ -77,6 +77,10 @@ Ceci est un fork du dépot officiel de [Eric Murphy](https://github.com/ericmurp
 * Ameliorer le .gitignore https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore
 * [ ] **PAS POSSIBLE AVEC DEPLOIEMENT VIA NETLIFY** *il le fait tout seul ?* Ajouter la compression des fichiers js
 
+* [X] **Config NetliflyCMS Article** Ajouter un niveau
+* * [ ] Integré dans le template
+* [X] **Config NetliflyCMS Article** Ajouter type d'installation
+* * [ ] Integré dans le template
 
 A explorer :
 https://discourse.gohugo.io/t/how-to-get-the-path-to-the-assets-directory-without-hardcoding/28217/3

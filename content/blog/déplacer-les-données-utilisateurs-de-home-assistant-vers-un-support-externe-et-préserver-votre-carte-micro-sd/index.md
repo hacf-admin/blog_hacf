@@ -1,32 +1,33 @@
 ---
 draft: false
+level: Débutant
 url_haoff: ""
 authors:
   - mcfly
   - pulpy
+date: 2022-09-19
+lastmod: 23-11-2322 16:11
+author: mcfly
+socialshare: true
 title: Déplacer les données utilisateurs de Home Assistant vers un support
   externe et préserver votre carte Micro SD
-date: 2022-09-19
-lastmod:
 image: ""
 description: "Préserver votre carte Micro SD en déplaçant les données
   utilisateurs de Home Assistant vers un support externe. "
-socialshare: true
+type_install:
+  - ha-os
 categories:
   - Installation
+series:
+  - Débuter avec Home Assistant
 tags:
   - ha-os
   - micro-sd
   - raspberry-pi
   - tag1
   - tag2
-series:
-  - Débuter avec Home Assistant
-author: mcfly
 ---
 Pour préserver la carte Micro SD, tout en gardant un système rapide ou si la taille de votre mémoire interne devient trop juste, Home Assistant permet de déplacer les données utilisateurs sur un support externe (il peut être interne avec un boitier adapté).
-
-
 
 ![Image du Schéma de principe sur le stockage des données vers un support externe](img/imagebf_image_usbdatadisk.png "Schéma de principe sur le stockage des données vers un support externe.")
 
@@ -39,11 +40,11 @@ Nous allons en conséquence voir comment effectuer cette manipulation.
 * Sélectionner le disque,
 * Cliquer sur `Déplacer`.
 
-**IMAGE ANIMEE DE LA DEMARCHE**
 
-Home Assistant doit redémarrer. Après avoir redémarré, vos données seront maintenant sur le disque choisi.
 
-Vos données seront à présent sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
+![](img/deplacer_donnees_utilisateur_home_assistant.gif)
+
+Après avoir redémarré, vos données seront sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
 
 ## Conclusion.
 

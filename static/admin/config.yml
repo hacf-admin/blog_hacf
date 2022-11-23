@@ -128,6 +128,26 @@ collections:
         widget: "text"
         hint: "Description devant faire entre x et xx caracteres"
 
+      - label: 'Niveau'
+        name: 'level'
+        widget: 'select'
+        multiple: false
+        hint: "**Débutant :** Uniquement via l'UI, **Intermediaire :** Peut necessiter du codage a la main et/ou fait appel a des Add_ns/Intégrations externes **Avancé : Fait appel a du code; template, appDeamon, etc**"
+        options: 
+        - Débutant
+        - Intermédiaire
+        - Avancé
+
+      - label: "Type d'installation"
+        name: 'type_install'
+        widget: 'select'
+        multiple: true
+        hint: "HA OS, HA Container, HA Core"
+        options: 
+        - ha-os
+        - ha-container
+        - ha-core
+
       - label: 'Categorie(s)'
         name: 'categories'
         widget: 'select'
@@ -159,11 +179,11 @@ collections:
         multiple: false
         hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
 
-      - label: "Liens vers sujet du forum"
+      - label: "Liens vers sujet du forum HACF (FR)"
         name: "url_hacf"
         widget: "string"  
         required: false
-      - label: "Liens vers sujet du forum"
+      - label: "Liens vers sujet du forum Officiel (EN)"
         name: "url_haoff"
         widget: "string"
         required: false
