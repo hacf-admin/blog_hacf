@@ -4,9 +4,21 @@
 {{ end }}
 <section class="py-5 bg-light">
   <div class="container">
+    <p>Par date ?</p>
     <h2 class="text-center text-secondary mb-5">{{ .title }}</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
       {{ range first $nbPost (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
+        {{ partial "cards/last-post" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+<section class="py-5 bg-light">
+  <div class="container">
+    <p>Par date de modif ?</p>
+    <h2 class="text-center text-secondary mb-5">{{ .title }}</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      {{ range first $nbPost (where site.RegularPages.ByLastmod.Reverse "Type" "in" site.Params.mainSections )}}
         {{ partial "cards/last-post" . }}
       {{ end }}
     </div>

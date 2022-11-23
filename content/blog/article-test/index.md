@@ -1,5 +1,6 @@
 ---
 draft: false
+level: Débutant
 authors:
   - mcfly
 keywords:
@@ -7,13 +8,14 @@ keywords:
   - Argon One Add-on
   - HassOS I2C Configurator
   - add-on ha
-date: 21-11-22 15:48
-lastmod: 21-11-2122 15:48
+date: 23-11-22 23:59
+lastmod: 24-11-2422 00:01
 author: mcfly
 socialshare: true
 title: Article Test
-
 image: null
+type_install:
+  - ha-os
 categories:
   - Add-on
   - Intégration
