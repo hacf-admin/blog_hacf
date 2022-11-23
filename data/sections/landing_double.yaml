@@ -21,39 +21,39 @@ button:
 - name: 'En savoir plus'
   url: /pages/association
 - name: 'Adhérer'
-  url: "https://adherer.hacf.fr"
+  url: "http://adherer.hacf.fr"
 
 socialLinks:
 - name: Email
   icon: "far fa-envelope"
-  url: "https://contact.hacf.fr"
+  url: "http://contact.hacf.fr"
 - name: Site
-  url: "https://www.hacf.fr/"
+  url: "https://hacf.fr/"
   icon: "fa fa-globe"
 - name: Forum
   icon: "fab fa-discourse"
   url: "https://forum.hacf.fr"
 - name: Discord
   icon: "fab fa-discord"
-  url: "https://discord.hacf.fr"
+  url: "http://discord.hacf.fr"
 - name: Groupe Facebook
   icon: "fab fa-facebook-messenger"
-  url: "https://groupe-facebook.hacf.fr"
+  url: "http://groupe-facebook.hacf.fr"
 - name: Github
   icon: "fab fa-github"
-  url: "https://github.hacf.fr"
+  url: "http://github.hacf.fr"
 - name: YouTube
   icon: "fab fa-youtube"
-  url: "https://youtube.hacf.fr"
+  url: "http://youtube.hacf.fr"
 - name: Page Facebook
   icon: "fab fa-facebook-square"
-  url: "https://page-facebook.hacf.fr"
+  url: "http://page-facebook.hacf.fr"
 - name: Twitter
   icon: "fab fa-twitter"
-  url: "https://twitter.hacf.fr"
+  url: "http://twitter.hacf.fr"
 - name: Facebook
   icon: "fab fa-facebook"
-  url: "https://facebook.hacf.fr"
+  url: "http://facebook.hacf.fr"
 
   
   
