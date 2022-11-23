@@ -2,6 +2,7 @@ baseURL = 'http://dev.hacf.fr'
 languageCode = 'fr-fr'
 title = 'HACF'
 
+#theme =
 paginate = 6
 
 enableRobotsTXT = true
