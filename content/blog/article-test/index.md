@@ -160,6 +160,9 @@ X^2^
 ![Image SVG](img/blueprint_import.svg)
 
 
+![Image Gif animé](img/image-png-animé.gif)
+
+
 ![Image Gif Animé 2](img/imge_gif_animé.gif)
 
 ![Image PNG](img/installation_detection_automatique_materiels.png)
@@ -167,3 +170,4 @@ X^2^
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 
 ![Image PNG](img/profil_utilisateur.png)
+
