@@ -40,9 +40,7 @@ Nous allons en conséquence voir comment effectuer cette manipulation.
 * Sélectionner le disque,
 * Cliquer sur `Déplacer`.
 
-
-
-![](img/deplacer_donnees_utilisateur_home_assistant.gif)
+![Déplacer ses données vers un autre support](img/deplacer_donnees_utilisateur_home_assistant.gif "Déplacer ses données vers un autre support")
 
 Après avoir redémarré, vos données seront sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
 
