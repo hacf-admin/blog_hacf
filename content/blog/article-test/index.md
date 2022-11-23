@@ -1,6 +1,5 @@
 ---
-draft: true
-article_ha: true
+draft: false
 authors:
   - mcfly
 keywords:
@@ -8,19 +7,20 @@ keywords:
   - Argon One Add-on
   - HassOS I2C Configurator
   - add-on ha
-date: 21-11-22 14:44
-lastmod: 21-11-2122 14:44
+date: 21-11-22 15:48
+lastmod: 21-11-2122 15:48
 author: mcfly
 socialshare: true
 title: Article Test
+
 image: null
 categories:
   - Add-on
   - Intégration
-tags:
-  - argon
 series:
   - home assistant
+tags:
+  - argon
 hacf: null
 description: Article de test
 url_off: null
@@ -159,7 +159,9 @@ X^2^
 
 ![Image SVG](img/blueprint_import.svg)
 
+
 ![Image Gif animé](img/image-png-animé.gif)
+
 
 ![Image Gif Animé 2](img/imge_gif_animé.gif)
 
@@ -168,3 +170,4 @@ X^2^
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 
 ![Image PNG](img/profil_utilisateur.png)
+
