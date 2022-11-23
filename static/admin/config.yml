@@ -76,7 +76,7 @@ collections:
         name: "title"
         widget: "string" 
         required: true
-
+      - {label: "Type", name: "type", widget: "hidden", default: "post"}
       # - label: "Gallerie"
       #   name: "gallery"
       #   widget: 'list'
@@ -104,15 +104,15 @@ collections:
         name: 'date'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
-        time_format: 'HH:mm'
-        format: 'DD-MM-YY HH:mm'
+        #time_format: 'HH:mm'
+        format: 'YY-MM-DD'
 
       - label: 'Date de modification'
-        name: 'lastmod'
+        name: 'date'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
-        time_format: 'HH:mm'
-        format: 'DD-MM-DYY HH:mm'
+        #time_format: 'HH:mm'
+        format: 'YY-MM-DD'
         required: false
 
       - label: "Image de l'article"
@@ -234,7 +234,9 @@ collections:
         name: "title"
         widget: "string" 
         required: true
-
+      
+      - {label: "Type", name: "type", widget: "hidden", default: "news"}
+      
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
@@ -244,15 +246,15 @@ collections:
         name: 'date'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
-        time_format: 'HH:mm'
-        format: 'DD-MM-YY HH:mm'
+        #time_format: 'HH:mm'
+        format: 'YY-MM-DD'
 
       - label: 'Date de modification'
-        name: 'lastmod'
+        name: 'date'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
-        time_format: 'HH:mm'
-        format: 'DD-MM-DYY HH:mm'
+        #time_format: 'HH:mm'
+        format: 'YY-MM-DD'
         required: false
 
       - label: "Image de l'article"
@@ -319,6 +321,8 @@ collections:
             name: "title"
             widget: "string" 
             required: true
+          
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
 
           - label: "Brouillon"
             name: "draft"
@@ -329,15 +333,15 @@ collections:
             name: 'date'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
-            time_format: 'HH:mm'
-            format: 'DD-MM-YY HH:mm'
+            #time_format: 'HH:mm'
+            format: 'YY-MM-DD'
 
           - label: 'Date de modification'
-            name: 'lastmod'
+            name: 'date'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
-            time_format: 'HH:mm'
-            format: 'DD-MM-DYY HH:mm'
+            #time_format: 'HH:mm'
+            format: 'YY-MM-DD'
             required: false
 
           - label: "Image de l'article"
@@ -411,6 +415,8 @@ collections:
             widget: "string" 
             required: true
 
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
+
           - label: "Brouillon"
             name: "draft"
             widget: "boolean"
@@ -420,15 +426,15 @@ collections:
             name: 'date'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
-            time_format: 'HH:mm'
-            format: 'DD-MM-YY HH:mm'
+            #time_format: 'HH:mm'
+            format: 'YY-MM-DD'
 
           - label: 'Date de modification'
-            name: 'lastmod'
+            name: 'date'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
-            time_format: 'HH:mm'
-            format: 'DD-MM-DYY HH:mm'
+            #time_format: 'HH:mm'
+            format: 'YY-MM-DD'
             required: false
 
           - label: "Image de l'article"
@@ -463,6 +469,8 @@ collections:
             widget: "string" 
             required: true
 
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
+
           - label: "Brouillon"
             name: "draft"
             widget: "boolean"
@@ -472,15 +480,15 @@ collections:
             name: 'date'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
-            time_format: 'HH:mm'
-            format: 'DD-MM-YY HH:mm'
+            #time_format: 'HH:mm'
+            format: 'YY-MM-DD'
 
           - label: 'Date de modification'
-            name: 'lastmod'
+            name: 'date'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
-            time_format: 'HH:mm'
-            format: 'DD-MM-DYY HH:mm'
+            #time_format: 'HH:mm'
+            format: 'YY-MM-DD'
             required: false
 
           - label: "Image de l'article"
@@ -515,6 +523,8 @@ collections:
           widget: "string" 
           required: true
 
+        - {label: "Type", name: "type", widget: "hidden", default: "page"}
+        
         - label: "Brouillon"
           name: "draft"
           widget: "boolean"
@@ -524,15 +534,15 @@ collections:
           name: 'date'
           widget: 'datetime'
           date_format: 'DD-MM-YY'
-          time_format: 'HH:mm'
-          format: 'DD-MM-YY HH:mm'
+          #time_format: 'HH:mm'
+          format: 'YY-MM-DD'
 
         - label: 'Date de modification'
-          name: 'lastmod'
+          name: 'date'
           widget: 'datetime'
           date_format: 'DD-MM-YY'
-          time_format: 'HH:mm'
-          format: 'DD-MM-DYY HH:mm'
+          #time_format: 'HH:mm'
+          format: 'YY-MM-DD'
           required: false
 
         - label: "Image de l'article"

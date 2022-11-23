@@ -23,23 +23,23 @@ buttons:
 
 # your projects
 depots:
-- name: Awesome FR
-  #logo: /images/sections/projects/awesome.png
-  role: Initiateur
-  timeline: "Avril 2020 - Présent"
-  repo: https://github.com/hacf-fr/awesome-francophone-home-assistant # If your project is a public repo on GitHub, then provide this link. it will show star count.
-  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Liste de ressources francophones super utiles à propos de Home Assistant.
-  tags: ["Autres", "Awesome"]
+# - name: Awesome FR
+#   #logo: /images/sections/projects/awesome.png
+#   role: Initiateur
+#   timeline: "Avril 2020 - Présent"
+#   repo: https://github.com/hacf-fr/awesome-francophone-home-assistant # If your project is a public repo on GitHub, then provide this link. it will show star count.
+#   #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+#   summary: Liste de ressources francophones super utiles à propos de Home Assistant.
+#   tags: ["Autres", "Awesome"]
 
-- name: Guide du Développeurs
-  #logo: /images/sections/projects/tensorflow.png
-  role: Initiateur
-  timeline: "Octobre 2020 - Présent"
-  repo: https://github.com/hacf-fr/homeassistant-guide-du-developpeur
-  url: "https://developpeurs.hacf.fr/"
-  summary: Un guide en français pour contribuer au projet Home Assistant 
-  tags: ["Autres", "Guide"]
+# - name: Guide du Développeurs
+#   #logo: /images/sections/projects/tensorflow.png
+#   role: Initiateur
+#   timeline: "Octobre 2020 - Présent"
+#   repo: https://github.com/hacf-fr/homeassistant-guide-du-developpeur
+#   url: "https://developpeurs.hacf.fr/"
+#   summary: Un guide en français pour contribuer au projet Home Assistant 
+#   tags: ["Autres", "Guide"]
 
 - name: hassRenaultZE
   #logo: /images/sections/projects/toha.png
