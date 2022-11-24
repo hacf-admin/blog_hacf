@@ -1,6 +1,5 @@
 ---
 draft: false
-visibleInCMS: true
 level: Débutant
 authors:
   - mcfly
@@ -9,6 +8,7 @@ keywords:
   - Argon One Add-on
   - HassOS I2C Configurator
   - add-on ha
+visibleInCMS: true
 date: 23-11-22 23:59
 lastmod: 24-11-2422 00:01
 author: mcfly
