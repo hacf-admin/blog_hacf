@@ -32,21 +32,21 @@ collections:
 
 ###############################################
 ###############################################
-# COLLECTION ARTICLE BLOG
+# COLLECTION ARTICLE BLOG dans dossier content/blog
 ###############################################
 ###############################################
   - name: "blog" # Used in routes, e.g., /admin/collections/post
     #layout: blog  # Si layout personalisé
     label: "Articles / Tutoriels" # Used in the UI
     label_singular: 'article' # Used in the UI, ie: "New Post"
-    description: >
-      Ajouter un article a la communauté.
+    description: 'Ajouter un article a la communauté.'
     folder: "content/blog" # Dossier ou sont stocké les articles
     path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
     #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    filter: {field: visibleInCMS, value: true}
     ###################################
     ## FILTRE DE L INTERFACE NETLIFYCMS
     ###################################
@@ -77,6 +77,7 @@ collections:
         widget: "string" 
         required: true
       - {label: "Type", name: "type", widget: "hidden", default: "post"}
+      - {name: visibleInCMS, widget: hidden, default: true }
       # - label: "Gallerie"
       #   name: "gallery"
       #   widget: 'list'
@@ -191,11 +192,12 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+        required: true
 
     
 ###############################################
 ###############################################
-# COLLECTION NEWS
+# COLLECTION NEWS dans dossier content/news
 ###############################################
 ###############################################
 
@@ -203,14 +205,14 @@ collections:
     #layout: blog  # Si layout personalisé
     label: "Actualités" # Used in the UI
     label_singular: 'article' # Used in the UI, ie: "New Post"
-    description: >
-      Ajouter une actualité domotique ou sur Home Assistant.
+    description: 'Ajouter une News/Actualité a la communauté.'
     folder: "content/news" # Dossier ou sont stocké les articles
     path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
     #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    filter: {field: visibleInCMS, value: true}
     view_filters:
       - label: Posts With Index
         field: title
@@ -236,7 +238,8 @@ collections:
         required: true
       
       - {label: "Type", name: "type", widget: "hidden", default: "news"}
-      
+      - {name: visibleInCMS, widget: hidden, default: true }
+
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
@@ -298,8 +301,127 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+###############################################
 
-      
+# COLLECTION ENTETE NEWS & POST Fichiers _index.md
+
+###############################################
+  - name: "head_post"
+    #layout: blog  # Si layout personalisé
+    label: "Entete index des Blog et Actualites"
+    label_singular: '_index' # Used in the UI, ie: "New Post"
+    create: false
+    files:
+      - file: "content/blog/_index.md"
+        label: "Index des articles de Blog"
+        name: "indexPost"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Titre Bouton" 
+            name: "btnTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du Bouton" 
+            name: "btnDescription"
+            widget: "string" 
+            required: false
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icones"
+                name: "icons"
+                widget: "text"
+                hint: 'format "fa-solid fa-server"' 
+
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+            required: false
+
+      - file: "content/news/_index.md"
+        label: "Index des articles Actualités"
+        name: "indexNews"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Titre Bouton" 
+            name: "btnTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du Bouton" 
+            name: "btnDescription"
+            widget: "string" 
+            required: false
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icones"
+                name: "icons"
+                widget: "text"
+                hint: 'format "fa-solid fa-server"' 
+
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+            required: false
+
 ###############################################
 
 # COLLECTION PAGES

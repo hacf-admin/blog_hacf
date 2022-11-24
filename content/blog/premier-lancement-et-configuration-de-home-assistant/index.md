@@ -1,6 +1,7 @@
 ---
 title: Premier lancement et configuration de Home Assistant
 draft: false
+visibleInCMS: true
 date: 2022-10-07 
 lastmod:
 image: "img/imagebf_image_hero-1-.jpg"
