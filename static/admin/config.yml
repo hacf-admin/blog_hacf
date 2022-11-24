@@ -338,6 +338,8 @@ collections:
             hint: "Description devant faire entre x et xx caracteres"
             required: true
 
+          - {label: "Type", name: "type", widget: "hidden", default: "post"}
+
           - label: "Brouillon"
             name: "draft"
             widget: "boolean"
@@ -392,6 +394,8 @@ collections:
             widget: "text"
             hint: "Description devant faire entre x et xx caracteres"
             required: true
+
+          - {label: "Type", name: "type", widget: "hidden", default: "news"}
 
           - label: "Brouillon"
             name: "draft"

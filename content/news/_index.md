@@ -2,6 +2,7 @@
 title: Nouvelles & Actualités
 description: Les nouvelles de HACF, de Home Assistant et de la domotique en generale.
 draft: false
+type: news
 visibleInCMS: false
 btnTitle: Nouveau sur Home Assistant ?
 btnDescription: Articles indispensable pour bien se lancer avec Home Assistant

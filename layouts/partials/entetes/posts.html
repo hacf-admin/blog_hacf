@@ -1,0 +1,17 @@
+{{ if .Params.buttons }}
+  <div class="container p-5">
+    <h5 class="text-center">{{ .Params.btnTitle }}</h5>
+    <p class="text-center font-italic">{{ .Params.btnDescription }}</p>
+    <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+    {{ range sort .Params.buttons "weight" }}
+      <div class="col">
+        <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icons }}"></i> {{ .name }}</a>
+      </div>  
+    {{ end }}
+    </div>
+  </div>
+
+  <div class="container">
+    <hr class="divider">
+  </div>
+{{ end }}
