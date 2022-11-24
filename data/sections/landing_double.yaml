@@ -21,7 +21,7 @@ button:
 - name: 'En savoir plus'
   url: /pages/association
 - name: 'Adhérer'
-  url: "http://adherer.hacf.fr"
+  url: "http://adhesion.hacf.fr"
 
 socialLinks:
 - name: Email
