@@ -38,7 +38,7 @@ collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/post
     #layout: blog  # Si layout personalisé
     label: "Articles / Tutoriels" # Used in the UI
-    label_singular: 'article' # Used in the UI, ie: "New Post"
+    label_singular: 'Articles' # Used in the UI, ie: "New Post"
     description: 'Ajouter un article a la communauté.'
     folder: "content/blog" # Dossier ou sont stocké les articles
     path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
@@ -47,27 +47,34 @@ collections:
     public_folder: "img/"
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
     filter: {field: visibleInCMS, value: true}
+    sortable_fields: ['title','date', 'lastmod']
     ###################################
     ## FILTRE DE L INTERFACE NETLIFYCMS
     ###################################
     view_filters:
-      - label: Posts With Index
-        field: title
-        pattern: 'This is post #'
-      - label: Posts Without Index
-        field: title
-        pattern: front matter post
       - label: Brouillon
         field: draft
         pattern: true
+      - label: Débutant
+        field: level
+        pattern: 'Débutant'
+      - label: Intérmerdiare
+        field: level
+        pattern: 'Intermédiaire'
+      - label: Avancé
+        field: level
+        pattern: 'Avancé'
+
     view_groups:
       - label: Par années
         field: date
         pattern: \d{4}
-      - label: Brouillons
-        field: draft
+      - label: Séries
+        field: series
       - label: Catégories
         field: categories
+      - label: Auteur
+        field: authors
     ##########################
     ## DEBUT REDACTION ARTICLE
     ##########################
@@ -78,7 +85,7 @@ collections:
         required: true
       - {label: "Type", name: "type", widget: "hidden", default: "post"}
       - {name: visibleInCMS, widget: hidden, default: true }
-
+      
 
       # - label: "Gallerie"
       #   name: "gallery"
@@ -208,7 +215,7 @@ collections:
   - name: "news" # Used in routes, e.g., /admin/collections/post
     #layout: blog  # Si layout personalisé
     label: "Actualités" # Used in the UI
-    label_singular: 'article' # Used in the UI, ie: "New Post"
+    label_singular: 'News' # Used in the UI, ie: "New Post"
     description: 'Ajouter une News/Actualité a la communauté.'
     folder: "content/news" # Dossier ou sont stocké les articles
     path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
