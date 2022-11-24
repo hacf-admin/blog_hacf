@@ -1,8 +1,9 @@
 ---
 title: "Home Assistant Core 2022.8 ! : Répare le"
 draft: false
-date: 15-08-22 11:17
-lastmod: 2022-08-25 11:17
+visibleInCMS: true
+date: 2022-08-15
+lastmod: 2022-08-25
 image: 
 description: Sortie de la version 2022.8 de Home Assistant, traduction française
   de la communauté Francophone HACF

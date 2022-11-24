@@ -1,5 +1,6 @@
 ---
 draft: false
+visibleInCMS: true
 level: Débutant
 url_haoff: ""
 authors:

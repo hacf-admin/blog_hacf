@@ -1,5 +1,6 @@
 ---
 draft: false
+visibleInCMS: true
 date: 2022-09-30
 lastmod: 
 author: argonaute

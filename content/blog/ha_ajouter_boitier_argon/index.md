@@ -1,5 +1,6 @@
 ---
 draft: false
+visibleInCMS: true
 article_ha: true
 authors:
   - mcfly

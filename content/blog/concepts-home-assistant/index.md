@@ -2,6 +2,7 @@
 title: Architecture et concepts Home Assistant
 date: 2022-10-09
 draft: false
+visibleInCMS: true
 lastmod: 
 image: img/accueil.png
 description: Certes, il est intéressant de commencer à "jouer" avec Home
