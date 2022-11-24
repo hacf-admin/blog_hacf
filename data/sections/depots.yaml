@@ -1,7 +1,7 @@
 section:
   name: Dépots HACF
   id: depots
-  weight: 2
+  weight: 3
   active: true
   template: sections/depots.html
 # section information
