@@ -108,7 +108,7 @@ collections:
         format: 'YY-MM-DD'
 
       - label: 'Date de modification'
-        name: 'date'
+        name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
@@ -250,7 +250,7 @@ collections:
         format: 'YY-MM-DD'
 
       - label: 'Date de modification'
-        name: 'date'
+        name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
@@ -337,7 +337,7 @@ collections:
             format: 'YY-MM-DD'
 
           - label: 'Date de modification'
-            name: 'date'
+            name: 'lastmod'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
             #time_format: 'HH:mm'
@@ -395,7 +395,7 @@ collections:
                     multiple: false
                     
               - label: "Type de contenu"
-                name: "type"
+                name: "type_content"
                 widget: "select"
                 multiple: true
                 options:
@@ -430,7 +430,7 @@ collections:
             format: 'YY-MM-DD'
 
           - label: 'Date de modification'
-            name: 'date'
+            name: 'lastmod'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
             #time_format: 'HH:mm'
@@ -484,7 +484,7 @@ collections:
             format: 'YY-MM-DD'
 
           - label: 'Date de modification'
-            name: 'date'
+            name: 'lastmod'
             widget: 'datetime'
             date_format: 'DD-MM-YY'
             #time_format: 'HH:mm'
@@ -538,7 +538,7 @@ collections:
           format: 'YY-MM-DD'
 
         - label: 'Date de modification'
-          name: 'date'
+          name: 'lastmod'
           widget: 'datetime'
           date_format: 'DD-MM-YY'
           #time_format: 'HH:mm'
