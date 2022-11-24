@@ -3,8 +3,8 @@ title: "Release Note : Home Assistant Core Version 2021.9.X" # Titre article exp
 date: 2022-03-03 # Date format YYYY-MM-DD
 lastmod: 2022-03-27 #Date format YYYY-MM-DD   Si rien n'est rentré il prendra la modification GIT.
 draft: false
-#layout: pages 
-type: # Types existant : pages; news; awesome; guidedev;etc. Laisser vide pour les articles
+visibleInCMS: true
+type: news # Types existant : pages; news; awesome; guidedev;etc. Laisser vide pour les articles
 
 description: "Traduction de la mise à jour de Home Assistant en version 2021.9.X" # Description du sujet.
 # hero: /path/image.ext # Recherche un fichier hero.(webp;jpg;png;svg) a la racine du dossier OU si un hero est defini ici SINON il prend un hero par defaut.
