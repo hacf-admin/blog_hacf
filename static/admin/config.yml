@@ -78,6 +78,8 @@ collections:
         required: true
       - {label: "Type", name: "type", widget: "hidden", default: "post"}
       - {name: visibleInCMS, widget: hidden, default: true }
+
+
       # - label: "Gallerie"
       #   name: "gallery"
       #   widget: 'list'
@@ -89,12 +91,14 @@ collections:
       #     - label: "Images Gallerie"
       #       name: "image_gallery"
       #       widget: "image"
+      #       slug: {{fields.name}}
       #       choose_url: false
       #       allow_multiple: true
-      #       media_folder: "{{fields.dossier}}/"
+      #       media_folder: "{{slug}}/"
       #       media_library:
       #         config:
       #           multiple: true
+
 
       - label: "Brouillon"
         name: "draft"
