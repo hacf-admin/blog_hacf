@@ -14,7 +14,8 @@ tags:
   - statuts
   - reglement
 ---
-AFFICHER UN SHORTCODE OU PARTIAL 3 BOUTONS
+
+{{< btnAsso >}}
 
 
 >L'association **HACF** est née de l'envie de réunir une **Communauté Francophone autour de Home ssistant**
@@ -31,7 +32,8 @@ Enfin, la solution est fédérée par une société qui garantit sa stabilité e
 
 ## Historique.
 
-AFFICHER UN SHORTCODE OU PARTIAL HISTORIQUE
+ A GARDER ????  peut etre sous forme de liste ?
+ AFFICHER UN SHORTCODE OU PARTIAL HISTORIQUE
 
 ## L'association.
 L'**association** s'est avérée comme un choix évident dès le début de l'aventure HACF, car elle permet de **pérenniser** la communauté contre tout départ d'un administrateur ou d'un fondateur.
@@ -56,11 +58,11 @@ Le bureau actuel est composé de :
 * Olivier (@Pozzi) en secrétaire et Jean-Baptiste (@jybi89) en adjoint.
 
 
-Les statuts sont disponibles [ici](/pages/statuts) et le règlement [ici](/pages/reglement). L'**adhésion** est de seulement **2 euros**.
+Les statuts sont disponibles [ici](/statuts) et le règlement [ici](/reglement). L'**adhésion** est de seulement **2 euros**.
 
 >Bien entendu, une association loi 1901 comme "Communauté Francophone autour de Home Assistant" ne permet pas de faire de bénéfices ou d'enrichir une quelconque personne.
 
-BOUTON ADHERER
+{{< button "Adhérer" "http://adherer.hacf.fr" "fas fa-ribbon" >}}
 
 ## Financement.
 Comme vous vous en doutez, la création, le maintien et l'évolution d'une communauté a un coût. Si celui-ci a été entièrement supporté par les membres fondateurs la première année, ils sont, depuis, complètement assumé par **votre adhésion à l'association, vos dons et liens affiliés**.
@@ -82,20 +84,20 @@ Donc **solution NON retenue**.
 Les cotisations et les dons vous permettent d’être reconnaissants envers le travail de la communauté. Pour cela nous avons retenus deux plateformes parmi plusieurs.
 
 #### Paypal.me
-De part sa renommée et compatibilité, Paypal via son service [PayPal.me](https://paypal.hacf.fr/) nous a semblé être une plateforme pertinente.
+De part sa renommée et compatibilité, Paypal via son service [PayPal.me](http://paypal.hacf.fr/) nous a semblé être une plateforme pertinente.
 * Pas de commissions, pour vous comme pour nous.
 * Permet de payer directement les prestataires sans passer par un transfert qui peut, lui aussi, amputer de nouveau une partie des dons.
 
-BOUTON DONS PAYPAL
+{{< button "Don" "http://don-paypal.hacf.fr" "fab fa-paypal">}}
 
 #### Hello Asso
 Suite à la création de l'association, nous avons cherché un service pour gérer les adhésions.
 Il s'avère que **Hello Asso** propose d'autres services comme la possibilité de recevoir des dons.
 * Pas de commissions, pour vous comme pour nous.
-* Permet de faire un don pendant l'[adhésion](https://adhesion.hacf.fr/) ou alors [indifféremment](https://dons.hacf.fr/).
+* Permet de faire un don pendant l'[adhésion](http://adhesion.hacf.fr/) ou alors [indifféremment](http://dons.hacf.fr/).
 
 
-BOUTON DONC ASSOCIATION HELLO ASSO
+{{< button "Don" "http://don.hacf.fr" "fas fa-hand-holding-dollar">}}
 
 ### Liens affiliés
 Le principe d'un **lien affilié** est de reverser un pourcentage de votre panier si vous cliquer sur un lien à travers une plateforme compatible. Ils peuvent être utilisés pour n'importe quel type d'achat et pas seulement pour du matériel domotique.
@@ -109,7 +111,7 @@ Deux enseignes bien connues ont été retenues : **Amazon** et **AliExpress**. E
 #### Amazon
 Ce géant du e-commerce international propose des produits qui arriveront rapidement avec un service client très satisfaisant, mais en contrepartie le/les produits seront plus cher.
 
-BOUTON LIEN AFFILIE AMAZON
+{{< button "Don" "http://amazon.hacf.fr" "fab fa-amazon">}}
 
 #### Aliexpress
 Ce géant du e-commerce des marchés asiatiques vous permettra d’acheter à des prix défiants toute concurrence, mais la livraison sera plus longue entre 15 et 60 jours.
@@ -117,25 +119,25 @@ Cette enseigne est très intéressante dans les projets DIY avec des prix de pi�
 
 >Il existe la livraison en 10 jours ouvrés pour des prix a peine plus chers.
 
-BOUTON LIEN AFFILIE ALIEXPRESS
+{{< button "Don" "http://aliexpress.hacf.fr" "fa-brands fa-alipay">}}
 
 ### Les partenariats
 Nous espérons pouvoir à terme mettre en place des partenariats avec des marques ou des enseignes permettant de présenter du matériel pouvant être intégré à Home Assistant, mais aussi proposer des bons de réductions à nos adhérents.
 
 Si le matériel est donné à la communauté, alors il sera mis dans un jeu concours pour les membres de la communauté au cours de l'année.
 
->Si vous êtes une enseigne ou un entreprise et êtes intéressés à nous envoyer, que ce soit en don ou en prêt, du matériel à tester, alors [contactez-nous](https://contact.hacf.fr).
+>Si vous êtes une enseigne ou un entreprise et êtes intéressés à nous envoyer, que ce soit en don ou en prêt, du matériel à tester, alors [contactez-nous](http://contact.hacf.fr).
 
 ## Participer, Contribuer, Adhérer.
 Voici les trois mots à retenir pour une communauté grandissante et pleine de volonté.
 
 ### Participer.
 C'est grâce a vos participations que nos médias se remplissent et attirent de plus en plus de monde.
-Les trois principaux médias sont le [Forum](https://forum.hacf.fr), le [groupe Facebook](https://groupe-facebook.hacf.fr/) et le [Discord](https://discord.hacf.fr/). Nous avons d'autres médias en préparation, et recherchons toujours des volontaires pour les animer et les abonder en contenu.
+Les trois principaux médias sont le [Forum](https://forum.hacf.fr), le [groupe Facebook](http://groupe-facebook.hacf.fr/) et le [Discord](http://discord.hacf.fr/). Nous avons d'autres médias en préparation, et recherchons toujours des volontaires pour les animer et les abonder en contenu.
 
 ### Contribuer.
 Contribuer financièrement ?? Et non, pas seulement et de loin. La **contribution** peut être en **temps**, en **énergie** et en **idées**.
-Tout ce qui peut faire avancer la communauté est bienvenue : que cela soit pour aider a **modérer**, a **animer** nos réseaux sociaux (par exemple), **partager** des news liées a la domotique ou a Home Assistant, tenir à jour les tutoriels (oui Home Assistant évolue trop vite) et bien d'**autre choses**. Alors n’hésitez pas [contacter-nous](https://contact.hacf.fr) et proposez vos idées ou votre candidature.
+Tout ce qui peut faire avancer la communauté est bienvenue : que cela soit pour aider a **modérer**, a **animer** nos réseaux sociaux (par exemple), **partager** des news liées a la domotique ou a Home Assistant, tenir à jour les tutoriels (oui Home Assistant évolue trop vite) et bien d'**autre choses**. Alors n’hésitez pas [contacter-nous](http://contact.hacf.fr) et proposez vos idées ou votre candidature.
 
 >Pour le reste, nous sommes tous concernés. A nous de faire ce que vous voulez de cette communauté. Alors n’hésitez pas, **il n’y a pas de bonne volonté inutile**.
 
@@ -143,4 +145,4 @@ D’autres choses arriveront encore avec le temps et en fonction de vos suggesti
 
 Il y a encore beaucoup de choses à dire et/ou à faire sur le fonctionnement et nous comptons sur vous.
 
-AFFICHER UN SHORTCODE OU PARTIAL 3 BOUTONS
+{{< btnAsso >}}

@@ -19,7 +19,7 @@ summary:
 
 button:
 - name: 'En savoir plus'
-  url: /pages/association
+  url: /association
 - name: 'Adhérer'
   url: "http://adhesion.hacf.fr"
 
