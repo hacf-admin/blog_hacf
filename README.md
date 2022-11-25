@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9e92335a-6184-4519-b29d-4869dc8408ec/deploy-status)](https://app.netlify.com/sites/hacf/deploys)
+
 # Se lancer dans la construction d'un site statique avec le generateur Hugo et Netlify CMS comme HeadLess
 
 Base de site Hugo très simple avec intégration Netlify CMS permettant la rédaction d'article en ligne (en dehors d'un editeur de code). Destiné à servir de point de départ pour créer votre propre site avec une intégration Netlify CMS prête à l'emploi.
