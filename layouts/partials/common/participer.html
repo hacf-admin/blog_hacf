@@ -1,7 +1,34 @@
 {{ if eq .Params.type "awesome" }}
-{{ partial "articles/git/gitrepoawesome.html" . }}
+    {{ if site.Params.GitRepoAwesome }}
+        {{ if site.Params.GitBranchAwesome }}
+        {{ .Scratch.Set "GitBranch" site.Params.GitBranchAwesome }}
+        {{ else }}
+        {{ .Scratch.Set "GitBranch" "main" }}
+        {{ end }}
+            <a class="text-decoration-none" href="{{ site.Params.GitRepoAwesome }}/edit/{{ .Scratch.Get "GitBranch" }}/{{ .File.LogicalName }}" title="Corriger/Modifier cette page" target="_blank" rel="noopener">
+                <i class="fa-solid fa-code-branch"></i> Ajouter une source
+            </a>
+    {{ end }}
 {{ else if eq .Params.type "guidedev" }}
-{{ partial "articles/git/gitrepoguidedev.html" . }}
+    {{ if site.Params.GitRepoAwesome }}
+        {{ if site.Params.GitBranchAwesome }}
+        {{ .Scratch.Set "GitBranch" site.Params.GitBranchAwesome }}
+        {{ else }}
+        {{ .Scratch.Set "GitBranch" "main" }}
+        {{ end }}
+            <a class="text-decoration-none" href="{{ site.Params.GitRepoAwesome }}/edit/{{ .Scratch.Get "GitBranch" }}/{{ .File.LogicalName }}" title="Corriger/Modifier cette page" target="_blank" rel="noopener">
+                <i class="fa-solid fa-code-branch"></i> Ajouter une source
+            </a>
+    {{ end }}
 {{ else }}
-{{ partial "articles/git/gitrepo.html" . }}
+    {{ if site.Params.GitRepo }}
+        {{ if site.Params.GitBranch }}
+        {{ .Scratch.Set "GitBranch" site.Params.GitBranch }}
+        {{ else }}
+        {{ .Scratch.Set "GitBranch" "main" }}
+        {{ end }}
+            <a class="text-decoration-none" href="{{ site.Params.GitRepo }}/edit/{{ .Scratch.Get "GitBranch" }}/content/{{ .File.Path }}" title="Corriger/Modifier cette page" target="_blank" rel="noopener">
+                <i class="fa-solid fa-code-branch"></i> Proposer une correction
+            </a>
+    {{ end }}
 {{ end }}
