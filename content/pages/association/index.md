@@ -1,5 +1,7 @@
 ---
 title: Association "Communauté Francophone autour de Home Assistant"
+aliases:
+  - /association
 draft: false
 type: page
 visibleInCMS: false

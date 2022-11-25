@@ -2,6 +2,8 @@
 draft: false
 type : awesome
 visibleInCMS: true
+aliases:
+  - /awesome
 title: Awesome Francophone Home Assistant
 image: img/article3.png
 description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
