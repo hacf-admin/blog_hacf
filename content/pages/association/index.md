@@ -4,7 +4,7 @@ aliases:
   - /association
 draft: false
 type: page
-visibleInCMS: false
+visibleInCMS: true
 description: Venez découvrir l'association communauté francophone autour de Home
   Assistant, son but et ses objectifs.
 socialshare: true
