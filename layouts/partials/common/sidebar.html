@@ -1,0 +1,19 @@
+{{ if ne .Params.type "page" "awesome" }}
+    {{ partial "articles/author.html" . }}
+{{ end }}
+<div class="sticky-top" style="top: 80px">
+    {{ if .Params.url_hacf }}
+    {{ partial "articles/help_forum.html" . }}
+    {{ end }}
+
+    <div class="justify-content-center border border-primary rounded m-2">
+        <h5 class="text-primary text-center">Sommaire</h5>
+        {{ .TableOfContents }}
+    </div>
+    {{ if ne .Params.type "page" }}
+    <div class="text-center">
+        {{ partial "common/participer.html" . }}
+    </div>       
+    {{ end }}
+    
+</div>

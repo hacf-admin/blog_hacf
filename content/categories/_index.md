@@ -1,8 +1,7 @@
 ---
-title: Articles
+title: Catégories
 description: Bienvenue dans les article de la communauté.
 draft: false
-type: post
 visibleInCMS: false
 btnTitle: Nouveau sur Home Assistant ?
 btnDescription: Articles indispensable pour bien se lancer avec Home Assistant

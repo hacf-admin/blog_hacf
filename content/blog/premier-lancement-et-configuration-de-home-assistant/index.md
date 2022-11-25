@@ -1,6 +1,7 @@
 ---
 title: Premier lancement et configuration de Home Assistant
 draft: false
+type: post
 visibleInCMS: true
 date: 2022-10-07 
 lastmod:

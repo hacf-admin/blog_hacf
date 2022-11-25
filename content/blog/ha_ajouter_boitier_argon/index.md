@@ -1,5 +1,6 @@
 ---
 draft: false
+type: post
 visibleInCMS: true
 article_ha: true
 authors:

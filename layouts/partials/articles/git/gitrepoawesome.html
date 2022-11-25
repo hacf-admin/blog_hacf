@@ -5,6 +5,6 @@
       {{ .Scratch.Set "GitBranch" "main" }}
     {{ end }}
         <a class="text-decoration-none" href="{{ site.Params.GitRepoAwesome }}/edit/{{ .Scratch.Get "GitBranch" }}/{{ .File.LogicalName }}" title="Corriger/Modifier cette page" target="_blank" rel="noopener">
-            <i class="fa-solid fa-code-branch"></i> Proposer une correction
+            <i class="fa-solid fa-code-branch"></i> Ajouter une source
         </a>
 {{ end }}

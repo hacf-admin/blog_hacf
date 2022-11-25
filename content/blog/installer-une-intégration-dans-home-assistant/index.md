@@ -1,5 +1,6 @@
 ---
 draft: true
+type: post
 visibleInCMS: true
 date: 2022-10-07
 lastmod: 

@@ -1,5 +1,6 @@
 ---
 draft: false
+type: post
 visibleInCMS: true
 level: Débutant
 url_haoff: ""
