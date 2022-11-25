@@ -1,14 +1,6 @@
 {{ define "main" }}
-<section class="mt-5 py-5 text-center bg-light" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
-  <div class="row py-lg-5">
-    <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light text-capitalize text-white">{{ .Title }}</h1>
-      <h3 class="fw-light text-white">{{ .Description }}</h3>
-    </div>
-  </div>
-</section>
 
-{{ partial "entetes/posts.html" . }}
+{{ partial "list/listHead.html" . }}
 
 
 <div class="text-center">
