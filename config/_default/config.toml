@@ -21,6 +21,7 @@ enableGitInfo = true
   customcss = true
   # Background image du jumbotron
   # background = '/images/site/background-dark.jpg'
+  noNetlifyHost = "" #Si votre site n'est pas hebergé sur Netlify mais que vous souhaitez utiliser le CMS ex: http://netlifyDomain.netlify.app
 
   heightCode = "300px" # Recuperer la valeur a appliquer sur es blocs de code
   enableTOC = true
