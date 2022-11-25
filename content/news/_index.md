@@ -1,3 +1,3 @@
 ---
-visibleCMS: false
+visibleInCMS: false
 ---

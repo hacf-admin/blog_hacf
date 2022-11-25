@@ -52,29 +52,21 @@ collections:
     ## FILTRE DE L INTERFACE NETLIFYCMS
     ###################################
     view_filters:
-      - label: Brouillon
-        field: draft
-        pattern: true
-      - label: Débutant
-        field: level
-        pattern: 'Débutant'
-      - label: Intérmerdiare
-        field: level
-        pattern: 'Intermédiaire'
-      - label: Avancé
-        field: level
-        pattern: 'Avancé'
-
+    - label: Brouillon
+      field: draft
+      pattern: true
     view_groups:
-      - label: Par années
-        field: date
-        pattern: \d{4}
-      - label: Séries
-        field: series
-      - label: Catégories
-        field: categories
-      - label: Auteur
-        field: authors
+    - label: Par années
+      field: date
+      pattern: \d{4}
+    - label: Auteur(s)
+      field: authors
+    - label: Catégories
+      field: categories
+    - label: Séries
+      field: series
+    - label: Tags
+      field: tags
     ##########################
     ## DEBUT REDACTION ARTICLE
     ##########################
@@ -225,23 +217,17 @@ collections:
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
     filter: {field: visibleInCMS, value: true}
     view_filters:
-      - label: Posts With Index
-        field: title
-        pattern: 'This is post #'
-      - label: Posts Without Index
-        field: title
-        pattern: front matter post
-      - label: Brouillon
-        field: draft
-        pattern: true
+    - label: Brouillon
+      field: draft
+      pattern: true
     view_groups:
-      - label: Par années
-        field: date
-        pattern: \d{4}
-      - label: Brouillons
-        field: draft
-      - label: Catégories
-        field: categories
+    - label: Par années
+      field: date
+      pattern: \d{4}
+    - label: Auteur(s)
+      field: authors
+    - label: Tags
+      field: tags
     fields: 
       - label: "Title" 
         name: "title"
@@ -314,18 +300,20 @@ collections:
         widget: "markdown"
 ###############################################
 
-# COLLECTION ENTETE NEWS & POST Fichiers _index.md
+# COLLECTION ENTETE NEWS & POST Fichiers data/xxxHead.yaml
 
 ###############################################
-  - name: "head_post"
+  - name: "head_post_news_terms"
     #layout: blog  # Si layout personalisé
-    label: "Entete index des Blog et Actualites"
-    label_singular: '_index' # Used in the UI, ie: "New Post"
+    label: "Entete des listes Articles, Actualites, Catégories ou Tags"
+    label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
     create: false
+    filter: {field: visibleInCMS, value: true}
     files:
-      - file: "content/blog/_index.md"
+      - file: "data/postHead.yaml"
         label: "Index des articles de Blog"
-        name: "indexPost"
+        format: "yaml"
+        name: "postHead"
         fields:
           - label: "Title" 
             name: "title"
@@ -339,7 +327,7 @@ collections:
             required: true
 
           - {label: "Type", name: "type", widget: "hidden", default: "post"}
-
+          
           - label: "Brouillon"
             name: "draft"
             widget: "boolean"
@@ -375,14 +363,20 @@ collections:
                 widget: "text"
                 hint: 'format "fa-solid fa-server"' 
 
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
+          - label: "Titre du contenu" 
+            name: "contentTitle"
+            widget: "string" 
             required: false
 
-      - file: "content/news/_index.md"
-        label: "Index des articles Actualités"
-        name: "indexNews"
+          - label: "Description du contenu"
+            name: "contentDescription"
+            widget: "text"
+            required: false
+
+      - file: "data/newsHead.yaml"
+        label: "Index des Nouvelles ou Actualités"
+        format: "yaml"
+        name: "newsHead"
         fields:
           - label: "Title" 
             name: "title"
@@ -432,9 +426,78 @@ collections:
                 widget: "text"
                 hint: 'format "fa-solid fa-server"' 
 
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
+          - label: "Titre du contenu" 
+            name: "contentTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du contenu"
+            name: "contentDescription"
+            widget: "text"
+            required: false
+
+      - file: "data/termsHead.yaml"
+        label: "Index des catégories et ou tags"
+        format: "yaml"
+        name: "termsHead"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          - {label: "Type", name: "type", widget: "hidden", default: "terms"}
+          
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Titre Bouton" 
+            name: "btnTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du Bouton" 
+            name: "btnDescription"
+            widget: "string" 
+            required: false
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icones"
+                name: "icons"
+                widget: "text"
+                hint: 'format "fa-solid fa-server"' 
+
+          - label: "Titre du contenu" 
+            name: "contentTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du contenu"
+            name: "contentDescription"
+            widget: "text"
             required: false
 
 ###############################################
@@ -449,6 +512,7 @@ collections:
     create: false
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
+    filter: {field: visibleInCMS, value: true}
     files:
       - file: "content/pages/awesome/index.md"
         label: "Liens utiles"
@@ -460,6 +524,7 @@ collections:
             required: true
           
           - {label: "Type", name: "type", widget: "hidden", default: "page"}
+          - {name: visibleInCMS, widget: hidden, default: true }
 
           - label: "Brouillon"
             name: "draft"
@@ -553,6 +618,7 @@ collections:
             required: true
 
           - {label: "Type", name: "type", widget: "hidden", default: "page"}
+          - {name: visibleInCMS, widget: hidden, default: false }
 
           - label: "Brouillon"
             name: "draft"
@@ -607,6 +673,7 @@ collections:
             required: true
 
           - {label: "Type", name: "type", widget: "hidden", default: "page"}
+          - {name: visibleInCMS, widget: hidden, default: false }
 
           - label: "Brouillon"
             name: "draft"
@@ -661,6 +728,7 @@ collections:
           required: true
 
         - {label: "Type", name: "type", widget: "hidden", default: "page"}
+        - {name: visibleInCMS, widget: hidden, default: false }
         
         - label: "Brouillon"
           name: "draft"
