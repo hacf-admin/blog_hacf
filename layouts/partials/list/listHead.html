@@ -1,0 +1,81 @@
+{{ if eq .Params.type "post" }}
+<section class="mt-5 py-5 text-center bg-light" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.postHead.title }}</h1>
+        <h3 class="fw-light text-white">{{ .Site.Data.postHead.description }}</h3>
+      </div>
+    </div>
+  </section>
+    {{ if .Site.Data.postHead.buttons }}
+        <div class="container p-5">
+            <h5 class="text-center">{{ .Site.Data.postHead.btnTitle }}</h5>
+            <p class="text-center font-italic">{{ .Site.Data.postHead.btnDescription }}</p>
+            <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+            {{ range sort .Site.Data.postHead.buttons "weight" }}
+                <div class="col">
+                <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icons }}"></i> {{ .name }}</a>
+                </div>  
+            {{ end }}
+            </div>
+        </div>
+        <div class="text-center">
+            <h5>{{ .Site.Data.postHead.contentTitle }}</h5>
+            <p>{{ .Site.Data.postHead.contentDescription }}</p>
+        </div>
+    {{ end }}
+{{ else if eq .Params.type "news" }}
+<section class="mt-5 py-5 text-center bg-light" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.newsHead.title }}</h1>
+        <h3 class="fw-light text-white">{{ .Site.Data.newsHead.description }}</h3>
+      </div>
+    </div>
+  </section>
+    {{ if .Site.Data.newsHead.buttons }}
+        <div class="container p-5">
+            <h5 class="text-center">{{ .Site.Data.newsHead.btnTitle }}</h5>
+            <p class="text-center font-italic">{{ .Site.Data.newsHead.btnDescription }}</p>
+            <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+            {{ range sort .Site.Data.newsHead.buttons "weight" }}
+                <div class="col">
+                <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icons }}"></i> {{ .name }}</a>
+                </div>  
+            {{ end }}
+            </div>
+        </div>
+        <div class="text-center">
+            <h5>{{ .Site.Data.newsHead.contentTitle }}</h5>
+            <p>{{ .Site.Data.newsHead.contentDescription }}</p>
+        </div>
+    {{ end }}
+{{ else }}
+<section class="mt-5 py-5 text-center bg-light" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.termsHead.title }}</h1>
+        <h3 class="fw-light text-white">{{ .Site.Data.termsHead.description }}</h3>
+      </div>
+    </div>
+  </section>
+    <div class="container p-5">
+        <h5 class="text-center">{{ .Site.Data.termsHead.btnTitle }}</h5>
+        <p class="text-center font-italic">{{ .Site.Data.termsHead.btnDescription }}</p>
+        <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+        {{ range sort .Site.Data.termsHead.buttons "weight" }}
+            <div class="col">
+            <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icons }}"></i> {{ .name }}</a>
+            </div>  
+        {{ end }}
+        </div>
+    </div>
+    <div class="text-center">
+        <h5>{{ .Site.Data.termsHead.contentTitle }}</h5>
+        <p>{{ .Site.Data.termsHead.contentDescription }}</p>
+    </div>
+{{ end }}
+
+<div class="container">
+    <hr class="divider">
+</div>

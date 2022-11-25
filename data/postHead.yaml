@@ -1,7 +1,8 @@
----
-title: Catégories
-description: Bienvenue dans les article de la communauté.
+
+title: Articles
+description: Bienvenu dans les articles de la communauté.
 draft: false
+type: post
 visibleInCMS: false
 btnTitle: Nouveau sur Home Assistant ?
 btnDescription: Articles indispensable pour bien se lancer avec Home Assistant
@@ -19,6 +20,5 @@ buttons:
     url: series/débuter-avec-home-assistant/
     weight: 3
     icons: fa-solid fas fa-paper-plane
----
-## Liste de tous les articles de la communauté
-Accedez a tous les articles de la communauté, n'hesitez pas a les faire evoluer en les completant, les corrigant, a les mettant a jour et en y ajoutant les votre
+contentTitle: Liste de tous les articles de la communauté
+contentDescription: Accedez a tous les articles de la communauté, n'hesitez pas a les faire evoluer en les completant, les corrigant, a les mettant a jour et en y ajoutant les votre
