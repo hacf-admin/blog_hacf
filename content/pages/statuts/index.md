@@ -5,7 +5,7 @@ draft: false
 type: page
 aliases:
   - /statuts
-visibleInCMS: false
+visibleInCMS: true
 description: Consulter les statuts de l'association communauté Francophone
   autour de Home Assistant
 socialshare: true
