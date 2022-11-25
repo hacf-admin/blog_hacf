@@ -3,6 +3,7 @@ title: Statuts de l'association Communauté Francophone autour de Home Assistant
 subttitle: Les Statuts de l'association "Communauté Francophone autour de Home Assistant"
 draft: false
 type: page
+visibleInCMS: false
 description: Consulter les statuts de l'association communauté Francophone
   autour de Home Assistant
 socialshare: true
