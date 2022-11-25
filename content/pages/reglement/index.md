@@ -5,7 +5,7 @@ draft: false
 type: page
 aliases:
   - /reglement
-visibleInCMS: false
+visibleInCMS: true
 description: Consulter le règlement de l'association communauté Francophone
   autour de Home Assistant
 socialshare: true
