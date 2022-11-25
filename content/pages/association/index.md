@@ -1,6 +1,7 @@
 ---
 title: Association "Communauté Francophone autour de Home Assistant"
 draft: false
+type: page
 description: Venez découvrir l'association communauté francophone autour de Home
   Assistant, son but et ses objectifs.
 socialshare: true

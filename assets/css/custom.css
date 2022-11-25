@@ -1,1 +1,10 @@
 /* Fichier CSS custom pour y ajouter vos modifications si vous le souhaitez */
+
+/* TOC */
+#TableOfContents a {
+    color: grey;
+    text-decoration: none;
+    }
+    #TableOfContents ul li {
+        list-style: none;
+        }

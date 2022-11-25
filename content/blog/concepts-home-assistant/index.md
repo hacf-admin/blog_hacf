@@ -2,6 +2,7 @@
 title: Architecture et concepts Home Assistant
 date: 2022-10-09
 draft: false
+type: post
 visibleInCMS: true
 lastmod: 
 image: img/accueil.png

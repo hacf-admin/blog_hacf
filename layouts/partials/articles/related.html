@@ -7,15 +7,15 @@
 	
 	<div class="col-4">
 		<div class="card h-100">
-			<a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
-				<img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="{{ .Description }}">
-			</a>
 			<div class="card-body">
-				<h5 class="card-title">{{ .Title }}</h5>
-				<p class="card-text text-secondary text-truncate">{{ .Description }}</p>
+			  <h5 class="card-title text-secondary p-1 fst-italic">{{ .Title }}</h5>
+			  <h6 class="card-subtitle mb-2 text-muted p-1">Catégoies ? Tags ?  Rien ?</h6>
+			  <p class="card-text text-truncate">{{ .Description }}</p>
+			  <a href="{{ .RelPermalink }}" class="card-link">Lire</a>
 			</div>
-		</div>   
+		  </div>
 	</div>
+
 
 	{{ end }}
 

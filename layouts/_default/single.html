@@ -10,10 +10,11 @@
               <h1 class="ls-tight font-bolder display-5 text-white mb-5">
                   {{ .Title }}
               </h1>
-              <!-- Text -->
+              <!-- Text 
               <p class="lead text-white text-opacity-80 mb-10 w-lg-2/3">
                   {{ .Description }}
               </p>
+              -->
           </div>
       </div>
     </div>
@@ -27,39 +28,56 @@
 <section class="container">
   <div class="row my-4">
     <article class="row justify-content-center">
-      <div class="col-10 col-xl-8 m-4">
+      <div class="col-12 col-xl-8 m-4">
         <div>
           {{ .Content }}
         </div>
       </div>
       <div class="col-xl-3 d-none d-xl-block">
-        {{ partial "articles/barre-lat-articles.html" . }}
+        {{ partial "common/sidebar.html" . }}
       </div>
     </article>
 
-    <div class="text-end">
-      {{ partial "articles/participer.html" . }}
+    <div class="col-12 text-end mt-2">
+      
     </div>
   </div>
 </section>
 
-<section class="mb-5">
-  <div class="container ">
-      <div class="row justify-content-evenly pt-2">
-        <div class="col-6">
-          {{ partial "pages/author.html" . }}
+{{ if eq .Params.type "post" "news" }}
+  <section class="mb-5">
+    <div class="container ">
+        <div class="row justify-content-evenly pt-2">
+          {{ if eq .Params.type "post"}}
+          <div class="col-12">
+          {{ partial "articles/aide-ha.html" . }}
+          </div>
+          {{ end }}
         </div>
+    </div>
+  </section>
+  <section class="container-fluid">
+    <div class="row justify-content-center m-3">
+          {{ partial "articles/related.html" . }}
+    </div>
+  </section>
+{{ end }}
 
-        <div class="col-6">
-            {{ partial "articles/aide-ha.html" . }}
+  {{ if eq .Params.type "page" "awesome" }}
+  <section class="mb-5">
+    <div class="container ">
+        <!--
+        <div class="col-12 border-top border-secondary pt-3" >
+            {{ partial "contact" . }}
         </div>
-      </div>
-  </div>
-</section>
+        -->
+        <div class="row justify-content-evenly pt-2">
+          <div class="col-12">
+            {{ partial "pages/author.html" . }}
+          </div>
+        </div>
+    </div>
+  </section>
+  {{ end }}
 
-<section class="container-fluid">
-      <div class="row justify-content-center m-3">
-            {{ partial "articles/related.html" . }}
-      </div>
-</section>
 {{ end }}

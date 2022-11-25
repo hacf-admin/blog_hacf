@@ -1,6 +1,7 @@
 ---
 title: "Home Assistant Core 2022.8 ! : Répare le"
 draft: false
+type: news
 visibleInCMS: true
 date: 2022-08-15
 lastmod: 2022-08-25

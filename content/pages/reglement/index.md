@@ -2,6 +2,7 @@
 title: Réglement de l'association Communauté Francophone autour de Home Assistant
 subttitle: Le Réglement de l'association "Communauté Francophone autour de Home Assistant"
 draft: false
+type: page
 description: Consulter le règlement de l'association communauté Francophone
   autour de Home Assistant
 socialshare: true
