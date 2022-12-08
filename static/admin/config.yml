@@ -307,7 +307,7 @@ collections:
 ###############################################
   - name: "customize_sections"
     #layout: blog  # Si layout personalisé
-    label: "Personnalisatiion / Activation des sections"
+    label: "Personnalisation / Activation des sections"
     #label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
     create: false
     #filter: {field: visibleInCMS, value: true}
@@ -450,6 +450,30 @@ collections:
                 name: "icons"
                 widget: "text"
                 hint: 'format "fa-solid fa-server"'
+
+
+      - file: "data/sections/news-articles.yaml"
+        label: "Section Derniers Articles"
+        format: "yaml"
+        name: "last_post"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/last_post.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+              - {label: "Nombre de Post a afficher", name: "nbPost", widget: "number", default: 3, value_type: "int" }
+
+          - {name: visibleInCMS, widget: hidden, default: true }
+
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
 ###############################################
 
 # COLLECTION ENTETE NEWS & POST Fichiers data/xxxHead.yaml
