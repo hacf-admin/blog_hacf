@@ -365,7 +365,7 @@ collections:
                 required: true
 
               - label: "Icones"
-                name: "icons"
+                name: "icon"
                 widget: "text"
                 hint: 'format "fa-solid fa-server"' 
 
@@ -428,7 +428,7 @@ collections:
 
               - label: "Icones"
                 name: "icons"
-                widget: "text"
+                widget: "string"
                 hint: 'format "fa-solid fa-server"' 
 
           - label: 'Réseaux Sociaux 2'
@@ -447,8 +447,8 @@ collections:
                 required: true
 
               - label: "Icones"
-                name: "icons"
-                widget: "text"
+                name: "icon"
+                widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
 
