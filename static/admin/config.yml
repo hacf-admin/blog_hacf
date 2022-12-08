@@ -474,6 +474,80 @@ collections:
             name: "title"
             widget: "string" 
             required: true
+
+      - file: "data/sections/depots.yaml"
+        label: "Dépots GitHub"
+        format: "yaml"
+        name: "depots"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/depots.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+
+          - {name: visibleInCMS, widget: hidden, default: true }
+
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Filtre"
+                name: "filter"
+                widget: "string"
+                required: true
+
+          - label: 'Les Dépots'
+            name: 'depots'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Role"
+                name: "role"
+                widget: "string"
+                required: false
+
+              - label: "Activité"
+                name: "timeline"
+                widget: "string"
+                required: false
+                hint: "Aout 2020 - Présent"
+
+              - label: "Url du Repo"
+                name: "repo"
+                widget: "string"
+                required: true
+
+              - label: "Description"
+                name: "summary"
+                widget: "string"
+                required: true
+
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                allow_add: true
+                hint: "Séparer vos tags par une virgule"   
 ###############################################
 
 # COLLECTION ENTETE NEWS & POST Fichiers data/xxxHead.yaml
