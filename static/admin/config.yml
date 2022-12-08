@@ -326,7 +326,7 @@ collections:
               - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
               - {label: "Template", name: "template", widget: "hidden", default: "sections/landing_double.html"}
               - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
-          - {name: visibleInCMS, widget: hidden, default: true }
+          - {name: visibleInCMS, widget: hidden, default: false }
 
           - label: "Titre" 
             name: "title"
@@ -365,7 +365,7 @@ collections:
                 required: true
 
               - label: "Icones"
-                name: "icons"
+                name: "icon"
                 widget: "text"
                 hint: 'format "fa-solid fa-server"' 
 
@@ -428,7 +428,7 @@ collections:
 
               - label: "Icones"
                 name: "icons"
-                widget: "text"
+                widget: "string"
                 hint: 'format "fa-solid fa-server"' 
 
           - label: 'Réseaux Sociaux 2'
@@ -447,8 +447,8 @@ collections:
                 required: true
 
               - label: "Icones"
-                name: "icons"
-                widget: "text"
+                name: "icon"
+                widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
 
@@ -468,7 +468,7 @@ collections:
               - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
               - {label: "Nombre de Post a afficher", name: "nbPost", widget: "number", default: 3, value_type: "int" }
 
-          - {name: visibleInCMS, widget: hidden, default: true }
+          - {name: visibleInCMS, widget: hidden, default: false }
 
           - label: "Titre" 
             name: "title"
@@ -490,7 +490,7 @@ collections:
               - {label: "Template", name: "template", widget: "hidden", default: "sections/depots.html"}
               - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
 
-          - {name: visibleInCMS, widget: hidden, default: true }
+          - {name: visibleInCMS, widget: hidden, default: false }
 
           - label: "Titre" 
             name: "title"
@@ -577,6 +577,7 @@ collections:
             required: true
 
           - {label: "Type", name: "type", widget: "hidden", default: "post"}
+          - {name: visibleInCMS, widget: hidden, default: false }
           
           - label: "Brouillon"
             name: "draft"
@@ -640,6 +641,7 @@ collections:
             required: true
 
           - {label: "Type", name: "type", widget: "hidden", default: "news"}
+          - {name: visibleInCMS, widget: hidden, default: false }
 
           - label: "Brouillon"
             name: "draft"
@@ -703,6 +705,7 @@ collections:
             required: true
 
           - {label: "Type", name: "type", widget: "hidden", default: "terms"}
+          - {name: visibleInCMS, widget: hidden, default: false }
           
 
           - label: "Brouillon"
