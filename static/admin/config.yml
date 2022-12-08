@@ -364,10 +364,11 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
+              - label: "Icone"
                 name: "icon"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
 
           - label: 'Réseaux Sociaux'
             name: 'socialLinks'
@@ -384,9 +385,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
                 hint: 'format "fa-solid fa-server"'
 
 
@@ -426,10 +428,11 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
+              - label: "Icone"
+                name: "icon"
                 widget: "string"
-                hint: 'format "fa-solid fa-server"' 
+                required: false
+                hint: 'format "fa-solid fa-server"'
 
           - label: 'Réseaux Sociaux 2'
             name: 'socialLinks2'
@@ -446,9 +449,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
+              - label: "Icone"
                 name: "icon"
                 widget: "string"
+                required: false
                 hint: 'format "fa-solid fa-server"'
 
 
@@ -609,10 +613,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -673,10 +677,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -738,10 +742,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 
           - label: "Titre du contenu" 
             name: "contentTitle"

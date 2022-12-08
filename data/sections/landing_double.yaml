@@ -1,94 +1,91 @@
-# section information
 section:
   name: Presentation HACF et HA off
   id: presentation
   weight: 2
   active: true
   template: sections/landing_double.html
-
-#Voir si possibilité d'integrer le resize image.
-#logo: /images/logo-hacf-70px.webp
-
-title: "HACF"
-subtitle: "Communauté Francophone Home Assistant"
-
+title: HACF
+subtitle: Communauté Francophone Home Assistant
 summary:
-- description: "**Communauté Francophone autour de Home Assistant HACF** est née de l’envie de réunir une **Communauté Francophone** autour de de la solution domotique **Home Assistant.**"
-- description: "Le but de HACF est de **fédérer** une communauté de **passionnés** dans un espace collaboratif dédié favorissant l'échange et l'entraide."
-- description: "Une **association** a été créé toujours dans un **but** de **transparence** et de **pérennisation**."
-
+  - description: "**Communauté Francophone autour de Home Assistant HACF** est née
+      de l’envie de réunir une **Communauté Francophone** autour de de la
+      solution domotique **Home Assistant.**"
+  - description: Le but de HACF est de **fédérer** une communauté de **passionnés**
+      dans un espace collaboratif dédié favorissant l'échange et l'entraide.
+  - description: Une **association** a été créé toujours dans un **but** de
+      **transparence** et de **pérennisation**.
 buttons:
-- name: 'En savoir plus'
-  url: /association
-- name: 'Adhérer'
-  url: "http://adhesion.hacf.fr"
-
+  - name: En savoir plus
+    url: /association
+    icon:
+  - name: Adhérer
+    url: http://adhesion.hacf.fr
+    icon:
 socialLinks:
-- name: Email
-  icon: "far fa-envelope"
-  url: "http://contact.hacf.fr"
-- name: Site
-  url: "https://hacf.fr/"
-  icon: "fa fa-globe"
-- name: Forum
-  icon: "fab fa-discourse"
-  url: "https://forum.hacf.fr"
-- name: Discord
-  icon: "fab fa-discord"
-  url: "http://discord.hacf.fr"
-- name: Groupe Facebook
-  icon: "fab fa-facebook-messenger"
-  url: "http://groupe-facebook.hacf.fr"
-- name: Github
-  icon: "fab fa-github"
-  url: "http://github.hacf.fr"
-- name: YouTube
-  icon: "fab fa-youtube"
-  url: "http://youtube.hacf.fr"
-- name: Page Facebook
-  icon: "fab fa-facebook-square"
-  url: "http://page-facebook.hacf.fr"
-- name: Twitter
-  icon: "fab fa-twitter"
-  url: "http://twitter.hacf.fr"
-- name: Facebook
-  icon: "fab fa-facebook"
-  url: "http://facebook.hacf.fr"
-
-  
-  
-title2: "Home Assistant"
-subtitle2: "Pourquoi choisir Home Assistant ?"
-
+  - name: Contact
+    icon: far fa-envelope
+    url: https://contact.hacf.fr
+  - name: Site
+    url: https://hacf.fr/
+    icon: fa fa-globe
+  - name: Forum
+    icon: fab fa-discourse
+    url: https://forum.hacf.fr
+  - name: Discord
+    icon: fab fa-discord
+    url: http://discord.hacf.fr
+  - name: Groupe Facebook
+    icon: fab fa-facebook-messenger
+    url: http://groupe-facebook.hacf.fr
+  - name: Github
+    icon: fab fa-github
+    url: http://github.hacf.fr
+  - name: YouTube
+    icon: fab fa-youtube
+    url: http://youtube.hacf.fr
+  - name: Page Facebook
+    icon: fab fa-facebook-square
+    url: http://page-facebook.hacf.fr
+  - name: Twitter
+    icon: fab fa-twitter
+    url: http://twitter.hacf.fr
+  - name: Facebook
+    icon: fab fa-facebook
+    url: http://facebook.hacf.fr
+title2: Home Assistant
+subtitle2: Pourquoi choisir Home Assistant ?
 summary2:
-- description: "Home Assistant est une application <span>gratuite</span> et **open source** pour la mise en place d’une solution domotique à votre domicile."
-- description: "Elle bénéficie d’une **excellente communauté** à travers le **monde** entier, ce qui lui permet d’évoluer très rapidement avec des **mises à jour fréquentes** et régulières et l’ajout de **nombreux matériels** connus et moins connus du grand public."
-- description: "Avec plus de **1700 intégrations** prises en charge, Home Assistant est une **solution** domotique **évolutive** et **pérenne**."
-
+  - description: Home Assistant est une application <span>gratuite</span> et **open
+      source** pour la mise en place d’une solution domotique à votre domicile.
+  - description: Elle bénéficie d’une **excellente communauté** à travers le
+      **monde** entier, ce qui lui permet d’évoluer très rapidement avec des
+      **mises à jour fréquentes** et régulières et l’ajout de **nombreux
+      matériels** connus et moins connus du grand public.
+  - description: Avec plus de **1700 intégrations** prises en charge, Home Assistant
+      est une **solution** domotique **évolutive** et **pérenne**.
 buttons2:
-- name: 'Découvrez Home Assistant'
-  url: "https://demo.home-assistant.io/#/lovelace/0"
-
-
+  - name: Découvrez Home Assistant
+    url: https://demo.home-assistant.io/#/lovelace/0
+    icon: 
 socialLinks2:
-- name: Site
-  url: "https://www.home-assistant.io/"
-  icon: "fa fa-globe"
-- name: Forum
-  url: "https://community.home-assistant.io/"
-  icon: "fab fa-discourse"
-- name: Discord
-  url: "https://discord.gg/c5DvZ4e"
-  icon: "fab fa-discord"
-- name: Groupe Facebook
-  url: "https://www.facebook.com/homeassistantio"
-  icon: "fab fa-facebook"
-- name: GitHub
-  url: "https://github.com/home-assistant/"
-  icon: "fab fa-github"
-- name: Reddit
-  url: "https://reddit.com/r/homeassistant"
-  icon: "fab fa-reddit"
-- name: Twitter
-  url: "https://twitter.com/home_assistant"
-  icon: "fab fa-twitter"
+  - name: Site
+    url: https://www.home-assistant.io/
+    icon: fa fa-globe
+  - name: Forum
+    url: https://community.home-assistant.io/
+    icon: fab fa-discourse
+  - name: Discord
+    url: https://discord.gg/c5DvZ4e
+    icon: fab fa-discord
+  - name: Groupe Facebook
+    url: https://www.facebook.com/homeassistantio
+    icon: fab fa-facebook
+  - name: GitHub
+    url: https://github.com/home-assistant/
+    icon: fab fa-github
+  - name: Reddit
+    url: https://reddit.com/r/homeassistant
+    icon: fab fa-reddit
+  - name: Twitter
+    url: https://twitter.com/home_assistant
+    icon: fab fa-twitter
