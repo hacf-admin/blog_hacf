@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+{{ partial "list/listHeadTag.html" . }}
+
+
+<div class="text-center">
+    {{ .Content }}
+</div>
+
+<div class="row justify-content-center">
+ 
+  <div class="col-12 col-lg-2 p-5 order-1">
+    <div class="d-grid gap-2 col-3 col-lg-12 mx-auto sticky-top" style="top: 80px">
+    <h5 class="text-center">Tags</h5>
+    {{ range .Site.Taxonomies.tags }}
+    <a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
+        <span class="visually-hidden">unread messages</span>
+      </span>
+    </a>
+    {{ end }}
+    </div>
+  </div>
+	
+	<div class="col-12 col-lg-9 order-2 m-3">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
+			{{ range .Paginator.Pages }}
+			<div class="col">
+			{{ partial "cards/post-list" . }}
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</div>	
+
+<div>
+  {{ partial "pagination" . }}
+</div>
+{{ end }}

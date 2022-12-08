@@ -364,10 +364,11 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
+              - label: "Icone"
                 name: "icon"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
 
           - label: 'Réseaux Sociaux'
             name: 'socialLinks'
@@ -384,9 +385,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
                 hint: 'format "fa-solid fa-server"'
 
 
@@ -426,10 +428,11 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
+              - label: "Icone"
+                name: "icon"
                 widget: "string"
-                hint: 'format "fa-solid fa-server"' 
+                required: false
+                hint: 'format "fa-solid fa-server"'
 
           - label: 'Réseaux Sociaux 2'
             name: 'socialLinks2'
@@ -446,9 +449,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
+              - label: "Icone"
                 name: "icon"
                 widget: "string"
+                required: false
                 hint: 'format "fa-solid fa-server"'
 
 
@@ -560,7 +564,7 @@ collections:
     create: false
     #filter: {field: visibleInCMS, value: true}
     files:
-      - file: "data/postHead.yaml"
+      - file: "data/head/postHead.yaml"
         label: "Index des articles de Blog"
         format: "yaml"
         name: "postHead"
@@ -609,10 +613,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -624,7 +628,7 @@ collections:
             widget: "text"
             required: false
 
-      - file: "data/newsHead.yaml"
+      - file: "data/head/newsHead.yaml"
         label: "Index des Nouvelles ou Actualités"
         format: "yaml"
         name: "newsHead"
@@ -673,10 +677,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -688,7 +692,7 @@ collections:
             widget: "text"
             required: false
 
-      - file: "data/termsHead.yaml"
+      - file: "data/head/termsHead.yaml"
         label: "Index des catégories et ou tags"
         format: "yaml"
         name: "termsHead"
@@ -738,10 +742,10 @@ collections:
                 widget: "string"
                 required: true
 
-              - label: "Icones"
-                name: "icons"
-                widget: "text"
-                hint: 'format "fa-solid fa-server"' 
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -753,6 +757,135 @@ collections:
             widget: "text"
             required: false
 
+      - file: "data/head/catHead.yaml"
+        label: "Index des catégories"
+        format: "yaml"
+        name: "catHead"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          - {label: "Type", name: "type", widget: "hidden", default: "terms"}
+          - {name: visibleInCMS, widget: hidden, default: false }
+          
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Titre Bouton" 
+            name: "btnTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du Bouton" 
+            name: "btnDescription"
+            widget: "string" 
+            required: false
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
+
+          - label: "Titre du contenu" 
+            name: "contentTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du contenu"
+            name: "contentDescription"
+            widget: "text"
+            required: false
+
+      - file: "data/head/tagHead.yaml"
+        label: "Index des tags"
+        format: "yaml"
+        name: "tagHead"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          - {label: "Type", name: "type", widget: "hidden", default: "terms"}
+          - {name: visibleInCMS, widget: hidden, default: false }
+          
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Titre Bouton" 
+            name: "btnTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du Bouton" 
+            name: "btnDescription"
+            widget: "string" 
+            required: false
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
+
+          - label: "Titre du contenu" 
+            name: "contentTitle"
+            widget: "string" 
+            required: false
+
+          - label: "Description du contenu"
+            name: "contentDescription"
+            widget: "text"
+            required: false
 ###############################################
 
 # COLLECTION PAGES
