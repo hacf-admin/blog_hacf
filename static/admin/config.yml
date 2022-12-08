@@ -325,7 +325,7 @@ collections:
               - {label: "Id", name: "id", widget: "string"}
               - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
               - {label: "Template", name: "template", widget: "hidden", default: "sections/landing_double.html"}
-
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
           - {name: visibleInCMS, widget: hidden, default: true }
 
           - label: "Titre" 
