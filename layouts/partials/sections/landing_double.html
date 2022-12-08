@@ -15,7 +15,7 @@
             title="Logo de HACF la communauté Francophone autour de Home Assistant"
           />
           <div class="card-body">
-            <h2 class="card-title text-secondary">{{ .name }}</h2>
+            <h2 class="card-title text-secondary">{{ .title }}</h2>
             <p class="card-subtitle fst-italic text-primary fs-4">{{ .subtitle }}</p>
             <p class="card-text">
               {{ range .summary }}
@@ -43,7 +43,7 @@
           </div>
     
           <div class="card-body">
-            {{ range .button }}
+            {{ range .buttons }}
             <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
             {{ end }}
           </div>
@@ -65,7 +65,7 @@
             title="Tableau de bord Home Assistant"
             />
           <div class="card-body">
-            <h2 class="card-title text-secondary">{{ .name2 }}</h2>
+            <h2 class="card-title text-secondary">{{ .title2 }}</h2>
             <p class="card-subtitle fst-italic text-primary fs-4">{{ .subtitle2 }}</p>
             <p class="card-text">
               {{ range .summary2 }}
@@ -93,7 +93,7 @@
           </div>
     
           <div class="card-body">
-            {{ range .button2 }}
+            {{ range .buttons2 }}
             <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
             {{ end }}
           </div>
