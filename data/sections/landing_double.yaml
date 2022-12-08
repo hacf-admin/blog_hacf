@@ -9,15 +9,15 @@ section:
 #Voir si possibilité d'integrer le resize image.
 #logo: /images/logo-hacf-70px.webp
 
-name: "HACF"
-subtitle: "Communauté Francophone autour de Home Assistant"
+title: "HACF"
+subtitle: "Communauté Francophone Home Assistant"
 
 summary:
 - description: "**Communauté Francophone autour de Home Assistant HACF** est née de l’envie de réunir une **Communauté Francophone** autour de de la solution domotique **Home Assistant.**"
 - description: "Le but de HACF est de **fédérer** une communauté de **passionnés** dans un espace collaboratif dédié favorissant l'échange et l'entraide."
 - description: "Une **association** a été créé toujours dans un **but** de **transparence** et de **pérennisation**."
 
-button:
+buttons:
 - name: 'En savoir plus'
   url: /association
 - name: 'Adhérer'
@@ -57,7 +57,7 @@ socialLinks:
 
   
   
-name2: "Home Assistant"
+title2: "Home Assistant"
 subtitle2: "Pourquoi choisir Home Assistant ?"
 
 summary2:
@@ -65,7 +65,7 @@ summary2:
 - description: "Elle bénéficie d’une **excellente communauté** à travers le **monde** entier, ce qui lui permet d’évoluer très rapidement avec des **mises à jour fréquentes** et régulières et l’ajout de **nombreux matériels** connus et moins connus du grand public."
 - description: "Avec plus de **1700 intégrations** prises en charge, Home Assistant est une **solution** domotique **évolutive** et **pérenne**."
 
-button2:
+buttons2:
 - name: 'Découvrez Home Assistant'
   url: "https://demo.home-assistant.io/#/lovelace/0"
 

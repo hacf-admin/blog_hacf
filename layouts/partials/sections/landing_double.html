@@ -1,8 +1,8 @@
 <section class="py-5 bg-light">
   <div class="container text-center">
     <div class="row justify-content-center">
-      <div class="col-11 col-lg-5">
-        <div class="card h-100 border border-opacity-50 border-3 border-secondary rounded pt-3 text-center mx-auto" style="max-width: 30rem;">
+      <div class="col-11 col-lg-5 offset-lg-1 mb-2 mb-lg-0">
+        <div class="card h-100 border border-opacity-50 border-3 border-secondary rounded pt-3 text-center">
           <img
             class="card-img-top mx-auto"
             style="max-height: 150px;max-width: 150px"
@@ -15,7 +15,7 @@
             title="Logo de HACF la communauté Francophone autour de Home Assistant"
           />
           <div class="card-body">
-            <h2 class="card-title text-secondary">{{ .name }}</h2>
+            <h2 class="card-title text-secondary">{{ .title }}</h2>
             <p class="card-subtitle fst-italic text-primary fs-4">{{ .subtitle }}</p>
             <p class="card-text">
               {{ range .summary }}
@@ -43,7 +43,7 @@
           </div>
     
           <div class="card-body">
-            {{ range .button }}
+            {{ range .buttons }}
             <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
             {{ end }}
           </div>
@@ -52,7 +52,7 @@
 
 
       <div class="col-11 col-lg-5">
-        <div class="card h-100 border border-opacity-50 border-3 border-secondary rounded pt-3 text-center mx-auto" style="max-width: 30rem;">
+        <div class="card h-100 border border-opacity-50 border-3 border-secondary rounded pt-3 text-center mx-auto">
           <img
             class="card-img-top mx-auto"
             style="max-height: 200px;max-width: 200px"
@@ -65,7 +65,7 @@
             title="Tableau de bord Home Assistant"
             />
           <div class="card-body">
-            <h2 class="card-title text-secondary">{{ .name2 }}</h2>
+            <h2 class="card-title text-secondary">{{ .title2 }}</h2>
             <p class="card-subtitle fst-italic text-primary fs-4">{{ .subtitle2 }}</p>
             <p class="card-text">
               {{ range .summary2 }}
@@ -93,7 +93,7 @@
           </div>
     
           <div class="card-body">
-            {{ range .button2 }}
+            {{ range .buttons2 }}
             <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
             {{ end }}
           </div>

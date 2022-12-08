@@ -1,6 +1,5 @@
 ---
 draft: false
-subttitle: blablabla particper
 visibleInCMS: true
 date: 22-11-25
 lastmod: 2022-09-28 23:53
