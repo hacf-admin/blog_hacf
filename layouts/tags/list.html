@@ -11,8 +11,8 @@
  
   <div class="col-12 col-lg-2 p-5 order-1">
     <div class="d-grid gap-2 col-3 col-lg-12 mx-auto sticky-top" style="top: 80px">
-    <h5 class="text-center">Catégories</h5>
-    {{ range .Site.Taxonomies.categories }}
+    <h5 class="text-center">Tags</h5>
+    {{ range .Site.Taxonomies.tags }}
     <a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
         <span class="visually-hidden">unread messages</span>

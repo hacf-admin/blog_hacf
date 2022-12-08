@@ -1,17 +1,17 @@
 <section class="mt-5 py-5 text-center bg-light" style="background-image:url({{ partial "helpers/get-img-article.html" . }})">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.tagHead.title }} {{ .Title }}</h1>
-      <h3 class="fw-light text-white">{{ .Site.Data.tagHead.description }} {{ .Title }}</h3>
+      <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.head.tagHead.title }} {{ .Title }}</h1>
+      <h3 class="fw-light text-white">{{ .Site.Data.head.tagHead.description }} {{ .Title }}</h3>
     </div>
   </div>
 </section>
-  {{ if .Site.Data.tagHead.buttons }}
+  {{ if .Site.Data.head.tagHead.buttons }}
       <div class="container p-5">
-          <h5 class="text-center">{{ .Site.Data.tagHead.btnTitle }}</h5>
-          <p class="text-center font-italic">{{ .Site.Data.tagHead.btnDescription }}</p>
+          <h5 class="text-center">{{ .Site.Data.head.tagHead.btnTitle }}</h5>
+          <p class="text-center font-italic">{{ .Site.Data.head.tagHead.btnDescription }}</p>
           <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
-          {{ range sort .Site.Data.tagHead.buttons "weight" }}
+          {{ range sort .Site.Data.head.tagHead.buttons "weight" }}
               <div class="col">
               <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
               </div>  
@@ -20,8 +20,8 @@
       </div>
   {{ end }}
   <div class="text-center m-4">
-    <h5>{{ .Site.Data.tagHead.contentTitle }} {{ .Title }}</h5>
-    <p>{{ .Site.Data.tagHead.contentDescription }}</p>
+    <h5>{{ .Site.Data.head.tagHead.contentTitle }} {{ .Title }}</h5>
+    <p>{{ .Site.Data.head.tagHead.contentDescription }}</p>
 </div>
 
 <div class="container">
