@@ -5,6 +5,14 @@
     color: grey;
     text-decoration: none;
     }
-    #TableOfContents ul li {
-        list-style: none;
-        }
+#TableOfContents ul li {
+    list-style: none;
+    }
+
+/* Menu auto Hide*/
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out;
+    }
+.scrolled-up{
+transform:translateY(0); transition: all 0.3s ease-in-out;
+}
