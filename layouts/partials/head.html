@@ -62,6 +62,11 @@
 {{ end }}
 <link rel="stylesheet" href="{{ $csscustom.RelPermalink }}" integrity="{{ $csscustom.Data.Integrity }}" media="all" type="text/css">
 
+<!--
+    Ajoute custom JS en local
+-->
+{{ $jscustom := resources.Get "/js/custom.js" | minify }}
+<script defer src="{{ $jscustom.RelPermalink }}"></script>
 
 <!--
     Ajoute Boostrap JS en local
