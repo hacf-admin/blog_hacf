@@ -33,6 +33,9 @@ Site/Blog de la communauté et l'association Francophone autour de Home Assistan
 * [X] **Config NetliflyCMS Article** Ajouter type d'installation
 * * [ ] Integrer dans le template
 
+* [X] Menu auto Hide https://bootstrap-menu.com/detail-autohide.html
+* [X] Selection TOC fixed
+
 A explorer :
 https://discourse.gohugo.io/t/how-to-get-the-path-to-the-assets-directory-without-hardcoding/28217/3
 https://mertbakir.gitlab.io/hugo/image-processing-in-hugo/
