@@ -119,7 +119,7 @@ Cette enseigne est très intéressante dans les projets DIY avec des prix de pi�
 
 >Il existe la livraison en 10 jours ouvrés pour des prix a peine plus chers.
 
-{{< button "Liens Affilliés" "http://aliexpress.hacf.fr" "fa-brands fa-alipay">}}
+{{< button "Liens Affilliés" "https://aliexpress.hacf.fr" "fa-brands fa-alipay">}}
 
 ### Les partenariats
 Nous espérons pouvoir à terme mettre en place des partenariats avec des marques ou des enseignes permettant de présenter du matériel pouvant être intégré à Home Assistant, mais aussi proposer des bons de réductions à nos adhérents.
