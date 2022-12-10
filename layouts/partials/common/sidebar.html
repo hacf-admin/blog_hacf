@@ -10,11 +10,14 @@
         <h5 class="text-primary text-center">Sommaire</h5>
         {{ .TableOfContents }}
     </div>
+
     {{ if ne .Params.type "page" }}
     <div class="text-center">
         {{ partial "common/participer.html" . }}
-    </div>       
+    </div>
+    {{ partial "common/last-post.html" . }}  
     {{ end }}
-    {{ partial "common/last-post.html" . }}
+    
     
 </div>
+
