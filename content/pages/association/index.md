@@ -32,8 +32,23 @@ Enfin, la solution est fédérée par une société qui garantit sa stabilité e
 
 ## Historique.
 
- A GARDER ????  peut etre sous forme de liste ?
- AFFICHER UN SHORTCODE OU PARTIAL HISTORIQUE
+**Idée / Réflexion** *Avril 2020*
+* Naissance dans la tête de six personnes suite au manque observé d’une véritable communauté francophone autour de Home Assistant.
+
+**Ouverture** *Juillet 2020*
+* HACF devient accessible à tous les francophones désirant partager, échanger ou apprendre sur la solution Home Assistant.
+
+**Idée / Réflexion** *Avirl 2020*
+* Naissance dans la tête de six personnes suite au manque observé d’une véritable communauté francophone autour de Home Assistant.
+
+**Union** *Février 2021*
+* Union avec le groupe Facebook [Home Assistant France](https://groupe-facebook.hacf.fr)
+
+**Association** *Juin 2021*
+* Création de l’association [Communauté Francophone autour de Home Assistant](/association) dans un soucis de transparence et de résilience.
+
+**Union** *Aout 2022*
+* Union avec le forum home-assistant.lu dans le but de concentrer nos froces de partage et d'entraide en un seul lieu.
 
 ## L'association.
 L'**association** s'est avérée comme un choix évident dès le début de l'aventure HACF, car elle permet de **pérenniser** la communauté contre tout départ d'un administrateur ou d'un fondateur.
