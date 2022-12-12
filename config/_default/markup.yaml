@@ -1,38 +1,38 @@
-markup:
-  #defaultMarkdownHandler: goldmark ## Utile si besoinde passer par l'ancien moteur markdown Blackfriday
-  tableOfContents:
-    endLevel: 5
-    ordered: false
-    startLevel: 2
 
-  highlight:
-    #anchorLineNos: false
-    #codeFences: true
-    #guessSyntax: false
-    #hl_Lines: ""
-    #lineAnchors: ""
-    #lineNoStart: 1
-    #lineNos: false
-    #lineNumbersInTable: true
-    noClasses: false
-    style: monokai
-    #tabWidth: 4
+#defaultMarkdownHandler: goldmark ## Utile si besoinde passer par l'ancien moteur markdown Blackfriday
+tableOfContents:
+  endLevel: 5
+  ordered: false
+  startLevel: 2
 
-  goldmark:
-    #extensions:
-    #  definitionList: true
-    #  footnote: true
-    #  linkify: true
-    #  strikethrough: true
-    #  table: true
-    #  taskList: true
-    #  typographer: true
-    parser:
-      attribute:
-        block: true
-    #    title: true
-    #  autoHeadingID: true
-    #  autoHeadingIDType: github
-    #renderer:
-    #  hardWraps: false
-      unsafe: true
+highlight:
+  #anchorLineNos: false
+  #codeFences: true
+  #guessSyntax: false
+  #hl_Lines: ""
+  #lineAnchors: ""
+  #lineNoStart: 1
+  #lineNos: false
+  #lineNumbersInTable: true
+  noClasses: false
+  style: monokai
+  #tabWidth: 4
+
+goldmark:
+  #extensions:
+  #  definitionList: true
+  #  footnote: true
+  #  linkify: true
+  #  strikethrough: true
+  #  table: true
+  #  taskList: true
+  #  typographer: true
+  parser:
+    attribute:
+      block: true
+  #    title: true
+  #  autoHeadingID: true
+  #  autoHeadingIDType: github
+  #renderer:
+  #  hardWraps: false
+    unsafe: true
