@@ -1,5 +1,5 @@
 markup:
-  defaultMarkdownHandler: goldmark ## Utile si besoinde passer par l'ancien moteur markdown Blackfriday
+  #defaultMarkdownHandler: goldmark ## Utile si besoinde passer par l'ancien moteur markdown Blackfriday
   tableOfContents:
     endLevel: 5
     ordered: false
@@ -27,12 +27,12 @@ markup:
     #  table: true
     #  taskList: true
     #  typographer: true
-    #parser:
-    #  attribute:
-    #    block: true
+    parser:
+      attribute:
+        block: true
     #    title: true
     #  autoHeadingID: true
     #  autoHeadingIDType: github
     #renderer:
     #  hardWraps: false
-    #  unsafe: false
+      unsafe: true
