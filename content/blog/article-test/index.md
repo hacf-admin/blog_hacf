@@ -32,6 +32,16 @@ url_off: null
 
 {{< keyboard kbd="CTRL, ALT" >}}
 
+test alert avec attribut NON FONCTIONNEL
+> This is a note.
+{.danger}
+
+> This is a warning.
+{.warning}
+
+> This is dangerous.
+{.danger}
+
 ## Test Gallery
 
 
