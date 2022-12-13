@@ -3,7 +3,7 @@
 {{ $mymonths := index $.Site.Data.mois }}
 
 {{ if and (ne $lastmod $date) (gt .Lastmod .Date) }}
-    <h6 class="card-subtitle mb-2 text-muted text-center">Mis à Jour le {{ .Lastmod.Day }} {{ index $mymonths (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }}</h6>
+    <h6 class="text-muted text-center">Mis à Jour le {{ .Lastmod.Day }} {{ index $mymonths (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }}</h6>
 {{ else }}
-    <h6 class="card-subtitle mb-2 text-muted text-center">Publié le {{ .Date.Day }} {{ index $mymonths (printf "%d" .Date.Month) }} {{ .Date.Year }}</h6>
+    <h6 class="text-muted text-center">Publié le {{ .Date.Day }} {{ index $mymonths (printf "%d" .Date.Month) }} {{ .Date.Year }}</h6>
 {{ end }}

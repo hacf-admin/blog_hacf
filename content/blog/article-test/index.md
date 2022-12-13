@@ -33,14 +33,26 @@ url_off: null
 {{< keyboard kbd="CTRL, ALT" >}}
 
 test alert avec attribut NON FONCTIONNEL
+```
 > This is a note.
-{.danger}
-
+{.alert .alert-primary}
+```
+> This is a note.
+{.alert .alert-primary}
+```
 > This is a warning.
-{.warning}
+{.alert .alert-warning}
+```
+> This is a warning.
+{.alert .alert-warning}
 
+```
 > This is dangerous.
-{.danger}
+{.alert .alert-danger}}
+```
+> This is dangerous.
+{.alert .alert-danger}}
+
 
 ## Test Gallery
 
@@ -179,6 +191,7 @@ X^2^
 ![Image Gif Animé 2](img/imge_gif_animé.gif)
 
 ![Image PNG](img/installation_detection_automatique_materiels.png)
+
 
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 

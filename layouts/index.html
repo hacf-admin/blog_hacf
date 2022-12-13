@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="mt-5">
+<section>
   {{ $sections:= site.Data.sections }}
     {{ range sort $sections "section.weight" }}
       {{ if .section.active }}

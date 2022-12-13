@@ -2,12 +2,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-    <title>{{ .Title }}</title>
+    <title>{{ .Site.Title }}</title>
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}{{ end }}" />
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}{{end}}" />
     <meta name="author" content="{{ if .IsHome }}{{ $.Site.Author.name }}{{ else }}{{ with .Params.authors }}{{ delimit . ", "}}{{ else }}{{ .Params.author }}{{end}}{{end}}" />
 
 
+ 
+    <title></title>
+    <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ delimit .Keywords ", " }}{{end}}" />
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
+    <meta name="author" content="{{ .Site.Author.name}}">
     
     <!--{{ with .OutputFormats.Get "RSS" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}

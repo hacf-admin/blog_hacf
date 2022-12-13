@@ -8,7 +8,9 @@
     <h2 class="text-center text-secondary mb-5">{{ .title }}</h2>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
       {{ range first $nbPost (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
-        {{ partial "cards/last-post" . }}
+      <div class="col">
+        {{ partial "cards/post-card" . }}
+      </div>
       {{ end }}
     </div>
   </div>
