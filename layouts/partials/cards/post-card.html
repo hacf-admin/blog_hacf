@@ -1,0 +1,29 @@
+
+        <div class="card shadow-sm h-100">
+            <!--<a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
+               <img src="{{ partial "helpers/get-hero.html" . }}" class="card-img-top" alt="hero-{{ .Title }}" title="hero-{{ .Title }}" height="200px" width="auto">
+            </a>-->
+            <a href="{{ .RelPermalink }}">
+                {{ partial "cards/image-list.html" . }}
+            </a>
+            
+            <div class="card-body">
+                <h5 class="card-title">{{ .Title }}</h5>
+                <p class=" text-muted text-end"><i class="fas fa-glasses"></i> {{ .ReadingTime }} min</p>
+                
+                <p class="card-text text-secondary">{{ .Description }}</p>
+            </div>
+            <h6 class="card-subtitle mb-2 text-muted text-center text-lowercase text-truncate">
+                {{ range $idx, $tag := .Params.tags }}
+                {{- if ne $idx 0 }}, {{ end }}
+                    <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
+                {{- end }}
+            </h6>
+            <div class="card-footer text-center">
+                <span class=" float-none float-lg-start pt-2">
+                    {{ partial "common/date" . }}
+                </span>
+                <a href="{{ .RelPermalink }}" title="Lire" class="float-none float-lg-end btn btn-outline-primary btn-sm">Lire</a>
+            </div> 
+        </div> 
+

@@ -4,26 +4,19 @@
     </a>
     <div class="card-body">
       <h6 class="card-subtitle mb-2 text-muted text-center text-capitalize text-trucate">
-        {{ range $idx, $category := .Params.categories }}
-        {{- if ne $idx 0 }}, {{ end }}
-            <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
-        {{- end }}</h6>
       <h5 class="card-title">{{ .Title }}</h5>
       <p class="text-muted text-end">{{ .ReadingTime }} min de lecture</p>
-      <p class="card-text text-secondary">{{ .Description }}</p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <a href="{{ .RelPermalink }}" title="Lire" type="button" class="btn btn-sm btn-outline-secondary">Lire</a>
-        </div>
-        <small class="text-muted">{{ partial "helpers/date" . }}</small>
-      </div>
+      <p class="card-text text-secondary text-truncate">{{ .Description }}</p>
+
     </div class="card-footer">
+      <div class="d-flex justify-content-between align-items-center mx-2">
+        <small class="text-muted">{{ partial "common/date" . }}</small>
+        <a href="{{ .RelPermalink }}" title="Lire" type="button" class="btn btn-sm btn-outline-secondary">Lire</a>
+      </div>
+      <hr>
       <h6 class="card-subtitle mb-2 text-muted text-center text-lowercase text-truncate">
           {{ range $idx, $tag := .Params.tags }}
           {{- if ne $idx 0 }}, {{ end }}
               <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
           {{- end }}</h6>
-    <div>
-
-    </div>
   </div>

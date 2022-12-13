@@ -3,10 +3,9 @@
 {{ with $related }}
 <h3 class="text-center">Ces articles peuvent vous interesser ...</h3>
 
-	{{ range . }}
-	
-	<div class="col-4">
-		<div class="card h-100">
+	{{ range . }}	
+		<div class="col-3">
+<!--			<div class="card h-100">
 			<div class="card-body">
 			  <h5 class="card-title text-secondary p-1 fst-italic">{{ .Title }}</h5>
 			  <h6 class="card-subtitle mb-2 text-muted p-1">Catégoies ? Tags ?  Rien ?</h6>
@@ -14,8 +13,11 @@
 			  <a href="{{ .RelPermalink }}" class="card-link">Lire</a>
 			</div>
 		  </div>
+		  -->	
+		  {{ partial "cards/post-card.html" . }}
 	</div>
 
+		
 
 	{{ end }}
 
