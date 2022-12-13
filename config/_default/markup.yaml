@@ -35,4 +35,4 @@ goldmark:
   #  autoHeadingIDType: github
   #renderer:
   #  hardWraps: false
-    unsafe: true
+  #  unsafe: true

@@ -192,6 +192,7 @@ X^2^
 
 ![Image PNG](img/installation_detection_automatique_materiels.png)
 
+
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 
 ![Image PNG](img/profil_utilisateur.png)
