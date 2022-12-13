@@ -1,7 +1,7 @@
 section:
   name: Presentation HACF et HA off
   id: presentation
-  weight: 2
+  weight: 1
   active: true
   template: sections/landing_double.html
 title: HACF
@@ -17,10 +17,10 @@ summary:
 buttons:
   - name: En savoir plus
     url: /association
-    icon:
+    icon: null
   - name: Adhérer
     url: http://adhesion.hacf.fr
-    icon:
+    icon: null
 socialLinks:
   - name: Contact
     icon: far fa-envelope
@@ -66,7 +66,7 @@ summary2:
 buttons2:
   - name: Découvrez Home Assistant
     url: https://demo.home-assistant.io/#/lovelace/0
-    icon: 
+    icon: null
 socialLinks2:
   - name: Site
     url: https://www.home-assistant.io/
