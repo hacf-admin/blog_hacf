@@ -1,0 +1,14 @@
+draft: false
+visibleInCMS: false
+
+taxoGen:
+  title: Les Rédacteurs
+  description: Bienvenue sur la page des rédacteurs de la communauté
+  contentTitle: Liste de toutes les personnes participants a la redaction et au maintient des articles de la communauté
+  contentDescription: Nous avons besoin de vous pour continuer a créer, maintenir et faire évoluer les articles.
+
+singleTaxo:
+  title: Les articles de
+  description: Bienvenue dans les articles de 
+  contentTitle: Liste de tous les articles de 
+  contentDescription: Accedez a tous les articles de la communauté, n'hesitez pas a les faire evoluer en les completant, les corrigant, a les mettant a jour et en y ajoutant les votre
