@@ -5,7 +5,7 @@ visibleInCMS: true
 draft: false
 date: 2022-09-30
 lastmod: null
-image: img/chauffage-chat2.jpg
+image: img/filpilote.png
 description: "A l'heure où le chauffage est un poste de dépense très important,
   Home Assistant ne fournit qu'un thermostat basique. Cet article propose une
   implémentation complète permettant de gérer son chauffage : thermostat plus
