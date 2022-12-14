@@ -86,6 +86,20 @@
 <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 
+<!--
+    Ajoute le css et le JS de Prismjs 
+-->
+{{ $cssprism := resources.Get "/css/prism.css" | resources.PostCSS }}
+
+{{ if hugo.IsProduction }}
+    {{ $cssprism = $cssprism | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link rel="stylesheet" href="{{ $cssprism.RelPermalink }}" integrity="{{ $cssprism.Data.Integrity }}" media="all" type="text/css">
+
+{{ $jsprism := resources.Get "/js/prism.js" | minify }}
+<script defer src="{{ $jsprism.RelPermalink }}"></script>
+
+
 <!-- Matomo -->
 
 <!-- End Matomo Code -->

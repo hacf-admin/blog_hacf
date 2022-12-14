@@ -1,17 +1,3 @@
-<!--
-    Ajoute le css et le JS de Prismjs 
--->
-
-{{ $cssprism := resources.Get "/css/prism.css" | resources.PostCSS }}
-
-{{ if hugo.IsProduction }}
-    {{ $cssprism = $cssprism | minify | fingerprint | resources.PostProcess }}
-{{ end }}
-<link rel="stylesheet" href="{{ $cssprism.RelPermalink }}" integrity="{{ $cssprism.Data.Integrity }}" media="all" type="text/css">
-
-{{ $jsprism := resources.Get "/js/prism.js" | minify }}
-<script defer src="{{ $jsprism.RelPermalink }}"></script>
-
 <div>
     {{ with .Attributes.title }}
         <div class="highlight-title"><span>{{ . }}</span></div>
