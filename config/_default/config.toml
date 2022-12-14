@@ -40,10 +40,12 @@ enableGitInfo = true
   tocPage = true
   authorPage = false
   allowGitModPage = false
+  lastPostPage = false
+  
   sidebarPost = true
   tocPost = true
   authorPost = true
-  lastPost = true
+  lastPostPost = true
   allowGitModPost = false
 
 [frontmatter]
