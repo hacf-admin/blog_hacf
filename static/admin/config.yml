@@ -339,6 +339,12 @@ collections:
             hint: "Description devant faire entre x et xx caracteres"
             required: true
 
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
       - file: "data/sections/landing_double.yaml"
         label: "Section Landing Double"
         format: "yaml"
