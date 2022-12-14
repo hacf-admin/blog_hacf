@@ -1,81 +1,91 @@
-{{ if eq .Params.type "post" }}
 <section class="py-5 text-center bg-light" style="background-image:url({{ partial "commons/get-img-article.html" . }})">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.head.postHead.title }}</h1>
-        <h3 class="fw-light text-white">{{ .Site.Data.head.postHead.description }}</h3>
-      </div>
-    </div>
-  </section>
-    {{ if .Site.Data.head.postHead.buttons }}
-        <div class="container p-5">
-            <h5 class="text-center">{{ .Site.Data.head.postHead.btnTitle }}</h5>
-            <p class="text-center font-italic">{{ .Site.Data.head.postHead.btnDescription }}</p>
-            <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
-            {{ range sort .Site.Data.head.postHead.buttons "weight" }}
-                <div class="col">
-                <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
-                </div>  
-            {{ end }}
-            </div>
-        </div>
-    {{ end }}
-    <div class="text-center m-4">
-      <h5>{{ .Site.Data.head.postHead.contentTitle }}</h5>
-      <p>{{ .Site.Data.head.postHead.contentDescription }}</p>
-  </div>
-{{ else if eq .Params.type "news" }}
-<section class="py-5 text-center bg-light" style="background-image:url({{ partial "commons/get-img-article.html" . }})">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.head.newsHead.title }}</h1>
-        <h3 class="fw-light text-white">{{ .Site.Data.head.newsHead.description }}</h3>
-      </div>
-    </div>
-  </section>
-    {{ if .Site.Data.head.newsHead.buttons }}
-        <div class="container p-5">
-            <h5 class="text-center">{{ .Site.Data.head.newsHead.btnTitle }}</h5>
-            <p class="text-center font-italic">{{ .Site.Data.head.newsHead.btnDescription }}</p>
-            <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
-            {{ range sort .Site.Data.head.newsHead.buttons "weight" }}
-                <div class="col">
-                <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
-                </div>  
-            {{ end }}
-            </div>
-        </div>
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light text-capitalize text-white">
+      {{ if eq .Params.type "post" }}
+        {{ .Site.Data.head.postHead.title }}
+      
+      {{ else if eq .Params.type "news" }}
+        {{ .Site.Data.head.newsHead.title }}
+      
+      {{ else }}
+        {{ .Site.Data.head.termsHead.title }}
+      {{ end }}
+      </h1>
 
-    {{ end }}
-    <div class="text-center m-5">
-      <h5>{{ .Site.Data.head.newsHead.contentTitle }}</h5>
-      <p>{{ .Site.Data.head.newsHead.contentDescription }}</p>
-  </div>
-{{ else }}
-<section class="py-5 text-center bg-light" style="background-image:url({{ partial "commons/get-img-article.html" . }})">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light text-capitalize text-white">{{ .Site.Data.head.termsHead.title }}</h1>
-        <h3 class="fw-light text-white">{{ .Site.Data.head.termsHead.description }}</h3>
-      </div>
+      <h3 class="fw-light text-white">
+      {{ if eq .Params.type "post" }}
+        {{ .Site.Data.head.postHead.description }}
+      
+      {{ else if eq .Params.type "news" }}
+        {{ .Site.Data.head.newsHead.description }}
+      
+      {{ else }}
+        {{ .Site.Data.head.termsHead.title }}
+      {{ end }}
+      </h3>
     </div>
-  </section>
+  </div>
+</section>
+
+{{ if eq .Params.type "post" }}
+  {{ if .Site.Data.head.postHead.buttons }}
     <div class="container p-5">
-        <h5 class="text-center">{{ .Site.Data.head.termsHead.btnTitle }}</h5>
-        <p class="text-center font-italic">{{ .Site.Data.head.termsHead.btnDescription }}</p>
+        <h5 class="text-center">{{ .Site.Data.head.postHead.btnTitle }}</h5>
+        <p class="text-center font-italic">{{ .Site.Data.head.postHead.btnDescription }}</p>
         <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
-        {{ range sort .Site.Data.head.termsHead.buttons "weight" }}
+        {{ range sort .Site.Data.head.postHead.buttons "weight" }}
             <div class="col">
             <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
             </div>  
         {{ end }}
         </div>
     </div>
-    <div class="text-center">
-        <h5>{{ .Site.Data.head.termsHead.contentTitle }}</h5>
-        <p>{{ .Site.Data.head.termsHead.contentDescription }}</p>
+  {{ end }}
+  <div class="text-center m-4">
+    <h5>{{ .Site.Data.head.postHead.contentTitle }}</h5>
+    <p>{{ .Site.Data.head.postHead.contentDescription }}</p>
+  </div>
+
+{{ else if eq .Params.type "news" }}
+  {{ if .Site.Data.head.newsHead.buttons }}
+  <div class="container p-5">
+      <h5 class="text-center">{{ .Site.Data.head.newsHead.btnTitle }}</h5>
+      <p class="text-center font-italic">{{ .Site.Data.head.newsHead.btnDescription }}</p>
+      <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+      {{ range sort .Site.Data.head.newsHead.buttons "weight" }}
+          <div class="col">
+          <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
+          </div>  
+      {{ end }}
+      </div>
+  </div>
+  {{ end }}
+  <div class="text-center m-5">
+    <h5>{{ .Site.Data.head.newsHead.contentTitle }}</h5>
+    <p>{{ .Site.Data.head.newsHead.contentDescription }}</p>
+  </div>
+
+{{ else }}
+  {{ if .Site.Data.head.termsHead.buttons }}
+  <div class="container p-5">
+    <h5 class="text-center">{{ .Site.Data.head.termsHead.btnTitle }}</h5>
+    <p class="text-center font-italic">{{ .Site.Data.head.termsHead.btnDescription }}</p>
+    <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
+    {{ range sort .Site.Data.head.termsHead.buttons "weight" }}
+        <div class="col">
+        <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
+        </div>  
+    {{ end }}
     </div>
+  </div>
+  {{ end }}
+  <div class="text-center">
+    <h5>{{ .Site.Data.head.termsHead.contentTitle }}</h5>
+    <p>{{ .Site.Data.head.termsHead.contentDescription }}</p>
+  </div>
 {{ end }}
+
 
 <div class="container">
     <hr class="divider">

@@ -2,11 +2,9 @@ title: Nouvelles & Actualités
 description: Les nouvelles de HACF, de Home Assistant et de la domotique en général.
 visibleInCMS: false
 draft: false
-btnTitle: ""
-btnDescription: ""
+
 buttons: []
 contentTitle: Toutes l'actualité de HACF, Home Assistant ou la Domotique
 contentDescription: Accédez à toutes les nouvelles et actualités concernant la
   communauté HACF, votre solution domotique ou tout autres choses en lien avec
   la domotique.
-btnDesription: description du bouton
