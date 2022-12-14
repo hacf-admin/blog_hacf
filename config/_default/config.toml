@@ -36,6 +36,18 @@ enableGitInfo = true
   gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
   gitBranchGuideDev = "main"
   
+  sidebarPage = true
+  tocPage = true
+  authorPage = false
+  allowGitModPage = false
+  lastPostPage = false
+  
+  sidebarPost = true
+  tocPost = true
+  authorPost = true
+  lastPostPost = true
+  allowGitModPost = false
+
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
   expiryDate = ['expiryDate']
@@ -47,8 +59,6 @@ enableGitInfo = true
   category = 'categories'
   series = 'series'
   author = 'authors'
-
-
 
 [related]
   includeNewer = true
@@ -69,7 +79,7 @@ enableGitInfo = true
 #resampleFilter = "box"
 # Default JPEG or WebP quality setting. Default is 75.
 quality = 100
-hint = "photo"
+#hint = "photo"
 disableDate = true
 disableLatLong = true
 
