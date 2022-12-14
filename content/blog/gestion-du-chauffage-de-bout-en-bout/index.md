@@ -1,5 +1,5 @@
 ---
-title: Gestion du chauffage de bout en bout 2
+title: Gestion du chauffage de bout en bout
 type: post
 visibleInCMS: true
 draft: false
