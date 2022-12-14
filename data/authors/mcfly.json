@@ -6,5 +6,7 @@
   "social_network": {
     "twitter": "https://www.twitter/mcfly"
   },
-  "pseudos": "McFly"
+  "pseudos": "McFly",
+  "pseudo_hacf": "mcfly",
+  "pseudo_haoff": "mcfly"
 }

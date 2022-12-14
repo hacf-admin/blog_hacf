@@ -1,0 +1,19 @@
+draft: false
+visibleInCMS: false
+
+taxoGen:
+  title: Les Tags
+  description: Liste des articles par tags
+  contentTitle: Liste de tous les articles en fonction de leurs tags
+  contentDescription: Accedez a tous les articles de la communauté, n'hesitez pas a les faire evoluer en les completant, les corrigant, a les mettant a jour et en y ajoutant les votre
+
+singleTaxo:
+  title: Les articles taggués
+  description: Bienvenue dans les articles taggués 
+  contentTitle: Liste de tous les articles contenant le tag
+  contentDescription: Accedez a tous les articles de la communauté, n'hesitez pas a les faire evoluer en les completant, les corrigant, a les mettant a jour et en y ajoutant les votre
+
+
+btnTitle: 
+btnDescription: 
+btnDesription: 

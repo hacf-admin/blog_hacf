@@ -3,25 +3,25 @@
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light text-capitalize text-white">
         {{ if .Params.head }}
-          {{ .Site.Data.head.catHead.taxoGen.title }}
+          {{ .Site.Data.head.tagsHead.taxoGen.title }}
         {{ else }}
-          {{ .Site.Data.head.catHead.singleTaxo.title }} {{ .Title }}
+          {{ .Site.Data.head.tagsHead.singleTaxo.title }} {{ .Title }}
         {{ end }}</h1>
       <h3 class="fw-light text-white"> 
         {{ if .Params.head }}
-          {{ .Site.Data.head.catHead.taxoGen.description }}
+          {{ .Site.Data.head.tagsHead.taxoGen.description }}
         {{ else }}
-          {{ .Site.Data.head.catHead.singleTaxo.description }} {{ .Title }}
+          {{ .Site.Data.head.tagsHead.singleTaxo.description }} {{ .Title }}
         {{ end }}</h3>
     </div>
   </div>
 </section>
-  {{ if .Site.Data.head.catHead.buttons }}
+  {{ if .Site.Data.head.tagsHead.buttons }}
       <div class="container p-5">
-          <h5 class="text-center">{{ .Site.Data.head.catHead.btnTitle }}</h5>
-          <p class="text-center font-italic">{{ .Site.Data.head.catHead.btnDescription }}</p>
+          <h5 class="text-center">{{ .Site.Data.head.tagsHead.btnTitle }}</h5>
+          <p class="text-center font-italic">{{ .Site.Data.head.tagsHead.btnDescription }}</p>
           <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
-          {{ range sort .Site.Data.head.catHead.buttons "weight" }}
+          {{ range sort .Site.Data.head.tagsHead.buttons "weight" }}
               <div class="col">
               <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
               </div>  
@@ -31,12 +31,12 @@
   {{ end }}
   <div class="text-center m-4">
     {{ if .Params.head }}
-    <h5>{{ .Site.Data.head.catHead.taxoGen.contentTitle }}</h5>
-    <p>{{ .Site.Data.head.catHead.taxoGen.contentDescription }}</p>
+    <h5>{{ .Site.Data.head.tagsHead.taxoGen.contentTitle }}</h5>
+    <p>{{ .Site.Data.head.tagsHead.taxoGen.contentDescription }}</p>
   {{ else }}
 
-    <h5>{{ .Site.Data.head.catHead.singleTaxo.contentTitle }} {{ .Title }}</h5>
-    <p>{{ .Site.Data.head.catHead.singleTaxo.contentDescription }}</p>
+    <h5>{{ .Site.Data.head.tagsHead.singleTaxo.contentTitle }} {{ .Title }}</h5>
+    <p>{{ .Site.Data.head.tagsHead.singleTaxo.contentDescription }}</p>
   {{ end }}
 </div>
 

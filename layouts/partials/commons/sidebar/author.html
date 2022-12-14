@@ -1,11 +1,12 @@
 {{ $author := index .Site.Data.authors (.Params.author | default "default") }}
-<div class="card border border-primary">
+
+<div class="card border border-primary my-1">
     <div class="card-header text-secondary border rounded-top p-0 m-1">
         <div class="row p-0 m-0">
             <div class="col-3">
                 <img src="{{ $author.avatar | relURL }}" class="rounded-circle p-0" alt="{{ $author.pseudos }}-avatar" width="50px">
             </div>
-            <div class="col-9 p-0 text-center">
+            <div class="col-9 p-0 text-start">
                 <a href="/authors/{{ $author.title }}" title="Voir tous les articles de {{ $author.pseudos }}">{{ $author.pseudos }}</a>
                 <p class="text-secondary fs-6">{{ $author.fonction }}</p>
             </div>
@@ -18,10 +19,11 @@
 
     <div class="card-body text-center">
         {{ if $author.pseudo_hacf }}
-        <a class="btn btn-outline-primary btn-sm" href="https://forum.hacf.fr/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HACF</a>  
+        
+        <a href="https://forum.hacf.fr/u/{{ $author.pseudo_hacf }}/summary" title="Profil de {{ $author.pseudos }} sur le forum Francophone HACF" target="_blank" rel="noreferrer"><img src="/images/logo.webp" alt="Profil de {{ $author.pseudos }} sur le forum Francophone HACF" height="30px" width="30px"></a>  
         {{ end }}
         {{ if $author.pseudo_haoff }}
-        <a class="btn btn-outline-primary btn-sm" href="https://community.home-assistant.io/u/{{ $author.name }}/summary" target="_blank" rel="noreferrer">Profil HAOff</a>
+        <a href="https://community.home-assistant.io/u/{{ $author.pseudo_haoff }}/summary" target="_blank" rel="noreferrer" title="Profil de {{ $author.pseudos }} sur le forum Anglais"><img class="rounded" src="/images/logo-haoff.png" alt="Profil de {{ $author.pseudos }} sur le forum Anglais" height="30px" width="30px"></a>
         {{ end }}
     </div>
 </div>

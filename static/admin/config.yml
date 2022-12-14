@@ -1284,6 +1284,12 @@ collections:
             name: "twitter"
             widget: "string"
             required: false 
+      - label: "Profil HACF"
+        name: "pseudo_hacf"
+        widget: "string"
+      - label: "Profil HA Off"
+        name: "pseudo_haoff"
+        widget: "string"       
 
 # ARCHIVE pour les sections du dossier data
 #          - {

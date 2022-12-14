@@ -1,5 +1,5 @@
 {{ $nbPost := 3}}
-<div class="justify-content-center border border-primary rounded m-2 text-center">
+<div class="justify-content-center border border-primary rounded my-1 text-center ">
     <h5 class="text-primary text-center text-decoration-underline">Derniers ajoutés</h5>
     <ul>
         {{ range first $nbPost (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
