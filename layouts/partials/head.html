@@ -98,10 +98,10 @@
 <link rel="stylesheet" href="{{ $cssprism.RelPermalink }}" integrity="{{ $cssprism.Data.Integrity }}" media="all" type="text/css">-->
 <link rel="stylesheet" href="/css/prism.css" media="all" type="text/css">
 
-{{ $jsprism := resources.Get "/js/prism.js" | minify }}
-<script defer src="{{ $jsprism.RelPermalink }}"></script>
+<!--{{ $jsprism := resources.Get "/js/prism.js" | minify }}
+<script defer src="{{ $jsprism.RelPermalink }}"></script>-->
 
-<script defer src="{{ $jsprism.RelPermalink }}"></script>
+<script defer src="/js/prism.js"></script>
 <!-- Matomo -->
 
 <!-- End Matomo Code -->
