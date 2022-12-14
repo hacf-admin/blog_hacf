@@ -312,6 +312,33 @@ collections:
     create: false
     #filter: {field: visibleInCMS, value: true}
     files:
+      - file: "data/sections/hero.yaml"
+        label: "Section Hero"
+        format: "yaml"
+        name: "hero"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/hero.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+          - {name: visibleInCMS, widget: hidden, default: false }
+ 
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
+ 
+          - label: "Sous-titre"
+            name: "subtitle"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
       - file: "data/sections/landing_double.yaml"
         label: "Section Landing Double"
         format: "yaml"
