@@ -26,7 +26,7 @@ depots:
       - HACS
       - Renault
   - name: Card Lovelace Météo France
-    role: "@ioull"
+    role: "@hacf-fr"
     timeline: Mai 2020 - Présent
     repo: https://github.com/hacf-fr/lovelace-meteofrance-weather-card
     summary: Carte Lovelace dédiée à l'intégration Météo-France pour Home Assistant.
