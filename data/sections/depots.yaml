@@ -4,55 +4,33 @@ section:
   weight: 3
   active: true
   template: sections/depots.html
-# section information
-
-title : Les développements de la communauté
-
-# filter buttons
+title: Les développements de la communauté
 buttons:
-- name: Tous
-  filter: "all"
-- name: Intégrations
-  filter: "Integration"
-- name: Add-ons
-  filter: "Add-ons"
-- name: HACS
-  filter: "HACS"
-- name: Autres
-  filter: "Autres"
-
-# your projects
+  - name: Tous
+    filter: all
+  - name: Intégrations
+    filter: Integration
+  - name: Add-ons
+    filter: Add-ons
+  - name: HACS
+    filter: HACS
+  - name: Autres
+    filter: Autres
 depots:
-# - name: Awesome FR
-#   #logo: /images/sections/projects/awesome.png
-#   role: Initiateur
-#   timeline: "Avril 2020 - Présent"
-#   repo: https://github.com/hacf-fr/awesome-francophone-home-assistant # If your project is a public repo on GitHub, then provide this link. it will show star count.
-#   #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-#   summary: Liste de ressources francophones super utiles à propos de Home Assistant.
-#   tags: ["Autres", "Awesome"]
-
-# - name: Guide du Développeurs
-#   #logo: /images/sections/projects/tensorflow.png
-#   role: Initiateur
-#   timeline: "Octobre 2020 - Présent"
-#   repo: https://github.com/hacf-fr/homeassistant-guide-du-developpeur
-#   url: "https://developpeurs.hacf.fr/"
-#   summary: Un guide en français pour contribuer au projet Home Assistant 
-#   tags: ["Autres", "Guide"]
-
-- name: hassRenaultZE
-  #logo: /images/sections/projects/toha.png
-  role: "???"
-  timeline: "Aout 2020 - Présent"
-  repo: https://github.com/hacf-fr/hassRenaultZE
-  summary: Sensor Renault ZE pour Home Assistant 
-  tags: ["HACS","Renault"]
-
-- name: Card Lovelace Météo France
-  #logo: /images/sections/projects/toha.png
-  role: Développeur
-  timeline: "Mai 2020 - Présent"
-  repo: https://github.com/hacf-fr/lovelace-meteofrance-weather-card
-  summary: Carte Lovelace dédiée à l'intégration Météo-France pour Home Assistant. 
-  tags: ["HACS","Cards","Lovelace"]
+  - name: hassRenaultZE
+    role: "@epenet"
+    timeline: Aout 2020 - Présent
+    repo: https://github.com/hacf-fr/hassRenaultZE
+    summary: Sensor Renault ZE pour Home Assistant
+    tags:
+      - HACS
+      - Renault
+  - name: Card Lovelace Météo France
+    role: "@ioull"
+    timeline: Mai 2020 - Présent
+    repo: https://github.com/hacf-fr/lovelace-meteofrance-weather-card
+    summary: Carte Lovelace dédiée à l'intégration Météo-France pour Home Assistant.
+    tags:
+      - HACS
+      - Cards
+      - Lovelace
