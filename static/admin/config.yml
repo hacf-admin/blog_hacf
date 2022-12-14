@@ -762,26 +762,47 @@ collections:
         format: "yaml"
         name: "catHead"
         fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "terms"}
           - {name: visibleInCMS, widget: hidden, default: false }
-          
-
           - label: "Brouillon"
             name: "draft"
             widget: "boolean"
             default: true
             required: false
+
+          - label: "Section"
+            name: "taxoGen"
+            widget: "object"
+            hint: " Concernant la page DES catégories"
+            fields:
+              - {label: "Titre ", name: "title", widget: "string", required: true}
+              - {label: "Description", name: "description", widget: "text", required: true}
+              - label: "Titre du contenu" 
+                name: "contentTitle"
+                widget: "string" 
+                required: false
+
+              - label: "Description du contenu"
+                name: "contentDescription"
+                widget: "text"
+                required: false
+
+          - label: "Section"
+            name: "singleTaxo"
+            widget: "object"
+            hint: " Concernant la page DE LA catégorie"
+            fields:
+              - {label: "Titre ", name: "title", widget: "string", required: true}
+              - {label: "Description", name: "description", widget: "text", required: true}
+              - label: "Titre du contenu" 
+                name: "contentTitle"
+                widget: "string" 
+                required: false
+
+              - label: "Description du contenu"
+                name: "contentDescription"
+                widget: "text"
+                required: false
+
 
           - label: "Titre Bouton" 
             name: "btnTitle"
@@ -812,41 +833,54 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
-          - label: "Titre du contenu" 
-            name: "contentTitle"
-            widget: "string" 
-            required: false
 
-          - label: "Description du contenu"
-            name: "contentDescription"
-            widget: "text"
-            required: false
 
-      - file: "data/head/tagHead.yaml"
-        label: "Index des tags"
+      - file: "data/head/tagsHead.yaml"
+        label: "Index des Tags"
         format: "yaml"
-        name: "tagHead"
+        name: "tagsHead"
         fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "terms"}
           - {name: visibleInCMS, widget: hidden, default: false }
-          
-
           - label: "Brouillon"
             name: "draft"
             widget: "boolean"
             default: true
             required: false
+
+          - label: "Section"
+            name: "taxoGen"
+            widget: "object"
+            hint: " Concernant la page DES tags"
+            fields:
+              - {label: "Titre ", name: "title", widget: "string", required: true}
+              - {label: "Description", name: "description", widget: "text", required: true}
+              - label: "Titre du contenu" 
+                name: "contentTitle"
+                widget: "string" 
+                required: false
+
+              - label: "Description du contenu"
+                name: "contentDescription"
+                widget: "text"
+                required: false
+
+          - label: "Section"
+            name: "singleTaxo"
+            widget: "object"
+            hint: " Concernant la page DE UN tag"
+            fields:
+              - {label: "Titre ", name: "title", widget: "string", required: true}
+              - {label: "Description", name: "description", widget: "text", required: true}
+              - label: "Titre du contenu" 
+                name: "contentTitle"
+                widget: "string" 
+                required: false
+
+              - label: "Description du contenu"
+                name: "contentDescription"
+                widget: "text"
+                required: false
+
 
           - label: "Titre Bouton" 
             name: "btnTitle"
@@ -877,15 +911,82 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
-          - label: "Titre du contenu" 
-            name: "contentTitle"
+
+      - file: "data/head/authorsHead.yaml"
+        label: "Index des Auteurs"
+        format: "yaml"
+        name: "authorsHead"
+        fields:
+          - {name: visibleInCMS, widget: hidden, default: false }
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+            required: false
+
+          - label: "Section"
+            name: "taxoGen"
+            widget: "object"
+            hint: " Concernant la page DES auteurs"
+            fields:
+              - {label: "Titre ", name: "title", widget: "string", required: true}
+              - {label: "Description", name: "description", widget: "text", required: true}
+              - label: "Titre du contenu" 
+                name: "contentTitle"
+                widget: "string" 
+                required: false
+
+              - label: "Description du contenu"
+                name: "contentDescription"
+                widget: "text"
+                required: false
+
+          - label: "Section"
+            name: "singleTaxo"
+            widget: "object"
+            hint: " Concernant la page DE l'auteur"
+            fields:
+              - {label: "Titre ", name: "title", widget: "string", required: true}
+              - {label: "Description", name: "description", widget: "text", required: true}
+              - label: "Titre du contenu" 
+                name: "contentTitle"
+                widget: "string" 
+                required: false
+
+              - label: "Description du contenu"
+                name: "contentDescription"
+                widget: "text"
+                required: false
+
+
+          - label: "Titre Bouton" 
+            name: "btnTitle"
             widget: "string" 
             required: false
 
-          - label: "Description du contenu"
-            name: "contentDescription"
-            widget: "text"
+          - label: "Description du Bouton" 
+            name: "btnDescription"
+            widget: "string" 
             required: false
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                hint: 'format "fa-solid fa-server"'
 ###############################################
 
 # COLLECTION PAGES
