@@ -30,30 +30,29 @@
 {{ else }}
 
     {{ if site.Params.sidebarPage }}
-    {{ if site.Params.authorPage }}
-        {{ partial "commons/sidebar/author.html" . }}
-    {{ end }}
-    <div class="sticky-top" style="top: 80px">
-        {{ if site.Params.tocPage }}
-            {{ partial "commons/sidebar/toc.html" . }}
+        {{ if site.Params.authorPage }}
+            {{ partial "commons/sidebar/author.html" . }}
         {{ end }}
+        <div class="sticky-top" style="top: 80px">
+            {{ if site.Params.tocPage }}
+                {{ partial "commons/sidebar/toc.html" . }}
+            {{ end }}
 
-        {{ if .Params.url_hacf }}
-            {{ partial "commons/sidebar/help_forum.html" . }}
-        {{ end }}
+            {{ if .Params.url_hacf }}
+                {{ partial "commons/sidebar/help_forum.html" . }}
+            {{ end }}
 
-        {{ if  site.Params.allowGitModPage}}
-            <div class="text-center">
-                {{ partial "commons/sidebar/gitMod.html" . }}
-            </div>  
-        {{ end }}
+            {{ if  site.Params.allowGitModPage}}
+                <div class="text-center">
+                    {{ partial "commons/sidebar/gitMod.html" . }}
+                </div>  
+            {{ end }}
 
-        {{ if site.Params.lastPage }}
-            {{ partial "commons/sidebar/last-post.html" . }}   
-        {{ end }}
-        
-    </div>
-
+            {{ if site.Params.lastPage }}
+                {{ partial "commons/sidebar/last-post.html" . }}   
+            {{ end }}
+            
+        </div>
     {{ end }}
     
 {{ end }}
