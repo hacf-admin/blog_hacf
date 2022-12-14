@@ -1,0 +1,32 @@
+<!-- Pour les articles et actualités -->
+{{ if eq .Params.type "post" "news" }}
+    {{ if site.Params.sidebarPost }}
+        {{ if site.Params.authorPost }}
+            {{ partial "commons/sidebar/author.html" . }}
+        {{ end }}
+        <div class="sticky-top" style="top: 80px">
+            {{ if site.Params.tocPost }}
+                {{ partial "commons/sidebar/toc.html" . }}
+            {{ end }}
+
+            {{ if .Params.url_hacf }}
+                {{ partial "commons/sidebar/help_forum.html" . }}
+            {{ end }}
+
+            {{ if  site.Params.allowGitModPost}}
+                <div class="text-center">
+                    {{ partial "commons/sidebar/gitMod.html" . }}
+                </div>  
+            {{ end }}
+
+            {{ if site.Params.lastPost }}
+                {{ partial "commons/sidebar/last-post.html" . }}   
+            {{ end }}
+            
+        </div>
+
+    {{ end }}
+    
+{{ end }}
+
+

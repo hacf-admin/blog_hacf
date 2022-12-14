@@ -36,6 +36,16 @@ enableGitInfo = true
   gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
   gitBranchGuideDev = "main"
   
+  sidebarPage = true
+  tocPage = true
+  authorPage = false
+  allowGitModPage = false
+  sidebarPost = true
+  tocPost = true
+  authorPost = true
+  lastPost = true
+  allowGitModPost = false
+
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
   expiryDate = ['expiryDate']
