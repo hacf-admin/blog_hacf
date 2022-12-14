@@ -1,46 +1,31 @@
 ---
-draft: false
-type : awesome
+title: Awesome Francophone Home Assistant
+type: awesome
 visibleInCMS: true
+draft: false
 aliases:
   - /awesome
-title: Awesome Francophone Home Assistant
-image: img/article3.png
+date: 22-12-14
+lastmod: 2022-09-28 23:36
+image: img/awesome-ha.png
 description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
   sujets autour de Home Assistant et de la domotique.
-lastmod: 2022-09-28 23:36
-liens_utiles:
-  - logo: img/automation_editor_new.png
-    url: https://www.projetdiy.fr/
-    description: Plein de guide DIY avec beaucoup d'ESP, d'électronique, des
-      raspberry et de la domotique.
-    title: Projets DIY
-    type:
-      - blog
-      - diy
-  - logo: images/author/hacf.webp
-    url: https://faire-ca-soi-meme.fr/
-    title: Faire soi-même
-    description: Des hacks, projets et tuto technologiques très bien expliqués et
-      des articles dédiés à la Zigate.
-    type:
-      - diy
-      - documentations
-      - blog
-socialshare: true
 tags:
   - awesome
+liens_utiles: []
+socialshare: true
 ---
 # Awesome" Francophone Home Assistant
 
 ## Blogs
+
 Blogs traitant de domotique et proposant des implémentations Home Assistant.
 
 * [Forum HACF](https://forum.hacf.fr/) - Le blog de la communauté francophone avec de nombreux guides et articles en français.
 * [Les Alexiens](https://www.lesalexiens.fr/) - Un blog qui parle d'Alexa, d'objet connecté et de domotique avec Home Assistant.
 * [Blog d'Antoine Guilbert](https://www.antoineguilbert.fr/category/domotique/) - Objects connectés et domotique.
 * [DEVOTICS](https://devotics.fr) - domotique, objets connectés, nouvelles technologies, développement.
-* [Figer](https://www.figer.com/Blog) de guide et conseil en informatique, réseau et domotique.
+* [Figer](https://www.figer.com) de guide et conseil en informatique, réseau et domotique.
 * [Ça Sert À Quoi ?](https://www.ca-sert-a-quoi.com/category/domotique/) - Un Blog de mise en situation des nouvelles technologies avec une section domotique.
 * [My Canaletto](https://www.canaletto.fr/) - Blog IT et domotique traitant en particulier d'une migration Jeedom vers Home Assistant.
 * [Blog de remi81](https://domo.rem81.com/) - Bloc note sur differents sujets autour de Home Assistant.
@@ -65,11 +50,13 @@ Blogs traitant de domotique et proposant des implémentations Home Assistant.
 * [Tech Café](https://techcafe.fr/category/domotique-podcast-maison-connectee/) - Un podcast domotique généraliste avec une sensibilité Jeedom mais qui s'ouvre à Home Assistant. A écouter : [Episode 18 Home Assistant](https://techcafe.fr/domotique-dossier-home-assistant/)
 
 ## Documentations
+
 Documentations pertinentes en français.
 
 * [Présentation et guide d'utilisation de deCONZ](https://presentationdeconz.wordpress.com/) - Tutoriel pour la configuration de deCONZ (Passerelle universelle Zigbee).
 
 ## Configurations
+
 Un partage de configurations HA par des membres francophones, souvent commentées en français.
 
 * [Oncleben31](https://github.com/oncleben31/home-assistant-config) - Configuration découpée en plusieurs fichiers et documentée en français et en anglais.
@@ -96,5 +83,5 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 * [Blueprints sur le forum HACF](https://forum.hacf.fr/tag/plan-blueprint) - Les Blueprints proposés par la communauté francophone.
 
 ## Faites le vous même (DIY)
-Vous trouverez dans cette section des tutos pour des montages à faire soi même.
 
+Vous trouverez dans cette section des tutos pour des montages à faire soi même.
