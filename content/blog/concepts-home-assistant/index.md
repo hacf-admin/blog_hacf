@@ -1,21 +1,24 @@
 ---
 title: Architecture et concepts Home Assistant
-date: 2022-10-09
-draft: false
 type: post
 visibleInCMS: true
-lastmod: 
+draft: false
+date: 2022-10-09
+lastmod: null
 image: img/accueil.png
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
   important d'assimiler les concepts et la terminologie de Home Assistant. C'est
   ce que propose cet article.
+level: Débutant
+type_install:
+  - ha-os
 categories:
   - Installation
-tags:
-  - Concepts
 series:
   - Les Bases de Home Assistant
+tags:
+  - Concepts
 author: argonaute
 ---
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
@@ -143,7 +146,22 @@ Le schéma suivant résume le principe de fonctionnement de base de Home Assista
 
 ![enter image description here](img/fonctionnement.jpg)
 
-Nous n'entrerons pas dans le détail, mais il faut comprendre que le moteur de HA fonctionne comme un **bus d'évènement.**. Ce bus permet à n'importe quelle intégration de déclencher ou d'écouter des **événements**. Par exemple, tout changement d'état d'un device sera annoncé sur le bus, avec le nouvel état et l'état précédant.
+### U﻿n peu de théorie
+
+Intéressons nous sur le schéma à Home Assistant Core, le coeur de Home Assistant.
+
+Nous n'entrerons pas dans le détail, mais il faut comprendre que le moteur de HA fonctionne autour d'un composant qui s'appel le **bus d'événement.** C'est lui qui empile les actions à faire, et est capable de les transmettre aux composants qui les écoutent. Peux ceux qui connaissent MQTT, c'est le même principe (dit publish/subscribe). 
+
+U﻿ne **machine à état** fini est capable de recevoir des changements d'états et d'appliquer des règles pour définir de nouveaux états. Tout changement d'état génère un événement sur le bus.
+
+U﻿n **timer** est lui en charge de déclencher des événements liés au temps.
+
+E﻿nfin, Home Assistant tient un **registre des services**. Un appel de service de l'extérieur génère un événement sur le bus. 
+
+* U﻿n bus d'évenement
+* U﻿ne machine à état
+
+Ce bus permet à n'importe quelle intégration de déclencher ou d'écouter des **événements**. Par exemple, tout changement d'état d'un device sera annoncé sur le bus, avec le nouvel état et l'état précédant.
 L'utilisation direct des événements dans Home Assistant est possible, mais pas usuelle.
 
 L'intégration crée ce qui permet d'interagir avec le cœur du système, et de ce fait expose :
