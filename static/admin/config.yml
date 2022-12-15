@@ -344,7 +344,28 @@ collections:
             widget: "text"
             hint: "Description devant faire entre x et xx caracteres"
             required: true
+            
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
 
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
+                
       - file: "data/sections/landing_double.yaml"
         label: "Section Landing Double"
         format: "yaml"
