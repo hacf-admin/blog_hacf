@@ -5,7 +5,7 @@ visibleInCMS: true
 draft: false
 date: 2022-10-09
 lastmod: null
-image: img/accueil.png
+image: img/accueil-2.jpg
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
   important d'assimiler les concepts et la terminologie de Home Assistant. C'est
