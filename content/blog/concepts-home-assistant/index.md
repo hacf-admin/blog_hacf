@@ -21,7 +21,7 @@ tags:
   - Concepts
 author: argonaute
 ---
-![](img/accueil-2.jpg)
+![]()
 
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
 C'est ce que nous proposons dans cet article.
