@@ -1,21 +1,24 @@
 ---
 title: Architecture et concepts Home Assistant
-date: 2022-10-09
-draft: false
 type: post
 visibleInCMS: true
-lastmod: 
-image: img/accueil.png
+draft: false
+date: 2022-10-09
+lastmod: null
+image: img/accueil-2.jpg
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
   important d'assimiler les concepts et la terminologie de Home Assistant. C'est
   ce que propose cet article.
+level: Débutant
+type_install:
+  - ha-os
 categories:
   - Installation
-tags:
-  - Concepts
 series:
   - Les Bases de Home Assistant
+tags:
+  - Concepts
 author: argonaute
 ---
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
@@ -143,14 +146,39 @@ Le schéma suivant résume le principe de fonctionnement de base de Home Assista
 
 ![enter image description here](img/fonctionnement.jpg)
 
-Nous n'entrerons pas dans le détail, mais il faut comprendre que le moteur de HA fonctionne comme un **bus d'évènement.**. Ce bus permet à n'importe quelle intégration de déclencher ou d'écouter des **événements**. Par exemple, tout changement d'état d'un device sera annoncé sur le bus, avec le nouvel état et l'état précédant.
-L'utilisation direct des événements dans Home Assistant est possible, mais pas usuelle.
+### Théorie sur le fonctionnement du coeur du système
 
-L'intégration crée ce qui permet d'interagir avec le cœur du système, et de ce fait expose :
+Intéressons nous sur le schéma à Home Assistant Core, le coeur de Home Assistant.
+
+Certes, nous n'entrerons pas dans le détail, mais il faut comprendre que le moteur de HA fonctionne autour d'un composant central qui s'appel le **bus d'événement.** Un événement est par exemple une action à faire, un événement temporel ou un changement d'état.
+
+Le bus reçoit du système des événements et il est capable de les transmettre aux composants qui les écoutent. Peux ceux qui connaissent MQTT, c'est le même principe dit de "publish/subscribe".
+
+Le bus d'événement est couplé à u﻿ne **machine à état fini**, qui connait les règles à appliquer. Elle est capable de recevoir des événements de changements d'états et d'appliquer des règles pour définir de nouveaux états. Et tout changement d'état génère à nouveau un événement sur le bus.
+
+U﻿n **timer** est lui en charge de déclencher tous les événements liés au temps.
+
+E﻿nfin, Home Assistant a un **registre des services**. Un appel de service de l'extérieur génère un événement sur le bus. Le bus est également capable de déclencher des actions via l'appel d'un service.
+
+Nous avions précédemment parlé des **intégrations** : des bibliothèques logicielles ajoutées quand de nouvelles fonctionnalités sont rajoutées. Home assistant core dialogue avec les différentes intégrations installées sur notre système domotique. 
+
+Sur le schéma est représentée l'intégration ZHA (Zigbee for Home Assistant) qui, quand elle est rajoutée à Home assistant, permet de dialoguer avec des composants zigbee, et par exemple une prise connectée.
+
+### Les composants de base à connaitre
+
+Une intégration (ZHA dans notre exemple) crée ce qui nous permettra d'interagir avec notre système domotique, et de ce fait expose 3 types de composants :
 
 * Des **entités**
 * Des **services**
 * Des **appareils**
+
+Ainsi, pour notre prise connectée, nous aurons un appareil appelé "prise connectée", des "entités" supportants les informations comme l'état de l'interrupteur ou la consommation de la prise, et enfin des services pour piloter l'arrêt et la marche. 
+
+> La compréhension des entités, services et appareils est primordiale
+> pour maîtriser Home Assistant. Nous les détaillons dans les chapitres
+> suivants.
+
+A noter que l'utilisation direct des **événements** dans Home Assistant est également possible, mais cependant pas usuelle. Ce sera utilisé dans quelques cas particuliers comme la demande de redémarrage de Home Assistant, ou une détection d'une personne sur une caméra.
 
 ### Les entités
 
