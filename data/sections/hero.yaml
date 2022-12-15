@@ -9,4 +9,7 @@ logo: images/sections/logo-hacf-100px.webp
 subtitle: La communauté francophone de votre solution domotique
 description: Une communauté de bénévoles passionnés, motivés par le partage et l'entraide.
 image: images/sections/background-dark.png
-buttons: []
+buttons:
+  - name: Boutton 1
+    url: "#"
+    icon: fa-solid fa-server
