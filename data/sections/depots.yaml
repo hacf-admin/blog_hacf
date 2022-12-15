@@ -1,7 +1,7 @@
 section:
   name: Dépots HACF
   id: depots
-  weight: 3
+  weight: 4
   active: true
   template: sections/depots.html
 title: Les développements de la communauté
