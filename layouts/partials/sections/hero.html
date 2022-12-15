@@ -16,9 +16,9 @@
           <h1 class="mb-md-2 mb-lg-4">{{ .subtitle }}</h1>
           <p>{{ .description }} ??</p>
         </div>
-        {{ if .Params.buttons }}
+        {{ if .buttons }}
             {{ range .buttons }}
-                <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
+                <a class="btn btn-primary" href="{{ .url }}" role="button">{{if .buttons.icon }}{{ .icon }}{{ end }}{{ .name }}</a>
             {{ end }}
         {{ end }}
 </div>
