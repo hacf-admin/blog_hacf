@@ -12,5 +12,6 @@ image: images/sections/background-dark.png
 buttons:
   - name: Bouton 1
     url: all
+    icon: fa-solid fa-server
   - name: Bouton 2
     url: Integration
