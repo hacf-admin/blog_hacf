@@ -4,19 +4,13 @@ section:
   weight: 1
   active: true
   template: sections/hero.html
-# section information
-
-title : Home Assistant Communauté Francophone
-logo : images/sections/logo-hacf-100px.webp
-subtitle : La communuté Francophone de votre solution Domotique
-description : Une communauté de benevoles, passionés pret a vous aider dans la bonne humeur et l'entraide.
-
-image : "images/sections/background-dark.png"
-
-# filter buttons
+title: Home Assistant Communauté Francophone
+logo: images/sections/logo-hacf-100px.webp
+subtitle: La communauté francophone de votre solution domotique
+description: Une communauté de bénévoles passionnés, motivés par le partage et l'entraide.
+image: images/sections/background-dark.png
 buttons:
-- name: Bouton 1
-  url: "all"
-- name: Bouton 2
-  url: "Integration"
-
+  - name: Bouton 1
+    url: all
+  - name: Bouton 2
+    url: Integration
