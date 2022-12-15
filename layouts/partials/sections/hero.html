@@ -18,7 +18,7 @@
         </div>
         {{ if .buttons }}
             {{ range .buttons }}
-                <a class="btn btn-primary" href="{{ .url }}" role="button">{{if .buttons.icon }}{{ .icon }}{{ end }}{{ .name }}</a>
+                <a class="btn btn-primary" href="{{ .url }}" role="button">{{if .icon }}<i class="{{ .icon }}"></i>{{ end }} {{ .name }}</a>
             {{ end }}
         {{ end }}
 </div>
