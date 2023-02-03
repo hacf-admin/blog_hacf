@@ -12,8 +12,6 @@ description: "A l'heure où le chauffage est un poste de dépense très importan
   performant, planification des plages de température, pilotage, gestion des
   ouvrants, interface graphique et courbes pour l'optimisation."
 level: Avancé
-type_install:
-  - ha-core
 categories:
   - Automatisation
 series:

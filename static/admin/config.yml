@@ -142,15 +142,15 @@ collections:
         - Intermédiaire
         - Avancé
 
-      - label: "Type d'installation"
-        name: 'type_install'
-        widget: 'select'
-        multiple: true
-        hint: "HA OS, HA Container, HA Core"
-        options: 
-        - ha-os
-        - ha-container
-        - ha-core
+#      - label: "Type d'installation"
+#        name: 'type_install'
+#        widget: 'select'
+#        multiple: true
+#        hint: "HA OS, HA Container, HA Core"
+#        options: 
+#        - ha-os
+#        - ha-container
+#        - ha-core
 
       - label: 'Categorie(s)'
         name: 'categories'

@@ -15,8 +15,6 @@ author: mcfly
 socialshare: true
 title: Article Test
 image: null
-type_install:
-  - ha-os
 categories:
   - Add-on
   - Intégration

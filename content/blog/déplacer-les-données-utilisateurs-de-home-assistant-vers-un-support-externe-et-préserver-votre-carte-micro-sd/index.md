@@ -16,8 +16,6 @@ title: Déplacer les données utilisateurs de Home Assistant vers un support
 image: ""
 description: "Préserver votre carte Micro SD en déplaçant les données
   utilisateurs de Home Assistant vers un support externe. "
-type_install:
-  - ha-os
 categories:
   - Installation
 series:

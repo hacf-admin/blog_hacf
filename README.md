@@ -5,10 +5,10 @@ Site/Blog de la communauté et l'association Francophone autour de Home Assistan
 * [X] Integrer juste le mail de contact (integré via JS et Shortcode Mail)
 * [X] Page contact
 * [ ] Probleme de TOC caché.
-* [ ] Mettre sans BulletPoint et a gauche le texte dans les boites Derniers ajoutés et mis à jour.
+* [X] Mettre sans BulletPoint et a gauche le texte dans les boites Derniers ajoutés et mis à jour.
 * [ ] Manque un lien à droite (comme « venez discuter » pour les articles) vers le forum ou quelqu’un pourrait faire un post pour proposer une nouvelle entrée.
 * [ ] Article de référence. l'article sur "mon premier sensor" avec systeme monitor et Raspberry ?
-* [ ] Supprimer Type d'installation dans les articles (ha-os, ha-core ha-container)
+* [X] Supprimer Type d'installation dans les articles (ha-os, ha-core ha-container)
 * [ ] Page Medias
 * [ ] Integrer les balises Twitter/facebook
 https://www.codeur.com/blog/integrer-open-graph-trafic-reseaux-sociaux/

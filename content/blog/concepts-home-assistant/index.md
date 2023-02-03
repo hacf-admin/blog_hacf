@@ -11,8 +11,6 @@ description: Certes, il est intéressant de commencer à "jouer" avec Home
   important d'assimiler les concepts et la terminologie de Home Assistant. C'est
   ce que propose cet article.
 level: Débutant
-type_install:
-  - ha-os
 categories:
   - Installation
 series:
