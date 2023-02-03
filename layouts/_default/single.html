@@ -5,19 +5,23 @@
 <section class="container">
   <div class="row my-4">
     <article class="row justify-content-center">
-      <div class="col-12 col-xl-8 m-4">
-        <div>
-          {{ .Content }}
+      {{ if eq .Params.type "contact" }}
+        <div class="col-12 col-xl-10 m-4">
+          <div>
+            {{ .Content }}
+          </div>
         </div>
-      </div>
-      <div class="col-xl-3 d-none d-xl-block">
-        {{ partial "commons/sidebar.html" . }}
-      </div>
+      {{ else }}
+        <div class="col-12 col-xl-8 m-4">
+          <div>
+            {{ .Content }}
+          </div>
+        </div>
+        <div class="col-xl-3 d-none d-xl-block">
+          {{ partial "commons/sidebar.html" . }}
+        </div>  
+      {{ end }}
     </article>
-
-    <div class="col-12 text-end mt-2">
-      
-    </div>
   </div>
 </section>
 
@@ -40,7 +44,7 @@
   </section>
 {{ end }}
 
-  {{ if eq .Params.type "page" "awesome" }}
+  {{ if eq .Params.type "page" "awesome" "contact" }}
   <section class="mb-5">
     <div class="container ">
         <!--

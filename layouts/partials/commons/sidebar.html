@@ -5,8 +5,9 @@
             {{ partial "commons/sidebar/author.html" . }}
         {{ end }}
         <div class="sticky-top" style="top: 80px">
+            
             {{ if site.Params.tocPost }}
-                {{ partial "commons/sidebar/toc.html" . }}
+                    {{ partial "commons/sidebar/toc.html" . }}
             {{ end }}
 
             {{ if .Params.url_hacf }}
@@ -33,9 +34,10 @@
         {{ if site.Params.authorPage }}
             {{ partial "commons/sidebar/author.html" . }}
         {{ end }}
+
         <div class="sticky-top" style="top: 80px">
             {{ if site.Params.tocPage }}
-                {{ partial "commons/sidebar/toc.html" . }}
+                    {{ partial "commons/sidebar/toc.html" . }}
             {{ end }}
 
             {{ if .Params.url_hacf }}

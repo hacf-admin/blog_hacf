@@ -1,6 +1,6 @@
 ---
 title: Nous Contacter
-type: page
+type: contact
 visibleInCMS: true
 draft: false
 aliases:

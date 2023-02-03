@@ -41,7 +41,7 @@ enableGitInfo = true
   authorPage = false
   allowGitModPage = false
   lastPostPage = false
-  
+
   sidebarPost = true
   tocPost = true
   authorPost = true
