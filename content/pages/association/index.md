@@ -13,6 +13,7 @@ tags:
   - association
   - statuts
   - reglement
+toc: true
 ---
 
 {{< btnAsso >}}
