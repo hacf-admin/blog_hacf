@@ -1,6 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9e92335a-6184-4519-b29d-4869dc8408ec/deploy-status)](https://app.netlify.com/sites/hacf/deploys)
 
 Site/Blog de la communauté et l'association Francophone autour de Home Assistant,  HACF.
+
 **__En route vers la V1:__**
 * [X] Integrer juste le mail de contact (integré via JS et Shortcode Mail)
 * [X] Page contact
