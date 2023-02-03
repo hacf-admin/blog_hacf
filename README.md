@@ -14,8 +14,9 @@ Site/Blog de la communauté et l'association Francophone autour de Home Assistan
 https://www.codeur.com/blog/integrer-open-graph-trafic-reseaux-sociaux/
 http://brendan-quinn.xyz/post/working-with-hugos-internal-partial-templates-facebook-and-open-graph/
 https://gohugo.io/templates/internal/#configure-open-graph
-* [ ] Bouton Adherer (Accueil) dans nouvel Onglet
-* [ ] Bouton Découvrer Home Assistant (Accueil) dans nouvel Onglet
+* [X] Bouton Adherer (Accueil) dans nouvel Onglet
+* [X] Ajout du choix d'ouverture des liens sur tous les bouttons.
+* [X] Bouton Découvrer Home Assistant (Accueil) dans nouvel Onglet
 * [ ] Un point d’interrogation non présent dans le CMS est resté derrière le deuxième texte du hero
 
 
