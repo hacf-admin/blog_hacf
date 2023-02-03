@@ -8,8 +8,6 @@ image: img/acces-exterieur-nginx-proxy-manger.jpg
 description: Comment accéder depuis l'extérieur a votre système domotique, Home
   Assistant, avec l'add-on Nginx Proxy Manager.
 level: Intermédiaire
-type_install:
-  - ha-os
 categories:
   - Add-on
 series:

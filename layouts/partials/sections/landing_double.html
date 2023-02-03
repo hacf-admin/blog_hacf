@@ -44,7 +44,7 @@
     
           <div class="card-body">
             {{ range .buttons }}
-            <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
+            <a class="btn btn-primary" href="{{ .url }}" {{ if eq .type "ext" }}target="_blank"{{ end }}  rel="noopener" role="button">{{ .name }}</a>
             {{ end }}
           </div>
         </div>
@@ -94,7 +94,7 @@
     
           <div class="card-body">
             {{ range .buttons2 }}
-            <a class="btn btn-primary" href="{{ .url }}" role="button">{{ .name }}</a>
+            <a class="btn btn-primary" href="{{ .url }}" {{ if eq .type "ext" }}target="_blank"{{ end }}  rel="noopener" role="button">{{ .name }}</a>
             {{ end }}
           </div>
         </div>

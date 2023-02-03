@@ -41,7 +41,7 @@ enableGitInfo = true
   authorPage = false
   allowGitModPage = false
   lastPostPage = false
-  
+
   sidebarPost = true
   tocPost = true
   authorPost = true
@@ -71,6 +71,9 @@ enableGitInfo = true
   name = 'categories'
   weight = 60
 
+
+[social]
+  twitter = 'hacf_fr'
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,

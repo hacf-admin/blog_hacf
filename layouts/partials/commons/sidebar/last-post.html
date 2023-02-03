@@ -1,14 +1,14 @@
 {{ $nbPost := 3}}
-<div class="justify-content-center border border-primary rounded my-1 text-center ">
-    <h5 class="text-primary text-center text-decoration-underline">Derniers ajoutés</h5>
+<div class="justify-content-center border border-primary rounded my-1 text-truncate">
+    <h5 class="text-primary text-center text-decoration-underline">Dernieres Publications</h5>
     <ul>
         {{ range first $nbPost (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
-        <li>
+        <li class="list-unstyled">
             <a class="text-decoration-none text-muted" href="{{ .Permalink }}" title="{{ .Title }}" alt="{{ .Title }}">{{ .Title }}</a>
         </li> 
         {{ end }}
     </ul>
-
+<!--
     <h5 class="text-primary text-center text-decoration-underline">Derniers mis à jour</h5>
     <ul>
         {{ range first $nbPost (where site.RegularPages.ByLastmod.Reverse "Type" "in" site.Params.mainSections )}}
@@ -17,4 +17,5 @@
         </li> 
         {{ end }}
     </ul>
+-->
   </div>
