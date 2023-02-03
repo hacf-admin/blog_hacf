@@ -5,6 +5,7 @@ Site/Blog de la communauté et l'association Francophone autour de Home Assistan
 * [X] Integrer juste le mail de contact (integré via JS et Shortcode Mail)
 * [X] Page contact
 * [ ] Probleme de TOC caché.
+>Ben j'ai creusé, et ca marche quand il renvoit vers un lien plus bas mais pas plus haut car le menu s'affiche a continuer de creuser.
 * [X] Mettre sans BulletPoint et a gauche le texte dans les boites Derniers ajoutés et mis à jour.
 * [ ] Manque un lien à droite (comme « venez discuter » pour les articles) vers le forum ou quelqu’un pourrait faire un post pour proposer une nouvelle entrée.
 * [ ] Article de référence. l'article sur "mon premier sensor" avec systeme monitor et Raspberry ?
@@ -18,6 +19,8 @@ https://gohugo.io/templates/internal/#configure-open-graph
 * [X] Ajout du choix d'ouverture des liens sur tous les bouttons.
 * [X] Bouton Découvrer Home Assistant (Accueil) dans nouvel Onglet
 * [X] Un point d’interrogation non présent dans le CMS est resté derrière le deuxième texte du hero
+* [X] Remplacé `derniers ajoutés` par `dernieres publications` ou `derniers articles`?
+>Tu valides ?
 
 
 ## Chose a faire:
