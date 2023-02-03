@@ -7,13 +7,14 @@
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}{{end}}" />
     <meta name="author" content="{{ if .IsHome }}{{ $.Site.Author.name }}{{ else }}{{ with .Params.authors }}{{ delimit . ", "}}{{ else }}{{ .Params.author }}{{end}}{{end}}" />
 
-
- 
-    <title></title>
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/schema.html" . }}
+<!--    <title></title>
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ delimit .Keywords ", " }}{{end}}" />
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
     <meta name="author" content="{{ .Site.Author.name}}">
-    
+-->    
     <!--{{ with .OutputFormats.Get "RSS" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
     {{- end }}

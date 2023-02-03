@@ -72,6 +72,9 @@ enableGitInfo = true
   weight = 60
 
 
+[social]
+  twitter = 'hacf_fr'
+
 [imaging]
 # Default resample filter used for resizing. Default is Box,
 # a simple and fast averaging filter appropriate for downscaling.
