@@ -3,6 +3,7 @@
 Site/Blog de la communauté et l'association Francophone autour de Home Assistant,  HACF.
 **__En route vers la V1:__**
 * [X] Integrer juste le mail de contact (integré via JS et Shortcode Mail)
+* [X] Page contact
 * [ ] Probleme de TOC caché.
 * [ ] Mettre sans BulletPoint et a gauche le texte dans les boites Derniers ajoutés et mis à jour.
 * [ ] Manque un lien à droite (comme « venez discuter » pour les articles) vers le forum ou quelqu’un pourrait faire un post pour proposer une nouvelle entrée.

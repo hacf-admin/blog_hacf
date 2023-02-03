@@ -12,7 +12,6 @@ image: ""
 description: Page de contact de la Communauté Francophone autour de Home Assistant (HACF) et de son Association.
 tags:
 socialshare: true
-toc: false
 ---
 # Nous Contacter.
 
