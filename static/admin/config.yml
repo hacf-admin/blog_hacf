@@ -365,7 +365,13 @@ collections:
                 widget: "string"
                 required: false
                 hint: 'format "fa-solid fa-server"'
-                
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
       - file: "data/sections/landing_double.yaml"
         label: "Section Landing Double"
         format: "yaml"
@@ -423,6 +429,12 @@ collections:
                 widget: "string"
                 required: false
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: 'Réseaux Sociaux'
             name: 'socialLinks'
@@ -487,6 +499,12 @@ collections:
                 widget: "string"
                 required: false
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: 'Réseaux Sociaux 2'
             name: 'socialLinks2'
@@ -672,6 +690,12 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
           - label: "Titre du contenu" 
             name: "contentTitle"
             widget: "string" 
@@ -735,6 +759,12 @@ collections:
                 name: "icon"
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -800,6 +830,12 @@ collections:
                 name: "icon"
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -887,7 +923,11 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
-
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
       - file: "data/head/tagsHead.yaml"
         label: "Index des Tags"
@@ -965,6 +1005,11 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
       - file: "data/head/authorsHead.yaml"
         label: "Index des Auteurs"
@@ -1041,6 +1086,13 @@ collections:
                 name: "icon"
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
 ###############################################
 
 # COLLECTION PAGES

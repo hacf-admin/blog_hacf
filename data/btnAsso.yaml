@@ -3,11 +3,14 @@ buttons:
     url: https://adherer.hacf.fr
     weight: 1
     icons: fas fa-ribbon
+    type:
   - name: Don (Hello Asso)
     url: https://dons.hacf.fr
     weight: 2
     icons: fas fa-hand-holding-dollar
+    type:
   - name: Don (Paypal)
     url: https://paypal.hacf.fr
     weight: 3
     icons: fab fa-paypal
+    type:

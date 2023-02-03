@@ -36,7 +36,7 @@
         <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
         {{ range sort .Site.Data.head.postHead.buttons "weight" }}
             <div class="col">
-            <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
+            <a class="btn btn-primary" href="{{ .url }}" {{ if eq .type "ext" }}target="_blank"{{ end }}  rel="noopener" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
             </div>  
         {{ end }}
         </div>
@@ -55,7 +55,7 @@
       <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
       {{ range sort .Site.Data.head.newsHead.buttons "weight" }}
           <div class="col">
-          <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
+          <a class="btn btn-primary" href="{{ .url }}" {{ if eq .type "ext" }}target="_blank"{{ end }}  rel="noopener" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
           </div>  
       {{ end }}
       </div>
@@ -74,7 +74,7 @@
     <div class="row row-cols-2 row-cols-sm-4 row-cols-md-4 g-3 justify-content-center text-center">
     {{ range sort .Site.Data.head.termsHead.buttons "weight" }}
         <div class="col">
-        <a class="btn btn-primary" href="{{ .url }}" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
+        <a class="btn btn-primary" href="{{ .url }}" {{ if eq .type "ext" }}target="_blank"{{ end }}  rel="noopener" role="button"><i class="{{ .icon }}"></i> {{ .name }}</a>
         </div>  
     {{ end }}
     </div>
