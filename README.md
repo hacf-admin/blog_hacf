@@ -17,7 +17,7 @@ https://gohugo.io/templates/internal/#configure-open-graph
 * [X] Bouton Adherer (Accueil) dans nouvel Onglet
 * [X] Ajout du choix d'ouverture des liens sur tous les bouttons.
 * [X] Bouton Découvrer Home Assistant (Accueil) dans nouvel Onglet
-* [ ] Un point d’interrogation non présent dans le CMS est resté derrière le deuxième texte du hero
+* [X] Un point d’interrogation non présent dans le CMS est resté derrière le deuxième texte du hero
 
 
 ## Chose a faire:
