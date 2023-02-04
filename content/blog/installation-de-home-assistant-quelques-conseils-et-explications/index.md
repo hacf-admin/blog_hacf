@@ -8,7 +8,7 @@ author: mcfly
 url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
 socialshare: true
 title: "Installation de Home Assistant : Quelques conseils et explications"
-image: img/article3.png
+images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les grandes lignes de votre installation et la
   direction que celle-ci va prendre dans un futur proche. Voici quelques

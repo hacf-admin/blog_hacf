@@ -12,6 +12,7 @@ enableInlineShortcodes = true
 enableGitInfo = true
 
 [params]
+  title= 'HACF Communauté Francophone autour Home Assistant'
   description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
   logo = "/images/logo.webp"

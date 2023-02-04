@@ -6,10 +6,9 @@
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}{{ end }}" />
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}{{end}}" />
     <meta name="author" content="{{ if .IsHome }}{{ $.Site.Author.name }}{{ else }}{{ with .Params.authors }}{{ delimit . ", "}}{{ else }}{{ .Params.author }}{{end}}{{end}}" />
+    
+    {{ partial "commons/head/opengraph.html" . }}
 
-    {{ template "_internal/opengraph.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/schema.html" . }}
 <!--    <title></title>
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ delimit .Keywords ", " }}{{end}}" />
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />

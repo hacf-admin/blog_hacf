@@ -14,7 +14,7 @@ lastmod: 24-11-2422 00:01
 author: mcfly
 socialshare: true
 title: Article Test
-image: null
+images:
 categories:
   - Add-on
   - Intégration
