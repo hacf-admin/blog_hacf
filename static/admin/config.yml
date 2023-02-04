@@ -1554,9 +1554,11 @@ collections:
       - label: "Profil HACF"
         name: "pseudo_hacf"
         widget: "string"
+        hint: "Mettre seulement le pseudos en minuscule" 
       - label: "Profil HA Off"
         name: "pseudo_haoff"
-        widget: "string"       
+        widget: "string"
+        hint: "Mettre seulement le pseudos en minuscule"      
 
 # ARCHIVE pour les sections du dossier data
 #          - {
