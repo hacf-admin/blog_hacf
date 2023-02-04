@@ -2,9 +2,9 @@
 {{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,svg,webp}"}}
 
 {{/*  if hero image is specified in the page front-matter, then use that  */}}
-{{ if .Params.image }}
+{{ if .Params.images }}
   {{/*  try to read from the page bundle  */}}
-  {{ $heroImage = .Resources.Get .Params.image }}
+  {{ $heroImage = .Resources.Get .Params.images }}
   {{/*  if the image does not exist in the page bundle,try looking in the assets folder  */}}
 {{ end }}
 {{ .Scratch.Set "heroScratch" $heroImage }}
