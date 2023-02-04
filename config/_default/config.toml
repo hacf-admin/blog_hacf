@@ -1,4 +1,5 @@
-baseURL = 'https://hacf.netlify.app'
+baseURL = 'https://dev.hacf.fr'
+#baseURL = 'https://hacf.netlify.app'
 languageCode = 'fr-fr'
 title = 'HACF'
 

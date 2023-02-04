@@ -1,7 +1,8 @@
 backend:
   name: git-gateway
   branch: netlify # Branch to update (optional; defaults to master)
-  site_domain: https://hacf.netlify.app/
+  site_domain: https://dev.hacf.fr
+#  site_domain: https://hacf.netlify.app/
 
 local_backend: true
 
