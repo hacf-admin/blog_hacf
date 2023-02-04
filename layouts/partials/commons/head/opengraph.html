@@ -4,9 +4,9 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 
 {{ if .Params.images }}
-<meta property="og:image" content="{{ .Params.images }}" />
+<meta property="og:image" content="{{ .Permalink }}{{ .Params.images }}" />
 {{ else }}
-<meta property="og:image" content="{{ .Site.Params.images }}"/>
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.images }}"/>
 {{- end -}}
 
 {{- if .IsPage }}
