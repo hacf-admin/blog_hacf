@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: netlify # Branch to update (optional; defaults to master)
-  site_domain: https://dev.hacf.fr/
+  site_domain: https://hacf.netlify.app/
 
 local_backend: true
 
@@ -120,7 +120,7 @@ collections:
         required: false
 
       - label: "Image de l'article"
-        name: "image"
+        name: "images"
         widget: "image"
         required: false
         allow_multiple: false
@@ -258,7 +258,7 @@ collections:
         required: false
 
       - label: "Image de l'article"
-        name: "image"
+        name: "images"
         widget: "image"
         required: false
         allow_multiple: false
@@ -1144,12 +1144,12 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
             choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+            hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
 
           - label: "Description"
             name: "description"
@@ -1243,7 +1243,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
@@ -1303,7 +1303,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
@@ -1363,7 +1363,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
@@ -1423,7 +1423,7 @@ collections:
           required: false
 
         - label: "Image de l'article"
-          name: "image"
+          name: "images"
           widget: "image"
           required: false
           allow_multiple: false
@@ -1483,7 +1483,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false

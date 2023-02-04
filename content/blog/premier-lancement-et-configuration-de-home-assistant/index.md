@@ -5,7 +5,7 @@ type: post
 visibleInCMS: true
 date: 2022-10-07 
 lastmod:
-image: "img/imagebf_image_hero-1-.jpg"
+images: "img/imagebf_image_hero-1-.jpg"
 description: Vous venez d’installer Home Assistant ? Nous allons balayer
   ensemble la première configuration. Elle vous permet de définir la position de
   votre maison, son élévation, mais aussi ajouter les intégrations

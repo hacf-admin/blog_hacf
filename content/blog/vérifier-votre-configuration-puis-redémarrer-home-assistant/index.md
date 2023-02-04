@@ -18,7 +18,7 @@ tags:
 series:
   - Les Bases de Home Assistant
   - Débuter avec Home Assistant
-image: img/hero.jpg
+images: img/hero.jpg
 ---
 
 

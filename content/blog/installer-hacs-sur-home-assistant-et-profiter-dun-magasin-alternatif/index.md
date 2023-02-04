@@ -8,7 +8,7 @@ author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
 title: Installer HACS sur Home Assistant et profiter d'un magasin alternatif.
-image: img/imagebf_image_article1-1-.png
+images: img/imagebf_image_article1-1-.png
 description: "Malgré les multitudes d'intégrations, d'add-ons ou de thèmes
   disponibles en natif dans Home Assistant, il y a une communauté qui en
   développe d'autres. Cette communauté, c'est HACS, pour Home Assistant
