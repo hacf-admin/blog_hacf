@@ -1,0 +1,12 @@
+{{- if .Params.images -}}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{{ .Params.images }}"/>
+{{- else -}}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{{ .Site.Params.images }}"/>
+{{- end -}}
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
+{{ with .Site.Social.twitter -}}
+<meta name="twitter:site" content="@{{ . }}"/>
+{{ end -}}

@@ -8,7 +8,7 @@
     <meta name="author" content="{{ if .IsHome }}{{ $.Site.Author.name }}{{ else }}{{ with .Params.authors }}{{ delimit . ", "}}{{ else }}{{ .Params.author }}{{end}}{{end}}" />
     
     {{ partial "commons/head/opengraph.html" . }}
-
+    {{ partial "commons/head/twitter_cards.html" . }}
 <!--    <title></title>
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ delimit .Keywords ", " }}{{end}}" />
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}" />
