@@ -46,7 +46,7 @@ Le travail d'une communauté internationale au profit de tous les utilisateurs d
 
 ## Installation.
 Ouvrir SSH & Web Terminal puis lancer la commande suivante 
-```
+```bash
     wget -O - https://get.hacs.xyz | bash -
 ```
 
@@ -76,7 +76,7 @@ Vous avez maintenant accès à plusieurs intégrations et composants d’interfa
 
 IMAGE ANIMEE AJOUT INTEGRATION
 
-&gt;Il est possible de choisir une version précise ou d'essayer une version bêta lors de l'installation d'un dépôt, bien sûr, cela est à vos risques.
+>Il est possible de choisir une version précise ou d'essayer une version bêta lors de l'installation d'un dépôt, bien sûr, cela est à vos risques.
 
 
 ## Conclusion

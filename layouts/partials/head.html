@@ -79,9 +79,9 @@
 {{ $jsbootstrap := resources.Get "/js/bootstrap.bundle.min.js" | minify }}
 <script defer src="{{ $jsbootstrap.RelPermalink }}"></script>
 
-<!--
+<!-- NON FONCTIONNEL CAR TROP DE RESSOURCES AU DEMARRAGE
     Ajoute le css et le JS de Prismjs 
--->
+
 
 {{ $cssprism := resources.Get "/css/prism.css" | resources.PostCSS }}
 
@@ -93,6 +93,7 @@
 
 {{ $jsprism := resources.Get "/js/prism.js" | minify }}
 <script defer src="{{ $jsprism.RelPermalink }}"></script>
+-->
 
 <!--
     Ajoute Netlify JS
