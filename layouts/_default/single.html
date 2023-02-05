@@ -29,7 +29,7 @@
 <section class="mb-5">
   <div class="container ">
       <div class="row justify-content-evenly pt-2">
-        <div class="col-12">
+        <div class="col-12 col-md-10 col-lg-8">
         {{ partial "articles/comment.html" . }}
         </div>
       </div>
@@ -39,7 +39,7 @@
     <div class="container ">
         <div class="row justify-content-evenly pt-2">
           {{ if eq .Params.type "post"}}
-          <div class="col-12">
+          <div class="col-12 col-md-10">
           {{ partial "articles/aide-ha.html" . }}
           </div>
           {{ end }}
