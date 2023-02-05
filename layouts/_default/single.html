@@ -26,6 +26,15 @@
 </section>
 
 {{ if eq .Params.type "post" "news" }}
+<section class="mb-5">
+  <div class="container ">
+      <div class="row justify-content-evenly pt-2">
+        <div class="col-12">
+        {{ partial "articles/comment.html" . }}
+        </div>
+      </div>
+  </div>
+</section>
   <section class="mb-5">
     <div class="container ">
         <div class="row justify-content-evenly pt-2">
