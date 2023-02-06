@@ -1,7 +1,7 @@
 ---
 title: Accèder a Home Assistant depuis l'exterieur en HHTPS avec Nginx Proxy Manager
-draft: false
 visibleInCMS: true
+draft: false
 date: 23-11-22 10:04
 lastmod: 23-11-2322 10:04
 images: img/acces-exterieur-nginx-proxy-manger.jpg
@@ -9,7 +9,7 @@ description: Comment accéder depuis l'extérieur a votre système domotique, Ho
   Assistant, avec l'add-on Nginx Proxy Manager.
 level: Intermédiaire
 categories:
-  - Add-on
+  - Réseau
 series:
   - Débuter avec Home Assistant
 tags:

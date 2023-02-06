@@ -158,8 +158,20 @@ collections:
         widget: 'select'
         multiple: true
         min: 1
-        options: ['Installation','Add-on','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself']
-
+        options:
+        - Concepts
+        - Installation
+        - Matériel
+        - Protocoles
+        - Réseau
+        - Interface UI
+        - Add-on/intégration
+        - ESPHome/DIY
+        - Automatisation
+        - Node-red
+        - Energie
+        - Sécurité
+        - Confort
       - label: 'Série(s)'
         name: 'series'
         widget: 'select'
