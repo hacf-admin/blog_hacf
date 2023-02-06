@@ -11,8 +11,11 @@
             {{ else }}
                 {{ partial "commons/sidebar/new_help_forum.html" . }}
             {{ end }}
--->
+-->         
+            {{ if .Params.url_hacf }}
             {{ partial "commons/sidebar/help_forum.html" . }}
+            {{ end }}
+            
 
             {{ if site.Params.tocPost }}
                     {{ partial "commons/sidebar/toc.html" . }}

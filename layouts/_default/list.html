@@ -10,21 +10,20 @@
 <div class="row justify-content-center">
 
   {{ if eq .Params.type "post" }}
-  <div class="col-12 col-lg-2 p-5 order-1">
-    <div class="d-grid gap-2 col-3 col-lg-12 mx-auto sticky-top" style="top: 80px">
-    <h5 class="text-center">Catégories</h5>
-    {{ range .Site.Taxonomies.categories }}
-    <a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
-        <span class="visually-hidden">unread messages</span>
-      </span>
-    </a>
-    {{ end }}
+  <div class="col-12 col-lg-2 p-5 order-1 text-center">
+    <div class="d-grid d-sm-inline d-lg-grid gap-2 col-xl-12 mx-auto sticky-top" style="top: 80px">
+      <h5 class="text-center">Catégories</h5>
+      {{ range .Site.Taxonomies.categories }}
+        <a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </a>
+      {{ end }}
     </div>
   </div>
-  {{ end }}
+	{{ end }}
 
-	
 	<div class="col-12 col-lg-9 order-2 m-3">
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-3 g-3 justify-content-center">
 			{{ range .Paginator.Pages }}
