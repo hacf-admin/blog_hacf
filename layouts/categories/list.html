@@ -11,9 +11,9 @@
   <div class="col-12 col-lg-2 p-5 order-1 text-center">
     <div class="d-grid d-sm-inline d-lg-grid gap-2 col-xl-12 mx-auto sticky-top" style="top: 80px">
     <h5 class="text-center">Catégories</h5>
-    <a class="btn btn-outline-primary position-relative" href="/blog" role="button">Tous</a>
+    <a class="btn btn-sm btn-outline-primary position-relative" href="/blog" role="button">Tous</a>
     {{ range .Site.Taxonomies.categories }}
-    <a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
+    <a class="btn btn-sm btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
         <span class="visually-hidden">unread messages</span>
       </span>

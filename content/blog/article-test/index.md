@@ -16,8 +16,19 @@ socialshare: true
 title: Article Test
 images:
 categories:
-  - Add-on
-  - Intégration
+  - Concepts
+  - Installation
+  - Matériel
+  - Protocoles
+  - Réseau
+  - Interface UI
+  - Add-on/intégration
+  - ESPHome/DIY
+  - Automatisation
+  - Node-red
+  - Energie
+  - Sécurité
+  - Confort
 series:
   - home assistant
 tags:
