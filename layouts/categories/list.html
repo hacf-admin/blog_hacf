@@ -8,8 +8,8 @@
 
 <div class="row justify-content-center">
  
-  <div class="col-12 col-lg-2 p-5 order-1">
-    <div class="d-grid gap-2 col-3 col-lg-12 mx-auto sticky-top" style="top: 80px">
+  <div class="col-12 col-lg-2 p-5 order-1 text-center">
+    <div class="d-grid d-sm-inline d-lg-grid gap-2 col-xl-12 mx-auto sticky-top" style="top: 80px">
     <h5 class="text-center">Catégories</h5>
     <a class="btn btn-outline-primary position-relative" href="/blog" role="button">Tous</a>
     {{ range .Site.Taxonomies.categories }}
@@ -23,7 +23,7 @@
   </div>
 	
 	<div class="col-12 col-lg-9 order-2 m-3">
-		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-3 g-3 justify-content-center">
 			{{ range .Paginator.Pages }}
 			<div class="col">
 			{{ partial "cards/post-card" . }}
