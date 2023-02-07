@@ -1,4 +1,6 @@
-{{ $date := .Date.Format "2 Jan, 2006" }}
+
+
+{{ $date := dateFormat "2 Jan., 2006" .Date }}
 {{ $lastmod := .Lastmod.Format "2 Jan, 2006" }}
 {{ $mymonths := index $.Site.Data.mois }}
 
