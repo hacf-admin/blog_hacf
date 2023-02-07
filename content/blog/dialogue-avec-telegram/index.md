@@ -21,12 +21,13 @@ url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
 
 Exemple de notifications :
-- "Vous partez alors que la fenêtre du salon est restée ouverte"
-- "Le taux de CO2 est trop fort et il faut aérer le salon"
-- "Une consommation anormale d'eau a été détectée cette nuit"
-- "La température du congélateur est trop élevée."
-- "Pas de consommation électrique de la pompe de la piscine. Vérifier son bon fonctionnement"
-- ....
+
+* "Vous partez alors que la fenêtre du salon est restée ouverte"
+* "Le taux de CO2 est trop fort et il faut aérer le salon"
+* "Une consommation anormale d'eau a été détectée cette nuit"
+* "La température du congélateur est trop élevée."
+* "Pas de consommation électrique de la pompe de la piscine. Vérifier son bon fonctionnement"
+* ....
 
 Home Assistant intègre un système de notification, mais qui a ses limites. Il est souvent préférable de le réserver aux notifications techniques, comme les demandes mises à jour.
 
@@ -34,7 +35,9 @@ Home Assistant intègre un système de notification, mais qui a ses limites. Il 
 
 Il est également très intéressant de pouvoir **répondre à ces notifications** pour déclencher une ou des actions via des boutons sous le message.
 L'exemple ci-dessous est la demande de fermeture du volet de la piscine quant l'air est plus froid que l'eau (cela permet de garder l'eau chaude et éviter l'évaporation).
-![Boutons d'action](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_boutons_commande_20220920122010_20220920102124.png)
+
+
+![](img/boutons-commande.png)
 
 Nous vous proposons ici un tuto complet pour implémenter simplement **telegram** avec les **automatisations** de HA.
 
@@ -42,22 +45,28 @@ La première chose sera de créer dans Telegram son "bot" Maison et obtenir un t
 Ensuite dans HA : on connectera Telegram en utilisant l'**intégration Telegram**. Puis on créera une **notification** que l'on utilisera de manière standard dans nos automatisations et scripts. 
 
 ## 1. Installer un bot Telegram
+
 ### 1.1 Création du bot
+
 Il va falloir vous créer un bot pour que ce soit lui qui vous envoie des messages.
 
 Rendez-vous sur [Telegram sur votre Navigateur ](https://web.telegram.org/) ou via votre application mobile.
 
 1. Rechercher `@botfather` dans le champ de recherche des contacts puis cliquer dessus.
 
-![BotFather Telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot1_20220920122249_20220920110230.png)
+![BotFather Telegram](img/bot1.png)
 
 2. Lancer le BotFather Telegram et cliquer sur `Démarrer` (ou start si en anglais).
-![Lancer le BotFather Telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot2_20220920130237_20220920110258.png)
 
+   ![](img/bot2.png)
 3. Une liste d’options vous sont proposées. Cliquer sur `/newbot`.
-![Optons Bot Telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot3_20220920130237_20220920110306.png)
-![Bot Telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot4_20220920130237_20220920110316.png)
-![Création Bot Telegram et token.](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot5_20220920130237_20220920110325.png)
+
+
+   ![](img/bot3.png)
+
+   ![](img/bot4.png)
+
+   ![](img/bot5.png)
 4. Choisir un nom pour votre bot puis un nom d’utilisateur (HACF_bot dans l'exemple)).
 
 Votre token apparaît, **gardez le bien précieusement**.
@@ -70,47 +79,58 @@ Vous avez maintenant votre Bot Telegram.
 L'étape suivante est de retrouver l'ID du fil de discussion ou envoyer les messages : soit seulement vous (voir 1.2) ou alors un groupe (voir 1.3) .
 
 ### 1.2 Récupérer votre ID pour vous envoyer des messages
+
 Cette partie permet de retrouver votre ID, si vous choisissez de n'envoyer des messages qu'à vous.
 
 Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le champs de recherche des contacts puis cliquer sur `Démarrer`.
-> Notez bien cet ID référençant le bot qui **émettra** les messages.
-> 
-![Get IDs Telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot6_20220920130237_20220920110334.png)
 
-![id user telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot7_20220920130237_20220920110342.png)
+> Notez bien cet ID référençant le bot qui **émettra** les messages.
+>
+> ![Get IDs Telegram](img/bot6.png)
+
+![id user telegram](img/bot7.png)
 
 ### 1.3 Utilisation d’un groupe
+
 La création d’un groupe vous permettra d’envoyer des messages aux utilisateurs de ce groupe. Vous pouvez par exemple créer un groupe appelé Maison, et y ajouter les membres de votre famille.
 
 Voici comment en récupérer l'ID.
 
 1. Cliquer sur le menu de Telegram puis `Nouveau groupe`
-![Ajouter un groupe telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot8_20220920130237_20220920110353.png)
-Donnez-lui un nom puis `CREATE GROUP`.
-![Nom du groupe](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot10_20220920130237_20220920110411.png)
 
+
+   ![](img/bot8.png)
+
+
+   Donnez-lui un nom puis `CREATE GROUP`.
+
+
+   ![](img/bot10.png)
 2. Sélectionner les users devant appartenir au groupe ainsi que votre bot.
 
 Cliquer sur votre Groupe en haut puis `Ajouter des membres`.
-**Important : n'oubliez pas d'ajouter votre bot** (autrement il ne pourra pas envoyer de messages dans le groupe).**
+**Important : n'oubliez pas d'ajouter votre bot** (autrement il ne pourra pas envoyer de messages dans le groupe).\*\*
 
-![Nom du groupe](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot11_20220920130237_20220920110419.png)
+![Nom du groupe](img/bot11.png)
 
-![Groupe Telegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot12_20220920130237_20220920110429.png)
+![Groupe Telegram](img/bot12.png)
 
 3. Récupérer votre ID du groupe en invitant `@getids bot` à votre groupe.
-Une fois ajouté, vous pouvez voir votre ID qui s'affiche dans le fil de discussion.
-> Notez bien cet ID référençant le groupe qui **recevra** les messages.
+   Une fois ajouté, vous pouvez voir votre ID qui s'affiche dans le fil de discussion.
 
-![enter image description here](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_bot14_20220920130237_20220920110448.png)
+   > Notez bien cet ID référençant le groupe qui **recevra** les messages.
+
+![enter image description here](img/bot14.png)
 
 Une fois l'ID noté, vous pouvez éjecter GetIdsBot du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
 
 ## 2. Configuration du bot dans Home Assistant
+
 Dans `configuration.yaml`, ajoutez le code qui suit pour référencer le token de votre bot émetteur et l'id du destinataire : ce peut être vous (voir 3.2), ou un groupe (voir 3.3).
 
 L'exemple ci-dessous fait référence à un groupe telegram qui s'appellerait Maison, et référencé dans Home Assistant sous le nom telegram_maison. L'envoie via Home Assistant d'une notification dans telegram_maison enverra un message dans le groupe telegram *Maison*.
-```
+
+```yaml
 # Configuration Telegram
 telegram_bot:
   - platform: polling
@@ -123,24 +143,29 @@ notify:
   - name: telegram_maison
     platform: telegram
     chat_id: !secret id_telegram_maison
-``` 
+```
+
 > Il peut être pertinent à terme de déplacer ce code dans un package notification.yaml qui est ensuite inclut dans le fichier configuration.
 
 ID et token fournis par Telegram sont à mettre dans le fichier secret.yaml et pas directement dans configuration.yaml.
-```
+
+```yaml
 # Telegram
 telegram_token: 999999999999999999999999999
 id_telegram_maison: 999999999999999999
 ```
 
 ### Tester le bon fonctionnement.
+
 Pour vérifier que tout fonctionne bien, rendez-vous dans `Outils de développement`, puis `services` et saisir les informations suivantes :
 
 * Service : `notify.telegram_maison` (ou votre user)
 * Message : `message: votre message`
 
 Cliquez sur `Appeler le service`. Vous devriez voir sur votre application Telegram le message arriver.
-![TestTelegram](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_TestTelegram_20220920130509_20220920115918.jpg)
+
+
+![](img/testtelegram.jpg)
 
 ## 3. Utilisation des notifications
 
@@ -148,7 +173,7 @@ L'utilisation se fait juste en appelant le service `notify.telegram_maison` dans
 
 Il ne faut pas hésiter à transmettre des données dans vos messages, par exemple ici la température de l'eau de l'air.
 
-```
+```yaml
 trigger: []
 condition: []
 action:
@@ -162,9 +187,9 @@ action:
 
 Il est aussi possible de rajouter une image, typiquement issue d'un snap d'une de vos caméras. Par exemple ici l'intérieur du poulailler pour vérifier que nos poules sont bien couchées quand la porte se ferme (ma femme adore cette fonction :slight_smile: ).
 
-![enter image description here](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_photo_poules_20220920122010_20220920102146.jpeg)
+![enter image description here](img/photo-poules.jpeg)
 
-```
+```yaml
 trigger: []
 condition: []
 action:
@@ -179,11 +204,13 @@ action:
 ## 4. Rajout de boutons d'action après le message
 
 Reprenons notre exemple du début de l'article :
-![Image boutons](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_boutons_commande_20220920122010_20220920102124.png)
+
+
+![](img/boutons-commande.png)
 
 Pour afficher les boutons, c'est très simple : il suffit de rajouter dans la section data du message la section ***inline_board*** avec ***libellé:/event*** à déclencher. Dans notre cas, les événements ***piscine_ferme*** et ***piscine_ignore_ferme*** seront déclenchés si respectivement un des boutons est pressé.
 
-```
+```yaml
 trigger: []
 condition: []
 action:
@@ -202,7 +229,7 @@ Il faut créer 2 automatisations qui se déclenchent pour respectivement chaque 
 
 Par exemple, voici l'automatisation pour traiter l'événement de demande de fermeture :
 
-```
+```yaml
 alias: 'Piscine : fermeture par telegram'
 description: Traite la réponse de demande de fermeture du volet par telegram
 trigger:
@@ -220,11 +247,13 @@ action:
 ## 6. Confirmation que l'action a été bien effectuée
 
 Une fois le bouton cliqué, il ne reste plus qu'à supprimer la barre de boutons, et confirmer à l'utilisateur que la demande d'action a été bien prise en compte.
-![Image confirmation](https://wiki.hacf.fr/?DialogueTelegram/download&file=DialogueTelegram_confirmation_20220920122010_20220920102136.png)
+
+
+![](img/confirmation.png)
 
 Pour cela, on rajoute à l'automatisation précédente quelques lignes :
 
-```
+```yaml
 alias: 'Piscine : fermeture par telegram'
 description: Traite la réponse de demande de fermeture du volet par telegram
 trigger:
@@ -250,7 +279,8 @@ mode: single
 ```
 
 Pour l'événement `cancel`, On répond juste `ok` et on demande la suppression de la ligne de boutons qui s'affichait dans Telegram.
-```
+
+```yaml
 alias: 'Piscine : ignorer demande fermeture telegram'
 description: Enlève bouton et réactive l'alerte sur fermeture
 trigger:
@@ -278,8 +308,9 @@ mode: single
 Voilà, vous pouvez maintenant "dialoguer" avec votre maison via telegram, en intégrant potentiellement des données et des photos  :slight_smile:
 
 Il est intéressant de personnaliser votre bot dans Telegram, en particulier :
- - Modifier le logo par défaut et mettre celui de Home Assistant. 
- - Paramétrer une purge des messages de plus de 8 jours.
-Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
+
+* Modifier le logo par défaut et mettre celui de Home Assistant. 
+* Paramétrer une purge des messages de plus de 8 jours.
+  Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
 
 N'hésitez pas à partager sur le forum les choses originales ou amusantes que vous auriez automatisées.
