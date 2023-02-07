@@ -59,7 +59,12 @@ J’utilise ce type de thermostat TPI pour 8 convecteur et depuis 5 ans (avec un
 
 ### 3.1 Le principe
 
-L’objectif du thermostat est de calculer une **puissance de chauffe** en fonction d’une **consigne** donnée, de la **température intérieure** et de la **température extérieure**.
+L’objectif du thermostat est de calculer un coefficient de puissance de chauffe en fonction d’une **consigne** donnée, de la **température intérieure** et de la **température extérieure**. Nous l’appellerons juste **puissance** pour simplifier.
+
+* Puissance = 100% : le convecteur chauffe en permanence
+* Puissance = 50% : le convecteur chauffe la moitié du temps
+* Puissance = 0% : le convecteur ne chauffe plus
+
 La puissance doit être de 100% quand la température de la pièce est loin de la consigne, puis baisser doucement jusqu’à atteindre la consigne. Ensuite le radiateur doit rester légèrement tiède pour compenser les pertes thermiques, ce en fonction de la température extérieure.
 
 **Tout d'abord, on calcul la puissance en pourcentage**
@@ -216,8 +221,6 @@ style: |
   }
 discover_existing: false
 ```
-
-
 
 Une fois la carte scheduler créée, elle est vide. Il faut utiliser l'interface pour créer les différentes planifications (type schema - 2 planifications : auto-eco et auto-confort pour chaque radiateur). 
 
@@ -498,6 +501,8 @@ En général, pour faire simple, les températures du mode ECO sont en général
 
 ## 8. Quel matériel utiliser
 
+### 8﻿.1 Le micro-module de pilotage du convecteur
+
 La première chose est le pilotage du chauffage lui même (typiquement les convecteurs). Le chauffage sera mis à une température un peu haute (24°C par exemple) et le thermostat TPI va générer une succession de on-off (typiquement 1 toutes les 10 minutes), la période de chauffe étant proportionnelle à la puissance. Il est plus que déconseillé d'allumer-couper l'alimentation électrique du convecteur car cela endommagerait l'électronique du chauffage. Il est donc impératif d'utiliser le fil pilote des convecteurs, ou le système intégré d'arrêt-marche pour les autres type de chauffage.
 
 J'utilise personnellement des qubino zwave ZMNHJD1 spécialement faits pour le fil pilote, qui sont très fiables, petits, ne chauffent pas. Et pour une chambre, il  n'y a surtout pas ce "click" bruyant à chaque démarrage que l'on trouve dans les modules bon marché. Certes un peu cher, mais c'est quand même pour du chauffage..... Il existe aussi une version à mettre dans le tableau électrique.
@@ -509,7 +514,29 @@ Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zi
 
 La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilote est faible. 
 
-Il est aussi possible de faire des on-off avec un thermostat physique (type heatit pilotant des cables chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
+**Attention cependant**, si vous utilisez un micro-module avec une diode, le fonctionnement du module sera inversé : le radiateur sera en confort quand le micro-module sera OFF, et arrêté quand le micro-module sera sur ON. Il faut alors modifier le code du blueprint thermostat (mettre switch_off à la place de switch_on). Ou à défaut créer un switch virtuel qui reprend l’état du micro-module et l’inverse :
+
+```yaml
+switch:
+  - platform: template
+    switches:
+      convecteur:
+        friendly_name: Convecteur
+        value_template: "{{ is_state('switch.monconvecteur', 'off') }}"
+        turn_on:
+          service: switch.turn_off
+          data:
+            entity_id: switch.monconvecteur
+        turn_off:
+          service: switch.turn_on
+          data:
+            entity_id: switch.monconvecteur
+        icon_template: "{% if is_state('switch.monconvecteur', 'on') %}mdi:radiator-disabled{% else %}mdi:radiator{% endif %}"
+```
+
+### 8﻿.2 Pilotage d'un thermostat
+
+Il est aussi possible de faire des on-off avec un **thermostat physique** (type heatit pilotant des cables chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
 
 ```yaml
 switch:
@@ -529,8 +556,12 @@ switch:
 
 Le même principe de template peut être utilisé si un micromodule nécessite d'inverser la commande : "on" pour éteindre et "off" pour allumer.
 
+### 8﻿.3 Le capteur de température
+
 Pour les capteurs de température, j'utilise et recommande des capteurs zigbee aqara ( WSDCGQ11LM) : ils sont fiables, petits et peu chers. Pour ceux qui veulent un afficheur, les capteurs Orvibo sont aussi très bien.\
 J'ai aussi historiquement des capteurs avec afficheurs Oregon THGR228N en 433mhz, très précis et dont les piles AAA tiennent 4 ans. Mais ils sont maintenant difficilement trouvables, ce qui est dommage.
+
+### 8﻿.4 Le détecteur d'ouverture
 
 Pour les capteurs de fenêtre, la aussi je recommande les Xiaomi aqara ( MCCGQ11LM). 
 
@@ -552,6 +583,8 @@ binary_sensor:
 Il est pertinent de contrôler le fonctionnement et éventuellement affiner les paramètres.  Voici à titre indicatif le code pour afficher des graphiques du fonctionnement de thermostat.
 
 ![](img/courbe.png)
+
+
 
 ```yaml
 type: custom:apexcharts-card
@@ -592,15 +625,45 @@ series:
       legend_value: false
 ```
 
-## 10. Pour aller plus loin
+## 10. Suivi de la consommation électrique
+
+Si on utilise un micro-module connecté au fil pilote du radiateur, il ne peut mesurer pas la consommation. Il ne mesure que la consommation du fil pilote qui est quasi nulle.
+
+Il est cependant possible d’approximer la consommation :
+
+* mesure du temps ou le switch est ON avec un history_stats
+* conversion en énergie avec un template
+
+```yaml
+sensor:
+  - platform: history_stats
+    name: convecteur_cuisine_temps_allumage
+    entity_id: switch.qubino_convecteur_cuisine_onoff
+    state: 'on'
+    type: time
+    start: "{{ now().replace(hour=0, minute=0, second=0, microsecond=0) }}"
+    end: "{{ now() }}"
+
+template:
+  sensor:
+    - name: Convecteur cuisine kWh
+      unique_id: convecteur_cuisine_kwh
+      device_class: energy
+      state_class: total_increasing
+      unit_of_measurement: 'kWh'
+      state: "{{ states('sensor.convecteur_cuisine_temps_allumage')|float(0) * 1.47}}"
+```
+
+Dans l’exemple précédent, 1.47 kW est la puissance du convecteur.
+
+Je conseille de mesurer la puissance du convecteur en actionnant le convecteur et en regardant les différences de puissance consommée sur le compteur de la maison (sauf si on a une pince ampérométrique). On obtient des AH (puissance apparente) mais le cosfi d’un convecteur étant a 1, cela correspond aux watts réels consommés.
+
+L’entité résultante peut directement être mise dans le module Energy.
+
+## 11. Pour aller plus loin
 
 Il serait possible d'avoir 2 planifications "confort". Une pour la **semaine** et une pour le **week-end**, en spécifiant les jours dans le scheduler. Il faut alors modifier le blueprint pour piloter non pas une mais les 2 planifications.
 
 Le thermostat peut être utilisé pour des **chaudières ou poëles à granul**e. Mais il serait recommandé d'augmenter la période de chauffe (plutôt 20mn) et ne pas démarrer la chaudière si la puissance est de moins de 5% et la laisser tourner si la puissance est plus de 95% pour éviter les cycles courts. Cela demande une petite adaptation du thermostat TPI.
-
-Le problème d’un pilotage de convecteur par fil pilote est qu’il n’y a pas de **mesure de consommation**. Il est possible de calculer le temps de fonctionnement avec un history_stat. Puis calculer via un template la puissance consommée en multipliant par la puissance du convecteur. Enfin envoyer cela dans un utility meter pour avoir la donnée toute les heures. Cela peut se faire avec d’autres modes de chauffage comme les granules.
-
-Pour information, @djal a proposé dans ses posts sur le forum l’**affichage de beaux graphiques ApexChart**. Il propose également une belle amélioration de ma carte initiale. Ses posts sont très bien détaillés.
-https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897/125
 
 Enfin, le bon fonctionnement des thermostats implique le bon fonctionnement des sondes. Avec mon ancienne box, j’avais un **« sanity check »** toutes les 2 heures pour vérifier que les sondes rafraichissaient toujours bien leurs données. Le chauffage coute trop chère pour ne pas avoir ce type de vérification, et ne pas se contenter de la vérification de la pile des capteurs. Il faudra utiliser l'entité status (valeur "alive" si tout va bien) si l'on a des module zwave.

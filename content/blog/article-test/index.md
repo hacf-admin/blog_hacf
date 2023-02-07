@@ -8,6 +8,7 @@ keywords:
   - Argon One Add-on
   - HassOS I2C Configurator
   - add-on ha
+title: Article Test
 visibleInCMS: true
 date: 07-02-23
 lastmod: 07-02-23
@@ -31,12 +32,14 @@ categories:
   - Confort
 series:
   - home assistant
+author: mcfly
+socialshare: true
 tags:
   - argon
 hacf: null
-description: Article de test
 url_off: null
 ---
+C﻿eci est un TEST de déploiement.
 
 ```toml
 [markup]
@@ -60,30 +63,32 @@ url_off: null
 {{< keyboard kbd="CTRL, ALT" >}}
 
 test alert avec attribut NON FONCTIONNEL
+
 ```
 > This is a note.
 {.alert .alert-primary}
 ```
+
 > This is a note.
-{.alert .alert-primary}
+> {.alert .alert-primary}
+
 ```
 > This is a warning.
 {.alert .alert-warning}
 ```
+
 > This is a warning.
-{.alert .alert-warning}
+> {.alert .alert-warning}
 
 ```
 > This is dangerous.
 {.alert .alert-danger}}
 ```
-> This is dangerous.
-{.alert .alert-danger}}
 
+> This is dangerous.
+> {.alert .alert-danger}}
 
 ## Test Gallery
-
-
 
 # Markdown Cheat Sheet
 
@@ -211,16 +216,14 @@ X^2^
 
 ![Image SVG](img/blueprint_import.svg)
 
-
 ![Image Gif animé](img/image-png-animé.gif)
-
 
 ![Image Gif Animé 2](img/imge_gif_animé.gif)
 
 ![Image PNG](img/installation_detection_automatique_materiels.png)
 
-
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 
-![Image PNG](img/profil_utilisateur.png)
 
+
+![Image PNG](img/profil_utilisateur.png)
