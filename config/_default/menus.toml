@@ -61,7 +61,9 @@ url = "/pages/about"
 [[footer]]
 name = "Protection des données"
 url = "/protection-des-donnees"
-
+[[footer]]
+name = "Nous-contacter"
+url = "/contact"
 
 
 [[hacf]]
