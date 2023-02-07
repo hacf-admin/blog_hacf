@@ -12,7 +12,7 @@ description: Certes, il est intéressant de commencer à "jouer" avec Home
   ce que propose cet article.
 level: Débutant
 categories:
-  - Installation
+  - Concepts
 series:
   - Les Bases de Home Assistant
 tags:
