@@ -10,10 +10,12 @@ keywords:
   - add-on ha
 title: Article Test
 visibleInCMS: true
-date: 23-11-22 23:59
-lastmod: 24-11-2422 00:01
+date: 07-02-23
+lastmod: 07-02-23
+author: mcfly
+socialshare: true
+title: Article Test
 images: null
-description: Article de test
 categories:
   - Concepts
   - Installation
