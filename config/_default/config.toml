@@ -6,6 +6,10 @@ title = 'HACF'
 #theme =
 paginate = 6
 
+#pygmentsUseClasses = true
+#pygmentsCodefences = true
+
+
 enableRobotsTXT = true
 enableEmoji = true
 
@@ -72,7 +76,6 @@ enableGitInfo = true
 [[related.indices]]
   name = 'categories'
   weight = 60
-
 
 [social]
   twitter = 'hacf_fr'
