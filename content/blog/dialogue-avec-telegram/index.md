@@ -2,7 +2,7 @@
 title: Dialogue avec Telegram
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 23-02-07
 lastmod: 23-02-07
 images: img/accueil.jpeg
