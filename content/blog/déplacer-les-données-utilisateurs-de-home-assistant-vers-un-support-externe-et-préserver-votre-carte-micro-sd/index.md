@@ -1,19 +1,19 @@
 ---
 draft: false
-type: post
-visibleInCMS: true
 level: Débutant
 url_haoff: ""
 authors:
   - mcfly
   - pulpy
-date: 2022-09-19
-lastmod: 23-11-2322 16:11
+visibleInCMS: true
+date: 20-09-22
+lastmod: 29-09-22
 author: mcfly
 socialshare: true
 title: Déplacer les données utilisateurs de Home Assistant vers un support
   externe et préserver votre carte Micro SD
-images:
+type: post
+images: null
 description: "Préserver votre carte Micro SD en déplaçant les données
   utilisateurs de Home Assistant vers un support externe. "
 categories:
