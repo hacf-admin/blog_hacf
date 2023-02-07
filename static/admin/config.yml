@@ -110,14 +110,14 @@ collections:
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
 
       - label: 'Date de modification'
         name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
         required: false
 
       - label: "Image de l'article"
@@ -260,14 +260,14 @@ collections:
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
 
       - label: 'Date de modification'
         name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
         required: false
 
       - label: "Image de l'article"
