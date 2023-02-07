@@ -516,7 +516,7 @@ La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilot
 
 **Attention cependant**, si vous utilisez un micro-module avec une diode, le fonctionnement du module sera inversé : le radiateur sera en confort quand le micro-module sera OFF, et arrêté quand le micro-module sera sur ON. Il faut alors modifier le code du blueprint thermostat (mettre switch_off à la place de switch_on). Ou à défaut créer un switch virtuel qui reprend l’état du micro-module et l’inverse :
 
-```
+```yaml
 switch:
   - platform: template
     switches:
@@ -533,8 +533,6 @@ switch:
             entity_id: switch.monconvecteur
         icon_template: "{% if is_state('switch.monconvecteur', 'on') %}mdi:radiator-disabled{% else %}mdi:radiator{% endif %}"
 ```
-
-
 
 ### 8﻿.2 Pilotage d'un thermostat
 
@@ -586,6 +584,8 @@ Il est pertinent de contrôler le fonctionnement et éventuellement affiner les 
 
 ![](img/courbe.png)
 
+
+
 ```yaml
 type: custom:apexcharts-card
 header:
@@ -634,7 +634,7 @@ Il est cependant possible d’approximer la consommation :
 * mesure du temps ou le switch est ON avec un history_stats
 * conversion en énergie avec un template
 
-```
+```yaml
 sensor:
   - platform: history_stats
     name: convecteur_cuisine_temps_allumage
