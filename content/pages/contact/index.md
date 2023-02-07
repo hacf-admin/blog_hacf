@@ -15,11 +15,7 @@ socialshare: true
 ---
 # Nous Contacter.
 
-{{< quote "Cette page est en construction, mais il est toujours possible de nous joindre sur nos differents médias ou via mail a l'adresse ci-dessous." "l'Equipe HACF" "center" >}}
-
-<script type=text/javascript> var name = "contact" ; var domain = "hacf.fr" ; var subject = "subject=Anti spam" ; document.write('<a href="mailto:' + name + '@' + domain + ' ?' + subject + '">') ; document.write(name + '@' + domain + '</a>') ;</script>
-
-{{< mail >}}
+{{< quote "Il est toujours possible de nous joindre sur nos differents médias ou via mail a l'adresse ci-dessous.{{< mail >}}" "l'Equipe HACF" "center" >}}
 
 
 

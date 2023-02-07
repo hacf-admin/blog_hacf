@@ -25,40 +25,39 @@
   </div>
 </section>
 
-{{ if eq .Params.type "post" "news" }}
-  <section class="mb-5">
-    <div class="container ">
-        <div class="row justify-content-evenly pt-2">
-          {{ if eq .Params.type "post"}}
-          <div class="col-12 col-md-10">
-          {{ partial "articles/aide-ha.html" . }}
+  {{ if eq .Params.type "post" "news" }}
+    <section class="mb-5">
+      <div class="container ">
+          <div class="row justify-content-evenly pt-2">
+            {{ if eq .Params.type "post"}}
+            <div class="col-12 col-md-10">
+            {{ partial "articles/aide-ha.html" . }}
+            </div>
+            {{ end }}
           </div>
-          {{ end }}
-        </div>
-    </div>
-  </section>
-  <section class="container-fluid">
-    <div class="row justify-content-center m-3">
-          {{ partial "articles/related.html" . }}
-    </div>
-  </section>
-{{ end }}
-
-  {{ if eq .Params.type "page" "awesome" "contact" }}
-  <section class="mb-5">
-    <div class="container ">
-        <!--
-        <div class="col-12 border-top border-secondary pt-3" >
-            {{ partial "contact" . }}
-        </div>
-        -->
-        <div class="row justify-content-evenly pt-2">
-          <div class="col-12">
-            {{ partial "pages/author.html" . }}
-          </div>
-        </div>
-    </div>
-  </section>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row justify-content-center m-3">
+            {{ partial "articles/related.html" . }}
+      </div>
+    </section>
   {{ end }}
 
+  {{ if eq .Params.type "page" "awesome" }}
+    <section class="mb-5">
+      <div class="container ">
+          <!--
+          <div class="col-12 border-top border-secondary pt-3" >
+              {{ partial "contact" . }}
+          </div>
+          -->
+          <div class="row justify-content-evenly pt-2">
+            <div class="col-12">
+              {{ partial "pages/author.html" . }}
+            </div>
+          </div>
+      </div>
+    </section>
+  {{ end }}
 {{ end }}
