@@ -37,6 +37,24 @@ hacf: null
 description: Article de test
 url_off: null
 ---
+
+```toml
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+```
+
 ## Test Keyboard
 
 {{< keyboard kbd="CTRL, ALT" >}}
