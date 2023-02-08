@@ -28,9 +28,10 @@ Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines so
 
 Dans ce post, je vous propose une solution relativement économique, basée sur un module à base d'**ESP32-SIM800L** et **ESPHome**, pour pouvoir **envoyer et recevoir des SMS** avec Home Assistant, déclencher des actions sur réception d'un SMS et même **lancer un appel** sur le téléphone, ce **sans connexion Internet**.
 
-![image|690x](https://wiki.hacf.fr/files/EsphomeSim800l_boitier_ouvert_20220919174258_20220919154426.jpeg)
+![image|690x](img/boitier-ouvert.jpeg)
 
 Je vous propose de traiter 2 cas concrets :
+
 1. **Reboot à distance de la box internet** : envoie d'un SMS qui déclenche le reboot.
 2. **Envoie d'un SMS** puis appel téléphonique pour alerter d'un incendie ou une intrusion.
 
@@ -54,27 +55,28 @@ Pour les abonnés Free, il est possible d'avoir un abonnement limité à 2h et s
 Vérifier également que votre zone est bien toujours couverte par le GRPS (ou 3G). 
 [Couverture mobile Free](https://mobile.free.fr/couverture)
 
-&gt; J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais à l'usage cet opérateur ne s'avère pas fiable, et les forums sont pleins de personnes insatisfaites. Les SMS étaient vraiment très lents à recevoir ou émettre, mais surtout j'ai eu en 2 mois 2 grosses pannes de plus de 24 heures venant de chez eux. Donc à fuir.
+J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais à l'usage cet opérateur ne s'avère pas fiable, et les forums sont pleins de personnes insatisfaites. Les SMS étaient vraiment très lents à recevoir ou émettre, mais surtout j'ai eu en 2 mois 2 grosses pannes de plus de 24 heures venant de chez eux. Donc à fuir.
 
 ## 2. Configuration ESPHome
 
-Pour l'installation et l'utilisation de ESPHome, je vous renvoie à l'excellent post de @McFly et je ne détaillerai pas chaque étape.
-https://forum.hacf.fr/t/installer-esphome-sur-home-assistant-et-creer-votre-premiere-configuration/223
+Je résume ici les grandes étapes, car l'installation de ESPHome n'est pas le sujet de ce tuto :
 
-Je résume donc juste ici les grandes étapes :
-- **Installer ESPHome** si ce n'est pas déjà fait
+* **Installer ESPHome** si ce n'est pas déjà fait
+* **Créer un nouveau composant** que l'on appellera ici ESP-SIM800
 
-- **Créer un nouveau composant** que l'on appellera ici ESP-SIM800
-![ESPHome](https://wiki.hacf.fr/files/EsphomeSim800l_esphome_20220919174258_20220919154510.png)
+  ![](img/esphome.png)
+* **Renseigner les mots de passe du réseau wifi.**
 
-- **Renseigner les mots de passe du réseau wifi.**  Pour cela, depuis ESPHome cliquer sur les 3 points en haut à droite puis Secrets Editor. Un fichier secret.yaml sous la racine du répertoire esphome est créé. Ce fichier est différent de celui de home assistant et est spécifique à ESPHome.
-```
+Pour cela, depuis ESPHome cliquer sur les 3 points en haut à droite puis Secrets Editor. Un fichier secret.yaml sous la racine du répertoire esphome est créé. Ce fichier est différent de celui de home assistant et est spécifique à ESPHome.
+
+```yaml
 wifi_ssid : "xxxxxxxxxx"
 wifi_password : "xxxxxxxxx"
 ```
-- Puis **copier le code** qui suit dans le code du composant (bouton *EDIT*) et le valider (bouton *VALIDATE*)
 
-```
+* Puis **copier le code** qui suit dans le code du composant (bouton `EDIT`) et le valider (bouton `VALIDATE`)
+
+```yaml
 esphome:
   name: esp-sim800
 
@@ -177,35 +179,35 @@ binary_sensor:
 ```
 
 * **Installer le micro-code sur l’ESP**
-	* connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, install, « plug into this computer » puis attendre que le fichier binaire soit généré (message « prepare download disparaisse), puis cliquer sur download. Vous devriez retrouver le binaire contenant le microcode dans votre répertoire « telechargement ».
-	* Cliquer sur "Open ESPHome Web », cliquer sur « install », puis « connect », sélectionner le port USB, puis cliquer sur « INSTALL ».
-	* Après 2 mn, l’ESP devrait afficher « configuration OK ».
-	* Retourner sur ESPHome, débrancher et rebrancher l’ESP, cliquer sur LOGS et vérifier que vous avez accès aux logs et que l’ESP fonctionne.
-A partir de ce moment, vous pourrez modifier le code de l’ESP (bouton EDIT) et le déployer EN OTA ( install / wirelessly).
-	* Débrancher et rebrancher l'ESP, puis après 1 mn de redémarrage, vérifier les logs du composant dans ESPHome. 
-![Logs](https://wiki.hacf.fr/files/EsphomeSim800l_log_20220919174612_20220919160830.png)
+*  Connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, install, « plug into this computer » puis attendre que le fichier binaire soit généré (message « prepare download disparaisse), puis cliquer sur download. Vous devriez retrouver le binaire contenant le microcode dans votre répertoire « telechargement »*.*Cliquer sur "Open ESPHome Web », cliquer sur « install », puis « connect », sélectionner le port USB, puis cliquer sur « INSTALL ».
+* Après 2 mn, l’ESP devrait afficher « configuration OK ». 
+* Retourner sur ESPHome, débrancher et rebrancher l’ESP, cliquer sur LOGS et vérifier que vous avez accès aux logs et que l’ESP fonctionne.
+  A partir de ce moment, vous pourrez modifier le code de l’ESP (bouton EDIT) et le déployer EN OTA ( install / wirelessly).
+* Débrancher et rebrancher l'ESP, puis après 1 mn de redémarrage, vérifier les logs du composant dans ESPHome.
+
+![](img/log.png)
 
 Le log doit afficher *Registered OK* et le niveau de réception (RSSI) du module téléphone, à 15 dans mon log ci-dessus.
 Le code proposé est avec le logger en mode debug, mais il pourra être changé en info quand tout fonctionnera.
 
 * Enfin **redémarrer home assistant**. Une nouvelle intégration ESP-SIM800 devrait être disponible et il faut la rajouter.
 
-
 **3 entités sont créées** : 
-* sensor.esp_sim800_sms_expediteur
-* sensor.esp_sim800_sms_message
-* esp_sim800_statut
 
-Quand le module reçoit un SMS, il va renseigner ces identités *esp_sim800_sms_expediteur* et *esp_sim800_sms_message*
+* `sensor.esp_sim800_sms_expediteur`
+* `sensor.esp_sim800_sms_message`
+* `esp_sim800_statut`
+
+Quand le module reçoit un SMS, il va renseigner ces identités `esp_sim800_sms_expediteur` et `esp_sim800_sms_message`
 On peut tester en envoyant un SMS au module et en vérifiant que les entités expéditeurs et message sont bien renseignées.
 
-Enfin *esp_sim800_statut* permet de savoir dans Lovelace si le module est correctement connecté.
-
+Enfin `esp_sim800_statut` permet de savoir dans Lovelace si le module est correctement connecté.
 
 **3 services sont également mis à disposition** :
-* Esp_sim800_send_sms 
-* Esp_sim800_replay_sms_ok 
-* Esp_sim800_dial
+
+* `Esp_sim800_send_sms` 
+* `Esp_sim800_replay_sms_ok` 
+* `Esp_sim800_dia`l
 
 **Esp_sim800_send_sms**  permet d'envoyer un SMS en lui passant le destinataire et un texte du message.
 **Esp_sim800_replay_sms_ok**  : revoie la dernière commande reçue suivi de OK au dernier expéditeur. Cette fonction est très utilise pour confirmer qu'un SMS a bien été reçu et que l'ordre est bien pris en compte.
@@ -214,10 +216,12 @@ Enfin *esp_sim800_statut* permet de savoir dans Lovelace si le module est correc
 Pour tester, on peut appeler les services avec l'outils de développement - service.
 
 ## 3. Mise en place d'une fonction de test
+
 Pour tester facilement et dans la durée, j'ai mis en place une automatisation qui permet d'envoyer par SMS juste le mot clé Test et qui retourne par SMS Test ok.
 
 **Voici le code**
-```
+
+```yaml
 alias: SIM800L - Test SMS
 description: Retourne le SMS avec *Test ok* quand on envoie le SMS *Test* (test d'émission réception)
 trigger:
@@ -228,19 +232,18 @@ condition: []
 action:
   - service: esphome.esp_sim800_reply_sms_ok
 mode: single
-
 ```
 
 ## 4. Premier cas d'utilisation : reboot à distance de la box internet
 
 Ce premier cas est important et a sauvé notre connexion pas plus tard que la semaine dernière alors que nous étions en congés. L'alternative serait les voisins à qui vous avez laissé vos clés, mais c'est potentiellement moins efficace. Ou alors un test de la connexion et demande de reboot automatique par HA, mais plus hasardeux.
 
-J'ai équipé la box d'une prise Zwave Neo Coolcam.
+J'ai équipé la box d'une prise **Zwave Neo Coolcam**.
 Si un sms est envoyé avec le mot clé Restart-box, alors une automatisation renvoie par SMS que  Restart-box OK, puis éteint la prise, attends une seconde et rallume la prise. La box redémarre.
 
 **Voici le code de l'automatisation.**
 
-```
+```yaml
 alias: SIM800L - Box internet reboot
 description: Redémarrage la box internet si SMS "Restart-box" est reçu
 trigger:
@@ -266,16 +269,17 @@ mode: single
 
 ## 5. Deuxième cas d'utilisation : alerte SMS puis appel
 
-Inondation, incendie, intrusion… ce n'est pas très raisonnable de ne compter que sur Internet et le fait que l'on a toujours et en permanence la 4G. Et puis une simple notification type "Coucou votre maison brule" ne sera pas forcément efficace. 
+Inondation, incendie, intrusion… **ce n'est pas très raisonnable de ne compter que sur Internet** et le fait que l'on a toujours et en permanence la 4G. Et puis une simple notification type "Coucou votre maison brule" ne sera pas forcément efficace. 
 
-Donc la solution proposée est d'envoyer un SMS puis d'appeler. Si on reçoit le message, on peut renvoyer un SMS avec le code Stop-alerte pour désactiver l'alerte (ou via l'interface lovelace). Autrement, le système rappellera 3 fois à 5 mn d'intervalle tant que l'alerte n'aura pas été désactivée.
+Donc la solution proposée est d'**envoyer un SMS puis d'appeler**. Si on reçoit le message, on peut renvoyer un SMS avec le code Stop-alerte pour désactiver l'alerte (ou via l'interface lovelace). Autrement, le système rappellera 3 fois à 5 mn d'intervalle tant que l'alerte n'aura pas été désactivée.
 
 Malheureusement, l'appel alertera avec sa sonnerie, mais ne peut contenir pour l'instant de message vocal. Il faut raccrocher et aller lire le SMS pour connaitre la nature de l'alerte. Il est donc recommandé d'entrer le n° de téléphone du module sous le nom "home Assistant" pour savoir qui appelle. 
 
-Bien entendu, il est conseillé d'inclure l'appel à plusieurs numéros à appeler en cas d'alerte (vous et votre conjoint par exemple, ou les voisins... ceux qui ont les clés :wink:), et en parallèle envoyer des notifications classiques.
+Bien entendu, il est conseillé d'inclure l'appel à plusieurs numéros à appeler en cas d'alerte (vous et votre conjoint par exemple, ou les voisins... ceux qui ont les clés), et en parallèle envoyer des notifications classiques.
 
 Voici le code du service (attention, c'est ici un script et non une automatisation), à appeler quand il y a une alerte critique à générer
-```
+
+```yaml
 alias: Alerte - SMS puis appel
 description: envoie le message passé en paramètre au destinataire, puis l'appel
 sequence:
@@ -301,7 +305,8 @@ icon: mdi:message-alert-outline
 Un input boolean ***activation_alertes_sms*** permet de sauvegarder l'armement de l'alerte. S'il est mis à off, l'alerte est désactivée.
 
 Et enfin le code qui se déclenche quand on envoie un SMS avec ***Stop-alerte*** au module demandant la désactivation de l'alerte.
-```
+
+```yaml
 alias: SIM800L - Stop alerte
 description: Arrête l'envoie de SMS + appel sur alertes
 trigger:
@@ -315,8 +320,6 @@ action:
       entity_id: input_boolean.activation_alertes_sms
   - service: esphome.esp_sim800_reply_sms_ok
 mode: single
-
 ```
 
 Voilà, n'hésitez pas à faire vos suggestions ou retours sur le forum, voir proposer des solutions alternatives.
-
