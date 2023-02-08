@@ -50,10 +50,11 @@ D'autres versions sont également dispos sur Aliexpress (j'ignore les différenc
 Enfin j'ai conçu sous fusion360 un boitier qui peut être téléchargé et imprimé.
 [Boitier à imprimer en 3D sur Cults3D](https://cults3d.com/fr/mod%C3%A8le-3d/outil/case-for-lilygo-module-ttgo-t-call-esp32-sim800l) 
 
-Et bien entendu il faut un abonnement téléphonique. Certes un petit coût mensuel, mais moins cher qu'une maison brulée car on n'a pas été prévenu à temps.
+Et bien entendu il faut un **abonnement téléphonique**. Certes un petit coût mensuel, mais moins cher qu'une maison brulée car on n'a pas été prévenu à temps.
 Pour les abonnés Free, il est possible d'avoir un abonnement limité à 2h et sans data gratuit. Autrement il coute 2€ par mois. C'est ce que je conseille. A noter que le fait de devenir client Free permet aussi de bénéficier de la possibilité d'envoyer des SMS via leur API (utile pour par exemple un NAS qui est typiquement sur un VLAN Data séparé du VLAN IOT ou se trouvera notre module).
-Vérifier également que votre zone est bien toujours couverte par le GRPS (ou 3G). 
-[Couverture mobile Free](https://mobile.free.fr/couverture)
+
+> **Vérifier également que votre zone est bien toujours couverte par le GRPS (ou 2G).**
+> [Couverture mobile Free](https://mobile.free.fr/couverture)
 
 J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais à l'usage cet opérateur ne s'avère pas fiable, et les forums sont pleins de personnes insatisfaites. Les SMS étaient vraiment très lents à recevoir ou émettre, mais surtout j'ai eu en 2 mois 2 grosses pannes de plus de 24 heures venant de chez eux. Donc à fuir.
 
@@ -179,11 +180,14 @@ binary_sensor:
 ```
 
 * **Installer le micro-code sur l’ESP**
-*  Connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, install, « plug into this computer » puis attendre que le fichier binaire soit généré (message « prepare download disparaisse), puis cliquer sur download. Vous devriez retrouver le binaire contenant le microcode dans votre répertoire « telechargement »*.*Cliquer sur "Open ESPHome Web », cliquer sur « install », puis « connect », sélectionner le port USB, puis cliquer sur « INSTALL ».
-* Après 2 mn, l’ESP devrait afficher « configuration OK ». 
-* Retourner sur ESPHome, débrancher et rebrancher l’ESP, cliquer sur LOGS et vérifier que vous avez accès aux logs et que l’ESP fonctionne.
-  A partir de ce moment, vous pourrez modifier le code de l’ESP (bouton EDIT) et le déployer EN OTA ( install / wirelessly).
-* Débrancher et rebrancher l'ESP, puis après 1 mn de redémarrage, vérifier les logs du composant dans ESPHome.
+
+  * Connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, install, `plug into this computer`, puis attendre que le fichier binaire soit généré (message `prepare download` disparaisse), puis cliquer sur `download`.
+    Vous devriez retrouver le binaire contenant le microcode dans votre répertoire « telechargement »*.*
+  * Cliquer sur `Open ESPHome Web`, cliquer sur `install`, puis `connect`, sélectionner le port USB, puis cliquer sur `INSTALL`.
+  * Après 2 mn, l’ESP devrait afficher `configuration OK`. 
+  * Retourner sur ESPHome, débrancher et rebrancher l’ESP, cliquer sur LOGS et vérifier que vous avez accès aux logs et que l’ESP fonctionne.
+    A partir de ce moment, vous pourrez modifier le code de l’ESP (bouton `EDIT`) et le déployer EN OTA ( `install / wirelessly`).
+  * Débrancher et rebrancher l'ESP, puis après 1 mn de redémarrage, vérifier les logs du composant dans ESPHome.
 
 ![](img/log.png)
 
