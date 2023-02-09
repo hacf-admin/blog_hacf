@@ -9,7 +9,7 @@ local_backend: true
 # Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
 # Peut etre desactivé en commantant la ligne ci-dessous.
 ## ATTENTION non disponible en local.
-publish_mode: editorial_workflow
+#publish_mode: editorial_workflow
 
 # These lines should *not* be indented
 media_folder: "static/images/uploads" # Chemin ou sont stocké les medias uploadés, dans Hugo par defaut c'est static/images/uploads ou assets/images/uploads pour pouvoir utiliser le resize.image.
