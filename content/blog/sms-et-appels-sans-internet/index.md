@@ -3,8 +3,8 @@ title: SMS et appels sans internet
 type: post
 visibleInCMS: true
 draft: false
-date: 08-02-23
-lastmod: 08-02-23
+date: 2023-02-08
+lastmod: ""
 images: img/accueil.png
 description: >-
   Home Assistant sécurise notre maison et en permet un control à distance. Mais
