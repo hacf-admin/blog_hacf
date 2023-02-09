@@ -11,7 +11,7 @@
 
   {{ if eq .Params.type "post" }}
   <div class="col-12 col-lg-2 p-5 order-1 text-center">
-    <div class="d-grid d-sm-inline d-lg-grid gap-2 col-xl-12 mx-auto sticky-top" style="top: 70px">
+    <div class="d-grid d-none d-sm-inline d-lg-grid gap-2 col-xl-12 mx-auto sticky-top" style="top: 70px">
       <h5 class="text-center">Catégories</h5>
       {{ range .Site.Taxonomies.categories }}
         <a class="btn btn-sm btn-outline-primary position-relative m-1" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
