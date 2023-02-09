@@ -2,7 +2,7 @@
 title: Ecran tactile Nextion avec ESPHome
 type: post
 visibleInCMS: true
-draft: true
+#draft: true
 date: 09-02-23
 lastmod: 09-02-23
 images: img/accueil2.png
