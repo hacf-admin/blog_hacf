@@ -3,19 +3,13 @@ draft: false
 level: Débutant
 authors:
   - mcfly
-keywords:
-  - Argon
-  - Argon One Add-on
-  - HassOS I2C Configurator
-  - add-on ha
-title: Article Test
 visibleInCMS: true
 date: 07-02-23
 lastmod: 07-02-23
 author: mcfly
 socialshare: true
 title: Article Test
-images: null
+image:
 categories:
   - Concepts
   - Installation
@@ -30,15 +24,14 @@ categories:
   - Energie
   - Sécurité
   - Confort
-series:
-  - home assistant
-author: mcfly
-socialshare: true
 tags:
   - argon
-hacf: null
-url_off: null
+
+hacf:
+description: Article de test
+url_off:
 ---
+
 C﻿eci est un TEST de déploiement.
 
 ```toml
