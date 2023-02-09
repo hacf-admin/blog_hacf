@@ -57,7 +57,7 @@ enableGitInfo = true
 [frontmatter]
   date = ['date', 'publishDate', 'lastmod']
   expiryDate = ['expiryDate']
-  lastmod = ['lastmod', ':git', 'date', 'publishDate']
+  lastmod = ['lastmod', 'date', 'publishDate'] #['lastmod', ':git', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
 
 [taxonomies]
