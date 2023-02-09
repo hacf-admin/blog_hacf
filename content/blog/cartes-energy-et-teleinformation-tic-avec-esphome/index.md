@@ -26,29 +26,29 @@ Le module **Energy** de Home Assistant est vraiment puissant, propose de belles 
 
 Certes le sujet télé-information a déjà été pas mal traité, mais il est proposé ici ici un retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total < 10€ :
 
--   Réalisation **DIY** avec un **ESP32** et les quelques composants soudés sur une plaque de prototypage
--   Un **boitier à imprimer**, disponible dans Cults
--   Adaptation de la configuration **ESPHome** pour avoir les entités compatibles **Energy**
--   Configuration et intégration du **module energy dans le dashboard HA** : consommation et coûts
+* Réalisation **DIY** avec un **ESP32** et les quelques composants soudés sur une plaque de prototypage
+* Un **boitier à imprimer**, disponible dans Cults
+* Adaptation de la configuration **ESPHome** pour avoir les entités compatibles **Energy**
+* Configuration et intégration du **module energy dans le dashboard HA** : consommation et coûts
 
 Une procédure de création de nouveaux composants ESPHome est documentée ici : [Utilisation ESPHome web pour de nouveaux composants](https://forum.hacf.fr/t/utilisation-esphome-web-pour-de-nouveaux-composants/10506)
 
 Pour plus d'informations, voici 2 excellents tutos :
 
--   ESPHome : [Installer ESPHome.... de @McFly](https://forum.hacf.fr/t/installer-esphome-sur-home-assistant-et-creer-votre-premiere-configuration/223)
--   Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
+* ESPHome : [Installer ESPHome.... de @McFly](https://forum.hacf.fr/t/installer-esphome-sur-home-assistant-et-creer-votre-premiere-configuration/223)
+* Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
 
 Pour information, le compteur électrique interfacé ici est en mode **TIC "historique",** avec heures pleines et heures creuses. Si ce n'est pas votre cas, il faudra faire quelques adaptations.
 
 Un ESP32 a été préféré plutôt qu'un ESP8266 car, plus puissant, il permet de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs ("bad CRC"). J'ai choisi une résistance de 2k en entrée, qui est un bon compromis. La liaison série principale de l'ESP32 est utilisée (UART0) disponible sur le GPIO 03. Autrement, on retrouve le schéma classique : **opto-coupleur** pour isoler le circuit et la compteur, **transistor mofset** pour réamplifier le signal. L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
 
-![image|690x361](blob:https://dev.hacf.fr/d7dc3e7f-1ca5-4a2c-92cf-68bb8c50a1dc)
+![Schéma électrique](img/schema.jpeg)
 
 Les quelques composants sont soudés sur une **plaque de prototypage de 5cm x 6cm**. Un bornier est rajouté. Certes, on peut trouver des montages tout faits, mais souder ces quelques composants n'est pas très compliqué, et le DIY est toujours tellement plus satisfaisant :smirk:
 
-![](blob:https://dev.hacf.fr/3c8ad40b-99ef-4649-9bdd-bed5f50294b1)
+![Boitier ouvert](img/boitier.jpeg)
 
-![](blob:https://dev.hacf.fr/cc3b3f8c-3cbb-42da-9a0f-598a5c317bad)
+![Compteur et branchement](img/compteur2.jpeg)
 
 Un boitier a été conçu sous fusion360 et mis en ligne : [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266)
 
@@ -180,7 +180,6 @@ text_sensor:
       } else {
         return { (String(seconds) +"s").c_str() };
       }
-
 ```
 
 Seules les informations utiles ont été gardées (par exemple l'ID du compteur qui ne change jamais n'a pas besoin d'être lue en permanence). Une lecture toutes les minutes est suffisante.
@@ -189,7 +188,7 @@ Les "sensors" d'index ont des attributs compatibles avec le module Energy : `sta
 
 Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans configuration - tableau de bord puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
 
-![image|675x500, 75%](blob:https://dev.hacf.fr/c5aba2cd-160e-4461-a796-1e05af8c0ee2)
+![Configuration dashboard Energy](img/interfaceenergy.png)
 
 La section **CO2** a également été configurée : cela donne le % d'énergie carbonée utilisée par EDF. Il faut aller sur le site https://co2signal.com/, créer une clé d'API et la rentrée dans la configuration du module Energy. Cela crée une entité CO2 avec en temps réel le % d'énergie carbonée utilisée par EDF.
 La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal). Bon...
@@ -198,7 +197,7 @@ La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](htt
 
 Reste enfin à intégrer les cartes Energy dans le dashboard (https://www.home-assistant.io/lovelace/energy/). Celui ci-après est adapté à un usage sur mobile.
 
-![image|220x500](blob:https://dev.hacf.fr/363bab73-24ce-4e51-a657-837762edc0df)
+![Dashboard pour mobile](img/interfacelovelace.png)
 
 A noter qu'il y a ici présent le nouveau composant bouton :smirk:
 
@@ -258,7 +257,6 @@ entities:
     secondary_info: last-updated
   - entity: button.teleinfo_restart
     name: Redémarrage
-
 ```
 
 Une suite logique sera d'intégrer les consommations des différents appareils de la maison : chauffage, chauffe-eau…
