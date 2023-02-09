@@ -86,11 +86,11 @@ Ensuite, vous pouvez créer les pages de votre application, et y créer les diff
 
 Dans les attributs de chaque élément, **quelques astuces** :
 
-* mettre un `objname` (nom court) pour le référencer dans ESPHome.
-* mettre `vscope` à global pour qu'il soit actif Quelle que soit la page affichée
-* attribut `sta` à `crop image` et préciser dans pic le fond utilisé
-* utiliser le browser pour renseigner les différents id (police, images, pages...).
-* les textes sont saisis en cliquant sur `multiline...` et non directement dans le champ.
+* Mettre un `objname` (nom court) pour le référencer dans ESPHome.
+* Mettre `vscope` à global pour qu'il soit actif Quelle que soit la page affichée
+* Attribut `sta` à `crop image` et préciser dans pic le fond utilisé
+* uUtiliser le browser pour renseigner les différents id (police, images, pages...).
+* Les textes sont saisis en cliquant sur `multiline...` et non directement dans le champ.
 
 Dans le carré `event` à gauche du carré `attributs`, il est possible de mettre du code qui sera exécuté dans le nextion. On mettra par exemple "page volet" pour le bouton volet, pour ouvrir une page dont le nom est "volet".
 
@@ -149,7 +149,7 @@ Le code (`service: update_tft` et paramètre `tft_url`) permet de téléverser l
 Il faut mettre le fichier dans un répertoire  sous `HA .\config\www\nextion`
 Ensuite l'appel du service `ESPHome: esp_nextion_update_tft` lancera le transfert et la mise à jour. Très pratique quand l'afficheur sera dans son boitier et ne sera plus accessible.
 
-`touch_sleep_timeout: 180` permet de mettre en veille l'afficheur si il n'est pas utilisé pendant plus de 3 minutes. Il suffit alors de le toucher pour le réveiller.
+`touch_sleep_timeout: 180` permet de mettre en veille l'afficheur s'il n'est pas utilisé pendant plus de 3 minutes. Il suffit alors de le toucher pour le réveiller.
 
 `wake_up_page: 0` permet de revenir à la première page quand l'afficheur est réveillé.
 
@@ -221,10 +221,10 @@ On utilise dans l'interface nextion un "dual state button". Chaque état a une c
 
 La lumière peut être activée depuis l'interface du Nextion ou depuis HA. Il faut alors 2 entrées :
 
-* 1 pour le nextion qui envoie l'ordre à HA si allumée depuis l'interface nextion
+* 1 pour le nextion qui envoie l'ordre à HA si allumé depuis l'interface nextion
 * 1 pour HA qui envoie l'ordre à l'interface Nextion quand la lumière est allumée depuis HA.
 
-Il est conseillé de préfixer les entrées en fonction de la platforme : le nom de l'entrée est `ha_lum_plage` pour l'entrée ha et `nx_lum_plage` pour l'entrée nextion.
+Il est conseillé de préfixer les entrées en fonction de la plateforme : le nom de l'entrée est `ha_lum_plage` pour l'entrée ha et `nx_lum_plage` pour l'entrée nextion.
 
 Le code c (lambda) se déclenche sur événement de changement d'état.
 
