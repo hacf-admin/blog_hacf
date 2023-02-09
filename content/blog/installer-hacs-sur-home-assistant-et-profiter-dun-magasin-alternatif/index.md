@@ -1,13 +1,14 @@
 ---
-draft: false
-type: post
 visibleInCMS: true
-date: 2022-10-06
-lastmod:
+draft: true
+date: 06-10-22
+lastmod: null
+level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
 title: Installer HACS sur Home Assistant et profiter d'un magasin alternatif.
+type: post
 images: img/imagebf_image_article1-1-.png
 description: "Malgré les multitudes d'intégrations, d'add-ons ou de thèmes
   disponibles en natif dans Home Assistant, il y a une communauté qui en
@@ -17,6 +18,8 @@ categories:
   - Add-on
   - Intégration
   - Automatisation
+series:
+  - Débuter avec Home Assistant
 tags:
   - HACS
   - add-on
@@ -26,8 +29,6 @@ tags:
   - lovelace
   - net-deamon
   - theme
-series:
-  - Débuter avec Home Assistant
 ---
 Malgré les multitudes d'intégrations, d'add-ons ou de thèmes disponibles en natif dans Home Assistant, il y a une communauté qui en développe d'autres. Parfois, lorsqu'elles sont très utilisées et utiles, elles peuvent se retrouver intégrés dans le core de Home Assistant.
 
