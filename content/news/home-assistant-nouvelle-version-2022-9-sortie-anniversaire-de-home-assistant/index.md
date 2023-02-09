@@ -1,7 +1,7 @@
 ---
 title: "Home Assistant nouvelle version 2022.9 : Sortie anniversaire de Home
   Assistant!"
-draft: true
+#draft: true
 type: news
 visibleInCMS: true
 date: 2022-09-29
