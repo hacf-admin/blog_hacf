@@ -10,7 +10,7 @@ keywords:
   - HassOS I2C Configurator
   - add-on ha
 visibleInCMS: true
-date: 2022-11-07
+date: 20-11-22
 lastmod: null
 author: mcfly
 socialshare: true
