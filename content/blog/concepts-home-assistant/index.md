@@ -2,7 +2,7 @@
 title: Architecture et concepts Home Assistant
 type: post
 visibleInCMS: true
-draft: false
+draft: true
 date: 09-10-22
 lastmod: 07-02-23
 images: img/accueil-2.jpg
