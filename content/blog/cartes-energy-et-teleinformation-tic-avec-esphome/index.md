@@ -22,44 +22,39 @@ tags:
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
 ---
-Le module Energy est vraiment puissant, propose de belles cartes interactives Lovelace (navigation jour-mois-année, consolidation des coûts), et ce serait à mon sens dommage de ne pas l'utiliser. Le module Energy utilise les tables "statistics" de HA, qui permettent de garder les données sans limite de durée, avec 1 enregistrement seulement stocké par heure.
+Le module **Energy** de Home Assistant est vraiment puissant, propose de belles cartes graphiques interactives (navigation jour-mois-année, consolidation des coûts), et il serait dommage de ne pas l'utiliser. Le module **Energy** utilise les tables "*statistics*" de HA, qui permettent de garder les données sans limite de durée, avec 1 enregistrement seulement stocké par heure.
 
-En général, je préfère toujours bien comprendre et essayer d'utiliser en priorité ce que propose HA avant d'utiliser des intégration tierces (par exemple Energy plutôt que node-red et influxDB pour la consommation électrique). Penser que ne pas faire le choix HA est prendre le risque de ne pas profiter des évolutions à venir de HA.
+Certes le sujet télé-information a déjà été pas mal traité, mais il est proposé ici ici un retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total < 10€ :
 
-Certes le sujet télé-information a déjà été pas mal traité, mais je vous propose de vous faire mon retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total < 10€ :
+-   Réalisation **DIY** avec un **ESP32** et les quelques composants soudés sur une plaque de prototypage
+-   Un **boitier à imprimer**, disponible dans Cults
+-   Adaptation de la configuration **ESPHome** pour avoir les entités compatibles **Energy**
+-   Configuration et intégration du **module energy dans le dashboard HA** : consommation et coûts
 
-* Réalisation DIY avec un ESP32 et les quelques composants soudés sur une plaque de prototypage 
-* Un boitier à imprimer, disponible dans Cults
-* Adaptation de la configuration ESPHome pour avoir les entités compatible Energy
-* Configuration et intégration du module energy dans Lovelace : consommation et coûts
+Une procédure de création de nouveaux composants ESPHome est documentée ici : [Utilisation ESPHome web pour de nouveaux composants](https://forum.hacf.fr/t/utilisation-esphome-web-pour-de-nouveaux-composants/10506)
 
-J'ai documenté ici la procédure de création de nouveaux composants ESPHome que j'utilise : 
-[Utilisation ESPHome web pour de nouveaux composants](https://forum.hacf.fr/t/utilisation-esphome-web-pour-de-nouveaux-composants/10506)
+Pour plus d'informations, voici 2 excellents tutos :
 
-Pour plus d'informations, je vous renvoie à 2 excellents tutos :
+-   ESPHome : [Installer ESPHome.... de @McFly](https://forum.hacf.fr/t/installer-esphome-sur-home-assistant-et-creer-votre-premiere-configuration/223)
+-   Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
 
-* ESPHome : [Installer ESPHome.... de @McFly](https://forum.hacf.fr/t/installer-esphome-sur-home-assistant-et-creer-votre-premiere-configuration/223)
-* Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
+Pour information, le compteur électrique interfacé ici est en mode **TIC "historique",** avec heures pleines et heures creuses. Si ce n'est pas votre cas, il faudra faire quelques adaptations.
 
-Pour information, mon compteur électrique est en mode TIC "historique", avec heures pleines et heures creuses. Si ce n'est pas votre cas, il faudra faire quelques adaptations.
+Un ESP32 a été préféré plutôt qu'un ESP8266 car, plus puissant, il permet de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs ("bad CRC"). J'ai choisi une résistance de 2k en entrée, qui est un bon compromis. La liaison série principale de l'ESP32 est utilisée (UART0) disponible sur le GPIO 03. Autrement, on retrouve le schéma classique : **opto-coupleur** pour isoler le circuit et la compteur, **transistor mofset** pour réamplifier le signal. L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
 
-J'ai moi préféré utiliser un ESP32 plutôt qu'un ESP8866 car, plus puissant, il permet de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs ("bad CRC"). J'ai choisi une résistance de 2k en entrée, qui est un bon compromis. La liaison série principale de l'ESP32 est utilisée (UART0) dispo sur le GPIO 03.
-Autrement, on retrouve le schéma classique : opto-coupleur pour isoler le circuit et la compteur, transistor mofset pour réamplifier le signal. L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
+![image|690x361](blob:https://dev.hacf.fr/d7dc3e7f-1ca5-4a2c-92cf-68bb8c50a1dc)
 
-![image|690x361](img/schema.jpeg)
+Les quelques composants sont soudés sur une **plaque de prototypage de 5cm x 6cm**. Un bornier est rajouté. Certes, on peut trouver des montages tout faits, mais souder ces quelques composants n'est pas très compliqué, et le DIY est toujours tellement plus satisfaisant :smirk:
 
-Les quelques composants sont soudés sur une plaque de prototypage de 5cm x 6cm. Un bornier est rajouté. Certes, on peut trouver des montages tout faits, mais souder ces quelques composants n'est pas très compliqué, et le DIY est toujours tellement plus satisfaisant :smirk:
+![](blob:https://dev.hacf.fr/3c8ad40b-99ef-4649-9bdd-bed5f50294b1)
 
-![](img/boitier.jpeg)
+![](blob:https://dev.hacf.fr/cc3b3f8c-3cbb-42da-9a0f-598a5c317bad)
 
-![](img/compteur2.jpeg)
-
-J'ai conçu sous fusion360 et mis en ligne le boitier :
-<https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266>
+Un boitier a été conçu sous fusion360 et mis en ligne : [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266)
 
 A noter qu'il pourrait bien entendu être utilisé pour d'autres montages à base de ESP32 ou ESP8266 sur carte de prototypages. D'ailleurs, il semble susciter de l'intérêt sur Cult3D.
 
-Concernant ESPHome, ci-dessous mon fichier de configuration.
+Concernant ESPHome, ci-dessous le fichier de configuration.
 
 ```yaml
 esphome:
@@ -185,30 +180,29 @@ text_sensor:
       } else {
         return { (String(seconds) +"s").c_str() };
       }
+
 ```
 
-Je n'ai gardé que les informations utiles (par exemple l'ID du compteur qui ne change jamais n'a pas besoin d'être lue en permanence). 
-Une lecture toutes les minutes est suffisante.
-Les sensors d'index ont des attributs compatibles avec le module Energy : state_class de type "total_increasing" et conversion en kWh.
-L'UART0 étant utilisée, il est préférable de désactiver la sortie des logs sur la liason série (baud_rate: 0 dans le logger). On peut enlever cela pour le premier flashage par cable, pour vérifier que tout se passe bien.
+Seules les informations utiles ont été gardées (par exemple l'ID du compteur qui ne change jamais n'a pas besoin d'être lue en permanence). Une lecture toutes les minutes est suffisante.
 
-Ensuite, il faut configurer le module Energy : il est depuis les dernières versions dans configuration - tableau de bord puis cliquer sur Energies. Je vous conseille de mettre les coûts de kWh.
+Les "sensors" d'index ont des attributs compatibles avec le module Energy : `state_class` de type `total_increasing` et conversion en kWh. L'UART0 étant utilisée, il est préférable de désactiver la sortie des logs sur la liaison série (`baud_rate: 0` dans le logger). On peut enlever cela pour le premier flashage par câble, pour vérifier que tout se passe bien.
 
-![image|675x500, 75%](img/interfaceenergy.png)
+Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans configuration - tableau de bord puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
 
-J'ai également configuré la partie CO2 pour tester : cela donne le % d'énergie carbonée utilisée par EDF. Il faut aller sur le site https://co2signal.com/, créer une clé d'API et la rentrée dans la configuration du module Energy. Cela crée une entité CO2 avec en temps réel le % d'énergie carbonée utilisée par EDF.
-La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal). Bon... 
+![image|675x500, 75%](blob:https://dev.hacf.fr/c5aba2cd-160e-4461-a796-1e05af8c0ee2)
 
-J'ai aussi essayé d'ajouter mes panneaux solaire, mais comme le module Energy ne prends pas en charge le rachat de la consommation par EDF, cela me faussait les résultats.
+La section **CO2** a également été configurée : cela donne le % d'énergie carbonée utilisée par EDF. Il faut aller sur le site https://co2signal.com/, créer une clé d'API et la rentrée dans la configuration du module Energy. Cela crée une entité CO2 avec en temps réel le % d'énergie carbonée utilisée par EDF.
+La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal). Bon...
 
-Reste enfin à intégrer les cartes Energy dans Lovelace (https://www.home-assistant.io/lovelace/energy/)
-Mon dashboard fait pour mobile est assez simple :
+> J'ai aussi essayé d'ajouter mes panneaux solaires, mais comme le module Energy ne prends pas en charge le rachat de la consommation par EDF, cela me faussait les résultats. Mais si vous êtes en auto-consommation, cela aura du sens
 
-![image|220x500](img/interfacelovelace.png)
+Reste enfin à intégrer les cartes Energy dans le dashboard (https://www.home-assistant.io/lovelace/energy/). Celui ci-après est adapté à un usage sur mobile.
 
-A noter qu'il y a ici présent le nouveau composant bouton :smirk: 
+![image|220x500](blob:https://dev.hacf.fr/363bab73-24ce-4e51-a657-837762edc0df)
 
-Et le code, si jamais, des 6 cartes (hors entête de ma navigation sur mobile) :
+A noter qu'il y a ici présent le nouveau composant bouton :smirk:
+
+Voici le code pour intégrer les 6 **cartes Energy** dans le dashboard :
 
 ```yaml
 type: energy-date-selection
@@ -264,7 +258,8 @@ entities:
     secondary_info: last-updated
   - entity: button.teleinfo_restart
     name: Redémarrage
+
 ```
 
-La suite pour moi sera d'intégrer les consommations des appareils : chauffage, chauffe-eau…
+Une suite logique sera d'intégrer les consommations des différents appareils de la maison : chauffage, chauffe-eau…
 N'hésitez pas à faire vos retours ou compléments.
