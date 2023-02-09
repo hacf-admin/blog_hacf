@@ -2,7 +2,7 @@
 title: SMS et appels sans internet
 type: post
 visibleInCMS: true
-draft: false
+#draft: false
 date: 2023-02-08
 lastmod: ""
 images: img/accueil.png
