@@ -3,11 +3,6 @@ draft: false
 level: Débutant
 authors:
   - mcfly
-keywords:
-  - Argon
-  - Argon One Add-on
-  - HassOS I2C Configurator
-  - add-on ha
 visibleInCMS: true
 date: 23-11-22 23:59
 lastmod: 24-11-2422 00:01
@@ -15,18 +10,14 @@ author: mcfly
 socialshare: true
 title: Article Test
 image: null
-type_install:
-  - ha-os
 categories:
-  - Add-on
-  - Intégration
 series:
   - home assistant
 tags:
   - argon
-hacf: null
+hacf:
 description: Article de test
-url_off: null
+url_off:
 ---
 ## Test Keyboard
 
