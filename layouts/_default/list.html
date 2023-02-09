@@ -26,7 +26,7 @@
 
 	<div class="col-11 col-lg-9 order-2 m-3">
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-3 g-3 justify-content-center">
-			{{ range .Paginator.Pages }}
+			{{ range .Paginator.Pages.ByLastmod.Reverse }}
 			<div class="col">
 			{{ partial "cards/post-card" . }}
 			</div>
