@@ -1,27 +1,28 @@
 ---
-title: Gestion du chauffage de bout en bout
-type: post
 visibleInCMS: true
 draft: false
-date: 2022-09-30
+date: 30-09-22
 lastmod: null
+level: Avancé
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
+socialshare: true
+title: Gestion du chauffage de bout en bout
+type: post
 images: img/chauffage-chat2.jpg
 description: "A l'heure où le chauffage est un poste de dépense très important,
   Home Assistant ne fournit qu'un thermostat basique. Cet article propose une
   implémentation complète permettant de gérer son chauffage : thermostat plus
   performant, planification des plages de température, pilotage, gestion des
   ouvrants, interface graphique et courbes pour l'optimisation."
-level: Avancé
 categories:
   - Automatisation
-series:
-  - Débuter avec Home Assistant
+  - Confort
+  - Energie
+series: null
 tags:
-  - Blueprint
-  - Chauffage
-author: argonaute
-url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
-socialshare: true
+  - blueprint
+  - chauffage
 ---
 ## Avant propos
 
