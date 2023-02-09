@@ -28,7 +28,7 @@ Il peut être très pratique d'installer un petit **afficheur tactile** la ou c'
 * Gestion de l'ouverture et fermeture du **volet de la piscine**, allumage des **spots**
 * Gestion des différentes **lumières extérieures**
 
-![ecrans|682x248](img/boitier.jpeg)
+![Rendu final du boitier installé](img/boitier.jpeg)
 
 Cet article décrit la réalisation d'un afficheur à base d'un **Nextion 2.8 pouces**, pour un coût de l'ordre de 30€. L'implémentation est faite grâce à ESPHome, qui assure la communication avec Home Assistant et permet des mises à jour en ligne. Cela évite des flux complexes type nodered, comme le proposent certains tutos.
 
@@ -45,7 +45,7 @@ Nous utiliserons un **ESP8266 Wemos D1**.
 
 Seules les connecteurs de la liaison série (TX et RX) ainsi que le 5v et la terre sont soudés, puis retournés pour ne pas prendre de place. 
 
-![image|481x500, 50%](img/esp8266.jpeg)
+![ESP8266](img/esp8266.jpeg)
 
 La connexion de l'afficheur est simple :
 
@@ -55,14 +55,14 @@ La connexion de l'afficheur est simple :
 
 Un boitier a été conçu et imprimé avec une imprimante 3d :
 
-![image|690x446, 50%](img/boitierouvert.jpeg)
+![Boitier ouvert](img/boitierouvert.jpeg)
 
 Les fichiers d'impression sont partagés sur cult3d
 [Cult3d - boitier pour Nextion 2.8](https://cults3d.com/fr/mod%C3%A8le-3d/divers/case-for-nextion-2-8-inches)
 
 Enfin, pour avoir le rendu d'un produit du commerce, une résine UV de lissage PolyPrint est utilisée. Elle est sans odeur et qui donne de fabuleux résultats.
 
-![image|295x265, 50%](img/resine.jpeg)
+![Le pot de résine](img/resine.jpeg)
 
 La résine peut être appliquée au pinceau. Puis éclairer 10s chaque surface avec une torche UV et la résine est immédiatement dure. Juste faire un petit ponçage avant et après l'application de la résine. 
 Enfin le boitier a été peint avec une bombe de peinture acrylique blanche qui peut se trouver dans n'importe quel magasin de bricolage.
@@ -75,7 +75,7 @@ Enfin le boitier a été peint avec une bombe de peinture acrylique blanche qui 
 Le design est assez facile : Nextion fournit un éditeur téléchargeable ici.
 [Nextion editor](https://nextion.tech/nextion-editor/)
 
-![image|593x500, 100%](img/editeur.png)
+![L'éditeur d'interface Nextion](img/editeur.png)
 
 Tous les éléments graphiques (fond, icônes) doivent être téléchargés dans le carré en bas à gauche, rubrique `picture`.
 Un fond de **240 x 320 pixels** doit en particulier est chargé au préalable. Vous pouvez réutiliser le fond noir de [GitHub](https://github.com/argonaute199/Nextion28-home-assistant).
