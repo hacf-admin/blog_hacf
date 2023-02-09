@@ -3,8 +3,8 @@ title: Dialogue avec Telegram
 type: post
 visibleInCMS: true
 draft: false
-date: 23-02-07
-lastmod: 23-02-07
+date: 07-02-23
+lastmod: ""
 images: img/accueil.jpeg
 description: >-
   Cet article présente comment intégrer Telegram à Home Assistant.
@@ -14,7 +14,8 @@ level: Intermédiaire
 categories:
   - Add-on/intégration
 tags:
-  - Telegram
+  - telegram
+  - notification
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
