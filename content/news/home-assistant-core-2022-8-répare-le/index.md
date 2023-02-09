@@ -1,9 +1,8 @@
 ---
 visibleInCMS: true
 draft: false
-date: 15-08-22
-lastmod: 09-02-23
-author:
+date: 2023-01-03
+lastmod: 2023-02-03
   - McFly
 url_hacf: https://forum.hacf.fr/t/home-assistant-2022-8-tu-peux-le-reparer/15217
 url_haoff: https://www.home-assistant.io/blog/2022/08/03/release-20228/

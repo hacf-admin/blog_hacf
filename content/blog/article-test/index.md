@@ -4,12 +4,14 @@ level: Débutant
 authors:
   - mcfly
 visibleInCMS: true
-date: 07-02-23
-lastmod: 07-02-23
+date: 2023-01-03
+lastmod: 2023-02-09
 author: mcfly
 socialshare: true
 title: Article Test
-image:
+tags:
+  - argon
+image: null
 categories:
   - Concepts
   - Installation
@@ -24,15 +26,12 @@ categories:
   - Energie
   - Sécurité
   - Confort
-tags:
-  - argon
-
-hacf:
+hacf: null
 description: Article de test
-url_off:
+url_off: null
 ---
 
-C﻿eci est un TEST de déploiement.
+Ceci est un TEST de déploiement.
 
 ```toml
 [markup]

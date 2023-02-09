@@ -110,14 +110,14 @@ collections:
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'DD-MM-YY'
+        format: 'YYYY-MM-DD'
 
       - label: 'Date de modification'
         name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'DD-MM-YY'
+        format: 'YYYY-MM-DD'
         required: false
 
       - label: "Image de l'article"
@@ -172,6 +172,7 @@ collections:
         - Energie
         - Sécurité
         - Confort
+
       - label: 'Série(s)'
         name: 'series'
         widget: 'select'
@@ -260,14 +261,14 @@ collections:
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'DD-MM-YY'
+        format: 'YYYY-MM-DD'
 
       - label: 'Date de modification'
         name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'DD-MM-YY'
+        format: 'YYYY-MM-DD'
         required: false
 
       - label: "Image de l'article"
