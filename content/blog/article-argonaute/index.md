@@ -2,7 +2,7 @@
 title: Article Argonaute
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-02-09
 lastmod: 2023-02-09
 images: img/awesome-ha.png
