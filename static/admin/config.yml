@@ -1,7 +1,8 @@
 backend:
   name: git-gateway
   branch: netlify # Branch to update (optional; defaults to master)
-  site_domain: https://dev.hacf.fr/
+  site_domain: https://dev.hacf.fr
+#  site_domain: https://hacf.netlify.app/
 
 local_backend: true
 
@@ -109,18 +110,18 @@ collections:
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
 
       - label: 'Date de modification'
         name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
         required: false
 
       - label: "Image de l'article"
-        name: "image"
+        name: "images"
         widget: "image"
         required: false
         allow_multiple: false
@@ -142,23 +143,35 @@ collections:
         - Intermédiaire
         - Avancé
 
-      - label: "Type d'installation"
-        name: 'type_install'
-        widget: 'select'
-        multiple: true
-        hint: "HA OS, HA Container, HA Core"
-        options: 
-        - ha-os
-        - ha-container
-        - ha-core
+#      - label: "Type d'installation"
+#        name: 'type_install'
+#        widget: 'select'
+#        multiple: true
+#        hint: "HA OS, HA Container, HA Core"
+#        options: 
+#        - ha-os
+#        - ha-container
+#        - ha-core
 
       - label: 'Categorie(s)'
         name: 'categories'
         widget: 'select'
         multiple: true
         min: 1
-        options: ['Installation','Add-on','Intégration', 'Automatisation', 'ESPHome', 'Do It Yourself']
-
+        options:
+        - Concepts
+        - Installation
+        - Matériel
+        - Protocoles
+        - Réseau
+        - Interface UI
+        - Add-on/intégration
+        - ESPHome/DIY
+        - Automatisation
+        - Node-red
+        - Energie
+        - Sécurité
+        - Confort
       - label: 'Série(s)'
         name: 'series'
         widget: 'select'
@@ -247,18 +260,18 @@ collections:
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
 
       - label: 'Date de modification'
         name: 'lastmod'
         widget: 'datetime'
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
-        format: 'YY-MM-DD'
+        format: 'DD-MM-YY'
         required: false
 
       - label: "Image de l'article"
-        name: "image"
+        name: "images"
         widget: "image"
         required: false
         allow_multiple: false
@@ -365,7 +378,13 @@ collections:
                 widget: "string"
                 required: false
                 hint: 'format "fa-solid fa-server"'
-                
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
       - file: "data/sections/landing_double.yaml"
         label: "Section Landing Double"
         format: "yaml"
@@ -423,6 +442,12 @@ collections:
                 widget: "string"
                 required: false
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: 'Réseaux Sociaux'
             name: 'socialLinks'
@@ -487,6 +512,12 @@ collections:
                 widget: "string"
                 required: false
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: 'Réseaux Sociaux 2'
             name: 'socialLinks2'
@@ -672,6 +703,12 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
           - label: "Titre du contenu" 
             name: "contentTitle"
             widget: "string" 
@@ -735,6 +772,12 @@ collections:
                 name: "icon"
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -800,6 +843,12 @@ collections:
                 name: "icon"
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
           - label: "Titre du contenu" 
             name: "contentTitle"
@@ -887,7 +936,11 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
-
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
       - file: "data/head/tagsHead.yaml"
         label: "Index des Tags"
@@ -965,6 +1018,11 @@ collections:
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
 
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
       - file: "data/head/authorsHead.yaml"
         label: "Index des Auteurs"
@@ -1041,6 +1099,13 @@ collections:
                 name: "icon"
                 widget: "string"
                 hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
 ###############################################
 
 # COLLECTION PAGES
@@ -1092,12 +1157,12 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
             choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+            hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
 
           - label: "Description"
             name: "description"
@@ -1153,6 +1218,66 @@ collections:
                 - diy
                 - autres
 
+      - file: "content/pages/contact/index.md"
+        label: "Nous Contacter"
+        name: "contact"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+          
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
+          - {name: visibleInCMS, widget: hidden, default: true }
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+
+          - label: "Alias"
+            name: "aliases"
+            widget: "list"
+            allow_add: true
+            required: false
+            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias"   
+
+          - label: 'Date de publication'
+            name: 'date'
+            widget: 'datetime'
+            date_format: 'DD-MM-YY'
+            format: 'YY-MM-DD'
+
+          - label: 'Date de modification'
+            name: 'lastmod'
+            widget: 'datetime'
+            date_format: 'DD-MM-YY'
+            format: 'YY-MM-DD'
+            required: false
+
+          - label: "Image de l'article"
+            name: "images"
+            widget: "image"
+            required: false
+            allow_multiple: false
+            choose_url: false
+            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+
+          - label: "Tags"
+            name: "tags"
+            widget: "list"
+            allow_add: true
+            hint: "Séparer vos tags par une virgule"   
+              
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+
       - file: "content/pages/association/index.md"
         label: "Association"
         name: "association"
@@ -1191,7 +1316,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
@@ -1251,7 +1376,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
@@ -1311,7 +1436,7 @@ collections:
           required: false
 
         - label: "Image de l'article"
-          name: "image"
+          name: "images"
           widget: "image"
           required: false
           allow_multiple: false
@@ -1371,7 +1496,7 @@ collections:
             required: false
 
           - label: "Image de l'article"
-            name: "image"
+            name: "images"
             widget: "image"
             required: false
             allow_multiple: false
@@ -1442,9 +1567,11 @@ collections:
       - label: "Profil HACF"
         name: "pseudo_hacf"
         widget: "string"
+        hint: "Mettre seulement le pseudos en minuscule" 
       - label: "Profil HA Off"
         name: "pseudo_haoff"
-        widget: "string"       
+        widget: "string"
+        hint: "Mettre seulement le pseudos en minuscule"      
 
 # ARCHIVE pour les sections du dossier data
 #          - {

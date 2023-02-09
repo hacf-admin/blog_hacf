@@ -2,6 +2,7 @@
 title: Association "Communauté Francophone autour de Home Assistant"
 aliases:
   - /association
+  - /about
 draft: false
 type: page
 visibleInCMS: true
@@ -13,6 +14,7 @@ tags:
   - association
   - statuts
   - reglement
+toc: true
 ---
 
 {{< btnAsso >}}

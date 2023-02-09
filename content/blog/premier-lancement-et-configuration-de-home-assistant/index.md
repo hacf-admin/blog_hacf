@@ -1,27 +1,28 @@
 ---
-title: Premier lancement et configuration de Home Assistant
-draft: false
-type: post
 visibleInCMS: true
-date: 2022-10-07 
-lastmod:
-image: "img/imagebf_image_hero-1-.jpg"
+draft: true
+date: 07-10-22
+lastmod: null
+level: Débutant
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/home-assistant-premiere-configuration/679
+socialshare: true
+title: Premier lancement et configuration de Home Assistant
+type: post
+images: img/imagebf_image_hero-1-.jpg
 description: Vous venez d’installer Home Assistant ? Nous allons balayer
   ensemble la première configuration. Elle vous permet de définir la position de
   votre maison, son élévation, mais aussi ajouter les intégrations
   automatiquement découvertes via discovery.
-socialshare: true
 categories:
   - Installation
+series:
+  - Débuter avec Home Assistant
 tags:
   - ha-container
   - ha-os
   - ha-core
   - ha-supervised
-series:
-  - Débuter avec Home Assistant
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/home-assistant-premiere-configuration/679
 ---
 Vous venez d'installer Home Assistant et vous êtes rendu sur votre instance via `http://homeassistant:8123` ou `http://homeassistant.local:8123`. 
 

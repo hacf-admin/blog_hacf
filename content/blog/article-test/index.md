@@ -4,50 +4,84 @@ level: Débutant
 authors:
   - mcfly
 visibleInCMS: true
-date: 23-11-22 23:59
-lastmod: 24-11-2422 00:01
+date: 07-02-23
+lastmod: 07-02-23
 author: mcfly
 socialshare: true
 title: Article Test
-image: null
+image:
 categories:
-series:
-  - home assistant
+  - Concepts
+  - Installation
+  - Matériel
+  - Protocoles
+  - Réseau
+  - Interface UI
+  - Add-on/intégration
+  - ESPHome/DIY
+  - Automatisation
+  - Node-red
+  - Energie
+  - Sécurité
+  - Confort
 tags:
   - argon
+
 hacf:
 description: Article de test
 url_off:
 ---
+
+C﻿eci est un TEST de déploiement.
+
+```toml
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+```
+
 ## Test Keyboard
 
 {{< keyboard kbd="CTRL, ALT" >}}
 
 test alert avec attribut NON FONCTIONNEL
+
 ```
 > This is a note.
 {.alert .alert-primary}
 ```
+
 > This is a note.
-{.alert .alert-primary}
+> {.alert .alert-primary}
+
 ```
 > This is a warning.
 {.alert .alert-warning}
 ```
+
 > This is a warning.
-{.alert .alert-warning}
+> {.alert .alert-warning}
 
 ```
 > This is dangerous.
 {.alert .alert-danger}}
 ```
-> This is dangerous.
-{.alert .alert-danger}}
 
+> This is dangerous.
+> {.alert .alert-danger}}
 
 ## Test Gallery
-
-
 
 # Markdown Cheat Sheet
 
@@ -175,16 +209,14 @@ X^2^
 
 ![Image SVG](img/blueprint_import.svg)
 
-
 ![Image Gif animé](img/image-png-animé.gif)
-
 
 ![Image Gif Animé 2](img/imge_gif_animé.gif)
 
 ![Image PNG](img/installation_detection_automatique_materiels.png)
 
-
 ![Image JPG](img/installerunaddonofficielounonofficiel.jpg)
 
-![Image PNG](img/profil_utilisateur.png)
 
+
+![Image PNG](img/profil_utilisateur.png)

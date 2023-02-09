@@ -18,9 +18,11 @@ buttons:
   - name: En savoir plus
     url: /association
     icon: null
+    type: 
   - name: Adhérer
     url: http://adhesion.hacf.fr
     icon: null
+    type: ext
 socialLinks:
   - name: Contact
     icon: far fa-envelope
@@ -67,6 +69,7 @@ buttons2:
   - name: Découvrez Home Assistant
     url: https://demo.home-assistant.io/#/lovelace/0
     icon: null
+    type: ext
 socialLinks2:
   - name: Site
     url: https://www.home-assistant.io/

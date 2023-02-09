@@ -5,13 +5,22 @@
             {{ partial "commons/sidebar/author.html" . }}
         {{ end }}
         <div class="sticky-top" style="top: 80px">
+
+<!--            {{ if .Params.url_hacf }}
+                {{ partial "commons/sidebar/help_forum.html" . }}
+            {{ else }}
+                {{ partial "commons/sidebar/new_help_forum.html" . }}
+            {{ end }}
+-->         
+            {{ if .Params.url_hacf }}
+            {{ partial "commons/sidebar/help_forum.html" . }}
+            {{ end }}
+            
+
             {{ if site.Params.tocPost }}
-                {{ partial "commons/sidebar/toc.html" . }}
+                    {{ partial "commons/sidebar/toc.html" . }}
             {{ end }}
 
-            {{ if .Params.url_hacf }}
-                {{ partial "commons/sidebar/help_forum.html" . }}
-            {{ end }}
 
             {{ if  site.Params.allowGitModPost}}
                 <div class="text-center">
@@ -33,9 +42,10 @@
         {{ if site.Params.authorPage }}
             {{ partial "commons/sidebar/author.html" . }}
         {{ end }}
+
         <div class="sticky-top" style="top: 80px">
             {{ if site.Params.tocPage }}
-                {{ partial "commons/sidebar/toc.html" . }}
+                    {{ partial "commons/sidebar/toc.html" . }}
             {{ end }}
 
             {{ if .Params.url_hacf }}

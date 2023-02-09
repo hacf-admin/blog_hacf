@@ -1,14 +1,15 @@
 ---
-draft: false
-type: post
 visibleInCMS: true
-date: 2022-10-06
-lastmod:
+draft: true
+date: 06-10-22
+lastmod: null
+level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
 title: Installer HACS sur Home Assistant et profiter d'un magasin alternatif.
-image: img/imagebf_image_article1-1-.png
+type: post
+images: img/imagebf_image_article1-1-.png
 description: "Malgré les multitudes d'intégrations, d'add-ons ou de thèmes
   disponibles en natif dans Home Assistant, il y a une communauté qui en
   développe d'autres. Cette communauté, c'est HACS, pour Home Assistant
@@ -17,6 +18,8 @@ categories:
   - Add-on
   - Intégration
   - Automatisation
+series:
+  - Débuter avec Home Assistant
 tags:
   - HACS
   - add-on
@@ -26,8 +29,6 @@ tags:
   - lovelace
   - net-deamon
   - theme
-series:
-  - Débuter avec Home Assistant
 ---
 Malgré les multitudes d'intégrations, d'add-ons ou de thèmes disponibles en natif dans Home Assistant, il y a une communauté qui en développe d'autres. Parfois, lorsqu'elles sont très utilisées et utiles, elles peuvent se retrouver intégrés dans le core de Home Assistant.
 
@@ -46,7 +47,7 @@ Le travail d'une communauté internationale au profit de tous les utilisateurs d
 
 ## Installation.
 Ouvrir SSH & Web Terminal puis lancer la commande suivante 
-```
+```bash
     wget -O - https://get.hacs.xyz | bash -
 ```
 
@@ -76,7 +77,7 @@ Vous avez maintenant accès à plusieurs intégrations et composants d’interfa
 
 IMAGE ANIMEE AJOUT INTEGRATION
 
-&gt;Il est possible de choisir une version précise ou d'essayer une version bêta lors de l'installation d'un dépôt, bien sûr, cela est à vos risques.
+>Il est possible de choisir une version précise ou d'essayer une version bêta lors de l'installation d'un dépôt, bien sûr, cela est à vos risques.
 
 
 ## Conclusion

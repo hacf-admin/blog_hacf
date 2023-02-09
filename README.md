@@ -2,6 +2,20 @@
 
 Site/Blog de la communauté et l'association Francophone autour de Home Assistant,  HACF.
 
+**__En route vers la V1:__**
+* [X] Page contact
+* [ ] Probleme de TOC caché.
+>Ben j'ai creusé, et ca marche quand il renvoit vers un lien plus bas mais pas plus haut car le menu s'affiche a continuer de creuser.
+
+* [ ] Article de référence. l'article sur "mon premier sensor" avec systeme monitor et Raspberry ?
+* [ ] Page Medias
+* [X] Integrer les balises Twitter/facebook
+https://www.codeur.com/blog/integrer-open-graph-trafic-reseaux-sociaux/
+http://brendan-quinn.xyz/post/working-with-hugos-internal-partial-templates-facebook-and-open-graph/
+https://gohugo.io/templates/internal/#configure-open-graph
+
+* [ ] Faire la collection via L'UI NetlifyCMS
+
 
 ## Chose a faire:
 * [ ] Ajouter une recherche.

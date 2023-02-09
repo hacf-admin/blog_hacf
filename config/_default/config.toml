@@ -1,9 +1,14 @@
 baseURL = 'https://dev.hacf.fr'
+#baseURL = 'https://hacf.netlify.app'
 languageCode = 'fr-fr'
 title = 'HACF'
 
 #theme =
 paginate = 6
+
+#pygmentsUseClasses = true
+#pygmentsCodefences = true
+
 
 enableRobotsTXT = true
 enableEmoji = true
@@ -12,10 +17,11 @@ enableInlineShortcodes = true
 enableGitInfo = true
 
 [params]
+  title= 'HACF Communauté Francophone autour Home Assistant'
   description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
   logo = "/images/logo.webp"
-  #defaulthero =  "/images/articles/article.webp" #NON FONCTIONNEL
+  images =  "images/articles/article.webp"
   contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
   mainSections = ["blog", "news"] #https://gohugo.io/functions/where/#mainsections
   customcss = true
@@ -41,7 +47,7 @@ enableGitInfo = true
   authorPage = false
   allowGitModPage = false
   lastPostPage = false
-  
+
   sidebarPost = true
   tocPost = true
   authorPost = true
@@ -71,6 +77,8 @@ enableGitInfo = true
   name = 'categories'
   weight = 60
 
+[social]
+  twitter = 'hacf_fr'
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,

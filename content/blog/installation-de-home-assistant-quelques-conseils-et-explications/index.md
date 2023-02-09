@@ -1,14 +1,15 @@
 ---
-draft: false
-type: post
 visibleInCMS: true
-date: 2022-09-28
-lastmod:
+draft: true
+date: 28-09-20
+lastmod: null
+level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
 socialshare: true
 title: "Installation de Home Assistant : Quelques conseils et explications"
-image: img/article3.png
+type: post
+images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les grandes lignes de votre installation et la
   direction que celle-ci va prendre dans un futur proche. Voici quelques
@@ -16,6 +17,9 @@ description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   Assistant. "
 categories:
   - Installation
+series:
+  - Les Bases de Home Assistant
+  - Débuter avec Home Assistant
 tags:
   - ha-container
   - ha-os
@@ -29,9 +33,6 @@ tags:
   - odroid
   - vm
   - raspberry-pi
-series:
-  - Les Bases de Home Assistant
-  - Débuter avec Home Assistant
 ---
 > Pour commencer, sachez que ce guide est une base de réflexion pour votre future installation domotique. Ce qui est écrit, est à adapter en fonction de vos connaissances, de votre matériel disponible et du temps que vous voulez constater à sa gestion (hors domotique). 
 

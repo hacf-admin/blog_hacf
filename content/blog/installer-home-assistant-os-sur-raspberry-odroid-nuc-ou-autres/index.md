@@ -1,20 +1,24 @@
 ---
-draft: false
-type: post
 visibleInCMS: true
-date: 2022-10-07
-lastmod:
+draft: true
+date: 07-10-22
+lastmod: null
+level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
 socialshare: true
 title: Installer Home Assistant OS sur Raspberry, Odroid, NUC ou autres
-image: img/imagebf_image_rpihaos.jpg
+type: post
+images: img/imagebf_image_rpihaos.jpg
 description: "Installons ensemble Home Assistant OS sur Raspberry Pi, Odroid,
   Tinkerboard, NUC ou autres, de manière simple et rapide. Commençons dans la
   domotique avec un système Open source, gratuit, international et évolutif avec
   plus de 1900 intégrations et des centaines d'add-ons. "
 categories:
   - Installation
+series:
+  - Débuter avec Home Assistant
+  - Les Bases de Home Assistant
 tags:
   - linux
   - mac-os
@@ -23,9 +27,6 @@ tags:
   - raspberry-pi
   - ha-supervised
   - ha-os
-series:
-  - Débuter avec Home Assistant
-  - Les Bases de Home Assistant
 ---
 Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de Home Assistant OS sur un matériel dédié ? Vous avez fait le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
 

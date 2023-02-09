@@ -14,11 +14,11 @@
         <img src="{{ .logo }}" alt="">
         <div class="text-white pt-3">
           <h1 class="mb-md-2 mb-lg-4">{{ .subtitle }}</h1>
-          <p>{{ .description }} ??</p>
+          <p>{{ .description }}</p>
         </div>
         {{ if .buttons }}
             {{ range .buttons }}
-                <a class="btn btn-primary" href="{{ .url }}" role="button">{{if .icon }}<i class="{{ .icon }}"></i>{{ end }} {{ .name }}</a>
+                <a class="btn btn-primary" href="{{ .url }}" {{ if eq .type "ext" }}target="_blank"{{ end }}  rel="noopener" role="button">{{if .icon }}<i class="{{ .icon }}"></i>{{ end }} {{ .name }}</a>
             {{ end }}
         {{ end }}
 </div>

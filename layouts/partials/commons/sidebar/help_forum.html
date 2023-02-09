@@ -1,5 +1,7 @@
-<div class="text-center">
-  <a type="button" class="btn btn-outline-primary" href="{{ printf "%s" $.Params.url_hacf }}" title="Venez discuter sur le forum de la Communauté Francophone" target="_blank">
-    <img src="/images/logo-hacf-30px.webp" alt="Venez discuter sur le forum de la Communauté Francophone" > Venez Discuter !
+{{ if .Params.url_hacf }}
+<div class="btn-group" role="group" aria-label="Basic example" style="width: 100%">
+  <a type="button" class="btn btn-outline-primary" href="{{ printf "%s" $.Params.url_hacf }}" title="Venez en discuter sur le forum de la Communauté Francophone" target="_blank">
+    <img src="/images/logo-hacf-30px.webp" alt="Venez en discuter sur le forum de la Communauté Francophone"><br>Assistance & discussions</a>
   </a>
-</div>
+</div> 
+{{ end }}

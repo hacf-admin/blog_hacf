@@ -1,24 +1,22 @@
 ---
-draft: false
-type: post
 visibleInCMS: true
-date: 2022-10-07
-lastmod: 2022-10-07
+draft: true
+date: 07-10-22
+lastmod: ""
+level: Débutant
 author: mcfly
 url_hacf: ""
 socialshare: true
 title: Vérifier votre configuration puis redémarrer Home Assistant
+type: post
+images: img/hero.jpg
 description: "Comment vérifier la configuration de votre Home Assistant avant de
   redémarrer, pour ne pas avoir de mauvaises surprises. "
 categories:
-  - Installation
-  - Automatisation
+  - Interface UI
+series: null
 tags:
   - configuration
-series:
-  - Les Bases de Home Assistant
-  - Débuter avec Home Assistant
-image: img/hero.jpg
 ---
 
 
