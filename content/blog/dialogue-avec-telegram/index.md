@@ -36,8 +36,7 @@ Home Assistant intègre un système de notification, mais qui a ses limites. Il 
 Il est également très intéressant de pouvoir **répondre à ces notifications** pour déclencher une ou des actions via des boutons sous le message.
 L'exemple ci-dessous est la demande de fermeture du volet de la piscine quant l'air est plus froid que l'eau (cela permet de garder l'eau chaude et éviter l'évaporation).
 
-
-![](img/boutons-commande.png)
+![Dialogue fermeture volet piscine](img/boutons-commande.png)
 
 Nous vous proposons ici un tuto complet pour implémenter simplement **telegram** avec les **automatisations** de HA.
 
@@ -61,10 +60,9 @@ Rendez-vous sur [Telegram sur votre Navigateur ](https://web.telegram.org/) ou v
    ![](img/bot2.png)
 3. Une liste d’options vous sont proposées. Cliquer sur `/newbot`.
 
-
    ![](img/bot3.png)
 
-   ![](img/bot4.png)
+   ![Récupèrer l'ID du bot](img/bot4.png)
 
    ![](img/bot5.png)
 4. Choisir un nom pour votre bot puis un nom d’utilisateur (HACF_bot dans l'exemple)).
@@ -98,29 +96,26 @@ Voici comment en récupérer l'ID.
 
 1. Cliquer sur le menu de Telegram puis `Nouveau groupe`
 
-
    ![](img/bot8.png)
-
 
    Donnez-lui un nom puis `CREATE GROUP`.
 
-
-   ![](img/bot10.png)
+   ![Création d'un groupe](img/bot10.png)
 2. Sélectionner les users devant appartenir au groupe ainsi que votre bot.
 
 Cliquer sur votre Groupe en haut puis `Ajouter des membres`.
 **Important : n'oubliez pas d'ajouter votre bot** (autrement il ne pourra pas envoyer de messages dans le groupe).\*\*
 
-![Nom du groupe](img/bot11.png)
+![Groupe Telegram - ajouter des membres (1/2)](img/bot11.png)
 
-![Groupe Telegram](img/bot12.png)
+![Groupe Telegram - ajouter des membres (2/2)](img/bot12.png)
 
 3. Récupérer votre ID du groupe en invitant `@getids bot` à votre groupe.
    Une fois ajouté, vous pouvez voir votre ID qui s'affiche dans le fil de discussion.
 
    > Notez bien cet ID référençant le groupe qui **recevra** les messages.
 
-![enter image description here](img/bot14.png)
+![Metadata du bot (GetIds Bot)](img/bot14.png)
 
 Une fois l'ID noté, vous pouvez éjecter GetIdsBot du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
 
@@ -164,8 +159,7 @@ Pour vérifier que tout fonctionne bien, rendez-vous dans `Outils de développem
 
 Cliquez sur `Appeler le service`. Vous devriez voir sur votre application Telegram le message arriver.
 
-
-![](img/testtelegram.jpg)
+![Outil de développement HA](img/testtelegram.jpg)
 
 ## 3. Utilisation des notifications
 
@@ -187,7 +181,7 @@ action:
 
 Il est aussi possible de rajouter une image, typiquement issue d'un snap d'une de vos caméras. Par exemple ici l'intérieur du poulailler pour vérifier que nos poules sont bien couchées quand la porte se ferme (ma femme adore cette fonction :slight_smile: ).
 
-![enter image description here](img/photo-poules.jpeg)
+![Photo des poules](img/photo-poules.jpeg)
 
 ```yaml
 trigger: []
@@ -205,8 +199,7 @@ action:
 
 Reprenons notre exemple du début de l'article :
 
-
-![](img/boutons-commande.png)
+![Dialogue fermeture volet piscine](img/boutons-commande.png)
 
 Pour afficher les boutons, c'est très simple : il suffit de rajouter dans la section data du message la section ***inline_board*** avec ***libellé:/event*** à déclencher. Dans notre cas, les événements ***piscine_ferme*** et ***piscine_ignore_ferme*** seront déclenchés si respectivement un des boutons est pressé.
 
@@ -248,8 +241,7 @@ action:
 
 Une fois le bouton cliqué, il ne reste plus qu'à supprimer la barre de boutons, et confirmer à l'utilisateur que la demande d'action a été bien prise en compte.
 
-
-![](img/confirmation.png)
+![Confirmation piscine fermée](img/confirmation.png)
 
 Pour cela, on rajoute à l'automatisation précédente quelques lignes :
 
