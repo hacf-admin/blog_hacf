@@ -1,10 +1,11 @@
 ---
+folder: Ecran-tactile-nextion-esphome
 title: Ecran tactile Nextion avec ESPHome
 type: post
 visibleInCMS: true
 draft: false
-date: 09-02-23
-lastmod: 09-02-23
+date: 2023-02-10
+lastmod: 2023-02-10
 images: img/accueil2.png
 description: Une tablette centralisée dans la maison est bien, mais un petit
   afficheur tactile judicieusement placé est encore mieux. Cet article propose
