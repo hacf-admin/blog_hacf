@@ -233,7 +233,7 @@ collections:
     label_singular: 'News' # Used in the UI, ie: "New Post"
     description: 'Ajouter une News/Actualité a la communauté.'
     folder: "content/news" # Dossier ou sont stocké les articles
-    path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
+    path: "{{folder}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
     #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
@@ -243,6 +243,9 @@ collections:
     - label: Brouillon
       field: draft
       pattern: true
+    - label: Publié
+      field: draft
+      pattern: false
     view_groups:
     - label: Par années
       field: date
@@ -252,6 +255,12 @@ collections:
     - label: Tags
       field: tags
     fields: 
+      - label: "Dossier" 
+        name: "folder"
+        widget: "string" 
+        required: true
+        hint: "Nommage du dossier (non visible), doit être simple, court et sans accents (exemple: ha-2023-2-3 ou z2m-1-2-3 etc)"
+
       - label: "Title" 
         name: "title"
         widget: "string" 
