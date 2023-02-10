@@ -1,10 +1,11 @@
 ---
+folder: architecture-concepts-ha
 title: Architecture et concepts Home Assistant
 type: post
 visibleInCMS: true
-draft: true
-date: 09-10-22
-lastmod: 07-02-23
+draft: false
+date: 2023-02-10
+lastmod: 2023-02-10
 images: img/accueil-2.jpg
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
