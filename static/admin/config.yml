@@ -42,7 +42,7 @@ collections:
     label_singular: 'Articles' # Used in the UI, ie: "New Post"
     description: 'Ajouter un article a la communauté.'
     folder: "content/blog" # Dossier ou sont stocké les articles
-    path: "{{slug}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
+    path: "{{folder}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
     #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
@@ -74,7 +74,13 @@ collections:
     ##########################
     ## DEBUT REDACTION ARTICLE
     ##########################
-    fields: 
+    fields:
+      - label: "Dossier" 
+        name: "folder"
+        widget: "string" 
+        required: true
+        hint: "Nommage du dossier (non visible), doi etre simple, cours (exemple: integration-ha ou acces-exterieur-nginx-proxy-manager etc)"
+        
       - label: "Title" 
         name: "title"
         widget: "string" 
