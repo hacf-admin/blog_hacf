@@ -89,7 +89,23 @@ collections:
       - {name: visibleInCMS, widget: hidden, default: true }
       
 
+      - label: "Gallerie"
+        name: "gallery"
+        widget: 'list'
+        fields:
+          - label: "Dossier_gallery"
+            name: "dossier"
+            widget: "string"
 
+          - label: "Images Gallerie"
+            name: "image_gallery"
+            widget: "image"
+            choose_url: false
+            allow_multiple: true
+            media_folder: "img/{{dossier}}/"
+            media_library:
+              config:
+                multiple: true
 
 
       - label: "Brouillon"
