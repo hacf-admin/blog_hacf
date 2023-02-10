@@ -5,7 +5,7 @@ type: post
 visibleInCMS: true
 draft: false
 date: 2023-02-09
-lastmod: 2023-03-01
+lastmod: 2023-02-10
 images: img/accueil.png
 description: "Les compteurs Linky disposent d'une prise de téléinformation
   appelée TIC qu'il est possible de connecter pour récupérer sa consommation
