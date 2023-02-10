@@ -79,8 +79,8 @@ collections:
         name: "folder"
         widget: "string" 
         required: true
-        hint: "Nommage du dossier (non visible), doi etre simple, cours (exemple: integration-ha ou acces-exterieur-nginx-proxy-manager etc)"
-        
+        hint: "Nommage du dossier (non visible), doit être simple, court et sans accents (exemple: integration-ha ou acces-exterieur-nginx-proxy-manager etc)"
+
       - label: "Title" 
         name: "title"
         widget: "string" 
@@ -89,24 +89,23 @@ collections:
       - {name: visibleInCMS, widget: hidden, default: true }
       
 
-      # - label: "Gallerie"
-      #   name: "gallery"
-      #   widget: 'list'
-      #   fields:
-      #     - label: "Dossier"
-      #       name: "dossier"
-      #       widget: "string"
+       - label: "Gallerie"
+         name: "gallery"
+         widget: 'list'
+         fields:
+           - label: "Dossier"
+             name: "dossier"
+             widget: "string"
 
-      #     - label: "Images Gallerie"
-      #       name: "image_gallery"
-      #       widget: "image"
-      #       slug: {{fields.name}}
-      #       choose_url: false
-      #       allow_multiple: true
-      #       media_folder: "{{slug}}/"
-      #       media_library:
-      #         config:
-      #           multiple: true
+           - label: "Images Gallerie"
+             name: "image_gallery"
+             widget: "image"
+             choose_url: false
+             allow_multiple: true
+             media_folder: "img/{{dossier}}/"
+             media_library:
+               config:
+                 multiple: true
 
 
       - label: "Brouillon"
