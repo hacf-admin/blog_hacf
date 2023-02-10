@@ -103,7 +103,8 @@ collections:
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
-        default: false
+        default: true
+        requiered: false
 
       - label: 'Date de publication'
         name: 'date'
@@ -254,7 +255,8 @@ collections:
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
-        default: false
+        default: true
+        requiered: false
 
       - label: 'Date de publication'
         name: 'date'
