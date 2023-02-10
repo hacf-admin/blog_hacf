@@ -3,12 +3,16 @@ draft: true
 level: Débutant
 authors:
   - mcfly
+folder: article-test
 visibleInCMS: true
 date: 2023-01-03
 lastmod: 2023-02-10
 author: mcfly
 socialshare: true
 title: Article Test
+gallery:
+  - dossier: gallerie1
+    image_gallery: img/installation_detection_automatique_materiels.png
 tags:
   - argon
 image: null
