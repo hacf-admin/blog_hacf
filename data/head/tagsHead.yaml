@@ -1,9 +1,9 @@
 visibleInCMS: false
 draft: false
 taxoGen:
-  title: Les Tags
-  description: Liste des articles par tags
-  contentTitle: Liste de tous les articles en fonction de leurs tags
+  title: Articles
+  description: Les articles avec le mot clé
+  contentTitle: "Liste de tous les articles de la communauté référencés avec le mot clé "
   contentDescription: Accédez a tous les articles de la communauté. N'hésitez pas
     à proposer à travers le forum des évolutions ou des corrections. Proposez
     nous à travers le forum de nouveaux articles.
