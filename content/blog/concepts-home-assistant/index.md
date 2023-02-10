@@ -3,7 +3,7 @@ folder: architecture-concepts-ha
 title: Architecture et concepts Home Assistant
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-02-10
 lastmod: 2023-02-10
 images: img/accueil-2.jpg
