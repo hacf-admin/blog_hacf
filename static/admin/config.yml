@@ -56,6 +56,9 @@ collections:
     - label: Brouillon
       field: draft
       pattern: true
+    - label: Publié
+      field: draft
+      pattern: false
     view_groups:
     - label: Par années
       field: date
