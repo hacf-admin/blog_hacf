@@ -5,7 +5,7 @@ type: post
 visibleInCMS: true
 draft: false
 date: 2023-02-10
-lastmod: 2023-02-10
+lastmod: ""
 images: img/accueil2.png
 description: Une tablette centralisée dans la maison est bien, mais un petit
   afficheur tactile judicieusement placé est encore mieux. Cet article propose
