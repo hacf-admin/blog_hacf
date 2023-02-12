@@ -16,7 +16,7 @@ highlight:
   lineNumbersInTable: true
   noClasses: false
   noH1: false
-#  style: dracula
+#  style: monokai
   tabWidth: 4
 
 goldmark:
