@@ -57,12 +57,11 @@
 <link rel="stylesheet" href="{{ $csssolid.RelPermalink }}" integrity="{{ $csssolid.Data.Integrity }}" media="all" type="text/css">
 
 {{ if (findRE "<pre" .Content 1) }}
-    {{ $syntaxCss := resources.Get "css/syntax.css" }}
-    {{ if hugo.IsProduction }}
-        {{ $syntaxCss = $syntaxCss | minify }}
-    {{ end }}
-    <link rel="stylesheet" href="{{ $syntaxCss.RelPermalink }}" >
-
+    {{ $codeblockCss := resources.Get "css/codeblock.css" }}
+        {{ if hugo.IsProduction }}
+            {{ $codeblockCss = $codeblockCss | minify }}
+        {{ end }}
+    <link rel="stylesheet" href="{{ $codeblockCss.RelPermalink }}" >
     {{ $copyCss := resources.Get "css/copy-code-button.css" }}
         {{ if hugo.IsProduction }}
             {{ $copyCss = $copyCss | minify }}
