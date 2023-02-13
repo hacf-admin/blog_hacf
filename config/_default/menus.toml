@@ -57,10 +57,10 @@
 
 [[footer]]
 name = "A propos"
-url = "/pages/about"
+url = "/about"
 [[footer]]
 name = "Protection des données"
-url = "/protection-des-donnees"
+url = "/rgpd"
 [[footer]]
 name = "Nous-contacter"
 url = "/contact"
@@ -68,7 +68,7 @@ url = "/contact"
 
 [[hacf]]
 name = "Email"
-url = "https://contact.hacf.fr"
+url = "/contact"
 pre = 'fa-envelope'
 weight = 1
 [[hacf]]
