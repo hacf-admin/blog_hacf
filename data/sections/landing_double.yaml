@@ -18,7 +18,7 @@ buttons:
   - name: En savoir plus
     url: /association
     icon: null
-    type: 
+    type: null
   - name: Adhérer
     url: http://adhesion.hacf.fr
     icon: null
@@ -26,7 +26,7 @@ buttons:
 socialLinks:
   - name: Contact
     icon: far fa-envelope
-    url: https://contact.hacf.fr
+    url: /contact
   - name: Site
     url: https://hacf.fr/
     icon: fa fa-globe
