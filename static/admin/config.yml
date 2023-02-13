@@ -1358,6 +1358,67 @@ collections:
             name: "body"
             widget: "markdown"
 
+      - file: "content/pages/rgpd/index.md"
+        label: "Potection des Données"
+        name: "rgpd"
+        fields:
+          - label: "Title" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - {label: "Type", name: "type", widget: "hidden", default: "page"}
+          - {name: visibleInCMS, widget: hidden, default: false }
+
+          - label: "Alias"
+            name: "aliases"
+            widget: "list"
+            allow_add: true
+            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
+            required: false
+
+          - label: "Brouillon"
+            name: "draft"
+            widget: "boolean"
+            default: true
+
+          - label: 'Date de publication'
+            name: 'date'
+            widget: 'datetime'
+            date_format: 'DD-MM-YY'
+            format: 'YY-MM-DD'
+
+          - label: 'Date de modification'
+            name: 'lastmod'
+            widget: 'datetime'
+            date_format: 'DD-MM-YY'
+            format: 'YY-MM-DD'
+            required: false
+
+          - label: "Image de l'article"
+            name: "images"
+            widget: "image"
+            required: false
+            allow_multiple: false
+            choose_url: false
+            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+
+          - label: "Tags"
+            name: "tags"
+            widget: "list"
+            allow_add: true
+            hint: "Séparer vos tags par une virgule"   
+              
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+
+
       - file: "content/pages/reglement/index.md"
         label: "Réglement Association"
         name: "reglement"
