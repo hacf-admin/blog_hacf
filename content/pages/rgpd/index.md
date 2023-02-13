@@ -27,7 +27,7 @@ Détails des services et de leur gestion des données personnelles.
 
 
 
-\## Le site.
+## Le site.
 
 Le [site](https://hacf.fr) est un site statique ne stockant aucune données. Aucun traitement ou analyse-y est faite pour le moment. Le site est hébergé par Netlify qui a ses propres règles RGPD consultable [ici](https://www.netlify.com/gdpr-ccpa/). 
 
@@ -35,13 +35,13 @@ Dans un avenir proche, nous hébergerons le site sur notre propre plateforme.
 
 
 
-\## Le forum.
+## Le forum.
 
 Le [forum](https://forum.hacf.fr) est hébergé sur notre propre serveur, il est basé sur une technologie Open Source nommée [Discourse](https://www.discourse.org/), il fait ses propres statistiques qui ne sont pas transmis à l'extérieur. Nous ne faisons aucune exploitation financière de ces analyses.
 
 
 
-\## Discord.
+## Discord.
 
 Le salon d'échange Discord est un service propriétaire, nous sommes donc soumis à [son règlement RGPD](https://support.discord.com/hc/fr/articles/360003858092-Mise-%C3%A0-jour-de-notre-politique-de-confidentialit%C3%A9-FAQ-de-la-RGPD) que vous avez accepté lors de la création de votre compte. Nous ne faisons aucune analyse supplémentaire et ne faisons pas commerces des données existantes.
 
@@ -49,14 +49,14 @@ Ce service a été [sanctionné par la CNIL](https://www.cnil.fr/fr/sanction-de-
 
 
 
-\## Groupe Facebook
+## Groupe Facebook
 
 Le groupe d'échange Facebook est un service propriétaire, nous sommes en conséquence soumis à [son règlement RGPD](https://fr-fr.facebook.com/business/gdpr) que vous avez accepté lors de la création de votre compte. Nous ne faisons aucune analyse supplémentaire et ne faisons pas commerces des données existantes.
 
-\## Hello Asso.
+## Hello Asso.
 
 L'inscription des membres de notre association passe par un service externe. Vous êtes de ce fait soumis à ses propres [règles RGPD](https://centredaide.helloasso.com/s/article/rgpd-chez-helloasso).
 
-\## Twitter, Youtube, Paypal.
+## Twitter, Youtube, Paypal.
 
 Des services annexes propriétaires sont peu exploités, mais existent. Nous sommes aussi soumis à leurs RGPD mais n'effectuons pas d'analyse ou de revente de leurs données.
