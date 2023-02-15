@@ -1,5 +1,5 @@
 {{/* check if there is any hero image in the same folder as the markdown file */}}
-{{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,svg,webp}"}}
+{{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,webp}" }} {{/* Supression du SVG qui pose probleme avec le watermarking */}}
 
 {{/*  if hero image is specified in the page front-matter, then use that  */}}
 {{ if .Params.images }}
