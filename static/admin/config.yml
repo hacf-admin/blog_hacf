@@ -4,7 +4,7 @@ backend:
   site_domain: https://dev.hacf.fr
 #  site_domain: https://hacf.netlify.app/
 
-local_backend: true
+#local_backend: true
 
 # Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
 # Peut etre desactivé en commantant la ligne ci-dessous.
