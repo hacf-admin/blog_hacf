@@ -15,22 +15,30 @@
   {{ .Scratch.Set "heroScratch" $heroImage }}
 {{ end }}
 
-
 {{ $heroImage := .Scratch.Get "heroScratch" }}
+{{/* watermarking */}}
+{{ $logo := (resources.Get "images/logo.png") }}
+
+{{- if and $heroImage $logo }}
+{{- $size := math.Round (mul $heroImage.Height 0.30) }}
+{{- $size := cond (ge $size 80) ($size) (80.0) }}
+
+{{- $logo := $logo.Resize (printf "%.0fx" $size) }}
+{{- $heroImage := $heroImage.Filter (images.Overlay $logo 10 10 ) }}
 
 {{/* resize hero image. don't resize if the image is an svg */}}
 
-{{ if hasPrefix $heroImage "http" }}
-<img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
-{{ else }}
-  {{ if and $heroImage (ne $heroImage.MediaType.SubType "svg") }}
-    {{ $heroImage := $heroImage.Resize "400x200 webp q100" }}
-    <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"/>
-
+  {{ if hasPrefix $heroImage "http" }}
+  <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
   {{ else }}
-    <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
+    {{ if and $heroImage (ne $heroImage.MediaType.SubType "svg") }}
+      {{ $heroImage := $heroImage.Resize "400x200 webp q100" }}
+      <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"/>
+
+    {{ else }}
+      <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
+    {{ end }}
   {{ end }}
 {{ end }}
-
 {{/*  return the hero image  */}}
 {{/* return $heroImage.RelPermalink */}}
