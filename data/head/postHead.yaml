@@ -18,9 +18,6 @@ buttons:
     url: blog/premiers-projets/
     weight: 3
     icon: fa-solid fas fa-paper-plane
-  - name: Premiers projets
-    url: blog/premiers-projets/
-    icon: fa-solid fas fa-paper-plane
 contentTitle: Liste de tous les articles de la communauté
 contentDescription: Accédez a tous les articles de la communauté. N'hésitez pas
   à proposer à travers le forum des évolutions ou des corrections. Proposez nous
