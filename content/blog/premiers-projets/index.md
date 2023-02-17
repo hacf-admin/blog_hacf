@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: true
 date: 2023-02-17
 lastmod: 2023-02-17
-images: img/accueil.png
+images: img/accueil2.png
 description: "Voila, vous avez installé Home Assistant et il est temps pour vous
   d'en découvrir ses possibilités. Ce tuto vous propose une série de mini
   projets pour une première approche. "
@@ -57,7 +57,9 @@ Sous l'onglet `paramètres`, on voit différents champs :
 * Avancé : l'état de l'entité (peut être cachée ou désactivée) et un alias permettant de lui mettre un nom convivial pour les assistants vocaux.
 
 Sous l'onglet `Information`, on peut voir la valeur de l'entité et l'historique des valeurs.
-XXXXXXXXXXXXXXXXXX
+
+
+![IP Locale - création](img/ip-locale-creation.gif)
 
 ### Afficher l'IP local dans le dashboard.
 
@@ -70,7 +72,11 @@ Sélectionner **Entité** (sans S)
 Supprimer l'entité existante et sélectionner votre entité Local IP, puis `enregistrer`.
 Dans le bandeau, cliquer sur `Terminer` pour sortir du mode d'édition
 Vous avez alors votre première carte affichant l'adresse IP de votre machine.
-XXXXXXXXXXXXXXX
+
+
+![IP locale - affichage](img/ip-locale-dashboard.gif)
+
+
 
 ## 2. Intégration Météo France
 
@@ -88,13 +94,17 @@ Toutes ces entités sont regroupées sous un appareil (en fait ici un service), 
 Certaines entités sont désactivées par défaut. Activez celles qui vous intéressent (par exemple température, pression et vent)
 
 Les entités créées sont visibles sous l'onglet `entités`.
-XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+![Météo France - création](img/meteo-france-creation.gif)
 
 ### Afficher la météo dans le dashboard
 
 Comme tout à l'heure, aller sous `aperçu`, mettez votre dashboard en `édition` (trois points et `Modifier le dashboard`). Ajouter la carte "prévisions météos".
 Vous avez alors les prévisions de votre ville.
-XXXXXXXXXXXXX
+
+
+![Météo France - dashboard](img/meteo-dashboard.jpg)
 
 Tout est aussi modifiable dans le langage de description **YAML**. Pour voir la description de la carte, mettre la carte en mode édition, et cliquer sur `Afficher l'éditeur de code`.
 
@@ -122,7 +132,7 @@ Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur
 Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icone ***mdi:lightbulb***.
 2 entités de type input_boolean sont créée.  
 
-XXXXXXXXXXXXXXXXXXXXX
+![Lampe et inter - création](img/inter-lampe-creation.gif)
 
 ### Affichage dans le dashboard
 
@@ -132,7 +142,9 @@ Ajouter ensuite une carte de type `bouton`. Préciser cette fois l'entité ***la
 Cliquer sur `terminer` pour quitter le mode édition.
 
 Vous pouvez maintenant jouer avec la lampe et l'interrupteur dans votre interface.
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+![](img/ip-locale-dashboard.gif)
 
 ## 4. Première automatisation
 
@@ -159,7 +171,7 @@ Ensuite on va créer l'automatisation suivante :
 Cliquer enfin sur enregistrer et donner un nom ***Gestion lampe*** à votre automatisation.
 Retourner sur votre dashboard et tester l'automatisation. Quand vous actionnez l'interrupteur, la lampe s'allume.
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+![Inter & lampe - automatisation](img/inter-lampe-automatisation.gif)
 
 Si vous devez partager votre automatisation, elle est visible en **YAML**, très compact. Retourner sous `paramètres` - `automatisations et scènes`, éditer l'automatisation en cliquant dessus et sur les 3 points à droite, cliquer sur `Modifier en YAML`. Quand vous maitriserez la syntaxe, il sera très rapide de modifier une automatisation existante via le YAML.$
 
@@ -197,7 +209,6 @@ sensor:
       - type: memory_use_percent
       - type: processor_use
       - type: processor_temperature
-
 ```
 
 > Attention à bien respecter les tabulations : ce sont 2 espaces pour chaque niveau et pas de TAB.
@@ -209,12 +220,18 @@ Vous devez ensuite cliquer sur le bouton `Redémarrer` pour redémarrer votre sy
 
 Toujours dans `outils de développement`, cliquer sur l'onglet `Etats` : c'est l'occasion d'utiliser cet outil pour retrouver les entités créer. Saisir par exemple Processor dans le champs de filtre pour retrouver vos entité et voir leurs valeurs.
 
+![Monitoring - états](img/monitoring-etats.jpg)
+
 Il est maintenant temps d'afficher le monitoring dans votre dashboard. 
 Cette fois, on va créer un onglet dédié appelé ***Système***. 
 Cliquer sur Aperçu puis mettre le dashboard en édition. Cliquer dans la barre du haut sur + renseigner le titre ***Système*** puis enregistrer. Vous avez un nouvel onglet dans votre dashboard.
 
+![](img/monitoring-nouvel-onglet.jpg)
+
 Créer sous cet onglet une nouvelle carte `Entités` (vous devriez savoir faire maintenant), et rajouter les 4 entités créées.
 Vous devriez obtenir ce résultat :
+
+![Monitoring - dashboard](img/monitoring-interface.jpg)
 
 Vous pouvez aussi vous amuser à utiliser une autre carte appelé Coup d'oeil, qui présente les résultats en ligne. Il est préférable de changer les noms et mettre des noms courts.
 
