@@ -3,7 +3,7 @@ folder: premiers-projets
 title: Premiers projets
 type: post
 visibleInCMS: true
-draft: false
+draft: true
 date: 2023-02-17
 lastmod: 2023-02-17
 images: img/accueil2.png
