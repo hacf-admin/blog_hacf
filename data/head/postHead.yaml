@@ -15,7 +15,7 @@ buttons:
     weight: 2
     icon: fa-solid fa-server
   - name: Premiers projets
-    url: blog/premiers-projets/
+    url: /blog/premiers-projets/
     weight: 3
     icon: fa-solid fas fa-paper-plane
 contentTitle: Liste de tous les articles de la communauté
