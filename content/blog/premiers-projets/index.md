@@ -88,7 +88,7 @@ Les entités créées sont visibles sous l'onglet `entités`.
 
 Comme tout à l'heure, aller sous `Aperçu`, mettez votre dashboard en `édition` (trois points et `Modifier le dashboard`). Ajouter la carte **prévisions météos**. Vous avez alors les prévisions de votre ville.
 
-![Météo France - dashboard](blob:https://dev.hacf.fr/fabb1908-eda2-406b-bf6b-a4641fd67ad8)
+![Météo France - dashboard](img/meteo-dashboard.jpg)
 
 La carte est aussi modifiable dans le langage de description **YAML**. Pour voir et éditer la description de la carte en YAML, mettre la carte en mode édition, et cliquer sur `Afficher l'éditeur de code`.
 
@@ -114,7 +114,7 @@ Cliquez dans le menu de gauche sur `Paramètres`, puis `Appareils et Services`, 
 
 Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur`. Donner le nom ***Interrupteur*** et l'icone ***mdi:toggle-switch***, puis cliquer sur `Créer`. Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icone ***mdi:lightbulb***. 2 entités de type input_boolean sont créées.
 
-![Lampe et inter - création](blob:https://dev.hacf.fr/47ec40d3-3d3b-494b-95f7-9abf8eb9ec8f)
+![Inter et lampe - création](img/inter-lampe-creation.gif)
 
 ### Affichage dans le dashboard
 
@@ -122,7 +122,7 @@ Cliquer dans le menu de gauche sur `Aperçu`, puis mettre le dashboard en éditi
 
 Vous pouvez maintenant jouer avec la lampe et l'interrupteur dans votre interface.
 
-![](blob:https://dev.hacf.fr/d054afb0-a7a6-4011-9698-b8ac9e7c766e)
+![Inter et lampe - dashboard](img/inter-lampe-dashboard.gif)
 
 ## 4. Première automatisation
 
@@ -149,7 +149,7 @@ Ensuite on va créer l'automatisation suivante :
 
 Cliquer enfin sur enregistrer et donner un nom ***Gestion lampe*** à votre automatisation. Retourner sur votre dashboard et tester l'automatisation. Quand vous actionnez l'interrupteur, la lampe doit s'allumer ou s'éteindre.
 
-![Inter & lampe - automatisation](blob:https://dev.hacf.fr/bdfb09b5-5004-4ba1-9e80-10e23096e6ba)
+![Inter et lampe - automatisation](img/inter-lampe-automatisation.gif)
 
 Si vous devez partager votre automatisation, elle est visible en **YAML**, très compact. Retourner sous `paramètres` - `automatisations et scènes`, éditer l'automatisation en cliquant dessus et sur les 3 points à droite, cliquer sur `Modifier en YAML`. Quand vous maitriserez la syntaxe, il sera très rapide de modifier une automatisation existante via le YAML.$
 
@@ -196,16 +196,16 @@ Vous devez ensuite cliquer sur le bouton `Redémarrer` pour redémarrer votre sy
 
 Toujours dans `outils de développement`, cliquer sur l'onglet `Etats` : c'est l'occasion d'utiliser cet outil pour retrouver les entités créer. Saisir par exemple **Processor** dans le champs de filtre pour retrouver vos entité et voir leurs valeurs.
 
-![Monitoring - états](blob:https://dev.hacf.fr/bc62de77-b97e-4dcf-bd38-1fe1081fbe99)
+![Monitoring - états](img/monitoring-etats.jpg)
 
 Il est maintenant temps d'afficher le monitoring dans votre dashboard.
 Cette fois, on va créer un nouvel onglet dédié appelé ***Système***. Cliquer sur Aperçu puis mettre le dashboard en édition. Cliquer dans la barre du haut sur + renseigner le titre ***Système*** puis enregistrer. Vous avez un nouvel onglet dans votre dashboard.
 
-![](blob:https://dev.hacf.fr/c3bc93aa-c606-4dba-ab0d-16e74c7ac184)
+![Monitoring - nouvel onglet](img/monitoring-nouvel-onglet.jpg)
 
 Créer sous la nouvelle vue de cet onglet une carte `Entités` (vous devriez savoir faire maintenant), et rajouter les 4 entités créées. Vous devriez obtenir ce résultat :
 
-![Monitoring - dashboard](blob:https://dev.hacf.fr/bff5549e-266e-4330-ae63-1e39791020ee)
+![Monitoring - dashboard](img/monitoring-interface.jpg)
 
 Vous pouvez aussi vous amuser à utiliser une autre carte appelé Coup d'oeil, qui présente les résultats en ligne. Il est préférable de personnaliser les noms et mettre des noms courts.
 
