@@ -1,5 +1,9 @@
+title: Articles
+description: Tous les articles de la communauté
+type: post
 visibleInCMS: false
 draft: false
+btnTitle: Nouveau sur Home Assistant ?
 btnDescription: Articles indispensables pour bien se lancer avec Home Assistant
 buttons:
   - name: Architecture et concepts
@@ -11,15 +15,11 @@ buttons:
     weight: 2
     icon: fa-solid fa-server
   - name: Premiers projets
-    url: series/débuter-avec-home-assistant/
+    url: blog/premiers-projets/
     weight: 3
     icon: fa-solid fas fa-paper-plane
+contentTitle: Liste de tous les articles de la communauté
 contentDescription: Accédez a tous les articles de la communauté. N'hésitez pas
   à proposer à travers le forum des évolutions ou des corrections. Proposez nous
   à travers le forum de nouveaux articles.
 btnDesription: Description du bouton
-title: Articles
-description: Tous les articles de la communauté
-type: post
-btnTitle: Nouveau sur Home Assistant ?
-contentTitle: Liste de tous les articles de la communauté
