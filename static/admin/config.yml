@@ -47,7 +47,7 @@ collections:
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
-    #filter: {field: visibleInCMS, value: true}
+    filter: {field: visibleInCMS, value: true}
     sortable_fields: ['title','date', 'lastmod']
     ###################################
     ## FILTRE DE L INTERFACE NETLIFYCMS
@@ -238,7 +238,7 @@ collections:
     media_folder: "img/" # Endroit ou sont stocké les images de l'article
     public_folder: "img/"
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
-    #filter: {field: visibleInCMS, value: true}
+    filter: {field: visibleInCMS, value: true}
     view_filters:
     - label: Brouillon
       field: draft
@@ -343,7 +343,7 @@ collections:
     label: "Personnalisation / Activation des sections"
     #label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
     create: false
-    #filter: {field: visibleInCMS, value: true}
+    filter: {field: visibleInCMS, value: true}
     files:
       - file: "data/sections/hero.yaml"
         label: "Section Hero"
@@ -667,7 +667,7 @@ collections:
     label: "Entete des listes Articles, Actualites, Catégories ou Tags"
     label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
     create: false
-    #filter: {field: visibleInCMS, value: true}
+    filter: {field: visibleInCMS, value: true}
     files:
       - file: "data/head/postHead.yaml"
         label: "Index des articles de Blog"
@@ -1137,7 +1137,7 @@ collections:
     create: false
     media_folder: "img/"
     public_folder: "img/"
-    #filter: {field: visibleInCMS, value: true}
+    filter: {field: visibleInCMS, value: true}
     files:
       - file: "content/pages/awesome/index.md"
         label: "Liens utiles"
