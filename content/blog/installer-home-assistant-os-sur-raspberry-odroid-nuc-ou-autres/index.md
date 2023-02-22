@@ -95,7 +95,7 @@ Rendez-vous, depuis votre navigateur, sur `[homeassistant.local:8123](http://hom
 
 > Il peut falloir attendre 2-3 minutes avant que cette page s'affiche.
 
-Il faut maintenant patienter quelques minutes, plus ou moins longues, en fonction de votre connexion internet avant de pouvoir lancer la [première configuration](/premiere-configuration) qui est commune à toutes les installations et bénéficie, donc, de son propre article.
+Il faut maintenant patienter quelques minutes, plus ou moins longues, en fonction de votre connexion internet avant de pouvoir lancer la [première configuration](/blog/premier-lancement-et-configuration-de-home-assistant) qui est commune à toutes les installations et bénéficie, donc, de son propre article.
 
 ## Déplacer les données utilisateurs (facultatif).
 Pour préserver la carte Micro SD, tout en gardant un système rapide ou si la taille de votre mémoire interne devient trop juste, Home Assistant permet de déplacer les données utilisateurs sur un support externe (il peut être interne avec un boitier adapté).
