@@ -1,7 +1,8 @@
 ---
+folder: ha-premiere-configuration
 visibleInCMS: true
 draft: true
-date: 07-10-22
+date: 2023-02-22
 lastmod: null
 level: Débutant
 author: mcfly
@@ -13,9 +14,10 @@ images: img/imagebf_image_hero-1-.jpg
 description: Vous venez d’installer Home Assistant ? Nous allons balayer
   ensemble la première configuration. Elle vous permet de définir la position de
   votre maison, son élévation, mais aussi ajouter les intégrations
-  automatiquement découvertes via discovery.
+  automatiquement découvertes via le discovery.
 categories:
   - Installation
+  - Concepts
 series:
   - Débuter avec Home Assistant
 tags:
@@ -52,7 +54,8 @@ La seconde page concerne votre domicile.
 La suivante vous permet d'accepter de partager anonymement certaines données, pour aider Home Assistant à améliorer le système.
 
 La dernière concerne les matériels détectés automatiquement par Home Assistant déjà disponibles.
-Vous pouvez passer cette étape, on y reviendra plus tard. Ils peuvent être retrouvés dans `Paramètres` -> `Appareils et Services`
+
+>Vous pouvez passer cette étape, on y reviendra plus tard. Ils peuvent être retrouvés dans `Paramètres` -> `Appareils et Services`
 
 ![Image de la Détection automatique des matériels présents sur votre réseau.](img/installation_detection_automatique_materiels-1-.png "Détection automatique des matériels présents sur votre réseau.")
 
