@@ -1,17 +1,20 @@
 ---
-folder: installations-ha-alternatives
-title: "Installation de Home Assistant : les alternatives"
-type: post
+folder: installations-ha-methodes
 visibleInCMS: true
 draft: true
 date: 2023-02-22
 lastmod: null
+level: Débutant
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+socialshare: true
+title: "Installation de Home Assistant : les méthodes"
+type: post
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les différentes alternatives d'installations et comment
   cela peut impacter votre futur système. Voici quelques conseils et
   explications sur ces différentes méthodes d'installation. "
-level: Débutant
 categories:
   - Installation
   - Concepts
@@ -31,17 +34,14 @@ tags:
   - odroid
   - vm
   - raspberry-pi
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
-socialshare: true
 ---
-> Ce guide est une base de réflexion à lire avant toute installation de votre future système domotique. Votre choix dépendre de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique).
+> Ce guide est une base de réflexion à lire avant toute installation de votre futur système domotique. Votre choix dépendra de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique).
 
 ## Les principales méthodes d’installation
 
 Il existe deux méthodes principales :
 
-* **Home Assistant OS (HA-OS)** : Composé du Système d'exploitation (OS) **dédié** et **optimisé** pour Home Assistant et de la couche **Superviseur**, vous débuterez, sur Home Assistant, sans vous soucier d'autres choses. C'est une version **clé en main**. Il permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant.
+* **Home Assistant OS (HA-OS)** : Composé du Système d'exploitation (OS) **dédié** et **optimisé** pour Home Assistant et de la couche **Superviseur. ous**, vous débuterez, sur Home Assistant, sans vous soucier d'autres choses. C'est une version **clé en main**. Elle permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant.
 * **Container** : Installation sur une machine possédant déjà son système d'exploitation. Home Assistant **Core** est installé dans un conteneur (par exemple, Docker). Tous les add-ons seront à installer et configurer indépendamment.
 
 Deux méthodes d'installation alternatives sont disponibles pour les **utilisateurs expérimentés** :
@@ -64,14 +64,14 @@ Enfin, si vous ne voulez pas dédier votre système à Home Assistant (sur un mi
 
 ### Installation "Home Assistant Container"
 
-Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial** : Linux, Windows, Mac OS, Synology DSM..
+Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial** : Linux, Windows, Mac OS, Synology DSM.
 Un gestionnaire de container (typiquement docker) permet d'installer des services qu'il est possible de gérer avec un outil comme portainer (gestionnaire de containers) présenté ci-dessous. L'ensemble fera office de supervisor dont on se passera alors.
 
 ![](img/portainer.jpg)
 
 Vous installez Home Assistant **core** dans votre propre environnement de conteneurs, que vous gérez vous-même.
 Home Assistant tourne alors comme un service à côté d'autres services comme MQTT, une base de donnée, un gestionnaire multimédia, etc 
-Attention : tout add-ons sera vu comme un service et sera à installer séparément.
+Attention : tout add-on sera vu comme un service et sera à installer séparément.
 
 ### Installation "Home Assistant Supervised"
 
