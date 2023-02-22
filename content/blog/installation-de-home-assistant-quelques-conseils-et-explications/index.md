@@ -1,21 +1,18 @@
 ---
 folder: installations-ha-explications
+title: "Installation de Home Assistant : Quelques conseils et explications"
+type: post
 visibleInCMS: true
 draft: true
 date: 2023-02-22
 lastmod: null
-level: Débutant
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
-socialshare: true
-title: "Installation de Home Assistant : Quelques conseils et explications"
-type: post
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les grandes lignes de votre installation et la
   direction que celle-ci va prendre dans un futur proche. Voici quelques
   conseils et explications sur les différentes méthodes d'installation de Home
   Assistant. "
+level: Débutant
 categories:
   - Installation
   - Concepts
@@ -35,76 +32,75 @@ tags:
   - odroid
   - vm
   - raspberry-pi
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+socialshare: true
 ---
->Pour commencer, sachez que ce guide est une base de réflexion pour votre future installation domotique. Ce qui est écrit, est à adapter en fonction de vos connaissances, de votre matériel disponible et du temps que vous voulez consacrer à sa gestion (hors domotique). 
+> Ce guide est une base de réflexion à lire avant toute installation de votre future système domotique. Votre choix dépendre de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique).
 
-Avant de vous lancer dans l'installation de Home Assistant, il est important de connaitre les grandes lignes de votre installation et la direction que celle-ci va prendre dans un futur proche.
+## Les principales méthodes d’installation
 
-Il faut savoir, que lors du passage d'un type d'installation a un autre, la partie **core** (entités, automatisations, intégrations, *backup*) sera facilitée par les sauvegardes de Home Assistant, mais pas pour tous (les add-ons par exemple).
+Il existe deux méthodes principales :
 
-#### Quelques conseils (subjectifs).
+* **Home Assistant OS (HA-OS)** : Composé du Système d'exploitation (OS) **dédié** et **optimisé** pour Home Assistant et de la couche **Superviseur**, vous débuterez, sur Home Assistant, sans vous soucier d'autres choses. C'est une version **clé en main**. Il permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant.
+* **Container** : Installation sur une machine possédant déjà son système d'exploitation. Home Assistant **Core** est installé dans un conteneur (par exemple, Docker). Tous les add-ons seront à installer et configurer indépendamment.
 
-*HA-OS fortement recommandé.*
-* Si vous êtes débutant, n'allez pas chercher des complications, vous perdrez plus de temps à essayer de faire tourner votre installation plutôt que domotiser votre logement. Il y a, dans la communauté, des membres qui tournent sur des installations complexes, qui certes, peuvent faire rêver et/ou font penser que c'est la meilleure façon, mais ce sont souvent des personnes avec des bagages techniques. Chercher au plus simple et, une fois la prise en main effectuée, vous pouvez changer de type d'installation (tout ne sera pas à refaire).
-* Si vous découvrez Linux, docker, les VMs, etc, partez sur des installations dites "complètes", (NUC, Raspberry, Odroid, etc). Par image complète, j'entends, une image faite pour votre matériel, comprenant l'OS (système exploitation) et Home Assistant avec le Superviseur (*Plus de détails plus bas*).
-
-## Les principales méthodes d’installation pour Home Assistant.
-
-Il en existe trois :
-
-* La version **Home Assistant OS** (*HA-OS*) : Composé du Système d'exploitation (OS) optimisé pour Home Assistant et de la couche Superviseur, vous débuterez, sur Home Assistant, sans vous soucier d'autres choses. Il permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. 
-C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant).
-
-* La version **Container** : Installation autonome du Home Assistant **Core** dans un conteneur (par exemple, Docker). Tous les add-ons seront à installer et configurer indépendamment.
-
-Deux méthodes d'installation alternatives sont disponibles pour les utilisateurs expérimentés :
+Deux méthodes d'installation alternatives sont disponibles pour les **utilisateurs expérimentés** :
 
 * **Home Assistant Supervised** : Installation manuelle de home Assistant avec le Superviseur.
 * **Home Assistant Core** : Installation manuelle à l'aide de l'environnement virtuel Python.
-    
 
-> La version **Core** contient seulement Home Assistant et nécessite l'installation et la configuration des add-ons en manuelle et en parallèle de Home Assistant. (**déconseillé pour les débutants**).
+> La version **Core** est très peu utilisée et s'adresse à des personnes de profil développeur ayant une bonne connaissance de l'environnement python. Cette solution est **réellement** réservée aux personnes **expérimentées** et ne sera pas abordée.
 
+### Installation "Home Assistant OS"
 
-### Home Assistant OS.
+Cette méthode implique **à priori** l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS dédié clé en main avec Home Assistant et le Superviseur.
+Elle a l’avantage d’être la moins gourmande en ressources et la plus simple d’utilisation.
 
-Cette méthode implique l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS et Home Assistant avec le Superviseur.
+Le type d'installation HA OS sur un support micro SD sera très facile. Mais attention, à force d’écriture, votre système peut être plus fragile. Pour une utilisation perenne, il vous faudra remplacer la carte Micro SD par un disque SSD ou a minima déplacer les données utilisateur vers un support externe.
 
-Elle a l’avantage d’être la moins énergivore et la plus simple d’utilisation.
+Enfin, si vous ne voulez pas dédier votre système à Home Assistant (sur un mini PC par exemple), vous pouvez faire une installation "Home Assistant OS" dans un **système virtualisé**. Le plus courant est **proxmox**.
 
-Mais, avec certains matériels, elle a l’inconvénient d’une installation sur un support micro SD qui, à force d’écriture, peut être plus fragile. (Une solution peut être de remplacer la carte Micro SD par un disque SSD ou de déplacer les données utilisateur vers un support externe).
+> Cette methode est officiellement supportée pour les Raspberry, Odroid, Asus Thinkerboard et Generic X86-X64 (Intel NUC). Au vu de la penurie de ce premier, n´hesitez pas a vous orienter vers d'autres machines si vous n'en avez pas en stock.
 
-{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-os" cat="Installation" >}}
+### Installation "Home Assistant Container"
 
->Cette methode est officiellement supportée pour les Raspberry, Odroid, Asus Thinkerboard et Generic X86-X64 (Intel NUC). Au vu de la penurie de ce premier, n´hesitez pas a vous orienter vers d'autres machines si vous n'en avez pas en stock.
+Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial** : Linux, Windows, Mac OS, Synology DSM..
+Un gestionnaire de container (typiquement docker) permet d'installer des services qu'il est possible de gérer avec un outil comme portainer (gestionnaire de containers) présenté ci-dessous. L'ensemble fera office de supervisor dont on se passera alors.
 
-### Home Assistant Container (*Raspberry PI, Odroid, Tinkerboard, NUC, Linux*).
+![](img/portainer.jpg)
 
-Cette solution permet l’utilisation de votre matériel pour d'autres services, autres que Home Assistant.
 Vous installez Home Assistant **core** dans votre propre environnement de conteneurs, que vous gérez vous-même.
->Sous Linux cette [installation est aussi possible avec le Superviseur](https://github.com/home-assistant/supervised-installer). Cette façon de gérer Home Assistant est celle qui exige le plus de vous. Elle a également des exigences strictes que vous devez respecter. À moins que vous n'ayez vraiment besoin de ce type d'installation, vous devriez installer Home Assistant OS (qui peut aussi être une machine virtuelle), ou Home Assistant Container.
+Home Assistant tourne alors comme un service à côté d'autres services comme MQTT, une base de donnée, un gestionnaire multimédia, etc 
+Attention : tout add-ons sera vu comme un service et sera à installer séparément.
 
-{{< selected_post title="Articles concernant l'installation de Home Assistant Container" tag="ha-container" cat="Installation" >}}
+### Installation "Home Assistant Supervised"
 
-### Home Assistant Core (*Raspberry PI, Odroid, Tinkerboard, NUC, Linux, Windows, MacOS*).
+Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial**. Mais vous pouvez vous passer d'un gestionnaire de containers externe (typiquement docker + portainer) et utiliser le superviseur de Home Assistant, qui permettra l'installation d'addons.
 
-Cette solution est **réellement** réservée aux personnes **expérimentées** et ne sera pas abordée pour le moment.
+> Linux est particulièrement adapté à une [installation supervised](https://github.com/home-assistant/supervised-installer). Cette façon de gérer Home Assistant est celle qui exige le plus de vous. Elle a également des exigences strictes que vous devez respecter. À moins que vous n'ayez vraiment besoin de ce type d'installation, vous devriez installer Home Assistant OS (qui peut aussi être une machine virtuelle), ou Home Assistant Container.
 
-{{< selected_post title="Articles concernant l'installation de Home Assistant Core" tag="ha-core" cat="Installation" >}}
+## Nos conseils
+
+* **Si vous êtes débutant, n'allez pas chercher des complications et choisissez HA OS**. Autrement, vous perdrez plus de temps à essayer de faire tourner votre installation plutôt que domotiser votre logement. Il y a, dans la communauté, des membres qui tournent sur des installations complexes, qui certes, peuvent faire rêver et/ou font penser que c'est la meilleure façon, mais ce sont souvent des personnes avec des bagages techniques. Chercher au plus simple et, une fois la prise en main effectuée, vous pouvez changer de type d'installation (tout ne sera pas à refaire).
+* **S﻿i vous ne voulez pas dédier une machine à Home Assistant, envisagez une virtualisation Proxmox.**
+* **Si vous découvrez Linux, docker, les VMs, partez sur des installations pré-configurées,** Vous les trouverez disponibles pour NUC, Raspberry, Odroid, etc. Par image pré-configurée, j'entends, une image faite pour votre matériel, comprenant l'OS (système exploitation) et Home Assistant avec le Superviseur (*Plus de détails plus bas*).
+
+> **Attention**. Si vous envisagez un jour une migration, il faut savoir, que lors du passage d'un type d'installation a un autre, la partie **core** (entités, automatisations, intégrations, *backup*) sera facilitée par les sauvegardes de Home Assistant, mais pas pour tous (les add-ons par exemple).
 
 ## Résumé des installations
 
-| Fonctions                                                                             | HA OS   | HA Containeur | HA Core    | HA Supervised |
-| ------------------------------------------------------------------------------------- | ------- | ------------- | ---------- | ------------- |
-| [Automations](https://www.home-assistant.io/docs/automation)                          | **OK**  | **OK**        | **OK**     |               |
-| [Dashboards](https://www.home-assistant.io/dashboards)                                | **OK**  | **OK**        | **OK**     | **OK**        |
-| [Intégrations](https://www.home-assistant.io/integrations)                            | **OK**  | **OK**        | **OK**     | **OK**        |
-| [Blueprints](https://www.home-assistant.io/docs/blueprint)                            | **OK**  | **OK**        | **OK**     | **OK**        |
-| Utilise les Containeurs                                                               | **OK**  | **OK**        | **X**      | **OK**        |
-| [Superviseur](https://www.home-assistant.io/docs/glossary/#home-assistant-supervisor) | **OK**  | **X**         | **X**      | **OK**        |
-| [Add-ons](https://www.home-assistant.io/addons)                                       | **OK**  | **X**         | **X**      | **OK**        |
-| [Sauvegardes](https://www.home-assistant.io/common-tasks/os/#backups)                 | **OK**  | **OK** *1*    | **OK** *1* | **OK**        |
-| Gestion de l'OS                                                                       | **OK**  | **X**         | **X**      | **X**         |
+| Fonctions                                                                             | HA OS  | HA Containeur | HA Core    | HA Supervised |
+| ------------------------------------------------------------------------------------- | ------ | ------------- | ---------- | ------------- |
+| [Automations](https://www.home-assistant.io/docs/automation)                          | **OK** | **OK**        | **OK**     |               |
+| [Dashboards](https://www.home-assistant.io/dashboards)                                | **OK** | **OK**        | **OK**     | **OK**        |
+| [Intégrations](https://www.home-assistant.io/integrations)                            | **OK** | **OK**        | **OK**     | **OK**        |
+| [Blueprints](https://www.home-assistant.io/docs/blueprint)                            | **OK** | **OK**        | **OK**     | **OK**        |
+| Utilise les Containeurs                                                               | **OK** | **OK**        | **X**      | **OK**        |
+| [Superviseur](https://www.home-assistant.io/docs/glossary/#home-assistant-supervisor) | **OK** | **X**         | **X**      | **OK**        |
+| [Add-ons](https://www.home-assistant.io/addons)                                       | **OK** | **X**         | **X**      | **OK**        |
+| [Sauvegardes](https://www.home-assistant.io/common-tasks/os/#backups)                 | **OK** | **OK** *1*    | **OK** *1* | **OK**        |
+| Gestion de l'OS                                                                       | **OK** | **X**         | **X**      | **X**         |
 
 1 : Les sauvegardes pour Home Assistant Core et Home Assistant Container sont fournies par l'[intégration de la `sauvegarde`](https://www.home-assistant.io/integrations/backup).
 
