@@ -1,6 +1,6 @@
 ---
-folder: installations-ha-explications
-title: "Installation de Home Assistant : Quelques conseils et explications"
+folder: installations-ha-alternatives
+title: "Installation de Home Assistant : les alternatives"
 type: post
 visibleInCMS: true
 draft: true
@@ -8,10 +8,9 @@ date: 2023-02-22
 lastmod: null
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
-  important de connaitre les grandes lignes de votre installation et la
-  direction que celle-ci va prendre dans un futur proche. Voici quelques
-  conseils et explications sur les différentes méthodes d'installation de Home
-  Assistant. "
+  important de connaitre les différentes alternatives d'installations et comment
+  cela peut impacter votre futur système. Voici quelques conseils et
+  explications sur ces différentes méthodes d'installation. "
 level: Débutant
 categories:
   - Installation
