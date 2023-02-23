@@ -1,17 +1,20 @@
 ---
 folder: installations-ha-methodes
-title: "Installation de Home Assistant : les méthodes"
-type: post
 visibleInCMS: true
-draft: false
+draft: true
 date: 2023-02-22
 lastmod: null
+level: Débutant
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+socialshare: true
+title: "Installation de Home Assistant : les méthodes"
+type: post
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les différentes alternatives d'installations et comment
   cela peut impacter votre futur système. Voici quelques conseils et
   explications sur ces différentes méthodes d'installation. "
-level: Débutant
 categories:
   - Installation
   - Concepts
@@ -31,9 +34,6 @@ tags:
   - odroid
   - vm
   - raspberry-pi
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
-socialshare: true
 ---
 > Ce guide est une base de réflexion à lire avant toute installation de votre futur système domotique. Votre choix dépendra de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique). 
 
