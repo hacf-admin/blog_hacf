@@ -1,17 +1,20 @@
 ---
 folder: installation-ha-os
-title: Installer Home Assistant OS sur Raspberry, Odroid, NUC ou autres
-type: post
 visibleInCMS: true
 draft: false
 date: 2023-02-22
 lastmod: null
+level: Débutant
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
+socialshare: true
+title: Installer Home Assistant OS sur Raspberry, Odroid, NUC ou autres
+type: post
 images: img/imagebf_image_rpihaos.jpg
 description: Installons ensemble Home Assistant OS sur Raspberry Pi, Odroid,
   Tinkerboard, NUC ou autres, de manière simple et rapide. Commençons dans la
   domotique avec un système Open source, gratuit, international et évolutif avec
   plus de 2400 intégrations et des centaines d'add-ons.
-level: Débutant
 categories:
   - Installation
 series:
@@ -24,9 +27,6 @@ tags:
   - odroid
   - raspberry-pi
   - ha-os
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/installer-home-assistant-sur-raspberry-pi-ou-autre-sbc-via-hassos/201
-socialshare: true
 ---
 Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de Home Assistant OS sur un matériel dédié ? Vous avez fait le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
 
@@ -37,6 +37,7 @@ Nous allons voir comment installer Home Assistant OS sur l'un de ces SBC (single
 ***Matériels utilisés :*** *Raspberry Pi et Home Assistant OS 8.5.*
 
 ### Prérequis.
+
 * [Balena Etcher](https://www.balena.io/etcher/) *(Linux, Windows, Mac)* ou
 * [Raspberry Pi OS](https://www.raspberrypi.com/software/) *(Linux, Windows, MacOS)*
 * [L'image pour votre système](https://github.com/home-assistant/operating-system/releases) *(Facultatif)*
@@ -51,14 +52,16 @@ Le système d'exploitation Home Assistant permet de stocker la plupart des donn�
 
 La fonction de disque de données peut être utilisée sur une installation existante sans perdre de données : Le système déplacera automatiquement les données existantes vers le disque de données externe. Toutefois, il est recommandé de [créer et de télécharger une sauvegarde](https://www.home-assistant.io/common-tasks/os/#backups) complète avant de procéder !
 
->Je tourne avec cette solution et je n'ai aucun problème, si vous installez Home Assistant sur un autre Raspberry et que le disque externe est branché, il récupère automatiquement vos données
+> Je tourne avec cette solution et je n'ai aucun problème, si vous installez Home Assistant sur un autre Raspberry et que le disque externe est branché, il récupère automatiquement vos données
 
 ## Préparation avec Balena Etcher.
+
 Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour votre système d'exploitation.
 
 ![Image de l'interface de Balena Etcher](img/balena-etcher.png "Interface de Balena Etcher")
 
 **Avec l'image déjà récupérée :**
+
 * Lancer Balena Etcher,
 * Cliquer sur `Flash from File`,
 * Sélectionner votre [image](https://github.com/home-assistant/operating-system/releases),
@@ -75,6 +78,7 @@ Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour vo
 * Cliquez sur `Flash`.
 
 ## Préparation avec Raspberry Pi OS.
+
 Récupérer et installer [Rapsberry Pi OS](https://www.raspberrypi.com/software/) pour votre système d'exploitation.
 
 ![Interface de Raspberry Pi Imager](img/raspberry-pi-imager.png "Interface de Raspberry Pi Imager")
@@ -87,6 +91,7 @@ Récupérer et installer [Rapsberry Pi OS](https://www.raspberrypi.com/software/
 Une fois la copie terminée et vérifiée, passez à la suite.
 
 ## Premier Lancement.
+
 Une fois votre image transférée par la méthode de votre choix, insérer votre carte MicroSD, votre câble Ethernet (recommandé), l'alimentation puis allumer votre matériel.
 
 Rendez-vous, depuis votre navigateur, sur `[homeassistant.local:8123](http://homeassistant.local:8123)` ou sur `ipdevotremateriel:8123`
@@ -98,9 +103,10 @@ Rendez-vous, depuis votre navigateur, sur `[homeassistant.local:8123](http://hom
 Il faut maintenant patienter quelques minutes, plus ou moins longues, en fonction de votre connexion internet avant de pouvoir lancer la [première configuration](/blog/premier-lancement-et-configuration-de-home-assistant) qui est commune à toutes les installations et bénéficie, donc, de son propre article.
 
 ## Déplacer les données utilisateurs (facultatif).
+
 Pour préserver la carte Micro SD, tout en gardant un système rapide ou si la taille de votre mémoire interne devient trop juste, Home Assistant permet de déplacer les données utilisateurs sur un support externe (il peut être interne avec un boitier adapté).
 
-![Image du Schéma de principe sur le stockage des données vers un support externe](img/imagebf_image_usbdatadisk.png "Schéma de principe sur le stockage des données vers un support externe.")
+![Image du Schéma de principe sur le stockage des données vers un support externe](img/ha_usbdatadisk.png "Schéma de principe sur le stockage des données vers un support externe.")
 
 Nous allons en conséquence voir comment effectuer cette manipulation.
 
@@ -115,14 +121,16 @@ Nous allons en conséquence voir comment effectuer cette manipulation.
 
 Après avoir redémarré, vos données seront sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
 
->Pour une installation sur Raspberry avec Micro SD, cette méthode permet d'éviter les problèmes de détection du disque dur lié à USB3 et ceux de la carte MicroSD corrompue. Il permet aussi au système de profiter d'un démarrage rapide.
-
+> Pour une installation sur Raspberry avec Micro SD, cette méthode permet d'éviter les problèmes de détection du disque dur lié à USB3 et ceux de la carte MicroSD corrompue. Il permet aussi au système de profiter d'un démarrage rapide.
+>
 > En cas de Carte MicroSD corrompue (ce qui ne devrait plus arriver avec cette methode), il vous suffit de reinstaller Home Assistant OS sur une nouvelle carte MicroSD Classe 2 et relancer votre Raspberry Pi. Votre solution domotique se relance comme s'il ne c'etait rien passé.
 
 ## Connexion en Wi-Fi.
+
 J'ai volontairement recommandé la connexion par câble Ethernet au lieu du Wifi. Ce n'est pas un oubli, mais un système domotique efficace ne repose pas sur du Wi-Fi. De plus, Home Assistant ne le recommande pas, mais sachez qu'il est possible de le configurer facilement, surtout si vous passez par Raspberry Pi OS.
 
 ### Sources.
+
 * [Home Assistant Installation](https://www.home-assistant.io/hassio/installation/)
 * [Home Assistant OS images](https://github.com/home-assistant/operating-system/releases)
 * [Etcher](https://www.balena.io/etcher/)
