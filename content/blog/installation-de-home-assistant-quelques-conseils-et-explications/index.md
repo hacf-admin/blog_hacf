@@ -37,7 +37,7 @@ socialshare: true
 ---
 > Ce guide est une base de réflexion à lire avant toute installation de votre futur système domotique. Votre choix dépendra de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique). 
 
-## Les principales méthodes d’installation
+## Les principales méthodes d’installation 
 
 Il existe deux méthodes principales :
 
