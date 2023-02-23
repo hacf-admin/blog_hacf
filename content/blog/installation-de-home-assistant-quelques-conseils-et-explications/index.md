@@ -1,20 +1,17 @@
 ---
 folder: installations-ha-methodes
+title: "Installation de Home Assistant : les méthodes"
+type: post
 visibleInCMS: true
 draft: true
 date: 2023-02-22
 lastmod: null
-level: Débutant
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
-socialshare: true
-title: "Installation de Home Assistant : les méthodes"
-type: post
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les différentes alternatives d'installations et comment
   cela peut impacter votre futur système. Voici quelques conseils et
   explications sur ces différentes méthodes d'installation. "
+level: Débutant
 categories:
   - Installation
   - Concepts
@@ -34,6 +31,9 @@ tags:
   - odroid
   - vm
   - raspberry-pi
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+socialshare: true
 ---
 > Ce guide est une base de réflexion à lire avant toute installation de votre futur système domotique. Votre choix dépendra de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique).
 
@@ -62,6 +62,8 @@ Enfin, si vous ne voulez pas dédier votre système à Home Assistant (sur un mi
 
 > Cette methode est officiellement supportée pour les Raspberry, Odroid, Asus Thinkerboard et Generic X86-X64 (Intel NUC). Au vu de la penurie de ce premier, n´hesitez pas a vous orienter vers d'autres machines si vous n'en avez pas en stock.
 
+{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-os" cat="Installation" >}}
+
 ### Installation "Home Assistant Container"
 
 Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial** : Linux, Windows, Mac OS, Synology DSM.
@@ -73,11 +75,15 @@ Vous installez Home Assistant **core** dans votre propre environnement de conten
 Home Assistant tourne alors comme un service à côté d'autres services comme MQTT, une base de donnée, un gestionnaire multimédia, etc 
 Attention : tout add-on sera vu comme un service et sera à installer séparément.
 
+{{< selected_post title="Articles concernant l'installation de Home Assistant Container" tag="ha-container" cat="Installation" >}}
+
 ### Installation "Home Assistant Supervised"
 
 Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial**. Mais vous pouvez vous passer d'un gestionnaire de containers externe (typiquement docker + portainer) et utiliser le superviseur de Home Assistant, qui permettra l'installation d'addons.
 
 > Linux est particulièrement adapté à une [installation supervised](https://github.com/home-assistant/supervised-installer). Cette façon de gérer Home Assistant est celle qui exige le plus de vous. Elle a également des exigences strictes que vous devez respecter. À moins que vous n'ayez vraiment besoin de ce type d'installation, vous devriez installer Home Assistant OS (qui peut aussi être une machine virtuelle), ou Home Assistant Container.
+
+{{< selected_post title="Articles concernant l'installation de Home Assistant Supervised " tag="ha-supervised" cat="Installation" >}}
 
 ## Nos conseils
 
