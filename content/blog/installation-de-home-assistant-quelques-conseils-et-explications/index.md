@@ -3,7 +3,7 @@ folder: installations-ha-methodes
 title: "Installation de Home Assistant : les méthodes"
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-02-22
 lastmod: null
 images: img/article3.png
