@@ -7,10 +7,10 @@ draft: false
 date: 2023-02-22
 lastmod: null
 images: img/imagebf_image_rpihaos.jpg
-description: "Installons ensemble Home Assistant OS sur Raspberry Pi, Odroid,
+description: Installons ensemble Home Assistant OS sur Raspberry Pi, Odroid,
   Tinkerboard, NUC ou autres, de manière simple et rapide. Commençons dans la
   domotique avec un système Open source, gratuit, international et évolutif avec
-  plus de 2400 intégrations et des centaines d'add-ons. "
+  plus de 2400 intégrations et des centaines d'add-ons.
 level: Débutant
 categories:
   - Installation
