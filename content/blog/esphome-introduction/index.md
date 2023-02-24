@@ -22,15 +22,12 @@ tags:
   - DIY
 author: argonaute
 ---
-Cet article permet de comprendre à quoi sert **[ESPHome](https://esphome.io/index.html)**, comment l'installer et l'utiliser.
-Enfin, il vous guidera dans la création de votre premier composant ESP.
-
 ![ESPHome - Nabu Casa](img/esphome-nabu-casa.png)
 
 ## ESPHome, c'est quoi ?
 
-**ESPHome** est un système permettant d'intégrer à **Home Assistan**t les périphériques à base de micro-contrôleurs ESP (ESP32 ou ESP8266). 
-Il permet aussi de modifier ou "flasher" des objets de certaines marques comme SonOff ou encore BlitzWolf.
+**[ESPHome](https://esphome.io/index.html)** est un système permettant d'intégrer à **Home Assistan**t les périphériques à base de micro-contrôleurs ESP (ESP32 ou ESP8266). 
+Il permet aussi de modifier ou "flasher" des objets de certaines marques comme **SonOff** ou encore **BlitzWolf**.
 
 ESPHome était à l'origine un projet open source indépendant initié par [Otto Winter](https://github.com/ottowinter), et a été racheté en mars 2021 par **[Nabu Casa](https://www.nabucasa.com/)**, l'éditeur de Home Assistant.
 
@@ -62,7 +59,7 @@ Et, cerise sur le gâteau, ils communiquent à la fois en **Wifi** et **Bluetoot
 Et le prix ? ces petites cartes ne coutent que **quelques euros** et sont facilement disponibles, que ce soit sur Amazon ou Aliexpress.
 
 > **Les ESP sont donc une référence pour toute personne souhaitant créer ses propres objets connectés (IOT).**
->
+
 > Si vous ne voulez pas souder, vous pourrez relier facilement vos ESP et ses périphériques avec des fils de prototypage type "**Dupont**" que l'on trouve facilement en nappe.
 > Certains fabricants fournissent des modules contenant à la fois un ESP et un ou des périphériques (capteurs...)  intégrés sur la carte.
 
@@ -93,11 +90,10 @@ ESPHome est un Add-on (module complémentaire) officiel de Home Assistant.
 
 Si vous avez une installation clé en main HA OS, rendez-vous sous `Paramètres` puis `Modules complémentaires.`
 
--Cliquer sur  `Boutique de Modules Complémentaires`
-- Recherchez ESPHome et cliquer sur `Installer`.
-- Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine.
-Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant. 
-
+* Cliquer sur  `Boutique de Modules Complémentaires`
+* Recherchez ESPHome et cliquer sur `Installer`.
+* Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine.
+  Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant. 
 
 ![Installation ESPHome](img/installation-esphome.png)
 
@@ -166,9 +162,6 @@ Connecter l'ESP à votre ordinateur via un câble USB.
 
 **Installer le micro-code sur l’ESP**
 
-
-![Flasher l'ESP](img/flasher-l-esp.jpg)
-
 * cliquer sur les 3 point en bas à droite du composant, `install`, `manual download`,
 * cliquer sur `Open ESPHome Web` pour ouvrir l'utilitaire de chargement
 * cliquer sur `install`, puis `connect`.
@@ -176,16 +169,17 @@ Connecter l'ESP à votre ordinateur via un câble USB.
 * Dans la boite de dialogue qui apparait, sélectionner le fichier de micro-code généré précédemment, puis cliquer sur `INSTALL`.
 * Après 1 à 2 mn, l’ESP devrait afficher configuration OK.
 
+![Flasher l'ESP](img/flasher-l-esp.jpg)
+
 **Tester la connexion avec votre ESP**
-
-
-![Lecture LOGS](img/lecture-des-logs.jpg)
 
 * Débrancher et rebrancher le l’ESP pour forcer son redémarrage
 * Retourner sur ESPHome, cliquer sur le bouton `LOGS` du composant et vérifier que vous avez accès aux logs et que l’ESP fonctionne.
   ESPHome essaie de se connecter en wifi à l'ESP et devrait confirmer la bonne connexion.
 
-  > Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
+> Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
+
+![Lecture LOGS](img/lecture-des-logs.jpg)
 
 ## Mise à jour en wifi (OTA)
 
@@ -201,9 +195,9 @@ Il est maintenant temps de vous intéresser à la programmation de votre ESP.
 Vous n'avez pas forcément de périphériques connectés à votre ESP, et nous vous proposons de rajouter des entités génériques accessibles depuis HA, et qui pourront vous être utiles dans toutes vos futures implémentations :
 
 * Un bouton pour **redémarrer** votre module
-* Un capteur pour indiquer le statut de votre ESP
-* Un capteur qui afficher la quantité du signal
-* Un capteur pour afficher depuis quand l'ESP est démarré (au format jour - heure - minute - seconde).
+* Un capteur pour indiquer le **statut de votre ESP**
+* Un capteur qui afficher la **quantité du signal**
+* Un capteur pour afficher **depuis quand l'ESP est démarré** (au format jour - heure - minute - seconde).
 
 La programmation se fait en YAML. Il est possible de rajouter du code C++ appelé **lambda** pour des calculs et des appels à des procédures internes.
 
@@ -262,7 +256,7 @@ Débrancher et rebrancher votre ESP, et vérifier en cliquant sur le bouton `LOG
 
 ## Affichage dans le dashboard HA
 
-Il vous faut maintenant rendre visible votre ESP dans Home Assistant.
+Il vous faut maintenant **rendre visible votre ESP dans Home Assistant**.
 
 Par défaut, votre ESP communique de manière chiffrée avec Home Assistant. Editer le code YAML de votre composant, et copier la clé de cryptage.
 
@@ -280,13 +274,11 @@ Il ne vous reste plus qu'à les intégrer dans votre dashboard Home Assistant.
 
 ![Dashboard](img/dashboard.png)
 
-
-
 ## Conclusion
 
 Nous espérons que cet article vous donnera envie de vous lancer dans la **création d'objets connectés fait maison**. C'est juste passionnant !!
 
-ESPHome est **facile à apréhender** et ne demande pas de connaissances en électronique ou en développement. Vous trouverez beaucoup de code YAML dans la documentation ESPHome ou sur les forums.
+ESPHome est **facile à appréhender** et ne demande pas de connaissances en électronique ou en développement. Vous trouverez beaucoup de code YAML dans la documentation ESPHome ou sur les forums.
 
 La suite logique pour créer vos projets est d'**imprimer vos boitiers en 3D**. Il existe une multitude de modèles sur des sites comme [Thingiverse](https://www.thingiverse.com/).
 
