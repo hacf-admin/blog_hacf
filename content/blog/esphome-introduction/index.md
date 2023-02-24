@@ -22,7 +22,7 @@ tags:
   - DIY
 author: argonaute
 ---
-![ESPHome - Nabu Casa](blob:https://dev.hacf.fr/f4bfc5b2-15b5-47cb-a6ee-0916da167ad9)
+![ESPHome - Nabu Casa](img/esphome-nabu-casa.png "ESPHome - Nabu Casa")
 
 ## 1. Introduction à ESPHome
 
@@ -36,7 +36,7 @@ Les **ESP** sont de petits modules électroniques à base de MCU (Micro Controll
 
 Bien que leur fonctionnement soit identique, l'ESP32 est **plus puissant** que l'esp8266 (un dual core 160Mhz min contre single core 80Mhz), et surtout il a **plus de port** que le ESP8266.
 
-![ESP32](blob:https://dev.hacf.fr/3dfccc7d-8d23-4308-860b-53fb457349d7)
+![ESP32](img/esp32.png "Pinout ESP32 DEVKIT V1")
 
 Ces modules sont livrés sur une petite carte électronique qui expose les **ports**, comme c'est le cas pour les arduino ou les raspberry :
 
@@ -88,7 +88,7 @@ Si vous avez une installation clé en main HA OS, rendez-vous sous `Paramètres`
 * Recherchez ESPHome et cliquer sur `Installer`.
 * Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine. Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant.
 
-![Installation ESPHome](blob:https://dev.hacf.fr/d51b8994-a71f-4492-80e7-e1deb178cc73)
+![Installation ESPHome](img/installation-esphome.png "Add-on ESPHome")
 
 ### 2.2 Installation sous HA container (docker)
 
@@ -134,7 +134,7 @@ Pour la première utilisation, nous avons choisi une ESP-Wroom-32, qui est très
 
 Editer le fichier `secret.yaml` (3 points en haut à droite sous ESPHome) et vérifier que vous n’avez qu’une entrée wifi et que les identifiants sont corrects. Rectifier si besoin. A noter que ce fichier n'est pas celui de Home Assistant, mais est dédié à ESPHome.
 
-![Création composant](blob:https://dev.hacf.fr/6325cd51-006c-42c5-b9e3-3be297545060)
+![Création composant](img/creation-composant.jpg "Création d'un composant")
 
 ### 3.2 Flasher l'ESP (première fois)
 
@@ -145,7 +145,7 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 * cliquer sur les 3 points, puis `install`, `manual download`, `modern format`. La compilation démarre.
 * Une fois la procédure terminée, vous pouvez vérifier que vous avez bien le micro-code dans le répertoire de téléchargement de votre navigateur (fichier `esp-test.bin`).
 
-![Compiler le firmware](blob:https://dev.hacf.fr/4241ec3e-24cc-4c5d-a7ee-bea5d2cd51c2)
+![Compilation Firmware avec ESPHome](img/compiler-le-firmeware.jpg "Compilation du Firmware avec ESPHome")
 
 **Installer le micro-code sur l’ESP**
 
@@ -156,7 +156,7 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 * Dans la boite de dialogue qui apparait, sélectionner le fichier de micro-code généré précédemment, puis cliquer sur `INSTALL`.
 * Après 1 à 2 mn, l’ESP devrait afficher configuration OK.
 
-![Flasher l'ESP](blob:https://dev.hacf.fr/e0657ba7-78ca-4002-9bca-61609ed2e485)
+![Flasher l'ESP](img/flasher-l-esp.jpg "Flasher l'ESP")
 
 **Tester la connexion avec votre ESP**
 
@@ -165,7 +165,7 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 
 > Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
 
-![Lecture LOGS](blob:https://dev.hacf.fr/fb2d138e-62cf-4568-94bc-e3c28e599a6b)
+![Lecture LOGS](img/lecture-des-logs.jpg "Lecture des LOGS")
 
 ## 4. Mise à jour en wifi (OTA)
 
@@ -242,7 +242,7 @@ Il vous faut maintenant **rendre visible votre ESP dans Home Assistant**.
 
 Par défaut, votre ESP communique de manière chiffrée avec Home Assistant. Editer le code YAML de votre composant, et copier la clé de cryptage.
 
-![Recopie clé API](blob:https://dev.hacf.fr/c1455fbe-55c9-4248-a7be-a3c144c6b943)
+![Recopier clé API](img/recopie-clé-api.png "Recopier la clé API")
 
 Aller sous `Paramètres`, `Appareils et Services` : votre module ESP devrait être découvert automatiquement
 
@@ -250,11 +250,11 @@ Cliquer sur `Configurer`, coller la clé de cyryptage. Votre ESP est prêt à ê
 
 En cliquant sous `1 Appareil` dans l'appareil créé, vous avez accès aux différentes entités.
 
-![Configuration dans HA](blob:https://dev.hacf.fr/64f50426-e56d-410c-9694-38bf8c1985f4)
+![Configuration dans HA](img/configuration-dans-ha.jpg "Ajout du materiel dans Home Assistant")
 
 Il ne vous reste plus qu'à les intégrer dans votre dashboard Home Assistant.
 
-![Dashboard](blob:https://dev.hacf.fr/1ff5fecd-492f-446c-972a-fa802a52d36e)
+![Dashboard](img/dashboard.png "Tableau de bord")
 
 ## Conclusion
 
