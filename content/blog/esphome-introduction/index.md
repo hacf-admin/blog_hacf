@@ -22,7 +22,6 @@ tags:
   - DIY
 author: argonaute
 ---
-
 ![ESPHome - Nabu Casa](blob:https://dev.hacf.fr/f4bfc5b2-15b5-47cb-a6ee-0916da167ad9)
 
 ## 1. Introduction à ESPHome
@@ -41,11 +40,11 @@ Bien que leur fonctionnement soit identique, l'ESP32 est **plus puissant** que l
 
 Ces modules sont livrés sur une petite carte électronique qui expose les **ports**, comme c'est le cas pour les arduino ou les raspberry :
 
--   Entrées-sorties numériques (**GPIO**)
--   Convertisseurs analogiques (**ADC / DAC**)
--   Ports séries (**UART** ou **SPI**)
--   Différents bus : **I2S** (connexion d'une caméra par ex) ou **CAN Bus**
--   Sortie 5v et 3.3v
+* Entrées-sorties numériques (**GPIO**)
+* Convertisseurs analogiques (**ADC / DAC**)
+* Ports séries (**UART** ou **SPI**)
+* Différents bus : **I2S** (connexion d'une caméra par ex) ou **CAN Bus**
+* Sortie 5v et 3.3v
 
 Les différents ports permettent d'y connecter une **multitude de types de capteurs** et périphériques divers. Ainsi, vous pouvez créer votre propre objet connecté **DIY** (Do It Yourself). Pour vous faire une idée des innombrables capteurs supportés, rendez-vous sur la page : https://esphome.io/#sensor-components
 
@@ -56,7 +55,7 @@ Et, cerise sur le gâteau, ils communiquent à la fois en **Wifi** et **Bluetoot
 Et le prix ? ces petites cartes ne coutent que **quelques euros** et sont facilement disponibles, que ce soit sur Amazon ou Aliexpress.
 
 > **Les ESP sont donc une référence pour toute personne souhaitant créer ses propres objets connectés (IOT).**
-
+>
 > Si vous ne voulez pas souder, vous pourrez relier facilement vos ESP et ses périphériques avec des fils de prototypage type "**Dupont**" que l'on trouve facilement en nappe. Certains fabricants fournissent des modules contenant à la fois un ESP et un ou des périphériques (capteurs...) intégrés sur la carte.
 
 ### 1.2 Principe de ESPHome
@@ -65,9 +64,9 @@ Normalement, les ESP se programment en C++ avec l'environnement NodeMCU, une pla
 
 Le principe de ESPHome est de décrire en YAML à la fois :
 
--   Ce qui est **connecté** à l'ESP
--   Les **traitements** à faire sur l'ESP
--   Les **entités et services** à créer sur Home Assistant pour lire et envoyer des données sur l'ESP.
+* Ce qui est **connecté** à l'ESP
+* Les **traitements** à faire sur l'ESP
+* Les **entités et services** à créer sur Home Assistant pour lire et envoyer des données sur l'ESP.
 
 Le YAML est **compilé** par ESPHome pour créer un **firmware** (un code binaire) qui est téléversé sur l'ESP. En parallèle, ESPHome va créer dans Home Assistant un composant avec les entités et services qui vont bien.
 
@@ -85,9 +84,9 @@ ESPHome est un Add-on (module complémentaire) officiel de Home Assistant.
 
 Si vous avez une installation clé en main HA OS, rendez-vous sous `Paramètres` puis `Modules complémentaires.`
 
--   Cliquer sur `Boutique de Modules Complémentaires`
--   Recherchez ESPHome et cliquer sur `Installer`.
--   Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine. Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant.
+* Cliquer sur `Boutique de Modules Complémentaires`
+* Recherchez ESPHome et cliquer sur `Installer`.
+* Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine. Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant.
 
 ![Installation ESPHome](blob:https://dev.hacf.fr/d51b8994-a71f-4492-80e7-e1deb178cc73)
 
@@ -109,8 +108,8 @@ services:
     restart: unless-stopped
     privileged: true
     network_mode: host
-
 ```
+
 Enfin, pour avoir accès à ESPHome dans le menu de gauche, ajouter ce code dans votre fichier configuration.yaml (préciser l'adresse IP de votre machine ou localhost).
 
 ```yaml
@@ -119,7 +118,6 @@ panel_iframe:
     title: 'ESPHome'
     url: 'http://192.168.xx.xx:6052/'
     icon: mdi:car-esp
-
 ```
 
 ## 3. Nouveau module ESP
@@ -128,9 +126,9 @@ Pour la première utilisation, nous avons choisi une ESP-Wroom-32, qui est très
 
 ### 3.1 Créer le composant sous ESPHome
 
--   Ouvrir ESPHome depuis le menu de gauche de HA.
--   Cliquer sur `New device` en bas à droite. Une fenêtre s'affiche. Cliquer sur continue.
--   Renseigner le nom du composant (esp-test par exemple), renseigner éventuellement les données de votre réseau wifi, puis choisir le type de ESP (ESP32 dans notre exemple). Cliquer sur skip Votre premier composant est créé et il apparait dans la fenêtre ESPHome.
+* Ouvrir ESPHome depuis le menu de gauche de HA.
+* Cliquer sur `New device` en bas à droite. Une fenêtre s'affiche. Cliquer sur continue.
+* Renseigner le nom du composant (esp-test par exemple), renseigner éventuellement les données de votre réseau wifi, puis choisir le type de ESP (ESP32 dans notre exemple). Cliquer sur skip Votre premier composant est créé et il apparait dans la fenêtre ESPHome.
 
 **Editez maintenant le code YAML de votre composant.** Cliquer sur `Edit` pour accéder le code YAML automatiquement généré et que vous pouvez compléter si besoin. La documentation ESPHome est bien faite et vous donne pour chaque périphérique des exemples de code à recopier et adapter. [ESPHome — ESPHome](https://esphome.io/#sensor-components)
 
@@ -144,26 +142,26 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 
 **Compiler le micro-code et téléchargez le**
 
--   cliquer sur les 3 points, puis `install`, `manual download`, `modern format`. La compilation démarre.
--   Une fois la procédure terminée, vous pouvez vérifier que vous avez bien le micro-code dans le répertoire de téléchargement de votre navigateur (fichier `esp-test.bin`).
+* cliquer sur les 3 points, puis `install`, `manual download`, `modern format`. La compilation démarre.
+* Une fois la procédure terminée, vous pouvez vérifier que vous avez bien le micro-code dans le répertoire de téléchargement de votre navigateur (fichier `esp-test.bin`).
 
 ![Compiler le firmware](blob:https://dev.hacf.fr/4241ec3e-24cc-4c5d-a7ee-bea5d2cd51c2)
 
 **Installer le micro-code sur l’ESP**
 
--   cliquer sur les 3 point en bas à droite du composant, `install`, `manual download`,
--   cliquer sur `Open ESPHome Web` pour ouvrir l'utilitaire de chargement
--   cliquer sur `install`, puis `connect`.
--   Sélectionner le port USB qui devrait être reconnu.
--   Dans la boite de dialogue qui apparait, sélectionner le fichier de micro-code généré précédemment, puis cliquer sur `INSTALL`.
--   Après 1 à 2 mn, l’ESP devrait afficher configuration OK.
+* cliquer sur les 3 point en bas à droite du composant, `install`, `manual download`,
+* cliquer sur `Open ESPHome Web` pour ouvrir l'utilitaire de chargement
+* cliquer sur `install`, puis `connect`.
+* Sélectionner le port USB qui devrait être reconnu.
+* Dans la boite de dialogue qui apparait, sélectionner le fichier de micro-code généré précédemment, puis cliquer sur `INSTALL`.
+* Après 1 à 2 mn, l’ESP devrait afficher configuration OK.
 
 ![Flasher l'ESP](blob:https://dev.hacf.fr/e0657ba7-78ca-4002-9bca-61609ed2e485)
 
 **Tester la connexion avec votre ESP**
 
--   Débrancher et rebrancher le l’ESP pour forcer son redémarrage
--   Retourner sur ESPHome, cliquer sur le bouton `LOGS` du composant et vérifier que vous avez accès aux logs et que l’ESP fonctionne. ESPHome essaie de se connecter en wifi à l'ESP et devrait confirmer la bonne connexion.
+* Débrancher et rebrancher le l’ESP pour forcer son redémarrage
+* Retourner sur ESPHome, cliquer sur le bouton `LOGS` du composant et vérifier que vous avez accès aux logs et que l’ESP fonctionne. ESPHome essaie de se connecter en wifi à l'ESP et devrait confirmer la bonne connexion.
 
 > Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
 
@@ -181,10 +179,10 @@ Pour vérifier que tout s'est bien passé, cliquer sur le bouton `LOG` de votre 
 
 Il est maintenant temps de vous intéresser à la programmation de votre ESP. Vous n'avez pas forcément de périphériques connectés à votre ESP, et nous vous proposons de rajouter des entités génériques accessibles depuis HA, et qui pourront vous être utiles dans toutes vos futures implémentations :
 
--   Un bouton pour **redémarrer** votre module
--   Un capteur pour indiquer le **statut de votre ESP**
--   Un capteur qui afficher la **quantité du signal**
--   Un capteur pour afficher **depuis quand l'ESP est démarré** (au format jour - heure - minute - seconde).
+* Un bouton pour **redémarrer** votre module
+* Un capteur pour indiquer le **statut de votre ESP**
+* Un capteur qui afficher la **quantité du signal**
+* Un capteur pour afficher **depuis quand l'ESP est démarré** (au format jour - heure - minute - seconde).
 
 La programmation se fait en YAML. Il est possible de rajouter du code C++ appelé **lambda** pour des calculs et des appels à des procédures internes.
 
@@ -226,22 +224,21 @@ binary_sensor:
           return { (String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
         icon: mdi:clock-start
         update_interval: 60s
-
 ```
 
-**Vérifiez si votre code est correct** Cliquer sur les 3 points du composant, puis `Validate` Vous devriez avoir en deuxième ligne le message "_INFO Configuration is valid!_"
+**Vérifiez si votre code est correct** Cliquer sur les 3 points du composant, puis `Validate` Vous devriez avoir en deuxième ligne le message "*INFO Configuration is valid!*"
 
 **Mettre à jour votre ESP en OTA**
 
 Depuis l'écran d'accueil de ESPHome, cliquez sur les trois points sur le composant, puis `install` et `wirelessly`.
 
-La compilation débute puis ensuite le chargement sur l'ESP. Il faut attendre quelques minutes pour que la procédure se termine. Vous devriez avoir le message "_INFO OTA successful_"
+La compilation débute puis ensuite le chargement sur l'ESP. Il faut attendre quelques minutes pour que la procédure se termine. Vous devriez avoir le message "*INFO OTA successful*"
 
 Débrancher et rebrancher votre ESP, et vérifier en cliquant sur le bouton `LOG` que tout fonctionne bien.
 
 ## 6. Affichage dans le dashboard HA
 
-Il vous faut maintenant **rendre visible votre ESP dans Home Assistant**.
+Il vous faut maintenant **rendre visible votre ESP dans Home Assistant**. 
 
 Par défaut, votre ESP communique de manière chiffrée avec Home Assistant. Editer le code YAML de votre composant, et copier la clé de cryptage.
 
