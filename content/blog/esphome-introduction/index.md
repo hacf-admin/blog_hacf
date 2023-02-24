@@ -1,6 +1,6 @@
 ---
 folder: esphome - introduction
-title: Introduction à ESPHome
+title: Premiers pas avec ESPHome
 type: post
 visibleInCMS: true
 draft: false
