@@ -93,9 +93,8 @@ ESPHome est un Add-on (module complémentaire) officiel de Home Assistant.
 
 Si vous avez une installation clé en main HA OS, rendez-vous sous `Paramètres` puis `Modules complémentaires.`
 
-\-Cliquer sur  `Boutique de Modules Complémentaires`
-
-\- Recherchez ESPHome et cliquer sur `Installer`.
+-Cliquer sur  `Boutique de Modules Complémentaires`
+- Recherchez ESPHome et cliquer sur `Installer`.
 - Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine.
 Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant. 
 
@@ -105,6 +104,7 @@ Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et 
 ### Installation HA container (docker)
 
 Si vous avez une installation de type **HA Container**, et que Home Assistant est installé sous **docker**, vous devrez installer ESPHome dans un nouveau conteneur.
+
 Ci-dessous le fichier compose. Je recommande l'utilisation de **portainer** et la création de **stacks**. Voici alors un fichier **compose** pour créer un conteneur ESPHome.
 
 ```yaml
