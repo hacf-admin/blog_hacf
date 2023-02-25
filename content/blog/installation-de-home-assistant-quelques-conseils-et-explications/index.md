@@ -149,7 +149,22 @@ Q﻿uelques add-ons sont néanmoins quasi indispensable, voici une liste non exh
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
 ## L'accès l'extérieur.
+A﻿ccéder a son systeme domotique depuis n'importe ou dans le monde est primordial, mais il faut prendre concience que cela peut ouvrir une breche de securité sur votre systeme domotique et aussi sur votre reseau interne. Il convient donc, de faire attention a ce que l'on fait.
 
+Il y a effectivement plein de solutions différentes avec chacune des avantages, des inconvénients, des limitations qui ne sont pas toujours facile d’appréhender quand on a une expérience limitée en réseau.
+
+### Réflexions
+
+Pour vous connecter sur votre serveur Home Assistant (HA) à distance, vous allez être confrontés à plusieurs challenges qui vous amèneront à un choix d’architecture :
+
+
+* Connaître l’IP publique de votre Box internet qui dans la majorité des cas peut changer régulièrement (volonté des FAIs - Fournisseur d’Accès à Internet - pour diverses raisons),
+* Modifier les paramètres réseaux de votre Box internet donc savoir accéder et connaître l’interface d’administration,
+
+* Gérer un enregistrement DNS, soit avec un nom de domaine (NDD) propre soit avec un service de DNS dynamique (DynDNS, DuckDNS, etc),
+* Gérer un certifcats SSL pour sécuriser les données de votre client (le navigateur ou l’application mobile que vous allez utiliser pour vous connecter) et votre serveur Home Assistant
+* Configurer HA pour un accès externe ET interne en utilisant le même NDD (pour vous simplifier la vie)
+* Et enfin votre appétence à l’informatique et ses technologies
 
 {{< selected_post title="Articles concernant l'accès extérieur à Home Assistant" tag="acces-exterieur" cat="Installation" >}}
 
