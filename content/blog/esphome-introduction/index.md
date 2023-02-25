@@ -54,9 +54,9 @@ Et, cerise sur le gâteau, ils communiquent à la fois en **Wifi** et **Bluetoot
 
 Et le prix ? ces petites cartes ne coutent que **quelques euros** et sont facilement disponibles, que ce soit sur Amazon ou Aliexpress.
 
-> **Les ESP sont donc une référence pour toute personne souhaitant créer ses propres objets connectés (IOT).**
->
-> Si vous ne voulez pas souder, vous pourrez relier facilement vos ESP et ses périphériques avec des fils de prototypage type "**Dupont**" que l'on trouve facilement en nappe. Certains fabricants fournissent des modules contenant à la fois un ESP et un ou des périphériques (capteurs...) intégrés sur la carte.
+>**Les ESP sont donc une référence pour toute personne souhaitant créer ses propres objets connectés (IOT).**
+
+>Si vous ne voulez pas souder, vous pourrez relier facilement vos ESP et ses périphériques avec des fils de prototypage type "**Dupont**" que l'on trouve facilement en nappe. Certains fabricants fournissent des modules contenant à la fois un ESP et un ou des périphériques (capteurs...) intégrés sur la carte.
 
 ### 1.2 Principe de ESPHome
 
@@ -142,16 +142,16 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 
 **Compiler le micro-code et téléchargez le**
 
-* cliquer sur les 3 points, puis `install`, `manual download`, `modern format`. La compilation démarre.
+* Cliquer sur les 3 points, puis `install`, `manual download`, `modern format`. La compilation démarre.
 * Une fois la procédure terminée, vous pouvez vérifier que vous avez bien le micro-code dans le répertoire de téléchargement de votre navigateur (fichier `esp-test.bin`).
 
 ![Compilation Firmware avec ESPHome](img/compiler-le-firmeware.jpg)
 
 **Installer le micro-code sur l’ESP**
 
-* cliquer sur les 3 point en bas à droite du composant, `install`, `manual download`,
-* cliquer sur `Open ESPHome Web` pour ouvrir l'utilitaire de chargement
-* cliquer sur `install`, puis `connect`.
+* Cliquer sur les 3 point en bas à droite du composant, `install`, `manual download`,
+* Cliquer sur `Open ESPHome Web` pour ouvrir l'utilitaire de chargement
+* Cliquer sur `install`, puis `connect`.
 * Sélectionner le port USB qui devrait être reconnu.
 * Dans la boite de dialogue qui apparait, sélectionner le fichier de micro-code généré précédemment, puis cliquer sur `INSTALL`.
 * Après 1 à 2 mn, l’ESP devrait afficher configuration OK.
@@ -163,7 +163,7 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 * Débrancher et rebrancher le l’ESP pour forcer son redémarrage
 * Retourner sur ESPHome, cliquer sur le bouton `LOGS` du composant et vérifier que vous avez accès aux logs et que l’ESP fonctionne. ESPHome essaie de se connecter en wifi à l'ESP et devrait confirmer la bonne connexion.
 
-> Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
+>Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
 
 ![Lecture LOGS](img/lecture-des-logs.jpg)
 
