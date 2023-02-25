@@ -166,6 +166,37 @@ Pour vous connecter sur votre serveur Home Assistant (HA) à distance, vous alle
 * Configurer HA pour un accès externe ET interne en utilisant le même NDD (pour vous simplifier la vie)
 * Et enfin votre appétence à l’informatique et ses technologies
 
+Face à ces challenges, différentes solutions sont possibles et toutes ne sont pas égales en terme de sécurité, de mise en oeuvre ou d’accessibilité. 
+
+Ces solutions sont :
+*﻿ Via Nabucasa,
+*﻿ Via acces direct,
+* ﻿Via des services externes,
+* ﻿Via une Box qui permet le "Loopback" ou un service DNS local,
+*﻿ Via un proxy inversé (reverse proxy),
+*﻿ Via un VPN,
+*﻿ Via un prestataire tier de services réseaux.
+
+Passons en revue ces différentes solutions.
+
+
+
+>AVANT TOUTE CHOSE : Vous devez considérer les accès vers votre réseau avec des communications chiffrées, donc nous parlerons ici uniquement d’accès via HTTPS et non HTTP !
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{< selected_post title="Articles concernant l'accès extérieur à Home Assistant" tag="acces-exterieur" cat="Installation" >}}
 
 ## La sauvegarde.
