@@ -1,4 +1,5 @@
 ---
+folder: dialogue-avec-telegram
 title: Dialogue avec Telegram
 type: post
 visibleInCMS: true
@@ -261,11 +262,19 @@ action:
 mode: single
 ```
 
-Voilà, vous pouvez maintenant "dialoguer" avec votre maison via telegram, en intégrant potentiellement des données et des photos :slight_smile:
+Voilà, vous pouvez maintenant "dialoguer" avec votre maison via Telegram, en intégrant potentiellement des données et des photos :slight_smile:
 
 Il est intéressant de personnaliser votre bot dans Telegram, en particulier :
 
 * Modifier le logo par défaut et mettre celui de Home Assistant.
 * Paramétrer une purge des messages de plus de 8 jours. Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
 
-N'hésitez pas à partager sur le forum les choses originales ou amusantes que vous auriez automatisées.
+## C﻿onclusion
+
+Voilà, grâce à Telegram, vous pouvez maintenant dialoguer avec votre maison à travers un réseau social.
+
+N'hésitez pas à partager sur le forum les choses originales ou amusantes que vous auriez automatisé.
+
+## Source
+
+C﻿et article est une fusion et réécriture des articles initialement proposés par @McFly et @Argonaute sur le forum HACF.
