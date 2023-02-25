@@ -36,7 +36,7 @@ Les **ESP** sont de petits modules électroniques à base de MCU (Micro Controll
 
 Bien que leur fonctionnement soit identique, l'ESP32 est **plus puissant** que l'esp8266 (un dual core 160Mhz min contre single core 80Mhz), et surtout il a **plus de port** que le ESP8266.
 
-![ESP32](img/esp32.png "Pinout ESP32 DEVKIT V1")
+![ESP32](img/esp32.png)
 
 Ces modules sont livrés sur une petite carte électronique qui expose les **ports**, comme c'est le cas pour les arduino ou les raspberry :
 
@@ -88,7 +88,7 @@ Si vous avez une installation clé en main HA OS, rendez-vous sous `Paramètres`
 * Recherchez ESPHome et cliquer sur `Installer`.
 * Enfin, une fois installé, cocher `Afficher dans la barre latérale` et laisser coché `Lancer au démarrage`Éteignez et redémarrez votre machine. Vous avez alors dans le menu de gauche de Home Assistant l'accès à ESPHome et vous être prêt à créer un nouveau composant.
 
-![Installation ESPHome](img/installation-esphome.png "Add-on ESPHome")
+![Installation ESPHome](img/installation-esphome.png)
 
 ### 2.2 Installation sous HA container (docker)
 
@@ -134,7 +134,7 @@ Pour la première utilisation, nous avons choisi une ESP-Wroom-32, qui est très
 
 Editer le fichier `secret.yaml` (3 points en haut à droite sous ESPHome) et vérifier que vous n’avez qu’une entrée wifi et que les identifiants sont corrects. Rectifier si besoin. A noter que ce fichier n'est pas celui de Home Assistant, mais est dédié à ESPHome.
 
-![Création composant](img/creation-composant.jpg "Création d'un composant")
+![Création composant](img/creation-composant.jpg)
 
 ### 3.2 Flasher l'ESP (première fois)
 
@@ -145,7 +145,7 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 * cliquer sur les 3 points, puis `install`, `manual download`, `modern format`. La compilation démarre.
 * Une fois la procédure terminée, vous pouvez vérifier que vous avez bien le micro-code dans le répertoire de téléchargement de votre navigateur (fichier `esp-test.bin`).
 
-![Compilation Firmware avec ESPHome](img/compiler-le-firmeware.jpg "Compilation du Firmware avec ESPHome")
+![Compilation Firmware avec ESPHome](img/compiler-le-firmeware.jpg)
 
 **Installer le micro-code sur l’ESP**
 
@@ -165,7 +165,7 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 
 > Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
 
-![Lecture LOGS](img/lecture-des-logs.jpg "Lecture des LOGS")
+![Lecture LOGS](img/lecture-des-logs.jpg)
 
 ## 4. Mise à jour en wifi (OTA)
 
@@ -242,7 +242,7 @@ Il vous faut maintenant **rendre visible votre ESP dans Home Assistant**.
 
 Par défaut, votre ESP communique de manière chiffrée avec Home Assistant. Editer le code YAML de votre composant, et copier la clé de cryptage.
 
-![Recopier clé API](img/recopie-clé-api.png "Recopier la clé API")
+![Recopier clé API](img/recopie-clé-api.png)
 
 Aller sous `Paramètres`, `Appareils et Services` : votre module ESP devrait être découvert automatiquement
 
@@ -250,11 +250,11 @@ Cliquer sur `Configurer`, coller la clé de cyryptage. Votre ESP est prêt à ê
 
 En cliquant sous `1 Appareil` dans l'appareil créé, vous avez accès aux différentes entités.
 
-![Configuration dans HA](img/configuration-dans-ha.jpg "Ajout du materiel dans Home Assistant")
+![Configuration dans HA](img/configuration-dans-ha.jpg)
 
 Il ne vous reste plus qu'à les intégrer dans votre dashboard Home Assistant.
 
-![Dashboard](img/dashboard.png "Tableau de bord")
+![Dashboard](img/dashboard.png)
 
 ## Conclusion
 
