@@ -147,30 +147,155 @@ Q﻿uelques add-ons sont néanmoins quasi indispensable, voici une liste non exh
 
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
+## L'accès l'extérieur.
+A﻿ccéder à son système domotique depuis n'importe où dans le monde est primordial, mais il faut prendre conscience que cela peut ouvrir une brèche de sécurité sur votre système domotique et aussi sur votre réseau interne. Il convient donc de faire attention à ce que l'on fait.
+
+Il y a effectivement plein de solutions différentes avec chacune des avantages, des inconvénients, des limitations qui ne sont pas toujours faciles d’appréhender quand on a une expérience limitée en réseau.
+
+### Réflexions
+Pour vous connecter sur votre serveur Home Assistant (HA) à distance, vous allez être confrontés à plusieurs challenges qui vous amèneront à un choix d’architecture :
+
+* Connaître l’IP publique de votre Box internet qui dans la majorité des cas peut changer régulièrement (volonté des FAIs - Fournisseur d’Accès à Internet - pour diverses raisons),
+* Modifier les paramètres réseaux de votre Box internet, donc savoir accéder et connaître l’interface d’administration,
+* Gérer un enregistrement DNS, soit avec un nom de domaine (NDD) propre, soit avec un service de DNS dynamique (DynDNS, DuckDNS, etc),
+* Gérer un certificat SSL pour sécuriser les données de votre client (le navigateur ou l’application mobile que vous allez utiliser pour vous connecter) et votre serveur Home Assistant
+* Configurer HA pour un accès externe ET interne en utilisant le même NDD (pour vous simplifier la vie)
+* Et enfin votre appétence à l’informatique et ses technologies
+
+Face à ces challenges, différentes solutions sont possibles et toutes ne sont pas égales en termes de sécurité, de mise en œuvre ou d’accessibilité.
+
+Ces solutions sont :
+* Via Nabu Casa,
+* Via accès direct en HTTP,
+* Via accés direct en HTTPS,
+* ﻿Via des services externes,
+* Via une Box qui permet le "Loopback" ou un service DNS local,
+* Via un proxy inversé (reverse proxy),
+* Via un VPN, *﻿ Via un prestataire tiers de services réseaux.
+
+Passons en revue ces différentes solutions.
+
+>AVANT TOUTE CHOSE : Vous devez considérer les accès vers votre réseau avec des communications chiffrées, donc nous parlerons ici uniquement d’accès via HTTPS et non HTTP!
+
+### Nabu Casa
+[Nabu Casa](https://www.nabucasa.com/) est la société créée par les fondateurs Home Assistant. Bien que Home Assistant soit Open Source, elle propose un service à 7.50 euros/mois ou 75 euros/an nommé Home Assistant Cloud, permettant, en plus de soutenir Home Assistant, un accès sécurisé depuis n'importe où et l'ajout simplifié de Google Assistant et Alexa.
+
+**Principe**
+Le service fournit un accès depuis leur portail vers votre serveur HA, vous avez uniquement besoin de configurer votre HA avec ce service.
+
+[Accès Nabu Casa]()
+
+**Avantage(s)**
+* Pas de nom de domaine à gérer,
+* Facilité de mise en œuvre,
+* Sécurité ++ (dépend de Nabu Cas),
+* Un essai de 31 jours.
+
+**Inconvénient(s)**
+* Un abonnement mensuel ou annuel,
+* Accès seulement à HA (tout comme l'accès direct).
+
+**Les tutos associés :**
+* [????? A FAIRE ????????]()
+
+### L'accès direct en HTTP.
+L’accès direct est le plus simple en terme d’architecture, mais pas forcément le plus souple et le plus sécurisé.
+
+#### Principe.
+Le principe est tout simplement de rediriger les requêtes de votre client (app mobile/navigateur) qui arrivent sur votre Box (via un nom de domaine ou votre IP) vers l’IP interne (du style 192.x.x.x:8123) de votre serveur Home Assistant.
+
+![Accès direct]()
+
+**Avantage(s)**
+* Peu d'éléments à configurer : la Box et HA
+
+**Inconvénient(s)**
+* Peu sécurisé : HA est directement exposé via un NAT de votre Box et cette dernière n'a pas de fonction de Pare-feu très développée,
+* Configuration via des fichiers en YAML (ce format n'est pas "user friendly" donc destiné déjà à des utilisateurs avertis)
+* Association exclusive d'un port de l'IP publique de votre Box à HA _(vous pourriez évidemment utiliser d'autres ports pour d'autres services).
+
+**Les tutos associés :**
+* [Redirection des ports de votre Box internet]()
+
+### L'accès direct en HTTPS.
+L’accès direct est le plus simple en terme d’architecture, mais pas forcément le plus souple et le plus sécurisé.
+
+#### Principe.
+Le principe est tout simplement de rediriger les requêtes de votre client (app mobile/navigateur) en s’appuyant sur les add-ons DuckDNS (pour avoir un nom de domaine comme [toto.duckdns.org](http://toto.duckdns.org/)) et Let’s Encrypt pour créer et gérer le certificat SSL de votre serveur Home Assistant.
+
+![Accès HTTPSt]()
+
+**Avantage(s)**
+* Pas de NDD à acheter,
+* Plus sécurisé que du HTTP simple.
+
+**Inconvénient(s)**
+* Rend plus compliqué l’accès en local,
+* Ouverture du port de votre Box,
+* Probleme de connexion avec certaine box via le NDD en local "loopback"
+
+**Les tutos associés :**
 
 
+### Via un proxy inversé
+La mise en place d'un proxy inversé complexifie un peu l'architecture, mais peut la rendre plus abordable (suivant la solution de proxy inversé utilisée) et **surtout** la sécuriser un peu mieux que la solution précédente.
 
+#### Principe
+Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur Home Assistant. De ce fait, c'est votre proxy inversé qui prend en charge la connexion sécurisée avec votre client. Le reste de la communication vers votre serveur Home Assistant peut rester non chiffrée (HTTP).
 
+![acces-reverse-proxy]()
 
+**Avantage(s)**
+* Sécurité accrue avec l'ajout d'un service intermédiaire
+* Possibilité d'exposer d'autres services que HA sur l'extérieur (Grafana, Synology, etc) sur le même port que HA
+* Configuration SSL automatisé ou plus souple suivant le produit de proxy inversé
 
+**Inconvénient(s)**
+* Complexification : configuration d'un service intermédiaire et sa compréhension dans l'architecture
 
+**Tutos associés**
+* [Accès de l’extérieur en HTTPS avec Nginx Proxy Manager]()
+* [Home Assistant via Reverse Proxy Synology]()
 
+### 4. Via un opérateur tiers de services réseaux (autre que Nabu Casa)
+Cette solution fait appel à un opérateur tiers pour se connecter à son réseau, tout comme la solution Nabu Casa. Sauf que ce n'est pas natif Home Assistant et qu'il vous faudra ajouter un module complémentaire (add-on).
 
+#### Principe
+Ceci est UN schéma possible, tout dépend des services fournit par l'opérateur (VPN, DynDNS, Proxy inverse, certificat SSL, etc). Dans l'exemple ci-après, l'opérateur fournit un service de proxy inverse et un certificat valide dans son domaine.
 
+[]![acces-services-tiers]()[]
 
+**Avantage(s)**
+* Accès via un tiers de confiance qui gère une partie de la sécurité
+* Pas besoin d’ouvrir de port en entrée sur la box.
 
+**Inconvénient(s)**
+* Ne vous affranchit pas de gérer un certificat pour la communication entre l'opérateur et votre réseau (sauf si service VPN),
+* Beaucoup de "services" à gérer (complexité).
 
+### 5. Via un VPN
+Cette solution est à but informatif, dans le sens où c'est une possibilité, mais la mise en œuvre technique est bien plus ardue… et si vous êtes intéressé, c'est que vous devriez avoir les compétences nécessaires (ou être suffisamment averti) pour mettre en pratique !
 
+#### Principe
+Le schéma présente de façon très simplifiée le principe. Via un client VPN installé sur votre mobile ou PC distant, vous aurez un accès à votre réseau local directement (moyennant quelques contraintes dépendantes de routage).
 
+![acces-vpn]()
 
+>**Nota :** Une offre (gratuite à ce jour) de la société [ZeroTier](https://www.zerotier.com/) permet de créer un VPN sans avoir besoin de toucher à sa Box internet, un plus indéniable, d'autant qu'[un add-on Home Assistant](https://github.com/hassio-addons/addon-zerotier) existe !
 
+**Avantage(s)**
+* Accès direct à tout votre réseau (pas seulement Home Assistant et pas uniquement en HTTPS),
+* Accès sécurisé.
 
+**Inconvénient(s)**
+* Être un utilisateur très averti,
+* Client VPN à installer sur son mobile ou PC distant.
 
-
-
-{{< selected_post title="Articles concernant l'accès extérieur à Home Assistant" tag="acces-exterieur" cat="Installation" >}}
+### Solution / conseil ??
+Comme vous pouvez vous en douter, il y a plein de solution adapté à différent niveau de compétence. Même si nos articles essai de rendre tout ça le plus simple possible, ne vous engagez dans des solutions complexes que vous ne comprenez pas.
 
 ## La sauvegarde.
+
 
 {{< selected_post title="Articles concernant les sauvegardes de Home Assistant" tag="backup" >}}
 
