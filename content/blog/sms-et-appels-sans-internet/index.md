@@ -1,4 +1,5 @@
 ---
+folder: sms-et-appels-sans-internet
 title: SMS et appels sans internet
 type: post
 visibleInCMS: true
@@ -326,4 +327,17 @@ action:
 mode: single
 ```
 
-Voilà, n'hésitez pas à faire vos suggestions ou retours sur le forum, voir proposer des solutions alternatives.
+## Conclusion
+
+Voilà, vous avez pu sécuriser à moindre coût votre système domotique en lui rajoutant une capacité d'appel téléphonique et un moyen de communiquer même si Internet tombe.
+
+
+La contrainte reste d'être dans une zone couverte par la 2G, mais c'est, en France, le cas pour pas mal de région grace à Free. 
+
+
+
+L'alternative est d'intégrer un modem type Huawei e3372, avec SMS gateway. Mais cette solution sera un peu plus chère, mais nécessitera surtout l'installation d'un serveur Gammu.
+
+
+
+N'hésitez pas à faire vos suggestions ou retours sur le forum, voir proposer des solutions alternatives.
