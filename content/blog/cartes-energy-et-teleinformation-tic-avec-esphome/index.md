@@ -23,21 +23,18 @@ tags:
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
 ---
+## 1.Introduction
+
 Le module **Energy** de Home Assistant est vraiment puissant, propose de belles cartes graphiques interactives (navigation jour-mois-année, consolidation des coûts), et il serait dommage de ne pas l'utiliser. Le module **Energy** utilise les tables "*statistics*" de HA, qui permettent de garder les données sans limite de durée, avec 1 enregistrement seulement stocké par heure.
 
-Certes le sujet télé-information a déjà été pas mal traité, mais il est proposé ici ici un retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total < 10€ :
+Certes le sujet télé-information a déjà été pas mal traité, mais il est proposé ici un retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total < 10€ :
 
 * Réalisation **DIY** avec un **ESP32** et les quelques composants soudés sur une plaque de prototypage
 * Un **boitier à imprimer**, disponible dans Cults
 * Adaptation de la configuration **ESPHome** pour avoir les entités compatibles **Energy**
 * Configuration et intégration du **module energy dans le dashboard HA** : consommation et coûts
 
-Une procédure de création de nouveaux composants ESPHome est documentée ici : [Utilisation ESPHome web pour de nouveaux composants](https://forum.hacf.fr/t/utilisation-esphome-web-pour-de-nouveaux-composants/10506)
-
-Pour plus d'informations, voici 2 excellents tutos :
-
-* ESPHome : [Installer ESPHome.... de @McFly](https://forum.hacf.fr/t/installer-esphome-sur-home-assistant-et-creer-votre-premiere-configuration/223)
-* Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
+## 2. Conception du module
 
 Pour information, le compteur électrique interfacé ici est en mode **TIC "historique",** avec heures pleines et heures creuses. Si ce n'est pas votre cas, il faudra faire quelques adaptations.
 
@@ -55,7 +52,11 @@ Un boitier a été conçu sous fusion360 et mis en ligne : [Boitier ESP32 sur Cu
 
 A noter qu'il pourrait bien entendu être utilisé pour d'autres montages à base de ESP32 ou ESP8266 sur carte de prototypages. D'ailleurs, il semble susciter de l'intérêt sur Cult3D.
 
-Concernant ESPHome, ci-dessous le fichier de configuration.
+## 3. Paramétrage ESPHome
+
+L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis de la création initiale du composant.
+
+Ci-dessous le fichier de configuration à recopier dans le paramétrage du composant ESPHome.
 
 ```yaml
 esphome:
@@ -187,6 +188,8 @@ Seules les informations utiles ont été gardées (par exemple l'ID du compteur 
 
 Les "sensors" d'index ont des attributs compatibles avec le module Energy : `state_class` de type `total_increasing` et conversion en kWh. L'UART0 étant utilisée, il est préférable de désactiver la sortie des logs sur la liaison série (`baud_rate: 0` dans le logger). On peut enlever cela pour le premier flashage par câble, pour vérifier que tout se passe bien.
 
+## 4. Configuration du module Energy
+
 Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans configuration - tableau de bord puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
 
 ![Configuration dashboard Energy](img/interfaceenergy.png)
@@ -195,6 +198,8 @@ La section **CO2** a également été configurée : cela donne le % d'énergie c
 La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal). Bon...
 
 > J'ai aussi essayé d'ajouter mes panneaux solaires, mais comme le module Energy ne prends pas en charge le rachat de la consommation par EDF, cela me faussait les résultats. Mais si vous êtes en auto-consommation, cela aura du sens
+
+## 5. Interface utilisateur (tableau de bord)
 
 Reste enfin à intégrer les cartes Energy dans le dashboard (https://www.home-assistant.io/lovelace/energy/). Celui ci-après est adapté à un usage sur mobile.
 
@@ -262,3 +267,19 @@ entities:
 
 Une suite logique sera d'intégrer les consommations des différents appareils de la maison : chauffage, chauffe-eau…
 N'hésitez pas à faire vos retours ou compléments.
+
+## Conclusion
+
+Vous pourrez ainsi suivre votre **consommation journalière, mensuelle ou annuelle**, ainsi que le coût électrique en heure pleine et heure creuse.
+
+L'étape suivante sera de détailler les **consommations de chaque appareil** de votre réseau électrique.
+Pour cela, il y a différentes solutions :
+
+* Intégration d'objets connectés exposant leur consommation
+* Capteur de mesure avec tor dans le tableau électrique (type Owon PC321)
+* Ajout de prises électriques connectés avec mesure de la consommation (machaine à laver, réfigérateur...)
+* Estimation de la consommation : calcul du temps de fonctionnement X puissance de l'appareil
+
+## Sources
+
+* Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
