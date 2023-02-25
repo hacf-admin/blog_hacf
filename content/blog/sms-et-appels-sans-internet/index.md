@@ -61,7 +61,9 @@ J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais
 
 ## 2. Configuration ESPHome
 
-Je résume ici les grandes étapes, car l'installation de ESPHome n'est pas le sujet de ce tuto :
+L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis dans la création initiale du composant.
+
+Voici pour rappel les grandes étapes :
 
 * **Installer ESPHome** si ce n'est pas déjà fait
 * **Créer un nouveau composant** que l'on appellera ici ESP-SIM800
