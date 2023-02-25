@@ -102,7 +102,7 @@ Par la suite, il sera possible de téléverser un nouveau fichier en wifi et nou
 
 ## 3. Paramétrage ESPHome
 
-L'article (Premiers pas avec ESPHome)[/blog/esphome-introduction/] vous guidera si besoin dans l'installation de ESPHome, puis de la création du composant.
+L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis de la création du composant.
 
 Voici les paramètres de base, sans composant connecté.
 
