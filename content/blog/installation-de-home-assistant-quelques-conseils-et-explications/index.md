@@ -95,9 +95,9 @@ Home Assistant tourne alors comme un service à côté d'autres services comme M
 
 {{< selected_post title="Articles concernant l'installation de Home Assistant Container" tag="ha-container" cat="Installation" >}}
 
-### Installation "Home Assistant Supervised"
+### Home Assistant Supervised.
 
-Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial**. Mais vous pouvez vous passer d'un gestionnaire de containers externe (typiquement docker + portainer) et utiliser le superviseur de Home Assistant, qui permettra l'installation d'addons.
+C﻿ette solution, un peu particulière, permet l’utilisation de votre matériel, **avec son système d'exploitation initial**, pour différentes utilisations. Il contient Home Assistant accompagné de son superviseur et un gestionnaire de conteneur (Docker). C﻿'est un "mélange" des deux méthodes d'installations.
 
 >Linux est particulièrement adapté à une [installation supervised](https://github.com/home-assistant/supervised-installer). Cette façon de gérer Home Assistant est celle qui exige le plus de vous. Elle a également des exigences strictes que vous devez respecter. À moins que vous n'ayez vraiment besoin de ce type d'installation, vous devriez installer Home Assistant OS (qui peut aussi être une machine virtuelle), ou Home Assistant Container.
 
@@ -127,7 +127,7 @@ Cette solution permet l’utilisation de votre matériel **avec son système d'e
 
 >**Attention**. Si vous envisagez un jour une migration, il faut savoir, que lors du passage d'un type d'installation a un autre, la partie **core** (entités, automatisations, intégrations, *backup*) sera facilitée par les sauvegardes de Home Assistant, mais pas pour tous (les add-ons par exemple).
 
-## Les add-ons indispensables.
+## Les add-ons.
 
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
