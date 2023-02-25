@@ -22,7 +22,7 @@ tags:
   - DIY
 author: argonaute
 ---
-![ESPHome - Nabu Casa](img/esphome-nabu-casa.png "ESPHome - Nabu Casa")
+![ESPHome - Nabu Casa](img/esphome-nabu-casa.png)
 
 ## 1. Introduction à ESPHome
 
@@ -38,17 +38,17 @@ Bien que leur fonctionnement soit identique, l'ESP32 est **plus puissant** que l
 
 ![ESP32](img/esp32.png)
 
-Ces modules sont livrés sur une petite carte électronique qui expose les **ports**, comme c'est le cas pour les arduino ou les raspberry :
+Ces modules sont livrés sur une petite carte électronique qui expose les **ports** sur des pins, comme c'est le cas pour les arduino ou les raspberry :
 
 * Entrées-sorties numériques (**GPIO**)
 * Convertisseurs analogiques (**ADC / DAC**)
 * Ports séries (**UART** ou **SPI**)
 * Différents bus : **I2S** (connexion d'une caméra par ex) ou **CAN Bus**
-* Sortie 5v et 3.3v
+* Sortie **5v** et **3.3v**
 
-Les différents ports permettent d'y connecter une **multitude de types de capteurs** et périphériques divers. Ainsi, vous pouvez créer votre propre objet connecté **DIY** (Do It Yourself). Pour vous faire une idée des innombrables capteurs supportés, rendez-vous sur la page : https://esphome.io/#sensor-components
+Les différents ports permettent d'y connecter une multitude de types de **capteurs** et **périphériques**. Ainsi, vous pouvez créer votre propre objet connecté **DIY** (Do It Yourself). Pour vous faire une idée des innombrables capteurs supportés, rendez-vous sur la page : https://esphome.io/#sensor-components
 
-Les ESP sont alimentés en **5v** et disposent en général (mais pas toujours) d'une connexion micro-usb ou usb-c. Ils sont capables de se mettre en vieille profonde (deep-sleep) pour consommer très peu d'énergie. Cela permet une utilisation sur pile ou batterie.
+Les ESP sont alimentés en **5v** et disposent en général (mais pas toujours) d'une connexion **micro-usb** ou **usb-c.** Ils sont capables de se mettre en vieille profonde (**deep-sleep**) pour consommer très peu d'énergie. Cela permet une utilisation sur pile ou batterie.
 
 Et, cerise sur le gâteau, ils communiquent à la fois en **Wifi** et **Bluetooth**. De nouveaux modèles intègrent même une connexion IP filaire.
 
@@ -97,7 +97,7 @@ Si vous avez une installation de type **HA Container**, et que Home Assistant es
 Ci-dessous le fichier compose. Je recommande l'utilisation de **portainer** et la création de **stacks**. Voici alors un fichier **compose** pour créer un conteneur ESPHome.
 
 ```yaml
-version: 3
+version: '3'
 services:
   esphome:
     container_name: esphome
@@ -265,3 +265,7 @@ ESPHome est **facile à appréhender** et ne demande pas de connaissances en él
 La suite logique pour créer vos projets est d'**imprimer vos boitiers en 3D**. Il existe une multitude de modèles sur des sites comme [Thingiverse](https://www.thingiverse.com/).
 
 N’hésitez pas à nous faire part de vos réalisations.
+
+## Sources
+
+C﻿et article est une fusion et réécriture des articles initialement proposés par @McFly et @Argonaute sur le forum HACF.
