@@ -40,11 +40,10 @@ Dans cet article, nous allons aborder tous les points important vous permettant 
 
 N﻿ous allons essayer de vous donner des points de réflexions vous permettant de choisir les solutions les plus adaptées a votre utilisation, vos connaissances et vos besoins dans les domaines suivants :
 
-\*﻿ Installation,
-
+* Installation, 
 * A﻿dd-ons indispensables, 
-  ﻿* Accès depuis l'extérieur,*
-  ﻿ Les sauvegardes.
+  ﻿* Accès depuis l'extérieur,
+* Les sauvegardes.
 
 > Un article sur les concepts, plus théorique, de Home Assistant est disponible [ici](/blog/concepts-home-assistant).
 
@@ -139,49 +138,21 @@ I﻿l existe plusieurs facons d'ajouter un add-on:
 * Les non-officiels : installable via les modules complémentaires mais nécessitant l’ajout du dépôt GitHub en manuel,
 * V﻿ia [HACS (Home Assistant Community Store)](https://hacs.xyz/) : HACS est une bibliothèque d'add-ons, de thèmes, de cartes personnalisée (Custom Card) développé par des membres de la communauté, mais n'étant pas encore officiellement intégré dans Home Assistant.
 
->﻿Home assistant a simplifié la chose en mettant à disposition des développeurs un script générant un bouton (pour les BluePrint, Dépots, etc) qui, d’un simple clique, fait les actions à votre place. Cela nécessite simplement de saisir l’adresse de votre instance.
-![Bouton Add Repository](img/add-repository.svg "Bouton Add Repository")
+> ﻿Home assistant a simplifié la chose en mettant à disposition des développeurs un script générant un bouton (pour les BluePrint, Dépots, etc) qui, d’un simple clique, fait les actions à votre place. Cela nécessite simplement de saisir l’adresse de votre instance.
+> ![Bouton Add Repository](img/add-repository.svg "Bouton Add Repository")
 
 Q﻿uelques add-ons sont néanmoins quasi indispensable, voici une liste non exhaustive :
-*﻿ File Editor ou VSCode : Permet l'edition des fichiers de configuration.
-*﻿ ?????
+﻿* File Editor ou VSCode : Permet l'edition des fichiers de configuration.*
+﻿ ?????
 
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
-## L'accès l'extérieur.
-A﻿ccéder a son systeme domotique depuis n'importe ou dans le monde est primordial, mais il faut prendre concience que cela peut ouvrir une breche de securité sur votre systeme domotique et aussi sur votre reseau interne. Il convient donc, de faire attention a ce que l'on fait.
-
-Il y a effectivement plein de solutions différentes avec chacune des avantages, des inconvénients, des limitations qui ne sont pas toujours facile d’appréhender quand on a une expérience limitée en réseau.
-
-### Réflexions
-
-Pour vous connecter sur votre serveur Home Assistant (HA) à distance, vous allez être confrontés à plusieurs challenges qui vous amèneront à un choix d’architecture :
-
-
-* Connaître l’IP publique de votre Box internet qui dans la majorité des cas peut changer régulièrement (volonté des FAIs - Fournisseur d’Accès à Internet - pour diverses raisons),
-* Modifier les paramètres réseaux de votre Box internet donc savoir accéder et connaître l’interface d’administration,
-
-* Gérer un enregistrement DNS, soit avec un nom de domaine (NDD) propre soit avec un service de DNS dynamique (DynDNS, DuckDNS, etc),
-* Gérer un certifcats SSL pour sécuriser les données de votre client (le navigateur ou l’application mobile que vous allez utiliser pour vous connecter) et votre serveur Home Assistant
-* Configurer HA pour un accès externe ET interne en utilisant le même NDD (pour vous simplifier la vie)
-* Et enfin votre appétence à l’informatique et ses technologies
-
-Face à ces challenges, différentes solutions sont possibles et toutes ne sont pas égales en terme de sécurité, de mise en oeuvre ou d’accessibilité. 
-
-Ces solutions sont :
-*﻿ Via Nabucasa,
-*﻿ Via acces direct,
-* ﻿Via des services externes,
-* ﻿Via une Box qui permet le "Loopback" ou un service DNS local,
-*﻿ Via un proxy inversé (reverse proxy),
-*﻿ Via un VPN,
-*﻿ Via un prestataire tier de services réseaux.
-
-Passons en revue ces différentes solutions.
 
 
 
->AVANT TOUTE CHOSE : Vous devez considérer les accès vers votre réseau avec des communications chiffrées, donc nous parlerons ici uniquement d’accès via HTTPS et non HTTP !
+
+
+
 
 
 
