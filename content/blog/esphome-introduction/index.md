@@ -22,7 +22,7 @@ tags:
   - DIY
 author: argonaute
 ---
-![ESPHome - Nabu Casa](img/esphome-nabu-casa.png "ESPHome - Nabu Casa")
+![ESPHome - Nabu Casa](img/esphome-nabu-casa.png)
 
 ## 1. Introduction à ESPHome
 
