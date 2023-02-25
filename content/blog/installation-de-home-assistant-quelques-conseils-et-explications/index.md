@@ -54,7 +54,7 @@ N﻿ous allons essayer de vous donner des points de réflexions vous permettant 
 Il existe deux méthodes principales :
 
 * **Home Assistant OS (HA-OS)** : Composé du Système d'exploitation (OS) **dédié** et **optimisé** pour Home Assistant et de la couche **Superviseur**,
-* **Container** : Installation sur une machine possédant déjà son système d'exploitation. Home Assistant **Core** est installé dans un conteneur (par exemple, Docker). Tous les add-ons seront à installer et configurer indépendamment.
+* **Container** : Installation sur une machine possédant déjà son système d'exploitation et un système de gestion de conteneur (exemple : docker). Cette dernière installe la version **core** de Home Assistant. Tous les add-ons seront à installer et configurer indépendamment.
 
 Deux méthodes d'installation alternatives sont disponibles pour les **utilisateurs expérimentés** :
 
@@ -63,29 +63,35 @@ Deux méthodes d'installation alternatives sont disponibles pour les **utilisate
 
 >La version **Core** est très peu utilisée et s'adresse à des personnes de profil développeur ayant une bonne connaissance de l'environnement python. Cette solution est **réellement** réservée aux personnes **expérimentées** et ne sera pas abordée.
 
-### Installation "Home Assistant OS"
+### Home Assistant OS ou HAOS.
 
-Cette méthode implique **à priori** l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS dédié clé en main avec Home Assistant et le Superviseur.
+Cette méthode implique l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS dédié clé en main avec Home Assistant et le Superviseur.
 Elle a l’avantage d’être la moins gourmande en ressources et la plus simple d’utilisation.
 
-Le type d'installation HA OS sur un support micro SD sera très facile. Mais attention, à force d’écriture, votre système peut être plus fragile. Pour une utilisation perenne, il vous faudra remplacer la carte Micro SD par un disque SSD ou a minima déplacer les données utilisateur vers un support externe.
+S﻿on installation tient au seul transfert de l'image vers un support (MicroSD ou SSD).
 
-Enfin, si vous ne voulez pas dédier votre système à Home Assistant (sur un mini PC par exemple), vous pouvez faire une installation "Home Assistant OS" dans un **système virtualisé**. Le plus courant est **proxmox**.
+>L'installation sur un support micro SD, à force d’écriture de votre systeme domotique, peut provoquer des erreurs ammenant des disfonctionnement de votre domotique. Pour une utilisation perenne, il vous faudra remplacer la carte Micro SD par un disque SSD ou a minima [déplacer les données utilisateur vers un support externe](/blog/installer-home-assistant-os-sur-raspberry-odroid-nuc-ou-autres/#déplacer-les-données-utilisateurs-facultatif).
 
-vous débuterez, sur Home Assistant, sans vous soucier d'autres choses. C'est une version **clé en main**. Elle permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant.
+E﻿n choisissant HAOS, vous débuterez, sans vous soucier d'autres choses. C'est une version **clé en main**. 
+Elle permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant.
 
 >Cette methode est officiellement supportée pour les Raspberry, Odroid, Asus Thinkerboard et Generic X86-X64 (Intel NUC). Au vu de la penurie de ce premier, n´hesitez pas a vous orienter vers d'autres machines si vous n'en avez pas en stock.
 
 {{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-os" cat="Installation" >}}
 
-### Installation "Home Assistant Container"
+Enfin, si vous ne voulez pas dédier votre système à Home Assistant (sur un mini PC par exemple), vous pouvez faire une installation "Home Assistant OS" dans un **système virtualisé**. Le plus courant est **Proxmox**.
 
-Cette solution permet l’utilisation de votre matériel **avec son système d'exploitation initial** : Linux, Windows, Mac OS, Synology DSM.
-Un gestionnaire de container (typiquement docker) permet d'installer des services qu'il est possible de gérer avec un outil comme portainer (gestionnaire de containers) présenté ci-dessous. L'ensemble fera office de supervisor dont on se passera alors.
+{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-supervised" cat="Installation" >}}
 
-Vous installez Home Assistant **core** dans votre propre environnement de conteneurs, que vous gérez vous-même.
+### Home Assistant Container.
+
+C﻿ette autre solution permet d'utiliser votre matériel pour Home Assistant, mais aussi d'autres services, et sur l'OS de votre choix (Linux, Windows, Mac OS, Synology DSM).
+
+Un gestionnaire de conteneur (typiquement Docker et Portainer) fera office de "superviseur", non présent par défaut dans cette installation, permettant d'installer Home Assistant **container**, mais aussi les services annexes (comprenez les add-ons) qui devront être configurés par vos soins.
+
+>**ATTENTION :** C﻿e choix d'installation vous contraint à maintenir vous-même votre environnement à jour.
+
 Home Assistant tourne alors comme un service à côté d'autres services comme MQTT, une base de donnée, un gestionnaire multimédia, etc 
-Attention : tout add-on sera vu comme un service et sera à installer séparément.
 
 {{< selected_post title="Articles concernant l'installation de Home Assistant Container" tag="ha-container" cat="Installation" >}}
 
