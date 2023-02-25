@@ -54,7 +54,7 @@ A noter qu'il pourrait bien entendu être utilisé pour d'autres montages à bas
 
 ## 3. Paramétrage ESPHome
 
-L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis de la création initiale du composant.
+L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis dans la création initiale du composant.
 
 Ci-dessous le fichier de configuration à recopier dans le paramétrage du composant ESPHome.
 
