@@ -102,8 +102,7 @@ Par la suite, il sera possible de téléverser un nouveau fichier en wifi et nou
 
 ## 3. Paramétrage ESPHome
 
-Il faut créer un nouveau composant dans ESPHome. J'utilise maintenant ESPHome Web et avais décrit la procédure ici (avec référence au tuto de @McFly). 
-[Utilisation ESPHome web pour de nouveaux composants](https://forum.hacf.fr/t/utilisation-esphome-web-pour-de-nouveaux-composants/10506)
+L'article (Premiers pas avec ESPHome)[/blog/esphome-introduction/] vous guidera si besoin dans l'installation de ESPHome, puis de la création du composant.
 
 Voici les paramètres de base, sans composant connecté.
 
