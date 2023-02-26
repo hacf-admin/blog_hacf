@@ -1,20 +1,18 @@
 ---
+folder: gestion-du-chauffage-de-bout-en-bout
+title: Gestion du chauffage de bout en bout
+type: post
 visibleInCMS: true
 draft: false
 date: 2022-09-30
 lastmod: null
-level: Avancé
-author: argonaute
-url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
-socialshare: true
-title: Gestion du chauffage de bout en bout
-type: post
 images: img/chauffage-chat2.jpg
 description: "A l'heure où le chauffage est un poste de dépense très important,
   Home Assistant ne fournit qu'un thermostat basique. Cet article propose une
   implémentation complète permettant de gérer son chauffage : thermostat plus
   performant, planification des plages de température, pilotage, gestion des
   ouvrants, interface graphique et courbes pour l'optimisation."
+level: Avancé
 categories:
   - Automatisation
   - Confort
@@ -23,6 +21,9 @@ series: null
 tags:
   - blueprint
   - chauffage
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
+socialshare: true
 ---
 ## Avant propos
 
@@ -107,7 +108,7 @@ La puissance et la consigne sont dans des input number définis spécifiquement 
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
 
-![blueprint](img/blueprint.png "Blueprint")
+![Blueprint](img/blueprint.png)
 
 Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le blueprint devrait être adapté.
 
@@ -119,11 +120,11 @@ Une carte assez basique permet de visualiser pour chaque radiateur le mode de ch
 
 Elle remplace la carte thermostat de HA.
 
-![enter image description here](img/cartethermostat.png "carte themostat ")
+![Carte thermostat](img/cartethermostat.png)
 
 Voici les différents modes proposés (champs de type input select):
 
-![carte thermostat mode](img/cartethermostat-mode.png "carte thermostat mode")
+![Carte thermostat - mode](img/cartethermostat-mode.png)
 
 * **Mode « auto-confort » :** quand la pièce est occupée. Ajuste automatiquement la température suivant des plages horaires définies dans le scheduler (planification « auto-confort »)
 * **Mode « auto-eco » :** quand la pièce est inoccupée (par exemple la semaine ou quand l’alarme est mise). Ajuste automatiquement la température suivant des plages horaires défini dans le scheduler (planification « auto-eco »). 
@@ -188,19 +189,19 @@ La planification est basée sur le scheduler proposé dans HACS, composé d'un c
 
 Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a un icone « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la scheduler card.
 
-![](img/listethermostats.png)
+![Liste thermostats](img/listethermostats.png)
 
 La vue réglage contient une seule scheduler card affichant la planification de tous les radiateurs. 
 
 Chaque radiateur a 2 planifications : une CONFORT et une ECO. Malheureusement, la scheduler card les affichent ici dans le désordre (en fait en fonction des plages horaires).
 
-![](img/planificationliste.png)
+![Liste planifications](img/planificationliste.png)
 
 La planification sera bien entendue active ou non en fonction du mode choisi dans le thermostat. La température de consigne va automatiquement changer en fonction de l’heure et du programme quand la planification est activée (le scheduler gère cela automatiquement pour nous).
 
 Il est possible si on est administrateur d'éditer chaque planification, puis sélectionner la température de consigne par plage horaire.
 
-![enter image description here](https://wiki.hacf.fr/files/ChauffageBoutEnBout_PlanificationDetail_20220907164738_20220907145043.png)
+![Détail planification](img/planificationdetail.png)
 
 Voici le code de l'implémentation de la scheduler card
 
@@ -298,7 +299,7 @@ Pour le charger dans Home Assistant, comme précédemment, aller dans configurat
 
 Ensuite une automatisation peut être facilement créée pour chaque radiateur en cliquant sur le  bouton "créer une automatisation". Il faut alors renseigner chaque valeur en entrée du blueprint.
 
-![https://wiki.hacf.fr/files/ChauffageBoutEnBout_Blueprint_20220907164738_20220907144821.png](img/blueprint.png)
+![Nouveau thermostat](img/nouveauthermonstat.png)
 
 **Point important** : comme déjà évoqué, si par exemple on passe du mode confort au mode eco, le scheduler ajuste automatiquement la consigne en fonction de sa planification et de l’heure qu’il est. Cela permet de se passer d’un deamon dynamique comme shedy.
 
@@ -511,7 +512,7 @@ Le module Fil Pilote Wifi - Heatzy est interessant et peut se trouver dans des m
 
 Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zigbee pourra convenir pour gérer le fil pilote. Mais il faut mettre en série une diode : 
 
-![](img/filpilote.png)
+![Module et fil pilote](img/filpilote.png)
 
 La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilote est faible. 
 
@@ -583,9 +584,7 @@ binary_sensor:
 
 Il est pertinent de contrôler le fonctionnement et éventuellement affiner les paramètres.  Voici à titre indicatif le code pour afficher des graphiques du fonctionnement de thermostat.
 
-![](img/courbe.png)
-
-
+![Courbes](img/courbe.png)
 
 ```yaml
 type: custom:apexcharts-card
