@@ -333,7 +333,7 @@ Depuis, les automatisations Home Assistant ont évoluées, évoluent encore, et 
 Elles sont accessibles en cliquant sur `Paramètres` `Automatisations et Scènes`
 Une automatisation est constituée de 3 blocs :
 
-![](img/automatisations.jpg)
+![Automatisations](img/automatisations.jpg)
 
 Le **trigger** va permettre d'indiquer QUAND une automatisation va se déclencher.
 Par exemple :
@@ -357,7 +357,7 @@ Quelques spécificités des automatisations HA :
 Node-Red n'est pas spécifique à Home Assistant, et est utilisé par d'autres solutions et pas que domotiques. Il faut donc installer un add-on complémentaire.
 Le principe est de créer un flux d'actions et de conditions grace à un éditeur visuel.
 
-![](img/node-red.jpg)
+![Node-red](img/node-red.jpg)
 
 Pour plus d'informations :  https://forum.hacf.fr/t/debuter-avec-node-red/334
 Node-Red propose une  quantité impressionnante de fonctions. Même si on utilise les automatisations HA, il est intéressant d'utiliser Node-Red pour des applications spécifiques comme exploiter une API http ou connecter des environnements exotiques.  
@@ -411,7 +411,7 @@ Par exemple, vous avez un sensor retournant true ou false si une porte est ferm�
 
 Dans votre fichier configuration.yaml (ou un package), vous pouvez recréer un sensor qui retournera un libellé "ouvert" ou "fermé". Le code **jinja2** sera mis dans la clé value_template (à la suite de la clé entre quote, ou à la ligne avec le symbole `&gt;-`.
 
-```
+```yaml
 -  platform:  template
 		sensors:
     		garage_etat:
@@ -438,7 +438,7 @@ Home Assistant fournit une application mobile sous Android et IOS. Elle est dés
 
 Une fois l'application installée sur son mobile, il est possible de spécifier dans l'application quelles informations seront transmises sur Home Assistant et donc visible sous forme d'entité créée : niveau de la batterie ou type de connexion par exemple, mais aussi localisation. Désactiver ce qui n'est pas utile.
 
-![enter image description here](img/appli-mobile.jpg)
+![Appli mobile](img/appli-mobile.jpg)
 
 Pour accéder aux paramètres dans l'application, cliquer sur `Paramètres` `Application compagnon` puis `capteurs` ou `paramètres d'emplacement`.
 
@@ -451,7 +451,7 @@ Or la communauté de développeurs propose un nombre assez conséquent de compos
 
 Pour accéder à ce magasin, il faut installer un add-on complémentaire HACS. L'interface de l'add-on apparaitra alors dans le menu de gauche.
 
-![enter image description here](img/hacs.jpg)
+![HACS](img/hacs.jpg)
 
 De la, vous aurez accès à 2 type de composants :
 
