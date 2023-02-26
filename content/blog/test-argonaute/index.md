@@ -3,11 +3,11 @@ folder: test-argonaute
 title: Test Argonaute
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-02-26
 lastmod: 2023-02-26
 images: img/awesome-ha.png
-description: Ceci est un test.
+description: "Ceci est un test. "
 level: Avancé
 categories:
   - Confort
