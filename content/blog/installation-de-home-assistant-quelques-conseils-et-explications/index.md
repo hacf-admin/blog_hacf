@@ -1,17 +1,20 @@
 ---
-folder: installations-ha-methodes
-title: "Installation de Home Assistant : les méthodes"
-type: post
+folder: HA_instllation_initiale
 visibleInCMS: true
 draft: true
 date: 2023-02-22
 lastmod: null
+level: Débutant
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+socialshare: true
+title: Home Assistant installation initiale
+type: post
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
   important de connaitre les différentes alternatives d'installations et comment
   cela peut impacter votre futur système. Voici quelques conseils et
   explications sur ces différentes méthodes d'installation. "
-level: Débutant
 categories:
   - Installation
   - Concepts
@@ -32,9 +35,6 @@ tags:
   - odroid
   - vm
   - raspberry-pi
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
-socialshare: true
 ---
 Dans cet article, nous allons aborder tous les points important vous permettant de vous lancer facilement avec Home Assistant.
 
@@ -142,8 +142,10 @@ I﻿l existe plusieurs facons d'ajouter un add-on:
 > ![Bouton Add Repository](img/add-repository.svg "Bouton Add Repository")
 
 Q﻿uelques add-ons sont néanmoins quasi indispensable, voici une liste non exhaustive :
-﻿ *File Editor ou VSCode : Permet l'edition des fichiers de configuration.*
-﻿ ?????
+* *File Editor ou VSCode* : Permet l'edition des fichiers de configuration.
+* *Terminal* :
+* *Samba* :
+
 
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
