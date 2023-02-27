@@ -41,23 +41,23 @@ C'est [l'année de la voix de Home Assistant](https://www.home-assistant.io/blog
 
 Aujourd'hui nous aimerions vous rencontrer :
 
-![Capture d'écran montrant la nouvelle fonction d'assistance utilisée pour allumer les lumières](https://www.home-assistant.io/images/blog/2023-02/assist.png)
-
-![Icône d'assistance](https://www.home-assistant.io/images/assist/assist-icon.svg)Assist vous permet d'utiliser le langage naturel pour contrôler Home Assistant. Il est alimenté par [Hassil](https://github.com/home-assistant/hassil) et les phrases (contribuées par 112 personnes) du projet [Home Assistant Intents](https://home-assistant.github.io/intents/) .
+Assist vous permet d'utiliser le langage naturel pour contrôler Home Assistant. Il est alimenté par [Hassil](https://github.com/home-assistant/hassil) et les phrases (contribuées par 112 personnes) du projet [Home Assistant Intents](https://home-assistant.github.io/intents/) .
 
 Nous pensons que la technologie est faite pour être jouée et que les projets doivent être utilisables dès que possible. Avec la communauté, nous pouvons ensuite itérer et affiner. C'est pourquoi aujourd'hui, nous offrons une expérience de base prenant en charge **22 langues** qui fonctionnent avec Assist.
 
-Allez-y, il est activé par défaut ; appuyez simplement sur la nouvelle icône `Assist` ![Icône d'assistance](https://www.home-assistant.io/images/assist/assist-icon.svg) en haut à droite de votre tableau de bord pour commencer à l'utiliser.
+Allez-y, il est activé par défaut ; appuyez simplement sur la nouvelle icône `Assist` en haut à droite de votre tableau de bord pour commencer à l'utiliser.
 
 Oh, et nous publions également des trucs amusants que nous avons concoctés en cours de route ! [En savoir plus sur Assist](https://www.home-assistant.io/docs/assist/) et les autres fonctionnalités vocales publiées dans le [chapitre 1 : Assist](https://www.home-assistant.io/blog/2023/01/26/year-of-the-voice-chapter-1/) blogpost et une [présentation vidéo (y compris des démos en direct) sur YouTube](https://www.youtube.com/live/ixgNT3RETPg) .
 
-![Jouer : L'année de la voix - Chapitre 1](https://i.ytimg.com/vi/ixgNT3RETPg/hqdefault.jpg)
+![Assist](img/assist.png)
 
 ## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#streaming-history)Historique de diffusion
 
 Les cartes d'historique sont désormais mises à jour en direct ! Nous diffusons maintenant les changements d'état pendant qu'ils se produisent et mettons à jour les graphiques en temps réel 😲
 
-![Capture d'écran montrant une carte d'historique présentant la consommation d'énergie d'une cafetière de cuisine, mise à jour en direct pendant la préparation du café](https://www.home-assistant.io/images/blog/2023-02/streaming-history-cards.gif)Ces cartes d'historique affichent maintenant la consommation d'énergie en direct pendant que je prépare une tasse de café.
+![](img/streaming-history-cards.gif)
+
+Ces cartes d'historique affichent maintenant la consommation d'énergie en direct pendant que je prépare une tasse de café.
 
 Mais cela ne se limite pas aux cartes d'historique, votre [tableau de bord d'historique](https://my.home-assistant.io/redirect/history) est désormais également en ligne !
 
@@ -69,7 +69,7 @@ En tant qu'effet secondaire, cela devrait également résoudre les erreurs d'aut
 
 L' [assistant de groupe](https://www.home-assistant.io/integrations/group) prend désormais également en charge les capteurs ! Les groupes de capteurs peuvent combiner des entités avec un état numérique, comme [des entités capteurs](https://www.home-assistant.io/integrations/sensor) , [nombre](https://www.home-assistant.io/integrations/number) et [aides numériques](https://www.home-assistant.io/integrations/input_number) .
 
-![Capture d'écran montrant le processus d'ajout d'un nouveau groupe de capteurs](https://www.home-assistant.io/images/blog/2023-02/sensor-groups.png)
+![Capture d'écran montrant le processus d'ajout d'un nouveau groupe de capteurs](img/sensor-groups.png)
 
 [![](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=group)
 
@@ -79,7 +79,7 @@ Par rapport aux méthodes mentionnées précédemment, les groupes de capteurs o
 
 ## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#now-even-tighter-integrated-with-esphome)Maintenant encore plus intégré avec ESPHome
 
-[ESPHome](https://esphome.io/) fonctionne déjà très bien avec Home Assistant. Pourtant, cette version le rend encore meilleur !
+[ESPHome](https://esphome.io/) fonctionne déjà très bien avec Home Assistant. Pourtant, cette version le rend encore meilleur !!
 
 Si vous utilisez le module complémentaire ESPHome, nous avons de grandes améliorations pour vous. L'add-on et Home Assistant vont désormais communiquer entre eux, apportant de nombreuses nouvelles fonctionnalités.
 
@@ -87,13 +87,13 @@ Lorsque vous configurez un nouvel appareil dans ESPHome et que vous l'ajoutez en
 
 Mais ce n'est pas tout. Ce qui est vraiment époustouflant, c'est que l'intégration ESPHome fournira désormais des entités de mise à jour lors de l'utilisation du module complémentaire !
 
-![Captures d'écran, celle de gauche montrant les mises à jour en attente pour les appareils ESPHome.  La bonne : un appareil ESPHome installant une mise à jour directement depuis Home Assistant](https://www.home-assistant.io/images/blog/2023-02/esphome-update-entities.png)
+![Captures d'écran, celle de gauche montrant les mises à jour en attente pour les appareils ESPHome.  La bonne : un appareil ESPHome installant une mise à jour directement depuis Home Assistant](img/esphome-update-entities.png)
 
-À l'heure actuelle, les entités de mise à jour n'indiqueront que si un appareil doit être mis à jour. Cependant, lorsque la prochaine version majeure d'ESPHome (2023.2) sera disponible, elle prendra également en charge leur mise à jour ! Oui, à ce stade, vous pouvez mettre à jour vos appareils ESPHome directement depuis Home Assistant et même l'automatiser !
+À l'heure actuelle, les entités de mise à jour n'indiqueront que si un appareil doit être mis à jour. Cependant, lorsque la prochaine version majeure d'ESPHome (2023.2) sera disponible, elle prendra également en charge leur mise à jour ! Oui, à ce stade, vous pouvez mettre à jour vos appareils ESPHome directement depuis Home Assistant et même l'automatiser ! 
 
 En outre, ESPHome déprécie l'ancienne authentification par mot de passe pour son API en faveur de la clé de chiffrement plus sécurisée. Si l'un de vos appareils ESPHome utilise toujours un mot de passe simple, Home Assistant vous en informera en créant un problème dans votre [tableau de bord des réparations](https://my.home-assistant.io/redirect/repairs) .
 
-![Capture d'écran montrant un problème de réparation soulevé pour un appareil ESPHome utilisant toujours le mot de passe API obsolète au lieu d'une clé de chiffrement API](https://www.home-assistant.io/images/blog/2023-02/esphome-repairs-encryption-key.png)
+![Capture d'écran montrant un problème de réparation soulevé pour un appareil ESPHome utilisant toujours le mot de passe API obsolète au lieu d'une clé de chiffrement API](img/esphome-update-entities.png)
 
 Nous avons également préparé la prochaine version d'ESPHome (2023.2), dans laquelle vous pouvez ajouter un nom convivial et plus humain à vos appareils ESPHome. Home Assistant les récupérera, ce qui rendra vos appareils ESPHome plus beaux dès la sortie de l'emballage !
 
