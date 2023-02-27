@@ -204,7 +204,13 @@ mode: single
 
 ### Debugging
 
-Il est également possible d'avoir des **traces** pour vérifier comment une automatisation s'est exécutée. Pour cela, cliquer sur `traces` et naviguer sur les dates des dernières exécutions, les noeuds exécutés, etc... c'est très puissant.
+Il est également possible d'avoir des **traces** pour vérifier comment une automatisation s'est exécutée. Pour cela, cliquer sur `traces.`
+
+![Automatisations - debugging](img/automatisation-debugging.jpg)
+
+L﻿es pouvez aussi voir une représentation graphique des dernières exécutions. Le graphique montre quel noeud a été exécuté (quelle a été le résultat d'un test). Si vous cliquez sur un noeud, vous pouvez enfin voir le traitement fait. 
+
+
 
 Enfin, il est possible de **forcer une exécution**. Le trigger est by-passé, et l'automatisation vérifie les conditions, puis exécute les actions. Pour déclencher l'automatisation et la tester, cliquer sur `exécuter` en haut à droite.
 
