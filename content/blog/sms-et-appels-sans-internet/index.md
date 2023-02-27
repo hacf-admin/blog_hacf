@@ -29,7 +29,7 @@ Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines so
 
 Dans ce post, je vous propose une solution relativement économique, basée sur un module à base d'**ESP32-SIM800L** et **ESPHome**, pour pouvoir **envoyer et recevoir des SMS** avec Home Assistant, déclencher des actions sur réception d'un SMS et même **lancer un appel** sur le téléphone, ce **sans connexion Internet**.
 
-![image|690x](img/boitier-ouvert.jpeg)
+![Boitier ouvert](img/boitier-ouvert.jpeg)
 
 Je vous propose de traiter 2 cas concrets :
 
@@ -68,7 +68,7 @@ Voici pour rappel les grandes étapes :
 * **Installer ESPHome** si ce n'est pas déjà fait
 * **Créer un nouveau composant** que l'on appellera ici ESP-SIM800
 
-  ![](img/esphome.png)
+  ![ESPHome](img/esphome.png)
 * **Renseigner les mots de passe du réseau wifi.**
 
 Pour cela, depuis ESPHome cliquer sur les 3 points en haut à droite puis Secrets Editor. Un fichier secret.yaml sous la racine du répertoire esphome est créé. Ce fichier est différent de celui de home assistant et est spécifique à ESPHome.
@@ -192,7 +192,7 @@ binary_sensor:
     A partir de ce moment, vous pourrez modifier le code de l’ESP (bouton `EDIT`) et le déployer EN OTA ( `install / wirelessly`).
   * Débrancher et rebrancher l'ESP, puis après 1 mn de redémarrage, vérifier les logs du composant dans ESPHome.
 
-![](img/log.png)
+![Logs](img/log.png)
 
 Le log doit afficher *Registered OK* et le niveau de réception (RSSI) du module téléphone, à 15 dans mon log ci-dessus.
 Le code proposé est avec le logger en mode debug, mais il pourra être changé en info quand tout fonctionnera.
