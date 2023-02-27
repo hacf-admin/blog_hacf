@@ -25,18 +25,19 @@ author: argonaute
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 socialshare: true
 ---
+
 ## Avant propos
 
-Cet article traite de l'implémentation d'un thermostat plus efficient que le thermostat virtuel de HA, une solution de planification du chauffage suivant des plages horaires, la gestion de différents modes de chauffage(manuel, éco, confort...), et enfin un exemple de carte lovelace pour afficher le tout.
+Cet article traite de l'implémentation d'un thermostat plus efficient que le thermostat virtuel de HA, une solution de planification du chauffage suivant des plages horaires, la gestion de différents modes de chauffage (manuel, éco, confort...), et enfin un exemple de carte lovelace pour afficher le tout.
 
 Ce post s'adresse tout particulièrement aux personnes **n'utilisant pas un thermostat physique** (type nest, heatit, netatmo ou même celui intégré au chauffage) et ayant un **mode de chauffage pilotable en on-off** (typiquement des convecteurs avec module on-off ou fil pilote).
-L'implémentation fait appel à pas mal de concepts, ce qui peut s'avérer complexe pour les personnes débutants avec HA.
+L'implémentation fait appel à pas mal de concepts, ce qui peut s'avérer complexe pour les personnes débutant avec HA.
 
 ## 1. Le chauffage dans Home Assistant
 
 S’il y a un domaine source de confort et d’économie dans une maison domotisée, c’est bien le chauffage. Home Assistant est un système domotique incroyable, offrant énormément de possibilités. Et pourtant, le sujet du chauffage est plutôt mal traité (pour l’instant).
 
-Un thermostat générique (intégration et carte lovelace) est proposé par HA pour piloter un chauffage en ON-OFF, mais il est de type **hystéresis** : il chauffe a 100% jusqu’a atteindre la température + un seuil, puis arrête. Le convecteur sera alors soit bouillant, soit froid, ce qui crée des **oscillations de température** et des **chaud-froid** inconfortables, et cela consomme plus. C’est probablement adapté aux climatiseurs réversibles américaines mais pas du tout à nos convecteurs et autres modes de chauffage. La **température extérieure** n’est même pas prise en compte, pas plus que la coupure du chauffage quand une **fenêtre est ouverte**.
+Un thermostat générique (intégration et carte lovelace) est proposé par HA pour piloter un chauffage en ON-OFF, mais il est de type **hystéresis** : il chauffe a 100% jusqu’à atteindre la température + un seuil, puis arrête. Le convecteur sera alors soit bouillant, soit froid, ce qui crée des **oscillations de température** et des **chaud-froid** inconfortables, et cela consomme plus. C’est probablement adapté aux climatiseurs réversibles américaines mais pas du tout à nos convecteurs et autres modes de chauffage. La **température extérieure** n’est même pas prise en compte, pas plus que la coupure du chauffage quand une **fenêtre est ouverte**.
 
 De plus, il n’y a pas de gestion des **plages horaires** permettant de définir les périodes de chauffe. Il faut alors faire appel à des intégrations de la communauté, ou alors pour les plus courageux tout redévelopper avec des automatisations et champs inputs (oups !!). Les 2 principales intégrations sont schedy et le scheduler. Schedy est un daemon qui permet de planifier dynamiquement des événements, mais bien que très puissant il n’a pas d’interface et son intégration est relativement complexe. Je vous proposerai d’utiliser l’autre intégration : le scheduler.  
 
@@ -55,7 +56,7 @@ L’article qui suit propose de mettre en place :
 * Une **carte lovelace** permettant de gérer le tout, dont l’affichage de la puissance en cours.
 * L'affichage de **graphiques** permettant de contrôler les paramètres
 
-J’utilise ce type de thermostat TPI pour 8 convecteur et depuis 5 ans (avec une autre box) et c’est vraiment très performant, avec une chaleur très douce de la pièce et des radiateurs, sans grandes variations.
+J’utilise ce type de thermostat TPI pour 8 convecteurs et depuis 5 ans (avec une autre box) et c’est vraiment très performant, avec une chaleur très douce de la pièce et des radiateurs, sans grandes variations.
 
 ## 3. Le thermostat TPI
 
@@ -75,12 +76,12 @@ Le calcul de la puissance en %, est assuré par la formule :
 
 > Puissance = coeff_c * *(T consigne - T intérieure) + coeff_t*   (T consigne - T extérieure) 
 
- avec un min a 0% et un max a 100%
+ avec un min à 0% et un max à 100%
 
 * **coeff_c** est un coeff qui dépend de la puissance du chauffage et de la surface.
 * **coeff_t** dépend lui de l’isolation de la pièce et des pertes thermiques.
 
-Pour une installation standard au norme on a coeff_c = 0,6 et coeff_t = 0,01
+Pour une installation standard aux normes, on a coeff_c = 0,6 et coeff_t = 0,01
 
 > Exemple : Tint = 19°C Text = 10°C et consigne a 20°C alors puissance = 70%
 
@@ -92,7 +93,7 @@ L’implémentation proposée ici est pour des convecteurs avec un fil pilote (Q
 
 Pour nos convecteurs, **la puissance nécessaire est recalculée toutes les 10 mn**, ce qui donne le temps de marche sur la période. Avec une puissance calculée de 70%, le convecteur sera alors sur ON 7mn puis sur OFF 3mn.
 
-La périodicité dépend de l’inertie : 30mn à 1 heure pour une chaudière, 10mn pour un convecteur on/off (fil pilote). Pour un poêle a granule, la puissance devrait être recalculée toutes les 30mn par exemple.
+La périodicité dépend de l’inertie : 30mn à 1 heure pour une chaudière, 10mn pour un convecteur on/off (fil pilote). Pour un poêle a granulé, la puissance devrait être recalculée toutes les 30mn par exemple.
 
 Le thermostat prend en charge la fenêtre et il coupe le radiateur quand cette dernière est ouverte.
 
@@ -104,7 +105,7 @@ https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/the
 Pour le charger dans Home Assistant, aller dans configuration, blueprints puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'url précédente.
 Ensuite une automatisation « thermostat » peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
 
-La puissance et la consigne sont dans des input number définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des sensors et la fenêtre un binary sensor. Enfin le radiateur est piloté par un switch.
+La puissance et la consigne sont dans des input_number définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des sensors et la fenêtre un binary sensor. Enfin le radiateur est piloté par un switch.
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
 
@@ -187,7 +188,7 @@ entities:
 La planification est basée sur le scheduler proposé dans HACS, composé d'un composant et une carte.
 <https://community.home-assistant.io/t/scheduler-card-custom-component/217458>
 
-Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a un icone « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la scheduler card.
+Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a un icône « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la scheduler card.
 
 ![Liste thermostats](img/listethermostats.png)
 
@@ -283,7 +284,7 @@ cards:
       navigation_path: chauffage-config
 ```
 
-**Avertissement** : sur certains devices, la carte numberbox-card peut mal fonctionner : Il faut alors cliquer au dessus et non sur les + et -. Si cela arrive, il est possible de juste supprimer la ligne *type: 'custom:numberbox-card'* pour revenir au champs input-number standard.
+**Avertissement** : sur certains devices, la carte numberbox-card peut mal fonctionner : Il faut alors cliquer au-dessus et non sur les + et -. Si cela arrive, il est possible de juste supprimer la ligne *type: 'custom:numberbox-card'* pour revenir aux champs input-number standard.
 
 ## 6. L’automatisation des modes
 
@@ -292,10 +293,10 @@ La sélection du mode doit activer ou désactiver les 3 automatisations : **ther
 La consigne est changée pour une valeur en dure si le mode n’est pas auto-eco ou auto-confort (par exemple pour le hors-gel).
 Pour ce faire, une dernière automatisation, codée également dans un blueprint, permet de prendre en charge cette sélection du mode par chaque radiateur. Elle prend en entrée le mode de chauffage désiré, la consigne et les 3 automatisations à piloter (thermostat, auto-confort et auto-eco).
 
-Le code du blueprint de gestion des modes peut être téléchargé via cette url :
+Le code du blueprint de gestion des modes peut être téléchargé via cette URL :
 <https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml>
 
-Pour le charger dans Home Assistant, comme précédemment, aller dans configuration, blueprint puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'url précédente.
+Pour le charger dans Home Assistant, comme précédemment, aller dans configuration, blueprint puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'URL précédente.
 
 Ensuite une automatisation peut être facilement créée pour chaque radiateur en cliquant sur le  bouton "créer une automatisation". Il faut alors renseigner chaque valeur en entrée du blueprint.
 
@@ -505,7 +506,7 @@ En général, pour faire simple, les températures du mode ECO sont en général
 
 ### 8﻿.1 Le micro-module de pilotage du convecteur
 
-La première chose est le pilotage du chauffage lui même (typiquement les convecteurs). Le chauffage sera mis à une température un peu haute (24°C par exemple) et le thermostat TPI va générer une succession de on-off (typiquement 1 toutes les 10 minutes), la période de chauffe étant proportionnelle à la puissance. Il est plus que déconseillé d'allumer-couper l'alimentation électrique du convecteur car cela endommagerait l'électronique du chauffage. Il est donc impératif d'utiliser le fil pilote des convecteurs, ou le système intégré d'arrêt-marche pour les autres type de chauffage.
+La première chose est le pilotage du chauffage lui même (typiquement les convecteurs). Le chauffage sera mis à une température un peu haute (24°C par exemple) et le thermostat TPI va générer une succession de on-off (typiquement 1 toutes les 10 minutes), la période de chauffe étant proportionnelle à la puissance. Il est plus que déconseillé d'allumer-couper l'alimentation électrique du convecteur car cela endommagerait l'électronique du chauffage. Il est donc impératif d'utiliser le fil pilote des convecteurs, ou le système intégré d'arrêt-marche pour les autres types de chauffage.
 
 J'utilise personnellement des qubino zwave ZMNHJD1 spécialement faits pour le fil pilote, qui sont très fiables, petits, ne chauffent pas. Et pour une chambre, il  n'y a surtout pas ce "click" bruyant à chaque démarrage que l'on trouve dans les modules bon marché. Certes un peu cher, mais c'est quand même pour du chauffage..... Il existe aussi une version à mettre dans le tableau électrique.
 Le module Fil Pilote Wifi - Heatzy est interessant et peut se trouver dans des magasins de bricolage.
@@ -514,7 +515,7 @@ Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zi
 
 ![Module et fil pilote](img/filpilote.png)
 
-La diode n'a pas à supporter une grand puissance, car l'intensité du fil pilote est faible. 
+La diode n'a pas à supporter une grande puissance, car l'intensité du fil pilote est faible. 
 
 **Attention cependant**, si vous utilisez un micro-module avec une diode, le fonctionnement du module sera inversé : le radiateur sera en confort quand le micro-module sera OFF, et arrêté quand le micro-module sera sur ON. Il faut alors modifier le code du blueprint thermostat (mettre switch_off à la place de switch_on). Ou à défaut créer un switch virtuel qui reprend l’état du micro-module et l’inverse :
 
@@ -538,7 +539,7 @@ switch:
 
 ### 8﻿.2 Pilotage d'un thermostat
 
-Il est aussi possible de faire des on-off avec un **thermostat physique** (type heatit pilotant des cables chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
+Il est aussi possible de faire des on-off avec un **thermostat physique** (type Heatit pilotant des câbles chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
 
 ```yaml
 switch:
@@ -560,14 +561,14 @@ Le même principe de template peut être utilisé si un micromodule nécessite d
 
 ### 8﻿.3 Le capteur de température
 
-Pour les capteurs de température, j'utilise et recommande des capteurs zigbee aqara ( WSDCGQ11LM) : ils sont fiables, petits et peu chers. Pour ceux qui veulent un afficheur, les capteurs Orvibo sont aussi très bien.\
+Pour les capteurs de température, j'utilise et recommande des capteurs zigbee Aqara ( WSDCGQ11LM) : ils sont fiables, petits et peu chers. Pour ceux qui veulent un afficheur, les capteurs Orvibo sont aussi très bien.\
 J'ai aussi historiquement des capteurs avec afficheurs Oregon THGR228N en 433mhz, très précis et dont les piles AAA tiennent 4 ans. Mais ils sont maintenant difficilement trouvables, ce qui est dommage.
 
 ### 8﻿.4 Le détecteur d'ouverture
 
-Pour les capteurs de fenêtre, la aussi je recommande les Xiaomi aqara ( MCCGQ11LM). 
+Pour les capteurs de fenêtre, la aussi je recommande les Xiaomi Aqara ( MCCGQ11LM). 
 
-Le thermostat TPI demande un capteur d'ouverture que l'on a pas forcément : il est possible de le simuler avec le code suivant :
+Le thermostat TPI demande un capteur d'ouverture que l'on n'a pas forcément : il est possible de le simuler avec le code suivant :
 
 ```yaml
 # Fenêtre virtuelle toujours fermée, pour chauffage
@@ -631,7 +632,7 @@ Si on utilise un micro-module connecté au fil pilote du radiateur, il ne peut m
 
 Il est cependant possible d’approximer la consommation :
 
-* mesure du temps ou le switch est ON avec un history_stats
+* mesure du temps où le switch est ON avec un history_stats
 * conversion en énergie avec un template
 
 ```yaml
@@ -666,4 +667,4 @@ Il serait possible d'avoir 2 planifications "confort". Une pour la **semaine** e
 
 Le thermostat peut être utilisé pour des **chaudières ou poëles à granul**e. Mais il serait recommandé d'augmenter la période de chauffe (plutôt 20mn) et ne pas démarrer la chaudière si la puissance est de moins de 5% et la laisser tourner si la puissance est plus de 95% pour éviter les cycles courts. Cela demande une petite adaptation du thermostat TPI.
 
-Enfin, le bon fonctionnement des thermostats implique le bon fonctionnement des sondes. Avec mon ancienne box, j’avais un **« sanity check »** toutes les 2 heures pour vérifier que les sondes rafraichissaient toujours bien leurs données. Le chauffage coute trop chère pour ne pas avoir ce type de vérification, et ne pas se contenter de la vérification de la pile des capteurs. Il faudra utiliser l'entité status (valeur "alive" si tout va bien) si l'on a des module zwave.
+Enfin, le bon fonctionnement des thermostats implique le bon fonctionnement des sondes. Avec mon ancienne box, j’avais un **« sanity check »** toutes les 2 heures pour vérifier que les sondes rafraichissaient toujours bien leurs données. Le chauffage coute trop cher pour ne pas avoir ce type de vérification, et ne pas se contenter de la vérification de la pile des capteurs. Il faudra utiliser l'entité status (valeur "alive" si tout va bien) si l'on a des modules zwave.
