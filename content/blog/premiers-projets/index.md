@@ -55,7 +55,7 @@ Cliquer sur l'entité. Sous l'onglet `paramètres`, on peut voir différents cha
 
 Sous l'onglet `Information`, sont affichés la valeur de l'entité et l'historique des valeurs.
 
-![IP Locale - création](img/ip-locale-creation.gif)
+![IP Locale - création](img/ip-locale-creation.jpg)
 
 ### Afficher l'IP local dans le dashboard.
 
@@ -67,7 +67,7 @@ Cliquer sur le bouton `+ Ajouter une carte`. Vous voyez ici toutes les cartes gr
 Sélectionner **Entité** (sans S) Supprimer l'entité existante et sélectionner votre entité Local IP, puis `enregistrer`.
 Dans le bandeau, cliquer sur `Terminer` pour sortir du mode d'édition Vous avez alors votre première carte affichant l'adresse IP de votre machine.
 
-![IP locale - dashboard](img/ip-locale-dashboard.gif)
+![IP locale - dashboard](img/ip-locale-dashboard.jpg)
 
 ## 2. Intégration Météo France
 
@@ -83,7 +83,7 @@ Toutes ces entités sont regroupées sous un **appareil** (en fait ici un servic
 
 Les entités créées sont visibles sous l'onglet `entités`.
 
-![Météo France - création](img/meteo-france-creation.gif)
+![Météo France - création](img/meteo-france-creation.jpg)
 
 ### Afficher la météo dans le dashboard
 
@@ -115,17 +115,23 @@ Cliquez dans le menu de gauche sur `Paramètres`, puis `Appareils et Services`, 
 
 Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur`. Donner le nom ***Interrupteur*** et l'icone ***mdi:toggle-switch***, puis cliquer sur `Créer`. Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icone ***mdi:lightbulb***. 2 entités de type input_boolean sont créées.
 
-![Inter et lampe - création](img/inter-lampe-automatisation.gif)
+![Inter et lampe - création](img/inter-lampe-creation.jpg)
 
 ### Affichage dans le dashboard
 
-Cliquer dans le menu de gauche sur `Aperçu`, puis mettre le dashboard en édition (3 points en haut à droite). Ajouter une carte de type `entités` (avec un S => affiche une liste d'entités), supprimer dans la liste les entités existantes, et rajouter l'entité ***Interrupteur*** précédemment créé. Ajouter ensuite une carte de type `bouton`. Préciser cette fois l'entité ***lampe***. Si vous n'avez pas encore de switch, l'éditeur visuel ne s'affiche pas et il vous faut saisir l'identifiant de la lampe dans le code YAML qui s'affiche. Cliquer sur `terminer` pour quitter le mode édition.
+Cliquer dans le menu de gauche sur `Aperçu`, puis mettre le dashboard en édition (3 points en haut à droite). Ajouter une carte de type `entités` (avec un S => affiche une liste d'entités), supprimer dans la liste les entités existantes, et rajouter l'entité ***Interrupteur*** précédemment créé. 
+
+![Inter et lampe - dashboard 1](img/inter-lampe-dashboard-1.jpg)
+
+Ajouter ensuite une carte de type `bouton`. Préciser cette fois l'entité ***lampe***. Si vous n'avez pas encore de switch, l'éditeur visuel ne s'affiche pas et il vous faut saisir l'identifiant de la lampe dans le code YAML qui s'affiche. Cliquer sur `terminer` pour quitter le mode édition.
+
+![Inter et lampe - dashboard 2](img/inter-lampe-dashboard-2.jpg)
 
 Vous pouvez maintenant jouer avec la lampe et l'interrupteur dans votre interface.
 
-![Inter et lampe - dashboard](img/inter-lampe-dashboard.gif)
-
 ## 4. Première automatisation
+
+### C﻿réation de l'automatisation
 
 Maintenant que vous avez un interrupteur et une lampe, vous pouvez vouloir **allumer la lampe quand l'interrupteur est actionné**. C'est l'objectif de cette **automatisation**.
 
@@ -137,6 +143,8 @@ Une automatisation est consituée de 3 grand blocs :
 Cliquer dans le menu de gauche `Paramètres`, puis `Automatisations et scènes`.
 Cliquer sur `créer une automatisation`, puis `commencer par une automatisation vide`
 
+![Inter et lampe - automatisation 1](img/inter-lampe-automatisation-1.jpg)
+
 Ensuite on va créer l'automatisation suivante :
 
 * **Déclencheur** : changement d'état de notre interrupteur (1)
@@ -144,15 +152,57 @@ Ensuite on va créer l'automatisation suivante :
 * **Action** : si interrupteur à on (2), alors allumer la lampe (3), autrement l'éteindre (4).
 
 (1) Cliquer sur `Ajouter un déclencheur` puis `Etat` et sélectionner l'entité ***Interrupteur***.
+
+![Inter et lampe - automatisation 2](img/inter-lampe-automatisation-2.jpg)
+
 (2) Cliquer sur `Ajouter une action` puis `Si-alors`. Cliquer sur `Ajouter une condition` , puis `Etat`, rensigner votre entité ***Interrupteur*** dans le champs `entité` et ***Activé*** dans le champs `Etat`.
+
+![Inter et lampe - automatisation 3](img/inter-lampe-automatisation-3.jpg)
+
 (3) Sous `Alors`, cliquer sur `Ajouter une action`, `appeler un service` puis `input_boolean.turn_on`, et renseigner l'entité ***Lampe***.
+
+![Inter et lampe - automatisation 4](img/inter-lampe-automatisation-4.jpg)
+
 (4) Cliquer sous `Ajouter Sinon`. Cliquer sur `Ajouter une action`, `appeler un service` puis `input_boolean.turn_off`, et renseigner l'entité ***Lampe***.
 
 Cliquer enfin sur enregistrer et donner un nom ***Gestion lampe*** à votre automatisation. Retourner sur votre dashboard et tester l'automatisation. Quand vous actionnez l'interrupteur, la lampe doit s'allumer ou s'éteindre.
 
-![Inter et lampe - automatisation](img/inter-lampe-automatisation.gif)
+![Inter et lampe - automatisation 5](img/inter-lampe-automatisation-5.jpg)
 
-Si vous devez partager votre automatisation, elle est visible en **YAML**, très compact. Retourner sous `paramètres` - `automatisations et scènes`, éditer l'automatisation en cliquant dessus et sur les 3 points à droite, cliquer sur `Modifier en YAML`. Quand vous maitriserez la syntaxe, il sera très rapide de modifier une automatisation existante via le YAML.$
+C﻿haque ligne de votre automatisation peut être **renommée** pour mieux documenter votre processus. Pour cela, cliquer sur les 3 points à droite de chaque traitement, puis cliquer sur `renommer`. 
+
+### E﻿dition en YAML
+
+Si vous devez partager votre automatisation, elle est visible en **YAML**, très compact. Retourner sous `paramètres` - `automatisations et scènes`, éditer l'automatisation en cliquant dessus et sur les 3 points à droite, cliquer sur `Modifier en YAML`. Quand vous maitriserez la syntaxe, il sera très rapide de modifier une automatisation existante via le YAML.
+
+V﻿ous devriez avoir ce code, qui sera rapide à modifier, et surtout facile à partager (sur le forum HACF par exemple).
+
+```yaml
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - input_boolean.interrupteur
+condition: []
+action:
+  - if:
+      - condition: state
+        entity_id: input_boolean.lampe
+        state: "on"
+    then:
+      - service: input_boolean.turn_off
+        data: {}
+        target:
+          entity_id: input_boolean.lampe
+    else:
+      - service: input_boolean.turn_on
+        data: {}
+        target:
+          entity_id: input_boolean.lampe
+mode: single
+```
+
+### Debugging
 
 Il est également possible d'avoir des **traces** pour vérifier comment une automatisation s'est exécutée. Pour cela, cliquer sur `traces` et naviguer sur les dates des dernières exécutions, les noeuds exécutés, etc... c'est très puissant.
 
