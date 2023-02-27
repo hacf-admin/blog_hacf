@@ -26,6 +26,8 @@ author: argonaute
 
 ## 1. Introduction à ESPHome
 
+>test quote
+
 **[ESPHome](https://esphome.io/index.html)** est un système permettant d'intégrer à **Home Assistant** les périphériques à base de micro-contrôleurs ESP (ESP32 ou ESP8266). Il permet aussi de modifier ou "flasher" des objets de certaines marques comme **SonOff** ou encore **BlitzWolf**.
 
 ESPHome était à l'origine un projet open source indépendant initié par [Otto Winter](https://github.com/ottowinter), et a été racheté en mars 2021 par **[Nabu Casa](https://www.nabucasa.com/)**, l'éditeur de Home Assistant.
