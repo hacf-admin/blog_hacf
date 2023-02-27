@@ -19,13 +19,14 @@ tags:
   - Débuter
 author: argonaute
 ---
+
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.
 Cet article vous propose de créer vos premiers projets pour commencer à appréhender les concepts, mais **sans avoir besoin d'objets connectés** à votre nouveau serveur domotique.
 
 Nous vous proposons les mini-projets suivants :
 
 1. Affichage de l'**IP locale** de votre machine.
-2. Installation de l'intégration **Meteo France** et affichage dans l'interface utilisateur.
+2. Installation de l'intégration **Météo France** et affichage dans l'interface utilisateur.
 3. Création d'une **lumière** et d'un **interrupteur** virtuel
 4. Développement de votre première **automatisation** pour les connecter
 5. **Monitoring** de votre machine
@@ -37,7 +38,7 @@ Nous vous proposons les mini-projets suivants :
 Le principe de base d'un serveur domotique est d'intégrer :
 
 * des **capteurs** ("sensor" en anglais), qui retourne des informations
-* des **actionneurs**, soit des composants que l'on peut "actionner" : lumières, volets roulants, prises connectées etc.
+* des **actionneurs**, soit des composants que l'on peut "actionner" : lumières, volets roulants, prises connectées, etc.
 
 Nous vous proposons de créer ici votre premier **capteur** qui affiche l'adresse IP locale de votre machine.
 
@@ -51,7 +52,7 @@ Cliquer sur l'entité. Sous l'onglet `paramètres`, on peut voir différents cha
 * Un **icône** de type "material design" (mdi:xxx), également modifiable.
 * Un **identifiant unique** constitué du type (sensor ici) et d'un ID modifiable constitué de mots séparés par des "_". A terme, vous devrez adopter une politique de nommage rigoureuse de ces ID.
 * Une éventuelle **pièce** où se trouve le capteur (sous `Avancé`)
-* L'**état** de l'entité (peut être cachée ou désactivée) et un alias permettant de lui mettre un nom convivial pour les assistants vocaux.
+* L'**état** de l'entité (peut être cachée ou désactivée) et un alias permettant de lui spécifier un nom convivial pour les assistants vocaux.
 
 Sous l'onglet `Information`, sont affichés la valeur de l'entité et l'historique des valeurs.
 
@@ -73,7 +74,7 @@ Dans le bandeau, cliquer sur `Terminer` pour sortir du mode d'édition Vous avez
 
 ### Création des entités
 
-Voici une autre intégration, permettant d'afficher cette fois non pas une entité mais plusieurs, relative à la météo. Elle est également utilisée par la carte standard **météo** de Home Assistant.
+Voici une autre intégration, permettant d'afficher cette fois non pas une entité mais plusieurs, relatives à la météo. Elle est également utilisée par la carte standard **météo** de Home Assistant.
 
 Cliquez sur `Paramètres` puis `Appareil et services`, et enfin `Ajouter une intégration`. Rechercher `Meteo France`, renseigner votre ville (Lyon dans l'exemple), et validez.
 
@@ -103,7 +104,7 @@ La **documentation de Home Assistant** est très bien faite (mais en anglais) : 
 
 Nous avons joué dans les 2 premiers chapitres avec des capteurs ("sensors"). Nous vous proposons ici de créer 2 "actionneurs" (sur lesquels on peut faire des actions) : un interrupteur et une lumière.
 
-Si vous avez une **clé Zigbee**, une **lumière connectée** et un **interrupteur connecté**, une intégration comme **ZHA** (celle par défaut de Home Assistant) ou **zigbee2mqtt** (très puissante et populaire) vous permettront de **pairer** vos objets. Vous aurez alors dans `Appareils` vos 2 objets, et pour chaque objet des entités serons créées. Ce sera à minima une entité de type light pour la lampe et de type switch pour l'interrupteur.
+Si vous avez une **clé Zigbee**, une **lumière connectée** et un **interrupteur connecté**, une intégration comme **ZHA** (celle par défaut de Home Assistant) ou **zigbee2mqtt** (très puissante et populaire) vous permettront de **pairer** vos objets. Vous aurez alors dans `Appareils` vos 2 objets, et pour chaque objet des entités serons créées. Ce sera a minima une entité de type light pour la lampe et de type switch pour l'interrupteur.
 
 Nous considérons dans cet article que **vous n'avez pas encore ce matériel.** Nous allons simuler la lampe et l'interrupteur par des entités de type **input_boolean**.
 
@@ -113,7 +114,7 @@ Cliquez dans le menu de gauche sur `Paramètres`, puis `Appareils et Services`, 
 
 > Les entrées sont des entités utiles pour l'interface, mais aussi des entités de calculs, de regroupement d'objets. Les entrées sont aussi utilisées comme variable permettant de stocker une donnée.
 
-Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur`. Donner le nom ***Interrupteur*** et l'icone ***mdi:toggle-switch***, puis cliquer sur `Créer`. Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icone ***mdi:lightbulb***. 2 entités de type input_boolean sont créées.
+Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur`. Donner le nom ***Interrupteur*** et l'icône ***mdi:toggle-switch***, puis cliquer sur `Créer`. Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icône ***mdi:lightbulb***. 2 entités de type input_boolean sont créées.
 
 ![Inter et lampe - création](img/inter-lampe-creation.jpg)
 
@@ -135,9 +136,9 @@ Vous pouvez maintenant jouer avec la lampe et l'interrupteur dans votre interfac
 
 Maintenant que vous avez un interrupteur et une lampe, vous pouvez vouloir **allumer la lampe quand l'interrupteur est actionné**. C'est l'objectif de cette **automatisation**.
 
-Une automatisation est consituée de 3 grand blocs : 
-**\- Déclencheur(s)** : les événements qui vont déclencher l'automatisation. Ce peut être un changement d'état d'une entité, une heure, le levé du soleil, une expression qui devient vrai... 
-**\- Condition(s) :** une ou plusieurs conditions qui doivent être vrai pour passer à la suite et exécuter les actions.
+Une automatisation est constituée de 3 grands blocs : 
+**\- Déclencheur(s)** : les événements qui vont déclencher l'automatisation. Ce peut être un changement d'état d'une entité, une heure, le levé du soleil, une expression qui devient vraie... 
+**\- Condition(s) :** une ou plusieurs conditions qui doivent être vraies pour passer à la suite et exécuter les actions.
 **\- Actions :** les actions que l'on va exécuter.
 
 Cliquer dans le menu de gauche `Paramètres`, puis `Automatisations et scènes`.
@@ -155,7 +156,7 @@ Ensuite on va créer l'automatisation suivante :
 
 ![Inter et lampe - automatisation 2](img/inter-lampe-automatisation-2.jpg)
 
-(2) Cliquer sur `Ajouter une action` puis `Si-alors`. Cliquer sur `Ajouter une condition` , puis `Etat`, rensigner votre entité ***Interrupteur*** dans le champs `entité` et ***Activé*** dans le champs `Etat`.
+(2) Cliquer sur `Ajouter une action` puis `Si-alors`. Cliquer sur `Ajouter une condition` , puis `Etat`, renseigner votre entité ***Interrupteur*** dans le champ `entité` et ***Activé*** dans le champ `Etat`.
 
 ![Inter et lampe - automatisation 3](img/inter-lampe-automatisation-3.jpg)
 
@@ -208,15 +209,15 @@ Il est également possible d'avoir des **traces** pour vérifier comment une aut
 
 ![Automatisations - debugging](img/automatisation-debugging.jpg)
 
-L﻿es pouvez aussi voir une représentation graphique des dernières exécutions. Le graphique montre quel noeud a été exécuté (quelle a été le résultat d'un test). Si vous cliquez sur un noeud, vous pouvez enfin voir le traitement fait. 
+Vous pouvez aussi voir une **représentation graphique** des dernières exécutions. Le graphique montre quel nœud a été exécuté (quelle a été le résultat d'un test). Si vous cliquez sur un nœud, vous pouvez enfin voir le traitement fait. 
 
 
 
 Enfin, il est possible de **forcer une exécution**. Le trigger est by-passé, et l'automatisation vérifie les conditions, puis exécute les actions. Pour déclencher l'automatisation et la tester, cliquer sur `exécuter` en haut à droite.
 
-Voila, **vous avez développé votre première automatisation**. Pour aller plus loins, n'hésitez pas à supprimer le trigger sur l'interrupteur, pour le remplacer sur une trigger sur le soleil (levé ou coucher du soleil), sur une heure précise (à telle heure), ou sur un modèle de temps (toutes les x minutes par exemple)...
+Voilà, **vous avez développé votre première automatisation**. Pour aller plus loin, n'hésitez pas à supprimer le trigger sur l'interrupteur, pour le remplacer sur une trigger sur le soleil (levé ou coucher du soleil), sur une heure précise (à telle heure), ou sur un modèle de temps (toutes les x minutes par exemple)...
 
-Vous pouvez aussi essayer de rajouter dans votre automatisation une condition (par exemple sur un interval de temps) qui devra être vérifiée avant de passer à l'action.
+Vous pouvez aussi essayer de rajouter dans votre automatisation une condition (par exemple sur un intervalle de temps) qui devra être vérifiée avant de passer à l'action.
 
 > **Ne confonder pas déclencheur et condition, qui est une erreur courante quand on débute.**
 
@@ -227,9 +228,9 @@ Home Assistant dispose d'une interface graphique qui permet de faire un maximum 
 
 Un prérequis est que vous avez installé votre machine avec un des modules complémentaires suivants, vous permettant de **voir et éditer les fichiers de Home Assistant**. A savoir :
 
-* **Samba** : permet d'accèder aux fichiers de votre machine depuis un gestionnaire de fichiers externe.
+* **Samba** : permet d'accéder aux fichiers de votre machine depuis un gestionnaire de fichiers externe.
 * **File Editor** : permet d'éditer un fichier depuis l'interface Home Assistant
-* **Visual Code** : permet aussi d'éditer un fichier depuis l'interface Home Assistant. Un outils plébiscité par les développeurs.
+* **Visual Code** : permet aussi d'éditer un fichier depuis l'interface Home Assistant. Un outil plébiscité par les développeurs.
 
 Editer le fichier **configuration.yaml** de Home Assistant et recopier le code suivant :
 
@@ -251,7 +252,7 @@ Puis cliquer sur le menu de gauche sous Home Assistant, `Outils de Développemen
 
 Vous devez ensuite cliquer sur le bouton `Redémarrer` pour redémarrer votre système.
 
-Toujours dans `outils de développement`, cliquer sur l'onglet `Etats` : c'est l'occasion d'utiliser cet outil pour retrouver les entités créer. Saisir par exemple **Processor** dans le champs de filtre pour retrouver vos entité et voir leurs valeurs.
+Toujours dans `outils de développement`, cliquer sur l'onglet `Etats` : c'est l'occasion d'utiliser cet outil pour retrouver les entités créer. Saisir par exemple **Processor** dans le champ de filtre pour retrouver vos entités et voir leurs valeurs.
 
 ![Monitoring - états](img/monitoring-etats.jpg)
 
@@ -264,10 +265,10 @@ Créer sous la nouvelle vue de cet onglet une carte `Entités` (vous devriez sav
 
 ![Monitoring - dashboard](img/monitoring-interface.jpg)
 
-Vous pouvez aussi vous amuser à utiliser une autre carte appelé Coup d'oeil, qui présente les résultats en ligne. Il est préférable de personnaliser les noms et mettre des noms courts.
+Vous pouvez aussi vous amuser à utiliser une autre carte appelé Coup d'œil, qui présente les résultats en ligne. Il est préférable de personnaliser les noms et mettre des noms courts.
 
 ## 6. Pour aller plus loins
 
-Voila, ce tuto touche à sa fin. Vous avez probablement des **objets connectés que votre système a automatiquement découvert**. Retourner sous `paramétres`, `Paramétres et Services` et `Intégrations` : ils apparaitront ici. Essayez de les configurer (si vous ne l'avez pas déja fait car vous êtes très curieux... sic ) .
+Voilà, ce tuto touche à sa fin. Vous avez probablement des **objets connectés que votre système a automatiquement découverts**. Retourner sous `paramétres`, `Paramétres et Services` et `Intégrations` : ils apparaitront ici. Essayez de les configurer (si vous ne l'avez pas déjà fait car vous êtes très curieux... sic ) .
 
-Enfin, pour vraiment bâtir un système domotique, il vous faut des objects connectés et un moyen pour leur parler. Si vous n'en avez pas, l'idéal est d'acquérir une clé USB permettant d'utiliser le protocle **Zigbee** : une clé **Sonoff**, **Conbee II** ou mieux la nouvelle clé USB **Matter Sky Connect**. Le choix d'objet connecté zigbee est immense.
+Enfin, pour vraiment bâtir un système domotique, il vous faut des objets connectés et un moyen pour leur parler. Si vous n'en avez pas, l'idéal est d'acquérir une clé USB permettant d'utiliser le protocole **Zigbee** : une clé **Sonoff**, **Conbee II** ou mieux la nouvelle clé USB **Matter Sky Connect**. Le choix d'objet connecté zigbee est immense.
