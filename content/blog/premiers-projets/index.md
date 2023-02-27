@@ -267,7 +267,7 @@ Créer sous la nouvelle vue de cet onglet une carte `Entités` (vous devriez sav
 
 Vous pouvez aussi vous amuser à utiliser une autre carte appelé Coup d'œil, qui présente les résultats en ligne. Il est préférable de personnaliser les noms et mettre des noms courts.
 
-## 6. Pour aller plus loins
+## 6. Pour aller plus loin
 
 Voilà, ce tuto touche à sa fin. Vous avez probablement des **objets connectés que votre système a automatiquement découverts**. Retourner sous `paramétres`, `Paramétres et Services` et `Intégrations` : ils apparaitront ici. Essayez de les configurer (si vous ne l'avez pas déjà fait car vous êtes très curieux... sic ) .
 
