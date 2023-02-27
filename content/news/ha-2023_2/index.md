@@ -35,7 +35,9 @@ author: argonaute
 
 *PS : Juste un rappel que la Saint Valentin approche. Assurez-vous de partager l'amour! ❤️*
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#meet-assist)Rendez-vous : assistez !
+![](img/ha-2023.2.png)
+
+## Rendez-vous : assistez !
 
 C'est [l'année de la voix de Home Assistant](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) et notre objectif est de permettre aux utilisateurs de contrôler Home Assistant dans leur propre langue. En collaboration avec la communauté Home Assistant, nous avons travaillé d'arrache-pied pour en jeter les bases.
 
