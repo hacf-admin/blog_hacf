@@ -1,6 +1,6 @@
 ---
 folder: Ha-2023_2
-title: "Home Assistant 2023.2 : Comment puis-je aider ?"
+title: "Home Assistant Core 2023.2 : Comment puis-je aider ?"
 type: news
 visibleInCMS: true
 draft: false
@@ -9,16 +9,15 @@ lastmod: 2023-02-27
 images: img/ha-2023.2.png
 description: >
   Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant
-  est sortie ce 1/2/2023.
+  Core est sortie ce 1/2/2023.
 
-  Voici une traduction des release notes publiées par Nabu Casa.
+  Traduction par HACF des release notes publiées par Nabu Casa.
 tags:
-  - release-ha
+  - release
+  - traduction
 author: argonaute
 ---
-# 2023.2 : Comment puis-je aider ?
-
-> ﻿** Cet article est une traduction de  [2023.2: How can I Assist?](https://www.home-assistant.io/blog/2023/02/01/release-20232/) ** publié sur le site de Home Assistant
+> ﻿ **Cet article est une traduction de  [2023.2: How can I Assist?](https://www.home-assistant.io/blog/2023/02/01/release-20232/)**  publié sur le site de Home Assistant
 
 **Assistant domestique Core 2023.2 !** 🎉
 
@@ -36,7 +35,7 @@ author: argonaute
 
 *PS : Juste un rappel que la Saint Valentin approche. Assurez-vous de partager l'amour! ❤️*
 
-![Play: Fête de sortie de Home Assistant 2023.2](https://i.ytimg.com/vi/S3XRVsqRX9k/hqdefault.jpg)
+![Play: Fête de sortie de Home Assistant 2023.2]()
 
 ## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#meet-assist)Rendez-vous : assistez !
 
