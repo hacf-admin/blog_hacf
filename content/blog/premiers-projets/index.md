@@ -115,7 +115,7 @@ Cliquez dans le menu de gauche sur `Paramètres`, puis `Appareils et Services`, 
 
 Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur`. Donner le nom ***Interrupteur*** et l'icone ***mdi:toggle-switch***, puis cliquer sur `Créer`. Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icone ***mdi:lightbulb***. 2 entités de type input_boolean sont créées.
 
-![Inter et lampe - création](img/inter-lampe-creation.gif)
+![Inter et lampe - création](img/inter-lampe-automatisation.gif)
 
 ### Affichage dans le dashboard
 
