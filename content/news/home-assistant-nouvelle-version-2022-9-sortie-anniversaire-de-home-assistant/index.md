@@ -1,15 +1,14 @@
 ---
+folder: HA-2022-9
 title: "Home Assistant nouvelle version 2022.9 : Sortie anniversaire de Home
   Assistant!"
-#draft: true
 type: news
 visibleInCMS: true
+draft: true
 date: 2022-09-29
 lastmod: 2022-09-29
-image: img/ha2022_9.png
 description: "Une nouvelle version de Home Assistant est sortie pour ses 9 ans.
   Nous vous proposons la traduction du sujet original. "
-socialshare: true
 tags:
   - release
   - traduction
@@ -17,6 +16,8 @@ author:
   - McFly
 url_hacf: https://forum.hacf.fr/t/home-assistant-nouvelle-version-2022-9-x-sortie-anniversaire-de-home-assistant/15341
 url_haoff: https://www.home-assistant.io/blog/2022/09/07/release-20229/
+socialshare: true
+image: img/ha2022_9.png
 ---
 > Traduction du [sujet officiel](https://www.home-assistant.io/blog/2022/09/07/release-20229/) 
 
