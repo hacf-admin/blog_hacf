@@ -37,6 +37,8 @@ Home Assistant intègre un système de notification, mais qui a ses limites. Il 
 
 Il est également très intéressant de pouvoir **répondre à ces notifications** pour déclencher une ou des actions via des boutons sous le message. L'exemple ci-dessous est la demande de fermeture du volet de la piscine quant l'air est plus froid que l'eau (cela permet de garder l'eau chaude et éviter l'évaporation).
 
+![Boutons commandes](img/boutons-commande.png)
+
 Nous vous proposons ici un tuto complet pour implémenter simplement **telegram** avec les **automatisations** de HA.
 
 La première chose sera de créer dans Telegram son "bot" Maison et obtenir un token et un ID. Ensuite dans HA : on connectera Telegram en utilisant l'**intégration Telegram**. Puis on créera une **notification** que l'on utilisera de manière standard dans nos automatisations et scripts.
@@ -51,8 +53,12 @@ Rendez-vous sur [Telegram sur votre Navigateur](https://web.telegram.org/) ou vi
 
 1. **Rechercher `@botfather` dans le champ de recherche des contacts puis cliquer dessus.**
 2. **Lancer le BotFather Telegram et cliquer sur `Démarrer` (ou start si en anglais).**
+
+   ![Lancer BotFather](img/lancer-botfather.jpg)
 3. **Une liste d’options vous sont proposées. Cliquer sur `/newbot`**
 4. **Choisir un nom pour votre bot puis un nom d’utilisateur (HACF_bot dans l'exemple)).**
+
+   ![Lancer BotFather](img/lancer-botfather.jpg)
 
 Votre token apparaît, **gardez le bien précieusement**.
 
