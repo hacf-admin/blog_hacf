@@ -20,6 +20,7 @@ tags:
   - Concepts
 author: argonaute
 ---
+
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
 C'est ce que nous proposons dans cet article.
 
@@ -30,7 +31,7 @@ Les développements sont particulièrement dynamiques, et le taux d'adoption de 
 
 Véritable **couteau suisse**, Home Assistant permet de connecter puis contrôler un nombre des plus importants de capteurs et systèmes en tout genre pour la maison, via l'intégration de quasi tous les principaux protocoles domotiques, en particulier [Zigbee](https://fr.wikipedia.org/wiki/ZigBee) et [Zwave](https://fr.wikipedia.org/wiki/Z-Wave), mais aussi plus récemment Matter.
 
-Beaucoup de gens viennent à Home Assistant car ils sont frustrés par l'**interface utilisateur** (UI) de leur système domotique actuel. Et c'est vrai qu'ils sont beaux les dashboards de HA, et permettent de donner libre court à sa créativité.
+Beaucoup de gens viennent à Home Assistant car ils sont frustrés par l'**interface utilisateur** (UI) de leur système domotique actuel. Et c'est vrai qu'ils sont beaux les dashboards de HA, et permettent de donner libre cours à sa créativité.
 
 Enfin, le succès de HA vient aussi du fait qu'il supporte beaucoup de machines hôtes et de systèmes d'exploitation. Il est très paramétrable et permet d'ajouter un nombre incroyable de composants complémentaires, avec environ 1 700 plugins disponibles.
 
@@ -48,7 +49,7 @@ Et chaque **mercredi du mois**, Nabu Casa annonce immanquablement une nouvelle v
 Et ce sont plus de **2 000 développeurs** à travers le monde participent aux développements via github, proposent des améliorations, de nouveaux add-ons ou intégrations.
 **Une partie de ces développements sont validés par Nabu Casa**, deviennent officiels. Ils sont intégrés au cœur de Home Assistant (HA core), soit disponible à travers un magasin (store) intégré d'add-ons ou intégrations certifiées. 
 
-Le store officiel est déjà très riche, mais ce n'est pas tout : un deuxième magasin, **[HACF](https://hacs.xyz/)** (**Home Assistant Community Store**) peut être rajouté en option et permet d'accéder gratuitement à encore plus d'extensions et de composants graphiques servants enrichir l'interface utilisateur.
+Le store officiel est déjà très riche, mais ce n'est pas tout : un deuxième magasin, **[HACS](https://hacs.xyz/)** (**Home Assistant Community Store**) peut être rajouté en option et permet d'accéder gratuitement à encore plus d'extensions et de composants graphiques servants enrichir l'interface utilisateur.
 
 Et comment se rémunère Nabu Casa nous direz-vous ? Et bien en offrant en échange d'une souscription de 75€ par an, une solution **sécure** et **simple** pour connecter à distance son instance locale Home Assistant, et intégrer des services cloud.
 Mais Home Assistant reste **gratuit**, et cette souscription est **optionnelle**. Il existe d'autres manières d'accéder gratuitement à son serveur domotique (DuckDNS, proxy, VPN, etc).
@@ -57,14 +58,14 @@ Mais Home Assistant reste **gratuit**, et cette souscription est **optionnelle**
 
 La plateforme de prédilection est **Raspberry PI**, idéalement le **PI4** avec 2Go de mémoire, voir 4Go. Mais HA tourne sous un **PI3**.
 Il est possible de faire tourner sur une carte SD, mais pour éviter sur le long terme la corruption de la carte (oups) il est recommandé de d'adopter un disque SSD.
-Un raspberry PI chauffe toujours un peu et il faudra idéamement prévoir un boitier type [Argon One M.2](https://www.amazon.fr/Argon-Bo%C3%AEtier-Raspberry-uniquement-Compatible/dp/B08MJ3CSW7) ou [Coolcase](https://www.amazon.fr/Cooler-Master-Case-programmable-dissipateur/dp/B08M6DGQ3R). 
+Un raspberry PI chauffe toujours un peu et il faudra idéalement prévoir un boitier type [Argon One M.2](https://www.amazon.fr/Argon-Bo%C3%AEtier-Raspberry-uniquement-Compatible/dp/B08MJ3CSW7) ou [Coolcase](https://www.amazon.fr/Cooler-Master-Case-programmable-dissipateur/dp/B08M6DGQ3R). 
 
 Une autre excellente plateforme est l'[Odroid N2+](https://www.kubii.fr/nano-ordinateurs/2596-carte-odroid-n2-4gb-kubii-3272496297630.html). Il est à refroidissement passif, plus puissant que le raspberry , avec SSD intégré, boitier, 4Go. Vu le prix actuel des Raspberry, l'Odroid est un excellent choix. 
 Nabu Casa propose par ailleurs un système intégré clé en main à base d'Odroid appelée [Home Assistant Blue](https://www.home-assistant.io/blue/) 
 
 Nabu Casa développe aussi (crowdfunding) un autre système à base de raspberry micro-compute, stockage et protocole Zigbee intégré : Home [Assistant Yellow](https://www.home-assistant.io/blog/2021/09/13/home-assistant-yellow/). Il devrait sortir prochainement : à suivre de près.
 
-D'autres ont peut-être déjà une **plateformex86-64** pour d'autres usages et préfèreront la puissance d'un **PC** (mini-PC type type Intel NUC par exemple).\
+D'autres ont peut-être déjà une **plateforme x86-64** pour d'autres usages et préfèreront la puissance d'un **PC** (mini-PC type type Intel NUC par exemple).\
 Mais Home Assistant s'installe aussi sur un **NAS Synology**, sur Mac, sur plateforme Asus et même une [box Free Delta](https://www.domo-blog.fr/comment-installer-domotique-home-assistant-sur-freebox-delta/).
 
 ## L'architecture logicielle
@@ -73,7 +74,7 @@ Il y a souvent confusion entre différents termes : HA OS, HA core, add-on, inte
 
 Essayons de comprendre un peu mieux l'architecture logicielle de Home Assistant, avec le schéma qui suit.
 
-![enter image description here](img/architecture.jpg)
+![Architecture](img/architecture.jpg)
 
 Home Assistant propose une configuration **clé en main** qui permet une installation rapide et simplifiée : une image est téléchargée, déployée sur son disque ou sa carte SD, puis Home Assistant pourra démarrer.
 
@@ -91,10 +92,10 @@ Mais il est possible d'utiliser des machines ayant un autre système d'exploitat
 **HA Core (Home Assistant Core)** est le programme de base de Home Assistant. 
 Que l'on utilise l'installation clé en main avec HA OS ou pas, il est bien entendu présent. 
 
-Une notion très importante est celle d'**integration**. Il s'agit de bibliothèques logicielles utilisées par Home Assistant, tournant dans l'instance HA core. Encore une fois, ce sont des **bibliothèques** de HA Core et pas des programmes tiers.
+Une notion très importante est celle d'**intégration**. Il s'agit de bibliothèques logicielles utilisées par Home Assistant, tournant dans l'instance HA core. Encore une fois, ce sont des **bibliothèques** de HA Core et pas des programmes tiers.
 
 Certaines sont directement installées par défaut avec Home Assistant.
-D'autres seront installées en se connectant au catalogue d'intégration. La liste des intégrations officielles est ici : [integrations Home Assistant](https://www.home-assistant.io/integrations/)
+D'autres seront installées en se connectant au catalogue d'intégration. La liste des intégrations officielles est ici : [intégrations Home Assistant](https://www.home-assistant.io/integrations/)
 
 Pour voir les intégrations : `Paramètres` `Appareil et Service` onglet `intégrations`.
 
@@ -109,20 +110,20 @@ Citons quelques exemples d'add-ons particulièrement recommandés :
 * **File Editor** : permet d'éditer les fichiers de configuration
 * **Samba** : permet de voir les fichiers de HA dans le
   gestionnaire de fichier d'une machine type PC
-* **Terminal SSH** : permet d'accèder à une console avec ligne de commandes
+* **Terminal SSH** : permet d'accéder à une console avec ligne de commandes
 
-D'autres add-ons sont accompagnés d'une intégration qui s'installera dans HA core. L'integration une bibliothèque de code permettant de dialoguer avec l'add-on. Elle permet d'exposer dans HA des services et des entités.
+D'autres add-ons sont accompagnés d'une intégration qui s'installera dans HA core. L'intégration est une bibliothèque de code permettant de dialoguer avec l'add-on. Elle permet d'exposer dans HA des services et des entités.
 Exemple :
 
-* **ZWaveJS** :  permet de connecter une clé USB pour implémenter le protocole  ZWave. L'add-on vient avec une integration appelée aussi ZWaveJS.
+* **ZWaveJS** :  permet de connecter une clé USB pour implémenter le protocole  ZWave. L'add-on vient avec une intégration appelée aussi ZWaveJS.
 
 &gt; Après cette lecture, ne confondez plus ADD-ONS (ou "modules complémentaires") et INTEGRATION.
 
 ### Gestionnaire de conteneurs
 
-La solution Home Assistant est composée de différents programmes, comme nous l'avons vu : Le premier programme est bien entendu **HA Core**, puis différents programmes complémentaire appelés **add-ons** (ou encore "modules complémentaires" dans l'interface en français).
+La solution Home Assistant est composée de différents programmes, comme nous l'avons vu : Le premier programme est bien entendu **HA Core**, puis différents programmes complémentaires appelés **add-ons** (ou encore "modules complémentaires" dans l'interface en français).
 
-Certes il est possible de faire tourner ces programmes directement sous le système d'exploitation, mais sur un serveur, il est préférable pour des questions de sécurité et maintenance de les faire tourner dans des **conteneurs** .  Il faut alors un **gestionnaire de conteneurs**.
+Certes il est possible de faire tourner ces programmes directement sous le système d'exploitation, mais sur un serveur, il est préférable pour des questions de sécurité et maintenance de les faire tourner dans des **conteneurs**.  Il faut alors un **gestionnaire de conteneurs**.
 
 * **Avec l'installation clé en main et HA OS,** 'un gestionnaire appelé **Supervisor** est automatiquement installé. Le logiciel permet de configurer et orchestrer les différents programmes (HA Core et les add-ons), mais aussi certaines fonctions de la machine (reboot par exemple). Depuis les dernières versions de HA, les menus du supervisor sont noyés dans le menu de paramètres de HA, pour offrir une logique applicative cohérente.
 * **Avec une installation manuelle**, il est possible de choisir son propre gestionnaire de conteneurs, le plus courant étant **[Docker](https://www.docker.com/)**. L'installation à la main du supervisor reste aussi possible.
@@ -134,7 +135,7 @@ Nous avons vu les différents composants logiciels de Home Assistant.
 Résumons ici les différents modes d'installation :
 
 * **Home Assistant Operating System**  : installation clé en main avec le système d'exploitation maison HA OS. Installation conseillée pour les débutants (mais pas que).
-* **Home Assistant Containers** : installation d'un OS spécifique (debian par exemple) et d'un gestionaire de conteneurs spécifique (docker par exemple).
+* **Home Assistant Containers** : installation d'un OS spécifique (debian par exemple) et d'un gestionnaire de conteneurs spécifique (docker par exemple).
 * **Home Assistant Supervised** : installation d'un OS spécifique (debian par exemple) mais du supervisor.
 * **Home Assistant Core** : installation de Home Assistant directement sur la machine, dans un environnement python.
   &gt; Les 2 dernières méthodes ne sont pas les plus conseillées.
@@ -143,15 +144,15 @@ Résumons ici les différents modes d'installation :
 
 Le schéma suivant résume le principe de fonctionnement de base de Home Assistant. Nous avons pris comme exemple une prise connectée, avec l'intégration ZHA (Zigbee Home Assistant) installée.
 
-![enter image description here](img/fonctionnement.jpg)
+![Fonctionnement](img/fonctionnement.jpg)
 
-### Théorie sur le fonctionnement du coeur du système
+### Théorie sur le fonctionnement du cœur du système
 
-Intéressons nous sur le schéma à Home Assistant Core, le coeur de Home Assistant.
+Intéressons-nous sur le schéma à Home Assistant Core, le cœur de Home Assistant.
 
 Certes, nous n'entrerons pas dans le détail, mais il faut comprendre que le moteur de HA fonctionne autour d'un composant central qui s'appel le **bus d'événement.** Un événement est par exemple une action à faire, un événement temporel ou un changement d'état.
 
-Le bus reçoit du système des événements et il est capable de les transmettre aux composants qui les écoutent. Peux ceux qui connaissent MQTT, c'est le même principe dit de "publish/subscribe".
+Le bus reçoit du système des événements et il est capable de les transmettre aux composants qui les écoutent. Si vous connaissez MQTT, c'est le même principe dit de "publish/subscribe".
 
 Le bus d'événement est couplé à u﻿ne **machine à état fini**, qui connait les règles à appliquer. Elle est capable de recevoir des événements de changements d'états et d'appliquer des règles pour définir de nouveaux états. Et tout changement d'état génère à nouveau un événement sur le bus.
 
@@ -161,7 +162,7 @@ E﻿nfin, Home Assistant a un **registre des services**. Un appel de service de 
 
 Nous avions précédemment parlé des **intégrations** : des bibliothèques logicielles ajoutées quand de nouvelles fonctionnalités sont rajoutées. Home assistant core dialogue avec les différentes intégrations installées sur notre système domotique. 
 
-Sur le schéma est représentée l'intégration ZHA (Zigbee for Home Assistant) qui, quand elle est rajoutée à Home assistant, permet de dialoguer avec des composants zigbee, et par exemple une prise connectée.
+L'intégration ZHA (Zigbee for Home Assistant) est présente sur le schéma. Elle permet de dialoguer avec des composants zigbee, et par exemple une prise connectée.
 
 ### Les composants de base à connaitre
 
@@ -171,13 +172,13 @@ Une intégration (ZHA dans notre exemple) crée ce qui nous permettra d'interagi
 * Des **services**
 * Des **appareils**
 
-Ainsi, pour notre prise connectée, nous aurons un appareil appelé "prise connectée", des "entités" supportants les informations comme l'état de l'interrupteur ou la consommation de la prise, et enfin des services pour piloter l'arrêt et la marche. 
+Ainsi, pour notre prise connectée, nous aurons un appareil appelé "prise connectée", des "entités" supportant les informations comme l'état de l'interrupteur ou la consommation de la prise, et enfin des services pour piloter l'arrêt et la marche. 
 
 > La compréhension des entités, services et appareils est primordiale
 > pour maîtriser Home Assistant. Nous les détaillons dans les chapitres
 > suivants.
 
-A noter que l'utilisation direct des **événements** dans Home Assistant est également possible, mais cependant pas usuelle. Ce sera utilisé dans quelques cas particuliers comme la demande de redémarrage de Home Assistant, ou une détection d'une personne sur une caméra.
+A noter que l'utilisation directe des **événements** dans Home Assistant est également possible, mais cependant pas usuelle. Ce sera utilisé dans quelques cas particuliers comme la demande de redémarrage de Home Assistant, ou une détection d'une personne sur une caméra.
 
 ### Les entités
 
@@ -194,7 +195,7 @@ Nous verrons plus loin que ces entités permettront de construire notre interfac
 Chaque entité à un libellé, un ID et un icône. 
 Le libellé peut être défini de manière à être convivial dans l'interface utilisateur. Idem pour l'icône.
 
-Chaque entité appartient à un **type** (par exemple **switch** ou **sensor**) , non modifiable.
+Chaque entité appartient à un **type** (par exemple **switch** ou **sensor**), non modifiable.
 
 L'ID est constitué de son **type**, un point puis un nom modifiable (sans espace ou point).
 
@@ -248,8 +249,8 @@ A noter que toutes les entités ne sont de loin pas regroupées au sein d'un app
 Rappelez-vous, les **intégrations** sont des **bibliothèques logicielles**. A ne pas confondre avec les **add-ons** (modules complémentaires) qui sont de programmes tiers.
 Elles permettent entre de créer de nouvelles entités ou appareils, et exposent des services liés. Par exemple une intégration ZHA (Zigbee Home Assistant) permet de créer les entités et les appareils zigbee.
 
-Aller dans `Paramètres` `Appareils et services` `Intégrations` pour voir les intégrations installées, et eventuellement les appareils et entités créés par cette intégration.
-De la, vous pouvez aussi installer de nouvelles intégrations.
+Aller dans `Paramètres` `Appareils et services` `Intégrations` pour voir les intégrations installées, et éventuellement les appareils et entités créés par cette intégration.
+De là, vous pouvez aussi installer de nouvelles intégrations.
 
 Il faut savoir que Home Assistant possède pas mal d'intégrations pré-installées en son cœur. Historiquement, les intégrations et leurs entités devaient être déclarées dans un fichier de configuration (**configuration.yaml**), dans un langage appelé YAML. Nous reviendrons sur cette syntaxe.
 Si c'est toujours le cas pour quelques intégrations, la tendance est de pouvoir tout faire depuis l'interface graphique.
@@ -258,7 +259,7 @@ Si c'est toujours le cas pour quelques intégrations, la tendance est de pouvoir
 
 Si vous avez navigué sur `paramètres` `appareils et services`, vous avez surement repéré le menu **entrées** (input) dans le dernier onglet.
 
-Il s'agit d'entités simples permettant de stocker des valeurs, mais aussi de disposer de composant graphiques comme des champs pouvant être utilisés dans l'interface.
+Il s'agit d'entités simples permettant de stocker des valeurs, mais aussi de disposer de composants graphiques comme des champs pouvant être utilisés dans l'interface.
 
 Exemple d'entités de stockage ou affichage : 
 
@@ -274,7 +275,7 @@ Exemple de helpers :
 * groupe : regroupe des entités, par exemple des lumières à gérer ensemble
 * planification : permet de gérer un calendrier.
 
-&gt; Amusez vous à créer une ou deux entrées, et à les utiliser dans l'interface graphique.
+&gt; Amusez-vous à créer une ou deux entrées, et à les utiliser dans l'interface graphique.
 
 ## L'interface utilisateur : lovelace
 
@@ -282,7 +283,7 @@ Exemple de helpers :
 
 Par défaut, vous avez accès à un premier **tableau de bord** (**dashboard**) en cliquant sous aperçu, dans le menu de gauche.
 Ensuite, vous pouvez créer des **vues**, qui sont des onglets de son tableau de bord. La création d'une vue se fait en cliquant sur le + de la barre d'onglets.
-Il est aussi possible de créer des sous-vue d'une vue existante.
+Il est aussi possible de créer des sous-vues d'une vue existante.
 
 Dans chacune de ces vues, on peut construire une interface en rajoutant des **cartes**. Pour cela, cliquer sur modifier en haut à droite du tableau de bord.
 Une fois l'interface créée, sauvez.
@@ -355,7 +356,7 @@ Quelques spécificités des automatisations HA :
 #### Node-Red
 
 Node-Red n'est pas spécifique à Home Assistant, et est utilisé par d'autres solutions et pas que domotiques. Il faut donc installer un add-on complémentaire.
-Le principe est de créer un flux d'actions et de conditions grace à un éditeur visuel.
+Le principe est de créer un flux d'actions et de conditions grâce à un éditeur visuel.
 
 ![Node-red](img/node-red.jpg)
 
@@ -453,7 +454,7 @@ Pour accéder à ce magasin, il faut installer un add-on complémentaire HACS. L
 
 ![HACS](img/hacs.jpg)
 
-De la, vous aurez accès à 2 type de composants :
+De là, vous aurez accès à 2 type de composants :
 
 * Des **intégrations**
 * Des **cartes** pouvant être utilisées dans votre **interface** graphique.
@@ -479,7 +480,7 @@ Quelques fonctions importantes :
 * **Général** : bien régler entre autre le fuseau horaire et les formats
 * **Mises à jour** : composants à mettre à jour
 * **Sauvegardes** : faire **régulièrement** une sauvegarde complète. Cela crée un fichier compressé "tar" qui se trouve dans le sous-répertoire backup. Vous pourrez grâce à lui faire un restore. Il est aussi conseillé de recopier la sauvegarde sur une autre machine (il faut avoir l'add-on Samba installé pour voir les fichiers dans HA).
-* **Corrections** : Home Assistant peut vous notifier de dysfonctionnement (composant obsolète par exemple) et comment y rémédier.
+* **Corrections** : Home Assistant peut vous notifier de dysfonctionnement (composant obsolète par exemple) et comment y remédier.
 * **Journaux** : ce sont les logs qui permettent d'identifier les erreurs.
 
 Enfin, vous pouvez gérer les droits de vos **utilisateurs** en cliquant `Paramètres` `Utilisateurs`. 
@@ -493,13 +494,11 @@ La notion de **personnes** est uniquement fonctionnelle. Elle permet de gérer l
 Cliquez sur `Paramètres` `Home Assistant Cloud` pour configurer votre accès avec Nabu Casa.
 
 Après il existe plusieurs manières d'accéder à Home Assistant, qui sont bien résumés dans cet article :
-https://forum.hacf.fr/t/acceder-a-home-assistant-a-distance/2744
-
-Ou encore une autre alternative sans avoir besoin d'ouvrir de ports sur sa box internet : https://forum.hacf.fr/t/tailscale-connecter-ha-via-un-mesh-vpn-network/15800
+[Installations initiales](/blog/installation-de-home-assistant-quelques-conseils-et-explications/)
 
 ## Conclusion
 
-Voilà, nous avons abordé les différents concepts de base, accèdé aux différents menus de l'application, ce qui vous permettra de plus rapidement vous approprier la plateforme et des tutos.
+Voilà, nous avons abordé les différents concepts de base, accédé aux différents menus de l'application, ce qui vous permettra de plus rapidement vous approprier la plateforme et des tutos.
 Nous n'avons fait qu'effleurer ce que permet Home Assistant. La plateforme peut être enrichie d'add-ons et intégrations extrêmement puissants, quand ils ne sont pas déjà intégrés.
 
 Juste quelques exemples :
