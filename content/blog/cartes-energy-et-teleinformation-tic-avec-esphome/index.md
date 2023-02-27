@@ -277,7 +277,7 @@ Pour cela, il y a différentes solutions :
 
 * Intégration d'objets connectés exposant leur consommation
 * Capteur de mesure avec tor dans le tableau électrique (type Owon PC321)
-* Ajout de prises électriques connectés avec mesure de la consommation (machaine à laver, réfigérateur...)
+* Ajout de prises électriques connectés avec mesure de la consommation (machine à laver, réfrigérateur...)
 * Estimation de la consommation : calcul du temps de fonctionnement X puissance de l'appareil
 
 ## Sources
