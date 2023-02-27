@@ -20,6 +20,7 @@ tags:
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
+
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
 
 Exemple de notifications :
@@ -41,7 +42,7 @@ Il est également très intéressant de pouvoir **répondre à ces notifications
 
 Nous vous proposons ici un tuto complet pour implémenter simplement **telegram** avec les **automatisations** de HA.
 
-La première chose sera de créer dans Telegram son "bot" Maison et obtenir un token et un ID. Ensuite dans HA : on connectera Telegram en utilisant l'**intégration Telegram**. Puis on créera une **notification** que l'on utilisera de manière standard dans nos automatisations et scripts.
+La première chose sera de créer dans Telegram son "bot" Maison et obtenir un token et un ID. Ensuite dans HA : on connectera Telegram en utilisant l'**intégration Telegram**. Puis, on créera une **notification** que l'on utilisera de manière standard dans nos automatisations et scripts.
 
 ## 1. Installer un bot Telegram
 
@@ -77,11 +78,11 @@ L'étape suivante est de retrouver l'ID du fil de discussion ou envoyer les mess
 
 Cette partie permet de retrouver votre ID, si vous choisissez de n'envoyer des messages qu'à vous.
 
-Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le champs de recherche des contacts puis cliquer sur `Démarrer`.
+Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le champ de recherche des contacts puis cliquer sur `Démarrer`.
 
 > Notez bien cet ID référençant le bot qui **émettra** les messages.
 
-![Récupèrer BotId](img/recuperer-botid.jpg)
+![Récupérer BotId](img/recuperer-botid.jpg)
 
 ### 1.3 Utilisation d’un groupe
 
@@ -296,7 +297,7 @@ Il est intéressant de personnaliser votre bot dans Telegram, en particulier :
 
 Voilà, grâce à Telegram, vous pouvez maintenant dialoguer avec votre maison à travers un réseau social.
 
-N'hésitez pas à partager sur le forum les choses originales ou amusantes que vous auriez automatisé.
+N'hésitez pas à partager sur le forum les choses originales ou amusantes que vous auriez automatisées.
 
 ## Source
 
