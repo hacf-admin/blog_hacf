@@ -54,17 +54,20 @@ Rendez-vous sur [Telegram sur votre Navigateur](https://web.telegram.org/) ou vi
 1. **Rechercher `@botfather` dans le champ de recherche des contacts puis cliquer dessus.**
 2. **Lancer le BotFather Telegram et cliquer sur `Démarrer` (ou start si en anglais).**
 
-   ![Lancer BotFather](img/lancer-botfather.jpg)
+![Lancer BotFather](img/lancer-botfather.jpg)
+
 3. **Une liste d’options vous sont proposées. Cliquer sur `/newbot`**
 4. **Choisir un nom pour votre bot puis un nom d’utilisateur (HACF_bot dans l'exemple)).**
 
-   ![Lancer BotFather](img/lancer-botfather.jpg)
+![Creation bot](img/creation-bot.jpg)
 
 Votre token apparaît, **gardez le bien précieusement**.
 
 Vous avez maintenant votre Bot Telegram.
 
-5. **Reste enfin à l'activer.** Retrouver votre bot dans la recherche (@HACF_bot par exemple), cliquer dessus, puis dans le fil de discussion, cliquer sur `Démarrer` (ou /start). Sans cette dernière opération, votre bot ne sera pas actif.
+5. **Reste enfin à l'activer.** Retrouver votre bot dans la recherche (@HACFx_bot par exemple), cliquer dessus, puis dans le fil de discussion, cliquer sur `Démarrer` (ou /start). Sans cette dernière opération, votre bot ne sera pas actif.
+
+![Start bot](img/start-bot.jpg)
 
 > A tout moment vous pouvez retourner sur BotFather, lancer /mybots puis cliquer votre bot pour le gèrer, le supprimer, voir son token, etc.
 
@@ -77,6 +80,8 @@ Cette partie permet de retrouver votre ID, si vous choisissez de n'envoyer des m
 Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le champs de recherche des contacts puis cliquer sur `Démarrer`.
 
 > Notez bien cet ID référençant le bot qui **émettra** les messages.
+
+![Récupèrer BotId](img/recuperer-botid.jpg)
 
 ### 1.3 Utilisation d’un groupe
 
@@ -92,11 +97,15 @@ Donnez-lui un nom puis `CREATE GROUP`.
 
 Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oubliez pas d'ajouter votre bot** (autrement il ne pourra pas envoyer de messages dans le groupe).\*\*
 
+![Creation groupe](img/creation-groupe.jpg)
+
 3. Récupérer votre ID du groupe en invitant `@getids bot` à votre groupe. Une fois ajouté, vous pouvez voir votre ID qui s'affiche dans le fil de discussion.
 
    > Notez bien cet ID référençant le groupe qui **recevra** les messages.
 
 Une fois l'ID noté, vous pouvez éjecter GetIdsBot du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
+
+![Recuperer ID groupe](img/recuperer-id-groupe.png)
 
 ## 2. Configuration du bot dans Home Assistant
 
@@ -138,6 +147,8 @@ Pour vérifier que tout fonctionne bien, rendez-vous dans `Outils de développem
 
 Cliquez sur `Appeler le service`. Vous devriez voir sur votre application Telegram le message arriver.
 
+![Test telegram](img/testtelegram.jpg)
+
 ## 3. Utilisation des notifications
 
 L'utilisation se fait juste en appelant le service `notify.telegram_maison` dans vos scripts et automatisations.
@@ -158,6 +169,8 @@ action:
 
 Il est aussi possible de rajouter une image, typiquement issue d'un snap d'une de vos caméras. Par exemple ici l'intérieur du poulailler pour vérifier que nos poules sont bien couchées quand la porte se ferme (ma femme adore cette fonction :slight_smile: ).
 
+![Dialogue - photos poules](img/photo-poules.jpeg)
+
 ```yaml
 trigger: []
 condition: []
@@ -173,6 +186,8 @@ action:
 ## 4. Rajout de boutons d'action après le message
 
 Reprenons notre exemple du début de l'article :
+
+![Dialogue telegram - bouton commande](img/boutons-commande.png)
 
 Pour afficher les boutons, c'est très simple : il suffit de rajouter dans la section data du message la section ***inline_board*** avec ***libellé:/event*** à déclencher. Dans notre cas, les événements ***piscine_ferme*** et ***piscine_ignore_ferme*** seront déclenchés si respectivement un des boutons est pressé.
 
@@ -213,6 +228,8 @@ action:
 ## 6. Confirmation que l'action a été bien effectuée
 
 Une fois le bouton cliqué, il ne reste plus qu'à supprimer la barre de boutons, et confirmer à l'utilisateur que la demande d'action a été bien prise en compte.
+
+![Dialogue - confirmation](img/confirmation.png)
 
 Pour cela, on rajoute à l'automatisation précédente quelques lignes :
 
