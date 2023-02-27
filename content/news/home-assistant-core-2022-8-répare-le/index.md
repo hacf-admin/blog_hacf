@@ -1,20 +1,20 @@
 ---
-visibleInCMS: true
-draft: false
-date: 2023-01-03
-lastmod: 2023-02-03
-  - McFly
-url_hacf: https://forum.hacf.fr/t/home-assistant-2022-8-tu-peux-le-reparer/15217
-url_haoff: https://www.home-assistant.io/blog/2022/08/03/release-20228/
-socialshare: true
+folder: HA_2022-8
 title: "Home Assistant Core 2022.8 ! : Répare le"
 type: news
+visibleInCMS: true
+draft: true
+date: 2023-01-03
+lastmod: 2023-02-03 - McFly
+description: Sortie de la version 2022.8 de Home Assistant, traduction française
+  de la communauté Francophone HACF
 tags:
   - traduction
   - release
+url_hacf: https://forum.hacf.fr/t/home-assistant-2022-8-tu-peux-le-reparer/15217
+url_haoff: https://www.home-assistant.io/blog/2022/08/03/release-20228/
+socialshare: true
 image: null
-description: Sortie de la version 2022.8 de Home Assistant, traduction française
-  de la communauté Francophone HACF
 ---
 ![Fonction réparation de Home Assistant 2022.8](img/ha2022_8_repairs.png "Fonction réparation de Home Assistant 2022.8")
 
