@@ -66,7 +66,7 @@ test alert avec attribut NON FONCTIONNEL
 ```
 
 > This is a note.
-> {.alert .alert-primary}
+{.alert .alert-primary}
 
 ```
 > This is a warning.
@@ -74,7 +74,7 @@ test alert avec attribut NON FONCTIONNEL
 ```
 
 > This is a warning.
-> {.alert .alert-warning}
+{.alert .alert-warning}
 
 ```
 > This is dangerous.
@@ -82,7 +82,7 @@ test alert avec attribut NON FONCTIONNEL
 ```
 
 > This is dangerous.
-> {.alert .alert-danger}}
+{.alert .alert-danger}}
 
 ## Test Gallery
 
@@ -114,7 +114,7 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Blockquote
 
-> blockquote
+>blockquote
 
 ### Ordered List
 
