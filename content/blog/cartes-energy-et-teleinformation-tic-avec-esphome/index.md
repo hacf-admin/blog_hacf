@@ -38,7 +38,7 @@ Certes le sujet télé-information a déjà été pas mal traité, mais il est p
 
 Pour information, le compteur électrique interfacé ici est en mode **TIC "historique",** avec heures pleines et heures creuses. Si ce n'est pas votre cas, il faudra faire quelques adaptations.
 
-Un ESP32 a été préféré plutôt qu'un ESP8266 car, plus puissant, il permet de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs ("bad CRC"). J'ai choisi une résistance de 2k en entrée, qui est un bon compromis. La liaison série principale de l'ESP32 est utilisée (UART0) disponible sur le GPIO 03. Autrement, on retrouve le schéma classique : **opto-coupleur** pour isoler le circuit et la compteur, **transistor mofset** pour réamplifier le signal. L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
+Un ESP32 a été préféré plutôt qu'un ESP8266 car, plus puissant, il permet de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs ("bad CRC"). J'ai choisi une résistance de 2k en entrée, qui est un bon compromis. La liaison série principale de l'ESP32 est utilisée (UART0) disponible sur le GPIO 03. Autrement, on retrouve le schéma classique : **opto-coupleur** pour isoler le circuit et le compteur, **transistor mofset** pour ré-amplifier le signal. L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
 
 ![Schéma électrique](img/schema.jpeg)
 
@@ -190,7 +190,7 @@ Les "sensors" d'index ont des attributs compatibles avec le module Energy : `sta
 
 ## 4. Configuration du module Energy
 
-Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans configuration - tableau de bord puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
+Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans `configuration `- `tableau de bord `puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
 
 ![Configuration dashboard Energy](img/interfaceenergy.png)
 
