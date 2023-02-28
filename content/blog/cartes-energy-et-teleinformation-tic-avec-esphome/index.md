@@ -190,7 +190,7 @@ Les "sensors" d'index ont des attributs compatibles avec le module Energy : `sta
 
 ## 4. Configuration du module Energy
 
-Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans `configuration `- `tableau de bord `puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
+Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans `configuration`- `tableau de bord`puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
 
 ![Configuration dashboard Energy](img/interfaceenergy.png)
 
