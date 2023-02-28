@@ -34,3 +34,13 @@ depots:
       - HACS
       - Cards
       - Lovelace
+  - name: Thermostat Versatile
+    role: "@Jean-Marc_Collin"
+    timeline: Decembre 2022 - Présent
+    repo: https://github.com/jmcollin78/versatile_thermostat
+    summary: Thermostat proportionnel avec gestion des presets - portes et fenêtres - détection de mouvement - gestion de présence et surconsommation.
+    tags:
+      - HACS
+      - Chauffage
+      - Thermostat
+
