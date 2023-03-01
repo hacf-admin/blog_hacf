@@ -79,7 +79,7 @@ collections:
         name: "folder"
         widget: "string" 
         required: true
-        hint: "Nommage du dossier (non visible), doit être simple, court et sans accents (exemple: integration-ha ou acces-exterieur-nginx-proxy-manager etc)"
+        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha-integration,esphome-introduction ou ha-acces-exterieur-nginx-proxy-manager etc)"
 
       - label: "Title" 
         name: "title"
@@ -87,7 +87,13 @@ collections:
         required: true
       - {label: "Type", name: "type", widget: "hidden", default: "post"}
       - {name: visibleInCMS, widget: hidden, default: true }
-      
+
+      - label: "Alias"
+        name: "aliases"
+        widget: "list"
+        allow_add: true
+        required: false
+        hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias"       
 
 #      - label: "Gallerie"
 #        name: "gallery"
@@ -120,6 +126,7 @@ collections:
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
         format: 'YYYY-MM-DD'
+        requiered: true        
 
       - label: 'Date de modification'
         name: 'lastmod'
@@ -136,6 +143,7 @@ collections:
         allow_multiple: false
         choose_url: false
         hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+        requiered: false
 
       - label: "Description"
         name: "description"
@@ -151,7 +159,8 @@ collections:
         - Débutant
         - Intermédiaire
         - Avancé
-
+        requiered: false
+        
 #      - label: "Type d'installation"
 #        name: 'type_install'
 #        widget: 'select'
@@ -182,13 +191,13 @@ collections:
         - Sécurité
         - Confort
 
-      - label: 'Série(s)'
-        name: 'series'
-        widget: 'select'
-        multiple: true
-        min: 1
-        required: false
-        options: ['Les Bases de Home Assistant','Débuter avec Home Assistant','Débuter en Domotique']
+#      - label: 'Série(s)'
+#        name: 'series'
+#        widget: 'select'
+#        multiple: true
+#        min: 1
+#        required: false
+#        options: ['Les Bases de Home Assistant','Débuter avec Home Assistant','Débuter en Domotique']
 
       - label: "Tags"
         name: "tags"
@@ -259,13 +268,20 @@ collections:
         name: "folder"
         widget: "string" 
         required: true
-        hint: "Nommage du dossier (non visible), doit être simple, court et sans accents (exemple: ha-2023-2-3 ou z2m-1-2-3 etc)"
+        hint: "Nommage du dossier (non visible), doit être simple, court et sans accents (exemple: ha-2023-2-3, z2m-1-2-3 ou esphome-2022-3 etc)"
 
       - label: "Title" 
         name: "title"
         widget: "string" 
         required: true
-      
+
+      - label: "Alias"
+        name: "aliases"
+        widget: "list"
+        allow_add: true
+        required: false
+        hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
+
       - {label: "Type", name: "type", widget: "hidden", default: "news"}
       - {name: visibleInCMS, widget: hidden, default: true }
 
@@ -281,6 +297,7 @@ collections:
         date_format: 'DD-MM-YY'
         #time_format: 'HH:mm'
         format: 'YYYY-MM-DD'
+        requiered: true
 
       - label: 'Date de modification'
         name: 'lastmod'
@@ -297,11 +314,13 @@ collections:
         allow_multiple: false
         choose_url: false
         hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
+        requiered: false
 
       - label: "Description"
         name: "description"
         widget: "text"
         hint: "Description devant faire entre x et xx caracteres"
+        requiered: false
 
       - label: "Tags"
         name: "tags"
@@ -1649,10 +1668,12 @@ collections:
         name: "pseudo_hacf"
         widget: "string"
         hint: "Mettre seulement le pseudos en minuscule" 
+        requiered: false
       - label: "Profil HA Off"
         name: "pseudo_haoff"
         widget: "string"
-        hint: "Mettre seulement le pseudos en minuscule"      
+        hint: "Mettre seulement le pseudos en minuscule"   
+        requiered: false   
 
 # ARCHIVE pour les sections du dossier data
 #          - {
