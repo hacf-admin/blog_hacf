@@ -62,11 +62,12 @@
             {{ $codeblockCss = $codeblockCss | minify }}
         {{ end }}
     <link rel="stylesheet" href="{{ $codeblockCss.RelPermalink }}" >
-    {{ $copyCss := resources.Get "css/copy-code-button.css" }}
+
+    {{ $copyCodeCss := resources.Get "css/copy-code-button.css" }}
         {{ if hugo.IsProduction }}
-            {{ $copyCss = $copyCss | minify }}
+            {{ $copyCodeCss = $copyCodeCss | minify }}
         {{ end }}
-    <link rel="stylesheet" href="{{ $copyCss.RelPermalink }}" >
+    <link rel="stylesheet" href="{{ $copyCodeCss.RelPermalink }}" >
 {{ end }}
 
 <!--
@@ -91,21 +92,6 @@
 {{ $jsbootstrap := resources.Get "/js/bootstrap.bundle.min.js" | minify }}
 <script defer src="{{ $jsbootstrap.RelPermalink }}"></script>
 
-<!-- NON FONCTIONNEL CAR TROP DE RESSOURCES AU DEMARRAGE
-    Ajoute le css et le JS de Prismjs 
-
-
-{{ $cssprism := resources.Get "/css/prism.css" | resources.PostCSS }}
-
-{{ if hugo.IsProduction }}
-    {{ $cssprism = $cssprism | minify | fingerprint | resources.PostProcess }}
-{{ end }}
-<link rel="stylesheet" href="{{ $cssprism.RelPermalink }}" integrity="{{ $cssprism.Data.Integrity }}" media="all" type="text/css">
-
-
-{{ $jsprism := resources.Get "/js/prism.js" | minify }}
-<script defer src="{{ $jsprism.RelPermalink }}"></script>
--->
 
 <!--
     Ajoute Netlify JS
