@@ -1,6 +1,6 @@
 ---
-folder: premiers-projets
-title: Premiers projets
+folder: ha-premiers-projets
+title: Vos premiers projets avec Home Assistant
 type: post
 visibleInCMS: true
 draft: false
