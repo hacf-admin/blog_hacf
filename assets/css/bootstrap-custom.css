@@ -1,0 +1,37 @@
+/*
+Error: Invalid CSS after "...uote-margin-y :": expected expression (e.g. 1px, bold), was "@import "../nod..."
+        on line 5 of assets/scss/bootstrap-custom.scss
+
+1: //custom.scss
+2: 
+3: $blockquote-margin-y : 
+4: 
+5: @import "../node_modules/bootstrap/scss/bootstrap";
+
+Backtrace:
+assets/scss/bootstrap-custom.scss:5
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/script/lexer.rb:240:in `expected!'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/script/parser.rb:855:in `assert_expr'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/script/parser.rb:68:in `parse'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1164:in `sass_script'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:653:in `variable'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:697:in `block_contents'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:383:in `run'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/exec/base.rb:50:in `parse'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/exec/base.rb:18:in `parse!'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/bin/sass:8:in `<top (required)>'
+/usr/bin/sass:25:in `load'
+/usr/bin/sass:25:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...uote-margin-y :\": expected expression (e.g. 1px, bold), was \"@import \"../nod...\"\A         on line 5 of assets/scss/bootstrap-custom.scss\A \A 1: //custom.scss\A 2: \A 3: $blockquote-margin-y : \A 4: \A 5: @import \"../node_modules/bootstrap/scss/bootstrap\";"; }
