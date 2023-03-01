@@ -1,5 +1,5 @@
 ---
-folder: HA_instllation_initiale
+folder: HA_commencer_base_solide
 visibleInCMS: true
 draft: true
 date: 2023-02-22
@@ -8,7 +8,7 @@ level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
 socialshare: true
-title: Home Assistant installation initiale
+title: "Home Assistant : Commencer avec une base solide."
 type: post
 images: img/article3.png
 description: "Avant de vous lancer dans l'installation de Home Assistant, il est
@@ -19,33 +19,19 @@ categories:
   - Installation
   - Concepts
   - Add-on/intégration
-series:
-  - Les Bases de Home Assistant
-  - Débuter avec Home Assistant
-tags:
-  - ha-container
-  - ha-os
-  - ha-core
-  - docker
-  - ha-supervised
-  - linux
-  - windows
-  - mac-os
-  - nuc
-  - odroid
-  - vm
-  - raspberry-pi
+series: null
+tags: []
 ---
-Dans cet article, nous allons aborder tous les points important vous permettant de vous lancer facilement avec Home Assistant.
+Dans cet article, nous allons essayer d'aborder tous les \*\*points important\*\* vous permettant de vous lancer avec une base solide dans Home Assistant.
 
-N﻿ous allons essayer de vous donner des points de réflexions vous permettant de choisir les solutions les plus adaptées a votre utilisation, vos connaissances et vos besoins dans les domaines suivants :
+Il y aura des points de réflexions vous permettant de choisir les solutions les plus adaptées a votre utilisation, vos connaissances et vos besoins dans les domaines suivants :
 
 * Installation, 
 * A﻿dd-ons indispensables, 
-  ﻿* Accès depuis l'extérieur,
+* Accès depuis l'extérieur,
 * Les sauvegardes.
 
-> Un article sur les concepts, plus théorique, de Home Assistant est disponible [ici](/blog/concepts-home-assistant).
+> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/blog/ha-concept).
 
 ## L’installation de Home Assistant
 
@@ -142,10 +128,10 @@ I﻿l existe plusieurs facons d'ajouter un add-on:
 > ![Bouton Add Repository](img/add-repository.svg "Bouton Add Repository")
 
 Q﻿uelques add-ons sont néanmoins quasi indispensable, voici une liste non exhaustive :
+
 * *File Editor ou VSCode* : Permet l'edition des fichiers de configuration.
 * *Terminal* :
 * *Samba* :
-
 
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
