@@ -1,6 +1,6 @@
 ---
 folder: esphome-premiers-pas
-title: Premiers pas avec ESPHome
+title: Vos premiers pas avec ESPHome
 type: post
 visibleInCMS: true
 draft: false
