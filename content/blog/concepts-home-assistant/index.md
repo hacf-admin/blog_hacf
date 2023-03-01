@@ -1,24 +1,26 @@
 ---
 folder: ha-concepts-architecture
-title: Architecture et concepts Home Assistant
-type: post
 visibleInCMS: true
 draft: false
 date: 2023-02-10
 lastmod: 2023-02-10
+level: Débutant
+author: argonaute
+series:
+  - Les Bases de Home Assistant
+title: Architecture et concepts Home Assistant
+type: post
+aliases:
+  - /ha-concepts
 images: img/accueil-2.jpg
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
   important d'assimiler les concepts et la terminologie de Home Assistant. C'est
   ce que propose cet article.
-level: Débutant
 categories:
   - Concepts
-series:
-  - Les Bases de Home Assistant
 tags:
   - Concepts
-author: argonaute
 ---
 
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
