@@ -1,5 +1,5 @@
 ---
-folder: architecture-concepts-ha
+folder: ha-concepts-architecture
 title: Architecture et concepts Home Assistant
 type: post
 visibleInCMS: true
