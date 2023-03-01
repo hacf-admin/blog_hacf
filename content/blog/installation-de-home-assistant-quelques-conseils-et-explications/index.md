@@ -33,32 +33,31 @@ Il y aura des points de réflexions vous permettant de choisir les solutions les
 * Accès depuis l'extérieur,
 * Les sauvegardes.
 
-> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/blog/ha-concept).
+> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/ha-concepts).
 
 ## L’installation de Home Assistant
 
-> Ce guide est une base de réflexion à lire avant toute installation de votre futur système domotique. Votre choix dépendra de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique).
+> Ce guide est une base de réflexion sur le choix de votre installation. Ce dernier dépendra de vos connaissances, de votre matériel et du temps que vous voulez consacrer à sa gestion (hors domotique).
 
 Il existe deux méthodes principales :
 
-* **Home Assistant OS (HA-OS)** : Composé du Système d'exploitation (OS) **dédié** et **optimisé** pour Home Assistant et de la couche **Superviseur**,
-* **Container** : Installation sur une machine possédant déjà son système d'exploitation et un système de gestion de conteneur (exemple : docker). Cette dernière installe la version **core** de Home Assistant. Tous les add-ons seront à installer et configurer indépendamment.
+* **Home Assistant OS (HA-OS)** : Composé du Système d'exploitation (OS) **dédié** et **optimisé** pour Home Assistant et de la couche **Superviseur** (plus d'infos après).
+* **Home Assistant Container (HA-container)** : Installation sur une machine possédant déjà son système d'exploitation et un système de gestion de conteneur (exemple : docker). Cette dernière installe la version **core** de Home Assistant. Tous les add-ons seront à installer et configurer indépendamment.
 
 Deux méthodes d'installation alternatives sont disponibles pour les **utilisateurs expérimentés** :
 
 * **Home Assistant Supervised** : Installation manuelle de home Assistant avec le Superviseur.
 * **Home Assistant Core** : Installation manuelle à l'aide de l'environnement virtuel Python.
 
-> La version **Core** est très peu utilisée et s'adresse à des personnes de profil développeur ayant une bonne connaissance de l'environnement python. Cette solution est **réellement** réservée aux personnes **expérimentées** et ne sera pas abordée.
+> La version **Core** est très peu utilisée et s'adresse à des personnes **expérimentées,** de profil développeur ayant une bonne connaissance de l'environnement python. Cette solution ne sera pas abordée.
 
 ### Home Assistant OS ou HAOS.
 
-Cette méthode implique l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS dédié clé en main avec Home Assistant et le Superviseur.
-Elle a l’avantage d’être la moins gourmande en ressources et la plus simple d’utilisation.
+Cette méthode d'installation implique l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS dédié clé en main avec Home Assistant et le Superviseur.
+Elle a l’avantage d’être la moins gourmande en ressources et la plus simple d’utilisation. Les mises a jour concerneront Home Assistant mais aussi l'OS. S﻿on installation tient du seul transfert de l'image vers un support (MicroSD, Mémoire Flash ou SSD).
 
-S﻿on installation tient au seul transfert de l'image vers un support (MicroSD ou SSD).
+{{< alert "L'installation sur un support micro SD, à force d’écriture de votre systeme domotique, peut provoquer des erreurs ammenant des disfonctionnement de votre domotique. Pour une utilisation perenne, il vous faudra remplacer la carte Micro SD par un disque SSD ou a minima [déplacer les données utilisateur vers un support externe](/blog/installer-home-assistant-os-sur-raspberry-odroid-nuc-ou-autres/#déplacer-les-données-utilisateurs-facultatif)." warning >}}
 
-> L'installation sur un support micro SD, à force d’écriture de votre systeme domotique, peut provoquer des erreurs ammenant des disfonctionnement de votre domotique. Pour une utilisation perenne, il vous faudra remplacer la carte Micro SD par un disque SSD ou a minima [déplacer les données utilisateur vers un support externe](/blog/installer-home-assistant-os-sur-raspberry-odroid-nuc-ou-autres/#déplacer-les-données-utilisateurs-facultatif).
 
 E﻿n choisissant HAOS, vous débuterez, sans vous soucier d'autres choses. C'est une version **clé en main**. 
 Elle permet un accès simple aux modules complémentaires (add-ons) et aux services [Nabucasa](https://www.nabucasa.com/) de Home Assistant. C'est la méthode d'installation recommandée pour profiter pleinement de Home Assistant.
