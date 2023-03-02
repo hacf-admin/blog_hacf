@@ -128,7 +128,7 @@ I﻿l existe plusieurs façons d'ajouter un add-on:
 > ![Bouton Add Repository](img/add-repository.svg "Bouton Add Repository")
 
 ### Q﻿uels sont les add-ons indispensables ? 
-Même si cette question reste tres subjective, voici une liste non exhaustive des add-ons les plus communs est utiles :
+Même si cette question reste très subjective, voici une liste non exhaustive des add-ons les plus communs est utiles :
 * *File Editor ou VSCode* : Permet l'édition des fichiers de configuration.
 * *Terminal* : Permet d'installer HACS et de lancer des commandes via un Terminal intégré directement dans votre interface (évite l'ouverture de l'accès SSH).
 * *Samba* : Permet de rendre accessible les dossiers de configuration sur votre réseau local.
