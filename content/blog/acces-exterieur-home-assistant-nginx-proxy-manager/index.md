@@ -1,23 +1,26 @@
 ---
-title: Accèder a Home Assistant depuis l'exterieur en HTTPS avec Nginx Proxy Manager
+folder: ha_acces_ext_npm
 visibleInCMS: true
 draft: false
 date: 2022-05-04
 lastmod: null
+level: Intermédiaire
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/acces-de-l-exterieur-en-https-avec-nginx-proxy-manager/1761
+series: null
+title: Accèder a Home Assistant depuis l'exterieur en HTTPS avec Nginx Proxy Manager
+aliases:
+  - /ha_acces_ext_npm
 images: img/acces-exterieur-nginx-proxy-manger.jpg
 description: Comment accéder depuis l'extérieur a votre système domotique, Home
   Assistant, avec l'add-on Nginx Proxy Manager.
-level: Intermédiaire
 categories:
   - Réseau
-series: null
 tags:
   - acces-exterieur
   - https
   - ssl
   - maria-db
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/acces-de-l-exterieur-en-https-avec-nginx-proxy-manager/1761
 ---
 Vous avez choisi d'accéder à Home Assistant depuis l'extérieur avec la solution Nginx Proxy Manager.
 
