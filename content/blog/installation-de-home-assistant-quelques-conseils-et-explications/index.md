@@ -307,3 +307,5 @@ N'hésitez pas à nous faire remonter les erreurs ou partager vos trouvailles su
 ### Sources
 * [Home Assistant Installation Officiel (EN)](https://www.home-assistant.io/installation/)
 * [Home Assistant Backup Officiel (EN)](https://www.home-assistant.io/integrations/backup/)
+* [Home Assistant Add-ons Officiel (EN)](https://www.home-assistant.io/addons)
+* [Home Assistant Cloud Officiel (EN)](https://www.home-assistant.io/integrations/cloud)
