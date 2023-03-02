@@ -20,7 +20,7 @@ description: Cet article vous apporte des explications claires sur les méthodes
 categories:
   - Installation
   - Concepts
-  - Add-on/intégration
+  - Add-on & Intégration
 tags: []
 ---
 Dans cet article, nous allons essayer d'aborder tous les \*\*points important\*\* vous permettant de vous lancer avec une base solide dans Home Assistant.
@@ -132,7 +132,7 @@ Même si cette question reste très subjective, voici une liste non exhaustive d
 * **Terminal** : Permet de lancer des commandes via un Terminal intégré directement dans votre interface (évite l'ouverture de l'accès SSH) et d'installer **HACS**.
 * **Samba** : Permet de rendre accessible les dossiers de configuration sur votre réseau local.
 
-{{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on" >}}
+{{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="Add-on & Intégration" >}}
 
 ## L'accès l'extérieur.
 A﻿ccéder à son système domotique depuis n'importe où dans le monde est primordial, mais il faut prendre conscience que cela peut ouvrir une brèche de sécurité sur votre système domotique et aussi sur votre réseau interne. Il convient donc de faire attention à ce que l'on fait.
