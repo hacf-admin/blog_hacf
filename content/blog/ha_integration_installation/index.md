@@ -1,5 +1,6 @@
 ---
 visibleInCMS: true
+folder: ha_integration_installation
 draft: true
 date: 2022-10-07
 lastmod: null
@@ -14,7 +15,7 @@ description: Les intégrations vous permettent d’ajouter facilement du matéri
   des capteurs, des fonctions au sein de votre système domotique. Nous allons
   voir comment ajouter une intégration.
 categories:
-  - Add-on/intégration
+  - Intégration
 series: null
 tags:
   - ha-core

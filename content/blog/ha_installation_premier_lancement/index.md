@@ -1,5 +1,5 @@
 ---
-folder: ha-premiere-configuration
+folder: ha_installation_premier_lancement
 title: Premier lancement et configuration de Home Assistant
 type: post
 visibleInCMS: true

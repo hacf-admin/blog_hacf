@@ -1,5 +1,5 @@
 ---
-folder: dialogue-avec-telegram
+folder: ha_integration_telegram
 title: Dialogue avec Telegram
 type: post
 visibleInCMS: true

@@ -1,5 +1,5 @@
 ---
-folder: HACS_installation_utilisation
+folder: hacs_installation_utilisation
 visibleInCMS: true
 draft: false
 date: 06-10-22
@@ -20,7 +20,7 @@ description: "Malgré les multitudes d'intégrations, d'add-ons ou de thèmes
   développe d'autres. Cette communauté, c'est HACS, pour Home Assistant
   Community Store. Voyons comment l'installer "
 categories:
-  - Add-on & Intégration
+  - Add-on
   - Automatisation
 tags:
   - HACS

@@ -1,5 +1,5 @@
 ---
-folder: HA_installation_haos
+folder: ha_installation_haos
 visibleInCMS: true
 draft: false
 date: 2023-02-22
