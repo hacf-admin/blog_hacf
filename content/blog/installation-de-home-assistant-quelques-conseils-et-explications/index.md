@@ -51,7 +51,6 @@ Deux méthodes d'installation alternatives sont disponibles pour les **utilisate
 > La version **Core** est très peu utilisée et s'adresse à des personnes **expérimentées,** de profil développeur ayant une bonne connaissance de l'environnement python. Cette solution ne sera pas abordée.
 
 ### Home Assistant OS ou HAOS.
-
 Cette méthode d'installation implique l’utilisation de votre matériel pour une unique tâche. L’image d’installation contiendra l’OS dédié clé en main avec Home Assistant et le Superviseur.
 Elle a l’avantage d’être la moins gourmande en ressources et la plus simple d’utilisation. Les mises à jour concerneront Home Assistant, mais aussi l'OS. S﻿on installation tient du seul transfert de l'image vers un support (MicroSD, Mémoire Flash ou SSD).
 
@@ -72,7 +71,6 @@ Elle permet un accès simple aux modules complémentaires (add-ons) et aux servi
 
 
 ### Home Assistant Container.
-
 C﻿ette autre solution permet d'utiliser votre matériel pour Home Assistant, mais aussi d'autres services, sur l'OS de votre choix (Linux, Windows, Mac OS, Synology DSM).
 
 Un gestionnaire de conteneur (typiquement Docker et Portainer) fera office de "superviseur", non présent par défaut dans cette installation, permettant d'installer Home Assistant **container**, mais aussi les services annexes (comprenez les add-ons) qui devront être configurés par vos soins.
@@ -105,9 +103,9 @@ Une solution alternative, un peu particulière, permet l’utilisation de votre 
 
 ### Nos conseils pour l'installation.
 
-* **Si vous êtes débutant, choisissez HA OS** pour vous concentrer sur la domotique de votre logement, plutôt que la mise en place et le maintien de votre système. Allez au plus simple et, une fois la prise en main effectuée, vous pouvez changer de type d'installation (tout ne sera pas à refaire).
-* **S﻿i vous ne voulez pas dédier une machine à Home Assistant, envisagez une virtualisation Proxmox.**
-* **Si vous découvrez Linux, docker, les VMs, partez sur des installations préconfigurées,** vous les trouverez disponibles pour NUC, Raspberry, Odroid, etc. Par image préconfigurée, j'entends, une image faite pour votre matériel, comprenant l'OS (système exploitation) et Home Assistant avec le Superviseur.
+* Si vous êtes **débutant**, choisissez **HA OS** pour vous concentrer sur la domotique de votre logement, plutôt que la mise en place et le maintien de votre système. Allez au plus simple et, une fois la prise en main effectuée, vous pouvez changer de type d'installation (tout ne sera pas à refaire).
+* **S﻿i vous ne voulez pas dédier une machine à Home Assistant, envisagez une virtualisation avec Proxmox par exemple.**
+* **Si vous découvrez Linux, Docker, les VMs, partez sur des installations préconfigurées,** vous les trouverez disponibles pour NUC, Raspberry, Odroid, etc. Par image préconfigurée, j'entends, une image faite pour votre matériel, comprenant l'OS (système exploitation) et Home Assistant avec le Superviseur.
 
 > **Attention**. Si vous envisagez un jour une migration, il faut savoir, que lors du passage d'un type d'installation a un autre, la partie **core** (entités, automatisations, intégrations, *backup*) sera facilitée par les sauvegardes de Home Assistant, mais pas les add-ons par exemple.
 
