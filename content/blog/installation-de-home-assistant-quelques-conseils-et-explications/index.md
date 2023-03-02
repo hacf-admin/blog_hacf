@@ -130,42 +130,22 @@ I﻿l existe plusieurs façons d'ajouter un add-on:
 ### Q﻿uels sont les add-ons indispensables ? 
 Même si cette question reste très subjective, voici une liste non exhaustive des add-ons les plus communs est utiles :
 * *File Editor ou VSCode* : Permet l'édition des fichiers de configuration.
-* *Terminal* : Permet d'installer HACS et de lancer des commandes via un Terminal intégré directement dans votre interface (évite l'ouverture de l'accès SSH).
+* *Terminal* : Permet de lancer des commandes via un Terminal intégré directement dans votre interface (évite l'ouverture de l'accès SSH) et d'installer HACS.
 * *Samba* : Permet de rendre accessible les dossiers de configuration sur votre réseau local.
-#####
-#####
-#####
-#####
-#####
-#####
+
 {{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
 
 ## L'accès l'extérieur.
-
 A﻿ccéder à son système domotique depuis n'importe où dans le monde est primordial, mais il faut prendre conscience que cela peut ouvrir une brèche de sécurité sur votre système domotique et aussi sur votre réseau interne. Il convient donc de faire attention à ce que l'on fait.
 
-Il y a effectivement plein de solutions différentes avec chacune des avantages, des inconvénients, des limitations qui ne sont pas toujours faciles d’appréhender quand on a une expérience limitée en réseau.
+Il y a plein de solutions différentes avec des avantages, des inconvénients et des limitations qui ne sont pas toujours faciles d’appréhender quand on a une expérience limitée en réseau.
 
-N﻿ous allons traiter ici les solutions pouvant etre directement intégrés a Home Assistant.
-
-### Réflexions
-
-Pour vous connecter sur votre serveur Home Assistant (HA) à distance, vous allez être confrontés à plusieurs challenges qui vous amèneront à un choix d’architecture :
-
-* Connaître l’IP publique de votre Box internet qui dans la majorité des cas peut changer régulièrement (volonté des FAIs - Fournisseur d’Accès à Internet - pour diverses raisons),
-* Modifier les paramètres réseaux de votre Box internet, donc savoir accéder et connaître l’interface d’administration,
-* Gérer un enregistrement DNS, soit avec un nom de domaine (NDD) propre, soit avec un service de DNS dynamique (DynDNS, DuckDNS, etc),
-* Gérer un certificat SSL pour sécuriser les données de votre client (le navigateur ou l’application mobile que vous allez utiliser pour vous connecter) et votre serveur Home Assistant
-* Configurer HA pour un accès externe ET interne en utilisant le même NDD (pour vous simplifier la vie)
-* Et enfin votre appétence à l’informatique et ses technologies
-
-Face à ces challenges, différentes solutions sont possibles et toutes ne sont pas égales en termes de sécurité, de mise en œuvre ou d’accessibilité.
+N﻿ous allons traiter ici les solutions pouvant être directement intégrées à Home Assistant.
 
 Ces solutions sont :
-
 * Via Nabu Casa,
 * Via accès direct en HTTP,
-* Via accés direct en HTTPS,
+* Via accès direct en HTTPS,
 * ﻿Via des services externes,
 * Via une Box qui permet le "Loopback" ou un service DNS local,
 * Via un proxy inversé (reverse proxy),
@@ -173,11 +153,12 @@ Ces solutions sont :
 
 Passons en revue ces différentes solutions.
 
-> AVANT TOUTE CHOSE : Vous devez considérer les accès vers votre réseau avec des communications chiffrées, donc nous parlerons ici uniquement d’accès via HTTPS et non HTTP!
+> **Avant toute chose :** N'imaginez pas un accès vers votre réseau avec des communications NON chiffrées, nous parlerons donc ici uniquement d’accès via HTTPS!
 
-### Nabu Casa
+### Nabu Casa (Home Assistant Cloud)
+>[Nabu Casa](https://www.nabucasa.com/) est la société créée par les fondateurs de Home Assistant.
 
-[Nabu Casa](https://www.nabucasa.com/) est la société créée par les fondateurs Home Assistant. Bien que Home Assistant soit Open Source, elle propose un service à 7.50 euros/mois ou 75 euros/an nommé Home Assistant Cloud, permettant, en plus de soutenir Home Assistant, un accès sécurisé depuis n'importe où et l'ajout simplifié de Google Assistant et Alexa.
+Sûrement la solution la plus simple, mais sécurisé, permettant de se connecter à son instance depuis n'importe où. Elle permet aussi de soutenir le projet lui-même pour 7.50 euros/mois ou 75 euros/an en plus de faciliter l'utilisation des assistants vocaux (Google Assistant et Alexa).
 
 **Principe**
 Le service fournit un accès depuis leur portail vers votre serveur HA, vous avez uniquement besoin de configurer votre HA avec ce service.
