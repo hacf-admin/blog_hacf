@@ -1,5 +1,5 @@
 ---
-folder: gestion-du-chauffage-de-bout-en-bout
+folder: confort-gestion-chauffage
 title: Gestion du chauffage de bout en bout
 type: post
 visibleInCMS: true

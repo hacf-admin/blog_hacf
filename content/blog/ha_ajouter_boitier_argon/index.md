@@ -1,5 +1,6 @@
 ---
 draft: true
+folder: ha_ajouter_boitier_argon
 article_ha: true
 level: Débutant
 authors:

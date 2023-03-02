@@ -1,5 +1,5 @@
 ---
-folder: esphome-premiers-pas
+folder: esphome-introduction
 title: Vos premiers pas avec ESPHome
 type: post
 visibleInCMS: true

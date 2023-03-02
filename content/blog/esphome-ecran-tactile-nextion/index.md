@@ -1,5 +1,5 @@
 ---
-folder: Ecran-tactile-nextion-esphome
+folder: esphome-ecran-tactile-nextion
 title: Ecran tactile Nextion avec ESPHome
 type: post
 visibleInCMS: true

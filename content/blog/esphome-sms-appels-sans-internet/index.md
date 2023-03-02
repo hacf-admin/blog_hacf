@@ -1,5 +1,5 @@
 ---
-folder: sms-et-appels-sans-internet
+folder: esphome-sms-appels-sans-internet
 title: SMS et appels sans internet
 type: post
 visibleInCMS: true

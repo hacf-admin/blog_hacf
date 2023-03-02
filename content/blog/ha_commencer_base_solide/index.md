@@ -1,5 +1,5 @@
 ---
-folder: HA_commencer_base_solide
+folder: ha_commencer_base_solide
 visibleInCMS: true
 draft: false
 date: 2023-03-02
@@ -20,7 +20,7 @@ description: Cet article vous apporte des explications claires sur les méthodes
 categories:
   - Installation
   - Concepts
-  - Add-on & Intégration
+  - Add-on
 tags: []
 ---
 Dans cet article, nous allons essayer d'aborder tous les \*\*points important\*\* vous permettant de vous lancer avec une base solide dans Home Assistant.

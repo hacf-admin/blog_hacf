@@ -1,5 +1,5 @@
 ---
-folder: cartes-energy-teleinformation-esphome
+folder: esphome-cartes-energy-teleinformation
 title: Cartes "Energy" et teleinformation (TIC) avec ESPHome
 type: post
 visibleInCMS: true
