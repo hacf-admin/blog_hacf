@@ -1,7 +1,7 @@
 ---
 folder: HA_commencer_base_solide
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-02-22
 lastmod: null
 level: Débutant
@@ -14,10 +14,9 @@ type: post
 aliases:
   - /ha-debuter
 images: img/article3.png
-description: "Avant de vous lancer dans l'installation de Home Assistant, il est
-  important de connaitre les différentes alternatives d'installations et comment
-  cela peut impacter votre futur système. Voici quelques conseils et
-  explications sur ces différentes méthodes d'installation. "
+description: Cet article vous apporte des explications claires sur les méthodes
+  d'installation de Home Assistant, mais aussi sur les add-ons indispensables et
+  comment accéder depuis l'extérieur à votre solution domotique.
 categories:
   - Installation
   - Concepts
