@@ -1,7 +1,7 @@
 ---
 folder: ha_addon_installation
 visibleInCMS: true
-draft: true
+draft: false
 date: 18-09-22
 lastmod: null
 level: Débutant
