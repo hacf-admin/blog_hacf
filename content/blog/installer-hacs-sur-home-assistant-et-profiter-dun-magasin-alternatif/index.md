@@ -1,12 +1,15 @@
 ---
+folder: HACS_installation_utilisation
 visibleInCMS: true
-draft: true
+draft: false
 date: 06-10-22
 lastmod: null
 level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
+series:
+  - Débuter avec Home Assistant
 title: Installer HACS sur Home Assistant et profiter d'un magasin alternatif.
 type: post
 images: img/imagebf_image_article1-1-.png
@@ -18,8 +21,6 @@ categories:
   - Add-on
   - Intégration
   - Automatisation
-series:
-  - Débuter avec Home Assistant
 tags:
   - HACS
   - add-on
