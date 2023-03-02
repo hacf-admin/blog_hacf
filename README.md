@@ -37,7 +37,7 @@ https://gohugo.io/templates/internal/#configure-open-graph
 * * Installer npm via `sudo apt install npm`
 * * Lancer `npm install postcss postcss-cli @fullhuman/postcss-purgecss`
 
-
+* Shortcode liste d'articles (pour memoire) `{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-os" cat="Installation" >}}`
 * [X] Ameliorer le .gitignore https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore
 * [X] **PAS POSSIBLE AVEC DEPLOIEMENT VIA NETLIFY** *il le fait tout seul ?* Ajouter la compression des fichiers js
 * [X] Mise en forme du code (prismJS et render-codeblock.html)
