@@ -115,7 +115,8 @@ Une solution alternative, un peu particulière, permet l’utilisation de votre 
 Les add-ons permettent d’ajouter des fonctions, services ou autres à votre système domotique.
 Des services très connus et reconnus (comme VSCode, MariaDB, Node-Red, Grafana, InfluxDB, DuckDNS, etc.) sont quasi configurés pour communiquer simplement avec votre Home Assistant.
 
-I﻿l existe plusieurs façons d'ajouter un add-on:
+I﻿l existe plusieurs façons d'ajouter un add-on :
+
 
 * Les officiels : installable via les modules complémentaires,
 * Les non-officiels : installable via les modules complémentaires, mais nécessitant l’ajout du dépôt GitHub en manuel,
@@ -160,96 +161,86 @@ Passons en revue ces différentes solutions.
 
 Sûrement la solution la plus simple, mais sécurisé, permettant de se connecter à son instance depuis n'importe où. Elle permet aussi de soutenir le projet lui-même pour 7.50 euros/mois ou 75 euros/an en plus de faciliter l'utilisation des assistants vocaux (Google Assistant et Alexa).
 
-**Principe**
-Le service fournit un accès depuis leur portail vers votre serveur HA, vous avez uniquement besoin de configurer votre HA avec ce service.
+#### Principe
+Fonctionnant sur le même principe que Cloudflare ou Zerotier (mais sans add-on), le service fournit un accès depuis leur serveur vers votre serveur HA, vous avez uniquement besoin de configurer votre HA avec ce service.
 
-![Acces via Nabu Casa](img/acces-nabucasa.png "Acces via Nabu Casa")
+![Accès via Nabu Casa](img/acces-nabucasa.png "Accès via Nabu Casa")
 
 **Avantage(s)**
-
-* Pas de nom de domaine à gérer,
+* Pas besoin d'un Nom de domaine,
 * Facilité de mise en œuvre,
-* Sécurité ++ (dépend de Nabu Cas),
+* Pas de ports à ouvrir sur votre Box,
+* Sécurité (dépend de la sécurité de Nabu Casa),
 * Un essai de 31 jours.
 
 **Inconvénient(s)**
-
 * Un abonnement mensuel ou annuel,
-* Accès seulement à HA (tout comme l'accès direct).
+* Accès seulement à HA depuis l'extérieur.
 
-**Les tutos associés :**
-
-* [????? A FAIRE ????????](<>)
+**Nous n'avons encore rien écrit sur l'accès avec Nabu Casa, mais si vous souhaitez le faire c'est avec plaisir.**
 
 ### L'accès direct en HTTP.
 
 L’accès direct est le plus simple en terme d’architecture, mais pas forcément le plus souple et le plus sécurisé.
 
 #### Principe.
+Le principe est de rediriger les requêtes de votre client (app mobile/navigateur) qui arrivent sur votre Box (via un nom de domaine ou votre IP) vers l’IP interne (ex :192.x.x.x:8123) de votre Home Assistant.
 
-Le principe est tout simplement de rediriger les requêtes de votre client (app mobile/navigateur) qui arrivent sur votre Box (via un nom de domaine ou votre IP) vers l’IP interne (du style 192.x.x.x:8123) de votre serveur Home Assistant.
+> Voir le shéma en HTTPS, ci-dessous, en supprimant les échanges sécurisés.
+
+**Avantage(s)**
+* Peu d'éléments à configurer : la Box et HA
+
+**Inconvénient(s)**
+* Peu sécurisé : HA est directement exposé via votre Box et cette dernière n'a pas de Pare-feu très développé,
+* Besoin de configuration dans le fichier `config.yaml`
+* Association exclusive d'un port de l'IP publique de votre Box à HA (vous pouvez évidemment utiliser d'autres ports pour d'autres services).
+
+**N'étant pas une solution sécurisée et recommandée, nous ne pensons pas écrire dessus**
+
+### L'accès direct en HTTPS.
+Cela reprend le principe de l'accès direct, mais en y ajoutant une **petite** couche sécurité via un certificat SSL.
+
+#### Principe.
+Avec un nom de domaine (NDD) ou via un prestataire externe (DuckDNS) et en s'appuyant sur des add-ons (Let's Encrypt, DuckDNS, ...), vous allez rediriger les requêtes de votre client (app mobile/navigateur) vers votre box qui redirigera vers votre Home Assistant. Cette fois l'échange d'information sera chiffré, mais toujours sans protection d'un pare-feu autre que celui intégré votre box.
 
 ![Accès direct](img/acces-direct.png "Accès direct")
 
 **Avantage(s)**
-
-* Peu d'éléments à configurer : la Box et HA
-
-**Inconvénient(s)**
-
-* Peu sécurisé : HA est directement exposé via un NAT de votre Box et cette dernière n'a pas de fonction de Pare-feu très développée,
-* Configuration via des fichiers en YAML (ce format n'est pas "user friendly" donc destiné déjà à des utilisateurs avertis)
-* Association exclusive d'un port de l'IP publique de votre Box à HA _(vous pourriez évidemment utiliser d'autres ports pour d'autres services).
-
-**Les tutos associés :**
-
-* [Redirection des ports de votre Box internet](<>)
-
-### L'accès direct en HTTPS.
-
-L’accès direct est le plus simple en terme d’architecture, mais pas forcément le plus souple et le plus sécurisé.
-
-#### Principe.
-
-Le principe est tout simplement de rediriger les requêtes de votre client (app mobile/navigateur) en s’appuyant sur les add-ons DuckDNS (pour avoir un nom de domaine comme [toto.duckdns.org](http://toto.duckdns.org/)) et Let’s Encrypt pour créer et gérer le certificat SSL de votre serveur Home Assistant.
-
-**Avantage(s)**
-
-* Pas de NDD à acheter,
-* Plus sécurisé que du HTTP simple.
+* Pas de NDD à acheter (si prestataire externe comme DuckDNS),
+* Un peu plus sécurisé que l'accès HTTP,
+* (En fonction du service) Validation des certificats et régénération automatique.
 
 **Inconvénient(s)**
-
-* Rend plus compliqué l’accès en local,
+* Peut rendre plus compliqué l’accès en local (passage par le NDD),
 * Ouverture du port de votre Box,
-* Probleme de connexion avec certaine box via le NDD en local "loopback"
+* Pas de pare-feu digne de ce nom,
+* Problème de connexion avec certaine box via le NDD en local "loopback" (Orange).
 
-**Les tutos associés :**
+**Nous n'avons encore rien écrit sur l'accès avec en HTTPS sur le site, mais certains existe sur le [forum](https://forum.hacf.fr).**
 
 ### Via un proxy inversé
+La mise en place d'un proxy inversé via Home Assistant (Ex : Nginx Proxy Manager) peu être un peu plus complexe, mais elle peut permettre de sécuriser un peu plus que la solution précédente.
 
-La mise en place d'un proxy inversé complexifie un peu l'architecture, mais peut la rendre plus abordable (suivant la solution de proxy inversé utilisée) et **surtout** la sécuriser un peu mieux que la solution précédente.
+La mise en place d'un proxy inversé sur une autre machine Home Assistant (Ex : Swag) est aussi plus complexe, mais elle permet de sécuriser encore plus votre installation.
 
 #### Principe
-
 Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur Home Assistant. De ce fait, c'est votre proxy inversé qui prend en charge la connexion sécurisée avec votre client. Le reste de la communication vers votre serveur Home Assistant peut rester non chiffrée (HTTP).
 
-![acces-reverse-proxy](img/topology-proxyinverse.png "acces par reverse proxy")
+![acces-reverse-proxy](img/topology-proxyinverse.png "accès par reverse proxy")
 
 **Avantage(s)**
-
-* Sécurité accrue avec l'ajout d'un service intermédiaire
+* Sécurité accrue avec l'ajout d'un service intermédiaire et des fois d'un pare-feu,
 * Possibilité d'exposer d'autres services que HA sur l'extérieur (Grafana, Synology, etc) sur le même port que HA
 * Configuration SSL automatisé ou plus souple suivant le produit de proxy inversé
+* Validation des certificats et régénération automatique.
 
 **Inconvénient(s)**
+* Complexification : configuration d'un service intermédiaire et sa compréhension dans l'architecture.
 
-* Complexification : configuration d'un service intermédiaire et sa compréhension dans l'architecture
+**Nous n'avons ps encore tout réécrit sur le site donc certains sont sur le site et d'autres existe sur le [forum](https://forum.hacf.fr).**
 
-**Tutos associés**
-
-* [Accès de l’extérieur en HTTPS avec Nginx Proxy Manager](<>)
-* [Home Assistant via Reverse Proxy Synology](<>)
+* [Accès de l’extérieur en HTTPS avec Nginx Proxy Manager](/ha_acces_ext_npm)
 
 ### 4. Via un opérateur tiers de services réseaux (autre que Nabu Casa)
 
