@@ -292,18 +292,18 @@ Il y a plusieurs moyens de faire des sauvegardes :
 
 Il n'y a pas de méthode à privilégier, car il faut mélanger les sauvegardes locales et distantes.
 
-En cas de soucis, il est possible de restaurer une sauvegarde dès le premier lancement de votre installation en cas de crash total, ou sinon directement depuis le gestionnaire de sauvegarde qui est maintenant intégré dans la version HA OS et HA Conteneur.
+En cas de soucis, il est possible de restaurer une sauvegarde via l'UI (`Paramètres->`Système`->`Sauvegardes`) ou alors dès le premier lancement en cas de crash total. 
+>La gestion des sauvegardes est maintenant disponible sur HAOS et HA Container.
 
-{{< selected_post title="Articles concernant les sauvegardes de Home Assistant" tag="backup" >}}
+**Nous n'avons encore rien écrit sur les sauvegardes sur le site, mais certains existe sur le [forum](https://forum.hacf.fr).**
 
 ## Conclusion.
-
-Nous touchons à la fin de cet article généraliste, mais vous permettant d'approfondir et de vous orienter vers des articles adaptés à vos besoins et vos demandes.
+Nous touchons à la fin de cet article assez généraliste, mais vous permettant d'approfondir et de vous orienter vers des articles adaptés à vos besoins et vos demandes.
 
 Il n'est pas un guide **ultime**, mais bien une aide dans la compréhension et la prise de vos décisions.
 
 N'hésitez pas à nous faire remonter les erreurs ou partager vos trouvailles sur le forum.
 
 ### Sources
-
-[Home Assistant Installation Officie (EN)](https://www.home-assistant.io/installation/)
+* [Home Assistant Installation Officiel (EN)](https://www.home-assistant.io/installation/)
+* [Home Assistant Backup Officiel (EN)](https://www.home-assistant.io/integrations/backup/)
