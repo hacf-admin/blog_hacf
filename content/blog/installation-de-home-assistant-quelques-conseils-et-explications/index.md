@@ -227,7 +227,7 @@ La mise en place d'un proxy inversé sur une autre machine Home Assistant (Ex : 
 #### Principe
 Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur Home Assistant. De ce fait, c'est votre proxy inversé qui prend en charge la connexion sécurisée avec votre client. Le reste de la communication vers votre serveur Home Assistant peut rester non chiffrée (HTTP).
 
-![acces-reverse-proxy](img/topology-proxyinverse.png "accès par reverse proxy")
+![Accès-reverse-proxy](img/topology-proxyinverse.png "accès par reverse proxy")
 
 **Avantage(s)**
 * Sécurité accrue avec l'ajout d'un service intermédiaire et des fois d'un pare-feu,
@@ -244,58 +244,50 @@ Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur
 
 ### 4. Via un opérateur tiers de services réseaux (autre que Nabu Casa)
 
-Cette solution fait appel à un opérateur tiers pour se connecter à son réseau, tout comme la solution Nabu Casa. Sauf que ce n'est pas natif Home Assistant et qu'il vous faudra ajouter un module complémentaire (add-on).
+Cette solution fait appel à un opérateur tiers (Cloudflare, Zerotier) pour se connecter à son réseau. Cela peut être gratuit ou payant et pourrait nécessiter l'installation d'un module complémentaire (add-on). *Elle peut aussi être associée à un accès externe via VPN*.
 
 #### Principe
-
-Ceci est UN schéma possible, tout dépend des services fournit par l'opérateur (VPN, DynDNS, Proxy inverse, certificat SSL, etc). Dans l'exemple ci-après, l'opérateur fournit un service de proxy inverse et un certificat valide dans son domaine.
+Le principe est le même qu'avec [Nabu Casa](#Nabu Casa (Home Assistant Cloud)), mais via un autre prestataire.
 
 **Avantage(s)**
-
-* Accès via un tiers de confiance qui gère une partie de la sécurité
-* Pas besoin d’ouvrir de port en entrée sur la box.
+* Accès via un tiers de confiance qui gère une partie de la sécurité et parfois le NDD,
+* Pas besoin d’ouvrir de port sur votre box.
 
 **Inconvénient(s)**
-
-* Ne vous affranchit pas de gérer un certificat pour la communication entre l'opérateur et votre réseau (sauf si service VPN),
-* Beaucoup de "services" à gérer (complexité).
+* Un service et add-on supplémentaire.
 
 ### 5. Via un VPN
-
-Cette solution est à but informatif, dans le sens où c'est une possibilité, mais la mise en œuvre technique est bien plus ardue… et si vous êtes intéressé, c'est que vous devriez avoir les compétences nécessaires (ou être suffisamment averti) pour mettre en pratique !
+Cette solution, à but informatif, est réservé aux personnes ayant des compétences en réseaux, car c'est bien plus ardu et complexe.
 
 #### Principe
-
 Le schéma présente de façon très simplifiée le principe. Via un client VPN installé sur votre mobile ou PC distant, vous aurez un accès à votre réseau local directement (moyennant quelques contraintes dépendantes de routage).
 
-> **Nota :** Une offre (gratuite à ce jour) de la société [ZeroTier](https://www.zerotier.com/) permet de créer un VPN sans avoir besoin de toucher à sa Box internet, un plus indéniable, d'autant qu'[un add-on Home Assistant](https://github.com/hassio-addons/addon-zerotier) existe !
+> **Nota :** Une offre (gratuite à date) de la société [ZeroTier](https://www.zerotier.com/) permet de créer un VPN sans avoir besoin de toucher à sa Box internet, un plus indéniable, d'autant qu'[un add-on Home Assistant](https://github.com/hassio-addons/addon-zerotier) existe !
 
 **Avantage(s)**
-
 * Accès direct à tout votre réseau (pas seulement Home Assistant et pas uniquement en HTTPS),
 * Accès sécurisé.
 
 **Inconvénient(s)**
-
 * Être un utilisateur très averti,
 * Client VPN à installer sur son mobile ou PC distant.
 
 ### Solution / conseil ??
+Comme vous pouvez vous en douter, il y a plein de solution adapté à différent niveau de compétence. Même si nos articles essai de rendre tout ça le plus simple possible, ne vous lancez pas dans des solutions complexes que vous ne comprenez pas.
 
-Comme vous pouvez vous en douter, il y a plein de solution adapté à différent niveau de compétence. Même si nos articles essai de rendre tout ça le plus simple possible, ne vous engagez dans des solutions complexes que vous ne comprenez pas.
+Le meilleur rapport facilité sécurité est [Nabu Casa](#Nabu Casa (Home Assistant Cloud)) même si elle est payante. Les autres solutions recommandées sont, soit le passage par un prestataire externe vous évitant d'ouvrir les ports de votre box internet ou alors l'utilisation d'un reverse proxy.
 
 ## La sauvegarde.
+Dernières étapes avant de commencer à jouer avec votre solution domotique, la sauvegarde.
+Une étape **très importante**, que l'on soit débutant ou confirmé, et qui devrait toujours être votre première préoccupation lorsque vous testez ou utilisez un service ou une app.
 
-Un élément important, que l'on soit débutant ou confirmé, est de bien sauvegarder son travail.
+Il est primordial d'effectuer des sauvegardes régulières, mais aussi de les disperser à plusieurs endroits).
 
-Il est primordial d'effectuer des sauvegardes régulières et dispersées à plusieurs endroits, plus connu sous la règle du 3-2-1.
-
-> La regle du 3-2-1 veut dire, une sauvegarde sur 2 supports differents et une sauvegarde a l'exterieur.
+>**La règle du 3-2-1, qu'est-ce que c'est ? :** 3 sauvegardes. 1 sauvegarde sur 2 supports differents et 1 sauvegarde a l'exterieur.
 
 Il y a plusieurs moyens de faire des sauvegardes :
-
-* En manuelle ou automatique, qui reste sur votre système,
-* Un envoi vers un espace cloud (Google Drive),
+* En manuelle ou automatique, qui reste sur votre système et récupérable via l'UI ou alors via un partage avec l'add-on Samba Share,
+* Un envoi vers un espace cloud (Ex : Google Drive),
 * Un envoi vers un NAS sur le réseau local.
 
 Il n'y a pas de méthode à privilégier, car il faut mélanger les sauvegardes locales et distantes.
