@@ -1,14 +1,18 @@
 ---
+folder: ha_addon_installation
 visibleInCMS: true
-draft: true
+draft: false
 date: 18-09-22
 lastmod: null
 level: Débutant
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/comment-installer-un-add-on-officiel-et-non-officiel/2071/
 socialshare: true
+series: null
 title: Installer un Add-on officiel ou non officiel sur Home Assistant
 type: post
+aliases:
+  - /ha_addon_installation
 images: img/installerunaddonofficielounonofficiel.jpg
 description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   sont une des forces de Home Assistant, car ils vous permettent d'y ajouter des
@@ -17,7 +21,6 @@ description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   domotique.
 categories:
   - Add-on/intégration
-series: null
 tags:
   - haos
   - ha-supervised
