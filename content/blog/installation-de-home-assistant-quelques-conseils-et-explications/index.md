@@ -107,7 +107,7 @@ Une solution alternative, un peu particulière, permet l’utilisation de votre 
 * **S﻿i vous ne voulez pas dédier une machine à Home Assistant, envisagez une virtualisation avec Proxmox par exemple.**
 * **Si vous découvrez Linux, Docker, les VMs, partez sur des installations préconfigurées,** vous les trouverez disponibles pour NUC, Raspberry, Odroid, etc. Par image préconfigurée, j'entends, une image faite pour votre matériel, comprenant l'OS (système exploitation) et Home Assistant avec le Superviseur.
 
-> **Attention**. Si vous envisagez un jour une migration, il faut savoir, que lors du passage d'un type d'installation a un autre, la partie **core** (entités, automatisations, intégrations, *backup*) sera facilitée par les sauvegardes de Home Assistant, mais pas les add-ons par exemple.
+> **Attention**. Si vous envisagez un jour une migration, il faut savoir, que lors du passage d'un type d'installation a un autre, la partie **core** (entités, automatisations, intégrations) sera facilitée par les sauvegardes de Home Assistant, mais pas les add-ons par exemple.
 
 ## Les add-ons.
 Les add-ons permettent d’ajouter des fonctions, services ou autres à votre système domotique.
@@ -128,11 +128,11 @@ I﻿l existe plusieurs façons d'ajouter un add-on :
 
 ### Q﻿uels sont les add-ons indispensables ? 
 Même si cette question reste très subjective, voici une liste non exhaustive des add-ons les plus communs est utiles :
-* *File Editor ou VSCode* : Permet l'édition des fichiers de configuration.
-* *Terminal* : Permet de lancer des commandes via un Terminal intégré directement dans votre interface (évite l'ouverture de l'accès SSH) et d'installer HACS.
-* *Samba* : Permet de rendre accessible les dossiers de configuration sur votre réseau local.
+* **File Editor** ou **VSCode** : Permet l'édition des fichiers de configuration.
+* **Terminal** : Permet de lancer des commandes via un Terminal intégré directement dans votre interface (évite l'ouverture de l'accès SSH) et d'installer **HACS**.
+* **Samba** : Permet de rendre accessible les dossiers de configuration sur votre réseau local.
 
-{{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on/intégration" >}}
+{{< selected_post title="Articles concernant les Add-ons indispensables de Home Assistant" cat="add-on, intégration" >}}
 
 ## L'accès l'extérieur.
 A﻿ccéder à son système domotique depuis n'importe où dans le monde est primordial, mais il faut prendre conscience que cela peut ouvrir une brèche de sécurité sur votre système domotique et aussi sur votre réseau interne. Il convient donc de faire attention à ce que l'on fait.
@@ -145,14 +145,13 @@ Ces solutions sont :
 * Via Nabu Casa,
 * Via accès direct en HTTP,
 * Via accès direct en HTTPS,
-* ﻿Via des services externes,
-* Via une Box qui permet le "Loopback" ou un service DNS local,
 * Via un proxy inversé (reverse proxy),
-* Via un VPN, *﻿ Via un prestataire tiers de services réseaux.
+*﻿ Via un prestataire tiers de services réseaux,
+* Via un VPN. 
 
 Passons en revue ces différentes solutions.
 
-> **Avant toute chose :** N'imaginez pas un accès vers votre réseau avec des communications NON chiffrées, nous parlerons donc ici uniquement d’accès via HTTPS!
+> **Avant toute chose :** N'imaginez pas un accès vers votre réseau avec des communications **NON** chiffrées, nous parlerons donc ici uniquement d’accès via HTTPS!
 
 ### Nabu Casa (Home Assistant Cloud)
 >[Nabu Casa](https://www.nabucasa.com/) est la société créée par les fondateurs de Home Assistant.
@@ -175,7 +174,7 @@ Fonctionnant sur le même principe que Cloudflare ou Zerotier (mais sans add-on)
 * Un abonnement mensuel ou annuel,
 * Accès seulement à HA depuis l'extérieur.
 
-**Nous n'avons encore rien écrit sur l'accès avec Nabu Casa, mais si vous souhaitez le faire c'est avec plaisir.**
+**Nous n'avons encore rien écrit sur l'accès avec Nabu Casa, mais si vous souhaitez le faire, c'est avec plaisir.**
 
 ### L'accès direct en HTTP.
 
@@ -215,10 +214,10 @@ Avec un nom de domaine (NDD) ou via un prestataire externe (DuckDNS) et en s'app
 * Pas de pare-feu digne de ce nom,
 * Problème de connexion avec certaine box via le NDD en local "loopback" (Orange).
 
-**Nous n'avons encore rien écrit sur l'accès avec en HTTPS sur le site, mais certains existe sur le [forum](https://forum.hacf.fr).**
+**Nous n'avons encore rien écrit sur l'accès avec en HTTPS sur le site, mais certains articles existent sur le [forum](https://forum.hacf.fr).**
 
 ### Via un proxy inversé
-La mise en place d'un proxy inversé via Home Assistant (Ex : Nginx Proxy Manager) peu être un peu plus complexe, mais elle peut permettre de sécuriser un peu plus que la solution précédente.
+La mise en place d'un proxy inversé via Home Assistant (Ex : Nginx Proxy Manager) peu être un peu plus complexe, mais elle peut permettre une sécurité supplémentaire.
 
 La mise en place d'un proxy inversé sur une autre machine Home Assistant (Ex : Swag) est aussi plus complexe, mais elle permet de sécuriser encore plus votre installation.
 
@@ -228,7 +227,7 @@ Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur
 ![Accès-reverse-proxy](img/topology-proxyinverse.png "accès par reverse proxy")
 
 **Avantage(s)**
-* Sécurité accrue avec l'ajout d'un service intermédiaire et des fois d'un pare-feu,
+* Sécurité accrue avec l'ajout d'un service intermédiaire et, des fois, d'un pare-feu,
 * Possibilité d'exposer d'autres services que HA sur l'extérieur (Grafana, Synology, etc) sur le même port que HA
 * Configuration SSL automatisé ou plus souple suivant le produit de proxy inversé
 * Validation des certificats et régénération automatique.
@@ -236,7 +235,7 @@ Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur
 **Inconvénient(s)**
 * Complexification : configuration d'un service intermédiaire et sa compréhension dans l'architecture.
 
-**Nous n'avons ps encore tout réécrit sur le site donc certains sont sur le site et d'autres existe sur le [forum](https://forum.hacf.fr).**
+**Nous n'avons ps encore tout réécrit sur le site donc certains articles sont sur le site et d'autres existent sur le [forum](https://forum.hacf.fr).**
 
 * [Accès de l’extérieur en HTTPS avec Nginx Proxy Manager](/ha_acces_ext_npm)
 
@@ -245,7 +244,7 @@ Le principe ici est de mettre ce proxy inversé entre votre Box et votre serveur
 Cette solution fait appel à un opérateur tiers (Cloudflare, Zerotier) pour se connecter à son réseau. Cela peut être gratuit ou payant et pourrait nécessiter l'installation d'un module complémentaire (add-on). *Elle peut aussi être associée à un accès externe via VPN*.
 
 #### Principe
-Le principe est le même qu'avec [Nabu Casa](#Nabu Casa (Home Assistant Cloud)), mais via un autre prestataire.
+Le principe est le même qu'avec [Nabu Casa](#nabu-casa-home-assistant-cloud), mais via un autre prestataire.
 
 **Avantage(s)**
 * Accès via un tiers de confiance qui gère une partie de la sécurité et parfois le NDD,
@@ -271,17 +270,17 @@ Le schéma présente de façon très simplifiée le principe. Via un client VPN 
 * Client VPN à installer sur son mobile ou PC distant.
 
 ### Solution / conseil ??
-Comme vous pouvez vous en douter, il y a plein de solution adapté à différent niveau de compétence. Même si nos articles essai de rendre tout ça le plus simple possible, ne vous lancez pas dans des solutions complexes que vous ne comprenez pas.
+Comme vous pouvez vous en douter, il y a plusieurs solutions adaptées à différent niveau de compétence. Même si nos articles essaient de rendre tout ça le plus simple possible, ne vous lancez pas dans des solutions complexes que vous ne comprenez pas.
 
-Le meilleur rapport facilité sécurité est [Nabu Casa](#Nabu Casa (Home Assistant Cloud)) même si elle est payante. Les autres solutions recommandées sont, soit le passage par un prestataire externe vous évitant d'ouvrir les ports de votre box internet ou alors l'utilisation d'un reverse proxy.
+La meilleure solution facilitée/sécurité est [Nabu Casa](#nabu-casa-home-assistant-cloud) même si elle est payante. Les autres solutions recommandées sont, soit le passage par un prestataire externe vous évitant d'ouvrir les ports de votre box internet ou alors l'utilisation d'un reverse proxy.
 
 ## La sauvegarde.
-Dernières étapes avant de commencer à jouer avec votre solution domotique, la sauvegarde.
+Dernière étape avant de commencer à jouer avec votre solution domotique, la sauvegarde.
 Une étape **très importante**, que l'on soit débutant ou confirmé, et qui devrait toujours être votre première préoccupation lorsque vous testez ou utilisez un service ou une app.
 
 Il est primordial d'effectuer des sauvegardes régulières, mais aussi de les disperser à plusieurs endroits).
 
->**La règle du 3-2-1, qu'est-ce que c'est ? :** 3 sauvegardes. 1 sauvegarde sur 2 supports differents et 1 sauvegarde a l'exterieur.
+>**La règle du 3-2-1**, qu'est-ce que c'est ? : 3 sauvegardes. 1 sauvegarde sur 2 supports differents et 1 sauvegarde a l'exterieur.
 
 Il y a plusieurs moyens de faire des sauvegardes :
 * En manuelle ou automatique, qui reste sur votre système et récupérable via l'UI ou alors via un partage avec l'add-on Samba Share,
@@ -290,10 +289,10 @@ Il y a plusieurs moyens de faire des sauvegardes :
 
 Il n'y a pas de méthode à privilégier, car il faut mélanger les sauvegardes locales et distantes.
 
-En cas de soucis, il est possible de restaurer une sauvegarde via l'UI (`Paramètres->`Système`->`Sauvegardes`) ou alors dès le premier lancement en cas de crash total. 
+En cas de soucis, il est possible de restaurer une sauvegarde via l'UI (`Paramètres`->`Système`->`Sauvegardes`) ou alors dès le premier lancement en cas de crash total. 
 >La gestion des sauvegardes est maintenant disponible sur HAOS et HA Container.
 
-**Nous n'avons encore rien écrit sur les sauvegardes sur le site, mais certains existe sur le [forum](https://forum.hacf.fr).**
+**Nous n'avons encore rien écrit sur les sauvegardes sur le site, mais certains articles existent sur le [forum](https://forum.hacf.fr).**
 
 ## Conclusion.
 Nous touchons à la fin de cet article assez généraliste, mais vous permettant d'approfondir et de vous orienter vers des articles adaptés à vos besoins et vos demandes.
