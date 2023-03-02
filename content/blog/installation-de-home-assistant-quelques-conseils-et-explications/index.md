@@ -63,11 +63,13 @@ Elle permet un accès simple aux modules complémentaires (add-ons) et aux servi
 
 > Cette methode est officiellement supportée pour les Raspberry, Odroid, Asus Thinkerboard et Generic X86-X64 (Intel NUC). Au vu de la penurie de ce premier, n´hesitez pas a vous orienter vers d'autres machines si vous n'en avez pas en stock.
 
-{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-os" cat="Installation" >}}
+**Article concernant l'installation de Home Assistant OS**
+[Comment installer Home Assistant OS sur Raspberry, Odroid ou autre SBC](/installation_haos)
 
 Enfin, si vous ne voulez pas dédier votre système à Home Assistant (sur un mini PC par exemple), vous pouvez faire une installation "Home Assistant OS" dans un **système virtualisé**. Le plus courant est **Proxmox**.
 
-{{< selected_post title="***Articles concernant l'installation de Home Assistant OS***" tag="ha-supervised" cat="Installation" >}}
+**Nous n'avons encore rien écrit, mais si vous souhaitez le faire c'est avec plaisir**
+
 
 ### Home Assistant Container.
 
