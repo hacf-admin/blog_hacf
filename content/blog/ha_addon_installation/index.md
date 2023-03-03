@@ -20,7 +20,7 @@ description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   etc.) déjà quasi configurés pour communiquer simplement avec votre système
   domotique.
 categories:
-  - Add-on/Intégration
+  - Add-on/intégration
 tags:
   - haos
   - ha-supervised
