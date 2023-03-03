@@ -1,7 +1,9 @@
 {
   "title": "argonaute",
   "fonction": "Rédacteur & helper",
-  "bio": "Ingénieur informaticien de formation, je suis passionné de nouvelles technologies et DIY. J'ai commencé la domotique il y a maintenant une dizaine d'année avec Zibase, puis Eedomus, avant de découvrir Home Assistant. J'aime concevoir, partager et échanger.",
+  "bio": "Ingénieur informaticien de formation, je suis passionné de nouvelles technologies et DIY.\nJ'ai commencé la domotique il y a maintenant une dizaine d'années avec Zibase, puis Eedomus, avant de découvrir Home Assistant.\nJ'aime concevoir, partager et échanger.",
   "avatar": "images/authors/argonaute.png",
-  "pseudos": "Argonaute"
+  "pseudos": "Argonaute",
+  "pseudo_hacf": "argonaute",
+  "pseudo_haoff": "argonaute"
 }
