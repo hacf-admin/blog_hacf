@@ -1,6 +1,6 @@
 ---
 folder: https://dev.hacf.fr/news/ha-2023_3/
-title: "2023.3: Dialogues !"
+title: "Home Assistant 2023.3: Dialogues !"
 type: news
 visibleInCMS: true
 draft: false
