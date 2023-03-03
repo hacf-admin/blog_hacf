@@ -1,23 +1,25 @@
 ---
 folder: ha-premiers-projets
-title: Vos premiers projets avec Home Assistant
-type: post
 visibleInCMS: true
 draft: false
 date: 2023-02-17
 lastmod: 2023-02-17
+level: Débutant
+author: argonaute
+series:
+  - Débuter avec Home Assistant
+title: Vos premiers projets avec Home Assistant
+type: post
+aliases:
+  - /ha_premiers_projets
 images: img/accueil2.png
 description: "Voila, vous avez installé Home Assistant et il est temps pour vous
   d'en découvrir ses possibilités. Ce tuto vous propose une série de mini
   projets pour une première approche. "
-level: Débutant
 categories:
   - Concepts
-series:
-  - Débuter avec Home Assistant
 tags:
   - Débuter
-author: argonaute
 ---
 
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.
