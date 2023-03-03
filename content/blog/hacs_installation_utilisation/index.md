@@ -20,7 +20,7 @@ description: "Malgré les multitudes d'intégrations, d'add-ons ou de thèmes
   développe d'autres. Cette communauté, c'est HACS, pour Home Assistant
   Community Store. Voyons comment l'installer "
 categories:
-  - Add-on
+  - Add-on/Intégration
   - Automatisation
 tags:
   - HACS

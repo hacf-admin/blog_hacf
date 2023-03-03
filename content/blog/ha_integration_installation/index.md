@@ -15,7 +15,7 @@ description: Les intégrations vous permettent d’ajouter facilement du matéri
   des capteurs, des fonctions au sein de votre système domotique. Nous allons
   voir comment ajouter une intégration.
 categories:
-  - Intégration
+  - Add-on/Intégration
 series: null
 tags:
   - ha-core
