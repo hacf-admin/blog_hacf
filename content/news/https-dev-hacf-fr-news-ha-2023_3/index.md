@@ -179,7 +179,7 @@ Nous saluons les nouvelles intégrations suivantes dans cette version :
 * **[Contrôleur SDN TP-Link Omada](https://www.home-assistant.io/integrations/tplink_omada)**, ajouté par [@MarkGodwin](https://github.com/MarkGodwin)\
   Contrôlez vos périphériques SDN Omada à liaison TP, tels que les commutateurs réseau, points d'accès et passerelles Internet.
 
-## "Breaking changes"[]
+## "Breaking changes"
 
 > Détail non traduit ici - voir sur [Release 2023.3. - breaking changes](https://www.home-assistant.io/blog/2023/03/01/release-20233/#breaking-changes)
 
