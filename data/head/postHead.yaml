@@ -7,15 +7,15 @@ btnTitle: Nouveau sur Home Assistant ?
 btnDescription: Articles indispensables pour bien se lancer avec Home Assistant
 buttons:
   - name: Architecture et concepts
-    url: blog/concepts-home-assistant/
+    url: /ha-concepts
     weight: 1
     icon: fa-solid fas fas fa-bezier-curve
   - name: Installations
-    url: blog/installation-de-home-assistant-quelques-conseils-et-explications/
+    url: /ha_debuter
     weight: 2
     icon: fa-solid fa-server
   - name: Premiers projets
-    url: blog/premiers-projets/
+    url: /ha_premiers_projets
     weight: 3
     icon: fa-solid fas fa-paper-plane
 contentTitle: Liste de tous les articles de la communauté
