@@ -179,19 +179,9 @@ Nous saluons les nouvelles intégrations suivantes dans cette version :
 * **[Contrôleur SDN TP-Link Omada](https://www.home-assistant.io/integrations/tplink_omada)**, ajouté par [@MarkGodwin](https://github.com/MarkGodwin)\
   Contrôlez vos périphériques SDN Omada à liaison TP, tels que les commutateurs réseau, points d'accès et passerelles Internet.
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#need-help-join-the-community)Besoin d'aide ? Rejoignez la communauté !
+## "Breaking changes"[]
 
-Home Assistant a une grande communauté d'utilisateurs qui sont tout à fait disposés pour s'entraider. Alors, rejoignez-nous !
-
-Notre très actif [Serveur de chat Discord](https://www.home-assistant.io/join-chat) est un excellent endroit pour être à, et n'oubliez pas de rejoindre notre incroyable forum[](https://community.home-assistant.io/).
-
-Vous avez trouvé un bug ou un problème ? Veuillez le signaler dans notre tracker d'émission, pour le réparer ! Ou, vérifiez [notre page d'aide](https://www.home-assistant.io/help) pour des conseils pour plus des endroits où vous pouvez aller.
-
-Êtes-vous plus dans le courrier électronique ? [Inscrivez-vous à notre newsletter Building the Open Home](https://www.home-assistant.io/newsletter) pour obtenir les dernières nouvelles sur les fonctionnalités, les choses qui se passent dans notre communauté et d'autres nouvelles sur la construction d'un système domotique  opensource; directement dans votre boîte de réception.
-
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#breaking-changes)Modifications de rupture ("breaking changes")
-
-> Détail non traduit ici - voir sur \[Release 2023.3.](https://www.home-assistant.io/blog/2023/03/01/release-20233/)
+> Détail non traduit ici - voir sur [Release 2023.3. - breaking changes](https://www.home-assistant.io/blog/2023/03/01/release-20233/#breaking-changes)
 
 * Assist / Conversation
 * Déclencheurs de dispositifs de pression atmosphérique
