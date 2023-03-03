@@ -5,7 +5,8 @@ type: news
 visibleInCMS: true
 draft: true
 date: 2023-01-03
-lastmod: 2023-02-03 - McFly
+lastmod: 2023-02-03
+authors: mcfly
 description: Sortie de la version 2022.8 de Home Assistant, traduction française
   de la communauté Francophone HACF
 tags:

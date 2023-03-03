@@ -5,7 +5,7 @@ draft: false
 date: 2023-02-22
 lastmod: null
 level: Débutant
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/home-assistant-premiere-configuration/679
 socialshare: true
 series:

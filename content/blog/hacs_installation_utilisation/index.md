@@ -5,7 +5,7 @@ draft: false
 date: 06-10-22
 lastmod: null
 level: Débutant
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
 series:

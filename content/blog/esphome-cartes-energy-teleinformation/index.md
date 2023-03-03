@@ -20,7 +20,7 @@ tags:
   - linky
   - esphome
   - esp32
-author: argonaute
+authors: argonaute
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
 ---
 ## 1.Introduction

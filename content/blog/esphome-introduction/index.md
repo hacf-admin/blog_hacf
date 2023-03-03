@@ -20,7 +20,7 @@ tags:
   - esp8266
   - esphome
   - DIY
-author: argonaute
+authors: argonaute
 ---
 ![ESPHome - Nabu Casa](img/esphome-nabu-casa.png)
 

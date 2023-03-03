@@ -5,7 +5,7 @@ draft: false
 date: 2023-02-10
 lastmod: 2023-02-10
 level: Débutant
-author: argonaute
+authors: argonaute
 series:
   - Les Bases de Home Assistant
 title: Architecture et concepts Home Assistant

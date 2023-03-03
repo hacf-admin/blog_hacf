@@ -7,7 +7,7 @@ folder: article-test
 visibleInCMS: true
 date: 2023-01-03
 lastmod: 2023-02-10
-author: mcfly
+authors: mcfly
 socialshare: true
 title: Article Test
 gallery:

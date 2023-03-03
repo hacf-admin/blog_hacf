@@ -21,7 +21,7 @@ series: null
 tags:
   - blueprint
   - chauffage
-author: argonaute
+authors: argonaute
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 socialshare: true
 ---

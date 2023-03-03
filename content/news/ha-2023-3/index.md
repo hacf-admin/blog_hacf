@@ -13,7 +13,7 @@ description: Comme chaque premier mercredi du mois, une nouvelle version de Home
 tags:
   - release
   - traduction
-author: argonaute
+authors: argonaute
 ---
 > **Cet article est une traduction de [2023.3: Dialogs!](https://www.home-assistant.io/blog/2023/03/01/release-20233/)** publié sur le site de Home Assistant.\*\*
 
