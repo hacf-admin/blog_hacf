@@ -14,7 +14,7 @@ description: Comme chaque premier mercredi du mois, une nouvelle version de Home
 tags:
   - release
   - traduction
-author: default
+author: ""
 ---
 > **Cet article est une traduction de [2023.3: Dialogs!](https://www.home-assistant.io/blog/2023/03/01/release-20233/)** publié sur le site de Home Assistant.\*\*
 
@@ -28,7 +28,7 @@ author: default
 
 *Mon point préféré dans cette version est, sans aucun doute, la toute nouvelle boîte de dialogue de redémarrage. Elle offre un choix approprié, réduit la navigation et est très élégante ! J'aime vraiment et apprécie le résultat. 🤩*
 
-*Profitez de cette version !"*
+*Profitez de cette version !"* 
 
 *../Frenck*
 
@@ -80,7 +80,7 @@ La **boîte de dialogue d'information de l'entité** (également connue sous le 
 
 ![Capture d'écran montrant les nouvelles boîtes de dialogue d'informations d'entité, mettant en évidence les changements de barre supérieure.](img/new-entity-dialog.png)
 
-Les onglets “ `Info `”, “ `Historique `”, “ `Paramètres `” et “ `Related `” ont été supprimés, ce qui donne à la boîte de dialogue un aspect beaucoup plus propre. Les icônes pour les paramètres et l'historique ont été ajoutés en haut à droite pour remplacer ces onglets. Le nouveau menu "trois points" peut afficher des informations sur l'entité liée et fournit un lien direct vers l'appareil tableau de bord de l'appareil qui a fourni cette entité.
+Les onglets “ `Info`”, “ `Historique`”, “ `Paramètres`” et “ `Related`” ont été supprimés, ce qui donne à la boîte de dialogue un aspect beaucoup plus propre. Les icônes pour les paramètres et l'historique ont été ajoutés en haut à droite pour remplacer ces onglets. Le nouveau menu "trois points" peut afficher des informations sur l'entité liée et fournit un lien direct vers l'appareil tableau de bord de l'appareil qui a fourni cette entité.
 
 Beau travail [@matthiasdebaat](https://github.com/matthiasdebaat) et [@piitaya !](https://github.com/piitaya)
 
