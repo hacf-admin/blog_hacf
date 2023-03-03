@@ -19,8 +19,7 @@ title: Installer le boitier Argon One sur Home Assistant et le controler
 type: post
 images: null
 categories:
-  - Add-on
-  - Intégration
+  - Add-on/Intégration
 series:
   - home assistant
 tags:

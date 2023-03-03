@@ -20,7 +20,7 @@ description: Cet article vous apporte des explications claires sur les méthodes
 categories:
   - Installation
   - Concepts
-  - Add-on
+  - Add-on/Intégration
 tags: []
 ---
 Dans cet article, nous allons essayer d'aborder tous les \*\*points important\*\* vous permettant de vous lancer avec une base solide dans Home Assistant.

@@ -13,7 +13,7 @@ description: >-
   Il est primordial de recevoir des notifications de son système domotique, et d'y accompagner des images ou des vidéos. Et si il est possible d'y répondre, c'est encore mieux. Home Assistant permet certes d'envoyer des notifications mais plutôt pour un usage système. Telegram avec son mécanisme de bot est vraiment très puissant et très pertinent.
 level: Intermédiaire
 categories:
-  - Add-on/intégration
+  - Add-on/Intégration
 tags:
   - telegram
   - notification
