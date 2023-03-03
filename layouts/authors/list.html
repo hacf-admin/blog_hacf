@@ -11,6 +11,7 @@
   <div class="col-12 col-lg-2 p-5 order-1">
     <div class="d-grid gap-2 col-3 col-lg-12 mx-auto sticky-top" style="top: 80px">
     <h5 class="text-center">Auteurs</h5>
+    <a class="btn btn-sm btn-outline-primary position-relative" href="/authors" role="button">Tous les Auteurs</a>
     {{ range .Site.Taxonomies.authors }}
     <a class="btn btn-outline-primary position-relative" href="{{ .Page.Permalink }}" role="button">{{ .Page.Title }} 
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ .Count }}
