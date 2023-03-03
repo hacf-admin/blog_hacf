@@ -99,8 +99,6 @@ Une fois la copie terminée et vérifiée, passez à la suite.
 * Dans `CHOISISSEZ LE STOCKAGE`, sélectionner votre Carte SD,
 * Et cliquer sur écrire.
 
-
-
 ## Premier Lancement.
 
 Une fois votre image transférée par la méthode de votre choix, insérer votre carte MicroSD, votre câble Ethernet (recommandé), l'alimentation puis allumer votre matériel.
