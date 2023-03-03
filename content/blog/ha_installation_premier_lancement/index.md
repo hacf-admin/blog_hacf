@@ -102,3 +102,7 @@ Après avoir redémarré, vos données seront sur le disque dur et les écriture
 ## Conclusion
 Vous avez maintenant une installation de Home Assistant toute fraîche. 
 Vous pouvez à présent vous lancer dans [vos premiers projets](/ha_premiers_projets) ou dans l'[installation d'add-ons](/ha_addon_installation).
+
+### Sources.
+* [External Drive Off](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk)
+* [Home Assistant OnBoarding Off (EN)](https://www.home-assistant.io/getting-started/onboarding/)
