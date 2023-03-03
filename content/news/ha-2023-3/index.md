@@ -1,9 +1,10 @@
 ---
+draft: false
+authors: argonaute
 folder: https://dev.hacf.fr/news/ha-2023_3/
 title: "Home Assistant 2023.3: Dialogues !"
 type: news
 visibleInCMS: true
-draft: false
 date: 2023-03-02
 lastmod: 2023-03-02
 images: img/social.png
@@ -13,7 +14,7 @@ description: Comme chaque premier mercredi du mois, une nouvelle version de Home
 tags:
   - release
   - traduction
-authors: argonaute
+author: default
 ---
 > **Cet article est une traduction de [2023.3: Dialogs!](https://www.home-assistant.io/blog/2023/03/01/release-20233/)** publié sur le site de Home Assistant.\*\*
 
