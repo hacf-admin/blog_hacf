@@ -42,7 +42,7 @@ Que votre matériel soit un NUC, une Raspberry, une Tinkerboard ou un Odroid, ce
 * [Raspberry Pi OS](https://www.raspberrypi.com/software/) *(Linux, Windows, MacOS)*
 * [L'image pour votre système](https://github.com/home-assistant/operating-system/releases) *(Facultatif)*
 
-**Installation sur Raspberry Pi : Pourquoi il utilise une carte Micro SD alors que, sur le net, tout le monde parle de problèmes avec les cartes SD ?** Parce que [Home Assistant le recommande](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk).(Voir [plus bas](/ha_installation_premier_lancement#déplacer-les-données-utilisateurs-facultatif))
+**Installation sur Raspberry Pi : Pourquoi il utilise une carte Micro SD alors que, sur le net, tout le monde parle de problèmes avec les cartes SD ?** Parce que [Home Assistant le recommande](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk).([Voir ici](/ha_installation_premier_lancement/#déplacer-les-données-utilisateurs-facultatif))
 
 ## Préparation avec Balena Etcher.
 Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour votre système d'exploitation.
