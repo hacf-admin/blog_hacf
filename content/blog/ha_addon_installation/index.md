@@ -90,4 +90,4 @@ Il est aussi possible d'installer des add-ons ou autres via **HACS** (*Home Assi
 ## Conclusion.
 Nous venons de voir comment ajouter une multitude de possibilités à notre instance domotique.
 
-Vous pouvez trouver une liste non exhaustive d'[add-ons indispensables ici](https://dev.hacf.fr/blog/ha_commencer_base_solide/#quels-sont-les-add-ons-indispensables).
+Vous pouvez trouver une liste non exhaustive d'[add-ons indispensables ici](/blog/ha_commencer_base_solide/#quels-sont-les-add-ons-indispensables).
