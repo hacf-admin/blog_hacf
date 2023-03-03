@@ -102,4 +102,3 @@ J'ai volontairement recommandé la connexion par câble Ethernet au lieu du Wifi
 * [Home Assistant Installation](https://www.home-assistant.io/hassio/installation/)
 * [Home Assistant OS images](https://github.com/home-assistant/operating-system/releases)
 * [Etcher](https://www.balena.io/etcher/)
-* [External Drive Off](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk)
