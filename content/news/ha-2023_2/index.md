@@ -25,7 +25,7 @@ author: argonaute
 
 *Sans aucun doute, les caractéristiques les plus spectaculaires sont liées au [premier chapitre de Year of the Voice](https://www.home-assistant.io/blog/2023/01/26/year-of-the-voice-chapter-1/) . 🎙️ Il est difficile de résumer tout cela dans ce blog de sortie, donc je ne vais même pas essayer de le faire dans cette introduction, mais sainte mère des maisons intelligentes : c'est quelque chose d'excitant ! 😮*
 
-*Mon sujet préféré de cette version : des étapes énormes vers une intégration encore plus étroite avec notre incroyable projet sœur : [ESPHome](https://esphome.io/) . La création et la maintenance de vos propres appareils IoT DIY sécurisés sont devenues beaucoup plus faciles.*
+*Mon point préféré de cette version : des étapes énormes vers une intégration encore plus étroite avec notre incroyable projet sœur : [ESPHome](https://esphome.io/) . La création et la maintenance de vos propres appareils IoT DIY sécurisés sont devenues beaucoup plus faciles.*
 
 *Et puisque nous parlons de génialité, avez-vous remarqué la grande quantité de logos dans l'image de sortie ci-dessus ? Tant de nouvelles intégrations ! 🤩*
 
@@ -37,7 +37,7 @@ author: argonaute
 
 ![](img/ha-2023.2.png)
 
-## Rendez-vous : assistez !
+## Rendez-vous : Assist !
 
 C'est [l'année de la voix de Home Assistant](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) et notre objectif est de permettre aux utilisateurs de contrôler Home Assistant dans leur propre langue. En collaboration avec la communauté Home Assistant, nous avons travaillé d'arrache-pied pour en jeter les bases.
 
@@ -45,7 +45,7 @@ Aujourd'hui nous aimerions vous rencontrer :
 
 Assist vous permet d'utiliser le langage naturel pour contrôler Home Assistant. Il est alimenté par [Hassil](https://github.com/home-assistant/hassil) et les phrases (contribuées par 112 personnes) du projet [Home Assistant Intents](https://home-assistant.github.io/intents/) .
 
-Nous pensons que la technologie est faite pour être jouée et que les projets doivent être utilisables dès que possible. Avec la communauté, nous pouvons ensuite itérer et affiner. C'est pourquoi aujourd'hui, nous offrons une expérience de base prenant en charge **22 langues** qui fonctionnent avec Assist.
+Nous pensons que la technologie est faite pour être déployée et que les projets doivent être utilisables dès que possible. Avec la communauté, nous pouvons ensuite itérer et affiner. C'est pourquoi aujourd'hui, nous offrons une expérience de base prenant en charge **22 langues** qui fonctionnent avec Assist.
 
 Allez-y, il est activé par défaut ; appuyez simplement sur la nouvelle icône `Assist` en haut à droite de votre tableau de bord pour commencer à l'utiliser.
 
@@ -63,13 +63,13 @@ Ces cartes d'historique affichent maintenant la consommation d'énergie en direc
 
 Mais cela ne se limite pas aux cartes d'historique, votre [tableau de bord d'historique](https://my.home-assistant.io/redirect/history) est désormais également en ligne !
 
-Grâce à tout cela, nous pouvons désormais écrire moins fréquemment dans la base de données de notre enregistreur. Il a fallu des années de changements pour en arriver là (merci [@bdraco](https://github.com/bdraco) 🙏). Il réduit considérablement l'utilisation des ressources et augmente considérablement la durée de vie du stockage. Le journal de bord en direct introduit précédemment et maintenant l'historique en direct ont été les derniers éléments qui ont rendu cela possible.
+Grâce à tout cela, nous pouvons désormais écrire **moins fréquemment** dans la base de données de notre enregistreur. Il a fallu des années de changements pour en arriver là (merci [@bdraco](https://github.com/bdraco) 🙏). Il réduit considérablement l'utilisation des ressources et augmente considérablement la durée de vie du stockage. Le journal de bord en direct introduit précédemment et maintenant l'historique en direct ont été les derniers éléments qui ont rendu cela possible.
 
-En tant qu'effet secondaire, cela devrait également résoudre les erreurs d'authentification rencontrées par certaines personnes lors de la réouverture de l'application compagnon iOS lors de l'utilisation de cartes d'historique.
+En tant qu'effet secondaire, cela devrait également résoudre les **erreurs d'authentification** rencontrées par certaines personnes lors de la réouverture de l'application compagnon iOS lors de l'utilisation de cartes d'historique.
 
 ## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#grouping-sensors)Regroupement des capteurs
 
-L' [assistant de groupe](https://www.home-assistant.io/integrations/group) prend désormais également en charge les capteurs ! Les groupes de capteurs peuvent combiner des entités avec un état numérique, comme [des entités capteurs](https://www.home-assistant.io/integrations/sensor) , [nombre](https://www.home-assistant.io/integrations/number) et [aides numériques](https://www.home-assistant.io/integrations/input_number) .
+L' [assistant de groupe](https://www.home-assistant.io/integrations/group) prend désormais également en charge les capteurs ! Les groupes de capteurs peuvent combiner des entités avec un état numérique, comme [des entités capteurs](https://www.home-assistant.io/integrations/sensor), [nombre](https://www.home-assistant.io/integrations/number) et [aides numériques](https://www.home-assistant.io/integrations/input_number) .
 
 ![Capture d'écran montrant le processus d'ajout d'un nouveau groupe de capteurs](img/sensor-groups.png)
 
@@ -101,7 +101,7 @@ Nous avons également préparé la prochaine version d'ESPHome (2023.2), dans la
 
 ## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#other-noteworthy-changes)Autres changements notables
 
-Il y a beaucoup plus de jus dans cette version ; Voici quelques-uns des autres changements notables de cette version :
+Il y a beaucoup plus de matière dans cette version ; Voici quelques-uns des autres changements notables de cette version :
 
 * Vous pouvez désormais également ajouter des alias à vos zones ! Notre nouvelle fonctionnalité d'assistance en tire parti.
 * Vous avez un capteur d'énergie dans `Wh`, mais vous aimeriez qu'il le soit `kWh`? Vous pouvez maintenant modifier les unités des capteurs d'énergie dans les paramètres de l'entité.
