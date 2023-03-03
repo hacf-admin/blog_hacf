@@ -126,6 +126,8 @@ panel_iframe:
 
 Pour la première utilisation, nous avons choisi une ESP-Wroom-32, qui est très courant.
 
+> Choisissez toujours si possible un ESP avec une prise USB : cela permet à la fois de l'alimenter plus facilement et surtout de charger le firmware initial sans avoir à refaire un câblage.  
+
 ### 3.1 Créer le composant sous ESPHome
 
 * Ouvrir ESPHome depuis le menu de gauche de HA.
@@ -167,7 +169,9 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 * Débrancher et rebrancher le l’ESP pour forcer son redémarrage
 * Retourner sur ESPHome, cliquer sur le bouton `LOGS` du composant et vérifier que vous avez accès aux logs et que l’ESP fonctionne. ESPHome essaie de se connecter en wifi à l'ESP et devrait confirmer la bonne connexion.
 
-> Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
+> Sachez qu**'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP**.
+>
+> Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
 >
 > Historiquement, le code était chargé grâce à un programme exécutable à télécharger sur son PC : [flasher.exe](https://github.com/esphome/esphome-flasher). Il est encore possible de l'utiliser si vous rencontrez des difficultés avec ESPHome Web. Le binaire sera alors à compiler en Legacy Format et non en Modern Format.
 
@@ -246,13 +250,15 @@ Débrancher et rebrancher votre ESP, et vérifier en cliquant sur le bouton `LOG
 
 Il vous faut maintenant **rendre visible votre ESP dans Home Assistant**. 
 
-Par défaut, votre ESP communique de manière chiffrée avec Home Assistant. Editer le code YAML de votre composant, et copier la clé de cryptage.
+Par défaut, votre ESP communique de manière chiffrée avec Home Assistant.
+
+Editer le code YAML de votre composant, et **copier la clé de cryptage**.
 
 ![Recopier clé API](img/recopie-clé-api.png)
 
 Aller sous `Paramètres`, `Appareils et Services` : votre module ESP devrait être découvert automatiquement
 
-Cliquer sur `Configurer`, coller la clé de cyryptage. Votre ESP est prêt à être utilisé dans Home Assistant et est visible dans la liste de vos appareils.
+Cliquer sur `Configurer`, coller la clé de cryptage. Votre ESP est prêt à être utilisé dans Home Assistant et est visible dans la liste de vos appareils.
 
 En cliquant sous `1 Appareil` dans l'appareil créé, vous avez accès aux différentes entités.
 
@@ -264,7 +270,7 @@ Il ne vous reste plus qu'à les intégrer dans votre dashboard Home Assistant.
 
 ## Conclusion
 
-Nous espérons que cet article vous donnera envie de vous lancer dans la **création d'objets connectés fait maison**. C'est juste passionnant !!
+Nous espérons que cet article vous donnera envie de vous lancer dans la **création d'objets connectés fait maison**. C'est juste **passionnant** !!
 
 ESPHome est **facile à appréhender** et ne demande pas de connaissances en électronique ou en développement. Vous trouverez beaucoup de code YAML dans la documentation ESPHome ou sur les forums.
 
