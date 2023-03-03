@@ -205,8 +205,6 @@ Reste enfin à intégrer les cartes Energy dans le dashboard (https://www.home-a
 
 ![Dashboard pour mobile](img/interfacelovelace.png)
 
-A noter qu'il y a ici présent le nouveau composant bouton :smirk:
-
 Voici le code pour intégrer les 6 **cartes Energy** dans le dashboard :
 
 ```yaml
@@ -266,7 +264,7 @@ entities:
 ```
 
 Une suite logique sera d'intégrer les consommations des différents appareils de la maison : chauffage, chauffe-eau…
-N'hésitez pas à faire vos retours ou compléments.
+
 
 ## Conclusion
 
@@ -278,7 +276,9 @@ Pour cela, il y a différentes solutions :
 * Intégration d'objets connectés exposant leur consommation
 * Capteur de mesure avec tor dans le tableau électrique (type Owon PC321)
 * Ajout de prises électriques connectés avec mesure de la consommation (machine à laver, réfrigérateur...)
-* Estimation de la consommation : calcul du temps de fonctionnement X puissance de l'appareil
+* Estimation de la consommation : calcul du temps de fonctionnement X puissance de l'appareil.
+
+N'hésitez pas à faire vos retours ou propositions.
 
 ## Sources
 
