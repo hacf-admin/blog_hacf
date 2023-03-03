@@ -57,7 +57,7 @@ La suivante vous permet d'accepter de partager anonymement certaines données, p
 
 La dernière concerne les matériels détectés automatiquement par Home Assistant déjà disponibles.
 
->Vous pouvez passer cette étape, on y reviendra plus tard. Ils peuvent être retrouvés dans `Paramètres` -> `Appareils et Services`
+> Vous pouvez passer cette étape, on y reviendra plus tard. Ils peuvent être retrouvés dans `Paramètres` -> `Appareils et Services`
 
 ![Image de la Détection automatique des matériels présents sur votre réseau.](img/installation_detection_automatique_materiels-1-.png "Détection automatique des matériels présents sur votre réseau.")
 
@@ -69,6 +69,30 @@ Le mode avancé vous permet d'avoir plus de contrôle sur votre serveur.
 Cliquer sur votre utilisateur (dans le menu) puis activer `Mode avancé`
 
 ![Image Activation du mode avancé dans le profil utilisateur de Home Assistant](img/profil_utilisateur-1-.png "Activation du mode avancé dans le profil utilisateur de Home Assistant")
+
+## Déplacer les données utilisateurs (facultatif).
+
+Si vous utilisez une MicroSD pour votre système et dans le but de la conserver en bon état le plus longtemps possible ou si la taille de votre mémoire interne devient trop juste, Home Assistant permet de déplacer les données utilisateurs sur un support externe (il peut être interne avec un boitier adapté).
+
+![Image du Schéma de principe sur le stockage des données vers un support externe](img/ha_usbdatadisk.png "Schéma de principe sur le stockage des données vers un support externe.")
+
+Nous allons en conséquence voir comment effectuer cette manipulation.
+
+> Il est conseillé de faire une sauvegarde avant d'effectuer cette manipulation, même s'il ne devrait pas avoir de problème.
+
+* Dans `Paramètres`, `Système`, `Stockage`,
+* En haut à droite, cliquer sur `...` puis appuyer sur `Déplacer le disque de données`,
+* Sélectionner le disque,
+* Cliquer sur `Déplacer`.
+
+![Déplacer ses données vers un autre support](img/deplacer_donnees_utilisateur_home_assistant.gif "Déplacer ses données vers un autre support")
+
+Après avoir redémarré, vos données seront sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
+
+> Pour une installation sur Raspberry avec Micro SD, cette méthode permet d'éviter les problèmes de détection du disque dur lié à USB3 et ceux de la carte MicroSD corrompue. Il permet aussi au système de profiter d'un démarrage rapide.
+>
+> En cas de Carte MicroSD corrompue (ce qui ne devrait plus arriver avec cette methode), il vous suffit de reinstaller Home Assistant OS sur une nouvelle carte MicroSD Classe 2 et relancer votre Raspberry Pi. Votre solution domotique se relance comme s'il ne c'etait rien passé.
+
 
 ## Conclusion
 
