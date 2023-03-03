@@ -1,6 +1,6 @@
 ---
 folder: Ha-2023_2
-title: "Home Assistant Core 2023.2 : Comment puis-je aider ?"
+title: "Home Assistant 2023.2 : Comment puis-je aider ?"
 type: news
 visibleInCMS: true
 draft: false
