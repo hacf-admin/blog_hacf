@@ -34,11 +34,13 @@ ESPHome était à l'origine un projet open source indépendant initié par [Otto
 
 Les **ESP** sont de petits modules électroniques à base de MCU (Micro Controller Unit) de la société **[Expressif Systems](https://www.espressif.com/en/products/socs/esp32)**. Il s'agit des **ESP8266** ou leurs grands frères les **ESP32**.
 
-Bien que leur fonctionnement soit identique, l'ESP32 est **plus puissant** que l'esp8266 (un dual core 160Mhz min contre single core 80Mhz), et surtout il a **plus de port** que le ESP8266.
+Bien que leur fonctionnement soit identique, l'ESP32 est **plus puissant** que l'esp8266 (un dual core 160Mhz min contre single core 80Mhz), et surtout, il a **plus de port** que le ESP8266 ainsi que 3 liaisons série à la place d'une.
 
 ![ESP32](img/esp32.png)
 
-Ces modules sont livrés sur une petite carte électronique qui expose les **ports** sur des pins, comme c'est le cas pour les arduino ou les raspberry :
+Ces modules sont livrés sur une petite carte électronique qui expose les **ports** sur des pins, comme c'est le cas pour les arduino ou les raspberry. 
+
+Les ESP disposent des entrées-sorties suivantes :
 
 * Entrées-sorties numériques (**GPIO**)
 * Convertisseurs analogiques (**ADC / DAC**)
@@ -46,17 +48,17 @@ Ces modules sont livrés sur une petite carte électronique qui expose les **por
 * Différents bus : **I2S** (connexion d'une caméra par ex) ou **CAN Bus**
 * Sortie **5v** et **3.3v**
 
-Les différents ports permettent d'y connecter une multitude de types de **capteurs** et **périphériques**. Ainsi, vous pouvez créer votre propre objet connecté **DIY** (Do It Yourself). Pour vous faire une idée des innombrables capteurs supportés, rendez-vous sur la page : https://esphome.io/#sensor-components
+Les différents ports permettent d'y connecter une multitude de types de **capteurs** et **périphériques**. Ainsi, vous pouvez créer votre propre objet connecté **DIY** (Do It Yourself). Pour vous faire une idée des innombrables capteurs supportés, rendez-vous sur la page : <https://esphome.io/#sensor-components>
 
-Les ESP sont alimentés en **5v** et disposent en général (mais pas toujours) d'une connexion **micro-usb** ou **usb-c.** Ils sont capables de se mettre en vieille profonde (**deep-sleep**) pour consommer très peu d'énergie. Cela permet une utilisation sur pile ou batterie.
+Les ESP sont alimentés en **5v** et disposent en général (mais pas toujours) d'une connexion **micro-usb** ou **usb-c.** Ils sont capables de se mettre en vieille profonde (**deep sleep**) pour consommer très peu d'énergie. Cela permet une utilisation sur **pile** ou **batterie**.
 
 Et, cerise sur le gâteau, ils communiquent à la fois en **Wifi** et **Bluetooth**. De nouveaux modèles intègrent même une connexion IP filaire.
 
 Et le prix ? ces petites cartes ne coutent que **quelques euros** et sont facilement disponibles, que ce soit sur Amazon ou Aliexpress.
 
->**Les ESP sont donc une référence pour toute personne souhaitant créer ses propres objets connectés (IOT).**
-
->Si vous ne voulez pas souder, vous pourrez relier facilement vos ESP et ses périphériques avec des fils de prototypage type "**Dupont**" que l'on trouve facilement en nappe. Certains fabricants fournissent des modules contenant à la fois un ESP et un ou des périphériques (capteurs...) intégrés sur la carte.
+> **Les ESP sont donc une référence pour toute personne souhaitant créer ses propres objets connectés (IOT).**
+>
+> Si vous ne voulez pas souder, vous pourrez relier facilement vos ESP et ses périphériques avec des fils de prototypage type "**Dupont**" que l'on trouve facilement en nappe. Certains fabricants fournissent des modules contenant à la fois un ESP et un ou des périphériques (capteurs...) intégrés sur la carte.
 
 ### 1.2 Principe de ESPHome
 
@@ -74,11 +76,11 @@ Le firmware est chargé soit via le **cable USB**, en **wifi** ("Over The Air") 
 
 ### 1.3 Alternatives à ESPHome
 
-Il y a d’autres concurrents à ESPHome, comme [EasyESP 35](https://www.letscontrolit.com/wiki/index.php/ESPEasy), [Tasmota 26](https://tasmota.github.io/docs/). Mais ESPHome est de très loin le mieux intégré à Home Assistant.
+Il y a d’autres concurrents à ESPHome, comme [EasyESP](https://www.letscontrolit.com/wiki/index.php/ESPEasy), [Tasmota](https://tasmota.github.io/docs/). Mais ESPHome est de très loin le mieux intégré à Home Assistant.
 
 ## 2. Installation de ESPHome
 
-ESPHome est un Add-on (module complémentaire) officiel de Home Assistant.
+ESPHome est un **Add-on** (module complémentaire) officiel de Home Assistant.
 
 ### 2.1 Installation sous HA OS
 
@@ -92,7 +94,7 @@ Si vous avez une installation clé en main HA OS, rendez-vous sous `Paramètres`
 
 ### 2.2 Installation sous HA container (docker)
 
-Si vous avez une installation de type **HA Container**, et que Home Assistant est installé sous **docker**, vous devrez installer ESPHome dans un nouveau conteneur.
+Si vous avez une inst allation de type **HA Container**, et que Home Assistant est installé sous **docker**, vous devrez installer ESPHome dans un nouveau conteneur.
 
 Ci-dessous le fichier compose. Je recommande l'utilisation de **portainer** et la création de **stacks**. Voici alors un fichier **compose** pour créer un conteneur ESPHome.
 
@@ -130,9 +132,11 @@ Pour la première utilisation, nous avons choisi une ESP-Wroom-32, qui est très
 * Cliquer sur `New device` en bas à droite. Une fenêtre s'affiche. Cliquer sur continue.
 * Renseigner le nom du composant (esp-test par exemple), renseigner éventuellement les données de votre réseau wifi, puis choisir le type de ESP (ESP32 dans notre exemple). Cliquer sur skip Votre premier composant est créé et il apparait dans la fenêtre ESPHome.
 
-**Editez maintenant le code YAML de votre composant.** Cliquer sur `Edit` pour accéder le code YAML automatiquement généré et que vous pouvez compléter si besoin. La documentation ESPHome est bien faite et vous donne pour chaque périphérique des exemples de code à recopier et adapter. [ESPHome — ESPHome](https://esphome.io/#sensor-components)
+**Editer maintenant le code YAML de votre composant.** Cliquer sur `Edit` pour accéder le code YAML automatiquement généré et que vous pouvez compléter si besoin. La documentation ESPHome est bien faite et vous donne pour chaque périphérique des exemples de code à recopier et adapter : voir [ESPHome sensor composants](https://esphome.io/#sensor-components)
 
-Editer le fichier `secret.yaml` (3 points en haut à droite sous ESPHome) et vérifier que vous n’avez qu’une entrée wifi et que les identifiants sont corrects. Rectifier si besoin. A noter que ce fichier n'est pas celui de Home Assistant, mais est dédié à ESPHome.
+Editer le fichier `secret.yaml` (3 points en haut à droite sous ESPHome) et vérifier que vous n’avez qu’une entrée wifi et que les identifiants sont corrects. Rectifier si besoin.
+
+> A noter que ce fichier n'est pas celui de Home Assistant, mais est dédié à ESPHome.
 
 ![Création composant](img/creation-composant.jpg)
 
@@ -163,7 +167,9 @@ Il est temps maintenant de créer un firmware et de l'installer sur votre ESP. C
 * Débrancher et rebrancher le l’ESP pour forcer son redémarrage
 * Retourner sur ESPHome, cliquer sur le bouton `LOGS` du composant et vérifier que vous avez accès aux logs et que l’ESP fonctionne. ESPHome essaie de se connecter en wifi à l'ESP et devrait confirmer la bonne connexion.
 
->Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
+> Sachez qu'il y a plusieurs méthodes pour télécharger initialement le firmware sur l'ESP. Vous pouvez en particulier choisir de connecter l'ESP en USB non pas sur votre PC, mais directement sur la machine hébergeant Home Assistant.
+>
+> Historiquement, le code était chargé grâce à un programme exécutable à télécharger sur son PC : [flasher.exe](https://github.com/esphome/esphome-flasher). Il est encore possible de l'utiliser si vous rencontrez des difficultés avec ESPHome Web. Le binaire sera alors à compiler en Legacy Format et non en Modern Format.
 
 ![Lecture LOGS](img/lecture-des-logs.jpg)
 
