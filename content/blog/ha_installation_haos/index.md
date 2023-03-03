@@ -30,11 +30,9 @@ tags:
   - raspberry-pi
   - ha-os
 ---
-Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de Home Assistant OS sur un matériel dédié ? Vous avez fait le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
+Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de Home Assistant OS. Vous faites le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
 
-Que votre matériel soit une Raspberry, une Tinkerboard ou un Odroid, ce guide est fait pour vous.
-
-Nous allons voir comment installer Home Assistant OS sur l'un de ces SBC (single Board Computer)
+Que votre matériel soit un NUC, une Raspberry, une Tinkerboard ou un Odroid, ce guide est fait pour vous.
 
 ***Matériels utilisés :*** *Raspberry Pi et Home Assistant OS 8.5.*
 
@@ -83,14 +81,23 @@ Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour vo
 
 Récupérer et installer [Rapsberry Pi OS](https://www.raspberrypi.com/software/) pour votre système d'exploitation.
 
-![Interface de Raspberry Pi Imager](img/raspberry-pi-imager.png "Interface de Raspberry Pi Imager")
-
 * Lancer Raspberry Pi OS,
+
+**Si vous n'avez pas récupéré l'image de Home Assistant OS.**
+
 * Dans `CHOISISSEZ L'OS`, `Other specifique-purpose OS`, `Home assistants and home automation`, `Home Assistant` puis `Home Assistant OS 9.3 (TPi4/400)` (au moment où j'écris),
 * Dans `CHOISISSEZ LE STOCKAGE`, sélectionner votre Carte SD,
-* Puis cliquer sur écrire.
+* Et cliquer sur écrire.
+
+![Interface de Raspberry Pi Imager](img/installation_home_assistant_raspberrypi_imager.gif "Interface de Raspberry Pi Imager")
 
 Une fois la copie terminée et vérifiée, passez à la suite.
+
+**Si vous n'avez pas récupéré l'[image de Home Assistant OS](https://github.com/home-assistant/operating-system/releases).**
+
+* Dans `CHOISISSEZ L'OS`, `Utiliser image personnalisée` et sélectionner votre image sur votre disque.,
+* Dans `CHOISISSEZ LE STOCKAGE`, sélectionner votre Carte SD,
+* Et cliquer sur écrire.
 
 ## Premier Lancement.
 
@@ -102,30 +109,7 @@ Rendez-vous, depuis votre navigateur, sur `[homeassistant.local:8123](http://hom
 
 > Il peut falloir attendre 2-3 minutes avant que cette page s'affiche.
 
-Il faut maintenant patienter quelques minutes, plus ou moins longues, en fonction de votre connexion internet avant de pouvoir lancer la [première configuration](/blog/premier-lancement-et-configuration-de-home-assistant) qui est commune à toutes les installations et bénéficie, donc, de son propre article.
-
-## Déplacer les données utilisateurs (facultatif).
-
-Pour préserver la carte Micro SD, tout en gardant un système rapide ou si la taille de votre mémoire interne devient trop juste, Home Assistant permet de déplacer les données utilisateurs sur un support externe (il peut être interne avec un boitier adapté).
-
-![Image du Schéma de principe sur le stockage des données vers un support externe](img/ha_usbdatadisk.png "Schéma de principe sur le stockage des données vers un support externe.")
-
-Nous allons en conséquence voir comment effectuer cette manipulation.
-
-> Il est conseillé de faire une sauvegarde avant d'effectuer cette manipulation, même s'il ne devrait pas avoir de problème.
-
-* Dans `Paramètres`, `Système`, `Stockage`,
-* En haut à droite, cliquer sur `...` puis appuyer sur `Déplacer le disque de données`,
-* Sélectionner le disque,
-* Cliquer sur `Déplacer`.
-
-![Déplacer ses données vers un autre support](img/deplacer_donnees_utilisateur_home_assistant.gif "Déplacer ses données vers un autre support")
-
-Après avoir redémarré, vos données seront sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
-
-> Pour une installation sur Raspberry avec Micro SD, cette méthode permet d'éviter les problèmes de détection du disque dur lié à USB3 et ceux de la carte MicroSD corrompue. Il permet aussi au système de profiter d'un démarrage rapide.
->
-> En cas de Carte MicroSD corrompue (ce qui ne devrait plus arriver avec cette methode), il vous suffit de reinstaller Home Assistant OS sur une nouvelle carte MicroSD Classe 2 et relancer votre Raspberry Pi. Votre solution domotique se relance comme s'il ne c'etait rien passé.
+Il faut maintenant patienter quelques minutes, plus ou moins longues, en fonction de votre connexion internet avant de pouvoir lancer la [première configuration](/ha_installation_premier_lancement) qui est commune à toutes les installations et bénéficie, donc, de son propre article.
 
 ## Connexion en Wi-Fi.
 
