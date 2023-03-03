@@ -5,7 +5,7 @@ draft: true
 date: 2022-10-07
 lastmod: null
 level: Débutant
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/comment-ajouter-une-integration-dans-home-assistant-t/2073
 socialshare: true
 title: Ajouter une intégration dans Home Assistant

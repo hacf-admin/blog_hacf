@@ -5,7 +5,7 @@ draft: false
 date: 2023-03-02
 lastmod: null
 level: Débutant
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
 socialshare: true
 series: null

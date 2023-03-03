@@ -5,7 +5,7 @@ draft: false
 date: 18-09-22
 lastmod: null
 level: Débutant
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/comment-installer-un-add-on-officiel-et-non-officiel/2071/
 socialshare: true
 series: null

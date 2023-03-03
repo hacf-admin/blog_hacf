@@ -5,7 +5,7 @@ draft: false
 date: 2022-05-04
 lastmod: null
 level: Intermédiaire
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/acces-de-l-exterieur-en-https-avec-nginx-proxy-manager/1761
 series: null
 title: Accèder a Home Assistant depuis l'exterieur en HTTPS avec Nginx Proxy Manager

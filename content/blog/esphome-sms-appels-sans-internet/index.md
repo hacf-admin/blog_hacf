@@ -21,7 +21,7 @@ tags:
   - sim800l
   - esp32
   - esphome
-author: argonaute
+authors: argonaute
 ---
 Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines sont vite **essentielles**. Il est rassurant de savoir que notre système veille sur la **sécurité** de la maison. 
 

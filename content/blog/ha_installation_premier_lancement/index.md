@@ -22,7 +22,7 @@ tags:
   - ha-os
   - ha-core
   - ha-supervised
-author: mcfly
+authors: mcfly
 url_hacf: https://forum.hacf.fr/t/home-assistant-premiere-configuration/679
 socialshare: true
 ---

@@ -17,7 +17,7 @@ series:
   - Débuter avec Home Assistant
 tags:
   - Débuter
-author: argonaute
+authors: argonaute
 ---
 
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.

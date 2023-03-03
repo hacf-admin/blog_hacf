@@ -17,7 +17,7 @@ categories:
 tags:
   - telegram
   - notification
-author: argonaute
+authors: argonaute
 url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
 
