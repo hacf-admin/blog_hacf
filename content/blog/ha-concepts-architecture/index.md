@@ -74,15 +74,15 @@ Mais Home Assistant s'installe aussi sur un **[NAS Synology](https://www.synolog
 
 ## L'architecture logicielle
 
-Il y a souvent confusion entre différents termes : HA OS, HA core, add-on, integration.... 
+Il y a souvent confusion entre différents termes : **HA OS**, **HA core**, **add-on**, **integration**.... 
 
-Essayons de comprendre un peu mieux **l'architecture logicielle de Home Assistan**t, avec le schéma qui suit.
+Essayons de comprendre un peu mieux **l'architecture logicielle de Home Assistant**, avec le schéma qui suit.
 
 ![Architecture](img/architecture.jpg)
 
-Home Assistant propose une configuration **clé en main** qui permet une installation rapide et simplifiée : une image est téléchargée, déployée sur son disque ou sa carte SD, puis Home Assistant pourra démarrer.
-
-Le schéma présente les composants installés. Nous verrons au fil de la présentation qu'il est possible de choisir d'autres types d'installation.
+> Le schéma présente les composants installés. Nous verrons au fil de la présentation qu'il est possible de choisir d'autres types d'installation.
+>
+> Home Assistant propose une configuration **clé en main** qui permet une installation rapide et simplifiée : une image est téléchargée, déployée sur son disque ou sa carte SD, puis Home Assistant pourra démarrer.
 
 ### Le système d'exploitation
 
@@ -121,7 +121,7 @@ Exemple :
 
 * **ZWaveJS** :  permet de connecter une clé USB pour implémenter le protocole  ZWave. L'add-on vient avec une intégration appelée aussi ZWaveJS.
 
-&gt; Après cette lecture, ne confondez plus ADD-ONS (ou "modules complémentaires") et INTEGRATION.
+Après cette lecture, ne confondez plus ADD-ONS (ou "modules complémentaires") et INTEGRATION.
 
 ### Gestionnaire de conteneurs
 
