@@ -82,7 +82,7 @@ Cette fonctionnalité est une version revue, améliorée et plus logique de l'as
 
 Par rapport aux méthodes mentionnées précédemment, les groupes de capteurs ont des options supplémentaires pour masquer leurs entités membres et la possibilité d'ignorer les capteurs qui ne sont actuellement pas dans un état numérique (c'est-à-dire actuellement "indisponible" ou "inconnu").
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#now-even-tighter-integrated-with-esphome)Plus d'intégration avec ESPHome
+## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#now-even-tighter-integrated-with-esphome)Intégration plus forte avec ESPHome
 
 [ESPHome](https://esphome.io/) fonctionne déjà très bien avec Home Assistant. Pourtant, cette version le rend encore meilleur !!
 
@@ -98,7 +98,7 @@ Mais ce n'est pas tout. Ce qui est vraiment époustouflant, c'est que l'intégra
 
 En outre, ESPHome déprécie l'ancienne authentification par mot de passe pour son API en faveur de la clé de chiffrement plus sécurisée. Si l'un de vos appareils ESPHome utilise toujours un mot de passe simple, Home Assistant vous en informera en créant un problème dans votre [tableau de bord des réparations](https://my.home-assistant.io/redirect/repairs) .
 
-![Capture d'écran montrant un problème de réparation soulevé pour un appareil ESPHome utilisant toujours le mot de passe API obsolète au lieu d'une clé de chiffrement API](img/esphome-update-entities.png)
+![Capture d'écran montrant un problème de réparation soulevé pour un appareil ESPHome utilisant toujours le mot de passe API obsolète au lieu d'une clé de chiffrement API](img/esphome-repairs-encryption-key.png)
 
 Nous avons par ailleurs préparé la prochaine version d'ESPHome (2023.2), dans laquelle vous pouvez ajouter un nom convivial et plus humain à vos appareils ESPHome. Home Assistant les récupérera, ce qui rendra vos appareils ESPHome plus beaux dès la sortie de l'emballage !
 
