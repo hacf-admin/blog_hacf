@@ -25,7 +25,6 @@ tags:
   - blueprint
   - chauffage
 ---
-
 ## Avant propos
 
 Cet article traite de l'implémentation d'un thermostat plus efficient que le thermostat virtuel de HA, une solution de planification du chauffage suivant des plages horaires, la gestion de différents modes de chauffage (manuel, éco, confort...), et enfin un exemple de carte lovelace pour afficher le tout.
@@ -39,7 +38,7 @@ S’il y a un domaine source de confort et d’économie dans une maison domotis
 
 Un thermostat générique (intégration et carte lovelace) est proposé par HA pour piloter un chauffage en ON-OFF, mais il est de type **hystéresis** : il chauffe a 100% jusqu’à atteindre la température + un seuil, puis arrête. Le convecteur sera alors soit bouillant, soit froid, ce qui crée des **oscillations de température** et des **chaud-froid** inconfortables, et cela consomme plus. C’est probablement adapté aux climatiseurs réversibles américaines mais pas du tout à nos convecteurs et autres modes de chauffage. La **température extérieure** n’est même pas prise en compte, pas plus que la coupure du chauffage quand une **fenêtre est ouverte**.
 
-De plus, il n’y a pas de gestion des **plages horaires** permettant de définir les périodes de chauffe. Il faut alors faire appel à des intégrations de la communauté, ou alors pour les plus courageux tout redévelopper avec des automatisations et champs inputs (oups !!). Les 2 principales intégrations sont schedy et le scheduler. Schedy est un daemon qui permet de planifier dynamiquement des événements, mais bien que très puissant il n’a pas d’interface et son intégration est relativement complexe. Je vous proposerai d’utiliser l’autre intégration : le scheduler.  
+De plus, il n’y a pas de gestion des **plages horaires** permettant de définir les périodes de chauffe. Il faut alors faire appel à des intégrations de la communauté, ou alors pour les plus courageux tout redévelopper avec des automatisations et champs inputs (oups !!). Les 2 principales intégrations sont schedy et le scheduler. Schedy est un "daemon" (un processus qui s'exécute en arrière-plan) qui permet de planifier dynamiquement des événements, mais bien que très puissant, il n’a pas d’interface et son intégration est relativement complexe. Je vous proposerai d’utiliser l’autre intégration : le scheduler.  
 
 Pour gérer les différents modes, par exemple pour moduler la température sur les périodes de présences et absences, il n’y a donc pas d’autres choix que de redévelopper des automations. 
 
