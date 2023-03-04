@@ -22,18 +22,17 @@ categories:
 tags:
   - Concepts
 ---
-
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
 C'est ce que nous proposons dans cet article.
 
 ## Pourquoi choisir Home Assistant
 
-[Home Assistant](https://www.home-assistant.io/) (HA) est actuellement un des systèmes domotiques des plus populaires dans le **monde**, avec plus de 1 demi-million de personnes qui l'utilisent.
+[Home Assistant](https://www.home-assistant.io/) (HA) est actuellement un des systèmes domotiques des plus populaires dans le **monde**, avec plus de **1 demi-million de personne**s qui l'utilisent.
 Les développements sont particulièrement dynamiques, et le taux d'adoption de la plateforme ne cesse de croitre.
 
 Véritable **couteau suisse**, Home Assistant permet de connecter puis contrôler un nombre des plus importants de capteurs et systèmes en tout genre pour la maison, via l'intégration de quasi tous les principaux protocoles domotiques, en particulier [Zigbee](https://fr.wikipedia.org/wiki/ZigBee) et [Zwave](https://fr.wikipedia.org/wiki/Z-Wave), mais aussi plus récemment Matter.
 
-Beaucoup de gens viennent à Home Assistant car ils sont frustrés par l'**interface utilisateur** (UI) de leur système domotique actuel. Et c'est vrai qu'ils sont beaux les dashboards de HA, et permettent de donner libre cours à sa créativité.
+Beaucoup de gens viennent à Home Assistant car ils sont frustrés par l'**interface utilisateur** (UI) de leur système domotique actuel. Et c'est vrai qu'ils sont beaux les "dashboards" de HA, et permettent de donner libre cours à sa créativité.
 
 Enfin, le succès de HA vient aussi du fait qu'il supporte beaucoup de machines hôtes et de systèmes d'exploitation. Il est très paramétrable et permet d'ajouter un nombre incroyable de composants complémentaires, avec environ 1 700 plugins disponibles.
 
@@ -43,38 +42,41 @@ Et tout cela **gratuitement** bien entendu.
 
 **Home Assistant** (HA) est  open source, sous licence [Apache 2.0](https://www.home-assistant.io/developers/license/).
 
-Le système a été initié dès 2014 par **Paulus Schoutsen**, qui en 2018 fonde la société **[Nabu Casa](https://www.nabucasa.com/)**.
+Le système a été initié dès 2014 par **[Paulus Schoutsen](https://www.linkedin.com/in/schoutsen)**, qui en 2018 fonde la société **[Nabu Casa](https://www.nabucasa.com/)**.
 Depuis, l'équipe de **Nabu Casa** imprime sa vision sur l'évolution de Home Assistant, assure l'**intégrité** et la **sécurité** de la plateforme.
 Et chaque **mercredi du mois**, Nabu Casa annonce immanquablement une nouvelle version. 
 
 **Home Assistant** étant open source, ses sources sont disponibles sur [GitHub](https://github.com/home-assistant/core).
 Et ce sont plus de **2 000 développeurs** à travers le monde participent aux développements via github, proposent des améliorations, de nouveaux add-ons ou intégrations.
-**Une partie de ces développements sont validés par Nabu Casa**, deviennent officiels. Ils sont intégrés au cœur de Home Assistant (HA core), soit disponible à travers un magasin (store) intégré d'add-ons ou intégrations certifiées. 
 
-Le store officiel est déjà très riche, mais ce n'est pas tout : un deuxième magasin, **[HACS](https://hacs.xyz/)** (**Home Assistant Community Store**) peut être rajouté en option et permet d'accéder gratuitement à encore plus d'extensions et de composants graphiques servants enrichir l'interface utilisateur.
+**Une partie de ces développements sont validés par Nabu Casa**, puis deviennent officiels. Ils sont intégrés au cœur de Home Assistant (HA core), soit disponible à travers un magasin (store) intégré d'add-ons ou intégrations certifiées. 
+
+Le store officiel est déjà très riche, mais ce n'est pas tout : un deuxième magasin, **[HACS](https://hacs.xyz/)** (**Home Assistant Community Store**) peut être rajouté en option et permet d'accéder gratuitement à encore plus de développements de la communauté : des **extensions** et des **composants graphiques** servants enrichir l'interface utilisateur. 
 
 Et comment se rémunère Nabu Casa nous direz-vous ? Et bien en offrant en échange d'une souscription de 75€ par an, une solution **sécure** et **simple** pour connecter à distance son instance locale Home Assistant, et intégrer des services cloud.
+
 Mais Home Assistant reste **gratuit**, et cette souscription est **optionnelle**. Il existe d'autres manières d'accéder gratuitement à son serveur domotique (DuckDNS, proxy, VPN, etc).
 
 ## Quelle machine choisir
 
-La plateforme de prédilection est **Raspberry PI**, idéalement le **PI4** avec 2Go de mémoire, voir 4Go. Mais HA tourne sous un **PI3**.
-Il est possible de faire tourner sur une carte SD, mais pour éviter sur le long terme la corruption de la carte (oups) il est recommandé de d'adopter un disque SSD.
-Un raspberry PI chauffe toujours un peu et il faudra idéalement prévoir un boitier type [Argon One M.2](https://www.amazon.fr/Argon-Bo%C3%AEtier-Raspberry-uniquement-Compatible/dp/B08MJ3CSW7) ou [Coolcase](https://www.amazon.fr/Cooler-Master-Case-programmable-dissipateur/dp/B08M6DGQ3R). 
+La plateforme de prédilection est le **Raspberry PI**, idéalement le **PI4** avec 2 Go de mémoire, voir 4 Go. Mais HA tourne sous un **PI3**.
+Il est possible de faire tourner sur une carte SD, mais pour éviter sur le long terme la corruption de la carte (oups) **il est recommandé de d'adopter un disque SSD**.
+Un raspberry PI chauffe toujours un peu et il faudra idéalement prévoir un boitier type [Argon One M.2](https://www.amazon.fr/Argon-Bo%C3%AEtier-Raspberry-uniquement-Compatible/dp/B08MJ3CSW7?tag=hacf0d-21) ou [Coolcase](https://www.amazon.fr/Cooler-Master-Case-programmable-dissipateur/dp/B08M6DGQ3R?tag=hacf0d-21). 
 
 Une autre excellente plateforme est l'[Odroid N2+](https://www.kubii.fr/nano-ordinateurs/2596-carte-odroid-n2-4gb-kubii-3272496297630.html). Il est à refroidissement passif, plus puissant que le raspberry , avec SSD intégré, boitier, 4Go. Vu le prix actuel des Raspberry, l'Odroid est un excellent choix. 
 Nabu Casa propose par ailleurs un système intégré clé en main à base d'Odroid appelée [Home Assistant Blue](https://www.home-assistant.io/blue/) 
 
-Nabu Casa développe aussi (crowdfunding) un autre système à base de raspberry micro-compute, stockage et protocole Zigbee intégré : Home [Assistant Yellow](https://www.home-assistant.io/blog/2021/09/13/home-assistant-yellow/). Il devrait sortir prochainement : à suivre de près.
+Nabu Casa a développé aussi (via du crowdfunding) un autre système à base de **raspberry micro-compute**, avec stockage eMMC et protocole Zigbee intégré : **[Home Assistant Yellow](https://www.home-assistant.io/yellow/)**. Ce module est particulièrement intéressant.
 
-D'autres ont peut-être déjà une **plateforme x86-64** pour d'autres usages et préfèreront la puissance d'un **PC** (mini-PC type type Intel NUC par exemple).\
-Mais Home Assistant s'installe aussi sur un **NAS Synology**, sur Mac, sur plateforme Asus et même une [box Free Delta](https://www.domo-blog.fr/comment-installer-domotique-home-assistant-sur-freebox-delta/).
+D'autres ont peut-être déjà une machine à base de processeur **x86-64** (Intel ou AMD) pour d'autres usages et préfèreront la puissance d'un **PC** (mini-PC type type Intel NUC par exemple). Home Assistant s'installera aussi bien sur Linux que windows.
+
+Mais Home Assistant s'installe aussi sur un **[NAS Synology](https://www.synology.com/fr-fr)**, sur **Mac OS**, une plateforme **Asus** et même une [box **Free Delta**](https://www.domo-blog.fr/comment-installer-domotique-home-assistant-sur-freebox-delta/).
 
 ## L'architecture logicielle
 
 Il y a souvent confusion entre différents termes : HA OS, HA core, add-on, integration.... 
 
-Essayons de comprendre un peu mieux l'architecture logicielle de Home Assistant, avec le schéma qui suit.
+Essayons de comprendre un peu mieux **l'architecture logicielle de Home Assistan**t, avec le schéma qui suit.
 
 ![Architecture](img/architecture.jpg)
 
