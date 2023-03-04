@@ -12,7 +12,7 @@ images: img/accueil.jpeg
 description: >-
   Cet article présente comment intégrer Telegram à Home Assistant.
 
-  Il est primordial de recevoir des notifications de son système domotique, et d'y accompagner des images ou des vidéos. Et si il est possible d'y répondre, c'est encore mieux. Home Assistant permet certes d'envoyer des notifications mais plutôt pour un usage système. Telegram avec son mécanisme de bot est vraiment très puissant et très pertinent.
+  Il est primordial de recevoir des notifications de son système domotique, et d'y accompagner des images ou des vidéos. Et si il est possible d'y répondre, c'est encore mieux. Home Assistant permet certes d'envoyer des notifications mais plutôt pour un usage système. Telegram avec son mécanisme de bot et sa gestion de groupes est vraiment très puissant et très pertinent.
 categories:
   - Add-on/Intégration
 tags:
@@ -20,7 +20,6 @@ tags:
   - notification
 url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
-
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
 
 Exemple de notifications :
@@ -72,11 +71,11 @@ Vous avez maintenant votre Bot Telegram.
 
 > A tout moment vous pouvez retourner sur BotFather, lancer /mybots puis cliquer votre bot pour le gèrer, le supprimer, voir son token, etc.
 
-L'étape suivante est de retrouver l'ID du fil de discussion ou envoyer les messages : soit seulement vous (voir 1.2) ou alors un groupe (voir 1.3) .
+L'étape suivante est de **retrouver l'ID du fil de discussion** ou envoyer les messages : soit seulement vous (voir 1.2) ou alors un groupe (voir 1.3).
 
-### 1.2 Récupérer votre ID pour vous envoyer des messages
+### 1.2 Récupérer votre ID pour VOUS envoyer des messages
 
-Cette partie permet de retrouver votre ID, si vous choisissez de n'envoyer des messages qu'à vous.
+Cette partie permet de retrouver **votre ID**, si **vous choisissez de n'envoyer des messages qu'à vous** (et pas à un groupe de personnes).
 
 Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le champ de recherche des contacts puis cliquer sur `Démarrer`.
 
@@ -84,9 +83,9 @@ Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le cham
 
 ![Récupérer BotId](img/recuperer-botid.jpg)
 
-### 1.3 Utilisation d’un groupe
+### 1.3 Récupérer l'ID pour les envois à un GROUPE
 
-La création d’un groupe vous permettra d’envoyer des messages aux utilisateurs de ce groupe. Vous pouvez par exemple créer un groupe appelé Maison, et y ajouter les membres de votre famille.
+La création d’un groupe vous permettra d’**envoyer des messages aux utilisateurs de ce groupe**. Vous pouvez par exemple créer un groupe appelé Maison, et y ajouter les membres de votre famille.
 
 Voici comment en récupérer l'ID.
 
@@ -94,7 +93,7 @@ Voici comment en récupérer l'ID.
 
 Donnez-lui un nom puis `CREATE GROUP`.
 
-2. Sélectionner les users devant appartenir au groupe ainsi que votre bot.
+2. Sélectionner les utilisateurs devant appartenir au groupe ainsi que votre bot.
 
 Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oubliez pas d'ajouter votre bot** (autrement il ne pourra pas envoyer de messages dans le groupe).\*\*
 
@@ -104,7 +103,7 @@ Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oub
 
    > Notez bien cet ID référençant le groupe qui **recevra** les messages.
 
-Une fois l'ID noté, vous pouvez éjecter GetIdsBot du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
+Une fois l'ID noté, vous pouvez éjecter `GetIds Bot` du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
 
 ![Recuperer ID groupe](img/recuperer-id-groupe.png)
 
@@ -112,7 +111,7 @@ Une fois l'ID noté, vous pouvez éjecter GetIdsBot du groupe en cliquant sur le
 
 Dans `configuration.yaml`, ajoutez le code qui suit pour référencer le token de votre bot émetteur et l'id du destinataire : ce peut être vous (voir 3.2), ou un groupe (voir 3.3).
 
-L'exemple ci-dessous fait référence à un groupe telegram qui s'appellerait Maison, et référencé dans Home Assistant sous le nom telegram*maison. L'envoie via Home Assistant d'une notification dans telegram_maison enverra un message dans le groupe telegram _Maison*.
+L'exemple ci-dessous fait référence à un groupe Telegram qui s'appellerait Maison, et référencé dans Home Assistant sous le nom telegram*maison. L'envoie via Home Assistant d'une notification dans telegram_maison enverra un message dans le groupe telegram _Maison*.
 
 ```yaml
 # Configuration Telegram
@@ -131,7 +130,7 @@ notify:
 
 > Il peut être pertinent à terme de déplacer ce code dans un package notification.yaml qui est ensuite inclut dans le fichier configuration.
 
-ID et token fournis par Telegram sont à mettre dans le fichier secret.yaml et pas directement dans configuration.yaml.
+ID et token fournis par Telegram sont à mettre dans le fichier `secret.yaml `et pas directement dans `configuration.yaml`.
 
 ```yaml
 # Telegram
@@ -143,8 +142,8 @@ id_telegram_maison: 999999999999999999
 
 Pour vérifier que tout fonctionne bien, rendez-vous dans `Outils de développement`, puis `services` et saisir les informations suivantes :
 
-* Service : `notify.telegram_maison` (ou votre user)
-* Message : `message: votre message`
+* **Service** : `notify.telegram_maison` (ou votre user)
+* **Message** : `message: votre message`
 
 Cliquez sur `Appeler le service`. Vous devriez voir sur votre application Telegram le message arriver.
 
@@ -168,7 +167,7 @@ action:
         Température abri : {{states('sensor.fibaro_piscine_temperature_abri')}} °C
 ```
 
-Il est aussi possible de rajouter une image, typiquement issue d'un snap d'une de vos caméras. Par exemple ici l'intérieur du poulailler pour vérifier que nos poules sont bien couchées quand la porte se ferme (ma femme adore cette fonction :slight_smile: ).
+Il est aussi possible de **rajouter une image**, typiquement issue d'une capture ("snap") d'une de vos caméras. Par exemple ici l'intérieur du poulailler pour vérifier que nos poules sont bien couchées quand la porte se ferme (ma femme adore cette fonction :slight_smile: ).
 
 ![Dialogue - photos poules](img/photo-poules.jpeg)
 
@@ -190,7 +189,7 @@ Reprenons notre exemple du début de l'article :
 
 ![Dialogue telegram - bouton commande](img/boutons-commande.png)
 
-Pour afficher les boutons, c'est très simple : il suffit de rajouter dans la section data du message la section ***inline_board*** avec ***libellé:/event*** à déclencher. Dans notre cas, les événements ***piscine_ferme*** et ***piscine_ignore_ferme*** seront déclenchés si respectivement un des boutons est pressé.
+Pour afficher les boutons, c'est très simple : il suffit de rajouter dans la section data du message la section `inline_board` avec `libellé:/event` à déclencher. Dans notre cas, les événements `piscine_ferme` et `piscine_ignore_ferme` seront déclenchés si respectivement un des boutons est pressé.
 
 ```yaml
 trigger: []
@@ -207,7 +206,7 @@ action:
 
 ## 5. Traitement des actions des boutons
 
-Il faut créer 2 automatisations qui se déclenchent pour respectivement chaque événement ***piscine_ferme*** ou ***piscine_ignore_ferme*** et exécute une action en conséquence.
+Il faut créer 2 automatisations qui se déclenchent pour respectivement chaque événement `piscine_ferme` ou `piscine_ignore_ferme` et exécute une action en conséquence.
 
 Par exemple, voici l'automatisation pour traiter l'événement de demande de fermeture :
 
@@ -286,19 +285,17 @@ action:
 mode: single
 ```
 
-Voilà, vous pouvez maintenant "dialoguer" avec votre maison via Telegram, en intégrant potentiellement des données et des photos :slight_smile:
-
-Il est intéressant de personnaliser votre bot dans Telegram, en particulier :
-
-* Modifier le logo par défaut et mettre celui de Home Assistant.
-* Paramétrer une purge des messages de plus de 8 jours. Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
+> Il est intéressant de personnaliser votre bot dans Telegram, en particulier :
+>
+> * Modifier le logo par défaut et mettre celui de Home Assistant.
+> * Paramétrer une purge des messages de plus de 8 jours. Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
 
 ## C﻿onclusion
 
-Voilà, grâce à Telegram, vous pouvez maintenant dialoguer avec votre maison à travers un réseau social.
+Voilà, vous pouvez maintenant "**dialoguer**" avec votre maison via **Telegram**, en intégrant potentiellement des données et des photos.
 
 N'hésitez pas à partager sur le forum les choses originales ou amusantes que vous auriez automatisées.
 
 ## Source
 
-C﻿et article est une fusion et réécriture des articles initialement proposés par @McFly et @Argonaute sur le forum HACF.
+C﻿et article est une fusion et réécriture des articles initialement proposés par *@McFly* et *@Argonaute* sur le forum HACF.
