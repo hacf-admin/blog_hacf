@@ -43,21 +43,22 @@ Le système est basé sur une carte LILYGO TTGO t-call ESP32 SIM800L qui intègr
 J'ai choisi le module avec la puce ch9102f sur Banggood
 [LILYGO® TTGO T-Call ESP 32 SIM800L](https://www.banggood.com/fr/LILYGO-TTGO-T-Call-V1_3-V1_4-ESP32-Wireless-Module-GPRS-Antenna-SIM-Card-SIM800L-Board-p-1527048.html)
 D'autres versions sont également dispos sur Aliexpress (j'ignore les différences entre les puces)
-[LILYGO® TTGO T-Call V1.4 – Module sans fil t-call V1.4 SIM800L ESP32,](https://fr.aliexpress.com/item/33045221960.html)
+[LILYGO® TTGO T-Call V1.4 – Module sans fil t-call V1.4 SIM800L ESP32,](https://s.click.aliexpress.com/deep_link.htm?aff_short_key=_All9bw&dl_target_url=https%3A%2F%2Ffr.aliexpress.com%2Fitem%2F33045221960.html)
 
 **ESPHome** propose une implémentation permettant de gérer le module SIM800L, qui est reprise dans ce post et adaptée.
 [Documentation ESPHome SIM800L](https://esphome.io/components/sim800l.html?highlight=sim800l)
 
-Enfin j'ai conçu sous fusion360 un boitier qui peut être téléchargé et imprimé.
+Enfin, j'ai conçu sous Fusion360 un boitier qui peut être téléchargé et imprimé.
 [Boitier à imprimer en 3D sur Cults3D](https://cults3d.com/fr/mod%C3%A8le-3d/outil/case-for-lilygo-module-ttgo-t-call-esp32-sim800l) 
 
 Et bien entendu il faut un **abonnement téléphonique**. Certes un petit coût mensuel, mais moins cher qu'une maison brulée car on n'a pas été prévenu à temps.
-Pour les abonnés Free, il est possible d'avoir un abonnement limité à 2h et sans data gratuit. Autrement il coute 2€ par mois. C'est ce que je conseille. A noter que le fait de devenir client Free permet aussi de bénéficier de la possibilité d'envoyer des SMS via leur API (utile pour par exemple un NAS qui est typiquement sur un VLAN Data séparé du VLAN IOT ou se trouvera notre module).
+
+Pour les **abonnés Free**, il est possible d'avoir un abonnement limité à 2h et sans data gratuit. Autrement il coute 2€ par mois. C'est ce que je conseille.
 
 > **Vérifier également que votre zone est bien toujours couverte par le GRPS (ou 2G).**
 > [Couverture mobile Free](https://mobile.free.fr/couverture)
 
-J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais à l'usage cet opérateur ne s'avère pas fiable, et les forums sont pleins de personnes insatisfaites. Les SMS étaient vraiment très lents à recevoir ou émettre, mais surtout j'ai eu en 2 mois 2 grosses pannes de plus de 24 heures venant de chez eux. Donc à fuir.
+J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais à l'usage cet opérateur ne s'avère pas fiable, et les forums sont pleins de personnes insatisfaites. Les SMS étaient vraiment très lents à recevoir ou émettre, mais surtout, j'ai eu en 2 mois 2 grosses pannes de plus de 24 heures venant de chez eux. Donc à fuir.
 
 ## 2. Configuration ESPHome
 
@@ -66,12 +67,12 @@ L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera 
 Voici pour rappel les grandes étapes :
 
 * **Installer ESPHome** si ce n'est pas déjà fait
-* **Créer un nouveau composant** que l'on appellera ici ESP-SIM800
+* **Créer un nouveau composant** que l'on appellera ici `ESP-SIM800`
 
   ![ESPHome](img/esphome.png)
 * **Renseigner les mots de passe du réseau wifi.**
 
-Pour cela, depuis ESPHome cliquer sur les 3 points en haut à droite puis Secrets Editor. Un fichier secret.yaml sous la racine du répertoire esphome est créé. Ce fichier est différent de celui de home assistant et est spécifique à ESPHome.
+Pour cela, depuis ESPHome cliquer sur les 3 points en haut à droite puis `Secrets Editor`. Un fichier `secret.yaml` sous la racine du répertoire esphome est créé. Ce fichier est différent de celui de home assistant et est spécifique à ESPHome.
 
 ```yaml
 wifi_ssid : "xxxxxxxxxx"
@@ -184,7 +185,7 @@ binary_sensor:
 
 * **Installer le micro-code sur l’ESP**
 
-  * Connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, install, `plug into this computer`, puis attendre que le fichier binaire soit généré (message `prepare download` disparaisse), puis cliquer sur `download`.
+  * Connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, `install`, `plug into this computer`, puis attendre que le fichier binaire soit généré (message `prepare download` disparaisse), puis cliquer sur `download`.
     Vous devriez retrouver le binaire contenant le microcode dans votre répertoire « telechargement »*.*
   * Cliquer sur `Open ESPHome Web`, cliquer sur `install`, puis `connect`, sélectionner le port USB, puis cliquer sur `INSTALL`.
   * Après 2 mn, l’ESP devrait afficher `configuration OK`. 
@@ -208,7 +209,7 @@ Le code proposé est avec le logger en mode debug, mais il pourra être changé 
 Quand le module reçoit un SMS, il va renseigner ces identités `esp_sim800_sms_expediteur` et `esp_sim800_sms_message`
 On peut tester en envoyant un SMS au module et en vérifiant que les entités expéditeurs et message sont bien renseignées.
 
-Enfin `esp_sim800_statut` permet de savoir dans Lovelace si le module est correctement connecté.
+Enfin `esp_sim800_statut` permet de savoir dans l'interface utilisateur si le module est correctement connecté.
 
 **3 services sont également mis à disposition** :
 
@@ -220,11 +221,11 @@ Enfin `esp_sim800_statut` permet de savoir dans Lovelace si le module est correc
 **Esp_sim800_replay_sms_ok**  : revoie la dernière commande reçue suivi de OK au dernier expéditeur. Cette fonction est très utilise pour confirmer qu'un SMS a bien été reçu et que l'ordre est bien pris en compte.
 **Esp_sim800_dial** permet de déclencher un appel. Malheureusement, il n'est pour l'instant pas possible de mettre de la voix. C'est cependant très utile pour déclencher la sonnerie du téléphone et donc générer une alerte.
 
-Pour tester, on peut appeler les services avec l'outils de développement - service.
+Pour tester, on peut appeler les services avec l'`outil de développemen`t - `service`.
 
 ## 3. Mise en place d'une fonction de test
 
-Pour tester facilement et dans la durée, j'ai mis en place une automatisation qui permet d'envoyer par SMS juste le mot clé Test et qui retourne par SMS Test ok.
+Pour tester facilement et dans la durée, j'ai mis en place une automatisation qui permet d'envoyer par SMS juste le mot clé ***Test*** et qui retourne par SMS ***Test ok***.
 
 **Voici le code**
 
@@ -243,10 +244,10 @@ mode: single
 
 ## 4. Premier cas d'utilisation : reboot à distance de la box internet
 
-Ce premier cas est important et a sauvé notre connexion pas plus tard que la semaine dernière alors que nous étions en congés. L'alternative serait les voisins à qui vous avez laissé vos clés, mais c'est potentiellement moins efficace. Ou alors un test de la connexion et demande de reboot automatique par HA, mais plus hasardeux.
+Ce premier cas est important et a sauvé notre connexion pas plus tard que la semaine dernière alors que nous étions en congés. L'alternative serait les **voisins à qui vous avez laissé vos clés**, mais c'est potentiellement moins efficace. Ou alors on pourrait mettre en place un test de la connexion à intervalles réguliers qui demande de "reboot" automatique par HA, mais plus hasardeux.
 
 J'ai équipé la box d'une prise **Zwave Neo Coolcam**.
-Si un sms est envoyé avec le mot clé Restart-box, alors une automatisation renvoie par SMS que  Restart-box OK, puis éteint la prise, attends une seconde et rallume la prise. La box redémarre.
+Si un SMS est envoyé avec le mot clé ***Restart-box***, alors une automatisation renvoie par SMS que  ***Restart-box OK***, puis éteint la prise, attends une seconde et rallume la prise. La box redémarre.
 
 **Voici le code de l'automatisation.**
 
@@ -280,11 +281,11 @@ Inondation, incendie, intrusion… **ce n'est pas très raisonnable de ne compte
 
 Donc la solution proposée est d'**envoyer un SMS puis d'appeler**. Si on reçoit le message, on peut renvoyer un SMS avec le code Stop-alerte pour désactiver l'alerte (ou via l'interface lovelace). Autrement, le système rappellera 3 fois à 5 mn d'intervalle tant que l'alerte n'aura pas été désactivée.
 
-Malheureusement, l'appel alertera avec sa sonnerie, mais ne peut contenir pour l'instant de message vocal. Il faut raccrocher et aller lire le SMS pour connaitre la nature de l'alerte. Il est donc recommandé d'entrer le n° de téléphone du module sous le nom "home Assistant" pour savoir qui appelle. 
+Malheureusement, **l'appel alertera avec sa sonnerie, mais ne peut contenir pour l'instant de message vocal**. Il faut raccrocher et aller lire le SMS pour connaitre la nature de l'alerte. Il est donc recommandé d'entrer le n° de téléphone du module sous le nom "home Assistant" dans ses contacts pour savoir qui appelle. 
 
 Bien entendu, il est conseillé d'inclure l'appel à plusieurs numéros à appeler en cas d'alerte (vous et votre conjoint par exemple, ou les voisins... ceux qui ont les clés), et en parallèle envoyer des notifications classiques.
 
-Voici le code du service (attention, c'est ici un script et non une automatisation), à appeler quand il y a une alerte critique à générer
+Voici le code du service (attention, c'est ici un script et non une automatisation), **à appeler quand il y a une alerte critique à générer.**
 
 ```yaml
 alias: Alerte - SMS puis appel
@@ -309,7 +310,7 @@ mode: single
 icon: mdi:message-alert-outline
 ```
 
-Un input boolean ***activation_alertes_sms*** permet de sauvegarder l'armement de l'alerte. S'il est mis à off, l'alerte est désactivée.
+Un *input boolean* ***activation_alertes_sms*** permet de sauvegarder l'armement de l'alerte. S'il est mis à *off*, l'alerte est désactivée.
 
 Et enfin le code qui se déclenche quand on envoie un SMS avec ***Stop-alerte*** au module demandant la désactivation de l'alerte.
 
@@ -331,15 +332,10 @@ mode: single
 
 ## Conclusion
 
-Voilà, vous avez pu sécuriser à moindre coût votre système domotique en lui rajoutant une capacité d'appel téléphonique et un moyen de communiquer même si Internet tombe.
+Voilà, vous avez pu **sécuriser à moindre coût votre système domotique** en lui rajoutant une **capacité d'appel téléphonique et un moyen de communiquer même si Internet tombe.**
 
-
-La contrainte reste d'être dans une zone couverte par la 2G, mais c'est, en France, le cas pour pas mal de région grace à Free. 
-
-
+La contrainte reste d'être dans une zone couverte par la 2G, mais c'est, en France, le cas pour pas mal de région grâce à Free. 
 
 L'alternative est d'intégrer un modem type Huawei e3372, avec SMS gateway. Mais cette solution sera un peu plus chère, mais nécessitera surtout l'installation d'un serveur Gammu.
-
-
 
 N'hésitez pas à faire vos suggestions ou retours sur le forum, voir proposer des solutions alternatives.
