@@ -98,10 +98,10 @@ Le thermostat prend en charge la fenêtre et il coupe le radiateur quand cette d
 Le code du thermostat est dans un **blueprint** qui peut être téléchargé via cette url :
 [https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)
 
-Pour le charger dans Home Assistant, aller dans `configuration`, `blueprints `puis cliquer sur le bouton `importer un blueprint` en bas à droite. et recopier l'URL précédente.
-Ensuite une automatisation  `thermostat ` peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
+Pour le charger dans Home Assistant, aller dans `configuration`, `blueprints`puis cliquer sur le bouton `importer un blueprint` en bas à droite. et recopier l'URL précédente.
+Ensuite une automatisation  `thermostat` peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
 
-La puissance et la consigne sont dans des `input_number` définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des `sensors `et la fenêtre un `binary sensor`. Enfin le radiateur est piloté par un `switch`.
+La puissance et la consigne sont dans des `input_number` définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des `sensors`et la fenêtre un `binary sensor`. Enfin le radiateur est piloté par un `switch`.
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
 
@@ -119,12 +119,12 @@ Une carte assez basique permet de **visualiser** pour chaque radiateur le **mode
 
 ![Carte thermostat](img/cartethermostat.png)
 
-Voici les différents modes proposés (champs de type input select):
+Voici les différents modes proposés (champs de type `input select`):
 
 ![Carte thermostat - mode](img/cartethermostat-mode.png)
 
 * **Mode « auto-confort » :** quand la pièce est occupée. Ajuste automatiquement la température suivant des plages horaires définies dans le scheduler (planification « auto-confort »)
-* **Mode « auto-eco » :** quand la pièce est inoccupée (par exemple la semaine ou quand l’alarme est mise). Ajuste automatiquement la température suivant des plages horaires défini dans le scheduler (planification « auto-eco »). 
+* **Mode « auto-eco » :** quand la pièce est inoccupée (par exemple la semaine ou quand l’alarme est mise). Ajuste automatiquement la température suivant des plages horaires définies dans le scheduler (planification « auto-eco »). 
   Une solution simple pour définir les températures du mode ECO sera de prendre les heures et les températures de CONFORT en les abaissants de 2 degrés.
 * **Mode « manuel » :** la consigne est gérée manuellement et non par une planification du scheduler. Dans ce mode, la carte affiche une ligne supplémentaire permettant d’ajuster la consigne.
 * **Mode « hors gel » :** règle la consigne sur une température donnée (en fait 10°C pour moi)
@@ -190,7 +190,7 @@ Une vue principale permet de voir les différents thermostats. L’interface pr�
 
 La vue réglage contient une seule scheduler card affichant la planification de tous les radiateurs. 
 
-Chaque radiateur a 2 planifications : une CONFORT et une ECO. Malheureusement, la scheduler card les affichent ici dans le désordre (en fait en fonction des plages horaires).
+Chaque radiateur a 2 planifications : une **CONFORT** et une **ECO**. Malheureusement, la scheduler card les affichent ici dans le désordre (en fait en fonction des plages horaires).
 
 ![Liste planifications](img/planificationliste.png)
 
@@ -223,64 +223,7 @@ discover_existing: false
 
 Une fois la carte scheduler créée, elle est vide. Il faut utiliser l'interface pour créer les différentes planifications (type schema - 2 planifications : auto-eco et auto-confort pour chaque radiateur). 
 
-Ci-dessous également le code du bandeau d'entête de la vue principale, avec l'icone pour accéder à la vue de paramétrage.
-
-```yaml
-type: 'custom:vertical-stack-in-card'
-horizontal: true
-cards:
-  - type: 'custom:button-card'
-    color: '#D1DBAE'
-    icon: 'mdi:close'
-    styles:
-      card:
-        - height: 40px
-        - width: 50px
-        - padding: 0px 0px
-        - background-color: '#FFC0BF'
-      icon:
-        - left: 8px
-        - width: 70%
-        - color: var(--primary-text-color)
-    tap_action:
-      action: navigate
-      navigation_path: accueil
-  - type: 'custom:button-card'
-    name: Chauffage
-    color: '#D1DBAE'
-    styles:
-      card:
-        - height: 40px
-        - padding: 0px 0px
-        - background-color: '#FFC0BF'
-      icon:
-        - left: 10px
-        - width: 18%
-        - color: var(--primary-text-color)
-      name:
-        - position: absolute
-        - left: 22px
-        - top: 10px
-        - font-size: 20px
-  - type: 'custom:button-card'
-    color: '#D1DBAE'
-    icon: 'mdi:tools'
-    styles:
-      card:
-        - height: 40px
-        - width: 50px
-        - padding: 0px 0px
-        - background-color: '#FFC0BF'
-      icon:
-        - left: 10px
-        - width: 55%
-        - color: var(--primary-text-color)
-    tap_action:
-      action: navigate
-      navigation_path: chauffage-config
-```
-
-**Avertissement** : sur certains devices, la carte numberbox-card peut mal fonctionner : Il faut alors cliquer au-dessus et non sur les + et -. Si cela arrive, il est possible de juste supprimer la ligne *type: 'custom:numberbox-card'* pour revenir aux champs input-number standard.
+> **Avertissement** : sur certains devices, la carte numberbox-card peut mal fonctionner : Il faut alors cliquer au-dessus et non sur les + et -. Si cela arrive, il est possible de juste supprimer la ligne *type: 'custom:numberbox-card'* pour revenir aux champs input-number standard.
 
 ## 6. L’automatisation des modes
 
@@ -298,7 +241,7 @@ Ensuite une automatisation peut être facilement créée pour chaque radiateur e
 
 ![Nouveau thermostat](img/nouveauthermonstat.png)
 
-**Point important** : comme déjà évoqué, si par exemple on passe du mode confort au mode eco, le scheduler ajuste automatiquement la consigne en fonction de sa planification et de l’heure qu’il est. Cela permet de se passer d’un deamon dynamique comme shedy.
+> **Point important** : comme déjà évoqué, si par exemple on passe du mode confort au mode eco, le scheduler ajuste automatiquement la consigne en fonction de sa planification et de l’heure qu’il est. Cela permet de se passer d’un deamon dynamique comme shedy.
 
 Enfin le thermostat met la consigne à 0 si la fenêtre est ouverte, et remet la bonne valeur une fois fermée.
 
@@ -487,14 +430,14 @@ mode: single
 
 ## 7. Gestion des absences
 
-J’utilise actuellement le marche-arrêt de l’alarme pour détecter les absences. Pour information, j’ai une alarme MyFox qui voit HA comme un actionneur 433MHz (type Chacon). Cela permet d’avertir HA quand l’alarme est mise ou enlevée sans avoir à passer par une API web..
+J’utilise actuellement l**'activation-désactivation de l’alarme** pour détecter les absences. Pour information, j’ai une alarme MyFox qui "voit" HA comme un actionneur 433MHz (type Chacon). Cela permet d’avertir HA quand l’alarme est mise ou enlevée sans avoir à passer par une API web.
 
 La gestion de l’alarme est :
 
 * Si **alarme mise**, mettre les chauffages qui sont en mode auto-confort en absence.
 * Si **alarme enlevée**, mettre les chauffages qui sont en mode absence en auto-confort.
 
-En général, pour faire simple, les températures du mode ECO sont en général les températures du mode confort mois 1.5 degrés.
+En général, pour faire simple, les températures du mode ECO sont en général les températures du mode confort mois 1.5 degré.
 
 > L’automatisation n’a pas été reportée ici, mais elle est basique. Il est également possible de gérer la présence de chaque membre de la famille par son portable.
 
@@ -502,18 +445,18 @@ En général, pour faire simple, les températures du mode ECO sont en général
 
 ### 8﻿.1 Le micro-module de pilotage du convecteur
 
-La première chose est le pilotage du chauffage lui même (typiquement les convecteurs). Le chauffage sera mis à une température un peu haute (24°C par exemple) et le thermostat TPI va générer une succession de on-off (typiquement 1 toutes les 10 minutes), la période de chauffe étant proportionnelle à la puissance. Il est plus que déconseillé d'allumer-couper l'alimentation électrique du convecteur car cela endommagerait l'électronique du chauffage. Il est donc impératif d'utiliser le fil pilote des convecteurs, ou le système intégré d'arrêt-marche pour les autres types de chauffage.
+La première chose est le pilotage du chauffage lui-même (typiquement les convecteurs). Le chauffage sera mis à une température un peu haute (24°C par exemple) et le thermostat TPI va générer une succession de *on-off* (typiquement 1 toutes les 10 minutes), la période de chauffe étant proportionnelle à la puissance. Il est plus que déconseillé d'allumer-couper l'alimentation électrique du convecteur car cela endommagerait l'électronique du chauffage. Il est donc impératif d'utiliser le fil pilote des convecteurs, ou le système intégré d'arrêt-marche pour les autres types de chauffage.
 
-J'utilise personnellement des qubino zwave ZMNHJD1 spécialement faits pour le fil pilote, qui sont très fiables, petits, ne chauffent pas. Et pour une chambre, il  n'y a surtout pas ce "click" bruyant à chaque démarrage que l'on trouve dans les modules bon marché. Certes un peu cher, mais c'est quand même pour du chauffage..... Il existe aussi une version à mettre dans le tableau électrique.
-Le module Fil Pilote Wifi - Heatzy est interessant et peut se trouver dans des magasins de bricolage.
+J'utilise personnellement des **qubino zwave ZMNHJD1** spécialement faits pour le fil pilote, qui sont très fiables, petits, ne chauffent pas. Et pour une chambre, il  n'y a surtout pas ce "click" bruyant à chaque démarrage que l'on trouve dans les modules bon marché. Certes un peu cher, mais c'est quand même pour du chauffage..... Il existe aussi une version à mettre dans le tableau électrique.
+Le module Fil Pilote Wifi - **Heatzy** est intéressant et peut se trouver dans des magasins de bricolage.
 
-Mais en fait tout module on-off type SonOff ZBMini ou Xiaomi Aqara SSM-U02 en Zigbee pourra convenir pour gérer le fil pilote. Mais il faut mettre en série une diode : 
+Mais en fait tout module on-off type **SonOff ZBMini** ou **Xiaomi Aqara SSM-U02** en Zigbee pourra convenir pour gérer le fil pilote. Mais il faut mettre en série une diode : 
 
 ![Module et fil pilote](img/filpilote.png)
 
 La diode n'a pas à supporter une grande puissance, car l'intensité du fil pilote est faible. 
 
-**Attention cependant**, si vous utilisez un micro-module avec une diode, le fonctionnement du module sera inversé : le radiateur sera en confort quand le micro-module sera OFF, et arrêté quand le micro-module sera sur ON. Il faut alors modifier le code du blueprint thermostat (mettre switch_off à la place de switch_on). Ou à défaut créer un switch virtuel qui reprend l’état du micro-module et l’inverse :
+**Attention cependant**, si vous utilisez un micro-module avec une diode, le fonctionnement du module sera inversé : le radiateur sera en confort quand le micro-module sera OFF, et arrêté quand le micro-module sera sur ON. Il faut alors modifier le code du blueprint thermostat (mettre switch_off à la place de switch_on). Ou à défaut il faut créer un switch virtuel qui reprend l’état du micro-module et l’inverse :
 
 ```yaml
 switch:
@@ -535,7 +478,7 @@ switch:
 
 ### 8﻿.2 Pilotage d'un thermostat
 
-Il est aussi possible de faire des on-off avec un **thermostat physique** (type Heatit pilotant des câbles chauffants électrique par exemple).  Ci-dessous le template pour transformer le thermostat en switch.
+Il est aussi possible de faire des on-off avec un **thermostat physique** (type Heatit pilotant des câbles chauffants électrique par exemple).  Ci-dessous le modèle (template) pour transformer le thermostat en switch.
 
 ```yaml
 switch:
@@ -557,12 +500,15 @@ Le même principe de template peut être utilisé si un micromodule nécessite d
 
 ### 8﻿.3 Le capteur de température
 
-Pour les capteurs de température, j'utilise et recommande des capteurs zigbee Aqara ( WSDCGQ11LM) : ils sont fiables, petits et peu chers. Pour ceux qui veulent un afficheur, les capteurs Orvibo sont aussi très bien.\
-J'ai aussi historiquement des capteurs avec afficheurs Oregon THGR228N en 433mhz, très précis et dont les piles AAA tiennent 4 ans. Mais ils sont maintenant difficilement trouvables, ce qui est dommage.
+Pour les capteurs de température, j'utilise et recommande des capteurs **zigbee Aqara ( WSDCGQ11LM)** : ils sont fiables, petits et peu chers.
+
+Pour ceux qui veulent un **afficheur**, les capteurs **Orvibo** sont aussi très bien.
+
+J'ai aussi historiquement des capteurs avec afficheurs **Oregon THGR228N** en 433mhz, très précis et dont les piles AAA tiennent 4 ans. Mais ils sont maintenant difficilement trouvables, ce qui est dommage.
 
 ### 8﻿.4 Le détecteur d'ouverture
 
-Pour les capteurs de fenêtre, la aussi je recommande les Xiaomi Aqara ( MCCGQ11LM). 
+Pour les capteurs de fenêtre, là aussi, je recommande les **Xiaomi Aqara ( MCCGQ11LM)**. 
 
 Le thermostat TPI demande un capteur d'ouverture que l'on n'a pas forcément : il est possible de le simuler avec le code suivant :
 
@@ -579,7 +525,7 @@ binary_sensor:
 
 ## 9. Afficher des courbes de suivi
 
-Il est pertinent de contrôler le fonctionnement et éventuellement affiner les paramètres.  Voici à titre indicatif le code pour afficher des graphiques du fonctionnement de thermostat.
+Il est pertinent de **contrôler le fonctionnement du thermostat** et éventuellement affiner les paramètres.  Voici à titre indicatif le code pour afficher des graphiques du fonctionnement de thermostat.
 
 ![Courbes](img/courbe.png)
 
@@ -624,12 +570,12 @@ series:
 
 ## 10. Suivi de la consommation électrique
 
-Si on utilise un micro-module connecté au fil pilote du radiateur, il ne peut mesurer pas la consommation. Il ne mesure que la consommation du fil pilote qui est quasi nulle.
+Si on utilise un micro-module connecté au fil pilote du radiateur, **il ne peut mesurer pas la consommation**. Il ne mesure que la consommation du fil pilote qui est quasi nulle.
 
 Il est cependant possible d’approximer la consommation :
 
-* mesure du temps où le switch est ON avec un history_stats
-* conversion en énergie avec un template
+* mesure du temps où le switch est *ON* avec un history_stats
+* conversion en énergie avec un modèle (template)
 
 ```yaml
 sensor:
@@ -653,14 +599,14 @@ template:
 
 Dans l’exemple précédent, 1.47 kW est la puissance du convecteur.
 
-Je conseille de mesurer la puissance du convecteur en actionnant le convecteur et en regardant les différences de puissance consommée sur le compteur de la maison (sauf si on a une pince ampérométrique). On obtient des AH (puissance apparente) mais le cosfi d’un convecteur étant a 1, cela correspond aux watts réels consommés.
+Je conseille de mesurer la puissance du convecteur en actionnant le convecteur et en regardant les différences de puissance consommée sur le compteur de la maison (sauf si on a une pince ampérométrique). On obtient des AV (Ampères*volts => puissance apparente) mais le cosfi d’un convecteur étant a 1, cela correspond aux watts réels consommés.
 
-L’entité résultante peut directement être mise dans le module Energy.
+L’entité calculée peut directement être mise dans le module Energy.
 
 ## 11. Pour aller plus loin
 
 Il serait possible d'avoir 2 planifications "confort". Une pour la **semaine** et une pour le **week-end**, en spécifiant les jours dans le scheduler. Il faut alors modifier le blueprint pour piloter non pas une mais les 2 planifications.
 
-Le thermostat peut être utilisé pour des **chaudières ou poëles à granul**e. Mais il serait recommandé d'augmenter la période de chauffe (plutôt 20mn) et ne pas démarrer la chaudière si la puissance est de moins de 5% et la laisser tourner si la puissance est plus de 95% pour éviter les cycles courts. Cela demande une petite adaptation du thermostat TPI.
+Le thermostat peut être utilisé pour des **chaudières ou poêles à granule**. Mais il serait recommandé d'augmenter la période de chauffe (plutôt 20mn) et ne pas démarrer la chaudière si la puissance est de moins de 5% et la laisser tourner si la puissance est plus de 95% pour éviter les cycles courts. Cela demande une petite adaptation du thermostat TPI.
 
 Enfin, le bon fonctionnement des thermostats implique le bon fonctionnement des sondes. Avec mon ancienne box, j’avais un **« sanity check »** toutes les 2 heures pour vérifier que les sondes rafraichissaient toujours bien leurs données. Le chauffage coute trop cher pour ne pas avoir ce type de vérification, et ne pas se contenter de la vérification de la pile des capteurs. Il faudra utiliser l'entité status (valeur "alive" si tout va bien) si l'on a des modules zwave.
