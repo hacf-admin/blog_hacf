@@ -38,18 +38,15 @@ S’il y a un domaine source de confort et d’économie dans une maison domotis
 
 Un thermostat générique (intégration et carte lovelace) est proposé par HA pour piloter un chauffage en ON-OFF, mais il est de type **hystéresis** : il chauffe a 100% jusqu’à atteindre la température + un seuil, puis arrête. Le convecteur sera alors soit bouillant, soit froid, ce qui crée des **oscillations de température** et des **chaud-froid** inconfortables, et cela consomme plus. C’est probablement adapté aux climatiseurs réversibles américaines mais pas du tout à nos convecteurs et autres modes de chauffage. La **température extérieure** n’est même pas prise en compte, pas plus que la coupure du chauffage quand une **fenêtre est ouverte**.
 
-De plus, il n’y a pas de gestion des **plages horaires** permettant de définir les périodes de chauffe. Il faut alors faire appel à des intégrations de la communauté, ou alors pour les plus courageux tout redévelopper avec des automatisations et champs inputs (oups !!). Les 2 principales intégrations sont schedy et le scheduler. Schedy est un "daemon" (un processus qui s'exécute en arrière-plan) qui permet de planifier dynamiquement des événements, mais bien que très puissant, il n’a pas d’interface et son intégration est relativement complexe. Je vous proposerai d’utiliser l’autre intégration : le scheduler.  
+De plus, il n’y a pas de gestion des **plages horaires** permettant de définir les périodes de chauffe. Il faut alors faire appel à des intégrations de la communauté, ou alors pour les plus courageux tout redévelopper avec des automatisations et champs inputs (oups !!). Les 2 principales intégrations sont schedy et le scheduler. Schedy est un "daemon" (un processus qui s'exécute en arrière-plan) qui permet de planifier dynamiquement des événements, mais bien que très puissant, il n’a pas d’interface et son intégration est relativement complexe. Je vous proposerai d’utiliser l’autre intégration : le **[scheduler](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)**.  
 
 Pour gérer les différents modes, par exemple pour moduler la température sur les périodes de présences et absences, il n’y a donc pas d’autres choix que de redévelopper des automations. 
-
-> **Automatisation HA ou Node-RED ?**\
-> Comme pour tout développement d'automatisations, le choix entre node red ou les automatisations HA. Les 2 méthodes se discutent et ont chacune leurs avantages et inconvénients. Personnellement j’utilise les 2 : node red pour les flux (http et mqtt en particulier) ou pour bénéficier de nœuds spécifiques, et les automatisations HA pour la manipulation d’entités et des logiques type si-alors. L’avantage de ce dernier choix est d’être très bien intégré à HA, d’avoir avec les traces une capacité de contrôler ce qui se passe (mis en place depuis 2 mois et très puissant), d’avoir une forme YAML compact et facilement partageable. Mais un gros avantage est l’utilisation de blueprints : une automatisation de chauffage est créée dans un modèle, puis réutilisée pour chaque radiateur ou pièce de la maison. C’est ce que je vous propose d’utiliser ici.
 
 ## 2. Proposition d’implémentation
 
 L’article qui suit propose de mettre en place :
 
-* Un **thermostat de type TPI** (Time Propostional &amp; Integration) basé sur les températures intérieure et extérieure, avec arrêt quand une fenêtre est ouverte.
+* Un **thermostat de type TPI** (Time Proportional Integration) basé sur les températures intérieure et extérieure, avec arrêt quand une fenêtre est ouverte.
 * Une **gestion des modes** : auto-confort, auto-éco, manuel, hors gel, arrêt, absences.
 * Une gestion des **plages horaires** pour les modes auto-confort et auto-eco.
 * Une **carte lovelace** permettant de gérer le tout, dont l’affichage de la puissance en cours.
@@ -69,7 +66,7 @@ L’objectif du thermostat est de calculer un coefficient de puissance de chauff
 
 La puissance doit être de 100% quand la température de la pièce est loin de la consigne, puis baisser doucement jusqu’à atteindre la consigne. Ensuite le radiateur doit rester légèrement tiède pour compenser les pertes thermiques, ce en fonction de la température extérieure.
 
-**Tout d'abord, on calcul la puissance en pourcentage**
+**Tout d'abord, on calcule la puissance en pourcentage**
 
 Le calcul de la puissance en %, est assuré par la formule :
 
@@ -77,7 +74,7 @@ Le calcul de la puissance en %, est assuré par la formule :
 
  avec un min à 0% et un max à 100%
 
-* **coeff_c** est un coeff qui dépend de la puissance du chauffage et de la surface.
+* **coeff_c** est un coeff. qui dépend de la puissance du chauffage et de la surface.
 * **coeff_t** dépend lui de l’isolation de la pièce et des pertes thermiques.
 
 Pour une installation standard aux normes, on a coeff_c = 0,6 et coeff_t = 0,01
@@ -99,26 +96,26 @@ Le thermostat prend en charge la fenêtre et il coupe le radiateur quand cette d
 ### 3.2 Code du thermostat
 
 Le code du thermostat est dans un **blueprint** qui peut être téléchargé via cette url :
-https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml
+[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)
 
-Pour le charger dans Home Assistant, aller dans configuration, blueprints puis cliquer sur le bouton "importer un blueprint" en bas à droite. et recopier l'url précédente.
-Ensuite une automatisation « thermostat » peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
+Pour le charger dans Home Assistant, aller dans `configuration`, `blueprints `puis cliquer sur le bouton `importer un blueprint` en bas à droite. et recopier l'URL précédente.
+Ensuite une automatisation  `thermostat ` peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
 
-La puissance et la consigne sont dans des input_number définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des sensors et la fenêtre un binary sensor. Enfin le radiateur est piloté par un switch.
+La puissance et la consigne sont dans des `input_number` définis spécifiquement et utilisés dans la carte lovelace. Les 2 températures sont dans des `sensors `et la fenêtre un `binary sensor`. Enfin le radiateur est piloté par un `switch`.
 
 La création ou édition d’un nouveau thermostat revient alors à renseigner les paramètres suivants :
 
 ![Blueprint](img/blueprint.png)
 
-Si on a des radiateurs avec vanne thermo (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le blueprint devrait être adapté.
+Si on a des radiateurs avec vanne thermo-dynamiques (pas en mode ON OFF mais injection de la puissance), il faudrait reprendre le calcul de puissance et le *blueprint* devrait être adapté.
 
 > **Attention** : si le format des nombres sur votre système est avec des virgules et non des points, il faut changer dans le blueprint les valeurs min - max - step de coeff_c et coeff_t, et remplacer les points en virgules.
 
 ## 4. La carte lovelace
 
-Une carte assez basique permet de visualiser pour chaque radiateur le mode de chauffage, la température de consigne, de la pièce, la puissance et l’état de la fenêtre.
+Une carte assez basique permet de **visualiser** pour chaque radiateur le **mode de chauffage**, la **température de consigne** de la pièce, la **puissance** du chauffage et l’**état de la fenêtre**.
 
-Elle remplace la carte thermostat de HA.
+**Elle remplace la carte thermostat de HA.**
 
 ![Carte thermostat](img/cartethermostat.png)
 
