@@ -39,10 +39,10 @@ L'ensemble du code et des fichiers est partagé ici :
 ## 1. Le matériel
 
 L'afficheur est un **Nextion 2.8 pouces** de référence NX3224F08.
-[Aliexpress : nextion 2.8 ](https://fr.aliexpress.com/item/4000593543479.html)
+[Aliexpress : nextion 2.8 ](https://fr.aliexpress.com/item/4000593543479.html?aff_fcid=9cf93e5e7784426eaa179db59fd9ac59-1677951327828-06475-_All9bw&aff_fsk=_All9bw&aff_platform=portals-tool&sk=_All9bw&aff_trace_key=9cf93e5e7784426eaa179db59fd9ac59-1677951327828-06475-_All9bw&terminal_id=0268d075afc1426fbbd2e076e1ad8b08&afSmartRedirect=y)
 
 Nous utiliserons un **ESP8266 Wemos D1**.
-[Aliexpress : wemos d1 mini](https://fr.aliexpress.com/item/32631693796.html)
+[Aliexpress : wemos d1 mini](https://s.click.aliexpress.com/deep_link.htm?aff_short_key=_All9bw&dl_target_url=https%3A%2F%2Ffr.aliexpress.com%2Fitem%2F32631693796.html)
 
 Seules les connecteurs de la liaison série (TX et RX) ainsi que le 5v et la terre sont soudés, puis retournés pour ne pas prendre de place. 
 
@@ -50,9 +50,9 @@ Seules les connecteurs de la liaison série (TX et RX) ainsi que le 5v et la ter
 
 La connexion de l'afficheur est simple :
 
-* Liaison série du wemos sur liaison série du nextion (entrée de l'un sur sortie de l'autre : TX afficheur connecté à RX wemos, RX afficheur connecté à TX wemos).
-* Afficheur alimenté par les sorties terre - 5v du wemos
-* Le wemos est lui alimenté par un cable micro-usb
+* **Liaison série du wemos sur liaison série du nextion** (entrée de l'un sur l sortie de l'autre : TX afficheur connecté à RX wemos, RX afficheur connecté à TX wemos).
+* **Afficheur alimenté par les sorties terre - 5v du wemos**
+* **Le wemos est lui alimenté par un câble micro-usb**
 
 Un boitier a été conçu et imprimé avec une imprimante 3d :
 
@@ -61,12 +61,13 @@ Un boitier a été conçu et imprimé avec une imprimante 3d :
 Les fichiers d'impression sont partagés sur cult3d
 [Cult3d - boitier pour Nextion 2.8](https://cults3d.com/fr/mod%C3%A8le-3d/divers/case-for-nextion-2-8-inches)
 
-Enfin, pour avoir le rendu d'un produit du commerce, une résine UV de lissage PolyPrint est utilisée. Elle est sans odeur et qui donne de fabuleux résultats.
+Enfin, pour avoir le rendu d'un produit du commerce, une **résine UV de lissage** **PolyPrint** est utilisée. Elle est sans odeur et qui donne de fabuleux résultats.
 
 ![Le pot de résine](img/resine.jpeg)
 
-La résine peut être appliquée au pinceau. Puis éclairer 10s chaque surface avec une torche UV et la résine est immédiatement dure. Juste faire un petit ponçage avant et après l'application de la résine. 
-Enfin le boitier a été peint avec une bombe de peinture acrylique blanche qui peut se trouver dans n'importe quel magasin de bricolage.
+**La résine peut être appliquée au pinceau**. Puis éclairer 10s chaque surface avec une torche UV et la résine est immédiatement dure. Juste faire un petit ponçage avant et après l'application de la résine. 
+
+Enfin **le boitier a été peint avec une bombe de peinture acrylique blanche** qui peut se trouver dans n'importe quel magasin de bricolage.
 
 **Polyprint** vend un kit avec un pot de lissage, un autre de colmatage et la lampe UV :
 [Résine UV lissage Polyprint Equalizer](http://polyprint-3d.com/polyprint.php#!/R%C3%A9sine-U-V-ultra-rapide-de-Lissage-et-de-Colmatage-en-15-s-DUO-60-g-Mini-torche-UV/p/356945204/category=63140647)
@@ -89,15 +90,15 @@ Dans les attributs de chaque élément, **quelques astuces** :
 
 * Mettre un `objname` (nom court) pour le référencer dans ESPHome.
 * Mettre `vscope` à global pour qu'il soit actif Quelle que soit la page affichée
-* Attribut `sta` à `crop image` et préciser dans pic le fond utilisé
-* uUtiliser le browser pour renseigner les différents id (police, images, pages...).
+* Attribut `sta` à `crop image` et préciser dans `pic`le fond utilisé
+* Utiliser le browser pour renseigner les différents id (police, images, pages...).
 * Les textes sont saisis en cliquant sur `multiline...` et non directement dans le champ.
 
 Dans le carré `event` à gauche du carré `attributs`, il est possible de mettre du code qui sera exécuté dans le nextion. On mettra par exemple "page volet" pour le bouton volet, pour ouvrir une page dont le nom est "volet".
 
 L'afficheur peut être testé en cliquant dans la barre d'outils sur `debug`. Vous serez averti si un champ obligatoire manque dans les attributs (id d'une police par exemple).
 
-Enfin, il ne reste plus qu'à charger le fichier (format TFT) sur le nextion. Pour cela, cliquer sur `file` / `TFT File Output` et télécharger le fichier sur une carte micro SD (utiliser un adaptateur USB - micro SD). Puis insérer la carte micro SD dans le nextion et allumer le : le fichier sera alors chargé.
+Enfin, il ne reste plus qu'à **charger le fichier (format TFT) sur le Nextion**. Pour cela, cliquer sur `file` / `TFT File Output` et télécharger le fichier sur une carte micro SD (utiliser un adaptateur USB - micro SD). Puis insérer la carte micro SD dans le Nextion et allumer le : le fichier sera alors chargé.
 Par la suite, il sera possible de téléverser un nouveau fichier en wifi et nous verrons plus loin comment.
 
 ## 3. Paramétrage ESPHome
@@ -145,7 +146,7 @@ display:
     brightness: 70%
 ```
 
-Le code (`service: update_tft` et paramètre `tft_url`) permet de téléverser le code issu de l'éditeur nextion dans l'afficheur. Bien renseigner l'adresse de votre machine HA pour le paramètre `tft_url`.
+Le code (`service: update_tft` et paramètre `tft_url`) permet de téléverser le code issu de l'éditeur Nextion dans l'afficheur. Bien renseigner l'adresse de votre machine HA pour le paramètre `tft_url`.
 Il faut mettre le fichier dans un répertoire  sous `HA .\config\www\nextion`
 Ensuite l'appel du service `ESPHome: esp_nextion_update_tft` lancera le transfert et la mise à jour. Très pratique quand l'afficheur sera dans son boitier et ne sera plus accessible.
 
@@ -155,7 +156,8 @@ Ensuite l'appel du service `ESPHome: esp_nextion_update_tft` lancera le transfer
 
 ## 4. Programmation de l'affichage des températures
 
-Un champ texte a été défini dans l'outil de création d'interface du nextion (ici `tempeau` pour la température de l'eau). Une entrée de type "Nextion" est alors créée dans ESPHome pour reprendre la valeur d'une entité sensor, la formater avec 1 décimale et l'envoyée à l'afficheur, dans le champ texte `tempeau`.
+Un champ texte a été défini dans l'outil de création d'interface du Nextion (ici `tempeau` pour la température de l'eau). Une entrée de type "Nextion" est alors créée dans ESPHome pour reprendre la valeur d'une entité sensor, la formater avec 1 décimale et l'envoyée à l'afficheur, dans le champ texte `tempeau`.
+
 Si on a plusieurs pages, on doit préfixer ce nom de champs par le nom de la page (ici `main.tempeau`).
 
 ```yaml
@@ -217,16 +219,18 @@ L'appui sur le bouton "fermer la piscine" dans l'interface appelle un service da
 
 ## 7. Programmation d'un bouton à 2 états pour les lumières
 
-On utilise dans l'interface nextion un "dual state button". Chaque état a une couleur (orange quand la lumière est allumée, gris autrement).
+On utilise dans l'interface Nextion un `dual state button`. Chaque état a une couleur (orange quand la lumière est allumée, gris autrement).
 
-La lumière peut être activée depuis l'interface du Nextion ou depuis HA. Il faut alors 2 entrées :
+La lumière peut être activée depuis l'interface du Nextion ou depuis HA.
 
-* 1 pour le nextion qui envoie l'ordre à HA si allumé depuis l'interface nextion
+Il faut alors 2 entrées :
+
+* 1 pour le Nextion qui envoie l'ordre à HA si allumé depuis l'interface Nextion
 * 1 pour HA qui envoie l'ordre à l'interface Nextion quand la lumière est allumée depuis HA.
 
-Il est conseillé de préfixer les entrées en fonction de la plateforme : le nom de l'entrée est `ha_lum_plage` pour l'entrée ha et `nx_lum_plage` pour l'entrée nextion.
+Il est conseillé de préfixer les entrées en fonction de la plateforme : le nom de l'entrée est `ha_lum_plage` pour l'entrée ha et `nx_lum_plage` pour l'entrée Nextion.
 
-Le code c (lambda) se déclenche sur événement de changement d'état.
+Le code C (lambda) se déclenche sur événement de changement d'état.
 
 ```yaml
 - platform: homeassistant
@@ -272,7 +276,8 @@ Le code c (lambda) se déclenche sur événement de changement d'état.
 
 ## 9. Mise à jour de l'afficheur quand il est réveillé
 
-Le code précédent permet les mises à jour quand le nextion est actif, mais l'interface n'est pas mise à jour que le nextion est en veille. Il faut donc rajouter du code pour la mise à jour quand le nextion est réveillé.
+Le code précédent permet les mises à jour quand le Nextion est actif, mais l'interface n'est pas mise à jour quand le Nextion est en veille. Il faut donc rajouter du code pour la mise à jour quand le Nextion est réveillé.
+
 Certains tutos proposent une mise à jour toutes les 5s, mais ce ne sera pas nécessaire dans notre cas.
 
 ```yaml
@@ -313,4 +318,5 @@ display:
 ```
 
 Le code sera adapté suivant vos besoins. Il pourrait aussi être repris pour flasher un afficheur sonoff.
+
 N'hésitez pas à proposer des évolutions ou partager vos propres implémentations.
