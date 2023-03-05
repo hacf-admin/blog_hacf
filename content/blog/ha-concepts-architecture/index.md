@@ -431,7 +431,7 @@ YAML n'est pas le seul code utilisé par Home Assistant. Dans certains cas, vous
 
 Par exemple, vous avez un sensor retournant `true `ou `false `si une porte est fermée ou non. Vous voulez avoir un libellé de l'état de votre porte.
 
-Dans votre fichier configuration.yaml (ou un package), vous pouvez recréer un sensor qui retournera un libellé "ouvert" ou "fermé". Le code **jinja2** sera mis dans la clé value_template (à la suite de la clé entre quote, ou à la ligne avec le symbole `>-`.
+Dans votre fichier configuration.yaml (ou un package), vous pouvez recréer un sensor qui retournera un libellé "ouvert" ou "fermé". Le code **jinja2** sera mis dans la clé `value_template` (à la suite de la clé entre quote, ou à la ligne avec le symbole `>-`.
 
 ```yaml
 -  platform:  template
