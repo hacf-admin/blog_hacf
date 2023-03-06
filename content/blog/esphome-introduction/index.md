@@ -6,6 +6,8 @@ folder: esphome-introduction
 title: Vos premiers pas avec ESPHome
 type: post
 visibleInCMS: true
+aliases:
+  - /esphome_installation
 date: 2023-02-24
 lastmod: 2023-02-24
 images: img/accueil.png
