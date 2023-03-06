@@ -25,7 +25,7 @@ tags:
   - haos
   - ha-supervised
 ---
-Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très connus (comme ""Node-Red"", ""Grafana"", ""InfluxDB"", ""DuckDNS"", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
+Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très connus (comme "Node-Red", "Grafana", "InfluxDB", "DuckDNS", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
 
 Il existe plusieurs façons d'installer un add-on :
 
