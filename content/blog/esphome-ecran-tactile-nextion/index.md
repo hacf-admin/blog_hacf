@@ -21,13 +21,14 @@ categories:
 tags:
   - nextion
   - esphome
+author: argonaute
 ---
 Il peut être très pratique d'installer un petit **afficheur tactile** la ou c'est utile (thermostat, pilotage d'une chaudière, météo, etc). C'est ce que j'ai fait en mettant un afficheur vers la porte d'accès ou jardin pour gérer la piscine et les éclairages extérieurs :
 
-* Affichage des **températures** de l'extérieur, de l'eau et de l'abri (piscine sous abri)
-* Affichage d'éventuelles **alertes**
-* Gestion de l'ouverture et fermeture du **volet de la piscine**, allumage des **spots**
-* Gestion des différentes **lumières extérieures**
+* Affichage des **températures** de l'extérieur, de l'eau et de l'abri (piscine sous abri),
+* Affichage d'éventuelles **alertes,**
+* Gestion de l'ouverture et fermeture du **volet de la piscine**, allumage des **spots,**
+* Gestion des différentes **lumières extérieures,**
 
 ![Rendu final du boitier installé](img/boitier.jpeg)
 
@@ -43,6 +44,8 @@ L'afficheur est un **Nextion 2.8 pouces** de référence NX3224F08.
 
 Nous utiliserons un **ESP8266 Wemos D1**.
 [Aliexpress : wemos d1 mini](https://s.click.aliexpress.com/deep_link.htm?aff_short_key=_All9bw&dl_target_url=https%3A%2F%2Ffr.aliexpress.com%2Fitem%2F32631693796.html)
+
+> Il est possible d'utiliser un ESP32 avec BLE pour profiter d'un proxy Bluetooth.
 
 Seules les connecteurs de la liaison série (TX et RX) ainsi que le 5v et la terre sont soudés, puis retournés pour ne pas prendre de place. 
 
@@ -74,13 +77,13 @@ Enfin **le boitier a été peint avec une bombe de peinture acrylique blanche** 
 
 ## 2. Le design de l'interface
 
-Le design est assez facile : Nextion fournit un éditeur téléchargeable ici.
+Le design est assez facile : Nextion fournit un éditeur téléchargeable [ici](https://nextion.tech/nextion-editor/).
 [Nextion editor](https://nextion.tech/nextion-editor/)
 
 ![L'éditeur d'interface Nextion](img/editeur.png)
 
 Tous les éléments graphiques (fond, icônes) doivent être téléchargés dans le carré en bas à gauche, rubrique `picture`.
-Un fond de **240 x 320 pixels** doit en particulier est chargé au préalable. Vous pouvez réutiliser le fond noir de [GitHub](https://github.com/argonaute199/Nextion28-home-assistant).
+Un fond de **240 x 320 pixels** doit en particulier être chargé au préalable. Vous pouvez réutiliser le fond noir de [GitHub](https://github.com/argonaute199/Nextion28-home-assistant).
 
 Ensuite, il faut créer ou charger les polices que vous utiliserez. Reprendre celle de mon github ou les créer en utilisant le menu `tools` - `font generator.` Les polices disponibles sont dans le carré en bas à gauche, rubrique "Font".
 
@@ -88,10 +91,10 @@ Ensuite, vous pouvez créer les pages de votre application, et y créer les diff
 
 Dans les attributs de chaque élément, **quelques astuces** :
 
-* Mettre un `objname` (nom court) pour le référencer dans ESPHome.
-* Mettre `vscope` à global pour qu'il soit actif Quelle que soit la page affichée
-* Attribut `sta` à `crop image` et préciser dans `pic`le fond utilisé
-* Utiliser le browser pour renseigner les différents id (police, images, pages...).
+* Mettre un `objname` (nom court) pour le référencer dans ESPHome,
+* Mettre `vscope` à global pour qu'il soit actif quelle que soit la page affichée,
+* Attribut `sta` à `crop image` et préciser dans `pic` le fond utilisé,
+* Utiliser le browser pour renseigner les différents id (police, images, pages...),
 * Les textes sont saisis en cliquant sur `multiline...` et non directement dans le champ.
 
 Dans le carré `event` à gauche du carré `attributs`, il est possible de mettre du code qui sera exécuté dans le nextion. On mettra par exemple "page volet" pour le bouton volet, pour ouvrir une page dont le nom est "volet".
@@ -103,7 +106,7 @@ Par la suite, il sera possible de téléverser un nouveau fichier en wifi et nou
 
 ## 3. Paramétrage ESPHome
 
-L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis dans la création du composant.
+L'article [premiers pas avec ESPHome](/esphome_installation) vous guidera si besoin dans l'installation de ESPHome, puis dans la création du composant.
 
 Voici les paramètres de base, sans composant connecté.
 
@@ -156,7 +159,7 @@ Ensuite l'appel du service `ESPHome: esp_nextion_update_tft` lancera le transfer
 
 ## 4. Programmation de l'affichage des températures
 
-Un champ texte a été défini dans l'outil de création d'interface du Nextion (ici `tempeau` pour la température de l'eau). Une entrée de type "Nextion" est alors créée dans ESPHome pour reprendre la valeur d'une entité sensor, la formater avec 1 décimale et l'envoyée à l'afficheur, dans le champ texte `tempeau`.
+Un champ texte a été défini dans l'outil de création d'interface du Nextion (ici `tempeau` pour la température de l'eau). Une entrée de type "Nextion" est alors créée dans ESPHome pour reprendre la valeur d'une entité sensor, la formater avec 1 décimale et l'envoyer à l'afficheur, dans le champ texte `tempeau`.
 
 Si on a plusieurs pages, on doit préfixer ce nom de champs par le nom de la page (ici `main.tempeau`).
 
