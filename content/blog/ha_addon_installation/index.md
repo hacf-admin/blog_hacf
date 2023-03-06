@@ -25,7 +25,7 @@ tags:
   - haos
   - ha-supervised
 ---
-Les add-ons permettent d'ajouter des services reconnus et très connus (comme ""Node-Red"", ""Grafana"", ""InfluxDB"", ""DuckDNS"", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
+Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très connus (comme ""Node-Red"", ""Grafana"", ""InfluxDB"", ""DuckDNS"", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
 
 Il existe deux types d’add-on :
 
@@ -86,8 +86,6 @@ Dans Home Assistant, cliquer sur `Paramètres` -> `Modules complémentaires` -> 
 * Chercher maintenant l'add-on et `INSTALLER`.
 
 > Le fonctionnement est identique à un add-on officiel.
-
-
 
 ![Ajouter le dépot d'un add-on non officiel sur Home Assistant](img/ha_addons_non_officiel_installation.gif "Ajouter le dépot d'un add-on non officiel sur Home Assistant")
 
