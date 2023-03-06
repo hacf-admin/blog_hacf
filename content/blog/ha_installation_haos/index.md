@@ -30,7 +30,7 @@ tags:
   - raspberry-pi
   - ha-os
 ---
-Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de Home Assistant OS. Vous faites le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
+Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de **Home Assistant OS**. Vous faites le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
 
 Que votre matériel soit un NUC, une Raspberry, une Tinkerboard ou un Odroid, ce guide est fait pour vous.
 
@@ -45,11 +45,13 @@ Que votre matériel soit un NUC, une Raspberry, une Tinkerboard ou un Odroid, ce
 **Installation sur Raspberry Pi : Pourquoi il utilise une carte Micro SD alors que, sur le net, tout le monde parle de problèmes avec les cartes SD ?** Parce que [Home Assistant le recommande](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk).([Voir ici](/blog/ha_installation_premier_lancement/#déplacer-les-données-utilisateurs-facultatif))
 
 ## Préparation avec Balena Etcher.
+
 Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour votre système d'exploitation.
 
 ![Image de l'interface de Balena Etcher](img/balena-etcher.png "Interface de Balena Etcher")
 
 **Avec l'image déjà récupérée :**
+
 * Lancer Balena Etcher,
 * Cliquer sur `Flash from File`,
 * Sélectionner votre [image](https://github.com/home-assistant/operating-system/releases),
@@ -57,6 +59,7 @@ Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour vo
 * Cliquez sur `Flash`.
 
 **Avec récupération de l'image en ligne :**
+
 * Lancer Balena Etcher,
 * Cliquer sur `Flash from URL`,
 * Rentrer l'[URL](https://www.home-assistant.io/installation/raspberrypi#write-the-image-to-your-boot-media) correspondante à votre matériel,
@@ -64,11 +67,13 @@ Récupérer la [version de Balena Etcher](https://www.balena.io/etcher/) pour vo
 * Cliquez sur `Flash`.
 
 ## Préparation avec Raspberry Pi OS.
+
 Récupérer et installer [Raspberry Pi OS](https://www.raspberrypi.com/software/) pour votre système d'exploitation.
 
 * Lancer Raspberry Pi OS,
 
 **Si vous n'avez pas récupéré l'image de Home Assistant OS.**
+
 * Dans `CHOISISSEZ L'OS`, `Other specifique-purpose OS`, `Home assistants and home automation`, `Home Assistant` puis `Home Assistant OS 9.3 (TPi4/400)` (au moment où j'écris),
 * Dans `CHOISISSEZ LE STOCKAGE`, sélectionner votre Carte SD,
 * Et cliquer sur écrire.
@@ -78,11 +83,13 @@ Récupérer et installer [Raspberry Pi OS](https://www.raspberrypi.com/software/
 Une fois la copie terminée et vérifiée, passez à la suite.
 
 **Si vous avez récupéré l'[image de Home Assistant OS](https://github.com/home-assistant/operating-system/releases).**
+
 * Dans `CHOISISSEZ L'OS`, `Utiliser image personnalisée` et sélectionner votre image sur votre disque,
 * Dans `CHOISISSEZ LE STOCKAGE`, sélectionner votre Carte SD,
 * Et cliquer sur écrire.
 
 ## Premier Lancement.
+
 Une fois votre image transférée par la méthode de votre choix, insérer votre carte MicroSD, votre câble Ethernet (recommandé), l'alimentation puis allumer votre matériel.
 
 Rendez-vous, depuis votre navigateur, sur `[homeassistant.local:8123](http://homeassistant.local:8123)` ou sur `ipdevotremateriel:8123`
