@@ -10,30 +10,33 @@ date: 2023-02-08
 lastmod: ""
 images: img/accueil.png
 description: >-
-  Home Assistant sécurise notre maison et en permet un control à distance. Mais
-  que se passera t'il si Internet tombe alors que vous êtes en voyage pour 2
+  Home Assistant sécurise notre maison et en permet le contrôle à distance. Mais
+  que se passera-t-il si internet tombe alors que vous êtes en voyage pour deux
   semaines ? Et si un incendie se déclenche, seul un appel téléphonique vous
   avertira correctement.
 
-  Cet article présente une solution DIY permettant à Home Assistant d'envoyer et recevoir des SMS, de déclencher des automatisations, mais aussi de faire un appel téléphonique. 
+  Cet article présente une solution DIY permettant à Home Assistant d'envoyer et de recevoir des SMS, de déclencher des automatisations, mais aussi de faire un appel téléphonique. 
 categories:
   - ESPHome/DIY
+  - Sécurité
 tags:
   - sim800l
   - esp32
   - esphome
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/sms-et-appels-avec-ha-sans-internet/6314
 ---
 Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines sont vite **essentielles**. Il est rassurant de savoir que notre système veille sur la **sécurité** de la maison. 
 
-**Or imaginez** : vous partez à Bali faire le voyage de votre rêve, ou une belle randonnée en montagne (je suis haut savoyard… :wink: ) et vous n'avez plus de 4G. Ou pire, la liaison internet de la maison tombe et la seule solution est de **rebooter la box**.
+**Or imaginez** : vous partez à Bali faire le voyage de votre rêve, ou une belle randonnée en montagne (je suis haut savoyard… :wink: ) et vous n'avez plus de 4G. Ou pire, la liaison internet de la maison tombe et la seule solution est de **redémarrer la box**.
 
-Dans ce post, je vous propose une solution relativement économique, basée sur un module à base d'**ESP32-SIM800L** et **ESPHome**, pour pouvoir **envoyer et recevoir des SMS** avec Home Assistant, déclencher des actions sur réception d'un SMS et même **lancer un appel** sur le téléphone, ce **sans connexion Internet**.
+Dans ce post, je vous propose une solution relativement économique, basée sur un module à base d'**ESP32-SIM800L** et **ESPHome**, pour pouvoir **envoyer et recevoir des SMS** avec Home Assistant, déclencher des actions sur réception d'un SMS et même **lancer un appel** sur le téléphone, et ce, **sans connexion internet**.
 
 ![Boitier ouvert](img/boitier-ouvert.jpeg)
 
-Je vous propose de traiter 2 cas concrets :
+Je vous propose de traiter deux cas concrets :
 
-1. **Reboot à distance de la box internet** : envoie d'un SMS qui déclenche le reboot.
+1. **Redémarrage à distance de la box internet** : envoie d'un SMS qui déclenche le redémarrage
 2. **Envoie d'un SMS** puis appel téléphonique pour alerter d'un incendie ou une intrusion.
 
 ## 1. Matériel
@@ -51,18 +54,18 @@ D'autres versions sont également dispos sur Aliexpress (j'ignore les différenc
 Enfin, j'ai conçu sous Fusion360 un boitier qui peut être téléchargé et imprimé.
 [Boitier à imprimer en 3D sur Cults3D](https://cults3d.com/fr/mod%C3%A8le-3d/outil/case-for-lilygo-module-ttgo-t-call-esp32-sim800l) 
 
-Et bien entendu il faut un **abonnement téléphonique**. Certes un petit coût mensuel, mais moins cher qu'une maison brulée car on n'a pas été prévenu à temps.
+Bien entendu, il faut un **abonnement téléphonique**. Certes un petit coût mensuel, mais moins cher qu'une maison brulée, car on n'a pas été prévenu à temps.
 
-Pour les **abonnés Free**, il est possible d'avoir un abonnement limité à 2h et sans data gratuit. Autrement il coute 2€ par mois. C'est ce que je conseille.
+Pour les **abonnés Free**, il est possible d'avoir un abonnement limité à 2h et sans data gratuit. Autrement, il coûte 2€ par mois. C'est ce que je conseille.
 
-> **Vérifier également que votre zone est bien toujours couverte par le GRPS (ou 2G).**
+> **Vérifier également que votre zone est bien couverte par le GRPS (ou 2G).**
 > [Couverture mobile Free](https://mobile.free.fr/couverture)
 
 J'avais initialement pris et conseillé un abonnement SymaMobile à 1,90€ mais à l'usage cet opérateur ne s'avère pas fiable, et les forums sont pleins de personnes insatisfaites. Les SMS étaient vraiment très lents à recevoir ou émettre, mais surtout, j'ai eu en 2 mois 2 grosses pannes de plus de 24 heures venant de chez eux. Donc à fuir.
 
 ## 2. Configuration ESPHome
 
-L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis dans la création initiale du composant.
+L'article [premiers pas avec ESPHome](/esphome_installation) vous guidera si besoin dans l'installation de ESPHome, puis dans la création initiale du composant.
 
 Voici pour rappel les grandes étapes :
 
@@ -70,16 +73,7 @@ Voici pour rappel les grandes étapes :
 * **Créer un nouveau composant** que l'on appellera ici `ESP-SIM800`
 
   ![ESPHome](img/esphome.png)
-* **Renseigner les mots de passe du réseau wifi.**
-
-Pour cela, depuis ESPHome cliquer sur les 3 points en haut à droite puis `Secrets Editor`. Un fichier `secret.yaml` sous la racine du répertoire esphome est créé. Ce fichier est différent de celui de home assistant et est spécifique à ESPHome.
-
-```yaml
-wifi_ssid : "xxxxxxxxxx"
-wifi_password : "xxxxxxxxx"
-```
-
-* Puis **copier le code** qui suit dans le code du composant (bouton `EDIT`) et le valider (bouton `VALIDATE`)
+* **Copier le code** qui suit dans le code du composant (bouton `EDIT`) et le valider (bouton `VALIDATE`)
 
 ```yaml
 esphome:
@@ -185,22 +179,15 @@ binary_sensor:
 
 * **Installer le micro-code sur l’ESP**
 
-  * Connecter l’ESP en USB sur votre PC, cliquer sur les 3 point, `install`, `plug into this computer`, puis attendre que le fichier binaire soit généré (message `prepare download` disparaisse), puis cliquer sur `download`.
-    Vous devriez retrouver le binaire contenant le microcode dans votre répertoire « telechargement »*.*
-  * Cliquer sur `Open ESPHome Web`, cliquer sur `install`, puis `connect`, sélectionner le port USB, puis cliquer sur `INSTALL`.
-  * Après 2 mn, l’ESP devrait afficher `configuration OK`. 
-  * Retourner sur ESPHome, débrancher et rebrancher l’ESP, cliquer sur LOGS et vérifier que vous avez accès aux logs et que l’ESP fonctionne.
-    A partir de ce moment, vous pourrez modifier le code de l’ESP (bouton `EDIT`) et le déployer EN OTA ( `install / wirelessly`).
-  * Débrancher et rebrancher l'ESP, puis après 1 mn de redémarrage, vérifier les logs du composant dans ESPHome.
-
 ![Logs](img/log.png)
 
-Le log doit afficher *Registered OK* et le niveau de réception (RSSI) du module téléphone, à 15 dans mon log ci-dessus.
+Le log doit afficher *Registered OK* et le niveau de réception (RSSI) du module téléphone à 15 dans mon log ci-dessus.
 Le code proposé est avec le logger en mode debug, mais il pourra être changé en info quand tout fonctionnera.
 
-* Enfin **redémarrer home assistant**. Une nouvelle intégration ESP-SIM800 devrait être disponible et il faut la rajouter.
+* Enfin **redémarrer Home Assistant,**
+* Ajouter la nouvelle intégration ESP-SIM800.
 
-**3 entités sont créées** : 
+**Trois entités sont créées** : 
 
 * `sensor.esp_sim800_sms_expediteur`
 * `sensor.esp_sim800_sms_message`
@@ -211,14 +198,14 @@ On peut tester en envoyant un SMS au module et en vérifiant que les entités ex
 
 Enfin `esp_sim800_statut` permet de savoir dans l'interface utilisateur si le module est correctement connecté.
 
-**3 services sont également mis à disposition** :
+**Trois services sont également mis à disposition** :
 
 * `Esp_sim800_send_sms` 
 * `Esp_sim800_replay_sms_ok` 
 * `Esp_sim800_dia`l
 
 **Esp_sim800_send_sms**  permet d'envoyer un SMS en lui passant le destinataire et un texte du message.
-**Esp_sim800_replay_sms_ok**  : revoie la dernière commande reçue suivi de OK au dernier expéditeur. Cette fonction est très utilise pour confirmer qu'un SMS a bien été reçu et que l'ordre est bien pris en compte.
+**Esp_sim800_replay_sms_ok**  : revoie la dernière commande reçue suivie de OK au dernier expéditeur. Cette fonction est très utilisée pour confirmer qu'un SMS a bien été reçu et que l'ordre est bien pris en compte.
 **Esp_sim800_dial** permet de déclencher un appel. Malheureusement, il n'est pour l'instant pas possible de mettre de la voix. C'est cependant très utile pour déclencher la sonnerie du téléphone et donc générer une alerte.
 
 Pour tester, on peut appeler les services avec l'`outil de développemen`t - `service`.
@@ -244,7 +231,7 @@ mode: single
 
 ## 4. Premier cas d'utilisation : reboot à distance de la box internet
 
-Ce premier cas est important et a sauvé notre connexion pas plus tard que la semaine dernière alors que nous étions en congés. L'alternative serait les **voisins à qui vous avez laissé vos clés**, mais c'est potentiellement moins efficace. Ou alors on pourrait mettre en place un test de la connexion à intervalles réguliers qui demande de "reboot" automatique par HA, mais plus hasardeux.
+Ce premier cas est important et a sauvé notre connexion pas plus tard que la semaine dernière alors que nous étions en congés. L'alternative serait les **voisins à qui vous avez laissé vos clés**, mais c'est potentiellement moins efficace. Ou alors mettre en place un test de la connexion à intervalles réguliers qui demande de "reboot" automatique par HA, mais plus hasardeux.
 
 J'ai équipé la box d'une prise **Zwave Neo Coolcam**.
 Si un SMS est envoyé avec le mot clé ***Restart-box***, alors une automatisation renvoie par SMS que  ***Restart-box OK***, puis éteint la prise, attends une seconde et rallume la prise. La box redémarre.
@@ -275,11 +262,11 @@ action:
 mode: single
 ```
 
-## 5. Deuxième cas d'utilisation : alerte SMS puis appel
+## 5. Deuxième cas d'utilisation : alerte SMS et appel
 
 Inondation, incendie, intrusion… **ce n'est pas très raisonnable de ne compter que sur Internet** et le fait que l'on a toujours et en permanence la 4G. Et puis une simple notification type "Coucou votre maison brule" ne sera pas forcément efficace. 
 
-Donc la solution proposée est d'**envoyer un SMS puis d'appeler**. Si on reçoit le message, on peut renvoyer un SMS avec le code Stop-alerte pour désactiver l'alerte (ou via l'interface lovelace). Autrement, le système rappellera 3 fois à 5 mn d'intervalle tant que l'alerte n'aura pas été désactivée.
+Donc la solution proposée est d'**envoyer un SMS et d'appeler**. Si on reçoit le message, on peut renvoyer un SMS avec le code Stop-alerte pour désactiver l'alerte (ou via l'interface lovelace). Autrement, le système rappellera 3 fois à 5 mn d'intervalle tant que l'alerte n'aura pas été désactivée.
 
 Malheureusement, **l'appel alertera avec sa sonnerie, mais ne peut contenir pour l'instant de message vocal**. Il faut raccrocher et aller lire le SMS pour connaitre la nature de l'alerte. Il est donc recommandé d'entrer le n° de téléphone du module sous le nom "home Assistant" dans ses contacts pour savoir qui appelle. 
 
@@ -334,8 +321,8 @@ mode: single
 
 Voilà, vous avez pu **sécuriser à moindre coût votre système domotique** en lui rajoutant une **capacité d'appel téléphonique et un moyen de communiquer même si Internet tombe.**
 
-La contrainte reste d'être dans une zone couverte par la 2G, mais c'est, en France, le cas pour pas mal de région grâce à Free. 
+La contrainte reste d'être dans une zone couverte par la 2G, mais c'est, en France, le cas pour pas mal de région. 
 
 L'alternative est d'intégrer un modem type Huawei e3372, avec SMS gateway. Mais cette solution sera un peu plus chère, mais nécessitera surtout l'installation d'un serveur Gammu.
 
-N'hésitez pas à faire vos suggestions ou retours sur le forum, voir proposer des solutions alternatives.
+N'hésitez pas à faire vos suggestions ou vos retours sur le forum, voir proposer des solutions alternatives.
