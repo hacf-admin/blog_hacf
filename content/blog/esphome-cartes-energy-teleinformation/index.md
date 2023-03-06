@@ -21,40 +21,55 @@ tags:
   - linky
   - esphome
   - esp32
+  - diy
+author: argonaute
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
 ---
 ## 1.Introduction
 
-Le module **Energy** de Home Assistant est vraiment puissant, propose de belles cartes graphiques interactives (navigation jour-mois-année, consolidation des coûts), et il serait dommage de ne pas l'utiliser. Le module **Energy** utilise les tables "*statistics*" de HA, qui permettent de garder les données sans limite de durée, avec 1 enregistrement seulement stocké par heure.
+Le module **Energy** de Home Assistant est vraiment puissant, il propose de belles cartes graphiques interactives (navigation jour-mois-année, consolidation des coûts), et il serait dommage de ne pas l'utiliser. Le module **Energy** utilise les tables "*statistics*" de HA, qui permettent de garder les données sans limite de durée, avec un seul enregistrement stocké par heure.
 
-Certes le sujet télé-information a déjà été pas mal traité, mais il est proposé ici un retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total < 10€ :
+Certes le sujet télé-information est présent sur plusieurs sujets, mais il est proposé ici, un retour d'expérience sur une intégration complète et éprouvée, avec un coût de réalisation total inférieur à 10 €.
 
-* Réalisation **DIY** avec un **ESP32** et les quelques composants soudés sur une plaque de prototypage
-* Un **boitier à imprimer**, disponible dans Cults
-* Adaptation de la configuration **ESPHome** pour avoir les entités compatibles **Energy**
-* Configuration et intégration du **module energy dans le dashboard HA** : consommation et coûts
+Les sujets traités dans cet articles sont :
+
+* Réalisation **DIY** avec un **ESP32** et les quelques composants soudés sur une plaque de prototypage,
+* Un **boitier à imprimer**, disponible dans [Cults](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266),
+* Adaptation de la configuration **ESPHome** pour avoir les entités compatibles **Energy,**
+* Configuration et intégration du **module energy dans le dashboard HA,**
+* Suivre la consommation et les coûts.
 
 ## 2. Conception du module
 
 Pour information, le compteur électrique interfacé ici est en mode **TIC "historique",** avec heures pleines et heures creuses. Si ce n'est pas votre cas, il faudra faire quelques adaptations.
 
-Un ESP32 a été préféré plutôt qu'un ESP8266 car, plus puissant, il permet de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs ("bad CRC"). J'ai choisi une résistance de 2k en entrée, qui est un bon compromis. La liaison série principale de l'ESP32 est utilisée (UART0) disponible sur le GPIO 03. Autrement, on retrouve le schéma classique : **opto-coupleur** pour isoler le circuit et le compteur, **transistor mofset** pour ré-amplifier le signal. L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
+Le choix de l'ESP32 plutôt qu'un ESP8266 a était préféré, car plus puissant, et permettant de mieux gérer le flux de données sur la liaison série et ainsi évider les erreurs (bad CRC). 
 
-![Schéma électrique](img/schema.jpeg)
+J'ai choisi une résistance de 2kOhms en entrée, qui est un bon compromis. La liaison série (disponible sur le GPIO 03) de l'ESP32 est utilisée (UART0). 
 
-Les quelques composants sont soudés sur une **plaque de prototypage de 5cm x 6cm**. Un bornier est rajouté. Certes, on peut trouver des montages tout faits, mais souder ces quelques composants n'est pas très compliqué, et le DIY est toujours tellement plus satisfaisant :smirk:
+Autrement, on retrouve le schéma classique : **opto-coupleur** pour isoler le circuit et le compteur, **transistor mofset** pour ré-amplifier le signal. 
 
-![Boitier ouvert](img/boitier.jpeg)
+L'ESP32, alimenté par sa prise micro-usb, alimente en 3.3v le circuit.
 
-![Compteur et branchement](img/compteur2.jpeg)
+![Schéma électrique montage TIC](img/schema.jpeg "Schéma électrique du module TIC")
+
+Les quelques composants sont soudés sur une **plaque de prototypage de 5cm x 6cm**. Un bornier est rajouté.
+
+> Certes, on peut trouver des montages tout faits, mais souder ces quelques composants n'est pas très compliqué, et le DIY est toujours tellement plus satisfaisant :smirk:.
+
+
+
+![Boitier du module TIC ouvert](img/boitier.jpeg)
+
+![Compteur et branchement du module TIC](img/compteur2.jpeg)
 
 Un boitier a été conçu sous fusion360 et mis en ligne : [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266)
 
-A noter qu'il pourrait bien entendu être utilisé pour d'autres montages à base de ESP32 ou ESP8266 sur carte de prototypages. D'ailleurs, il semble susciter de l'intérêt sur Cult3D.
+> À noter qu'il pourrait bien entendu être utilisé pour d'autres montages à base de ESP32 ou ESP8266 sur carte de prototypages. D'ailleurs, il semble susciter de l'intérêt sur Cult3D.
 
 ## 3. Paramétrage ESPHome
 
-L'article [premiers pas avec ESPHome](/blog/esphome-introduction/) vous guidera si besoin dans l'installation de ESPHome, puis dans la création initiale du composant.
+L'article [premiers pas avec ESPHome](/esphome_installation) vous guidera si besoin dans l'installation de ESPHome, puis dans la création initiale du composant.
 
 Ci-dessous le fichier de configuration à recopier dans le paramétrage du composant ESPHome.
 
@@ -186,26 +201,24 @@ text_sensor:
 
 Seules les informations utiles ont été gardées (par exemple l'ID du compteur qui ne change jamais n'a pas besoin d'être lue en permanence). Une lecture toutes les minutes est suffisante.
 
-Les "sensors" d'index ont des attributs compatibles avec le module Energy : `state_class` de type `total_increasing` et conversion en kWh. L'UART0 étant utilisée, il est préférable de désactiver la sortie des logs sur la liaison série (`baud_rate: 0` dans le logger). On peut enlever cela pour le premier flashage par câble, pour vérifier que tout se passe bien.
+Les `sensors` index ont des attributs compatibles avec le module Energy : `state_class` de type `total_increasing` et conversion en kWh. L'UART0 étant utilisée, il est préférable de désactiver la sortie des logs sur la liaison série (`baud_rate: 0` dans le logger). On peut enlever cela pour le premier flashage par câble, pour vérifier que tout se passe bien.
 
 ## 4. Configuration du module Energy
 
-Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans `configuration`- `tableau de bord`puis cliquer sur `Energies`. Il est conseillé de mettre les coûts de kWh.
+Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans `configuration`- `tableau de bord`puis cliquer sur `Energies`. Il est conseillé de mettre les coûts en EUR/kWh.
 
 ![Configuration dashboard Energy](img/interfaceenergy.png)
 
-La section **CO2** a également été configurée : cela donne le % d'énergie carbonée utilisée par EDF. Il faut aller sur le site https://co2signal.com/, créer une clé d'API et la rentrée dans la configuration du module Energy. Cela crée une entité CO2 avec en temps réel le % d'énergie carbonée utilisée par EDF.
-La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal). Bon...
-
-> J'ai aussi essayé d'ajouter mes panneaux solaires, mais comme le module Energy ne prends pas en charge le rachat de la consommation par EDF, cela me faussait les résultats. Mais si vous êtes en auto-consommation, cela aura du sens
+> La section **CO2** a également été configurée : cela donne le % d'énergie carbonée utilisée par EDF. Il faut aller sur le site https://co2signal.com/, créer une clé d'API et la rentrée dans la configuration du module Energy. Cela crée une entité CO2 avec en temps réel le % d'énergie carbonée utilisée par EDF.
+> La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal).
 
 ## 5. Interface utilisateur (tableau de bord)
 
 Reste enfin à intégrer les cartes Energy dans le dashboard (https://www.home-assistant.io/lovelace/energy/). Celui ci-après est adapté à un usage sur mobile.
 
-![Dashboard pour mobile](img/interfacelovelace.png)
+![Dashboard Energy Home Assistant pour Smartphone](img/interfacelovelace.png "Dashboard Energy Home Assistant pour Smartphone")
 
-Voici le code pour intégrer les 6 **cartes Energy** dans le dashboard :
+Voici le code pour intégrer les six **cartes Energy** dans le dashboard :
 
 ```yaml
 type: energy-date-selection
@@ -265,17 +278,18 @@ entities:
 
 Une suite logique sera d'intégrer les consommations des différents appareils de la maison : chauffage, chauffe-eau…
 
-
 ## Conclusion
 
-Vous pourrez ainsi suivre votre **consommation journalière, mensuelle ou annuelle**, ainsi que le coût électrique en heure pleine et heure creuse.
+Vous pouvez suivre votre **consommation journalière, mensuelle ou annuelle**, ainsi que le coût électrique en heure pleine et heure creuse.
 
 L'étape suivante sera de détailler les **consommations de chaque appareil** de votre réseau électrique.
 Pour cela, il y a différentes solutions :
 
-* Intégration d'objets connectés exposant leur consommation
-* Capteur de mesure avec tor dans le tableau électrique (type Owon PC321)
-* Ajout de prises électriques connectés avec mesure de la consommation (machine à laver, réfrigérateur...)
+* Intégration d'objets connectés exposant leurs consommations,
+* Capteur de mesure, avec pince ampèremétrique, dans le tableau électrique (type Owon PC321, PZEM)
+* Ajout de prises électriques connectées avec mesure de la consommation (machine à laver, réfrigérateur)
+
+  > Notez que souvent la prise connectée utilise une tension fixe de 230v ou 250v, ce qui peut fausser les calculs (P=UI=230\*2 ou 250\*2 ce n'est pas pareil).
 * Estimation de la consommation : calcul du temps de fonctionnement X puissance de l'appareil.
 
 N'hésitez pas à faire vos retours ou propositions.
@@ -283,3 +297,5 @@ N'hésitez pas à faire vos retours ou propositions.
 ## Sources
 
 * Teleinfo DIY : [Connaitre sa conso... de GammaTroniques](https://gammatroniques.fr/connaitre-sa-consommation-electrique-avec-home-assistant/)
+* [Monitorer votre électricité pour moins de 15 euros (sans soudure)](https://www.youtube.com/watch?v=76uxjZLqePA)
+* [Monitorer plusieurs sources AC](https://www.youtube.com/watch?v=O6QESZfJMcM).
