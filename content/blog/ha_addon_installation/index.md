@@ -29,10 +29,10 @@ Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter de
 
 Les add-ons sont des **"programmes"** complémentaires à Home Assistant, et qui tournent en parallèle du cœur de Home Assistant (dans un processus dédié).
 
-{{< alert "**IMPORTANT**
-
-1. L'installation d'un add-on dans Home Assistant nécessite d'avoir installé le **superviseur**, donc d'avoir fait une installation de type **HA OS** ou **HA Supervised**.
-2. Il ne faut surtout pas les confondre les **intégrations**, qui sont des bibliothèques de code ajoutées à Home Assistant, et les add-on (ou "modules complémentaires") qui sont des programmes à part entière." warning >}}
+> **IMPORTANT**
+>
+> 1. L'installation d'un add-on dans Home Assistant nécessite d'avoir installé le **superviseur**, donc d'avoir fait une installation de type **HA OS** ou **HA Supervised**.
+> 2. Il ne faut surtout pas les confondre les **intégrations**, qui sont des bibliothèques de code ajoutées à Home Assistant, et les add-on (ou "modules complémentaires") qui sont des programmes à part entière.
 
 Il existe 2 types d'add-on :
 
