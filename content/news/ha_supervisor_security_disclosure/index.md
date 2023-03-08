@@ -3,7 +3,7 @@ folder: ha_supervisor_security_disclosure
 title: Faille de sécurité dans Home Assistant OS et Supervised
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-03-08
 lastmod: 2023-03-08
 images: img/ha_vulnerabilite_superviseur.png
