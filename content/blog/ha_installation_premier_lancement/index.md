@@ -74,16 +74,19 @@ Cliquer sur votre utilisateur (dans le menu) puis activer `Mode avancé`
 
 ![Image du Schéma expliquant le support des données en externe.](img/ha_usbdatadisk.png "Schéma expliquant le support des données en externe.")
 
-Le système d'exploitation Home Assistant permet de stocker la plupart des données sur un support de stockage externe (par exemple, un SSD ou un disque dur connecté par USB). Ce disque de données contient non seulement les données de l'utilisateur, mais aussi la plupart des services de Home Assistant (Core, Supervisor, etc.). Cela signifie qu'un disque de données rapide rendra le système global beaucoup plus rapide.
+Le système d'exploitation Home Assistant permet de stocker la plupart des données sur un support de stockage externe (par exemple, un **SSD** ou un **disque dur connecté par USB**). Ce disque de données contient non seulement les données de l'utilisateur, mais aussi la plupart des composants de Home Assistant (Core, Supervisor, etc.). Cela signifie qu'un disque de données rapide rendra le système global beaucoup plus rapide.
 
->Si vous utilisez une MicroSD pour votre système et dans le but de la conserver en bon état le plus longtemps possible ou si la taille de votre mémoire interne devient trop juste, il est intéressant d'utiliser cette fonctionnalité.
+Home Assistant propose une fonction pour **déplacer ses données utilisateur vers un autre disque**.
 
->La fonction de disque de données peut être utilisée sur une installation existante sans perdre de données. Toutefois, il est recommandé de [créer et de télécharger une sauvegarde](https://www.home-assistant.io/common-tasks/os/#backups) complète avant de procéder !
+> Si vous utilisez une MicroSD pour votre système et dans le but de la conserver en bon état le plus longtemps possible ou si la taille de votre mémoire interne devient trop juste, il est intéressant d'utiliser cette fonctionnalité.
+>
+> La fonction de disque de données peut être utilisée sur une installation existante sans perdre de données. Toutefois, il est recommandé de [créer et de télécharger une sauvegarde](https://www.home-assistant.io/common-tasks/os/#backups) complète avant de procéder !
+>
+> Si vous installez Home Assistant sur un autre Raspberry et que le disque externe est branché, il récupère automatiquement vos données
 
->Si vous installez Home Assistant sur un autre Raspberry et que le disque externe est branché, il récupère automatiquement vos données
+### Comment effectuer cette manipulation.
 
-###Comment effectuer cette manipulation.
->Il est conseillé de faire une sauvegarde avant d'effectuer cette manipulation, même s'il ne devrait pas avoir de problème.
+> Il est conseillé de faire une sauvegarde avant d'effectuer cette manipulation, même s'il ne devrait pas avoir de problème.
 
 * Dans `Paramètres`, `Système`, `Stockage`,
 * En haut à droite, cliquer sur `...` puis appuyer sur `Déplacer le disque de données`,
@@ -95,14 +98,17 @@ Le système d'exploitation Home Assistant permet de stocker la plupart des donn�
 Après avoir redémarré, vos données seront sur le disque dur et les écritures ne viendront plus abimer votre carte Micro SD.
 
 > Pour une installation sur Raspberry avec Micro SD, cette méthode permet d'éviter les problèmes de détection du disque dur lié à USB3 et ceux de la carte MicroSD corrompue. Il permet aussi au système de profiter d'un démarrage rapide.
-
->En cas de Carte MicroSD corrompue (ce qui ne devrait plus arriver avec cette methode), il vous suffit de reinstaller Home Assistant OS sur une nouvelle carte MicroSD Classe 2, de brancher le disque dur et relancer votre Raspberry Pi. Votre solution domotique se relance comme s'il ne c'etait rien passé.
-
+>
+> En cas de Carte MicroSD corrompue (ce qui ne devrait plus arriver avec cette methode), il vous suffit de reinstaller Home Assistant OS sur une nouvelle carte MicroSD Classe 2, de brancher le disque dur et relancer votre Raspberry Pi. Votre solution domotique se relance comme s'il ne c'etait rien passé.
+>
+> Il reste cependant conseillé d'installer Home Assistant et ses données sur un disque externe. Pour Rasperry, il existe des boitiers comme le Argo One M2 qui contient dans son socle une carte permettant d'y loger un disque SSD au format M.2. 
 
 ## Conclusion
+
 Vous avez maintenant une installation de Home Assistant toute fraîche. 
 Vous pouvez à présent vous lancer dans [vos premiers projets](/ha_premiers_projets) ou dans l'[installation d'add-ons](/ha_addon_installation).
 
 ### Sources.
+
 * [External Drive Off](https://www.home-assistant.io/common-tasks/os/#using-external-data-disk)
 * [Home Assistant OnBoarding Off (EN)](https://www.home-assistant.io/getting-started/onboarding/)
