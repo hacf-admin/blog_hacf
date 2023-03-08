@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 level: Débutant
 authors: mcfly
 folder: ha_integration_installation
