@@ -32,7 +32,7 @@ Il y aura des points de réflexions vous permettant de choisir les solutions les
 * Accès depuis l'extérieur,
 * Les sauvegardes.
 
-> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/ha-concepts).
+> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/ha_concepts).
 
 ## L’installation de Home Assistant
 
