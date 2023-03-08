@@ -20,24 +20,29 @@ description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   etc.) déjà quasi configurés pour communiquer simplement avec votre système
   domotique.
 categories:
-  - Add-on/intégration
+  - Installation
 tags:
   - haos
   - ha-supervised
 ---
-Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très connus (comme "Node-Red", "Grafana", "InfluxDB", "DuckDNS", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
+Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très populaires (comme "Node-Red", "Grafana", "InfluxDB", "DuckDNS", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
 
-Il existe plusieurs façons d'installer un add-on :
+Les add-ons sont des **"programmes"** complémentaires à Home Assistant, et qui tournent en parallèle du cœur de Home Assistant (dans un processus dédié).
+
+{{< alert "**IMPORTANT**
+
+1. L'installation d'un add-on dans Home Assistant nécessite d'avoir installé le **superviseur**, donc d'avoir fait une installation de type **HA OS** ou **HA Supervised**.
+
+2. Il ne faut surtout pas les confondre les **intégrations**, qui sont des bibliothèques de code ajoutées à Home Assistant, et les add-on (ou "modules complémentaires") qui sont des programme à part entière." warning >}}
+
+Il existe 2 types d'add-on :
 
 * **Les officiels :** Disponibles sur les modules complémentaires,
 * **Les non-officiels** : Installable depuis les modules complémentaires, mais nécessitant l'ajout manuel du dépôt GitHub en manuel.
-* **Add-ons HACS** (Home Assistant Community Store) : C'est un magasin alternatif.
 
 L'installation des add-ons étant toujours la même, voici les différentes méthodes.
 
-**Matériels utilisés**
-
-* *Home Assistant OS 2023.3*
+**Système utilisé** *: Home Assistant OS 2023.3*
 
 ## Installation d'un Add-on Officiel.
 
@@ -48,11 +53,10 @@ Dans Home Assistant, cliquer sur `Paramètres` -> `Modules complémentaires` -> 
 * Cliquer dessus,
 * Puis `INSTALLER`
 
-**IMAGE ANIMEE**
-
 ### Description d'un add-on.
 
 Les add-ons sont quasiment tous fait pareil.
+
 Une fois installé, vous avez quatre onglets en haut.
 
 * **Info** : Permet de contrôler l'add-on et donne une description, il permet aussi de voir les ressources utilisées par ce dernier,
@@ -76,7 +80,7 @@ Les add-ons non officiels permettent aux développeurs de mettre à disposition 
 >
 > Home Assistant a simplifié les choses en mettant à disposition des développeurs un script générant un bouton qui, d'un simple clique, fait les actions à votre place. Cela nécessite simplement de saisir l'adresse de votre instance.
 
-Pour ajouter un add-on non officiel, il va falloir ajouter un dépôt dans la boutique des modules complémentaires.
+Pour ajouter un add-on non officiel, **il va falloir ajouter un dépôt** dans la boutique des modules complémentaires.
 
 Dans Home Assistant, cliquer sur `Paramètres` -> `Modules complémentaires` -> `Boutique des modules complémentaires` -> `...` (en haut à droite) -> `Dépôts`.
 
@@ -89,12 +93,8 @@ Dans Home Assistant, cliquer sur `Paramètres` -> `Modules complémentaires` -> 
 
 ![Ajouter le dépot d'un add-on non officiel sur Home Assistant](img/ha_addons_non_officiel_installation.gif "Ajouter le dépot d'un add-on non officiel sur Home Assistant")
 
-## Installation d'un Add-on HACS.
-
-Il est aussi possible d'installer des add-ons ou autres via **HACS** (*Home Assistant Community Store*), mais vu que cette installation permet d'autres choses, elle bénéficie d'un [article dédié](/hacs_installation).
-
 ## Conclusion.
 
-Nous venons de voir comment ajouter une multitude de possibilités à notre instance domotique.
+Nous venons de voir comment compléter à notre système domotique avec des programmes tiers, via le mécanisme d'add-on. Cette possibilité permet de démultiplier les capacités de votre système.
 
-Vous pouvez trouver une liste non exhaustive d'[add-ons indispensables ici](/blog/ha_commencer_base_solide/#quels-sont-les-add-ons-indispensables).
+Vous pouvez trouver une liste non exhaustive d'[add-ons indispensables ici](https://dev.hacf.fr/blog/ha_commencer_base_solide/#quels-sont-les-add-ons-indispensables-).
