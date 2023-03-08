@@ -51,7 +51,11 @@ Pour les autres qui ne sont ni détecté automatiquement ni via l'UI, il reste l
 
 ![Intégration manuelle du matériel via le fichier configuration](img/ha_integration_manuelle.gif "Intégration manuelle du matériel via le fichier configuration")
 
+## Les intégrations de HACS.
 
+**HACS** (Home Assistant Community Store) vous permet d'ajouter des intégrations développées par la communauté **mondiale** des développeurs/utilisateurs de Home Assistant. Ces intégrations sont non officielles et leur utilisation est sous votre responsabilité.
+
+**HACS** permettant de gérer bien plus que les intégrations, il dispose de [son propre article](/hacs_installation).
 
 ## Conclusion.
 
