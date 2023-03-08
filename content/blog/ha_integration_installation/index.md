@@ -53,8 +53,12 @@ Pour les autres qui ne sont ni détecté automatiquement ni via l'UI, il reste l
 
 
 
-### Conclusion.
-
-
+## Conclusion.
 
 Il n'y a rien de compliqué, mais quand on débute, ce n'est jamais très évident.
+
+
+
+### Sources.
+
+* [Liste des intégrations de Home Assistant](https://www.home-assistant.io/integrations/).
