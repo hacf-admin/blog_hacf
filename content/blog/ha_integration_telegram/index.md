@@ -10,14 +10,17 @@ date: 2023-02-09
 lastmod: ""
 images: img/accueil.jpeg
 description: >-
-  Cet article présente comment intégrer Telegram à Home Assistant.
+  Cet article présente comment intégrer Telegram à Home Assistant et communiquer
+  avec lui.
 
-  Il est primordial de recevoir des notifications de son système domotique, et d'y accompagner des images ou des vidéos. Et si il est possible d'y répondre, c'est encore mieux. Home Assistant permet certes d'envoyer des notifications mais plutôt pour un usage système. Telegram avec son mécanisme de bot et sa gestion de groupes est vraiment très puissant et très pertinent.
+  Il est primordial de recevoir des notifications de son système domotique, et d'y accompagner des images ou des vidéos. Et s'il est possible d'y répondre, c'est encore mieux. Home Assistant permet certes d'envoyer des notifications, mais plutôt pour un usage système. Telegram avec son mécanisme de bot et sa gestion de groupes est vraiment très puissant et très pertinent.
 categories:
   - Add-on/Intégration
 tags:
   - telegram
   - notification
+  - bot
+author: default
 url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
@@ -33,15 +36,19 @@ Exemple de notifications :
 
 Home Assistant intègre un système de notification, mais qui a ses limites. Il est souvent préférable de le réserver aux notifications techniques, comme les demandes mises à jour.
 
-**Telegram** est alors une **solution de choix** pour permettre à toute la famille recevoir des notifications de sa maison.
+**Telegram** est alors une **solution de choix** pour permettre à toute la famille de recevoir des notifications sur la maison.
 
 Il est également très intéressant de pouvoir **répondre à ces notifications** pour déclencher une ou des actions via des boutons sous le message. L'exemple ci-dessous est la demande de fermeture du volet de la piscine quant l'air est plus froid que l'eau (cela permet de garder l'eau chaude et éviter l'évaporation).
 
-![Boutons commandes](img/boutons-commande.png)
+![Boutons de commandes du volet de la piscine avec Telegram](img/boutons-commande.png "Boutons de commandes du volet de la piscine avec Telegram")
 
-Nous vous proposons ici un tuto complet pour implémenter simplement **telegram** avec les **automatisations** de HA.
+Nous vous proposons ici un tutoriel complet pour implémenter simplement **Telegram** avec les **automatisations** de Home Assistant.
 
-La première chose sera de créer dans Telegram son "bot" Maison et obtenir un token et un ID. Ensuite dans HA : on connectera Telegram en utilisant l'**intégration Telegram**. Puis, on créera une **notification** que l'on utilisera de manière standard dans nos automatisations et scripts.
+Les étapes suivantes seront détaillées :
+
+* Créer un bot Telegram et obtenir un token et un ID,
+* Connecter Telegram a Home Assistant via l'**intégration Telegram**,
+* Créer une **notification** que l'on utilisera de manière standard dans nos automatisations et nos scripts.
 
 ## 1. Installer un bot Telegram
 
@@ -51,15 +58,15 @@ Il va falloir vous créer un bot pour que ce soit lui qui vous envoie des messag
 
 Rendez-vous sur [Telegram sur votre Navigateur](https://web.telegram.org/) ou via votre application mobile.
 
-1. **Rechercher `@botfather` dans le champ de recherche des contacts puis cliquer dessus.**
-2. **Lancer le BotFather Telegram et cliquer sur `Démarrer` (ou start si en anglais).**
+1. Rechercher `@botfather` dans le champ de recherche des contacts puis cliquer dessus.
+2. Lancer le BotFather Telegram et cliquer sur `Démarrer` (ou start si en anglais).
 
-![Lancer BotFather](img/lancer-botfather.jpg)
+![Ajout de Botfather a votre Telegram](img/lancer-botfather.jpg "Ajout de Botfather a votre Telegram")
 
-3. **Une liste d’options vous sont proposées. Cliquer sur `/newbot`**
-4. **Choisir un nom pour votre bot puis un nom d’utilisateur (HACF_bot dans l'exemple)).**
+3. Une liste d’options vous sont proposées. Cliquer sur `/newbot`
+4. Choisir un nom pour votre bot et un nom d’utilisateur (HACF_bot dans l'exemple)).
 
-![Creation bot](img/creation-bot.jpg)
+![Création d'un bot Telegram avec Botfather](img/creation-bot.jpg "Création d'un bot Telegram avec Botfather")
 
 Votre token apparaît, **gardez le bien précieusement**.
 
@@ -67,7 +74,7 @@ Vous avez maintenant votre Bot Telegram.
 
 5. **Reste enfin à l'activer.** Retrouver votre bot dans la recherche (@HACFx_bot par exemple), cliquer dessus, puis dans le fil de discussion, cliquer sur `Démarrer` (ou /start). Sans cette dernière opération, votre bot ne sera pas actif.
 
-![Start bot](img/start-bot.jpg)
+![Démarrage du bot Telegram](img/start-bot.jpg "Démarrage du bot Telegram")
 
 > A tout moment vous pouvez retourner sur BotFather, lancer /mybots puis cliquer votre bot pour le gèrer, le supprimer, voir son token, etc.
 
@@ -81,7 +88,7 @@ Pour récupérer l’`ID` de votre `USER`, rechercher `@getids bot` dans le cham
 
 > Notez bien cet ID référençant le bot qui **émettra** les messages.
 
-![Récupérer BotId](img/recuperer-botid.jpg)
+![Récupérer BotId d'un utilisateur sur Telegram](img/recuperer-botid.jpg "Récupérer BotId d'un utilisateur sur Telegram")
 
 ### 1.3 Récupérer l'ID pour les envois à un GROUPE
 
@@ -95,9 +102,9 @@ Donnez-lui un nom puis `CREATE GROUP`.
 
 2. Sélectionner les utilisateurs devant appartenir au groupe ainsi que votre bot.
 
-Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oubliez pas d'ajouter votre bot** (autrement il ne pourra pas envoyer de messages dans le groupe).\*\*
+Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oubliez pas d'ajouter votre bot** (autrement, il ne pourra pas envoyer de messages dans le groupe).\*\*
 
-![Creation groupe](img/creation-groupe.jpg)
+![Creation d'un groupe avec Telegram](img/creation-groupe.jpg "Creation d'un groupe avec Telegram")
 
 3. Récupérer votre ID du groupe en invitant `@getids bot` à votre groupe. Une fois ajouté, vous pouvez voir votre ID qui s'affiche dans le fil de discussion.
 
@@ -105,7 +112,7 @@ Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oub
 
 Une fois l'ID noté, vous pouvez éjecter `GetIds Bot` du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
 
-![Recuperer ID groupe](img/recuperer-id-groupe.png)
+![Récupérer BotId d'un groupe sur Telegram](img/recuperer-id-groupe.png "Récupérer BotId d'un groupe sur Telegram")
 
 ## 2. Configuration du bot dans Home Assistant
 
@@ -130,7 +137,7 @@ notify:
 
 > Il peut être pertinent à terme de déplacer ce code dans un package notification.yaml qui est ensuite inclut dans le fichier configuration.
 
-ID et token fournis par Telegram sont à mettre dans le fichier `secret.yaml `et pas directement dans `configuration.yaml`.
+ID et token fournis par Telegram sont à mettre dans le fichier `secret.yaml`et pas directement dans `configuration.yaml`.
 
 ```yaml
 # Telegram
@@ -147,7 +154,7 @@ Pour vérifier que tout fonctionne bien, rendez-vous dans `Outils de développem
 
 Cliquez sur `Appeler le service`. Vous devriez voir sur votre application Telegram le message arriver.
 
-![Test telegram](img/testtelegram.jpg)
+![Test du fonctionnement de Telegram via l'outil de developpement de Home Assistant](img/testtelegram.jpg "Test du fonctionnement de Telegram via l'outil de developpement de Home Assistant")
 
 ## 3. Utilisation des notifications
 
@@ -169,7 +176,7 @@ action:
 
 Il est aussi possible de **rajouter une image**, typiquement issue d'une capture ("snap") d'une de vos caméras. Par exemple ici l'intérieur du poulailler pour vérifier que nos poules sont bien couchées quand la porte se ferme (ma femme adore cette fonction :slight_smile: ).
 
-![Dialogue - photos poules](img/photo-poules.jpeg)
+![Inserer une image dans la notification Telegram avec Home Assistant](img/photo-poules.jpeg "Inserer une image dans la notification Telegram avec Home Assistant")
 
 ```yaml
 trigger: []
@@ -187,7 +194,7 @@ action:
 
 Reprenons notre exemple du début de l'article :
 
-![Dialogue telegram - bouton commande](img/boutons-commande.png)
+![Dialogue Telegram et Home Assistant - les boutons de commandes](img/boutons-commande.png "Dialogue Telegram et Home Assistant - les boutons de commandes")
 
 Pour afficher les boutons, c'est très simple : il suffit de rajouter dans la section data du message la section `inline_board` avec `libellé:/event` à déclencher. Dans notre cas, les événements `piscine_ferme` et `piscine_ignore_ferme` seront déclenchés si respectivement un des boutons est pressé.
 
@@ -206,7 +213,7 @@ action:
 
 ## 5. Traitement des actions des boutons
 
-Il faut créer 2 automatisations qui se déclenchent pour respectivement chaque événement `piscine_ferme` ou `piscine_ignore_ferme` et exécute une action en conséquence.
+Il faut créer deux automatisations qui se déclenchent pour chaque événement `piscine_ferme` ou `piscine_ignore_ferme` et exécute une action en conséquence.
 
 Par exemple, voici l'automatisation pour traiter l'événement de demande de fermeture :
 
@@ -229,7 +236,7 @@ action:
 
 Une fois le bouton cliqué, il ne reste plus qu'à supprimer la barre de boutons, et confirmer à l'utilisateur que la demande d'action a été bien prise en compte.
 
-![Dialogue - confirmation](img/confirmation.png)
+![Dialogue Telegram et Home Assistant - confirmation](img/confirmation.png "Dialogue Telegram et Home Assistant - confirmation")
 
 Pour cela, on rajoute à l'automatisation précédente quelques lignes :
 
