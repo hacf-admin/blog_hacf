@@ -81,7 +81,7 @@ Vous avez maintenant accès à plusieurs intégrations et composants d’interfa
 * Cliquer sur le`+ EXPLORER ET TÉLÉCHARGER DES DEPOTS' 
 * Rechercher l’intégration, thème, carte, automatisation que vous souhaitez,
 * Cliquer dessus, lisez le descriptif puis `TELECHARGER`,
-* [Vérifier votre configuration puis redémarrer Home Assistant](/blog/ha).
+* Vérifier votre configuration et redémarrer Home Assistant.
 
 IMAGE ANIMEE AJOUT INTEGRATION
 
@@ -89,7 +89,7 @@ IMAGE ANIMEE AJOUT INTEGRATION
 
 ## Conclusion
 
-Vous avez à présent la possibilité d’ajouter encore plus de matériels via les intégrations de HACS, de custom cards, de thèmes grâce à la formidable communauté de Home Assistant.
+Vous avez à présent la possibilité d’ajouter encore plus de matériels via les intégrations de HACS, des custom cards, des thèmes grâce à la formidable communauté de Home Assistant.
 
 ### Sources
 
