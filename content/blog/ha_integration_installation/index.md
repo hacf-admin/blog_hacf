@@ -27,7 +27,7 @@ tags:
 ---
 Les intégrations vous permettent d’ajouter facilement du matériel, des capteurs, des fonctions au sein de votre système domotique.
 
-Il existe trois manières d’ajouter des intégrations.
+Il existe plusieurs manières d’ajouter des intégrations.
 
 ## La découverte automatique
 
@@ -60,8 +60,6 @@ Pour les autres qui ne sont ni détecté automatiquement ni via l'UI, il reste l
 ## Conclusion.
 
 Il n'y a rien de compliqué, mais quand on débute, ce n'est jamais très évident.
-
-
 
 ### Sources.
 
