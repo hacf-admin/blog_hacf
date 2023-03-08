@@ -3,7 +3,7 @@ folder: test-argonaute
 title: Test Argonaute
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-03-08
 lastmod: 2023-03-08
 images: img/awesome-ha.png
