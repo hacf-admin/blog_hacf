@@ -43,13 +43,23 @@ Le travail d'une communauté mondiale au profit de tous les utilisateurs de Home
 **Prérequis**
 
 * Un compte [GitHub](https://github.com/),
-* Avoir [installé l'add-on](/ha_addon_installation) SSH Web Terminal,
+* Avoir [installé l'add-on](/ha_addon_installation) `SSH Web Terminal`,
 * Avoir `default_config` dans votre`configuration.yaml` *(par défaut normalement) sinon voir [ici](https://www.home-assistant.io/integrations/my/)*,
 * Version de Home Assistant supérieure à 2022.8.0.
 
-*Article rédigé avec Home Assistant OS 9.5 et version Core 2023.3.1*
+> *Article rédigé avec Home Assistant OS 9.5 et version Core 2023.3.1, SSH Web Terminal 13.0.2 et HACS Version 1.31.0.*
 
-## Installation.
+## Installation SSH Web Terminal.
+
+Pour [installer un add-on](/ha_addon_installation), il y a déjà un article, mais je vais juste ajouter quelques informations spécifiques à `SSH Web Terminal`.
+
+Cet add-on nécessite une petite configuration et l'activation du mode ?????.
+
+
+
+
+
+## Installation de HACS.
 
 Ouvrir SSH & Web Terminal puis lancer la commande suivante 
 
@@ -79,8 +89,8 @@ Vous avez maintenant accès à plusieurs intégrations et composants d’interfa
 * Ouvrir HACS, 
 * Choisir entre Intégrations, Interface ou Automatisation,
 * Cliquer sur le`+ EXPLORER ET TÉLÉCHARGER DES DEPOTS' 
-* Rechercher l’intégration, thème, carte, automatisation que vous souhaitez,
-* Cliquer dessus, lisez le descriptif puis `TELECHARGER`,
+* Rechercher l’intégration, le thème, la carte ou l'automatisation que vous souhaitez,
+* Cliquer dessus, lire le descriptif puis `TELECHARGER`,
 * Vérifier votre configuration et redémarrer Home Assistant.
 
 IMAGE ANIMEE AJOUT INTEGRATION
@@ -93,4 +103,5 @@ Vous avez à présent la possibilité d’ajouter encore plus de matériels via 
 
 ### Sources
 
-* https://hacs.xyz/
+* [Site officiel](<* https://hacs.xyz/>) (EN)
+* [Dernière version à télécharger si installation manuelle](https://github.com/hacs/integration/releases).
