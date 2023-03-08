@@ -27,6 +27,8 @@ Nous avons été informés d'un problème de sécurité qui a un impact sur les 
 
 Vous pouvez vérifier que vous avez reçu la mise à jour sur la [page Assistant de maison](https://my.home-assistant.io/redirect/info) et vérifier que vous exécutez au moins la version 2023.03.1 du Superviseur.
 
+![](img/supervisor_security_disclosure.png)
+
 ## [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#affected-version)Version affectée
 
 La question de la sécurité a affecté les types d'installation Home Assistant supervisé. Il s'agit notamment d'installations fonctionnant sur le Home Assistant Blue et Home Assistant Yellow.
