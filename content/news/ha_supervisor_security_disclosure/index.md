@@ -6,6 +6,7 @@ visibleInCMS: true
 draft: true
 date: 2023-03-08
 lastmod: 2023-03-08
+images: img/ha_vulnerabilite_superviseur.png
 description: >-
   Home Assistant a annoncé la découverte d'une faille de sécurité dans les
   versions Home Assistant OS et Home Assistant Supervised.
