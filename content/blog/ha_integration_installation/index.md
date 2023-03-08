@@ -50,3 +50,11 @@ Pour les autres qui ne sont ni détecté automatiquement ni via l'UI, il reste l
 > NOTA : Sur la méthodes manuelle, nous vous recommandons de lire l'articles sur l'organisation du fichier `configuration.yaml`.
 
 ![Intégration manuelle du matériel via le fichier configuration](img/ha_integration_manuelle.gif "Intégration manuelle du matériel via le fichier configuration")
+
+
+
+### Conclusion.
+
+
+
+Il n'y a rien de compliqué, mais quand on débute, ce n'est jamais très évident.
