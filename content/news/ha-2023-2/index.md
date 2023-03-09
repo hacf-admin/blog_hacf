@@ -56,7 +56,7 @@ Oh, et nous publions également des trucs amusants que nous avons concoctés en 
 
 ![Fonction Assist de Home Assistant](img/assist.png "Fonction Assist de Home Assistant")
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#streaming-history)Historique de diffusion.
+## Historique de diffusion.
 
 Les cartes d'historique sont désormais mises à jour en direct ! Nous diffusons maintenant les changements d'état pendant qu'ils se produisent et mettons à jour les graphiques en temps réel 😲
 
@@ -70,7 +70,7 @@ Grâce à tout cela, nous pouvons dorénavant écrire **moins fréquemment** dan
 
 En tant qu'effet secondaire, cela devrait également résoudre les **erreurs d'authentification** rencontrées par certaines personnes lors de la réouverture de l'application compagnon iOS lors de l'utilisation de cartes d'historique.
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#grouping-sensors)Regroupement des capteurs.
+## Regroupement des capteurs.
 
 L'[assistant de groupe](https://www.home-assistant.io/integrations/group) prend désormais en charge les capteurs ! Les groupes de capteurs peuvent combiner des entités avec un état numérique, comme [des entités capteurs](https://www.home-assistant.io/integrations/sensor), [nombre](https://www.home-assistant.io/integrations/number) et [aides numériques](https://www.home-assistant.io/integrations/input_number).
 
@@ -82,7 +82,7 @@ Cette fonctionnalité est une version revue, améliorée et plus logique de l'as
 
 Par rapport aux méthodes mentionnées précédemment, les groupes de capteurs ont des options supplémentaires pour masquer leurs entités membres et la possibilité d'ignorer les capteurs qui ne sont actuellement pas dans un état numérique (c'est-à-dire actuellement "indisponible" ou "inconnu").
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#now-even-tighter-integrated-with-esphome)Intégration plus forte avec ESPHome
+## Intégration plus forte avec ESPHome
 
 [ESPHome](https://esphome.io/) fonctionne déjà très bien avec Home Assistant. Pourtant, cette version le rend encore meilleur !!
 
@@ -102,7 +102,7 @@ En outre, ESPHome déprécie l'ancienne authentification par mot de passe pour s
 
 Nous avons par ailleurs préparé la prochaine version d'ESPHome (2023.2), dans laquelle vous pouvez ajouter un nom convivial et plus humain à vos appareils ESPHome. Home Assistant les récupérera, ce qui rendra vos appareils ESPHome plus beaux dès la sortie de l'emballage !
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#other-noteworthy-changes)Autres changements notables
+## Autres changements notables
 
 Il y a beaucoup plus de matière dans cette version ; Voici quelques-uns des autres changements notables de cette version :
 
@@ -126,7 +126,7 @@ Il y a beaucoup plus de matière dans cette version ; Voici quelques-uns des aut
   * [Renault](https://www.home-assistant.io/integrations/renault) excellent travail [@epenet](https://github.com/epenet) (HACF Power)!
   * [HomeWizard Energy](https://www.home-assistant.io/integrations/homewizard) super travail [@DCSBL](https://github.com/DCSBL) !
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#new-integrations)Nouvelles intégrations
+## Nouvelles intégrations
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
@@ -166,7 +166,7 @@ Cette version contient également de nouvelles intégrations virtuelles. Les int
 * **[Mijndomein Energie](https://www.home-assistant.io/integrations/mijndomein_energie)** fourni par [EnergyZero](https://www.home-assistant.io/integrations/energyzero) , ajouté par [@klaasnicolaas](https://github.com/klaasnicolaas)
 * **[Fire TV](https://www.home-assistant.io/integrations/fire_tv)** fourni par [Android TV](https://www.home-assistant.io/integrations/androidtv), ajouté par [@jrieger](https://github.com/jrieger)
 
-## [](https://www.home-assistant.io/blog/2023/02/01/release-20232/#integrations-now-available-to-set-up-from-the-ui)Intégrations configurables depuis l'interface utilisateur
+## Intégrations configurables depuis l'interface utilisateur
 
 Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
 
