@@ -29,30 +29,30 @@ Vous pouvez vérifier que vous avez reçu la mise à jour sur la [page Assistant
 
 ![](img/supervisor_security_disclosure.png)
 
-## [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#affected-version)Version affectée
+## Version affectée
 
 La question de la sécurité a affecté les types d'installation Home Assistant supervisé. Il s'agit notamment d'installations fonctionnant sur le Home Assistant Blue et Home Assistant Yellow.
 
 Les deux autres types d'installation, Home Assistant Container (Docker) et Les services d'assistant d'accueil (domaine Python-Usine) n'ont pas été touchés.
 
-## [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#credits)Crédits
+## Crédits
 
 La question de la sécurité a été constatée par [Joseph Surin](https://www.linkedin.com/in/joseph-surin/) à partir [d'elttam](https://www.elttam.com/). Merci beaucoup d'avoir porté cette question à notre attention.
 
-## [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#about-the-issue)À propos de la faille
+## À propos de la faille
 
 Le Superviseur est une application qui fait partie intégrante de Home Assistant OS et Supervised. Le superviseur est responsable de la gestion du système. Le problème permet à un attaquant de contourner à distance l'authentification et l'interaction directe avec l'API du Superviseur. Cela donne l'accès aux mises à jour et à la gestion des add-ons et des sauvegardes. Notre analyse montre que cette faille est dans Home Assistant depuis l'introduction du Superviseur en 2017.
 
 Nous avons publié [l'avis de sécurité CVE-2023-27482 sur GitHub](https://github.com/home-assistant/core/security/advisories/GHSA-2j8f-h4mr-qr25).
 
-## [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#faq)FAQ
+## FAQ
 
 - - -
 
-### [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#has-this-vulnerability-been-abused)Cette vulnérabilité a-t-elle été utilisée à mauvais escient ?
+### Cette vulnérabilité a-t-elle été utilisée à mauvais escient ?
 
 Nous ne savons pas. Nous n'avons entendu aucune information faisant état de personnes piratées.
 
-### [](https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/#is-there-a-workaround)Y a-t-il une solution de contournement ?
+### Y a-t-il une solution de contournement ?
 
 Dans le cas où l'on n'est pas en mesure de mettre à jour le superviseur, il est demandé de ne pas exposer votre instance Home Assistant sur Internet.
