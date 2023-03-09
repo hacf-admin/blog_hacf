@@ -4,7 +4,7 @@ level: Débutant
 authors: mcfly
 folder: ha_commencer_base_solide
 visibleInCMS: true
-date: 2023-03-02
+date: 2023-03-09
 lastmod: null
 url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
 socialshare: true
