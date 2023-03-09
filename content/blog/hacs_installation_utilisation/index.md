@@ -112,8 +112,6 @@ Vous avez à présent accès à plusieurs intégrations et composants d’interf
 * Cliquer dessus, lire le descriptif puis `TELECHARGER`,
 * Vérifier votre configuration et redémarrer Home Assistant.
 
-IMAGE ANIMEE AJOUT INTEGRATION
-
 > Il est possible de choisir une version précise ou d'essayer une version bêta lors de l'installation d'un dépôt, bien sûr, cela est à vos risques.
 
 ## Conclusion
