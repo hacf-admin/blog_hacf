@@ -50,7 +50,7 @@ Cela signifie que toutes les intégrations répertoriées individuellement comme
 
 Enfin, autre amélioration pour retrouver les choses plus facilement  : l'option de redémarrage a également été ajouté au menu (trois points en haut à droite de l'écran des paramètres).
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#asking-assist-for-the-current-state-of-things)Demander à Assist les états des objets
+## Demander à Assist les états des objets
 
 Cette version vous aide à trouver l'état des objets de votre maison. Par exemple :
 
@@ -76,7 +76,7 @@ Merci, [@synesthesiam](https://github.com/synesthesiam) pour la mise en œuvre d
 
 Vous voulez aider à ajouter la prise en charge de ces intentions dans votre langue ? Je vous en prie ! En savoir plus sûr [prononciation des phrases dans notre documentation](https://developers.home-assistant.io/docs/voice/intent-recognition/contributing).
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#cleaner-entity-information-dialogs)Dialogues d'information plus clairs pour les entités
+## Dialogues d'information plus clairs pour les entités
 
 La **boîte de dialogue d'information de l'entité** (aussi connue sous le nom de boîte de dialogue plus d'informations) a obtenu de belles améliorations dans cette version.
 
@@ -86,7 +86,7 @@ Les onglets “ `Info`”, “ `Historique`”, “ `Paramètres`” et “ `Rel
 
 Beau travail [@matthiasdebaat](https://github.com/matthiasdebaat) et [@piitaya !](https://github.com/piitaya) (HACF Power)
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#new-dialogs-for-lights-switches-and-siren-entities)Nouvelles boîtes de dialogue pour les lumières, les interrupteurs et les sirènes
+## Nouvelles boîtes de dialogue pour les lumières, les interrupteurs et les sirènes
 
 Il y a d'autres choses sur les boîtes de dialogue. [@matthiasdebaat](https://github.com/matthiasdebaat) et [@piitaya](https://github.com/piitaya) ont travaillé sur les sessions de conceptions partagées [during the State of the Open Home 2022](https://www.youtube.com/live/D936T1Ze8-4?feature=share&t=5193). Cette version apporte les premières évolutions aux dialogues relatifs aux entités de lumières, interrupteurs et sirènes.
 
@@ -96,7 +96,7 @@ Les nouvelles boîtes de dialogue sont **agréables** et **propres**. Les nouvea
 
 Des commandes supplémentaires pour allumer / éteindre, choisir la couleur (température) ont été ajoutés, et les effets apparaissent juste en dessous du curseur. En haut à droite, vous trouverez des nouveaux contrôles fournis avec l'apparence améliorée dont nous avons discuté dans le paragraphe précédent.
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#sensor-display-precision)Précision d'affichage des capteurs.
+## Précision d'affichage des capteurs.
 
 Vous avez un capteur qui a trop de décimales dans sa valeur numérique ? Souhaitez-vous l'afficher arrondi à un seul ou peut-être même pas de décimales ?
 
@@ -110,9 +110,9 @@ Cela a également été étendu aux **intégrations**, qui peuvent désormais fo
 
 Vous pouvez aussi profiter de la précision configurée lors de l'écriture de modèles, comme le `states()` la fonction a été étendue pour aider à le faire. Vous pouvez trouver plus d'informations sur [le capteur de formatage indiqué dans la documentation de modélisation](https://www.home-assistant.io/docs/configuration/templating/#formatting-sensor-states).
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#new-create-automation-dialog)Nouvelle boîte de dialogue de création d'automatisations
+## Nouvelle boîte de dialogue de création d'automatisations
 
-Continuons le thème des dialogues de cette version ! [@piitaya](https://github.com/piitaya) a de plus fait évoluer la boîte de dialogue que vous voyez lorsque vous créez une **nouvelle automatisatio**n.
+Continuons le thème des dialogues de cette version ! [@piitaya](https://github.com/piitaya) a de plus fait évoluer la boîte de dialogue que vous voyez lorsque vous créez une **nouvelle automatisation**.
 
 Vous pouvez maintenant trouver et choisir rapidement un **modèle à utiliser** pour votre automatisation ou **créez-en un à partir de zéro**. L'aspect général est beaucoup plus moderne, et correspond mieux à notre conception actuelle.
 
@@ -142,7 +142,7 @@ Bien que, si vous souhaitez connecter votre concentrateur Hue, nous vous recomma
 
 L'ajout d'un appareil Matter est également plus logique. Ajoutez simplement un nouvel appareil à partir de la page Appareils et Services, tout comme si vous ajouteriez un autre appareil ou intégration à Home Assistant. Oh ! N'oublions pas [@ArturoGuerra](https://github.com/ArturoGuerra), qui a ajouté le support des lumières de couleur ! Merci !
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#python-311-support)Prise en charge de Python 3.11
+## Prise en charge de Python 3.11
 
 La prise en charge de **Python 3.11** est arrivée ! 🐍
 
@@ -150,7 +150,7 @@ La prise en charge de **Python 3.11** est arrivée ! 🐍
 
 Nous travaillons par ailleurs à la mise à niveau vers Python 3.11 pour notre système d'exploitation Home Assistant, pour les méthodes d'installation supervisées et de conteneurs afin de fournir les mêmes améliorations de performances. Nous vous tiendrons au courant.
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#other-noteworthy-changes)Autres changements notables
+## Autres changements notables
 
 Il y a beaucoup plus de matière dans cette version ; voici quelques autres changements :
 
@@ -171,7 +171,7 @@ Il y a beaucoup plus de matière dans cette version ; voici quelques autres ch
 * [@thecode](https://github.com/thecode) apporte un support supplémentaire pour [Shelly](https://www.home-assistant.io/integrations/shelly) Capteurs d'énergie Pro 3EM, sympa !
 * [ScreenLogic](https://www.home-assistant.io/integrations/screenlogic) prend désormais en charge les mises à jour locales pour presque toutes les entités. Merci [@dieselrabbit !](https://github.com/dieselrabbit)
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#new-integrations)Nouvelles intégrations
+## Nouvelles intégrations
 
 Nous saluons les nouvelles intégrations suivantes dans cette version :
 
@@ -214,6 +214,6 @@ Si vous êtes un développeur d'intégrations custom et que vous souhaitez en sa
 * [Nombre de décimales utilisées lors de l'affichage d'un état de capteur est désormais configurable](https://developers.home-assistant.io/blog/2023/02/08/sensor_presentation_rounding)
 * [Fichiers de traduction supprimés du référentiel central](https://developers.home-assistant.io/blog/2023/02/06/translations-files-removed-from-core)
 
-## [](https://www.home-assistant.io/blog/2023/03/01/release-20233/#all-changes)Toutes les modifications
+## Toutes les modifications
 
 Bien sûr, il y a beaucoup plus dans cette version. Vous pouvez trouver une liste de toutes les modifications apportées ici : [Journal complet des modifications pour le noyau de l'assistant à domicile 2023.3](https://www.home-assistant.io/changelogs/core-2023.3)
