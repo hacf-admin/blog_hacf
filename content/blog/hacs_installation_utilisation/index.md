@@ -15,7 +15,7 @@ title: Installer HACS sur Home Assistant et profiter d'un magasin alternatif.
 type: post
 aliases:
   - /hacs_installation
-images: img/imagebf_image_article1-1-.png
+images: img/hacs_cover.png
 description: "Malgré la multitude d'intégrations, d'add-ons ou de thèmes
   disponibles en natif dans Home Assistant, il y a une communauté qui en
   développe d'autres. Cette communauté, c'est HACS, pour Home Assistant
