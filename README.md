@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9e92335a-6184-4519-b29d-4869dc8408ec/deploy-status)](https://app.netlify.com/sites/hacf/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e318fb64-f86e-4572-bbc6-90598c22b842/deploy-status)](https://app.netlify.com/sites/hacf/deploys)
 
 Site/Blog de la communauté et l'association Francophone autour de Home Assistant,  HACF.
 
