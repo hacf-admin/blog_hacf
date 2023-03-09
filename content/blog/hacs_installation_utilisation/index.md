@@ -5,7 +5,7 @@ authors: mcfly
 folder: hacs_installation_utilisation
 visibleInCMS: true
 date: 2023-03-08
-lastmod: null
+lastmod: 2023-03-09
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
@@ -45,19 +45,27 @@ Le travail d'une communauté mondiale au profit de tous les utilisateurs de Home
 * Un compte [GitHub](https://github.com/),
 * Avoir [installé l'add-on](/ha_addon_installation) `SSH Web Terminal`,
 * Avoir `default_config` dans votre`configuration.yaml` *(par défaut normalement) sinon voir [ici](https://www.home-assistant.io/integrations/my/)*,
-* Version de Home Assistant supérieure à 2022.8.0.
+* Version de Home Assistant supérieure à 2022.11.0.
 
-> *Article rédigé avec Home Assistant OS 9.5 et version Core 2023.3.1, SSH Web Terminal 13.0.2 et HACS Version 1.31.0.*
+> *Article rédigé avec Home Assistant OS 9.5 et version Core 2023.3.2, SSH Web Terminal 13.0.2 et HACS Version 1.31.0.*
 
 ## Installation SSH Web Terminal.
 
 Pour [installer un add-on](/ha_addon_installation), il y a déjà un article, mais je vais juste ajouter quelques informations spécifiques à `SSH Web Terminal`.
 
-Cet add-on nécessite une petite configuration et l'activation du mode ?????.
+Cet add-on nécessite une petite configuration et la désactivation du mode protégé.
 
+Après avoir téléchargé l'add-on :
 
+* Rendez-vous dans l'onglet Configuration,
+* Dans Options, renseigner un Mot de passe et un utilisateur,
+* Enregistrer,
+* Rendez-vous dans l'onglet infos et désactiver le mode protégé
+* Démarrer l'add-on.
 
+> Vous pouvez désactiver le lancement au démarrage si vous l'utiliser seulement pour installer HACS, sinon ne pas hésiter à mettre un mot de passe fort si vous le laisser toujours activé.
 
+![Add-on Web Terminal SSH Configuration](img/terminal_ssh_configuration.gif "Add-on Web Terminal SSH Configuration")
 
 ## Installation de HACS.
 
@@ -67,22 +75,33 @@ Ouvrir SSH & Web Terminal puis lancer la commande suivante
     wget -O - https://get.hacs.xyz | bash -
 ```
 
+
+
+![Installation de HACS en SSH depuis Home Assistant](img/hacs_installation_ssh.gif "Installation de HACS en SSH depuis Home Assistant")
+
+Vous pouvez maintenant arrêter l'add-on Web Terminal SSH et réactiver le mode protégé.
+
 Ensuite :
 
-* **vider le cache** de votre navigateur ou effectuer un rafraichissement complet (*sinon HACS n'apparaitra pas.*)
+* **Vider le cache** de votre navigateur ou effectuer un rafraichissement complet (*sinon HACS n'apparaitra pas.* S'il n'apparait toujours pas, redémarrer)
 * Se rendre dans `Paramètres` ->  `Appareils et services` ->  `AJOUTER L'INTEGRATION` ->  Rechercher `HACS`,
-* Cliquer dessus puis accepter en cochant les cases de première page,
+* Cliquer dessus et accepter en cochant les cases de première page,
 * Cliquer sur le lien GitHub et connectez-vous,
 * Saisir le code d'autorisation affiché, au moment où GitHub vous le demande,
 * Cliquer sur `Authorize hacs`
-* Sélectionner la pièce dans laquelle vous souhaitez ajouter HACS,
+* Sélectionner la pièce dans laquelle vous souhaitez ajouter HACS.
+
+![Ajouter HACS à votre Home Assistant](img/hacs_integration.gif "Ajouter HACS à Home Assistant")
+
 * Retourner dans `Paramètres` ->  `Appareils et services` 
 * Cliquer sur `CONFIGURER` de l'intégration HACS,
-* Configurer votre intégration *Facultatif Cocher AppDemon et NetDaemon*
+* *Facultatif* Configurer votre intégration*, possibilité d'activer AppDaemon, NetDaemon (Déprécié) et les choses experimentales*
 
 Vous devez avoir dans votre bandeau latéral, HACS de disponible et une tuile dédié dans les intégrations.
 
-Vous avez maintenant accès à plusieurs intégrations et composants d’interface supplémentaires.
+Vous avez à présent accès à plusieurs intégrations et composants d’interface supplémentaires.
+
+![Interface de HACS](img/hacs_interface.png "Interface de HACS")
 
 ## Ajouter une intégration, une interface ou une automatisation.
 
