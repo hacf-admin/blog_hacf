@@ -32,7 +32,7 @@
       
       <figure>
         <a href="{{ $image.RelPermalink }}">
-          <img
+          <img class="mx-auto d-block"
             sizes="(max-width: 400px) 250px,
                    (max-width: 500px) 300px,
                    (max-width: 768px) 400px,
@@ -50,7 +50,7 @@
             >
         </a>
         {{ with $caption }}
-          <figcaption>{{ . | markdownify }}</figcaption>
+          <figcaption class="text-center">{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
 
@@ -71,7 +71,7 @@
       
       <figure>
         <a href="{{ $image.RelPermalink }}">
-          <img
+          <img class="mx-auto d-block"
             sizes="(max-width: 400px) 250px,
                    (max-width: 500px) 300px,
                    (max-width: 768px) 400px,
@@ -87,7 +87,7 @@
             >
         </a>
         {{ with $caption }}
-          <figcaption>{{ . | markdownify }}</figcaption>
+          <figcaption class="text-center">{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
 
@@ -106,7 +106,7 @@
       
       <figure>
         <a href="{{ $image.RelPermalink }}">
-          <img
+          <img class="mx-auto d-block" 
             sizes="(max-width: 400px) 250px,
                    (max-width: 500px) 300px,
                    (max-width: 768px) 400px,
@@ -120,7 +120,7 @@
             >
         </a>
         {{ with $caption }}
-          <figcaption>{{ . | markdownify }}</figcaption>
+          <figcaption class="text-center">{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
 
@@ -138,7 +138,7 @@
       
       <figure>
         <a href="{{ $image.RelPermalink }}">
-          <img
+          <img class="mx-auto d-block"
             sizes="(max-width: 400px) 250px,
                    (max-width: 500px) 300px,
                    400px"
@@ -150,7 +150,7 @@
             >
         </a>
         {{ with $caption }}
-          <figcaption>{{ . | markdownify }}</figcaption>
+          <figcaption class="text-center">{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
 
@@ -167,7 +167,7 @@
       
       <figure>
         <a href="{{ $image.RelPermalink }}">
-          <img
+          <img class="mx-auto d-block"
             sizes="(max-width: 400px) 250px,
                    300px"
             srcset="{{ $XS.RelPermalink }} 250w, 
@@ -177,7 +177,7 @@
             >
         </a>
         {{ with $caption }}
-          <figcaption>{{ . | markdownify }}</figcaption>
+          <figcaption class="text-center">{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
 
@@ -194,7 +194,7 @@
       
       <figure>
         <a href="{{ $image.RelPermalink }}">
-          <img
+          <img class="mx-auto d-block"
             sizes="300px"
             srcset="{{ $XS.RelPermalink }} 250w"
             src="{{ $image.RelPermalink }}"
@@ -202,7 +202,7 @@
             >
         </a>
         {{ with $caption }}
-          <figcaption>{{ . | markdownify }}</figcaption>
+          <figcaption class="text-center">{{ . | markdownify }}</figcaption>
         {{ end }}
       </figure>
 
@@ -210,7 +210,7 @@
 
   {{ else }}
     <div class="row text-center">
-        <img 
+        <img class="mx-auto d-block" 
         src="{{ $image.RelPermalink }}"
         alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
         width="auto"
