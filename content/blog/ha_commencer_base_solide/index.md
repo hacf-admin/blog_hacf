@@ -13,7 +13,7 @@ title: "Home Assistant : Commencer avec une base solide."
 type: post
 aliases:
   - /ha_debuter
-images: img/cover-article-hacf.png
+images: img/ha_install_bases_solide_cover.png
 description: Cet article vous apporte des explications claires sur les méthodes
   d'installation de Home Assistant, mais aussi sur les add-ons indispensables et
   comment accéder depuis l'extérieur à votre solution domotique.
