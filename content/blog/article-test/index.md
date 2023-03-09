@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 level: Débutant
 authors:
   - mcfly
@@ -7,12 +7,12 @@ folder: article-test
 visibleInCMS: true
 date: 2023-01-03
 lastmod: 2023-02-10
-authors: mcfly
+author: mcfly
 socialshare: true
-title: Article Test
 gallery:
   - dossier: gallerie1
     image_gallery: img/installation_detection_automatique_materiels.png
+title: NE PAS SUPP Article Test
 tags:
   - argon
 image: null
@@ -31,7 +31,7 @@ categories:
   - Sécurité
   - Confort
 hacf: null
-description: Article de test
+description: Article de testessffgdfg
 url_off: null
 ---
 
@@ -66,7 +66,7 @@ test alert avec attribut NON FONCTIONNEL
 ```
 
 > This is a note.
-{.alert .alert-primary}
+> {.alert .alert-primary}
 
 ```
 > This is a warning.
@@ -74,7 +74,7 @@ test alert avec attribut NON FONCTIONNEL
 ```
 
 > This is a warning.
-{.alert .alert-warning}
+> {.alert .alert-warning}
 
 ```
 > This is dangerous.
@@ -82,7 +82,7 @@ test alert avec attribut NON FONCTIONNEL
 ```
 
 > This is dangerous.
-{.alert .alert-danger}}
+> {.alert .alert-danger}}
 
 ## Test Gallery
 
@@ -114,7 +114,7 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Blockquote
 
->blockquote
+> blockquote
 
 ### Ordered List
 
