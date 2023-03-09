@@ -20,8 +20,8 @@
 {{ $logo := (resources.Get "images/logo.png") }}
 
 {{- if and $heroImage $logo }}
-{{- $size := math.Round (mul $heroImage.Height 0.30) }}
-{{- $size := cond (ge $size 80) ($size) (80.0) }}
+{{- $size := math.Round (mul $heroImage.Height 0.20) }}
+{{- $size := cond (ge $size 80) ($size) (80) }}
 
 {{- $logo := $logo.Resize (printf "%.0fx" $size) }}
 {{- $heroImage := $heroImage.Filter (images.Overlay $logo 10 10 ) }}
