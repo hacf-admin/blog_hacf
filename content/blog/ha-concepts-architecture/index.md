@@ -12,7 +12,7 @@ series:
 title: Architecture et concepts Home Assistant
 type: post
 aliases:
-  - /ha_concepts
+  - /ha-concepts
 images: img/accueil-2.jpg
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
