@@ -3,7 +3,7 @@ folder: hacf_news_portail_communautaire
 title: Retour du portail communautaire HACF
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-03-10
 lastmod: 2023-03-10
 images: img/hacf_news_portail_communautaire.png
