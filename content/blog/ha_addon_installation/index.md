@@ -13,7 +13,8 @@ title: Installer un Add-on officiel ou non officiel sur Home Assistant
 type: post
 aliases:
   - /ha_addon_installation
-images: img/installerunaddonofficielounonofficiel.jpg
+  - /ha_addon
+images: img/ha_addons_installation.png
 description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   sont une des forces de Home Assistant, car ils vous permettent d'y ajouter des
   services reconnus et très connus (comme Node-Red, Grafana, InfluxDB, DuckDNS,
