@@ -64,7 +64,9 @@ url = "/rgpd"
 [[footer]]
 name = "Nous-contacter"
 url = "/contact"
-
+[[footer]]
+name = "Gestion"
+url = "/admin"
 
 [[hacf]]
 name = "Email"
