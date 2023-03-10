@@ -4,7 +4,7 @@ level: Débutant
 authors: argonaute
 folder: ha_concepts_architecture
 visibleInCMS: true
-date: 2023-02-10
+date: 2023-03-06
 lastmod: 2023-02-10
 author: argonaute
 series:
