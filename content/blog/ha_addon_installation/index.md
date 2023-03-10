@@ -12,6 +12,7 @@ series: null
 title: Installer un Add-on officiel ou non officiel sur Home Assistant
 type: post
 aliases:
+  - /ha_addon_installation
   - /ha_addon
 images: img/ha_addons_installation.png
 description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
