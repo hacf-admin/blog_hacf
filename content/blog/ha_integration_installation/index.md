@@ -12,7 +12,9 @@ socialshare: true
 series: null
 title: Ajouter une intégration dans Home Assistant
 type: post
-images: ""
+aliases:
+  - /ha_integrations
+images: img/ha_integration_installation.png
 description: Les intégrations vous permettent d’ajouter facilement du matériel,
   des capteurs, des fonctions au sein de votre système domotique. Nous allons
   voir les différentes façons d'ajouter une intégration dans Home Assistant.
