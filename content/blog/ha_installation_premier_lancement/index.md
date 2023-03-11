@@ -1,13 +1,13 @@
 ---
-draft: false
-level: Débutant
-authors: mcfly
 folder: ha_installation_premier_lancement
 title: Premier lancement et configuration de Home Assistant
 type: post
 visibleInCMS: true
 aliases:
   - /ha_installation_premier_lancement
+draft: false
+level: Débutant
+authors: mcfly
 date: 2023-02-22
 lastmod: null
 images: img/ha_premier_lancement_cover.png
@@ -23,7 +23,8 @@ tags:
   - ha-os
   - ha-core
   - ha-supervised
-url_hacf: https://forum.hacf.fr/t/home-assistant-premiere-configuration/679
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/premier-lancement-et-configuration-de-home-assistant/679
 socialshare: true
 series:
   - Débuter avec Home Assistant
