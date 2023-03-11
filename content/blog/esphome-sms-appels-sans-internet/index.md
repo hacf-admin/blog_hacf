@@ -1,11 +1,11 @@
 ---
+folder: esphome-sms-appels-sans-internet
+type: post
+visibleInCMS: true
 draft: false
 level: Avancé
 authors: argonaute
-folder: esphome-sms-appels-sans-internet
 title: SMS et appels sans internet
-type: post
-visibleInCMS: true
 date: 2023-02-08
 lastmod: ""
 images: img/accueil.png
@@ -23,6 +23,8 @@ tags:
   - sim800l
   - esp32
   - esphome
+  - sms
+  - appels
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/sms-et-appels-avec-ha-sans-internet/6314
 ---
