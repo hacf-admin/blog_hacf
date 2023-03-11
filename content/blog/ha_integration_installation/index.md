@@ -23,7 +23,7 @@ tags:
   - ha-docker
   - hacs
 author: mcfly
-url_hacf: https://forum.hacf.fr/t/comment-ajouter-une-integration-dans-home-assistant-t/2073
+url_hacf: https://forum.hacf.fr/t/ajouter-une-integration-dans-home-assistant/2072
 socialshare: true
 series: null
 ---
