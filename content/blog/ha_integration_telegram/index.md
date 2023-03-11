@@ -1,11 +1,11 @@
 ---
+folder: ha_integration_telegram
+type: post
+visibleInCMS: true
 draft: false
 level: Intermédiaire
 authors: argonaute
-folder: ha_integration_telegram
 title: Dialogue avec Telegram
-type: post
-visibleInCMS: true
 date: 2023-03-02
 lastmod: ""
 images: img/accueil.jpeg
@@ -21,7 +21,7 @@ tags:
   - notification
   - bot
 author: default
-url_hacf: https://forum.hacf.fr/t/tuto-dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
+url_hacf: https://forum.hacf.fr/t/dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
 
