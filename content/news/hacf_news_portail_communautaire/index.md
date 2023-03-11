@@ -14,11 +14,12 @@ author: default
 Après plus d'un an d'absence, l'équipe HACF est heureuse de vous annoncer le retour du portail de la communauté.
 
 La vocation de ce nouveau portail créé de toute pièce est :
-- présenter HACF et fédérer les activités de l’association
-- rassembler des articles en français sur HA et la domotique en général 
-- informer avec une rubrique actualité 
-- fournir un référentiel de ressources en français 
-- être un point d’accès aux différents médias HACF
+
+* présenter HACF et fédérer les activités de l’association
+* rassembler des articles en français sur HA et la domotique en général 
+* informer avec une rubrique actualité 
+* fournir un référentiel de ressources en français 
+* être un point d’accès aux différents médias HACF
 
 Le portail est donc un point central pour la vie de l'association. Vous y trouverez une présentation, son actualité, comment adhérer, et même ses statuts et son règlement.
 
@@ -33,3 +34,7 @@ Dans un premier temps, chacun pourra soumettre un article sur le forum et nous l
 Dans un second temps, le portail sera directement ouvert à toute personne souhaitant devenir rédacteur.
 
 Nous espérons que ce nouveau média de la communauté vous plaira et vous donnera satisfaction.
+
+
+
+**U﻿n grand merci à @Argonaute pour le temps et l'énergie.**
