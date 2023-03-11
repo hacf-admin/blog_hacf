@@ -1,6 +1,6 @@
 ---
 folder: esphome-ecran-tactile-nextion
-title: Ecran tactile Nextion avec ESPHome
+title: "Ecran tactile Nextion avec ESPHome : déporter vos commandes"
 type: post
 visibleInCMS: true
 draft: false
@@ -19,6 +19,7 @@ categories:
 tags:
   - nextion
   - esphome
+  - diy
 url_hacf: https://forum.hacf.fr/t/ecran-tactile-nextion-avec-esphome-deporter-vos-commandes/10622
 url_haoff: ""
 authors: argonaute
