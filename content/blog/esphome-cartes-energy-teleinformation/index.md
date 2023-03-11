@@ -1,11 +1,11 @@
 ---
+folder: esphome-cartes-energy-teleinformation
+type: post
+visibleInCMS: true
 draft: false
 level: Avancé
 authors: argonaute
-folder: esphome-cartes-energy-teleinformation
 title: Cartes "Energy" et teleinformation (TIC) avec ESPHome
-type: post
-visibleInCMS: true
 date: 2023-02-09
 lastmod: 2023-02-10
 images: img/accueil.png
@@ -22,6 +22,7 @@ tags:
   - esphome
   - esp32
   - diy
+  - energie
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
 ---
