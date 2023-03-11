@@ -1,18 +1,15 @@
 ---
+folder: ha-premiers-projets
+title: Vos premiers projets avec Home Assistant
+type: post
+visibleInCMS: true
+aliases:
+  - /ha_premiers_projets
 draft: false
 level: Débutant
 authors: argonaute
-folder: ha-premiers-projets
-visibleInCMS: true
 date: 2023-03-05
 lastmod: 2023-02-17
-author: argonaute
-series:
-  - Débuter avec Home Assistant
-title: Vos premiers projets avec Home Assistant
-type: post
-aliases:
-  - /ha_premiers_projets
 images: img/accueil2.png
 description: "Voila, vous avez installé Home Assistant et il est temps pour vous
   d'en découvrir ses possibilités. Ce tuto vous propose une série de mini
@@ -20,7 +17,15 @@ description: "Voila, vous avez installé Home Assistant et il est temps pour vou
 categories:
   - Concepts
 tags:
-  - Débuter
+  - météo-france
+  - automatisations
+  - monitoring
+  - card
+  - dashboard
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
+series:
+  - Débuter avec Home Assistant
 ---
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.
 Cet article vous propose de créer vos premiers projets pour commencer à appréhender les concepts, mais **sans avoir besoin d'objets connectés** à votre nouveau serveur domotique.
