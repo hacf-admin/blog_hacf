@@ -3,16 +3,13 @@ draft: false
 level: Débutant
 authors: mcfly
 folder: ha_commencer_base_solide
-visibleInCMS: true
-date: 2023-03-09
-lastmod: null
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
-socialshare: true
-series: null
 title: "Home Assistant : Commencer avec une base solide."
 type: post
+visibleInCMS: true
 aliases:
   - /ha_debuter
+date: 2023-03-09
+lastmod: null
 images: img/ha_bases_solides_cover.png
 description: Cet article vous apporte des explications claires sur les méthodes
   d'installation de Home Assistant, mais aussi sur les add-ons indispensables et
@@ -22,6 +19,9 @@ categories:
   - Concepts
   - Add-on/Intégration
 tags: []
+url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+socialshare: true
+series: null
 ---
 Dans cet article, nous allons essayer d'aborder tous les **points important** vous permettant de vous lancer avec une base solide dans Home Assistant.
 
