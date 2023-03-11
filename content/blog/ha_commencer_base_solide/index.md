@@ -1,13 +1,13 @@
 ---
-draft: false
-level: Débutant
-authors: mcfly
 folder: ha_commencer_base_solide
 title: "Home Assistant : Commencer avec une base solide."
 type: post
 visibleInCMS: true
 aliases:
   - /ha_debuter
+draft: false
+level: Débutant
+authors: mcfly
 date: 2023-03-09
 lastmod: null
 images: img/ha_bases_solides_cover.png
@@ -19,7 +19,8 @@ categories:
   - Concepts
   - Add-on/Intégration
 tags: []
-url_hacf: https://forum.hacf.fr/t/conseils-sur-le-choix-methode-ou-type-dinstallation/2068
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/home-assistant-commencer-avec-une-base-solide/21742
 socialshare: true
 series: null
 ---
