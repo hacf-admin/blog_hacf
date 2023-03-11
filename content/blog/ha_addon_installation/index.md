@@ -3,17 +3,14 @@ draft: false
 level: Débutant
 authors: mcfly
 folder: ha_addon_installation
-visibleInCMS: true
-date: 2023-03-03
-lastmod: null
-url_hacf: https://forum.hacf.fr/t/comment-installer-un-add-on-officiel-et-non-officiel/2071/
-socialshare: true
-series: null
 title: Installer un Add-on officiel ou non officiel sur Home Assistant
 type: post
+visibleInCMS: true
 aliases:
   - /ha_addon_installation
   - /ha_addon
+date: 2023-03-03
+lastmod: null
 images: img/ha_addons_installation.png
 description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   sont une des forces de Home Assistant, car ils vous permettent d'y ajouter des
@@ -25,6 +22,9 @@ categories:
 tags:
   - haos
   - ha-supervised
+url_hacf: https://forum.hacf.fr/t/installer-un-add-on-officiel-ou-non-officiel-sur-home-assistant/2071
+socialshare: true
+series: null
 ---
 Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très populaires (comme "Node-Red", "Grafana", "InfluxDB", "DuckDNS", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
 
