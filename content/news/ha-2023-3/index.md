@@ -3,7 +3,7 @@ draft: false
 url_haoff: https://forum.hacf.fr/t/home-assistant-2023-3-dialogues/21765
 authors: argonaute
 folder: ha_2023_3
-title: "Home Assistant 2023.3: Dialogues !"
+title: "Home Assistant 2023.3 : Dialogues !"
 type: news
 visibleInCMS: true
 date: 2023-03-02
