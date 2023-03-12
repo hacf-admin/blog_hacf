@@ -7,13 +7,13 @@ aliases:
   - /awesome
 date: 22-12-14
 lastmod: 2022-09-28 23:36
-image: img/awesome-ha.png
-description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
-  sujets autour de Home Assistant et de la domotique.
 tags:
   - awesome
 liens_utiles: []
 socialshare: true
+image: img/awesome-ha.png
+description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
+  sujets autour de Home Assistant et de la domotique.
 ---
 # Awesome" Francophone Home Assistant
 
@@ -85,3 +85,5 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 ## Faites le vous même (DIY)
 
 Vous trouverez dans cette section des tutos pour des montages à faire soi même.
+
+> Si vous avez des **remarques** sur cette page, ou souhaitez qu'un **ajout** soit fait, vous pouvez le demander ici sur le [forum HACF](https://forum.hacf.fr/t/liens-utiles-awesome-sur-le-portail-hacf/21769)
