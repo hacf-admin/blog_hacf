@@ -1,6 +1,6 @@
 ---
 folder: hacf_news_portail_communautaire
-title: Retour du portail communautaire HACF
+title: Portail communautaire HACF
 type: news
 visibleInCMS: true
 draft: false
