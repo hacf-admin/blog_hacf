@@ -133,9 +133,9 @@ Le principe d'un **lien affilié** est de reverser un pourcentage de votre panie
 
 Deux enseignes bien connues ont été retenues : **Amazon** et **AliExpress**. Elles ont chacune leurs avantages et inconvénients. Avec ces deux enseignes, nous balayons un large panel concernant vos attentes.
 
-> Notre [plateforme discord](https://discord.hacf.fr) vous permet de générer les liens affiliés : allez sous le fil de discution "Liens affiliés", coller le lien vers le produit (Amazon ou Aliexpress, et un bot vous renverra le lien affilié à utiliser.
+> Notre [plateforme discord](https://discord.hacf.fr) vous permet de générer les liens affiliés : allez sous le fil de discution [Liens-affiliés](https://discord.com/channels/706096417000652840/784046728282243102), coller le lien vers le produit (Amazon ou Aliexpress), et un bot vous renverra le lien affilié à utiliser.
 >
->  Il est possible en cliquant sur les liens ci-dessous d'accèder à l'"accueil affilié" des deux marchands.
+> Il est possible en cliquant sur les liens ci-dessous d'accèder à l'`accueil affilié` des deux marchands.
 
 #### Amazon
 
