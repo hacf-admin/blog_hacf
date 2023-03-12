@@ -40,9 +40,6 @@ Enfin, la solution est fédérée par une société qui garantit sa stabilité e
 **Ouverture** *Juillet 2020*
 * HACF devient accessible à tous les francophones désirant partager, échanger ou apprendre sur la solution Home Assistant.
 
-**Idée / Réflexion** *Avirl 2020*
-* Naissance dans la tête de six personnes suite au manque observé d’une véritable communauté francophone autour de Home Assistant.
-
 **Union** *Février 2021*
 * Union avec le groupe Facebook [Home Assistant France](https://groupe-facebook.hacf.fr)
 
