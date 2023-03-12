@@ -2,11 +2,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-    <title>{{ .Site.Title }}</title>
+    <title>{{if .IsHome}}{{ $.Site.Title }}{{else}}{{ .Title }}{{ end }}</title>
     <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{ if .Params.Description }}{{ .Params.Description }}{{ else }}{{ .Site.Params.Description }}{{ end }}{{ end }}" />
     <meta name="keywords" content="{{if .IsHome}}{{ $.Site.Params.keywords }}{{else}}{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}{{end}}" />
     <meta name="author" content="{{ if .IsHome }}{{ $.Site.Author.name }}{{ else }}{{ with .Params.authors }}{{ delimit . ", "}}{{ else }}{{ .Params.author }}{{end}}{{end}}" />
-    
+
     {{ partial "commons/head/opengraph.html" . }}
     {{ partial "commons/head/twitter_cards.html" . }}
 <!--    <title></title>
