@@ -1,17 +1,17 @@
 ---
-title: Awesome Francophone Home Assistant
-type: awesome
 visibleInCMS: true
 draft: false
-aliases:
-  - /awesome
 date: 22-12-14
 lastmod: 2022-09-28 23:36
-tags:
-  - awesome
 liens_utiles: []
 socialshare: true
+title: Awesome Francophone Home Assistant
+type: awesome
+tags:
+  - awesome
 image: img/awesome-ha.png
+aliases:
+  - /awesome
 description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
   sujets autour de Home Assistant et de la domotique.
 ---
@@ -28,16 +28,16 @@ Blogs traitant de domotique et proposant des implémentations Home Assistant.
 * [Figer](https://www.figer.com) de guide et conseil en informatique, réseau et domotique.
 * [Ça Sert À Quoi ?](https://www.ca-sert-a-quoi.com/category/domotique/) - Un Blog de mise en situation des nouvelles technologies avec une section domotique.
 * [My Canaletto](https://www.canaletto.fr/) - Blog IT et domotique traitant en particulier d'une migration Jeedom vers Home Assistant.
-* [Blog de remi81](https://domo.rem81.com/) - Bloc note sur differents sujets autour de Home Assistant.
+* [Blog de remi81](https://domo.rem81.com/) - Bloc note sur différents sujets autour de Home Assistant.
 * [Blog de Yann](https://domotique.yann.me/) - Blog sur divers sujets autour de Home Assistant.
 * [Canaletto & friends](https://ghost.canaletto.fr/) - Blog domotique, Home-Assistant, Home Lab et DIY.
 * [Domo-blog](https://www.domo-blog.fr/) - Blog généraliste, mais proposant souvent des intégrations Home Assistant.
-* [Zeguigui](https://www.zeguigui.com/) - Blog généraliste, mais proposant souvent des intégrations Home Assistant.
+* [Zeguigui](https://www.zeguigui.com/) - Blog généraliste, mais proposant fréquemment des intégrations Home Assistant.
 
 ## Chaines vidéos
 
 * [ArminasTV](https://www.youtube.com/channel/UCLoLYGnh66x9cMee-qBi3XQ) - Guides vidéos dont une aide au démarrage sur Home Assistant.
-* [e-2-nomy](https://www.youtube.com/channel/UCaSQ9Wl2KWUvQmTRV26O96Q) - Des vidéos DIY orrientées maison autonome à base d'ESP et de Home Assistant.
+* [e-2-nomy](https://www.youtube.com/channel/UCaSQ9Wl2KWUvQmTRV26O96Q) - Des vidéos DIY orientées maison autonome à base d'ESP et de Home Assistant.
 * [Journal de Thomas](https://www.youtube.com/channel/UCRJE6Yb_R3Xei-QGcy_Qwhw) - Vidéos d'un passionné sur différentes solutions domotique dont les plus récentes traitent de Home Assistant.
 * [DCJona](https://www.youtube.com/channel/UCPRsHkUnQZ4261jzwXT-tdw) - Domotique & DIY - Des tests et guides vidéos autour de Home Assistant, Node Red et autres projets DIY.
 * [La Maison Bleue](https://www.youtube.com/channel/UCOfuwHAgQnK8vORbGBSA28Q) - Une chaîne sur Home Assistant et Node-Red.
@@ -47,7 +47,8 @@ Blogs traitant de domotique et proposant des implémentations Home Assistant.
 
 ## Podcasts audio
 
-* [Tech Café](https://techcafe.fr/category/domotique-podcast-maison-connectee/) - Un podcast domotique généraliste avec une sensibilité Jeedom mais qui s'ouvre à Home Assistant. A écouter : [Episode 18 Home Assistant](https://techcafe.fr/domotique-dossier-home-assistant/)
+* [Domo-blog](https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xOTYxNTA4LnJzcw==) - un podcast sur la domotique, en complément de l'excellent site [Domo-Blog](https://www.domo-blog.fr/) d'Aurélien Brunet
+* [Tech Café](https://techcafe.fr/category/domotique-podcast-maison-connectee/) - Un podcast domotique généraliste type "discussion à la machine à café". A écouter : [Episode 18 Home Assistant](https://techcafe.fr/domotique-dossier-home-assistant/)
 
 ## Documentations
 
@@ -68,10 +69,10 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 ## Intégrations francophones (Custom Components)
 
 * [hassRenaultZE](https://github.com/hacf-fr/hassRenaultZE) - Pour accéder aux infos de votre véhicule électrique Renault ZE comme la Zoé.
-* [Livebox Orange](https://github.com/Cyr-ius/hass-livebox-component) - Une integration pour accéder à certaines informations de votre Livebox.
+* [Livebox Orange](https://github.com/Cyr-ius/hass-livebox-component) - Une intégration pour accéder à certaines informations de votre Livebox.
 * [HA-pool_pump](https://github.com/oncleben31/ha-pool_pump) - Un moyen de piloter la pompe de filtration de sa piscine.
 * [prixCarburant](https://github.com/max5962/prixCarburant-home-assistant) - Permet de récupérer les prix du carburant depuis le site gouvernemental français.
-* [apiEnedis](https://github.com/saniho/apiEnedis) - Accéder à vos information de consomation électrique depuis la plateforme Enedis.
+* [apiEnedis](https://github.com/saniho/apiEnedis) - Accéder à vos informations de consommation électrique depuis la plateforme Enedis.
 
 ## Cartes Personnalisées pour l'interface (Lovelace Custom cards)
 
@@ -80,10 +81,10 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 
 ## Blueprints pour créer des automatisations simplement
 
-* [Blueprints sur le forum HACF](https://forum.hacf.fr/tag/plan-blueprint) - Les Blueprints proposés par la communauté francophone.
+* [Thermostat TPI](https://github.com/argonaute199/chauffage-home-assistant) - l'implémentation d'un thermostat alternatif plus performant.
 
-## Faites le vous même (DIY)
+## Faites-le vous-même (DIY)
 
-Vous trouverez dans cette section des tutos pour des montages à faire soi même.
+Vous trouverez prochainement dans cette section des tutos pour des montages à faire soi-même.
 
 > Si vous avez des **remarques** sur cette page, ou souhaitez qu'un **ajout** soit fait, vous pouvez le demander ici sur le [forum HACF](https://forum.hacf.fr/t/liens-utiles-awesome-sur-le-portail-hacf/21769)
