@@ -10,6 +10,47 @@ Le site est basé sur [Hugo](https://gohugo.io/), un générateur de site statiq
 
 Le thème a été créé de zéro avec le framework [Boostrap](https://getbootstrap.com/) en version 5 et nous utilisons les icônes [FontAwesome](https://fontawesome.com/).
 
+*Pour une petite presentationde Hugo c'est [plus bas](#hugo)*
+
+## Lancer le portail communautaire en local.
+Voici comment utiliser le portail communautaire chez vous.
+*Les commandes sont sous linux Ubuntu*
+**prérequis :**
+* git d'installé `apt install git`,
+* Node JS
+```bash
+curl -fsSL https://deb.nodesource.com/setup_18.x -o /tmp/nodesource_setup.sh
+sudo bash /tmp/nodesource_setup.sh
+sudo apt-get install -y nodejs
+```
+>laisser bien le `x` apres la version
+
+* Vérifier avec `node -v`
+
+**Récupération et installation des dépendances**
+#####################################################
+**POUR LE MOMENT NE RIEN ENVOYER SUR LA BRANCHE NETLIFY**
+#####################################################
+* Cloner le dépôt `git clone git@github.com:hacf-admin/blog_hacf.git`,
+* Rendez-vous dans le dossier `cd blog_hacf`,
+* Créer une branche de travail,
+* Installer npm `sudo apt install npm`,
+* Installer les dépendances postCSS `npm install postcss-cli autoprefixer fullhuman/postcss-purgecss`,
+
+*Facultatif si vous n'avez pas besoin de l'interface d'édition*
+Dans le dossier `static`-> `admin` -> `config.yml`,
+* Décocher `#local_backend: true`,
+
+Retourner à la racine du dossier `blog_hacf`,
+* Dans un terminal, lancer la commande `hugo serve`,
+* *facultatif* Dans un deuxième lancer la commande `npx netlify-cms-proxy-server`,
+
+Il y a un article de test (content -> blog -> article-test) que vous pouvez utiliser pour vos essais.
+
+#####################################################
+**POUR LE MOMENT NE RIEN ENVOYER SUR LA BRANCHE NETLIFY**
+#####################################################
+
 ## Hugo.
 Hugo est un générateur de site statique codé en [Go](https://go.dev/), il bénéficie d'une [grande communauté](https://discourse.gohugo.io/) (anglophone malheureusement)
 
@@ -99,42 +140,3 @@ Après cette petite explication, vous êtes déjà bien armé pour vous amuser a
 Quelques commandes :
 `hugo serve` : permet de lancer un serveur en local permettant de voir votre site une fois construit.
 `hugo serve -D` : pareil mais construit aussi les articles brouillons.
-
-## Lancer le portail communautaire en local.
-Voici comment utiliser le portail communautaire chez vous.
-*Les commandes sont sous linux Ubuntu*
-**prérequis :**
-* git d'installé `apt install git`,
-* Node JS
-```bash
-curl -fsSL https://deb.nodesource.com/setup_18.x -o /tmp/nodesource_setup.sh
-sudo bash /tmp/nodesource_setup.sh
-sudo apt-get install -y nodejs
-```
->laisser bien le `x` apres la version
-
-* Vérifier avec `node -v`
-
-**Récupération et installation des dépendances**
-#####################################################
-**POUR LE MOMENT NE RIEN ENVOYER SUR LA BRANCHE NETLIFY**
-#####################################################
-* Cloner le dépôt `git clone git@github.com:hacf-admin/blog_hacf.git`,
-* Rendez-vous dans le dossier `cd blog_hacf`,
-* Créer une branche de travail,
-* Installer npm `sudo apt install npm`,
-* Installer les dépendances postCSS `npm install postcss-cli autoprefixer fullhuman/postcss-purgecss`,
-
-*Facultatif si vous n'avez pas besoin de l'interface d'édition*
-Dans le dossier `static`-> `admin` -> `config.yml`,
-* Décocher `#local_backend: true`,
-
-Retourner à la racine du dossier `blog_hacf`,
-* Dans un terminal, lancer la commande `hugo serve`,
-* *facultatif* Dans un deuxième lancer la commande `npx netlify-cms-proxy-server`,
-
-Il y a un article de test (content -> blog -> article-test) que vous pouvez utiliser pour vos essais.
-
-#####################################################
-**POUR LE MOMENT NE RIEN ENVOYER SUR LA BRANCHE NETLIFY**
-#####################################################
