@@ -1,24 +1,12 @@
 
 {{ $related := .Site.RegularPages.Related . | first 3 }}
 {{ with $related }}
-<h3 class="text-center">Ces articles peuvent vous interesser ...</h3>
-
-	{{ range . }}	
-		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xxl-3 g-3 justify-content-center">
-<!--			<div class="card h-100">
-			<div class="card-body">
-			  <h5 class="card-title text-secondary p-1 fst-italic">{{ .Title }}</h5>
-			  <h6 class="card-subtitle mb-2 text-muted p-1">Catégoies ? Tags ?  Rien ?</h6>
-			  <p class="card-text text-truncate">{{ .Description }}</p>
-			  <a href="{{ .RelPermalink }}" class="card-link">Lire</a>
-			</div>
-		  </div>
-		  -->	
-		  {{ partial "cards/post-card.html" . }}
-	</div>
-
-		
-
+	<h3 class="text-center">Ces articles peuvent vous interesser ...</h3>
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-3">
+	{{ range . }}
+		<div class="col">	
+		{{ partial "cards/post-card.html" . }}
+		</div>
 	{{ end }}
-
+	</div>
 {{ end }}
