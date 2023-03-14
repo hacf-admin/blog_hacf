@@ -1,0 +1,134 @@
+---
+folder: zigbee2mqtt-availability
+title: "Zigbee2mqtt : bien gérer les disponibilités"
+type: post
+visibleInCMS: true
+draft: true
+date: 2023-03-14
+lastmod: 2023-03-14
+description: >-
+  L'indisponibilité non détectée d'un périphérique Zigbee peut avoir de graves
+  conséquences pour nos systèmes domotiques.
+
+  Cet article vous explique comment fiabiliser Zigbee2MQTT en gérant correctement la surveillance des objets connectés. 
+level: Intermédiaire
+categories:
+  - Protocoles
+tags:
+  - zigbee2mqtt
+  - zigbee
+author: argonaute
+---
+Une grande majorité des adeptes de Home Assistant ont actuellement a intégré **Zigbee**. Cela permet d'intégrer des objets connectés à la fois fiables et à bon prix.
+
+Or certains de ces objets connectés sont absolument **critiques** : sécurité (alarme, détecteur incendie), chauffage (capteur de température) pour ne citer qu'eux.
+La question se pose alors d'être **averti quand un objet ne répond plus**, et savoir depuis quand il ne répond plus.
+
+Si on enlève Deconz qui l'intégration propriétaire des clés types Conbee II, Il existe principalement 2 intégrations possibles du Zigbee : 
+
+* **ZHA** : simple, spécifique à Home Assistant et très bien intégré.
+* **Zigbee2MQTT** : non spécifique à Home Assistant, tourne dans un add-on et communique avec Home Assistant via un serveur MQTT.
+
+> Zigbee2MQTT a plus de paramètres de réglages que ZHA, une belle interface avec de puissants outils de gestion zigbee, et surtout supporte plus de périphériques. Si on rajoute l'indépendance à HA et l'interface MQTT, **beaucoup préfèrent zigbee2mqtt à ZHA**.
+
+Or quand, un périphérique ne répond plus, ZHA met les entités avec un état indisponible (`unavailable`). 
+Cela permet de le traiter fonctionnellement. Un interrupteur par exemple pourra prendre 3 états : `on`, `off` et `unavailable`, ce qui permettra de traiter fonctionnellement cet état.
+
+MAIS, par défaut, **Zigbee2MQTT laisse les périphériques dans le dernier état connu, et n'affiche pas la disponibilité dans  son interface**.
+Un capteur de température pourra rester bloqué à la température d'il y a une semaine. C'est très gênant quand il est utilisé par un thermostat !!
+
+Il est cependant possible de paramétrer Zigbee2MQTT pour y remédier et avoir le même comportement que ZHA.
+
+Une fois paramétré, vous aurez dans l'interface Zigbee2mqtt 2 nouvelles colonnes : `Vu pour la dernière fois` et `disponibilité`.
+Et **ces informations seront transmises à Home Assistant pour les exploiter**.
+
+![Interface Zigbee2mqtt](img/interface-zigbee2mqtt.jpg)
+
+## "Vu pour la dernière fois" ( last_seen )
+
+Pour rajouter cette colonne, rendez-vous votre interface zigbee2mqtt, puis `paramètres`, `avancés` faire défiler et mettez le paramètre `Last_seen `à `ISO_8601`
+
+![Activer last_seen](img/activer-last_seen.jpg)
+
+
+Redémarrer l'add-on zigbee : aller dans le sous-menu à droite de paramètres dans outils et cliquer sur le bouton rouge `redémarrer Zigbee2MQTT`. 
+L'alternative est d'aller dans les modules complémentaire pour redémarrer l'addon...
+Si dans l'interface Zigbee2MQTT, vous avez maintenant une nouvelle colonne "Vu pour la dernière fois".
+
+Redémarrer Home Assistant, pour cliquer sur un appareil Zigbee : vous vous apercevrez que vous avez maintenant une nouvelle entité (désactivée par défaut) qui affiche quand le périphérique a été vu pour la dernière fois.
+
+
+![Entité last_seen](img/entité-last_seen.jpg)
+
+
+
+## Affichage "Disponibilité"
+
+Il va maintenant falloir éditer le fichier de configuration de zigbee2mqtt. Il se trouve sous le répertoire `\config\zigbee2mqtt`.
+
+Et la rajouter le mot clé `availability` et ses paramètres comme présenté ci-dessous :
+
+```yaml
+homeassistant: true
+mqtt:
+  server: mqtt://192.168.XX.XX:1883
+  user: mqtt
+  password: XXXXXXXXX
+serial:
+  port: /dev/ttyACM0
+  adapter: deconz
+frontend:
+  port: 8099
+permit_join: true
+availability:
+  active:
+    timeout: 20
+  passive:
+    timeout: 240
+devices:
+  '0x04cf8cdf3cxxxxxx':
+    friendly_name: Prise chambre
+```
+
+ Redémarrez Zigbee2mqtt : vous devriez maintenant avoir une nouvelle colonne "Disponibilité".
+MAIS SURTOUT : après avoir redémarré Home Assistant, les entités se mettront en indisponibles (état `unavailable`) quand elles ne le seront plus dans Zigbee2mqtt.
+
+## Paramétrage de l'indisponibilité
+
+La question suivante est : quand un périphérique (un capteur par exemple) est jugé indisponible.
+Il existe 2 types de périphériques : 
+
+* **Actifs** : les périphériques généralement branchés au secteur, qui renvoient souvent leur état.
+* **Passifs** : les capteurs habituellement sur pile, qui ne renvoient que très occasionnellement leur état.
+
+Pour chaque type de capteur, il est possible d'indiquer **au bout de combien de minutes** un périphérique est jugé indisponible.
+Vous pouvez voir que dans le fichier, on a mis 20mn pour les périphériques actifs et 360 (6 heures) pour les périphériques passifs.
+
+En fonction de vos périphériques, l'idée est de trouver les meilleurs paramètres pour mettre assez haut pour toujours détecter les présences, mais assez bas pour avertir d'une indisponibilité.
+
+## Forcer  la désactivation
+
+Vous pouvez indiquer à Zigbee2MQTT qu'un périphérique n'est plus actif et qu'il ne fait pas le surveiller (voir la première capture d'écran).
+
+Pour cela, éditer le fichier de configuration de Zigbee2MQTT. Parcourez la liste des périphériques et retrouvez celui à désactiver.
+Rajouter la propriété `availability : false`  dans la description du périphérique :
+
+
+Exemple :
+
+
+```yaml
+  '0x3c6a2cfffed2efa8':
+    friendly_name: Owon conso principal 1
+    availability: false
+```
+
+``
+
+## Conclusion
+
+Voilà, vous pouvez **vérifier rapidement dans l'interface Zigbee2MQTT la disponibilité de vos périphériques**, et **affiner les règles de détection** d'une indisponibilité. 
+
+Vous pouvez également **gérer cette indisponibilité dans Home Assistant comme un "cas fonctionnel"** : par exemple limiter le fonctionnement d'un chauffage qui se base sur une température plus valide.
+
+Prochainement, je vous indiquerai comment, via un blueprint, automatiser une alerte qui se déclenchera quand un de vos périphériques n'est plus disponible.
