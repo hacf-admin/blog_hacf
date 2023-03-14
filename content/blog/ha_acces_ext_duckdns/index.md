@@ -46,7 +46,7 @@ Avant de configurer Home Assistant, vous devez :
 
 ![ha_acces_ext_duckdns_account](img/ha_acces_ext_duckdns_account.png "Compte DuchDNS et Création NDD")
 
-## L'add-on DuckDNS.
+## L'add-on DuckDNS
 
 Maintenant que vous avez les prérequis :
 
