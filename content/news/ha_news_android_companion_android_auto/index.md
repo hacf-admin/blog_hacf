@@ -18,6 +18,8 @@ tags:
 author: default
 url_hacf: https://forum.hacf.fr/t/home-assistant-sur-android-auto/20051
 ---
+> **Cet article est une traduction de [Home Assistant coming for your car!](https://www.home-assistant.io/blog/2023/01/20/android-auto/) publié sur le site de Home Assistant.**
+
 Aujourd'hui, nous vous annonçons que le développement d'[Android Auto](https://www.android.com/auto) a commencé. En décembre, Google a publié une [mise à jour](https://developer.android.com/docs/quality-guidelines/car-app-quality?category=iot#dec-22) d'Android Auto et accepte enfin les applications IoT dans le Play Store. Comme vous l'avez deviné, l'équipe a voulu ajouter des fonctionnalités immédiatement. Découvrez les nouvelles fonctionnalités que l'équipe a déjà commencé à ajouter !\
 \
 Ces fonctionnalités sont actuellement disponibles dans notre [canal bêta](https://play.google.com/apps/testing/io.homeassistant.companion.android) et seront mises à disposition dans le canal stable dans les deux prochaines semaines.
