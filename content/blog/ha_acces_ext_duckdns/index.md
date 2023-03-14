@@ -28,7 +28,7 @@ Ce n'est pas la méthode le plus sécurisé, car elle nécessite l'ouverture du 
 **prérequis :**
 
 * Avoir un compte [DuckDNS](https://www.duckdns.org/),
-* Avoir créé un domaine (ici hacf-fr.duckdns.org),
+* Avoir créé un domaine sur [hacf-fr.duckdns.org](hacf-fr.duckdns.org),
 * Récupérer son token,
 * Avoir ouvert et redirigé le port 8123 de votre box vers le 8123 de votre Home Assistant.
 
