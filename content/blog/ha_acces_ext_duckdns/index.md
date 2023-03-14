@@ -20,23 +20,33 @@ url_hacf: https://forum.hacf.fr/t/acceder-a-home-assistant-depuis-l-exterieur-av
 ---
 Vous venez d'installer Home Assistant et **vous souhaitez y avoir accès depuis l'extérieur**. Comme expliqué dans [Home Assistant : commencer avec des bases solides](/blog/ha_commencer_base_solide/), il existe plusieurs possibilités, et voici l'une d'entre elles.
 
-Nous allons voir comment accéder à votre système domotique gratuitement depuis l'extérieur avec [DuckDNS ](https://www.duckdns.org/)via la méthode de l'add-on.
-Ce n'est pas la méthode le plus sécurisé, car elle nécessite l'ouverture du port 8123 de votre routeur/box.
+Nous allons voir comment accéder à votre système domotique gratuitement depuis l'extérieur avec [DuckDNS ](https://www.duckdns.org/)via un add-on dédié.
 
 *Article réalisé avec Home Assistant OS 2023.3.3 et add-on DuckDNS 1.15.0*
 
-**prérequis :**
+## Principe de DuckDNS
 
-* Avoir un compte [DuckDNS](https://www.duckdns.org/),
-* Avoir créé un domaine sur [hacf-fr.duckdns.org](hacf-fr.duckdns.org),
+DuckDNS va vous permettre d’obtenir simplement et gratuitement un **domaine** (en fait un sous domaine de DuckDNS, par exemple mamaison.duckdns.org). Un add-on DuckDNS installé sur Home Assistant demandera a DuckDNS d’**associer l’adresse externe de votre box a ce sous domaine**, même si elle n’est pas fixe et peut changer. \
+Enfin, vous devrez **ouvrir un port sur votre box ou routeur**, pour que l’accès de l’extérieur via votre nouveau domaine soit redirigé vers votre serveur Home Assistant, dont l’IP devra être fixe.
+
+> Ce n'est potentiellement pas la méthode le plus sécurisée, car elle nécessite l'ouverture du port 8123 de votre routeur/box, ce qui est une porte d’entrée pour des attaques potentielles. De plus, toute personne ayant votre mot de passe pourrait se connecter sur votre serveur.
+>
+> **Vous devez donc bien comprendre cela et en accepter ces risques.**
+
+## **Configuration prérequise**
+
+Avant de configurer Home Assistant, vous devez :
+
+* Avoir créé un compte [DuckDNS](https://www.duckdns.org/),
+* Avoir créé un sous-domaine : par exemple le sous-domaine ***hacf-fr*** permettra un accès a sa machine via hacf-fr.duckdns.org, 
 * Récupérer son token,
 * Avoir ouvert et redirigé le port 8123 de votre box vers le 8123 de votre Home Assistant.
 
-> Il semblerait que seul le 8123 doit être ouvert.
->
-> ![ha_acces_ext_duckdns_account](img/ha_acces_ext_duckdns_account.png "Compte DuchDNS et Création NDD")
+> Normalement seul le 8123 doit être ouvert.
 
-## Via l'add-on DuckDNS.
+![ha_acces_ext_duckdns_account](img/ha_acces_ext_duckdns_account.png "Compte DuchDNS et Création NDD")
+
+## L'add-on DuckDNS.
 
 Maintenant que vous avez les prérequis :
 
@@ -119,8 +129,8 @@ Une dernière étape consiste à ajouter votre nouvelle URL dans la configuratio
 ### Conclusion.
 
 Vous avez désormais accès à votre système domotique depuis l'extérieur.
-Comme dit plus haut ce n'est pas la méthode le plus sécurisé, car elle nécessite l'ouverture du port 8123 de votre routeur.
+Comme dit plus haut ce n'est pas la méthode le plus sécurisé, car elle nécessite entre autre l'ouverture du port 8123 de votre routeur.
 
-Il faut aussi signaler, qu'actuellement, il y a quelque petit problème de connexion des serveurs de DuckDNS, il faut donc prendre tout cela en considération.
+Il faut aussi signaler, qu'actuellement, il y a quelques petits problèmes de connexion des serveurs de DuckDNS, il faut donc prendre tout cela en considération.
 
 C'est une bonne méthode pour essayer ou donner l'accès à une machine test, mais peut-être pas pour une utilisation orientée sécurité de votre système domotique.
