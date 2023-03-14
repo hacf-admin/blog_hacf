@@ -1,17 +1,17 @@
 ---
-visibleInCMS: true
-draft: false
-date: 22-12-14
-lastmod: 2022-09-28 23:36
-liens_utiles: []
-socialshare: true
 title: Awesome Francophone Home Assistant
 type: awesome
-tags:
-  - awesome
-image: img/awesome-ha.png
+visibleInCMS: true
+draft: false
 aliases:
   - /awesome
+date: 22-12-14
+lastmod: 2022-09-28 23:36
+tags:
+  - awesome
+liens_utiles: []
+socialshare: true
+image: img/awesome-ha.png
 description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
   sujets autour de Home Assistant et de la domotique.
 ---
@@ -33,6 +33,14 @@ Blogs traitant de domotique et proposant des implémentations Home Assistant.
 * [Canaletto & friends](https://ghost.canaletto.fr/) - Blog domotique, Home-Assistant, Home Lab et DIY.
 * [Domo-blog](https://www.domo-blog.fr/) - Blog généraliste, mais proposant souvent des intégrations Home Assistant.
 * [Zeguigui](https://www.zeguigui.com/) - Blog généraliste, mais proposant fréquemment des intégrations Home Assistant.
+
+## Discord
+
+* **[H﻿ACF](https://discord.hacf.fr)** -  Discord de communauté francophone.
+
+<!---->
+
+* D﻿omotique & DIY - Discord autour de la domotique en général sans affiliation de box ou autre.
 
 ## Chaines vidéos
 
