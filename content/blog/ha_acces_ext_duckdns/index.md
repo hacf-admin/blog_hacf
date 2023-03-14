@@ -18,9 +18,9 @@ tags:
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/acceder-a-home-assistant-depuis-l-exterieur-avec-lextension-duckdns/378
 ---
-Vous venez d'installer Home Assistant et vous souhaitez y avoir accès depuis l'extérieur. Comme expliqué dans Home Assistant : commencer avec des bases solides, il existe plusieurs possibilités, et voici l'une d'entre elles.
+Vous venez d'installer Home Assistant et **vous souhaitez y avoir accès depuis l'extérieur**. Comme expliqué dans [Home Assistant : commencer avec des bases solides](/blog/ha_commencer_base_solide/), il existe plusieurs possibilités, et voici l'une d'entre elles.
 
-Nous allons voir comment accéder à votre système domotique gratuitement depuis l'extérieur avec DuckDNS via la méthode de l'add-on.
+Nous allons voir comment accéder à votre système domotique gratuitement depuis l'extérieur avec [DuckDNS ](https://www.duckdns.org/)via la méthode de l'add-on.
 Ce n'est pas la méthode le plus sécurisé, car elle nécessite l'ouverture du port 8123 de votre routeur/box.
 
 *Article réalisé avec Home Assistant OS 2023.3.3 et add-on DuckDNS 1.15.0*
@@ -40,7 +40,7 @@ Ce n'est pas la méthode le plus sécurisé, car elle nécessite l'ouverture du 
 
 Maintenant que vous avez les prérequis :
 
-* Installer l'add-on DuckDNS (je passe sur cette étape [disponible ici](/ha_addon)),
+* Installer l'add-on DuckDNS (je passe sur l'étape d'installation d'un add-on disponible [ici](/blog/ha_addon_installation/)),
 * Une fois installé un petit tour par la documentation,
 * Rendez-vous ensuite dans l'onglet `Configuration`,
 * * Ajouter votre domaine,
