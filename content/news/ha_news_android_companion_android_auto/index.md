@@ -7,7 +7,11 @@ draft: true
 date: 2023-03-14
 lastmod: 2023-03-14
 images: img/ha_android_companion_android_auto.png
-description: blablabla
+description: >-
+  Home Assistant a annoncé sa nouvelle application sur Android Auto.
+
+
+  Ceci est la traduction de la communauté Francophone autour de Home Assistant (HACF) de cette annonce.
 tags:
   - ha-news
   - android-auto
