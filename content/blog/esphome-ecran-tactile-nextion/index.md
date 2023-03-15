@@ -20,10 +20,10 @@ tags:
   - nextion
   - esphome
   - diy
+author: argonaute
 url_hacf: https://forum.hacf.fr/t/ecran-tactile-nextion-avec-esphome-deporter-vos-commandes/10622
 url_haoff: ""
 authors: argonaute
-author: argonaute
 ---
 Il peut être très pratique d'installer un petit **afficheur tactile** la ou c'est utile (thermostat, pilotage d'une chaudière, météo, etc). C'est ce que j'ai fait en mettant un afficheur vers la porte d'accès ou jardin pour gérer la piscine et les éclairages extérieurs :
 
@@ -32,7 +32,7 @@ Il peut être très pratique d'installer un petit **afficheur tactile** la ou c'
 * Gestion de l'ouverture et fermeture du **volet de la piscine**, allumage des **spots,**
 * Gestion des différentes **lumières extérieures,**
 
-![Rendu final du boitier installé](img/boitier.jpeg)
+![Rendu final du boitier installé](img/boitier.jpeg "Rendu final du boitier installé")
 
 Cet article décrit la réalisation d'un afficheur à base d'un **Nextion 2.8 pouces**, pour un coût de l'ordre de 30€. L'implémentation est faite grâce à ESPHome, qui assure la communication avec Home Assistant et permet des mises à jour en ligne. Cela évite des flux complexes type nodered, comme le proposent certains tutos.
 
@@ -51,7 +51,7 @@ Nous utiliserons un **ESP8266 Wemos D1**.
 
 Seules les connecteurs de la liaison série (TX et RX) ainsi que le 5v et la terre sont soudés, puis retournés pour ne pas prendre de place. 
 
-![ESP8266](img/esp8266.jpeg)
+![ESP8266](img/esp8266.jpeg "ESP8266")
 
 La connexion de l'afficheur est simple :
 
@@ -61,14 +61,14 @@ La connexion de l'afficheur est simple :
 
 Un boitier a été conçu et imprimé avec une imprimante 3d :
 
-![Boitier ouvert](img/boitierouvert.jpeg)
+![Boitier ouvert](img/boitierouvert.jpeg "Boitier ouvert")
 
 Les fichiers d'impression sont partagés sur cult3d
 [Cult3d - boitier pour Nextion 2.8](https://cults3d.com/fr/mod%C3%A8le-3d/divers/case-for-nextion-2-8-inches)
 
 Enfin, pour avoir le rendu d'un produit du commerce, une **résine UV de lissage** **PolyPrint** est utilisée. Elle est sans odeur et qui donne de fabuleux résultats.
 
-![Le pot de résine](img/resine.jpeg)
+![Le pot de résine](img/resine.jpeg "Le pot de résine")
 
 **La résine peut être appliquée au pinceau**. Puis éclairer 10s chaque surface avec une torche UV et la résine est immédiatement dure. Juste faire un petit ponçage avant et après l'application de la résine. 
 
@@ -82,7 +82,7 @@ Enfin **le boitier a été peint avec une bombe de peinture acrylique blanche** 
 Le design est assez facile : Nextion fournit un éditeur téléchargeable [ici](https://nextion.tech/nextion-editor/).
 [Nextion editor](https://nextion.tech/nextion-editor/)
 
-![L'éditeur d'interface Nextion](img/editeur.png)
+![L'éditeur d'interface Nextion](img/editeur.png "L'éditeur d'interface Nextion")
 
 Tous les éléments graphiques (fond, icônes) doivent être téléchargés dans le carré en bas à gauche, rubrique `picture`.
 Un fond de **240 x 320 pixels** doit en particulier être chargé au préalable. Vous pouvez réutiliser le fond noir de [GitHub](https://github.com/argonaute199/Nextion28-home-assistant).
