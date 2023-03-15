@@ -1,11 +1,9 @@
 ---
 folder: esphome-cartes-energy-teleinformation
+title: Cartes "Energy" et teleinformation (TIC) avec ESPHome
 type: post
 visibleInCMS: true
 draft: false
-level: Avancé
-authors: argonaute
-title: Cartes "Energy" et teleinformation (TIC) avec ESPHome
 date: 2023-02-09
 lastmod: 2023-02-10
 images: img/accueil.png
@@ -14,6 +12,8 @@ description: "Les compteurs Linky disposent d'une prise de téléinformation
   électrique dans Home Assistant. Cet article décrit comment construire pour une
   somme modique un module permettant de récupérer les informations du Linky,
   basé sur ESPHome et un ESP32. "
+level: Avancé
+authors: argonaute
 categories:
   - Energie
   - ESPHome/DIY
@@ -58,11 +58,9 @@ Les quelques composants sont soudés sur une **plaque de prototypage de 5cm x 6c
 
 > Certes, on peut trouver des montages tout faits, mais souder ces quelques composants n'est pas très compliqué, et le DIY est toujours tellement plus satisfaisant :smirk:.
 
+![Boitier du module TIC ouvert](img/boitier.jpeg "Boitier du module TIC ouvert")
 
-
-![Boitier du module TIC ouvert](img/boitier.jpeg)
-
-![Compteur et branchement du module TIC](img/compteur2.jpeg)
+![Compteur et branchement du module TIC](img/compteur2.jpeg "Compteur et branchement du module TIC")
 
 Un boitier a été conçu sous fusion360 et mis en ligne : [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266)
 
@@ -208,7 +206,7 @@ Les `sensors` index ont des attributs compatibles avec le module Energy : `state
 
 Ensuite, il est nécessaire de configurer le module **Energy** : il est depuis les dernières versions dans `configuration`- `tableau de bord`puis cliquer sur `Energies`. Il est conseillé de mettre les coûts en EUR/kWh.
 
-![Configuration dashboard Energy](img/interfaceenergy.png)
+![Configuration dashboard Energy](img/interfaceenergy.png "Configuration dashboard Energy")
 
 > La section **CO2** a également été configurée : cela donne le % d'énergie carbonée utilisée par EDF. Il faut aller sur le site https://co2signal.com/, créer une clé d'API et la rentrée dans la configuration du module Energy. Cela crée une entité CO2 avec en temps réel le % d'énergie carbonée utilisée par EDF.
 > La doc est ici si jamais : [CO2 Signal - Home Assistant (home-assistant.io)](https://www.home-assistant.io/integrations/co2signal).
