@@ -3,9 +3,10 @@ folder: ha_acces_ext_duckdns
 title: "DuckDNS : accéder à Home Assistant depuis l'extérieur"
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-03-13
 lastmod: 2023-03-13
+images: img/ha_acces_ext_duchdns.png
 description: Comment accéder à Home Assistant depuis l'extérieur avec l'add-on
   DuckDNS de manière assez simple.
 level: Débutant
