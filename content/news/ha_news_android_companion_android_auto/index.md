@@ -17,6 +17,7 @@ tags:
   - android-auto
 author: default
 url_hacf: https://forum.hacf.fr/t/home-assistant-sur-android-auto/20051
+url_haoff: https://www.home-assistant.io/blog/2023/01/20/android-auto/
 ---
 > **Cet article est une traduction de [Home Assistant coming for your car!](https://www.home-assistant.io/blog/2023/01/20/android-auto/) publié sur le site de Home Assistant.**
 
@@ -25,8 +26,6 @@ Aujourd'hui, nous vous annonçons que le développement d'[Android Auto](https:/
 Ces fonctionnalités sont actuellement disponibles dans notre [canal bêta](https://play.google.com/apps/testing/io.homeassistant.companion.android) et seront mises à disposition dans le canal stable dans les deux prochaines semaines.
 
 {{< youtube id="Ngnd6vHb2VU" autoplay="false" >}}
-
-
 
 ![android_auto_garage](img/android_auto_garage.jpg "Etat de la porte de garage")
 
@@ -47,3 +46,9 @@ Nous avons également ajouté un nouveau capteur binaire qui vous permet d'autom
 ![android_auto_sensor](img/android_auto_sensor.png "Les sensors disponnible sur Android Auto")
 
 Un grand merci à [Jbassett](https://github.com/JBassett) et [jpelgrom](https://github.com/jpelgrom) pour leurs contributions à la nouvelle application Android Auto. Nous attendons avec impatience les améliorations continues de cette nouvelle expérience.
+
+
+
+### Sources
+
+* [Annonce Officielle (EN)](https://www.home-assistant.io/blog/2023/01/20/android-auto/)
