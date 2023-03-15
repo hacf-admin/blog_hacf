@@ -19,6 +19,7 @@ tags:
   - zigbee2mqtt
   - zigbee
 author: argonaute
+url_hacf: https://forum.hacf.fr/t/zigbee2mqtt-bien-gerer-les-disponibilites-de-ses-devices/21905
 ---
 Une grande majorité des adeptes de Home Assistant ont actuellement intégré le protocole **Zigbee**. Cela permet d'intégrer des objets connectés à la fois **fiables** et **à bon prix**.
 
