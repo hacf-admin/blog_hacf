@@ -33,7 +33,7 @@ Enfin, vous devrez **ouvrir un port sur votre box ou routeur**, pour que l’acc
 >
 > **Vous devez donc bien comprendre cela et en accepter ces risques.**
 
-## **Configuration prérequise**
+## Configuration prérequise
 
 Avant de configurer Home Assistant, vous devez :
 
