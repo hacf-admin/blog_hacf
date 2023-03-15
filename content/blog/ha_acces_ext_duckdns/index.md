@@ -15,7 +15,6 @@ categories:
 tags:
   - acces-exterieur
   - duckdns
-  - ""
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/acceder-a-home-assistant-depuis-l-exterieur-avec-lextension-duckdns/378
 ---
