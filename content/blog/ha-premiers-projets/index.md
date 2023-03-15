@@ -6,10 +6,14 @@ visibleInCMS: true
 aliases:
   - /ha_premiers_projets
 draft: false
-level: Débutant
-authors: argonaute
 date: 2023-03-05
 lastmod: 2023-02-17
+level: Débutant
+authors: argonaute
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
+series:
+  - Débuter avec Home Assistant
 images: img/accueil2.png
 description: "Voila, vous avez installé Home Assistant et il est temps pour vous
   d'en découvrir ses possibilités. Ce tuto vous propose une série de mini
@@ -22,10 +26,6 @@ tags:
   - monitoring
   - card
   - dashboard
-author: argonaute
-url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
-series:
-  - Débuter avec Home Assistant
 ---
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.
 Cet article vous propose de créer vos premiers projets pour commencer à appréhender les concepts, mais **sans avoir besoin d'objets connectés** à votre nouveau serveur domotique.
@@ -72,7 +72,7 @@ Cliquer sur l'entité. Sous l'onglet `paramètres`, on peut voir différents cha
 
 Sous l'onglet `Information`, sont affichés la valeur de l'entité et l'historique des valeurs.
 
-![IP Locale - création](img/ip-locale-creation.jpg)
+![IP Locale - création](img/ip-locale-creation.jpg "Ajout de lintégration IP locale")
 
 ### Afficher l'IP local dans le dashboard.
 
@@ -91,7 +91,7 @@ Vous voyez ici toutes les cartes graphiques disponibles.
 
 Dans le bandeau, cliquer sur `Terminer` pour sortir du mode d'édition Vous avez alors votre première carte affichant l'adresse IP de votre machine.
 
-![IP locale - dashboard](img/ip-locale-dashboard.jpg)
+![IP locale - dashboard](img/ip-locale-dashboard.jpg "Dashboard - affichage de l’IP locale")
 
 ## 2. Intégration Météo France.
 
@@ -111,13 +111,13 @@ Certaines entités sont désactivées par défaut. Activez celles qui vous inté
 
 Les entités créées sont visibles sous l'onglet `entités`.
 
-![Météo France - création](img/meteo-france-creation.jpg)
+![Météo France - création](img/meteo-france-creation.jpg "Ajout de l’intégration Météo France")
 
 ### Afficher la météo dans le dashboard
 
 Comme tout à l'heure, aller sous `Aperçu`, mettez votre dashboard en `édition` (trois points et `Modifier le dashboard`). Ajouter la carte **prévisions météos**. Vous avez alors les prévisions de votre ville.
 
-![Météo France - dashboard](img/meteo-dashboard.jpg)
+![Météo France - dashboard](img/meteo-dashboard.jpg "Dashboard - carte Météo France")
 
 La carte est aussi modifiable dans le langage de description **YAML**. Pour voir et éditer la description de la carte en YAML, mettre la carte en mode édition, et cliquer sur `Afficher l'éditeur de code`.
 
@@ -143,17 +143,17 @@ Cliquez dans le menu de gauche sur `Paramètres`, puis `Appareils et Services`, 
 
 Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur`. Donner le nom ***Interrupteur*** et l'icône ***mdi:toggle-switch***, puis cliquer sur `Créer`. Recréer une deuxième entrée `interrupteur`, en lui donnant le nom ***lampe*** et l'icône ***mdi:lightbulb***. Deux entités de type `input_boolean` sont créées.
 
-![Inter et lampe - création](img/inter-lampe-creation.jpg)
+![Inter et lampe - création](img/inter-lampe-creation.jpg "Création des entités (pour lampe et interrupteur)")
 
 ### Affichage dans le dashboard
 
 Cliquer dans le menu de gauche sur `Aperçu`, puis mettre le dashboard en édition (3 points en haut à droite). Ajouter une carte de type `entités` (avec un S => affiche une liste d'entités), supprimer dans la liste les entités existantes, et rajouter l'entité ***Interrupteur*** précédemment créé. 
 
-![Inter et lampe - dashboard 1](img/inter-lampe-dashboard-1.jpg)
+![Inter et lampe - dashboard 1](img/inter-lampe-dashboard-1.jpg "Affichage de l’interrupteur")
 
 Ajouter ensuite une carte de type `bouton`. Préciser cette fois l'entité ***lampe***. Si vous n'avez pas encore de switch, l'éditeur visuel ne s'affiche pas et il vous faut saisir l'identifiant de la lampe dans le code YAML qui s'affiche. Cliquer sur `terminer` pour quitter le mode édition.
 
-![Inter et lampe - dashboard 2](img/inter-lampe-dashboard-2.jpg)
+![Inter et lampe - dashboard 2](img/inter-lampe-dashboard-2.jpg "Dashboard - création de la lampe")
 
 Vous pouvez maintenant jouer avec la lampe et l'interrupteur dans votre interface.
 
@@ -173,7 +173,7 @@ Une automatisation est constituée de 3 grands blocs :
 * Cliquer sur `créer une automatisation`, 
 * Puis `commencer par une automatisation vide.`
 
-![Inter et lampe - automatisation 1](img/inter-lampe-automatisation-1.jpg)
+![Inter et lampe - automatisation 1](img/inter-lampe-automatisation-1.jpg "Création de l’automatisation")
 
 On va créer l'automatisation suivante :
 
@@ -183,15 +183,15 @@ On va créer l'automatisation suivante :
 
 (1) Cliquer sur `Ajouter un déclencheur` puis `Etat` et sélectionner l'entité ***Interrupteur***.
 
-![Inter et lampe - automatisation 2](img/inter-lampe-automatisation-2.jpg)
+![Inter et lampe - automatisation 2](img/inter-lampe-automatisation-2.jpg "Création du déclencheur sur l’interrupteur")
 
 (2) Cliquer sur `Ajouter une action` puis `Si-alors`. Cliquer sur `Ajouter une condition` , puis `Etat`, renseigner votre entité ***Interrupteur*** dans le champ `entité` et ***Activé*** dans le champ `Etat`.
 
-![Inter et lampe - automatisation 3](img/inter-lampe-automatisation-3.jpg)
+![Inter et lampe - automatisation 3](img/inter-lampe-automatisation-3.jpg "Test de l’état pour savoir si il faudra allumer ou éteindre")
 
 (3) Sous `Alors`, cliquer sur `Ajouter une action`, `appeler un service` puis `input_boolean.turn_on`, et renseigner l'entité ***Lampe***.
 
-![Inter et lampe - automatisation 4](img/inter-lampe-automatisation-4.jpg)
+![Inter et lampe - automatisation 4](img/inter-lampe-automatisation-4.jpg "Création de l’action SI (éteindre)")
 
 (4) Cliquer sous `Ajouter Sinon`. Cliquer sur `Ajouter une action`, `appeler un service` puis `input_boolean.turn_off`, et renseigner l'entité ***Lampe***.
 
@@ -201,7 +201,7 @@ Retourner sur votre dashboard et tester l'automatisation.
 
 Quand vous actionnez l'interrupteur, la lampe doit s'allumer ou s'éteindre.
 
-![Inter et lampe - automatisation 5](img/inter-lampe-automatisation-5.jpg)
+![Inter et lampe - automatisation 5](img/inter-lampe-automatisation-5.jpg "Création de l’action ALORS (allumer)")
 
 C﻿haque ligne de votre automatisation peut être **renommée** pour mieux documenter votre processus. Pour cela, cliquer sur les 3 points à droite de chaque traitement, puis cliquer sur `renommer`. 
 
@@ -240,7 +240,7 @@ mode: single
 
 Il est également possible d'avoir des **traces** pour vérifier comment une automatisation s'est exécutée. Pour cela, cliquer sur `traces.`
 
-![Automatisations - debugging](img/automatisation-debugging.jpg)
+![Automatisations - debugging](img/automatisation-debugging.jpg "Debuging d’une automatisation")
 
 Vous pouvez aussi voir une **représentation graphique** des dernières exécutions. Le graphique montre quel nœud a été exécuté (quelle a été le résultat d'un test). Si vous cliquez sur un nœud, vous pouvez enfin voir le traitement fait. 
 
@@ -255,7 +255,6 @@ Vous pouvez aussi essayer de rajouter dans votre automatisation une condition (p
 ## 5. Monitoring de sa machine
 
 Ce chapitre est l'occasion d'utiliser du **YAML** dans le **fichier de configuration de Home Assistant**.
-
 
 Home Assistant dispose d'une interface graphique qui permet de faire un maximum de chose. Cette interface s'enrichit un peu plus à chaque mise à jour mensuelle (en général le premier mercredi de chaque mois). Mais un certain nombre d'intégrations doivent être définies dans le fichier de configuration de Home Assistant : **configuration.yaml**.
 
@@ -285,16 +284,16 @@ Vous devez ensuite cliquer sur le bouton `Redémarrer` pour redémarrer votre sy
 
 Toujours dans `outils de développement`, cliquer sur l'onglet `Etats` : c'est l'occasion d'utiliser cet outil pour retrouver les entités créer. Saisir par exemple **Processor** dans le champ de filtre pour retrouver vos entités et voir leurs valeurs.
 
-![Monitoring - états](img/monitoring-etats.jpg)
+![Monitoring - états](img/monitoring-etats.jpg "Outils de développement - états des entités")
 
 Il est maintenant temps d'afficher le monitoring dans votre dashboard.
 Cette fois, on va créer un nouvel onglet dédié appelé ***Système***. Cliquer sur Aperçu puis mettre le dashboard en édition. Cliquer dans la barre du haut sur + renseigner le titre ***Système*** puis enregistrer. Vous avez un nouvel onglet dans votre dashboard.
 
-![Monitoring - nouvel onglet](img/monitoring-nouvel-onglet.jpg)
+![Monitoring - nouvel onglet](img/monitoring-nouvel-onglet.jpg "Nouvel onglet dans le dashboard")
 
 Créer sous la nouvelle vue de cet onglet une carte `Entités` (vous devriez savoir faire maintenant), et rajouter les quatre entités créées. Vous devriez obtenir ce résultat :
 
-![Monitoring - dashboard](img/monitoring-interface.jpg)
+![Monitoring - dashboard](img/monitoring-interface.jpg "Dashboard - affichage des entités de monotoring")
 
 Vous pouvez aussi vous amuser à utiliser une autre carte appelé Coup d'œil, qui présente les résultats en ligne. Il est préférable de personnaliser les noms et mettre des noms courts.
 
