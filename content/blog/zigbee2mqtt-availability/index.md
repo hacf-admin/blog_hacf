@@ -3,7 +3,7 @@ folder: zigbee2mqtt-availability
 title: "Zigbee2MQTT : bien gérer les disponibilités de ses devices"
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-03-14
 lastmod: 2023-03-14
 images: img/accueil.png
@@ -47,13 +47,13 @@ Il est cependant possible de paramétrer Zigbee2MQTT pour y remédier et avoir l
 Une fois paramétré, vous aurez dans l'interface Zigbee2mqtt deux nouvelles colonnes : `Vu pour la dernière fois` et `disponibilité`.
 Et ces **informations** seront **transmises** à **Home Assistant,** ce qui permettra de les exploiter.
 
-![Interface Zigbee2mqtt](img/interface-zigbee2mqtt.jpg)
+![Interface Zigbee2mqtt](img/interface-zigbee2mqtt.jpg "Zigbee2MQTT - liste des devices et leurs disponibilité")
 
 ## "Vu pour la dernière fois" ( last_seen )
 
 Pour rajouter cette colonne, rendez-vous dans l'interface Zigbee2mqtt, puis `paramètres`, `avancés` faire défiler et mettez le paramètre `Last_seen` à `ISO_8601.`
 
-![Activer last_seen](img/activer-last_seen.jpg)
+![Activer last_seen](img/activer-last_seen.jpg "Activer « last_seen »")
 
 Redémarrer l'add-on zigbee2mqtt : aller dans le sous-menu à droite de paramètres dans outils et cliquer sur le bouton rouge `redémarrer Zigbee2MQTT`. 
 
@@ -63,7 +63,7 @@ Dans l'interface Zigbee2MQTT, vous avez maintenant une nouvelle colonne "Vu pour
 
 Redémarrer à présent Home Assistant, puis cliquer sur un appareil Zigbee : vous avez désormais une **nouvelle entité** **`last_seen`** (désactivée par défaut) qui affiche quand le périphérique a été vu pour la dernière fois.
 
-![Entité last_seen](img/entité-last_seen.jpg)
+![Entité last_seen](img/entité-last_seen.jpg "Nouvelle entité last_seen")
 
 ## Affichage "Disponibilité"
 
