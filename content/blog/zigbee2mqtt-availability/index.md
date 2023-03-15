@@ -56,7 +56,8 @@ Pour rajouter cette colonne, rendez-vous dans l'interface Zigbee2mqtt, puis `par
 ![Activer last_seen](img/activer-last_seen.jpg)
 
 Redémarrer l'add-on zigbee2mqtt : aller dans le sous-menu à droite de paramètres dans outils et cliquer sur le bouton rouge `redémarrer Zigbee2MQTT`. 
->Sous Home Assistant OS, vous pouvez aller dans les modules complémentaires pour redémarrer l'add-on.
+
+> Sous Home Assistant OS, vous pouvez aller dans les modules complémentaires pour redémarrer l'add-on.
 
 Dans l'interface Zigbee2MQTT, vous avez maintenant une nouvelle colonne "Vu pour la dernière fois".
 
@@ -92,7 +93,13 @@ devices:
 
 Redémarrez Zigbee2MQTT : vous devriez maintenant avoir une nouvelle colonne "Disponibilité".
 
-**MAIS SURTOUT :** après avoir redémarré Home Assistant, les entités se mettront en indisponibles (état `unavailable`) quand elles ne le seront plus dans Zigbee2MQTT.
+**POINT IMPORTANT**
+
+Sans activer les indisponibilités, un device garde son dernier état initial même quand il est indisponible. Par exemple un capteur de température restera indéfiniment a son ancienne valeur, idem pour un switch.
+
+En activant la gestion des indisponibilités dans Zigbee2MQTT, le capteur indisponible prendra dans Home Assistant l’état `unavailable`. Zigbee2MQTT se comportera alors comme ZHA, ce qui n’est pas le cas par défaut.
+
+L’état `unavailable` permet alors dans Home Assistant un traitement fonctionnel comme l’envoie d’une notification d’alerte ou l’arrêt d’un thermostat dépendant d’un capteur de température.
 
 ## Paramétrage de l'indisponibilité
 
