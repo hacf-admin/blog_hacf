@@ -29,7 +29,7 @@ Nous allons voir comment accéder à votre système domotique gratuitement depui
 DuckDNS va vous permettre d’obtenir simplement et gratuitement un **domaine** (en fait un sous domaine de DuckDNS, par exemple mamaison.duckdns.org). Un add-on DuckDNS installé sur Home Assistant demandera a DuckDNS d’**associer l’adresse externe de votre box a ce sous domaine**, même si elle n’est pas fixe et peut changer. \
 Enfin, vous devrez **ouvrir un port sur votre box ou routeur**, pour que l’accès de l’extérieur via votre nouveau domaine soit redirigé vers votre serveur Home Assistant, dont l’IP devra être fixe.
 
-> Ce n'est potentiellement pas la méthode le plus sécurisée, car elle nécessite l'ouverture du port 8123 de votre routeur/box, ce qui est une porte d’entrée pour des attaques potentielles. De plus, toute personne ayant votre mot de passe pourrait se connecter sur votre serveur.
+> Ce n'est potentiellement pas la méthode le plus sécurisée, car elle nécessite l'ouverture du port 8123 de votre routeur/box, ce qui est une porte d’entrée pour des attaques potentielles.
 >
 > **Vous devez donc bien comprendre cela et en accepter ces risques.**
 
@@ -38,7 +38,7 @@ Enfin, vous devrez **ouvrir un port sur votre box ou routeur**, pour que l’acc
 Avant de configurer Home Assistant, vous devez :
 
 * Avoir créé un compte [DuckDNS](https://www.duckdns.org/),
-* Avoir créé un sous-domaine : par exemple le sous-domaine ***hacf-fr*** permettra un accès a sa machine via hacf-fr.duckdns.org, 
+* Avoir créé un sous-domaine : par exemple le sous-domaine ***hacf-fr*** permettra un accès à sa machine via hacf-fr.duckdns.org, 
 * Récupérer son token,
 * Avoir ouvert et redirigé le port 8123 de votre box vers le 8123 de votre Home Assistant.
 
