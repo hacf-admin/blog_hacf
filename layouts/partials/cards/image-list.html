@@ -29,14 +29,14 @@
 {{/* resize hero image. don't resize if the image is an svg */}}
 
   {{ if hasPrefix $heroImage "http" }}
-  <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
+  <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="" width="400px" height="200"/>
   {{ else }}
     {{ if and $heroImage (ne $heroImage.MediaType.SubType "svg") }}
       {{ $heroImage := $heroImage.Resize "400x200 webp q100" }}
-      <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"/>
+      <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="" width="{{ $heroImage.Width }}" height="{{ $heroImage.Height }}"/>
 
     {{ else }}
-      <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="{{ $heroImage.Permalink }}" width="400px" height="200"/>
+      <img src="{{ $heroImage.Permalink }}" class="card-img-top" alt="" width="400px" height="200"/>
     {{ end }}
   {{ end }}
 {{ end }}
