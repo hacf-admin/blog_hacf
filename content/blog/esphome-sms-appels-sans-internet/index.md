@@ -1,11 +1,9 @@
 ---
 folder: esphome-sms-appels-sans-internet
+title: SMS et appels sans internet
 type: post
 visibleInCMS: true
 draft: false
-level: Avancé
-authors: argonaute
-title: SMS et appels sans internet
 date: 2023-02-08
 lastmod: ""
 images: img/accueil.png
@@ -16,6 +14,8 @@ description: >-
   avertira correctement.
 
   Cet article présente une solution DIY permettant à Home Assistant d'envoyer et de recevoir des SMS, de déclencher des automatisations, mais aussi de faire un appel téléphonique. 
+level: Avancé
+authors: argonaute
 categories:
   - ESPHome/DIY
   - Sécurité
@@ -34,7 +34,7 @@ Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines so
 
 Dans ce post, je vous propose une solution relativement économique, basée sur un module à base d'**ESP32-SIM800L** et **ESPHome**, pour pouvoir **envoyer et recevoir des SMS** avec Home Assistant, déclencher des actions sur réception d'un SMS et même **lancer un appel** sur le téléphone, et ce, **sans connexion internet**.
 
-![Boitier ouvert](img/boitier-ouvert.jpeg)
+![Boitier ouvert](img/boitier-ouvert.jpeg "Boitier ouvert")
 
 Je vous propose de traiter deux cas concrets :
 
@@ -74,7 +74,7 @@ Voici pour rappel les grandes étapes :
 * **Installer ESPHome** si ce n'est pas déjà fait
 * **Créer un nouveau composant** que l'on appellera ici `ESP-SIM800`
 
-  ![ESPHome](img/esphome.png)
+  ![ESPHome](img/esphome.png "Composant (device) dans ESPHome")
 * **Copier le code** qui suit dans le code du composant (bouton `EDIT`) et le valider (bouton `VALIDATE`)
 
 ```yaml
@@ -181,7 +181,7 @@ binary_sensor:
 
 * **Installer le micro-code sur l’ESP**
 
-![Logs](img/log.png)
+![Logs](img/log.png "Les logs")
 
 Le log doit afficher *Registered OK* et le niveau de réception (RSSI) du module téléphone à 15 dans mon log ci-dessus.
 Le code proposé est avec le logger en mode debug, mais il pourra être changé en info quand tout fonctionnera.
