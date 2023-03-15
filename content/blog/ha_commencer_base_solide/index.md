@@ -1,28 +1,28 @@
 ---
 folder: ha_commencer_base_solide
-title: "Home Assistant : Commencer avec une base solide."
 type: post
 visibleInCMS: true
 aliases:
   - /ha_debuter
 draft: false
-level: Débutant
-authors: mcfly
 date: 2023-03-09
 lastmod: null
-images: img/ha_bases_solides_cover.png
 description: Cet article vous apporte des explications claires sur les méthodes
   d'installation de Home Assistant, mais aussi sur les add-ons indispensables et
   comment accéder depuis l'extérieur à votre solution domotique.
+level: Débutant
+authors: mcfly
+author: mcfly
+url_hacf: https://forum.hacf.fr/t/home-assistant-commencer-avec-une-base-solide/21742
+socialshare: true
+series: null
+title: "Home Assistant : Commencer avec une base solide."
+images: img/ha_bases_solides_cover.png
 categories:
   - Installation
   - Concepts
   - Add-on/Intégration
 tags: []
-author: mcfly
-url_hacf: https://forum.hacf.fr/t/home-assistant-commencer-avec-une-base-solide/21742
-socialshare: true
-series: null
 ---
 Dans cet article, nous allons essayer d'aborder tous les **points important** vous permettant de vous lancer avec une base solide dans Home Assistant.
 
@@ -33,7 +33,7 @@ Vous trouverez des points de réflexions vous permettant de choisir les solution
 * Accès depuis l'extérieur,
 * Les sauvegardes.
 
-> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/ha_concepts).
+> Un article sur les concepts, plus théorique mais trés interessant, de Home Assistant est disponible [ici](/blog/ha-concepts-architecture/).
 
 ## L’installation de Home Assistant
 
