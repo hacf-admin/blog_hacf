@@ -27,8 +27,6 @@ Ces fonctionnalités sont actuellement disponibles dans notre [canal bêta](http
 
 {{< youtube id="Ngnd6vHb2VU" autoplay="false" >}}
 
-
-
 ![android_auto_garage](img/android_auto_garage.jpg "Etat de la porte de garage")
 
 Une fois que vous aurez lancé l'application, vous aurez un accès facile à des dispositifs tels que votre porte de garage, vos lumières, vos serrures et même vos scènes.
@@ -48,3 +46,9 @@ Nous avons également ajouté un nouveau capteur binaire qui vous permet d'autom
 ![android_auto_sensor](img/android_auto_sensor.png "Les sensors disponnible sur Android Auto")
 
 Un grand merci à [Jbassett](https://github.com/JBassett) et [jpelgrom](https://github.com/jpelgrom) pour leurs contributions à la nouvelle application Android Auto. Nous attendons avec impatience les améliorations continues de cette nouvelle expérience.
+
+
+
+### Sources
+
+* [Annonce Officielle (EN)](https://www.home-assistant.io/blog/2023/01/20/android-auto/)
