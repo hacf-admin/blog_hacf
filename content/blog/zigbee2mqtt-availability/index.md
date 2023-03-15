@@ -48,7 +48,7 @@ Il est cependant possible de paramétrer Zigbee2MQTT pour y remédier et avoir l
 Une fois paramétré, vous aurez dans l'interface Zigbee2mqtt deux nouvelles colonnes : `Vu pour la dernière fois` et `disponibilité`.
 Et ces **informations** seront **transmises** à **Home Assistant,** ce qui permettra de les exploiter.
 
-![Interface Zigbee2mqtt](img/interface-zigbee2mqtt.jpg "Zigbee2MQTT - liste des devices et leurs disponibilité")
+![Interface Zigbee2mqtt](img/interface-zigbee2mqtt.jpg "Zigbee2MQTT - liste des devices et leurs disponibilités")
 
 ## "Vu pour la dernière fois" ( last_seen )
 
