@@ -3,7 +3,7 @@ folder: ha_news_android_companion_android_auto
 title: Home Assistant sur Android Auto
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-03-14
 lastmod: 2023-03-14
 images: img/ha_android_companion_android_auto.png
