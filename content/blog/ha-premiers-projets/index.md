@@ -6,14 +6,10 @@ visibleInCMS: true
 aliases:
   - /ha_premiers_projets
 draft: false
-date: 2023-03-05
-lastmod: 2023-02-17
 level: Débutant
 authors: argonaute
-author: argonaute
-url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
-series:
-  - Débuter avec Home Assistant
+date: 2023-03-05
+lastmod: 2023-02-17
 images: img/accueil2.png
 description: "Voila, vous avez installé Home Assistant et il est temps pour vous
   d'en découvrir ses possibilités. Ce tuto vous propose une série de mini
@@ -26,6 +22,10 @@ tags:
   - monitoring
   - card
   - dashboard
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
+series:
+  - Débuter avec Home Assistant
 ---
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.
 Cet article vous propose de créer vos premiers projets pour commencer à appréhender les concepts, mais **sans avoir besoin d'objets connectés** à votre nouveau serveur domotique.
@@ -147,13 +147,13 @@ Cliquer sur le bouton en bas à droite `+ créer une entrée` puis `interrupteur
 
 ### Affichage dans le dashboard
 
-Cliquer dans le menu de gauche sur `Aperçu`, puis mettre le dashboard en édition (3 points en haut à droite). Ajouter une carte de type `entités` (avec un S => affiche une liste d'entités), supprimer dans la liste les entités existantes, et rajouter l'entité ***Interrupteur*** précédemment créé. 
+N﻿ous allons tout d'abord afficher la lampe. Ajouter une carte de type  `bouton`. Préciser cette fois l'entité ***lampe***. Si vous n'avez pas encore de switch, l'éditeur visuel ne s'affiche pas et il vous faut saisir l'identifiant de la lampe dans le code YAML qui s'affiche. Cliquer sur `terminer` pour quitter le mode édition.
 
-![Inter et lampe - dashboard 1](img/inter-lampe-dashboard-1.jpg "Affichage de l’interrupteur")
+![Inter et lampe - dashboard 1](img/inter-lampe-dashboard-1.jpg "Dashboard - affichage de la lampe")
 
-Ajouter ensuite une carte de type `bouton`. Préciser cette fois l'entité ***lampe***. Si vous n'avez pas encore de switch, l'éditeur visuel ne s'affiche pas et il vous faut saisir l'identifiant de la lampe dans le code YAML qui s'affiche. Cliquer sur `terminer` pour quitter le mode édition.
+Reste ensuite à afficher l'interrupteur. Cliquer dans le menu de gauche sur `Aperçu`, puis mettre le dashboard en édition (3 points en haut à droite). Ajouter une carte de type `entités` (avec un S => affiche une liste d'entités), supprimer dans la liste les entités existantes, et rajouter l'entité ***Interrupteur*** précédemment créé. 
 
-![Inter et lampe - dashboard 2](img/inter-lampe-dashboard-2.jpg "Dashboard - création de la lampe")
+![Inter et lampe - dashboard 2](img/inter-lampe-dashboard-2.jpg "Dashboard - affichage de l'interrupteur")
 
 Vous pouvez maintenant jouer avec la lampe et l'interrupteur dans votre interface.
 
