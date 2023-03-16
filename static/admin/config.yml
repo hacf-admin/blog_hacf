@@ -162,15 +162,21 @@ collections:
         - Avancé
         requiered: false
         
-#      - label: "Type d'installation"
-#        name: 'type_install'
-#        widget: 'select'
-#        multiple: true
-#        hint: "HA OS, HA Container, HA Core"
-#        options: 
-#        - ha-os
-#        - ha-container
-#        - ha-core
+      - label: "Type d'installation"
+        name: 'type_install'
+        widget: 'select'
+        multiple: true
+        hint: "HA OS, HA Container, HA Core"
+        required: false
+        options: 
+        - ha-os
+        - ha-container
+        - ha-core
+
+      - label: "Version Home Assistant" 
+        name: "version_ha"
+        widget: "string" 
+        required: true
 
       - label: 'Categorie(s)'
         name: 'categories'
