@@ -4,7 +4,8 @@ type: post
 visibleInCMS: true
 draft: false
 level: Intermédiaire
-authors: argonaute
+authors:
+  - mcfly
 title: Dialogue avec Telegram
 date: 2023-03-02
 lastmod: ""
@@ -20,7 +21,7 @@ tags:
   - telegram
   - notification
   - bot
-author: default
+author: argonaute
 url_hacf: https://forum.hacf.fr/t/dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
