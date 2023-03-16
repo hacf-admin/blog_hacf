@@ -5,7 +5,7 @@ type: post
 visibleInCMS: true
 draft: false
 level: Avancé
-authors: argonaute
+author: argonaute
 date: 2022-09-30
 lastmod: null
 images: img/chauffage-chat2.jpg
@@ -22,7 +22,6 @@ tags:
   - blueprint
   - chauffage
   - energie
-author: argonaute
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 socialshare: true
 series: null

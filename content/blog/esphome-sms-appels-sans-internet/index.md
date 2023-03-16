@@ -15,7 +15,7 @@ description: >-
 
   Cet article présente une solution DIY permettant à Home Assistant d'envoyer et de recevoir des SMS, de déclencher des automatisations, mais aussi de faire un appel téléphonique. 
 level: Avancé
-authors: argonaute
+author: argonaute
 categories:
   - ESPHome/DIY
   - Sécurité
@@ -25,7 +25,6 @@ tags:
   - esphome
   - sms
   - appels
-author: argonaute
 url_hacf: https://forum.hacf.fr/t/sms-et-appels-avec-ha-sans-internet/6314
 ---
 Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines sont vite **essentielles**. Il est rassurant de savoir que notre système veille sur la **sécurité** de la maison. 

@@ -7,7 +7,7 @@ aliases:
   - /ha_premiers_projets
 draft: false
 level: Débutant
-authors: argonaute
+author: argonaute
 date: 2023-03-05
 lastmod: 2023-02-17
 images: img/accueil2.png
@@ -22,7 +22,6 @@ tags:
   - monitoring
   - card
   - dashboard
-author: argonaute
 url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
 series:
   - Débuter avec Home Assistant

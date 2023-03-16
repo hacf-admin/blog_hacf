@@ -11,7 +11,6 @@ description: Cet article vous apporte des explications claires sur les méthodes
   d'installation de Home Assistant, mais aussi sur les add-ons indispensables et
   comment accéder depuis l'extérieur à votre solution domotique.
 level: Débutant
-authors: mcfly
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/home-assistant-commencer-avec-une-base-solide/21742
 socialshare: true

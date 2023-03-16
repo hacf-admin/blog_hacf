@@ -6,7 +6,7 @@ aliases:
   - /esphome_installation
 draft: false
 level: Intermédiaire
-authors: argonaute
+author: argonaute
 title: Vos premiers pas avec ESPHome
 date: 2023-02-24
 lastmod: 2023-02-24
@@ -23,7 +23,8 @@ tags:
   - esp8266
   - esphome
   - DIY
-author: argonaute
+authors: 
+  - mcfly
 url_hacf: https://forum.hacf.fr/t/installation-et-premiers-pas-avec-esphome/223
 ---
 ![ESPHome - Nabu Casa](img/esphome-nabu-casa.png)

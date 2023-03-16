@@ -1,7 +1,7 @@
 ---
 draft: false
 level: Débutant
-authors: mcfly
+author: mcfly
 folder: ha_addon_installation
 title: Installer un Add-on officiel ou non officiel sur Home Assistant
 type: post

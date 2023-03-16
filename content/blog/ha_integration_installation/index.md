@@ -7,7 +7,7 @@ aliases:
   - /ha_integrations
 draft: false
 level: Débutant
-authors: mcfly
+author: mcfly
 date: 2022-10-07
 lastmod: null
 images: img/ha_integration_installation.png
@@ -22,7 +22,6 @@ tags:
   - ha-supervised
   - ha-docker
   - hacs
-author: mcfly
 url_hacf: https://forum.hacf.fr/t/ajouter-une-integration-dans-home-assistant/2072
 socialshare: true
 series: null
