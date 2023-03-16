@@ -7,7 +7,6 @@ aliases:
   - /installation_haos
 draft: false
 level: Débutant
-authors: mcfly
 date: 2023-02-22
 lastmod: null
 images: img/ha_installation_haos.png
