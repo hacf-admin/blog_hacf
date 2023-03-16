@@ -12,6 +12,8 @@ description: Après plus d'un an d'absence, l'équipe HACF est heureuse de vous
 tags:
   - hacf
 author: default
+authors:
+  - mcfly
 url_hacf: https://forum.hacf.fr/t/retour-du-portail-communautaire-hacf/21740
 ---
 Après plus d'un an d'absence, l'équipe HACF est heureuse de vous annoncer le retour du portail de la communauté.
