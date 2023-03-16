@@ -72,7 +72,7 @@ Cliquer sur l'entité. Sous l'onglet `paramètres`, on peut voir différents cha
 
 Sous l'onglet `Information`, sont affichés la valeur de l'entité et l'historique des valeurs.
 
-![IP Locale - création](img/ip-locale-creation.jpg "Ajout de lintégration IP locale")
+![IP Locale - création](img/ip-locale-creation.jpg "Ajout de l'intégration IP locale")
 
 ### Afficher l'IP local dans le dashboard.
 
@@ -240,7 +240,7 @@ mode: single
 
 Il est également possible d'avoir des **traces** pour vérifier comment une automatisation s'est exécutée. Pour cela, cliquer sur `traces.`
 
-![Automatisations - debugging](img/automatisation-debugging.jpg "Debuging d’une automatisation")
+![Automatisations - debugging](img/automatisation-debugging.jpg "Debugage d’une automatisation")
 
 Vous pouvez aussi voir une **représentation graphique** des dernières exécutions. Le graphique montre quel nœud a été exécuté (quelle a été le résultat d'un test). Si vous cliquez sur un nœud, vous pouvez enfin voir le traitement fait. 
 
