@@ -7,7 +7,7 @@ aliases:
   - /hacs_installation
 draft: false
 level: Débutant
-authors: mcfly
+author: mcfly
 date: 2023-03-08
 lastmod: 2023-03-09
 images: img/hacs_cover.png
@@ -27,7 +27,6 @@ tags:
   - lovelace
   - net-deamon
   - theme
-author: mcfly
 url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personnalisees/359
 socialshare: true
 series:
