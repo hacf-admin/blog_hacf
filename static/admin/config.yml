@@ -212,15 +212,25 @@ collections:
         allow_add: true
         hint: "Séparer vos tags par une virgule"   
         
-      - label: "Auteur(s)"
+      - label: "Auteur Principal"
         name: "author"
         widget: "relation"
         collection: "authors"
         searchFields: ["title"]
         valueField: "title"
-        required: false
+        required: true
         multiple: false
-        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
+        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard, pour les traductions selectionner default"
+
+      - label: "Co-auteur(s)"
+        name: "authors"
+        widget: "relation"
+        collection: "authors"
+        searchFields: ["title"]
+        valueField: "title"
+        required: false
+        multiple: true
+        hint: "Selectionner les auteurs ayants contribués"
 
       - label: "Liens vers sujet du forum HACF (FR)"
         name: "url_hacf"
@@ -335,21 +345,31 @@ collections:
         allow_add: true
         hint: "Séparer vos tags par une virgule"   
         
-      - label: "Auteur(s)"
+      - label: "Auteur Principal"
         name: "author"
         widget: "relation"
         collection: "authors"
         searchFields: ["title"]
         valueField: "title"
-        required: false
+        required: true
         multiple: false
-        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard"
+        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard, pour les traductions selectionner default"
+
+      - label: "Co-auteur(s)"
+        name: "authors"
+        widget: "relation"
+        collection: "authors"
+        searchFields: ["title"]
+        valueField: "title"
+        required: false
+        multiple: true
+        hint: "Selectionner les auteurs ayants contribués"
 
       - label: "Liens vers sujet du forum"
         name: "url_hacf"
         widget: "string"  
         required: false
-      - label: "Liens vers sujet du forum"
+      - label: "Liens vers l'annonce officielle"
         name: "url_haoff"
         widget: "string"
         required: false
