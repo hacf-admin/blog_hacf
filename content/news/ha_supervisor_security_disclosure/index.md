@@ -18,6 +18,8 @@ tags:
   - faille
   - ha-os
 author: default
+authors:
+  - mcfly
 url_hacf: https://forum.hacf.fr/t/alerte-securite-du-superviseursur-haos-et-ha-supervised/21627
 url_haoff: https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/
 ---

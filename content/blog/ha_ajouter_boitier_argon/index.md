@@ -13,7 +13,7 @@ keywords:
 visibleInCMS: true
 date: 20-11-22
 lastmod: 2023-02-10
-author: mcfly
+author: argonaute
 socialshare: true
 title: Installer le boitier Argon One sur Home Assistant et le controler
 type: post

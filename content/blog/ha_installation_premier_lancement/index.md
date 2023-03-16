@@ -7,7 +7,7 @@ aliases:
   - /ha_installation_premier_lancement
 draft: false
 level: Débutant
-authors: mcfly
+author: mcfly
 date: 2023-02-22
 lastmod: null
 images: img/ha_premier_lancement_cover.png
@@ -23,7 +23,7 @@ tags:
   - ha-os
   - ha-core
   - ha-supervised
-author: mcfly
+
 url_hacf: https://forum.hacf.fr/t/premier-lancement-et-configuration-de-home-assistant/679
 socialshare: true
 series:

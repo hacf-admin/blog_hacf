@@ -7,7 +7,6 @@ aliases:
   - /ha-concepts
 draft: false
 level: Débutant
-authors: argonaute
 date: 2023-03-06
 lastmod: 2023-02-10
 images: img/accueil-2.jpg

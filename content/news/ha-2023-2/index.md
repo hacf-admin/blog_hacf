@@ -1,6 +1,5 @@
 ---
 draft: false
-authors: argonaute
 folder: ha_2023_2
 title: "Home Assistant 2023.2 : Comment puis-je aider ?"
 aliases:
@@ -19,6 +18,8 @@ tags:
   - release
   - traduction
 author: default
+authors:
+  - argonaute
 ---
 > ﻿ **Cet article est une traduction de  [2023.2: How can I Assist?](https://www.home-assistant.io/blog/2023/02/01/release-20232/)**  publié sur le site de Home Assistant
 

@@ -13,7 +13,7 @@ description: "Les compteurs Linky disposent d'une prise de téléinformation
   somme modique un module permettant de récupérer les informations du Linky,
   basé sur ESPHome et un ESP32. "
 level: Avancé
-authors: argonaute
+author: argonaute
 categories:
   - Energie
   - ESPHome/DIY
@@ -23,7 +23,6 @@ tags:
   - esp32
   - diy
   - energie
-author: argonaute
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
 ---
 ## 1.Introduction
