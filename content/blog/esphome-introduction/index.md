@@ -295,11 +295,11 @@ Votre ESP est prêt à être utilisé dans Home Assistant et est visible dans la
 
 En cliquant sous `1 Appareil` dans l'appareil créé, vous avez accès aux différentes entités.
 
-![Configuration dans HA](img/configuration-dans-ha.jpg)
+![Configuration dans HA](img/configuration-dans-ha.jpg "Configuration dans HA")
 
 Il ne vous reste plus qu'à les intégrer dans votre dashboard Home Assistant.
 
-![Dashboard](img/dashboard.png)
+![Dashboard](img/dashboard.png "Résultat dans le dashboard")
 
 ## Conclusion
 
