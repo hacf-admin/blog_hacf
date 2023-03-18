@@ -13,6 +13,7 @@ description: Une tablette centralisée dans la maison est bien, mais un petit
   grâce à ESPHome et un petit afficheur de la marque Nextion connecté à un
   ESP8266.
 level: Avancé
+version_ha: "2023.3"
 categories:
   - ESPHome/DIY
   - Confort
@@ -278,7 +279,7 @@ Le code C (lambda) se déclenche sur événement de changement d'état.
                   entity_id: switch.ipx800_lumiere_escalier_plage
 ```
 
-## 9. Mise à jour de l'afficheur quand il est réveillé
+## 8. Mise à jour de l'afficheur quand il est réveillé
 
 Le code précédent permet les mises à jour quand le Nextion est actif, mais l'interface n'est pas mise à jour quand le Nextion est en veille. Il faut donc rajouter du code pour la mise à jour quand le Nextion est réveillé.
 
