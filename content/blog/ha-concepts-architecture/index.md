@@ -6,9 +6,14 @@ visibleInCMS: true
 aliases:
   - /ha-concepts
 draft: false
-level: Débutant
 date: 2023-03-06
 lastmod: 2023-02-10
+level: Débutant
+version_ha: "2023.3"
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/architecture-et-concepts-de-home-assistant/21744/
+series:
+  - Les Bases de Home Assistant
 images: img/accueil-2.jpg
 description: Certes, il est intéressant de commencer à "jouer" avec Home
   Assistant en déroulant quelques tutos. Mais pour aller plus loin, Il est
@@ -18,10 +23,6 @@ categories:
   - Concepts
 tags:
   - Concepts
-author: argonaute
-url_hacf: https://forum.hacf.fr/t/architecture-et-concepts-de-home-assistant/21744/
-series:
-  - Les Bases de Home Assistant
 ---
 Il existe beaucoup de tutoriels sur [Home Assistant](https://www.home-assistant.io/), ce qui est parfait pour débuter. Mais comme toujours, pour pouvoir aller plus loin, créer son propre système, il est indispensable de bien s'approprier les concepts de la plateforme et la terminologie. 
 C'est ce que nous proposons dans cet article.
@@ -142,7 +143,6 @@ Résumons ici les différents modes d'installation :
 * **Home Assistant Supervised** : installation d'un OS spécifique (Debian par exemple) mais du superviseur.
 * **Home Assistant Core** : installation de Home Assistant directement sur la machine, dans un environnement python.
 
-
 Les deux dernières méthodes ne sont pas les plus conseillées.
 
 Pour plus d'informations sur les méthodes d'installation, rendez-vous sur [Home Assistant : commencer avec une base solide](https://dev.hacf.fr/ha_debuter)
@@ -214,7 +214,6 @@ Exemple pour notre prise connectée :
 * sensor.prise_salon_conso
 * sensor.prise_buffer_temperature
 
-
 On peut retrouver les entités créées sous `paramètres` `Appareil et services` onglet  `entités`
 
 ### Les différents types d'entités
@@ -228,7 +227,6 @@ Les plus courantes sont :
 * [**switch** ](https://www.home-assistant.io/integrations/switch/)
 * [camera](https://www.home-assistant.io/integrations/camera)
 * [cover](https://www.home-assistant.io/integrations/cover) (les ouvrants)
-
 
 Mais il y en a bien d'autres.
 
@@ -267,7 +265,7 @@ Il faut savoir que Home Assistant possède pas mal d'intégrations préinstallé
 
 Si c'est toujours le cas pour quelques intégrations, **la tendance est de pouvoir tout faire depuis l'interface graphique**.
 
-### Les entrées ou helpers en anglais
+### Les entrées et les « helpers »
 
 Si vous avez navigué sur `paramètres` `appareils et services`, vous avez surement repéré le menu **entrées** (input) dans le dernier onglet.
 
