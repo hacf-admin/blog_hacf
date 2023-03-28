@@ -42,7 +42,7 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PAGE_TOKEN }}
         publish_branch: netlify # if your main branch is `master` use that here.
         publish_dir: ./public
 
