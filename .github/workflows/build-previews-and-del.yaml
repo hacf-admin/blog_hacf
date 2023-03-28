@@ -4,14 +4,15 @@ name: Deploy Hugo to Github Page or SFTP or rsync SSH serveur
 on:
   push:
     branches:
-    - netlify
+      - netlify  # Set a branch to deploy
+  pull_request:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     # checkout to the commit that has been pushed
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         submodules: false  # Fetch Hugo themes (true OR recursive)
         fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
@@ -22,25 +23,19 @@ jobs:
       with:
         hugo-version: 'latest'
         extended: true
+
     # Add postCSS https://github.com/peaceiris/actions-hugo#%EF%B8%8F-workflow-for-autoprefixer-and-postcss-cli
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
-
-    - name: Cache dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
 
     - run: npm ci
 
-
     # build website
-    - name: Build
+    - name: Build with draft
       run: hugo -D --minify
       
     # Permet le deployement sur la branche main pour GitHub Page (plus utilisé)
