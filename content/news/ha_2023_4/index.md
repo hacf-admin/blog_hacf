@@ -33,7 +33,7 @@ Joyeuses Pâques ! 🐣 et profitez de cette release !
 
 .../Frenck
 
-<!--StartFragment-->
+
 
 ## Nouvelles boîtes de dialogue pour les entités alarme, volets et ventilateur
 
@@ -47,19 +47,25 @@ Tout d'abord, **les volets** ! Pour les volets, il existe de nombreuses variante
 
 Ce n'est pas un problème pour les nouvelles boîtes de dialogue : elles s'adapteront aux capacités votre volet.
 
-![Captures d'écran montrant les nouvelles boîtes de dialogue d'informations sur les entités de couverture.](https://www.home-assistant.io/images/blog/2023-04/entity-dialog-covers.png)Celui de gauche est intéressant, le curseur contrôle à quel niveau les stores sont baissés. Remarquez comment il se glisse depuis le haut ! Le curseur directement à côté contrôle lui l'inclinaison. Sympa !
+![](img/entity-dialog-covers.png)
+
+Celui de gauche est intéressant, le curseur contrôle à quel niveau les stores sont baissés. Remarquez comment il se glisse depuis le haut ! Le curseur directement à côté contrôle lui l'inclinaison. Sympa !
 
 ### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#fans)VENTILATEURS
 
-Ensuite, les **entités ventilateur**. L'interface affiche une boîte de dialogue de contrôle permettant de s'adapter aux possibilits du ventilateur que vous contrôlez, exactement comme pour les volets.
+Ensuite, les **entités ventilateur**. L'interface affiche une boîte de dialogue de contrôle permettant de s'adapter aux possibilités du ventilateur que vous contrôlez, exactement comme pour les volets.
 
-![Captures d'écran montrant les nouvelles boîtes de dialogue d'informations sur les entités de fans.](https://www.home-assistant.io/images/blog/2023-04/entity-dialog-fans.png)En fonction du nombre de pas de vitesse dont dispose votre ventilateur, la boîte de dialogue d'ajuste automatiquement automatiquement sur l'interface utilisateur. S'il a quatre étapes de vitesse ou moins, il affiche les boutons de vitesse comme sur la capture d'écran de gauche. Sinon, il utilisera le curseur affiché sur la capture d'écran la plus à droite.
+![](img/entity-dialog-fans.png)
+
+En fonction du nombre de pas de vitesse dont dispose votre ventilateur, la boîte de dialogue d'ajuste automatiquement automatiquement sur l'interface utilisateur. S'il a quatre étapes de vitesse ou moins, il affiche les boutons de vitesse comme sur la capture d'écran de gauche. Sinon, il utilisera le curseur affiché sur la capture d'écran la plus à droite.
 
 ### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#alarm-control-panels)PANNEAUX DE COMMANDE D'ALARME
 
 Enfin, les **cartes entités du panneau de contrôle d'alarme**. Ils sont un peu différents par rapport pour les autres car, plus souvent, ceux-ci nécessitent que l'on saisisse un code pour armer ou désarmer l'alarme.
 
-![L'enregistrement d'écran montrant les nouvelles boîtes de dialogue d'informations sur l'entité du panneau de commande d'alarme fonctionne avec la broche.](https://www.home-assistant.io/images/blog/2023-04/entity-dialog-alarms.gif)Voilà à quoi ressemble maintenant l'armement et le désarmement d'une alarme.
+![](img/entity-dialog-alarms.gif)
+
+Voilà à quoi ressemble maintenant l'armement et le désarmement d'une alarme.
 
 En cas de besoin, le clavier de code secret apparaîtra ! Une belle touche finale est l'animation très soignée qui est affichée pendant le processus d'armement et de désarmement de l'alarme.
 
@@ -67,11 +73,11 @@ En cas de besoin, le clavier de code secret apparaîtra ! Une belle touche final
 
 Le [Carte Tuile](https://www.home-assistant.io/dashboards/tile/) a deux nouvelles fonctionnalités : la vitesse du ventilateur et le mode d'alarme.
 
-Les deux se ressemblent et sont similaires aux nouvelles boîtes de dialogue d'entité d'en haut, ce qui donne une apparence agréable et cohérente. Regardez : ne sont-ils pas beaux?
+Les deux se ressemblent et sont similaires aux nouvelles boîtes de dialogue d'entité d'en haut, ce qui donne une apparence agréable et cohérente. Regardez : ne sont-ils pas beaux ?
 
-![Captures d'écran la nouvelle fonction de vitesse du ventilateur pour les cartes de carreaux.](https://www.home-assistant.io/images/blog/2023-04/tile-fans.png)
+![](img/tile-fans.png)
 
-Comme la nouvelle boîte de dialogue entité de ventilateur, la fonction de vitesse du ventilateur affichera les boutons s'il y a sont 4 vitesses ou moins, et dans tous les autres cas, il utilisera le curseur. Si le ventilateur ne peut être que allumé / désactivé, comme le ventilateur au milieu dans la capture d'écran ci-dessus, la tuile ordinaire sera utilisée.
+Comme la nouvelle boîte de dialogue entité de ventilateur, la fonction de vitesse du ventilateur affichera les boutons s'il y a sont 4 vitesses ou moins, et dans tous les autres cas, il utilisera le curseur. Si le ventilateur ne peut être que "allumé" / "éteint", comme le ventilateur au milieu dans la capture d'écran ci-dessus, la tuile ordinaire sera utilisée.
 
 La fonction de sélection du mode d'alarme permet de régler rapidement votre alarme dans les différents états. La fonctionnalité offre la possibilité de sélectionner les modes affichés sous forme de ligne de boutons.
 
@@ -118,11 +124,11 @@ Comme si la réutilisation de vos macros n'était pas déjà suffisante, lvoici 
 
 Merci, [@depoll](https://github.com/depoll), [@ehendrix23](https://github.com/ehendrix23), [@petro31](https://github.com/Petro31), et [@rokam](https://github.com/rokam), pour les incroyables ajouts ci-dessous ! ❤️
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#adjusted-behavior-of-relative_time-and-today_at)COMPORTEMENT AJUSTÉ DE RELATIVE_TIME ET D'AUJOURD'HUI_AT
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#adjusted-behavior-of-relative_time-and-today_at)Comportement plus pertinent de "relative time" et "today_at"
 
 [@Petro31](https://github.com/Petro31) a ajusté le comportement des entités modèle à l'aide des fonctions spécifiques `relative_time` et `today_at` pour mettre à jour leur état une fois par minute. Sympa !
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-is_hidden_entity-function)NOUVELLE FONCTION IS_HIDDEN_ENTITY
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-is_hidden_entity-function)Nouvelle fonction "is_hidden_entity"
 
 La toute nouvelle fontion `is_hidden_entity` a été ajoutée par [@depoll](https://github.com/depoll), qui peut indiquer si une entité donnée a été marquée comme “cachée” ou non. Cette fonction marche également comme test. Cool!
 
@@ -132,7 +138,7 @@ Cet exemple renvoie une liste de toutes les entités de la cuisine qui ne sont p
 {{ area_entities('kitchen') | reject('is_hidden_entity') | list }}
 ```
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-areas-function)NOUVELLES FONCTIONS DE ZONES
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-areas-function)Nouvelles fonctions de zone
 
 En parlant de zones, [@rokam](https://github.com/rokam) a ajouté une fonction `areas`, qui renvoie une liste de toutes les zones que vous avez!
 
@@ -142,7 +148,7 @@ Un exemple simpliste:
 {{ area_entities('kitchen') | reject('is_hidden_entity') | list }}
 ```
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#added-break-and-continue-for-use-in-for-loops)Ajout de BREAK ET CONTINUE pour être utilisé dans les boucles
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#added-break-and-continue-for-use-in-for-loops)Ajout de "break" et "continue" pour être utilisé dans les boucles
 
 [@depoll](https://github.com/depoll) a rajouté le support de `break` et `continue` pour les boucles, qui permet de court-circuiter ces boucles, vous permettant de les rendre plus efficaces.
 
@@ -157,9 +163,9 @@ Un exemple simpliste:
 {%- endfor -%}
 ```
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-has_value-function)Nouvelle fonction has_value
+## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-has_value-function)Nouvelle fonction "has_value"
 
-Enfin, [@ehendrix23](https://github.com/ehendrix23) ajouté une fonction de modèle demandée lors du mois de “What the Heck?! ”: `has_value`. La fonction `has_value` peut également être utilisé pour tester et filtrer les entités actuellement dans un état `unavailable` ou `unknown`.
+Enfin, [@ehendrix23](https://github.com/ehendrix23) ajouté une fonction de modèle demandée lors du mois de “What the Heck?! ” : `has_value`. La fonction `has_value` peut également être utilisé pour tester et filtrer les entités actuellement dans un état `unavailable` ou `unknown`.
 
 Vous pouvez utiliser cette condition, comme ceci :
 
@@ -181,12 +187,12 @@ Au fur et à mesure que votre maison intelligente se développe et que vous ajou
 
 Cette version a un nouveau format de base de données qui réduit l'espace nécessaire pour stocker l'historique de vos appareils. Ce changement présente plusieurs avantages :
 
-* Déduplication plus petite ( ), moins d'utilisation du disque
-* IO disque réduit ( Améliorations de la durée de vie de la carte SD )
+* Déduplication plus petite, moins d'utilisation du disque
+* IO disque réduit (Améliorations de la durée de vie de la carte SD)
 * Utilisation réduite du processeur 📉
 * Démarrage plus rapide 🏎️
 * Graphiques et journal de bord d'historique plus rapides
-* Latence réduite dans tout le système, ce qui signifie moins d'attente à partir du moment vous appuyez sur un bouton jusqu'à ce qu'une action termine 🚀
+* Latence réduite dans tout le système, ce qui signifie moins d'attente à partir du moment ou vous appuyez sur un bouton jusqu'à ce qu'une action termine 🚀
 * Home Assistant conserve désormais l'historique lors du changement de nom des entités 🤘
 
 Si vous accédez directement à la base de données, consultez [Data science portal](https://data.home-assistant.io/) et [Integration SQL](https://www.home-assistant.io/integrations/sql/) pour les exemples de requêtes.
@@ -212,7 +218,7 @@ example:
 
 Ce qui se traduit par les éléments suivants :
 
-![Une capture d'écran montrant le nouveau sélecteur constant.](https://www.home-assistant.io/images/blueprints/selector-constant.png)
+![](img/selector-constant.png)
 
 Une fois coché, le sélecteur renvoie la valeur définie.
 
@@ -248,22 +254,21 @@ Les intégrations doivent explicitement ajouter la prise en charge de ces traduc
 
 l y a bien plus de lapins de Pâques dans cette version ; voici quelques-uns des autres changements notables de cette version :
 
-* [@ArturoGuerra](https://github.com/ArturoGuerra) aa ajouté la prise en charge des verrous à [Matter](https://www.home-assistant.io/integrations/matter)! Sympa !
-* La nouvelle boîte de dialogue d'entité lampe ( a introduit la dernière version ) prend désormais mieux en charge mode blanc. Merci, [@piitaya](https://github.com/piitaya)!
+* [@ArturoGuerra](https://github.com/ArturoGuerra) a ajouté la prise en charge des verrous à [Matter](https://www.home-assistant.io/integrations/matter)! Sympa !
+* La nouvelle boîte de dialogue d'entité lampe (a introduit la dernière version) prend désormais mieux en charge mode blanc. Merci, [@piitaya](https://github.com/piitaya) !
 * [@emontnemery](https://github.com/emontnemery) a ajouté des classes de stockage d'énergie et de stockage de volume ; celles-ci permettront de différencier, par exemple, l'énergie consommée de l'énergie stockée dans une batterie.
 * [@starkillerOG](https://github.com/starkillerOG) est très satisfait de l'intégration de Reolink. Il fournit maintenant des entités bouton, interrupteur, sirène, sélection, numéro et lumière pour toutes sortes de choses que les caméras et les sonnettes Reolink peuvent faire. Génial !
-* Le [Lecteur multimédia universel](https://www.home-assistant.io/integrations/universal) prend désormais en charge la navigation dans les médias ! Merci, [@Drafteed](https://github.com/Drafteed)!
-* L'intégration du [Superviseur](https://www.home-assistant.io/integrations/hassio) fournit maintenant des capteurs contenant les statistiques du Home Assistant Core et du superviseur. Merci, [@ludeeus](https://github.com/ludeeus)!
-* L'intégration de  [Spotify](https://www.home-assistant.io/integrations/spotify) prend désormais en charge les podcasts ! Sympa  [@BTMorton](https://github.com/BTMorton)!
-* [](https://www.home-assistant.io/integrations/livisi)xxxx supporte maintenant les appareils climatiques, les interrupteurs (PSSO, ISS, et ISS2), et les capteurs de fenêtre (WDS). Merci @StefanIacobLivisi & @planbnet !
-  ESPHome prend désormais en charge l'appairage des appareils Bluetooth. Beau travail[@StefanIacobLivisi](https://github.com/StefanIacobLivisi) & [@planbnet](https://github.com/planbnet)!
-* [ESPHome](https://www.home-assistant.io/integrations/esphome) prend désormais en charge l'appariement des appareils Bluetooth. Beau travail [@bdraco](https://github.com/bdraco) & [@jagheterfredrik](https://github.com/jagheterfredrik)!
-* [@MarkGodwin](https://github.com/MarkGodwin) étendu le [TP-Link Omada](https://www.home-assistant.io/integrations/tplink_omada) intégration pour prendre en charge la mise à jour entités; génial!
-* Tout `sun.sun` les attributs des entités sont désormais également disponibles sous forme de capteurs, beaucoup plus facile à utiliser, merci [@gjohansson-ST](https://github.com/gjohansson-ST)!
-* Les couvertures avec la classe des dispositifs de porte apparaissent désormais comme des portes réelles [HomeKit](https://www.home-assistant.io/integrations/homekit), bien [@Dexwell](https://github.com/Dexwell)!
-* [@loongyh](https://github.com/loongyh) a fait quelque chose de similaire pour [Assistant Google](https://www.home-assistant.io/integrations/google_assistant). Couvre avec le la classe des appareils de fenêtre apparaît maintenant comme des fenêtres réelles. Merci!
-* Le [SQL](https://www.home-assistant.io/integrations/sql) l'intégration prend désormais en charge les paramètres de l'appareil et les classes d'état, merci [@gjohansson-ST](https://github.com/gjohansson-ST)!
-* [@teharris1](https://github.com/teharris1) soutien supplémentaire pour le nouveau [Insteon](https://www.home-assistant.io/integrations/insteon) appareil i3, cool!
+* Le [Lecteur multimédia universel](https://www.home-assistant.io/integrations/universal) prend désormais en charge la navigation dans les médias ! Merci, [@Drafteed](https://github.com/Drafteed) !
+* L'intégration du [Superviseur](https://www.home-assistant.io/integrations/hassio) fournit maintenant des capteurs contenant les statistiques du Home Assistant Core et du superviseur. Merci, [@ludeeus](https://github.com/ludeeus) !
+* L'intégration de  [Spotify](https://www.home-assistant.io/integrations/spotify) prend désormais en charge les podcasts ! Sympa  [@BTMorton](https://github.com/BTMorton) !
+* [LIVISI Smart Home](https://www.home-assistant.io/integrations/livisi) supporte maintenant les climatiseurs, les interrupteurs (PSSO, ISS, et ISS2), et les capteurs de fenêtre (WDS). Merci @StefanIacobLivisi & @planbnet !
+* [ESPHome](https://www.home-assistant.io/integrations/esphome) prend désormais en charge l'appariement des appareils Bluetooth. Beau travail [@bdraco](https://github.com/bdraco) & [@jagheterfredrik](https://github.com/jagheterfredrik) !
+* [@MarkGodwin](https://github.com/MarkGodwin) a étendu l'intégration [TP-Link Omada](https://www.home-assistant.io/integrations/tplink_omada) pour prendre en charge la mise à jour des entités. Génial !
+* Tousles attributs des entités `sun.sun`  sont désormais également disponibles sous forme de capteurs, beaucoup plus facile à utiliser, merci [@gjohansson-ST](https://github.com/gjohansson-ST) !
+* Les volets avec la classe des dispositifs de porte apparaissent désormais comme des portes réelles [HomeKit](https://www.home-assistant.io/integrations/homekit), bien [@Dexwell](https://github.com/Dexwell) !
+* [@loongyh](https://github.com/loongyh) a fait quelque chose de similaire pour [Assistant Google](https://www.home-assistant.io/integrations/google_assistant). Les volets avec la classe apparaissent maintenant comme des fenêtres réelles. Merci !
+* L'intégration [SQL](https://www.home-assistant.io/integrations/sql) prend désormais en charge les paramètres de l'appareil et les classes d'état, merci [@gjohansson-ST](https://github.com/gjohansson-ST) !
+* [@teharris1](https://github.com/teharris1) a rajouté un support supplémentaire pour le nouvel appareil [Insteon](https://www.home-assistant.io/integrations/insteon) i3, cool !
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-integrations)Nouvelles intégrations
 
@@ -278,7 +283,8 @@ Ces intégrations sont nouvelles :
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#integrations-now-available-to-set-up-from-the-ui)Intégrations désormais disponibles à configurer à partir de l'interface utilisateur
 
-Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant:
+Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
+
 
 * **[EDL21](https://www.home-assistant.io/integrations/edl21)**, fait par [@StephanU](https://github.com/StephanU)
 * **[Frontier Silicon](https://www.home-assistant.io/integrations/frontier_silicon)**, fait par [@wlcrs](https://github.com/wlcrs)
