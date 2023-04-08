@@ -1,6 +1,6 @@
 ---
 folder: tuto-dev-sommaire
-title: Développer pour Home Assistant - les tutos
+title: Développer pour Home Assistant - les tutos...
 type: post
 visibleInCMS: true
 draft: true
