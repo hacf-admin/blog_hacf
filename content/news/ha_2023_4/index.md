@@ -75,196 +75,188 @@ Comme la nouvelle boîte de dialogue entité de ventilateur, la fonction de vite
 
 La fonction de sélection du mode d'alarme permet de régler rapidement votre alarme dans les différents états. La fonctionnalité offre la possibilité de sélectionner les modes affichés sous forme de ligne de boutons.
 
-![Captures d'écran la nouvelle fonction de mode d'alarme pour les cartes de carreaux.](https://www.home-assistant.io/images/blog/2023-04/tile-alarms.png)
+Tout comme avec la nouvelle boîte de dialogue entité, le pavé de de saisie de code apparaîtra quand la saisie de code est nécessaire et la même belle petite animation est présente. 🤩
 
-Tout comme avec la nouvelle boîte de dialogue d'entité, le pavé de broches apparaîtra une fois la saisie de code est nécessaire et même la belle petite animation est là. 🤩
+## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#macros-for-your-templates)Macros pour vos modèles ("templates")
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#macros-for-your-templates)Macros pour vos modèles
+Si vous êtes un utilisateur avancé de Home Assistant, vous serez probablement familié avec le langage de modéle de Home Assistant : **Jinja2**. Cela vous permet de faire des choses très puissantes dans vos modèles. Cependant, si vous en avez beaucoup, vous finissez souvent par répéter une logique similaire partout !
 
-Si vous êtes un utilisateur avancé de Home Assistant, vous serez probablement familier avec le langage de modélisation de Home Assistant: Jinja2. Cela vous permet de faire incroyable des choses puissantes dans vos modèles. Cependant, si vous en avez beaucoup, vous finissent souvent par répéter une logique similaire partout!
+[@depoll](https://github.com/depoll) est venu à la rescousse ! Il a trouvé un moyen d'ajouter la capacité de définir de manière centralisée vos propres macros Jinja2, pour ensuite les importer et utiliser n'importe où dans Home Assistant! 🤯
 
-[@depoll](https://github.com/depoll) à la rescousse! Il a trouvé un moyen d'ajouter la capacité de définir de manière centralisée vos propres macros Jinja2 et importez-les et utilisez-les n'importe où dans Home Assistant! 🤯
+Pour soutenir cela, Home Assistant a maintenant un nouveau dossier `custom_templates`, où vous pouvez stocker vos macros. Par exemple, vous pouvez créer ce fichier `/config/custom_templates/tools.jinja`:
 
-Pour soutenir cela, Home Assistant a maintenant un nouveau `custom_templates` dossier, où vous pouvez stocker vos macros. Par exemple, supposez ce fichier `/config/custom_templates/tools.jinja`:
+```yaml
+{% macro answer_question(entity_id) %}
 
-```jinja
+Is the {{ state_attr(entity_id, 'friendly_name') }} on?
+{{ (states(entity_id) == 'on') | iif('Yes', 'No') }}!
 
+{% endmacro %}
 ```
 
-Jinja
+Cette macro `answer_question` posera et répondra à une question basée sur l'ID d'une entité. Vous pouvez maintenant importer et utiliser cette macro n'importe où dans Home Assistant. Par exemple:
 
-Copier
-
-Cette macro `answer_question` posera et répondra à une question basée sur une donnée ID d'entité. Vous pouvez maintenant importer et utiliser cette macro n'importe où dans Home Assistant. Par exemple:
-
-```jinja
-
+```yaml
+{% from 'tools.jinja' import answer_question %}
+{{ answer_question('light.kitchen') }}
 ```
-
-Jinja
-
-Copier
 
 Qui sortira:
 
 ```text
-
+Is the kitchen light on?
+Yes!
 ```
-
-Texte
-
-Copier
 
 Une contribution fantastique! Merci, [@depoll](https://github.com/depoll)!
 
-[Réutilisation de la documentation des modèles](https://www.home-assistant.io/docs/configuration/templating/#reusing-templates)
+[Lien vers la documentation des modèles](https://www.home-assistant.io/docs/configuration/templating/#reusing-templates)
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#more-new-templating-features)Plus de nouvelles fonctionnalités de modélisation
+## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#more-new-templating-features)De nouvelles fonctionnalités de modéles ("templates")
 
-Comme si la réutilisation de vos macros n'était pas déjà assez bonne, là est beaucoup plus de qualité de modèle dans cette version!
+Comme si la réutilisation de vos macros n'était pas déjà suffisante, lvoici encore plus pour la création de modèle dans cette version !
 
-Merci, [@depoll](https://github.com/depoll), [@ehendrix23](https://github.com/ehendrix23), [@petro31](https://github.com/Petro31), et [@rokam](https://github.com/rokam), pour ces incroyables ajouts ci-dessous! ❤️
+Merci, [@depoll](https://github.com/depoll), [@ehendrix23](https://github.com/ehendrix23), [@petro31](https://github.com/Petro31), et [@rokam](https://github.com/rokam), pour les incroyables ajouts ci-dessous ! ❤️
 
 ### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#adjusted-behavior-of-relative_time-and-today_at)COMPORTEMENT AJUSTÉ DE RELATIVE_TIME ET D'AUJOURD'HUI_AT
 
-[@Petro31](https://github.com/Petro31) ajuster le comportement des entités de modèle à l'aide du `relative_time` et `today_at` fonctions de modèle pour mettre à jour leur état une fois par minute. Agréable!
+[@Petro31](https://github.com/Petro31) a ajusté le comportement des entités modèle à l'aide des fonctions spécifiques `relative_time` et `today_at` pour mettre à jour leur état une fois par minute. Sympa !
 
 ### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-is_hidden_entity-function)NOUVELLE FONCTION IS_HIDDEN_ENTITY
 
-Le tout nouveau `is_hidden_entity` fonction a été ajoutée par [@depoll](https://github.com/depoll), qui peut dire si une entité donnée a été marquée “ cachée ” ou non. Cette fonction fonctionne également comme test. Cool!
+La toute nouvelle fontion `is_hidden_entity` a été ajoutée par [@depoll](https://github.com/depoll), qui peut indiquer si une entité donnée a été marquée comme “cachée” ou non. Cette fonction marche également comme test. Cool!
 
-Cet exemple renvoie une liste de toutes les entités de la cuisine qui ne sont pas caché.
+Cet exemple renvoie une liste de toutes les entités de la cuisine qui ne sont pas cachées.
 
-```jinja
-
+```yaml
+{{ area_entities('kitchen') | reject('is_hidden_entity') | list }}
 ```
 
-Jinja
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-areas-function)NOUVELLES FONCTIONS DE ZONES
 
-Copier
-
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-areas-function)FONCTION DE NOUVELLES ZONES
-
-Parler de domaines, [@rokam](https://github.com/rokam) ajouté un `areas` fonction, qui renvoie une liste de tous les domaines que vous avez!
+En parlant de zones, [@rokam](https://github.com/rokam) a ajouté une fonction `areas`, qui renvoie une liste de toutes les zones que vous avez!
 
 Un exemple simpliste:
 
-```jinja
-
+```yaml
+{{ area_entities('kitchen') | reject('is_hidden_entity') | list }}
 ```
 
-Jinja
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#added-break-and-continue-for-use-in-for-loops)Ajout de BREAK ET CONTINUE pour être utilisé dans les boucles
 
-Copier
+[@depoll](https://github.com/depoll) a rajouté le support de `break` et `continue` pour les boucles, qui permet de court-circuiter ces boucles, vous permettant de les rendre plus efficaces.
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#added-break-and-continue-for-use-in-for-loops)AJOUT DE LA PAUSE ET CONTINUER À ÊTRE UTILISÉ POUR LES BOUCLES
-
-[@depoll](https://github.com/depoll) support supplémentaire pour `break` et `continue` pour les boucles, qui permet court-circuiter ces boucles, vous permettant de les rendre plus efficaces.
-
-```jinja
-
+```yaml
+{%- for value in range(10) %}
+    {%- if value == 1 -%}
+        {%- continue -%}
+    {%- elif value == 3 -%}
+        {%- break -%}
+    {%- endif -%}
+    {{ value }}
+{%- endfor -%}
 ```
-
-Jinja
-
-Copier
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-has_value-function)Nouvelle fonction has_value
 
-Enfin, [@ehendrix23](https://github.com/ehendrix23) ajouté une fonction de modèle demandée du mois de “ Qu'est-ce que le Heck?! ”: `has_value`. Le `has_value` la fonction peut également être utilisée comme tester et filtrer les entités actuellement dans un `unavailable` ou `unknown` état.
+Enfin, [@ehendrix23](https://github.com/ehendrix23) ajouté une fonction de modèle demandée lors du mois de “What the Heck?! ”: `has_value`. La fonction `has_value` peut également être utilisé pour tester et filtrer les entités actuellement dans un état `unavailable` ou `unknown`.
 
-Vous pouvez utiliser cette condition, comme ceci:
+Vous pouvez utiliser cette condition, comme ceci :
 
-```jinja
-
+```yaml
+{% if has_value('sensor.train_departure_time') %}
+  The train leaves at {{ states('sensor.train_departure_time') }}
+{% endif %}
 ```
 
-Jinja
+Ou, peut-être répertorier toutes les entités du salon qui n'ont actuellement aucune valeur :
 
-Copier
-
-Ou, peut-être répertorier toutes les entités du salon qui n'ont actuellement aucun État valeur:
-
-```jinja
-
+```yaml
+{{ area_entities('living_room') | reject('has_value') | list }}
 ```
-
-Jinja
-
-Copier
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#database-scalability)Évolutivité de la base de données
 
-À mesure que votre maison intelligente grandit et que vous ajoutez plus d'appareils, cela signifie plus de données à conserver piste de. Cette version comprend des avancées importantes vers l'enregistreur conception de base de données pour aider l'échelle de l'assistant à domicile.
+Au fur et à mesure que votre maison intelligente se développe et que vous ajoutez des appareils, cela signifie qu'il y a plus de données à garder en mémoire. Cette version inclut des avancées significatives dans la conception de la base de données de l'enregistreur pour aider Home Assistant à évoluer.
 
-Cette version a un nouveau format de base de données qui réduit l'espace nécessaire au stockage historique de vos appareils. Ce changement présente quelques avantages:
+Cette version a un nouveau format de base de données qui réduit l'espace nécessaire pour stocker l'historique de vos appareils. Ce changement présente plusieurs avantages :
 
 * Déduplication plus petite ( ), moins d'utilisation du disque
 * IO disque réduit ( Améliorations de la durée de vie de la carte SD )
 * Utilisation réduite du processeur 📉
-* Démarrage plus rapide ⁇ ️
+* Démarrage plus rapide 🏎️
 * Graphiques et journal de bord d'historique plus rapides
 * Latence réduite dans tout le système, ce qui signifie moins d'attente à partir du moment vous appuyez sur un bouton jusqu'à ce qu'une action termine 🚀
 * Home Assistant conserve désormais l'historique lors du changement de nom des entités 🤘
 
-Si vous accédez directement à la base de données, consultez le [Portail de la science des données](https://data.home-assistant.io/) et le [Intégration SQL](https://www.home-assistant.io/integrations/sql/) pour les requêtes mises à jour par exemple.
+Si vous accédez directement à la base de données, consultez [Data science portal](https://data.home-assistant.io/) et [Integration SQL](https://www.home-assistant.io/integrations/sql/) pour les exemples de requêtes.
 
-La migration des données de fond peut prendre un certain temps, selon la taille de vos données stockées. Pour vous assurer que l'assistant à domicile conserve l'historique lors du changement de nom entité, attendez 24 heures après la mise à niveau avant le changement de nom.
+La migration des données en arrière-plan peut prendre un certain temps, en fonction de la taille des données stockées. Pour s'assurer que Home Assistant conserve l'historique lorsqu'il renomme une entité, attendez 24 heures après la mise à jour avant de renommer.
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-selector-capabilities)Nouvelles capacités de sélection
+## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-selector-capabilities)Evolutions des Selecteurs ("selectors")
 
-[Sélecteurs](https://www.home-assistant.io/docs/blueprint/selectors) sont des entrées utilisateur pour l'interface utilisateur qui conduisent des choses comme [Plans](https://www.home-assistant.io/get-blueprints). Un nouveau sélecteur à utiliser dans Blueprints a été ajouté par [@emontnemery](https://github.com/emontnemery) et [@piitaya](https://github.com/piitaya): Le sélecteur constant.
+[](https://www.home-assistant.io/docs/blueprint/selectors)Les [Selectors](https://www.home-assistant.io/docs/blueprint/selectors) sont des entrées utilisateur pour l'interface utilisateur qui sont utiles dans par exemple les [Blueprints](https://www.home-assistant.io/get-blueprints). Un nouveau type de sélecteur à utiliser dans les Blueprints a été ajouté par [@emontnemery](https://github.com/emontnemery) et [@piitaya](https://github.com/piitaya): Le **sélecteur constant**.
 
 Le sélecteur constant fournit une entrée facultative, qui renvoie une valeur fixe ( la constante ) lorsqu'elle est activée, sinon ne fournit aucune valeur.
 
-Exemple d'utilisation dans un plan:
+Exemple d'utilisation dans un blueprint :
 
 ```yaml
-
+example:
+  name: Constant selector example
+  selector:
+    constant:
+      label: Enabled
+      value: true
 ```
 
-YAML
+Ce qui se traduit par les éléments suivants :
 
-Copier
+![Une capture d'écran montrant le nouveau sélecteur constant.](https://www.home-assistant.io/images/blueprints/selector-constant.png)
 
-Ce qui se traduit par les éléments suivants:
+Une fois coché, le sélecteur renvoie la valeur définie.
 
-![Une capture d'écran montrant le nouveau sélecteur constant.](https://www.home-assistant.io/images/blueprints/selector-constant.png)Une fois coché, le sélecteur renvoie la valeur définie.
+Les filtres de périphérique (devices) et d'entité sur les sélecteurs de zone, d'entité, de périphérique et de cible ont également été améliorés. Auparavant, vous pouviez filtrer avec un seul ensemble de conditions ; désormais, vous pouvez passer une liste de filtres.
 
-Les filtres de l'appareil et de l'entité sur le [Zone](https://www.home-assistant.io/docs/blueprint/selectors/#area-selector), [Entité](https://www.home-assistant.io/docs/blueprint/selectors/#entity-selector), [Appareil](https://www.home-assistant.io/docs/blueprint/selectors/#device-selector), et [Cible](https://www.home-assistant.io/docs/blueprint/selectors/#target-selector) sélecteurs. Auparavant, vous pouviez filtrer avec un ensemble unique de conditions; maintenant, vous pouvez passer dans une liste de filtres.
+Si vous construisez des Blueprints, cela peut s'avérer très utile si un utilisateur doit pouvoir sélectionner un appareil parmi plusieurs.
 
-Si vous construisez des plans, cela peut être très utile si un utilisateur doit pouvoir sélectionner l'un des multiples appareils différents.
-
-Un exemple, ce sélecteur vous permet de sélectionner le capteur de batterie de soit une télécommande Philips Hue RWL020 ( US ) ou RWL021 ( EU ) dans votre plan directeur.
+Par exemple, ce sélecteur vous permet de sélectionner le capteur de batterie d'une télécommande Philips Hue RWL020 (US) ou RWL021 (EU) dans votre Blueprint.
 
 ```yaml
-
+device:
+  filter:
+    - integration: deconz
+      manufacturer: Philips
+      model: RWL020
+    - integration: deconz
+      manufacturer: Philips
+      model: RWL021
+  entity:
+    - domain: sensor
+      device_class: battery
 ```
-
-YAML
-
-Copier
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#translating-entities)Entités traductrices
 
-Au cours des dernières versions, nous avons lentement étendu le support de traduction dans plus places dans Home Assistant. Cette version complète le support pour la traduction entités!
+Au cours des dernières versions, nous avons lentement étendu la prise en charge de la traduction à d'autres endroits dans Home Assistant. Cette version complète la prise en charge de la traduction des entités !
 
-Cela comprend les noms des entités ’, leurs attributs et les traductions de les valeurs d'attribut. Ces traductions seront visibles sur vos tableaux de bord, dialogues, éditeurs d'automatisation, etc. Presque tous les endroits les affichent.
+Cela inclut les noms des entités, leurs attributs et les traductions des valeurs des attributs. Ces traductions seront visibles sur vos tableaux de bord, dialogues, éditeurs d'automatisation, etc. Pratiquement tous les endroits qui les affichent.
 
-Les intégrations doivent ajouter explicitement une prise en charge de ceux-ci. Pas mal d'intégrations l'ont fait dans cette version, mais nous nous attendons à ce que beaucoup suivent dans la prochaine versions.
+Les intégrations doivent explicitement ajouter la prise en charge de ces traductions. Un certain nombre d'intégrations l'ont fait dans cette version, mais nous nous attendons à ce que de nombreuses autres suivent dans les prochaines versions.
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#other-noteworthy-changes)Autres changements notables
 
-Il y a beaucoup plus de lapins de Pâques dans cette version; voici quelques autres change cette version en fonction:
+l y a bien plus de lapins de Pâques dans cette version ; voici quelques-uns des autres changements notables de cette version :
 
-* [@ArturoGuerra](https://github.com/ArturoGuerra) prise en charge supplémentaire des verrous [Matière](https://www.home-assistant.io/integrations/matter)! Agréable!
-* La nouvelle boîte de dialogue d'entité lumineuse ( a introduit la dernière version ) prend désormais mieux en charge mode blanc. Merci, [@piitaya](https://github.com/piitaya)!
-* [@emontnemery](https://github.com/emontnemery) classes de dispositifs de stockage et de stockage de volume d'énergie supplémentaires; ces permettra de différencier, par exemple, l'énergie consommée par rapport à l'énergie stockée énergie dans une batterie.
-* [@starkillerOG](https://github.com/starkillerOG) est en train de balancer le [Rebobiner](https://www.home-assistant.io/integrations/reolink) intégration. Il fournit maintenant un bouton, commutateur, sirène, sélectionnez, numérotez et allumez des entités pour toutes sortes de choses que vous Les caméras et les sonnettes peuvent faire l'affaire. Impressionnant!
-* Le [Lecteur multimédia universel](https://www.home-assistant.io/integrations/universal) prend désormais en charge les médias de navigation! Merci, [@Drafteed](https://github.com/Drafteed)!
-* Le [Superviseur](https://www.home-assistant.io/integrations/hassio) l'intégration fournit désormais des capteurs contenant Statistiques de l'assistant principal et du superviseur à domicile. Merci, [@ludeeus](https://github.com/ludeeus)!
-* Le [Spotify](https://www.home-assistant.io/integrations/spotify) l'intégration prend désormais en charge les podcasts! Nice [@BTMorton](https://github.com/BTMorton)!
-* [Maison intelligente LIVISI](https://www.home-assistant.io/integrations/livisi) prend désormais en charge les dispositifs climatiques, les commutateurs ( PSSO, ISS, et ISS2 ), et capteurs de fenêtre ( WDS ). Merci [@StefanIacobLivisi](https://github.com/StefanIacobLivisi) & [@planbnet](https://github.com/planbnet)!
+* [@ArturoGuerra](https://github.com/ArturoGuerra) aa ajouté la prise en charge des verrous à [Matter](https://www.home-assistant.io/integrations/matter)! Sympa !
+* La nouvelle boîte de dialogue d'entité lampe ( a introduit la dernière version ) prend désormais mieux en charge mode blanc. Merci, [@piitaya](https://github.com/piitaya)!
+* [@emontnemery](https://github.com/emontnemery) a ajouté des classes de stockage d'énergie et de stockage de volume ; celles-ci permettront de différencier, par exemple, l'énergie consommée de l'énergie stockée dans une batterie.
+* [@starkillerOG](https://github.com/starkillerOG) est très satisfait de l'intégration de Reolink. Il fournit maintenant des entités bouton, interrupteur, sirène, sélection, numéro et lumière pour toutes sortes de choses que les caméras et les sonnettes Reolink peuvent faire. Génial !
+* Le [Lecteur multimédia universel](https://www.home-assistant.io/integrations/universal) prend désormais en charge la navigation dans les médias ! Merci, [@Drafteed](https://github.com/Drafteed)!
+* L'intégration du [Superviseur](https://www.home-assistant.io/integrations/hassio) fournit maintenant des capteurs contenant les statistiques du Home Assistant Core et du superviseur. Merci, [@ludeeus](https://github.com/ludeeus)!
+* L'intégration de  [Spotify](https://www.home-assistant.io/integrations/spotify) prend désormais en charge les podcasts ! Sympa  [@BTMorton](https://github.com/BTMorton)!
+* [](https://www.home-assistant.io/integrations/livisi)xxxx supporte maintenant les appareils climatiques, les interrupteurs (PSSO, ISS, et ISS2), et les capteurs de fenêtre (WDS). Merci @StefanIacobLivisi & @planbnet !
+  ESPHome prend désormais en charge l'appairage des appareils Bluetooth. Beau travail[@StefanIacobLivisi](https://github.com/StefanIacobLivisi) & [@planbnet](https://github.com/planbnet)!
 * [ESPHome](https://www.home-assistant.io/integrations/esphome) prend désormais en charge l'appariement des appareils Bluetooth. Beau travail [@bdraco](https://github.com/bdraco) & [@jagheterfredrik](https://github.com/jagheterfredrik)!
 * [@MarkGodwin](https://github.com/MarkGodwin) étendu le [TP-Link Omada](https://www.home-assistant.io/integrations/tplink_omada) intégration pour prendre en charge la mise à jour entités; génial!
 * Tout `sun.sun` les attributs des entités sont désormais également disponibles sous forme de capteurs, beaucoup plus facile à utiliser, merci [@gjohansson-ST](https://github.com/gjohansson-ST)!
@@ -275,7 +267,9 @@ Il y a beaucoup plus de lapins de Pâques dans cette version; voici quelques aut
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-integrations)Nouvelles intégrations
 
-Cette version n'a pas de nouvelles intégrations, mais fournit quelques nouvelles virtuelles intégrations. Les intégrations virtuelles sont des talons traités par d'autres ( existants ) des intégrations pour aider à la recherche. Ce sont de nouveaux:
+Cette version ne contient pas de nouvelles intégrations, mais fournit quelques nouvelles intégrations virtuelles. Les intégrations virtuelles sont des éléments gérés par d'autres intégrations (existantes) afin de faciliter la recherche. 
+
+Ces intégrations sont nouvelles :
 
 * **[ESERA 1 fil](https://www.home-assistant.io/integrations/esera_onewire)** fourni par [1 fil](https://www.home-assistant.io/integrations/one), ajouté par [@jrieger](https://github.com/jrieger)
 * **[HomeSeer](https://www.home-assistant.io/integrations/homeseer)** travaille avec [Z-Wave](https://www.home-assistant.io/integrations/zwave_js), ajouté par [@b-uwe](https://github.com/b-uwe)
@@ -284,11 +278,9 @@ Cette version n'a pas de nouvelles intégrations, mais fournit quelques nouvelle
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#integrations-now-available-to-set-up-from-the-ui)Intégrations désormais disponibles à configurer à partir de l'interface utilisateur
 
-Les intégrations suivantes sont désormais disponibles via l'interface utilisateur Home Assistant:
+Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant:
 
 * **[EDL21](https://www.home-assistant.io/integrations/edl21)**, fait par [@StephanU](https://github.com/StephanU)
 * **[Frontier Silicon](https://www.home-assistant.io/integrations/frontier_silicon)**, fait par [@wlcrs](https://github.com/wlcrs)
 * **[Nextcloud](https://www.home-assistant.io/integrations/nextcloud)**, fait par [@mib1185](https://github.com/mib1185)
 * **[Obihai](https://www.home-assistant.io/integrations/obihai)**, fait par [@ejpenney](https://github.com/allenejpenneyorter)
-
-<!--EndFragment-->
