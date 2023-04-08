@@ -4,7 +4,7 @@ title: "Home Assistant 2023.4 : Macro pour les modèles et nouvelles boîtes de
   dialogue entités !"
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-04-08
 lastmod: 2023-04-08
 images: img/social.png
