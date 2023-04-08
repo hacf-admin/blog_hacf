@@ -1,6 +1,6 @@
 ---
 folder: tuto-dev-sommaire
-title: Développer pour Home Assistant - les tutos...
+title: Développer pour Home Assistant - des tutos...
 type: post
 visibleInCMS: true
 draft: true
@@ -47,7 +47,7 @@ L'aspect **Open-Source** est précieux et super utile lorsqu'on bute sur une dif
 
 ## Liste des tutos (à venir)
 
-Les tutos sont en cours de rédactions et seront publiés prochainement.
+Les tutos sont en cours de rédaction. Mais le premier sera publié prochainement !!
 
 * **Tuto1 :** Installer son environnement de dev.
 * **Tuto2 :** Création d'une intégration, un appareil et plusieurs entités.
