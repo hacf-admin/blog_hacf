@@ -59,7 +59,7 @@ Ensuite, les **entités ventilateur**. L'interface affiche une boîte de dialogu
 
 En fonction du nombre de pas de vitesse dont dispose votre ventilateur, la boîte de dialogue d'ajuste automatiquement automatiquement sur l'interface utilisateur. S'il a quatre étapes de vitesse ou moins, il affiche les boutons de vitesse comme sur la capture d'écran de gauche. Sinon, il utilisera le curseur affiché sur la capture d'écran la plus à droite.
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#alarm-control-panels)PANNEAUX DE COMMANDE D'ALARME
+### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#alarm-control-panels)Panneau de commande d'alarme
 
 Enfin, les **cartes entités du panneau de contrôle d'alarme**. Ils sont un peu différents par rapport pour les autres car, plus souvent, ceux-ci nécessitent que l'on saisisse un code pour armer ou désarmer l'alarme.
 
@@ -81,13 +81,15 @@ Comme la nouvelle boîte de dialogue entité de ventilateur, la fonction de vite
 
 La fonction de sélection du mode d'alarme permet de régler rapidement votre alarme dans les différents états. La fonctionnalité offre la possibilité de sélectionner les modes affichés sous forme de ligne de boutons.
 
-Tout comme avec la nouvelle boîte de dialogue entité, le pavé de de saisie de code apparaîtra quand la saisie de code est nécessaire et la même belle petite animation est présente. 🤩
+![](img/tile-alarms.png)
+
+Tout comme avec la nouvelle boîte de dialogue entité, le pavé de saisie de code apparaîtra quand la saisie de code est nécessaire et la même belle petite animation est présente. 🤩
 
 ## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#macros-for-your-templates)Macros pour vos modèles ("templates")
 
 Si vous êtes un utilisateur avancé de Home Assistant, vous serez probablement familié avec le langage de modéle de Home Assistant : **Jinja2**. Cela vous permet de faire des choses très puissantes dans vos modèles. Cependant, si vous en avez beaucoup, vous finissez souvent par répéter une logique similaire partout !
 
-[@depoll](https://github.com/depoll) est venu à la rescousse ! Il a trouvé un moyen d'ajouter la capacité de définir de manière centralisée vos propres macros Jinja2, pour ensuite les importer et utiliser n'importe où dans Home Assistant! 🤯
+[@depoll](https://github.com/depoll) est venu à la rescousse ! Il a trouvé un moyen d'ajouter la capacité de définir de manière centralisée vos propres macros Jinja2, pour ensuite les importer et utiliser n'importe où dans Home Assistant ! 🤯
 
 Pour soutenir cela, Home Assistant a maintenant un nouveau dossier `custom_templates`, où vous pouvez stocker vos macros. Par exemple, vous pouvez créer ce fichier `/config/custom_templates/tools.jinja`:
 
@@ -114,7 +116,7 @@ Is the kitchen light on?
 Yes!
 ```
 
-Une contribution fantastique! Merci, [@depoll](https://github.com/depoll)!
+Une contribution fantastique ! Merci, [@depoll](https://github.com/depoll)!
 
 [Lien vers la documentation des modèles](https://www.home-assistant.io/docs/configuration/templating/#reusing-templates)
 
