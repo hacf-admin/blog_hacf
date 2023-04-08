@@ -19,9 +19,7 @@ tags:
   - developpement
 author: jean-marc_collin
 ---
-Cette série de tutos a pour objectif de vous apprendre à développer une intégration Home Assistant accessible sur HACS. Elle se veut progressive et didactique.
-
-- - -
+Cette série de tutos a pour objectif de vous **apprendre à développer** une intégration Home Assistant accessible sur HACS. Elle se veut progressive et didactique.
 
 > Tu veux développer une intégration pour Home Assistant ou tout simplement contribuer à une intégration existante ? Cette suite d'article est faite pour toi et à pour but de t'aider à te lancer. Elle est conçu comme les articles que j'aurai aimé trouver lorsque je me suis moi-même lancé.''''
 
@@ -35,7 +33,7 @@ Pour pouvoir utiliser ces articles, il est préférable de :
 4. Un compte Github : un compte Github est nécessaire pour pouvoir forker des repos et notamment celui de Home Assistant
 5. Un PC ou un Mac ou une box linux bien sur.
 
-# [](https://github.com/jmcollin78/tuto-hacs#remarques-pr%C3%A9liminaires)Remarques préliminaires
+## Remarques préliminaires
 
 **Open Source on vous a dit :** il existe littéralement des milliers d'intégrations pour Home Assistant. Le meilleur conseil que je peux donner est d'aller voir leur code. Tu vas apprendre énormément en consultant ce que les autres ont faits et comment ils l'ont fait. L'aspect Open-Source est précieux et super utile lorsqu'on but sur une difficulté -> n'hésites pas.
 
@@ -43,7 +41,7 @@ Pour pouvoir utiliser ces articles, il est préférable de :
 
 **Un peu de lecture :** la doc officielle est ici. Elle est en Anglais, pas super à jour tout le temps, n'est pas faite pour développer une intégration HACS et n'est pas très didactique. Si tu n'y connais rien, tu n'y comprendra pas grand-chose. Par contre, s'y référer de temps en temps pour étendre le champ de sa connaissance une fois qu'on a compris les concepts est une super bonne idée. Gardes bien ça en tête !
 
-> [![Tip](https://github.com/jmcollin78/tuto-hacs/raw/master/images/tips.png?raw=true?raw=true)](https://github.com/jmcollin78/tuto-hacs/blob/master/images/tips.png?raw=true?raw=true) Tu es prêt ? Fébrile ? Ca va aller, on te dit...
+> [![Tip] Tu es prêt ? Fébrile ? Ca va aller, on te dit...
 
 Sommaire
 
