@@ -184,19 +184,21 @@ collections:
         multiple: true
         min: 1
         options:
+        - Add-on/Intégration
+        - Automatisation
         - Concepts
+        - Confort
+        - Développement
+        - Energie
+        - ESPHome/DIY
         - Installation
+        - Interface UI
         - Matériel
+        - Node-red
         - Protocoles
         - Réseau
-        - Interface UI
-        - Add-on/Intégration
-        - ESPHome/DIY
-        - Automatisation
-        - Node-red
-        - Energie
         - Sécurité
-        - Confort
+
 
 #      - label: 'Série(s)'
 #        name: 'series'
