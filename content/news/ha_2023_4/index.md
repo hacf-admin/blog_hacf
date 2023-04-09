@@ -39,7 +39,7 @@ Joyeuses Pâques ! 🐣 et profitez de cette release !
 
 Donc, cette version [@piitaya](https://github.com/piitaya) a persévéré, mettant en œuvre les conceptions de [@matthiasdebaat](https://github.com/matthiasdebaat), apportant la même nouvelle interface utilisateur, propre et dépouillée, dans les dialogues entités pour les panneaux de contrôle d'alarme, les volets et les ventilateurs !
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#covers)Volets
+### Volets
 
 Pour les volets, il existe de nombreuses variantes, portes, fenêtres, rideaux, stores, volets roulants, etc. En plus, certains peuvent être contrôlés jusqu'où ils sont ouverts / fermés et d'autres ne peuvent être qu'ouverts et fermés.
 
@@ -49,7 +49,7 @@ Ce n'est pas un problème pour les nouvelles boîtes de dialogue : elles s'adapt
 
 Celle de gauche est intéressante, le curseur contrôle à quel niveau les stores sont baissés. Remarquez comment il se glisse depuis le haut ! Le curseur à côté contrôle l'inclinaison. Sympa !
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#fans)Ventilateurs
+### Ventilateurs
 
 L'interface affiche une boîte de dialogue de contrôle permettant de s'adapter aux possibilités du ventilateur que vous contrôlez, exactement comme pour les volets.
 
@@ -57,7 +57,7 @@ L'interface affiche une boîte de dialogue de contrôle permettant de s'adapter 
 
 En fonction du nombre de vitesses dont dispose votre ventilateur, la boîte de dialogue s'ajuste automatiquement sur l'interface utilisateur. S'il a quatre étapes de vitesse ou moins, il affiche les boutons de vitesse comme sur la capture d'écran de gauche. Sinon, il utilisera le curseur affiché sur la capture d'écran la plus à droite.
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#alarm-control-panels)Panneau de contrôle d'alarme
+### Panneau de contrôle d'alarme
 
 Enfin, les **cartes entités du panneau de contrôle d'alarme**. Ils sont un peu différents par rapport aux autres, car plus souvent, ils nécessitent que l'on saisisse un code pour armer ou désarmer l'alarme.
 
@@ -67,7 +67,7 @@ Voilà à quoi ressemble maintenant l'armement et le désarmement d'une alarme.
 
 En cas de besoin, le clavier de code secret apparaîtra ! Une belle touche finale est l'animation très soignée qui est affichée pendant le processus d'armement et de désarmement de l'alarme.
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-features-for-the-tile-card)Nouvelles fonctionnalités pour la carte Tuile (Tile)
+## Nouvelles fonctionnalités pour la carte Tuile (Tile)
 
 La [Carte Tuile](https://www.home-assistant.io/dashboards/tile/) a deux nouvelles fonctionnalités : la vitesse du ventilateur et le mode d'alarme.
 
@@ -83,7 +83,7 @@ La fonction de sélection du mode d'alarme permet de régler rapidement votre al
 
 Tout comme avec la nouvelle boîte de dialogue entité, le pavé de saisie de code apparaîtra quand la saisie de code est nécessaire et la même belle petite animation est présente. 🤩
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#macros-for-your-templates)Macros pour vos modèles ("templates")
+## Macros pour vos modèles ("templates")
 
 Si vous êtes un utilisateur avancé de Home Assistant, vous serez probablement familier avec le modéle de Home Assistant : **Jinja2**. Cela vous permet de faire des choses très puissantes dans vos modèles. Cependant, si vous en avez beaucoup, vous finissez souvent par répéter une logique similaire partout !
 
@@ -118,17 +118,17 @@ Une contribution fantastique ! Merci, [@depoll](https://github.com/depoll)!
 
 [Lien vers la documentation des modèles](https://www.home-assistant.io/docs/configuration/templating/#reusing-templates)
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#more-new-templating-features)De nouvelles fonctionnalités de modèles ("templates")
+## De nouvelles fonctionnalités de modèles ("templates")
 
 Comme si la réutilisation de vos macros n'était pas déjà suffisante, en voici plus pour la création de modèle dans cette version !
 
 Merci, [@depoll](https://github.com/depoll), [@ehendrix23](https://github.com/ehendrix23), [@petro31](https://github.com/Petro31), et [@rokam](https://github.com/rokam), pour les incroyables ajouts ci-dessous ! ❤️
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#adjusted-behavior-of-relative_time-and-today_at)Comportement plus pertinent de "relative time" et "today_at"
+### Comportement plus pertinent de "relative time" et "today_at"
 
 [@Petro31](https://github.com/Petro31) a ajusté le comportement des entités modèle à l'aide des fonctions spécifiques `relative_time` et `today_at` pour mettre à jour leur état une fois par minute. Sympa !
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-is_hidden_entity-function)Nouvelle fonction "is_hidden_entity"
+### Nouvelle fonction "is_hidden_entity"
 
 La toute nouvelle fontion `is_hidden_entity` a été ajoutée par [@depoll](https://github.com/depoll), qui peut indiquer si une entité a été marquée comme “cachée” ou non. Cette fonction marche également comme test. Cool!
 
@@ -138,7 +138,7 @@ Cet exemple renvoie une liste de toutes les entités de la cuisine qui ne sont p
 {{ area_entities('kitchen') | reject('is_hidden_entity') | list }}
 ```
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-areas-function)Nouvelles fonctions de zone
+### Nouvelles fonctions de zone
 
 En parlant de zones, [@rokam](https://github.com/rokam) a ajouté une fonction `areas`, qui renvoie une liste de toutes les zones que vous avez !
 
@@ -148,7 +148,7 @@ Un exemple simpliste :
 {{ area_entities('kitchen') | reject('is_hidden_entity') | list }}
 ```
 
-### [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#added-break-and-continue-for-use-in-for-loops)Ajout de "break" et "continue" pour être utilisé dans les boucles
+### Ajout de "break" et "continue" pour être utilisé dans les boucles
 
 [@depoll](https://github.com/depoll) a rajouté le support de `break` et `continue` pour les boucles, qui permet de court-circuiter ces boucles, vous permettant de les rendre plus efficaces.
 
@@ -163,7 +163,7 @@ Un exemple simpliste :
 {%- endfor -%}
 ```
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-has_value-function)Nouvelle fonction "has_value"
+## Nouvelle fonction "has_value"
 
 Enfin, [@ehendrix23](https://github.com/ehendrix23) ajouté une fonction de modèle demandée pendant le “What the Heck?! ” : `has_value`. La fonction `has_value` peut aussi être utilisé pour tester et filtrer les entités actuellement dans un état `unavailable` ou `unknown`.
 
@@ -181,7 +181,7 @@ Ou, peut-être répertorier toutes les entités du salon qui n'ont actuellement 
 {{ area_entities('living_room') | reject('has_value') | list }}
 ```
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#database-scalability)Évolutivité de la base de données
+## Évolutivité de la base de données
 
 Au fur et à mesure que Home Assistant se développe et que vous ajoutez des appareils, cela signifie qu'il y a plus de données à garder en mémoire. Cette version inclut des avancées significatives dans la conception de la base de données de l'enregistreur pour aider Home Assistant à évoluer.
 
@@ -199,9 +199,9 @@ Si vous accédez directement à la base de données, consultez [Data science por
 
 La migration des données en arrière-plan peut prendre un certain temps, en fonction de la taille des données stockées. Pour s'assurer que Home Assistant conserve l'historique lorsqu'il renomme une entité, attendez 24 heures après la mise à jour avant de renommer.
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-selector-capabilities)Évolutions des Sélecteurs ("selectors")
+## Évolutions des Sélecteurs ("selectors")
 
-[](https://www.home-assistant.io/docs/blueprint/selectors)Les [Selectors](https://www.home-assistant.io/docs/blueprint/selectors) sont des entrées pour l'interface utilisateur qui sont utiles dans les [Blueprints](https://www.home-assistant.io/get-blueprints), par exemple. Un nouveau type de sélecteur a été ajouté par [@emontnemery](https://github.com/emontnemery) et [@piitaya](https://github.com/piitaya): Le **sélecteur constant**.
+Les [Selectors](https://www.home-assistant.io/docs/blueprint/selectors) sont des entrées pour l'interface utilisateur qui sont utiles dans les [Blueprints](https://www.home-assistant.io/get-blueprints), par exemple. Un nouveau type de sélecteur a été ajouté par [@emontnemery](https://github.com/emontnemery) et [@piitaya](https://github.com/piitaya): Le **sélecteur constant**.
 
 Le sélecteur constant fournit une entrée facultative, qui renvoie une valeur fixe ( la constante ) lorsqu'elle est activée, sinon ne fournit aucune valeur.
 
@@ -242,7 +242,7 @@ device:
       device_class: battery
 ```
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#translating-entities)Entités traductrices
+## Entités traductrices
 
 Au cours des dernières versions, nous avons lentement étendu la prise en charge de la traduction à d'autres endroits dans Home Assistant. Cette version complète la prise en charge de la traduction des entités !
 
@@ -250,7 +250,7 @@ Cela inclut les noms des entités, leurs attributs et les traductions des valeur
 
 Les intégrations doivent explicitement ajouter la prise en charge de ces traductions. Un certain nombre d'intégrations l'ont fait dans cette version, mais nous nous attendons à ce que de nombreuses autres suivent dans les prochaines versions.
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#other-noteworthy-changes)Autres changements notables
+## Autres changements notables
 
 Il y a bien plus de lapins de Pâques dans cette version ; voici quelques autres changements notables de cette version :
 
@@ -270,7 +270,7 @@ Il y a bien plus de lapins de Pâques dans cette version ; voici quelques autres
 * L'intégration [SQL](https://www.home-assistant.io/integrations/sql) prend désormais en charge les paramètres de l'appareil et les classes d'état, merci [@gjohansson-ST](https://github.com/gjohansson-ST) !
 * [@teharris1](https://github.com/teharris1) a rajouté un support supplémentaire pour le nouvel appareil [Insteon](https://www.home-assistant.io/integrations/insteon) i3, cool !
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#new-integrations)Nouvelles intégrations
+## Nouvelles intégrations
 
 Cette version ne contient pas de nouvelles intégrations, mais fournit quelques nouvelles intégrations virtuelles. Les intégrations virtuelles sont des éléments gérés par d'autres intégrations (existantes) afin de faciliter la recherche. 
 
@@ -281,7 +281,7 @@ Ces intégrations sont nouvelles :
 * **[Quadra-Fire](https://www.home-assistant.io/integrations/quadrafire)** fourni par [IntelliFire](https://www.home-assistant.io/integrations/intellifire), ajouté par [@jeeftor](https://github.com/jeeftor)
 * **[Castings du Vermont](https://www.home-assistant.io/integrations/vermont_castings)** fourni par [IntelliFire](https://www.home-assistant.io/integrations/intellifire), ajouté par [@jeeftor](https://github.com/jeeftor)
 
-## [](https://www.home-assistant.io/blog/2023/04/05/release-20234/#integrations-now-available-to-set-up-from-the-ui)Intégrations désormais disponibles à configurer à partir de l'interface utilisateur
+## Intégrations désormais disponibles à configurer à partir de l'interface utilisateur
 
 Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
 
