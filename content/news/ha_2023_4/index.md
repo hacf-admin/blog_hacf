@@ -21,17 +21,19 @@ authors:
   - argonaute
 url_haoff: https://www.home-assistant.io/blog/2023/04/05/release-20234/
 ---
-Home Assistant Core 2023.4 ! 🎉
+> **Cet article est une traduction de [2023.4: Custom template macros, and many more new entity dialogs!](https://www.home-assistant.io/blog/2023/04/05/release-20234/)** publié sur le site de Home Assistant.\*\*
 
-Le printemps est là ! Et nous avons quelques belles nouvelles fonctionnalités pour vous permettre de jouer avec ce prochain week-end de Pâques ! 🐰
+**Home Assistant Core 2023.4 ! 🎉**
 
-Je suis ravi de voir ces nouveaux dialogues entité arriver dans cette version. Ils sont magnifiques et fonctionnent exceptionnellement bien depuis l'application mobile. Il y a même un bonus supplémentaire avec les nouvelles fonctionnalités des cartes tile (tuiles) !
+*"Le printemps est là ! Et nous avons quelques belles nouvelles fonctionnalités pour vous permettre de jouer avec ce prochain week-end de Pâques ! 🐰*
 
-J'adore la nouvelle possibilité de créer ses propres macros de modèles Jinja2 dans cette version. C'est époustouflant ! Et le plus beau, c'est qu'elles sont facilement partageables ! J'ai hâte de voir ce que vous allez inventer !
+*Je suis ravi de voir ces nouveaux dialogues entité arriver dans cette version. Ils sont magnifiques et fonctionnent exceptionnellement bien depuis l'application mobile. Il y a même un bonus supplémentaire avec les nouvelles fonctionnalités des cartes tile (tuiles) !*
 
-Joyeuses Pâques ! 🐣 et profitez de cette release !
+*J'adore la nouvelle possibilité de créer ses propres macros de modèles Jinja2 dans cette version. C'est époustouflant ! Et le plus beau, c'est qu'elles sont facilement partageables ! J'ai hâte de voir ce que vous allez inventer !*
 
-.../Frenck
+*Joyeuses Pâques ! 🐣 et profitez de cette release !"*
+
+*.../Frenck*
 
 ## Nouvelles boîtes de dialogue pour les entités alarme, volets et ventilateur
 
