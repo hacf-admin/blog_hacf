@@ -54,7 +54,7 @@ Un pc avec :
 
 Des micro PC d'occasion à base de I3/I5, comme les [HP EliteDesk G3 mini](https://pcpack.fr/recherche?controller=search&s=HP+EliteDesk+800+G3+Mini) par exemple, font très bien l'affaire.
 
->Il y a de très bonnes affaires sur les sites qui font du recyclage de parc informatique comme [PCPack](https://pcpack.fr/), [ABShop](https://www.afbshop.fr/), [BlackMarket](https://www.backmarket.fr/) tout en offrant une garantie, mais aussi sur les sites de petite annonce ou Ebay.
+>Il y a de très bonnes affaires sur les sites qui font du recyclage de parc informatique comme [PCPack](https://pcpack.fr/), [AFBShop](https://www.afbshop.fr/), [BlackMarket](https://www.backmarket.fr/) tout en offrant une garantie, mais aussi sur les sites de petite annonce ou Ebay.
 
 
 **Mon conseil** (*subjectif*)
