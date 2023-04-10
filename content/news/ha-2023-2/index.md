@@ -1,11 +1,11 @@
 ---
-draft: false
 folder: ha_2023_2
 title: "Home Assistant 2023.2 : Comment puis-je aider ?"
 aliases:
   - /ha_2023.2
 type: news
 visibleInCMS: true
+draft: false
 date: 2023-02-27
 lastmod: 2023-02-27
 images: img/ha-2023.2.png
@@ -21,7 +21,7 @@ author: default
 authors:
   - argonaute
 ---
-> ﻿ **Cet article est une traduction de  [2023.2: How can I Assist?](https://www.home-assistant.io/blog/2023/02/01/release-20232/)**  publié sur le site de Home Assistant
+> ﻿ Cet article est une traduction de  [2023.2: How can I Assist?](https://www.home-assistant.io/blog/2023/02/01/release-20232/) publié sur le site de Home Assistant
 
 **Home Assistant Core 2023.2 !** 🎉
 
