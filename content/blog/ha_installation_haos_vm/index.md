@@ -57,25 +57,25 @@ Des micro PC d'occasion à base de I3/I5, comme les [HP EliteDesk G3 mini](https
 >Il y a de très bonnes affaires sur les sites qui font du recyclage de parc informatique comme [PCPack](https://pcpack.fr/), [ABShop](https://www.afbshop.fr/), [BlackMarket](https://www.backmarket.fr/) tout en offrant une garantie, mais aussi sur les sites de petite annonce ou Ebay.
 
 
-**mon conseil** (*subjectif*)
+**Mon conseil** (*subjectif*)
 * 2 Go pour l'hyperviseur plus autant de Go affecté pour chacune des machines virtuelles et conteneurs.
 Une machine virtuelle aura généralement besoin de plus de ressources  (CPU, espace disque et Mémoire) qu'un conteneur.
 
 **IMPORTANT**
-Il n'est, a ma connaissance, **PAS POSSIBLE** de partager le même périphérique (USB comme dongle Zigbee) sur plusieurs machines virtuelles simultanément.
+Il n'est, à ma connaissance, **PAS POSSIBLE** de partager le même périphérique (USB comme dongle Zigbee) sur plusieurs machines virtuelles simultanément.
 
 ## Proxmox
 ### Installation de Proxmox.
 
-* Télécharger la dernière version de [Proxmox sur le site officiel](https://www.proxmox.com/en/downloads/category/iso-images-pve) (Version 7.4 a date.)
+* Télécharger la dernière version de [Proxmox sur le site officiel](https://www.proxmox.com/en/downloads/category/iso-images-pve) (Version 7.4 a date).
 
 * Créer une clé bootable [Balena Etcher](https://www.balena.io/etcher) ou de [Ventoy](https://www.ventoy.net/en/index.html).
 
 * Booter votre machine dédiée sur votre clé USB, chaque machine étant spécifique, je vous laisse chercher un peu (ESC, F2, F8, F10, SUPPR).
 
-Au boot vous devriez avoir ceci
+Au boot, vous devriez avoir ceci
 
-**PEUT ETRE REMPLACER PAR UNE SEULE IMAGE**
+**PEUT ÊTRE REMPLACER PAR UNE SEULE IMAGE**
 
 ![image|665x500](upload://uEWBYC8JCy5zXZVoLbrSlYMrwT2.png)
 
@@ -97,14 +97,14 @@ Au boot vous devriez avoir ceci
 
 ![ok2|690x433](upload://fZ8f4aqkyzBmzkDavJZp64ck8uR.gif)
 
-* Sélectionner votre carte réseaux (si plusieurs, eviter le Wi-Fi),
-* Verifier et noter l'adresse IP affectée a votre serveur (il est possible de la changer mais n'oubliez pas d'affecter cette adresse sur votre routeur/box),
+* Sélectionner votre carte réseaux (si plusieurs, éviter le Wi-Fi),
+* Vérifier et noter l'adresse IP affectée à votre serveur (il est possible de la changer, mais n'oubliez pas d'affecter cette adresse sur votre routeur/box),
 * Cliquer sur **INSTALL**.
 
 ![ok4|690x431](upload://sAQTeFeGP7ZLyyuFL66An0vlfbS.gif)
 
-Ssi tout va bien, après redémarrage de la machine, on arrive sur un terminal, l'installation de Proxmox est alors fini.
-Maintenant que votre serveur Proxmox est installé, normalement tout va ce passer sur votre ordinateur principal.
+Si tout va bien, après redémarrage de la machine, on arrive sur un terminal, l'installation de Proxmox est alors fini.
+Maintenant que votre serveur Proxmox est installé, normalement tout va se passer sur votre ordinateur principal.
 
 ![image|690x429](upload://bWFhvpFPl2v0w5nYtK0uPG6Atph.png)
 
@@ -129,7 +129,7 @@ Une fois les identifiants saisis, vous devriez avoir cette boite d'information
 ## Home Assistant.
 Nous voila enfin arrivé à l'installation de notre système domotique préfère (ou bientôt préfère si vous débutez).
 
-La procédure officielle se trouve sur le [site de Home Assistant](https://www.home-assistant.io/installation/linux), mais nous allons utiliser un script qui simplifit grandement l'installation.
+La procédure officielle se trouve sur le [site de Home Assistant](https://www.home-assistant.io/installation/linux), mais nous allons utiliser un script qui simplifie grandement l'installation.
 
 Rendez-vous sur le [site de tteck](https://tteck.github.io/Proxmox/).
 
@@ -164,17 +164,17 @@ Toujours dans la page de scripts :
 
 ![ok6|690x431](upload://ksqEhYDDVO20FxVzjOAfXFsAqB8.gif)
 
-Une fois le deroulement du script terminé, retourner sur l'interface principale de Proxmox.
+Une fois le déroulement du script terminé, retourner sur l'interface principale de Proxmox.
 Vous devez voir une machine virtuelle 100 (HAOS 9.5 à date) qui doit être créé.
-Cliquer sur cette machine virtuelle, vous pouvez soit consulter la page de résumé soit accéder au Shell de la machine virtuelle (VM). Dans les deux cas, recuperer l'adresse IP de la VM qui est celle de votre Home Assistant.
+Cliquer sur cette machine virtuelle, vous pouvez soit consulter la page de résumé, soit accéder au Shell de la machine virtuelle (VM). Dans les deux cas, récupérer l'adresse IP de la VM qui est celle de votre Home Assistant.
 
 ![ok7|690x431](upload://4Vs8GQIJDOgcrEQQhOu1c7hZSEB.gif)
 
-Il vous suffit de saisir cette adresse, suivie du port 8123 pour acceder au premier lancement de Home Assistant
+Il vous suffit de saisir cette adresse, suivie du port 8123 pour accéder au premier lancement de Home Assistant
 ex: http://192.168.1.158:8123
 ![image|690x412](upload://lnZdRwLRRhk9Upnkvr9fQrEfItn.png)
 
-Continuer la configuration grace a l'article [premier configuration](/ha_installation_premier_lancement)
+Continuer la configuration grâce a l'article [premier configuration](/ha_installation_premier_lancement)
 
 ### Allez plus loin.
 **Périphériques USB**
@@ -182,13 +182,13 @@ Continuer la configuration grace a l'article [premier configuration](/ha_install
 
 >L'association d'un périphérique peut être faite à n'importe quel moment, mais la prise en compte de ce dernier, n'aura lieu qu'après un redémarrage complet de la VM.
 
-* Connecter votre clé USB sur votre Serveur Proxmox;
-Dans la barre verticale de gauche choisissez la VM sur laquelle vous voulez affecter votre clé USB puis : 
+**Connecter votre clé USB sur votre Serveur Proxmox**
+Dans la barre verticale de gauche, choisissez la VM sur laquelle vous voulez affecter votre clé USB, puis : 
 * Aller dans matériel,
 * Ajouter,
 * Périphérique USB,
 * Utiliser les identifiants USB du fabricant et du périphérique,
-* Choisir le périphérique a inclure.
+* Choisir le périphérique à inclure.
 
 Cette opération est à faire autant de fois qu'il y a de clé à inclure
 
@@ -197,22 +197,11 @@ Cette opération est à faire autant de fois qu'il y a de clé à inclure
 **Petit conseil**
 Brancher et inclure une clé à la fois sur votre serveur.
 
-**???? A CONFIRMER**J'ai cru voir quelque part qu'il y avait une limitation de 4 périphériques
-n'en n'ayant que 3 je ne peux pas confirmer cette affirmation
-
-
-Vérifier la présence de vos devices USB dans Home Assistant.
+**Vérifier la présence de vos devices USB dans Home Assistant.**
 ![ok11|690x251](upload://297j8cTKt4vY3mMx5eFiTHgEyX8.gif)
 
+**Limitation a quatre USB.**
+Une limitation de quatre périphériques peut être outrepassée via la [méthode suivante](https://forum.proxmox.com/threads/limit-for-usb-devices.89774/)
+
 ### Conclusion.
-
-A AJOUTER.
-
-
-
-###################################################################
-Cette partie peut etre ajouté a l'article existant sur la premiere configuration dans une nouvelle partie *repartir depuis une sauvegarde**
-
-## ATTENTION
-dans le cas de la restauration d'une sauvegarde, je vous invite a affecter dans votre routeur ou votre serveur DHCP l'adresse IP de l'ancienne machine a cette machine virtuelle
-Par exemple j'avais un PI 3 qui était accessible en 192.168.1.100, affecter a votre machine virtuelle cette adresse IP, penser a désactiver la réservation du bail du Raspberry sinon gare aux conflits d'adresse IP
+L'installation de Home Assistant OS sur un serveur Proxmox vous permet de bénéficier de la version la plus complète de Home Assistant (HAOS) tout en pouvant utiliser votre matériel pour d'autres applications/services.
