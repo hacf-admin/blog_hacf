@@ -21,7 +21,7 @@ authors:
   - argonaute
 url_haoff: https://www.home-assistant.io/blog/2023/04/05/release-20234/
 ---
-> **Cet article est une traduction de [2023.4: Custom template macros, and many more new entity dialogs!](https://www.home-assistant.io/blog/2023/04/05/release-20234/)** publié sur le site de Home Assistant.\*\*
+> Cet article est une traduction de [2023.4: Custom template macros, and many more new entity dialogs!](https://www.home-assistant.io/blog/2023/04/05/release-20234/) publié sur le site de Home Assistant.
 
 **Home Assistant Core 2023.4 ! 🎉**
 
