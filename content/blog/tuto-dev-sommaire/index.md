@@ -1,5 +1,5 @@
 ---
-folder: dev_tuto_sommaire
+folder: dev_tuto_introduction
 title: Développer pour Home Assistant - Introduction.
 type: post
 visibleInCMS: true
