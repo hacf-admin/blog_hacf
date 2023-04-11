@@ -3,7 +3,7 @@ folder: dev_tuto_sommaire
 title: Développer pour Home Assistant - Introduction.
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-04-08
 lastmod: 2023-04-08
 images: img/tuto-developper-intro.png
