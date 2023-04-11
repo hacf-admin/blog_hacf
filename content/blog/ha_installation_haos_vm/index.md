@@ -81,40 +81,42 @@ Au boot, vous devriez avoir ceci
 
 **PEUT ÊTRE REMPLACER PAR UNE SEULE IMAGE**
 
-![Ecran accueil de l'installation de Proxmox](img/01-promox-installation.png)
+![Écran accueil de l'installation de Proxmox](img/01-promox-installation.png "Écran accueil de l'installation de Proxmox")
 
 * Cliquez sur  **install proxmox**, (*ça va brasser un peu en mode terminal*),
-
-Ecran accueil de l'installation de Proxmox
-
-
-
-![image|690x432](upload://m3fRvXVKELlQK8njxt61b1fQYKY.png)
-
 * Cliquer sur **I agree**,
+* Selectionner le disque dur ou sera installé Proxmox.
 
-![image|690x430](upload://jWOa1GGvvp40pzExnZQi0U69dLR.png)
+> **ATTENTION** Si votre machine à plusieurs disques dur, choisissez le bon, c'est **irréversible** !
+>
+> (*Personnellement, je choisis le mode automatique*)
 
-**ATTENTION** Si votre machine à plusieurs disques dur, choisissez le bon, c'est **irréversible** !
+![Écran accueil de sélection du disque](img/02-proxmox-selection-disque-dur.png "Écran accueil de sélection du disque")
 
-(*Personnellement, je choisis le mode automatique*)
+Donner ensuite :
 
-![ok1|690x433](upload://i9vIMDMaYFiEJughFVDVba8RSFI.gif)
+* un nom a votre machine,
+* le fuseau horraire,
+* la disposition de votre clavier
+
+Sur la page suivante :
 
 * Renseigner un mot de passe **FORT** et une adresse email **VALIDE**,
 
-![ok2|690x433](upload://fZ8f4aqkyzBmzkDavJZp64ck8uR.gif)
+![Fenêtre de configuration de l'utilisateur principal](img/04-proxmox-utilisateur-mot-de-passe.gif "Fenêtre de configuration de l'utilisateur principal")
 
-* Sélectionner votre carte réseaux (si plusieurs, éviter le Wi-Fi),
+Passons aux réglages reseaux :
+
+* Sélectionner votre carte réseaux (si plusieurs, **éviter le Wi-Fi**),
 * Vérifier et noter l'adresse IP affectée à votre serveur (il est possible de la changer, mais n'oubliez pas d'affecter cette adresse sur votre routeur/box),
 * Cliquer sur **INSTALL**.
 
-![ok4|690x431](upload://sAQTeFeGP7ZLyyuFL66An0vlfbS.gif)
+![Fenêtre de configuration du réseau](img/05-proxmox-config-reseau.gif "Fenêtre de configuration du réseau")
 
 Si tout va bien, après redémarrage de la machine, on arrive sur un terminal, l'installation de Proxmox est alors fini.
 Maintenant que votre serveur Proxmox est installé, normalement tout va se passer sur votre ordinateur principal.
 
-![image|690x429](upload://bWFhvpFPl2v0w5nYtK0uPG6Atph.png)
+![Terminal Proxmox après redémarrage.](img/06-proxmox-shell.png "Terminal Proxmox après redémarrage.")
 
 ### Démarrage de Proxmox.
 
@@ -126,10 +128,11 @@ Depuis votre navigateur préféré,
 
 * Connectez-vous avec le login `root` et le mot de passe saisi lors de l'installation (*vous pouvez avant aussi choisir le français et enregistrer le nom d'utilisateur*).
 
-![image|690x375](upload://1K4hqKPdb25Zx3QQQ0Dzc0BhWzY.png)
+![Écran de connexion a Proxmox](img/07-proxmox-ecran-connexion.png "Écran de connexion a Proxmox")
 
-Une fois les identifiants saisis, vous devriez avoir cette boite d'information
-![image|690x377](upload://3mSLpnC0d061h2QsXhjCwxN0bn0.png)
+Une fois les identifiants saisis, vous devriez avoir cette boite d'information.
+
+![Message d'erreur de Proxmox](img/07-proxmox-message-erreur.png "Message d'erreur de Proxmox")
 
 > Pas de panique, Proxmox est une solution de virtualisation opensource gratuite, mais si vous souscrivez, vous avez accès à une hotline complémentaire, c'est le prix à payer pour la gratuité.
 
@@ -141,52 +144,51 @@ La procédure officielle se trouve sur le [site de Home Assistant](https://www.h
 
 Rendez-vous sur le [site de tteck](https://tteck.github.io/Proxmox/).
 
+
+
 ### Mis a jour de Proxmox.
 
 Pour mettre à jour Proxmox :
 
 * Cliquez sur **Proxmox tools**,
-
-![image|689x379](upload://9k6gkjmsGSq0kXN0Lg7wJylfgaA.png)
-
-* Puis sur Proxmox VE 7 Post Install
-
-![image|690x403](upload://rxAPCxRr7HjLw9Jgfo3yqEgVwob.png)
-
+* Puis **Proxmox VE 7 Post Install**,
 * Copiez la ligne de code affichée,
+
+![Récuperation de la commande du script Post Install depuis le site Tteck](img/09-proxmox-récuperation-script-post-install-tteck.gif "Récuperation de la commande du script Post Install depuis le site Tteck")
+
 * Rendez-vous dans le Shell de Proxmox,
+* Coller le code,
+* Collez la et appuyer sur **entrer**.
 
-![ok5|690x431](upload://1hFQQFcThdm5v3ETknZCuVfLxQx.gif)
-
-* Collez la et appuyer sur **entrer**,
-* Tout valider à **yes**
+![Lancement du script Post Install du site Tteck](img/09-proxmox-script-post-install.gif "Lancement du script Post Install du site Tteck")
 
 Cette étape permet de mettre à jour les dépôts permettant de maintenir Proxmox et d'enlever le popup disgracieux au login de Proxmox.
 
 ### Installation de Home Assistant
 
-Toujours dans la page de scripts :
+Toujours dans la page de scripts du [site de tteck](https://tteck.github.io/Proxmox/) :
 
 * Choisir **Home Assistant**, 
-* Home Assistant OS VM,
+* Puis **Home Assistant OS VM**,
 * Copiez la ligne de code affichée,
 * Rendez-vous dans le Shell de Proxmox,
-* Collez la et appuyer sur **entrer**,
+* Collez-la et appuyer sur **entrer**,
 * Suivez les étapes.
 
   > Vous pouvez laisser les paramètres par défauts ou bien les modifier.
 
-![ok6|690x431](upload://ksqEhYDDVO20FxVzjOAfXFsAqB8.gif)
+![Script d'installation Home Assistant OS sur VM Proxmox](img/10-proxmox-installation-script-ha.gif "Script d'installation Home Assistant OS sur VM Proxmox")
 
 Une fois le déroulement du script terminé, retourner sur l'interface principale de Proxmox.
+
+
 Vous devez voir une machine virtuelle 100 (HAOS 9.5 à date) qui doit être créé.
 Cliquer sur cette machine virtuelle, vous pouvez soit consulter la page de résumé, soit accéder au Shell de la machine virtuelle (VM). Dans les deux cas, récupérer l'adresse IP de la VM qui est celle de votre Home Assistant.
 
-![ok7|690x431](upload://4Vs8GQIJDOgcrEQQhOu1c7hZSEB.gif)
+![Récuperation de l'IP de la VM HAOS](img/11-proxmox-recuperation-ip.gif "Récuperation de l'IP de la VM HAOS")
 
 Il vous suffit de saisir cette adresse, suivie du port 8123 pour accéder au premier lancement de Home Assistant
 ex: http://192.168.1.158:8123
-![image|690x412](upload://lnZdRwLRRhk9Upnkvr9fQrEfItn.png)
 
 Continuer la configuration grâce a l'article [premier configuration](/ha_installation_premier_lancement)
 
@@ -209,13 +211,14 @@ Dans la barre verticale de gauche, choisissez la VM sur laquelle vous voulez aff
 
 Cette opération est à faire autant de fois qu'il y a de clé à inclure
 
-![ok9|618x500](upload://BYYehZYEwBPKpP4ivCRU8ASjIE.gif)
+![Ajouter une clé USB a votre VM](img/20-proxmox-ajout-cles-usb.gif "Ajouter une clé USB a votre VM")
 
 **Petit conseil**
 Brancher et inclure une clé à la fois sur votre serveur.
 
 **Vérifier la présence de vos devices USB dans Home Assistant.**
-![ok11|690x251](upload://297j8cTKt4vY3mMx5eFiTHgEyX8.gif)
+
+![Vérifier la présence des matériels USB depuis Home Assistant](img/21-ha-lister-materiel-usb.gif "Vérifier la présence des matériels USB depuis Home Assistant")
 
 **Limitation a quatre USB.**
 Une limitation de quatre périphériques peut être outrepassée via la [méthode suivante](https://forum.proxmox.com/threads/limit-for-usb-devices.89774/)
