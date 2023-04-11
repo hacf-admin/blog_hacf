@@ -3,9 +3,11 @@ folder: dev_tuto_sommaire
 title: Développer pour Home Assistant - Introduction.
 type: post
 visibleInCMS: true
+aliases:
+  - /ha_dev
 draft: false
-date: 2023-04-08
-lastmod: 2023-04-08
+date: 2023-04-11
+lastmod: 2023-04-11
 images: img/tuto-developper-intro.png
 description: >-
   Vous souhaitez développer vos propres intégrations pour vous ou pour la
