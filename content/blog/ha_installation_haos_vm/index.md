@@ -81,9 +81,13 @@ Au boot, vous devriez avoir ceci
 
 **PEUT ÊTRE REMPLACER PAR UNE SEULE IMAGE**
 
-![image|665x500](upload://uEWBYC8JCy5zXZVoLbrSlYMrwT2.png)
+![Ecran accueil de l'installation de Proxmox](img/01-promox-installation.png)
 
 * Cliquez sur  **install proxmox**, (*ça va brasser un peu en mode terminal*),
+
+Ecran accueil de l'installation de Proxmox
+
+
 
 ![image|690x432](upload://m3fRvXVKELlQK8njxt61b1fQYKY.png)
 
