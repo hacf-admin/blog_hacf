@@ -1697,12 +1697,12 @@ collections:
         name: "pseudo_hacf"
         widget: "string"
         hint: "Mettre seulement le pseudos en minuscule" 
-        requiered: false
+        required: false
       - label: "Profil HA Off"
         name: "pseudo_haoff"
         widget: "string"
         hint: "Mettre seulement le pseudos en minuscule"   
-        requiered: false   
+        required: false   
 
 # ARCHIVE pour les sections du dossier data
 #          - {
