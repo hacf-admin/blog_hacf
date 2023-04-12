@@ -366,7 +366,7 @@ Si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
 > **Note** - en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
 > comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
-Le déroulement de la commande `pip install `est globalement le suivant :
+Le déroulement de la commande `pip install`est globalement le suivant :
 
 ```bash
 vscode ➜ /workspaces/python $ pip install -r requirements.txt 
@@ -412,16 +412,18 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 
  "Nouveau dossier", puis donnes lui le nom `config`.
 
-**Notes** 
-* La commande `hass -c ./config `ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus.
-* Arrêter le processus (ctrl+c) stoppe Home Assistant.
-* Pour vérifier que Home Assistant tourne bien, connecte-toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
+> **Notes** 
+>
+> * La commande `hass -c ./config`ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus.
+> * Arrêter le processus (ctrl+c) stoppe Home Assistant.
+
+Pour vérifier que Home Assistant tourne bien, connecte-toi avec un navigateur l'adresse suivante : `http://localhost:9123` et la page d'accueil de Home Assistant doit s'afficher :
 
 ![Accueil Home Assistant](img/accueil-ha.png)
 
 Saisis alors un premier compte et attend la fin de l'installation.
 
-Conseil : normalement les réseaux sont séparés et cette instance Home Assistant de dev ne devrait pas trouver tes équipements. S'il les trouve (ça peut dépendre de ta configuration réseau), ne les ajoute pas. Ça pourrait les perturber.
+**Conseil** : normalement les réseaux sont séparés et cette instance Home Assistant de dev ne devrait pas trouver tes équipements. S'il les trouve (ça peut dépendre de ta configuration réseau), ne les ajoute pas. Ça pourrait les perturber.
 
 > **En cas de pépin :**
 >
@@ -436,7 +438,7 @@ Quand tout se passe bien, on arrive sur le dashboard par défaut suivant :
 
 ![Dashboard](/img/dahsboard-defaut.png)
 
-Si tel n'est pas le cas, n'hésites pas à revoir les étapes précédentes et à demander de l'aide dans le forum (une page spéciale va être créée pour ça).
+Si tel n'est pas le cas, n'hésites pas à revoir les étapes précédentes et à demander de l'aide dans le forum (un sujet est disponible pour ça).
 
 On peut voir aussi que le répertoire `config` a été initialisé avec du contenu bien connu : le fichier `configuration.yaml`, le `home-assistant.log`, ...
 
@@ -457,11 +459,13 @@ Un arrêt / relance complet de VSC te permettra de vérifier que l'installation 
 ### Ajouter des tâches Dev-Container
 
 Arrêter et démarrer Home Assistant en mode ligne de commande dans le Terminal n'est pas très pratique. On va maintenant configurer des tâches Dev-Containers pour faire ça.
-Ca se passe en ouvrant le menu des taches "Command+Shitf+P" (Mac). Ça ouvre un menu qui ressemble à ça :
+
+
+Cela se passe en ouvrant le menu des taches `"Command+Shitf+P"` (Mac). Ça ouvre un menu qui ressemble à ça :
 
 ![](img/executer-taches.png)
 
-Choisis "Executer la tâche", puis "Configurer une tâche", puis "Créer le fichier tasks.json à partir d'un modèle", puis
+Choisis "Exécuter la tâche", puis "Configurer une tâche", puis "Créer le fichier tasks.json à partir d'un modèle", puis
 
 ![](img/task-others.png)
 
@@ -487,17 +491,17 @@ Choisis "Executer la tâche", puis "Configurer une tâche", puis "Créer le fich
 }
 ```
 
-Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu tâches accessibles via `Command+Shift+P` (Mac). Vérifies que ça marche, en tapant "Command+Shift+P", puis "Tâches: Executer une tâche". Tu dois voir les 2 tâches qu'on a créées juste au-dessus :
+Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu tâches accessibles via `Command+Shift+P` (Mac). Vérifies que ça marche, en tapant "Command+Shift+P", puis "Tâches: Exécuter une tâche".
+
+Tu dois voir les 2 tâches que l'on a créées juste au-dessus :
 
 ![](img/taches-ha.png)
 
-Testes les 2 options pour vérifier qu'elles fonctionnent comme prévu.
+Teste les 2 options pour vérifier qu'elles fonctionnent comme prévu.
 
-Une fois lancé en mode tâche, tu as accès à la tâche directement dans VSC en bas à droite :
+Une fois lancé en mode tâche, tu as accès à la tâche directement dans VSC en bas à droite avec possibilité d'arrêter directement en cliquant sur la poubelle. :
 
 ![Console Tache](/img/console-task.png)
-
-avec possibilité d'arrêter directement en cliquant sur la poubelle.
 
 ## Conclusion
 
@@ -507,4 +511,4 @@ On en a profité pour faire un tour rapide des **fonctionnalités de Visual Stud
 
 Comme sur un environnement classique Home Assistant, tu peux modifier le fichier `configuration.yaml`, installer des `intégrations`, ou des intégrations custom dans `config/custom-components`.
 
-C'est ce qu'on fera dans le prochain article : **créer sa propre custom intégration**.
+C'est ce qu'on fera dans le prochain article : **Créer une intégration et une entité simple**.
