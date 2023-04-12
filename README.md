@@ -45,7 +45,7 @@ Dans le dossier `static`-> `admin` -> `config.yml`,
 
 Retourner à la racine du dossier `blog_hacf`,
 * Dans un terminal, lancer la commande `hugo serve`,
-* *facultatif* Dans un deuxième lancer la commande `npx netlify-cms-proxy-server`,
+* *facultatif* Dans un deuxième lancer la commande `npx @staticcms/proxy-server`,
 
 Il y a un article de test (content -> blog -> article-test) que vous pouvez utiliser pour vos essais.
 
