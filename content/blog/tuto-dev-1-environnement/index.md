@@ -24,8 +24,8 @@ Histoire de bien comprendre ce qui est fait, cet article détaille toutes les é
 
 Les outils nécessaires pour bien démarrer sont les suivants :
 
-1. *Docker* : permet la manipulation de conteneurs (container en anglais). Un container peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applis. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage. Ça permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ca tourne. Pour installer Docker ça se passe ici : https://docs.docker.com/desktop/install/mac-install/
-2. *Visual Studio Code* (VSC) : VSC est ce qu'on appelle un IDE (Environnment de développement intégré). Avec lui on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets de par la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
+1. ***Docker*** : permet la manipulation de conteneurs (container en anglais). Un container peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applis. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage. Ça permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ca tourne. Pour installer Docker ça se passe ici : https://docs.docker.com/desktop/install/mac-install/
+2. ***Visual Studio Code* (VSC)** : VSC est ce qu'on appelle un IDE (Environnment de développement intégré). Avec lui on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets de par la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
 
 Ces deux logiciels sont suffisants pour démarrer.
 
@@ -37,7 +37,7 @@ Crées un répertoire sur ton disque dur qui va contenir tes fichiers sources (/
 
 Si c'est la première fois que tu le démarres tu vas avoir une fenêtre qui ressemble à ça :
 
-![Tip](img/vsc-splash-screen.png)
+![Visual Studio](img/vsc-splash-screen.png)
 
 Cliques sur
 
@@ -101,7 +101,6 @@ Une fois toutes les extensions installées, vous devriez les voir la liste des e
 
 ![Extension installées](img/extension-installees.png)
 
-> ![Tip](/images/tips.png?raw=true)
 > Voilà, Visual Studio Code est prêt ! Passons à l'installation et à la préparation du container.
 
 ## Démarrage et configuration du container
@@ -133,7 +132,6 @@ Ca peut faire peur mais on te demande de **choisir l'image de base** dans lequel
 
 Rappelles toi, un container, c'est un espace isolé dans ta machine qui fait tourner un OS. Cet OS il faut le choisir et c'est à cette étape que ça se passe. On est bien en train de dire qu'on va faire tourner une machine Linux sur ton Windows ou Mac avec cette méthode.
 
-> ![Tip](/images/tips.png?raw=true)
 > Le gros avantage c'est que si tu changes de machines (tu passes sur Mac par exemple), l'OS du container sera le même. Donc ton environnement de dev sera portable sur toutes les machines, car indépendant de celle-ci.
 
 Donc, à ce stade l'idée c'est de prendre une image de base du container qui va contenir tout ce qu'on veut : **un OS Linux et tant qu'à faire un Python pré-installé** et dans la bonne version. Comme ça on n'aura pas à le faire. Microsoft nous donne une floppée d'image de base prête à l'emploi.
@@ -182,7 +180,6 @@ Pour quitter le container, il faut cliquer sur le bouton vert en bas à gauche e
 
 ## Résumé à ce stade
 
-> ![Tip](/images/tips.png?raw=true)
 > A ce stade, on a :
 >
 > * installé les outils nécessaires Docker et Visual Studio Code,
@@ -339,7 +336,6 @@ Lorsque tu sauvegardes le fichier (Command + S sur Mac), Dev Container propose d
 Appuies sur Rebuild et VSC va redémarrer avec un container mis à jour avec ces options.
 A chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
 
-> ![Tip](/images/tips.png?raw=true)
 > En cas de soucis, si le container ne démarre pas ou si des erreurs apparaissent, tu peux afficher la console Dev Container pour voir ce qui ne va pas :
 
 ![rebuilt devcontainer](/img/console-dev-containers.png)
@@ -360,8 +356,7 @@ Il est installé dans le terminal avec la commande suivante :
 $ pip install -r requirements.txt
 ```
 
-> ![Tip](/images/tips.png?raw=true)
-> Notes :
+> **Notes :**
 >
 > * tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
 > * si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
@@ -391,7 +386,6 @@ Successfully installed ...
 
 Les messages de type notice indiquant qu'une nouvelle version de pip est disponible peuvent être ignorés sans danger. De temps en temps, fait la mise à jour comme indiqué.
 
-> ![Tip](/images/tips.png?raw=true)
 > Voilà Home Assistant est installé, on va pouvoir le configurer et le démarrer.
 
 ### Démarrer Home Assistant
@@ -411,7 +405,6 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 ...
 ```
 
-> ![Tip](/images/tips.png?raw=true)
 > Notes:
 >
 > * le message, `Fatal Error: Specified configuration directory /workspaces/python/config does not exist` indique que le répertoire `config` n'existe pas. Il faut le créer à la racine du projet avec clic droit dans le navigateur de fichiers :
@@ -424,25 +417,24 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 
 Pour vérifier que Home Assistant tourne bien, connectes toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
 
-![Tip](img/accueil-ha.png)
+![Accueil Home Assistant](img/accueil-ha.png)
 
 Saisis alors un premier compte et attend la fin de l'installation.
 
 Conseil : normalement les réseaux sont séparés et cette instance Home Assistant de dev ne devrait pas trouver tes équipements. Si il les trouve (ça peut dépendre de ta configuration réseau), ne les ajoute pas. Ca pourrait les perturber.
 
-> ![Tip](/images/tips.png?raw=true)
-> En cas de pépin :
+> **En cas de pépin :**
 >
 > * si le navigateur ne trouve rien sur http://localhost:9123, vérifie les choses suivantes :
 > * dans l'onglet Port à coté de Terminal, tu dois voir ton port 9123 ouvert
 
-![Tip](/img/port-ouvert.png)
+![Ports ouverts](/img/port-ouvert.png)
 
 > * si ce n'est pas le cas, soit le port n'est pas le bon et vérifie ta config dans le fichier `devcontainer.json`, soit Home Assistant est arrêté et vérifie dans le terminal où il a été lancé si il est toujours actif.
 
 Quand tout se passe bien, on arrive sur le dashboard par défaut suivant :
 
-![Tip](/img/dahsboard-defaut.png)
+![Dashboard](/img/dahsboard-defaut.png)
 
 Si tel n'est pas le cas, n'hésites pas à revoir les étapes précédentes et à demander de l'aide dans le forum (une page spéciale va être créée pour ça).
 
