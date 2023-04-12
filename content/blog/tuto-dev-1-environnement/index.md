@@ -412,17 +412,15 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 ...
 ```
 
-![Tip](/images/tips.png?raw=true)
-
+> ![Tip](/images/tips.png?raw=true)
 > Notes:
 >
 > * le message, `Fatal Error: Specified configuration directory /workspaces/python/config does not exist` indique que le répertoire `config` n'existe pas. Il faut le créer à la racine du projet avec clic droit dans le navigateur de fichiers :
->
 
 ![Créer répertoire](img/creer-repertoire.png)
 
->
 >   "Nouveau dossier". Donnes lui le nom `config`.
+>
 > * la commande hass -c ./config ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus. Arrêter le processus (ctrl+c) stoppe Home Assistant.
 
 Pour vérifier que Home Assistant tourne bien, connectes toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
@@ -470,11 +468,11 @@ Un arrêt / relance complet de VSC te permettra de vérifier que l'installation 
 Arrêter et démarrer Home Assistant en mode ligne de commande dans le Terminal n'est pas très pratique. On va maintenant configurer des tâches Dev-Containers pour faire ça.
 Ca se passe en ouvrant le menu des taches "Command+Shitf+P" (Mac). Ca ouvre un menu qui ressemble à ça :
 
-![Tâches](/img/executer-taches.png).
+![](img/executer-taches.png)
 
 Choisis "Executer la tâche", puis "Configurer une tâches", puis "Créer le fichier tasks.json à partir d'un modèle", puis
 
-![Tâches others](/img/task-others.png).
+![](img/task-others.png)
 
 Ca vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine de ton projet. Mets les lignes suivantes :
 
@@ -500,7 +498,7 @@ Ca vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine
 
 Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu tâches accessibles via `Command+Shift+P` (Mac). Vérifies que ça marche, en tapant "Command+Shift+P", puis "Tâches: Executer une tâche". Tu dois voir les 2 tâches qu'on a créées juste au-dessus :
 
-![Tâches HA](/img/taches-ha.png).
+![](img/taches-ha.png)
 
 Testes les 2 options pour vérifier qu'elles fonctionnent comme prévu.
 
