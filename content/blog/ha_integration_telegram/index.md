@@ -1,12 +1,9 @@
 ---
 folder: ha_integration_telegram
+title: Dialogue avec Telegram
 type: post
 visibleInCMS: true
 draft: false
-level: Intermédiaire
-authors:
-  - mcfly
-title: Dialogue avec Telegram
 date: 2023-03-02
 lastmod: ""
 images: img/accueil.jpeg
@@ -15,6 +12,8 @@ description: >-
   avec lui.
 
   Il est primordial de recevoir des notifications de son système domotique, et d'y accompagner des images ou des vidéos. Et s'il est possible d'y répondre, c'est encore mieux. Home Assistant permet certes d'envoyer des notifications, mais plutôt pour un usage système. Telegram avec son mécanisme de bot et sa gestion de groupes est vraiment très puissant et très pertinent.
+level: Intermédiaire
+version_ha: "2023.4"
 categories:
   - Add-on/Intégration
 tags:
@@ -22,6 +21,8 @@ tags:
   - notification
   - bot
 author: argonaute
+authors:
+  - mcfly
 url_hacf: https://forum.hacf.fr/t/dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
 ---
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
@@ -190,6 +191,20 @@ action:
       photo:
         - file: /media/poules/snap.jpg
 ```
+
+Vous trouverez dans la doc plus d'informations sur la gestion des images : [Setting up local media sources](https://www.home-assistant.io/more-info/local-media/setup-media/)
+
+Vous pouvez par exemple créer un sous-répertoire `/poules` dans `config/www` qui est par défaut un répertoire avec des accès ouverts.
+
+Puis déclarer ce répertoire dans votre fichier de configuration `config.yaml `pour qu'il soit accessible sous le nom "poules" depuis le répertoire multimédia ainsi que votre code YAML.
+
+```yaml
+homeassistant:
+  media_dirs:
+    poules: /config/www/poules/
+```
+
+
 
 ## 4. Rajout de boutons d'action après le message
 
