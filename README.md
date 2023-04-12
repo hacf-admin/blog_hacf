@@ -37,9 +37,11 @@ sudo apt-get install -y nodejs
 * Installer npm `sudo apt install npm`,
 * Installer les dépendances postCSS `npm install postcss-cli autoprefixer fullhuman/postcss-purgecss`,
 
-*Facultatif si vous n'avez pas besoin de l'interface d'édition*
+*Facultatif si vous avez besoin de l'interface d'édition*
 Dans le dossier `static`-> `admin` -> `config.yml`,
-* Décocher `#local_backend: true`,
+* Décommenter `#local_backend: true`,
+
+>**ATTENTION** : La creation d'article depuis l'interface en local n'agit que sur le depot Github. Cela veut dire que l'article sera créé sur le Github et non en local.
 
 Retourner à la racine du dossier `blog_hacf`,
 * Dans un terminal, lancer la commande `hugo serve`,
