@@ -61,7 +61,7 @@ et valide avec le bouton
 
 Si tu as bien suivi les instructions ci-dessus, tu arrives sur une fenêtre qui ressemble à ça :
 
-![Ouvrir un répertoire](img/vsc-repertoire.png)
+![Sélectionner un répertoire](img/vsc-repertoire.png)
 
 Tu peux fermer la fenêtre de bienvenue en cliquant sur la croix.
 
@@ -99,7 +99,7 @@ Ajouter les extensions suivantes :
 
 Une fois toutes les extensions installées, vous devriez les voir la liste des extensions installées :
 
-![Extensions installées](img/extension-installees.png)
+![Liste des extensions installées](img/extension-installees.png)
 
 > Voilà, **Visual Studio Code est prêt !** Passons à l'installation et à la préparation du container.
 
@@ -138,7 +138,7 @@ Donc, à ce stade, l'idée est de prendre une **image de base du container** qui
 
 Nous allons choisir celle que l'on trouve en tapant `python 3` dans le champ de recherche :
 
-![Python 3 image](/img/image-python3.png)
+![Image Python 3](/img/image-python3.png)
 
 Cliques sur la première ligne et choisis `Create Dev Container` :
 
@@ -148,7 +148,7 @@ Patiente un peu que l'image se télécharge, que VSC redémarre, que VSC initial
 
 Tu devrais voir quelque-chose comme ça :
 
-![Python 3 - image](/img/vsc-dans-container.png)
+![VSC dans un container](/img/vsc-dans-container.png)
 
 En bas à gauche, je vois que je suis dans `Dev Container: Python 3` (ainsi je suis bien en mode **container**) et il m'a créé quelques fichiers de configuration de `Dev-Containe`r pour mémoriser mes choix.
 
@@ -164,7 +164,7 @@ On ira plus tard ajouter des options dans le fichier `devcontainer.json`.
 
 Ouvrez le terminal (`Command +` sur Mac) et explore un peu la machine sur laquelle tu es avec les quelques commandes de base (`pwd`, `ls`, `df -h`) :
 
-![devcontainer.json](/img/container-terminal.png)
+![Container - terminal](/img/container-terminal.png)
 
 Tu devrais constater qu'apparemment, tu n'es plus sur ton PC (ou Mac). Les répertoires ne sont plus les mêmes, tu ne vois plus tes fichiers, mais que ceux qui sont dans Visual Studio Code (VSC)...
 
@@ -174,7 +174,7 @@ C'est clair, tu n'es plus tout à fait sur ton PC, mais **dans un container**.
 
 Pour quitter le container, il faut cliquer sur le bouton vert en bas à gauche et choisir l'option `Fermer la connexion à distance` :
 
-![devcontainer.json](img/dev-container-menu.png)
+![Menu du devcontainer](img/dev-container-menu.png)
 
 >  Après un redémarrage de VSC, tu vas revenir comme avant, en mode "dit" **local** (donc pas dans le container qui est dit mode **distant** ; même si il tourne sur ton PC en local). Ca peut être perturbant au début.
 
@@ -332,14 +332,14 @@ Cela se fait en ajoutant la ligne suivante dans le fichier `devcontainer.json` :
 
 Lorsque tu sauvegardes le fichier (`Command + S` sur Mac), Dev Container propose de "rebuilder" le container avec le message suivant :
 
-![](img/rebuilt-container.png)
+![Rebuild du container](img/rebuilt-container.png)
 
 Appuies sur `Rebuild`et VSC va redémarrer avec un container mis à jour avec ces options.
 À chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
 
 > En cas de soucis, si le container ne démarre pas ou si des erreurs apparaissent, tu peux afficher la console Dev Container pour voir ce qui ne va pas :
 
-![rebuilt devcontainer](/img/console-dev-containers.png)
+![console devcontainer](/img/console-dev-containers.png)
 
 > Si ca arrive, corriges l'erreur dans le fichier `devcontainer.json` et redémarre.
 
@@ -463,11 +463,11 @@ Arrêter et démarrer Home Assistant en mode ligne de commande dans le Terminal 
 
 Cela se passe en ouvrant le menu des taches `"Command+Shitf+P"` (Mac). Ça ouvre un menu qui ressemble à ça :
 
-![](img/executer-taches.png)
+![Exécuter tâches](img/executer-taches.png)
 
 Choisis "Exécuter la tâche", puis "Configurer une tâche", puis "Créer le fichier tasks.json à partir d'un modèle", puis
 
-![](img/task-others.png)
+![Autres taches](img/task-others.png)
 
 Ça vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine de ton projet. Mets les lignes suivantes :
 
@@ -495,7 +495,7 @@ Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu t
 
 Tu dois voir les 2 tâches que l'on a créées juste au-dessus :
 
-![](img/taches-ha.png)
+![Taches Home Assistant](img/taches-ha.png)
 
 Teste les 2 options pour vérifier qu'elles fonctionnent comme prévu.
 
