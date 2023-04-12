@@ -8,8 +8,8 @@ date: 2023-04-11
 lastmod: 2023-04-11
 images: img/tuto-developper-1-environnement.png
 description: "Ce premier tuto vous présente comment mettre en place votre
-  environnement développement : quels outils installer et comment les
-  configurer. "
+  environnement de développement : quels outils installer et comment les
+  configurer."
 level: Avancé
 version_ha: "2023.4"
 categories:
@@ -18,16 +18,21 @@ tags:
   - developpement
 author: jean-marc_collin
 ---
-Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes une par une. Pour les développements suivants, il est plutôt conseillé de cloner un environnement tout prêt. Pour le tuto, c'est plus intéressant de tout faire à la main pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
+Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes de l'installation de votre environnement de développement.
+
+Dans une majorité de cas, il sera plutôt conseillé de cloner un environnement tout prêt. Mais dans le cadre de ce tutoriel, il est plus intéressant de tout faire "à la main" pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
 
 ## Les outils à installer
 
 Les outils nécessaires pour bien démarrer sont les suivants :
 
-1. ***Docker*** : permet la manipulation de conteneurs (container en anglais). Un container peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applis. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage. Ça permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ça tourne. Pour installer Docker ça se passe ici : https://docs.docker.com/desktop/install/mac-install/
+1. ***Docker*** : permet la manipulation de conteneurs ("container" en anglais). Un "container" peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applications. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage.
+Cela permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ça tourne.
+Pour installer Docker ça se passe ici : <https://docs.docker.com/desktop/install/mac-install/>
+
 2. ***Visual Studio Code* (VSC)** : VSC est ce qu'on appelle un IDE (Environnement de développement intégré). Avec lui, on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets grâce à la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
 
-Ces deux logiciels sont suffisants pour démarrer.
+Ces deux logiciels sont suffisants pour démarrer votre projet.
 
 ## Configuration de VSC
 
@@ -57,7 +62,6 @@ et valide avec le bouton
 
 Si tu as bien suivi les instructions ci-dessus, tu arrives sur une fenêtre qui ressemble à ça :
 
-
 ![Ouvrir un répertoire](img/vsc-repertoire.png)
 
 Tu peux fermer la fenêtre de bienvenue en cliquant sur la croix.
@@ -73,7 +77,6 @@ On va ajouter quelques plugins pour faciliter notre développement. Pour cela, i
 de la barre d'outils tout à gauche.
 
 Ajouter les extensions suivantes :
-
 
 * on va faire du Python donc il va nous falloir
 
@@ -370,7 +373,6 @@ $ pip install -r requirements.txt
 > * comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
 Le déroulement de la commande pip install est en gros le suivant :
-
 
 ```bash
 vscode ➜ /workspaces/python $ pip install -r requirements.txt 
