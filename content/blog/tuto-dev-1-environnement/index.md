@@ -18,14 +18,14 @@ tags:
   - developpement
 author: jean-marc_collin
 ---
-Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes une par une. Pour les développements suivants, il est plutot conseillé de cloner un environnement tout prêt. Pour le tuto, c'est plus intéressant de tout faire à la main pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
+Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes une par une. Pour les développements suivants, il est plutôt conseillé de cloner un environnement tout prêt. Pour le tuto, c'est plus intéressant de tout faire à la main pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
 
 ## Les outils à installer
 
 Les outils nécessaires pour bien démarrer sont les suivants :
 
-1. ***Docker*** : permet la manipulation de conteneurs (container en anglais). Un container peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applis. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage. Ça permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ca tourne. Pour installer Docker ça se passe ici : https://docs.docker.com/desktop/install/mac-install/
-2. ***Visual Studio Code* (VSC)** : VSC est ce qu'on appelle un IDE (Environnment de développement intégré). Avec lui on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets de par la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
+1. ***Docker*** : permet la manipulation de conteneurs (container en anglais). Un container peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applis. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage. Ça permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ça tourne. Pour installer Docker ça se passe ici : https://docs.docker.com/desktop/install/mac-install/
+2. ***Visual Studio Code* (VSC)** : VSC est ce qu'on appelle un IDE (Environnement de développement intégré). Avec lui, on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets grâce à la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
 
 Ces deux logiciels sont suffisants pour démarrer.
 
@@ -35,7 +35,7 @@ Ces deux logiciels sont suffisants pour démarrer.
 
 Crées un répertoire sur ton disque dur qui va contenir tes fichiers sources (/Projects/home-assistant/hacs-tuto par exemple) et lances VSC.
 
-Si c'est la première fois que tu le démarres tu vas avoir une fenêtre qui ressemble à ça :
+Si c'est la première fois que tu le démarres, tu vas avoir une fenêtre qui ressemble à ça :
 
 ![Visual Studio](img/vsc-splash-screen.png)
 
@@ -51,27 +51,29 @@ et valide avec le bouton
 
 ![Ouvrir](/img/ouvrir-bouton.png)
 
-*Les copies d'écran sont pour Mac, tu dois adapter à ton OS (Windows, Linux, ...).*
+*Les copies d'écran sont pour Mac, tu dois adapter à ton OS (Windows, Linux...).*
 
 ### Installer quelques plugins
 
-Si tu as bien suivi les instructions ci-dessus, tu arrives sur une fenêtre qui ressemble à ça:
+Si tu as bien suivi les instructions ci-dessus, tu arrives sur une fenêtre qui ressemble à ça :
+
 
 ![Ouvrir un répertoire](img/vsc-repertoire.png)
 
 Tu peux fermer la fenêtre de bienvenue en cliquant sur la croix.
 
-Ca se présente comme ça :
+Ça se présente comme ça :
 
 ![Plan de travail VSC](/img/vsc-plan-travail.png)
 
-On va ajouter quelques plugins pour faciliter notre développement. Pour cela, il faut se mettre sur la vue Extensions en cliquant sur l'icone
+On va ajouter quelques plugins pour faciliter notre développement. Pour cela, il faut se mettre sur la vue Extensions en cliquant sur l'icône
 
 ![](img/bouton-extension.png)
 
 de la barre d'outils tout à gauche.
 
-Ajouter les extensions suivantes:
+Ajouter les extensions suivantes :
+
 
 * on va faire du Python donc il va nous falloir
 
@@ -93,19 +95,19 @@ et celle-là pour nous aider à organiser nos imports :
 
 ![Extension Yaml](/img/extension-yaml.png)
 
-* et celles-là pour avoir une interface en Français et quelques aides sur Git :
+* et celles-là pour avoir une interface en français et quelques aides sur Git :
 
 ![Extension French](/img/extension-french.png)
 
 Une fois toutes les extensions installées, vous devriez les voir la liste des extensions installées
 
-![Extension installées](img/extension-installees.png)
+![Extensions installées](img/extension-installees.png)
 
 > Voilà, Visual Studio Code est prêt ! Passons à l'installation et à la préparation du container.
 
 ## Démarrage et configuration du container
 
-Comme dit plus haut, on va développer dans un container grace au plugin Dev-container installé au-dessus.
+Comme dit plus haut, on va développer dans un container grâce au plugin Dev-container installé au-dessus.
 On va maintenant basculer dans ce mode et le configurer.
 
 1. clic en bas à gauche sur le bouton vert
@@ -114,7 +116,7 @@ On va maintenant basculer dans ce mode et le configurer.
 
 2. et sélectionne l'option "New Dev Container",
 
-Note: le message suivant indique Docker n'est pas démarrer. Il faut qu'il soit lancer AVANT de pouvoir basculer dans le container (forcément) :
+Note: le message suivant indique que Docker n'est pas démarré. Il faut qu'il soit lancé AVANT de pouvoir basculer dans le container (forcément) :
 
 ![Docker not started](/img/docker-not-started.png)
 
@@ -128,13 +130,13 @@ Refait "clic sur le bouton vert" + "New Dev Container" au besoin et tu dois arri
 
 ![Dev Container image](/img/dev-container-images.png)
 
-Ca peut faire peur mais on te demande de **choisir l'image de base** dans lequel va tourner ton environnement de dev.
+Ça peut faire peur, mais on te demande de **choisir l'image de base** dans lequel va tourner ton environnement de dev.
 
-Rappelles toi, un container, c'est un espace isolé dans ta machine qui fait tourner un OS. Cet OS il faut le choisir et c'est à cette étape que ça se passe. On est bien en train de dire qu'on va faire tourner une machine Linux sur ton Windows ou Mac avec cette méthode.
+Rappelle-toi, un container, c'est un espace isolé dans ta machine qui fait tourner un OS. Cet OS, il faut le choisir et c'est à cette étape que ça se passe. On est bien en train de dire qu'on va faire tourner une machine Linux sur ton Windows ou Mac avec cette méthode.
 
 > Le gros avantage c'est que si tu changes de machines (tu passes sur Mac par exemple), l'OS du container sera le même. Donc ton environnement de dev sera portable sur toutes les machines, car indépendant de celle-ci.
 
-Donc, à ce stade l'idée c'est de prendre une image de base du container qui va contenir tout ce qu'on veut : **un OS Linux et tant qu'à faire un Python pré-installé** et dans la bonne version. Comme ça on n'aura pas à le faire. Microsoft nous donne une floppée d'image de base prête à l'emploi.
+Donc, à ce stade l'idée, c'est de prendre une image de base du container qui va contenir tout ce qu'on veut : **un OS Linux et tant qu'à faire un Python pré-installé** et dans la bonne version. Comme ça on n'aura pas à le faire. Microsoft nous donne une flopée d'image de base prête à l'emploi.
 
 On va prendre celle qu'on trouve en tapant "python 3" dans le champ de recherche :
 
@@ -144,7 +146,7 @@ Cliques sur la première ligne et choisis "Create Dev Container" :
 
 ![Create dev container](/img/create-dev-container.png)
 
-Patiente un peu que l'image se télécharge, que VSC redémarre, que VSC initialise le container. VSC redémarre mais cette fois dans le container. Vous devriez voir quelque-chose comme ça :
+Patiente un peu que l'image se télécharge, que VSC redémarre, que VSC initialise le container. VSC redémarre, mais cette fois dans le container. Vous devriez voir quelque-chose comme ça :
 
 ![Python 3 image](/img/vsc-dans-container.png)
 
@@ -164,9 +166,9 @@ Ouvrez le terminal (Command + `sur Mac) et explores un peu la machine sur laquel
 
 ![devcontainer.json](/img/container-terminal.png)
 
-Tu devrais constater qu'apparement tu n'es plus sur ton PC (ou Mac). Les répertoires ne sont plus les mêmes, tu ne vois plus tes fichiers mais que ceux qui sont dans VSC, ...
+Tu devrais constater qu'apparemment, tu n'es plus sur ton PC (ou Mac). Les répertoires ne sont plus les mêmes, tu ne vois plus tes fichiers, mais que ceux qui sont dans VSC...
 
-C'est clair, tu n'es plus tout à fait sur ton PC mais dans un container.
+C'est clair, tu n'es plus tout à fait sur ton PC, mais dans un container.
 
 ### Quitter le container et revenir en local
 
@@ -210,8 +212,8 @@ On va ajouter les extensions vscode suivantes :
 
 * `ms-python.python` : on va faire du Python,
 * `ms-python.vscode-pylance` : une extension très riche sur Python qui simplifie le développement.
-* `github.vscode-pull-request-github` :  si on veut faire des pull request dans Github (pas nécessaire pour le tuto mais ca évitera d'y revenir ensuite),
-* `ryanluker.vscode-coverage-gutters` : pour mesurer ce qu'on appelle la couverture du code "code coverage" par les tests. On cherche à trouver les parties de notre code qui ne sont pas testées afin d'améliorer nos tests et d'être sur qu'on n'en a pas oublié. On s'en servira dans le chapitre sur les tests,
+* `github.vscode-pull-request-github` :  si on veut faire des pull request dans Github (pas nécessaire pour le tuto, mais ça évitera d'y revenir ensuite),
+* `ryanluker.vscode-coverage-gutters` : pour mesurer ce qu'on appelle la couverture du code "code coverage" par les tests. On cherche à trouver les parties de notre code qui ne sont pas testées afin d'améliorer nos tests et d'être sûr qu'on n'en a pas oublié. On s'en servira dans le chapitre sur les tests,
 
 Pour ajouter ces extensions, on ajoute simplement le bloc suivant dans le fichier `devcontainer.json` sous `customisations/vscode`:
 
@@ -226,18 +228,18 @@ Pour ajouter ces extensions, on ajoute simplement le bloc suivant dans le fichie
 
 #### Options
 
-Les options suivantes permettent de personnaliser l'environement Dev Containers. Bien que pas indispensable, il sont fortement recommandées pour le développement sous HA afin d'uniformiser tous les développements.
+Les options suivantes permettent de personnaliser l'environement Dev Containers. Bien que pas indispensable, ils ont fortement recommandé pour le développement sous HA afin d'uniformiser tous les développements.
 
 * `file.eol` : on utilise la forme Linux des sauts de ligne \n,
 * `editor.tabSize` : taille d'une tabulation,
-* `terminal..`. : le shell à utiliser dans le terminal. A adapter selon vos préférences au besoin,
-* `python.pythonPath` : le chemin de l'executable Python,
+* `terminal..`. : le shell à utiliser dans le terminal. À adapter selon vos préférences au besoin,
+* `python.pythonPath` : le chemin de l'exécutable Python,
 * `python.linting.pylintEnabled` : on autorise l'analyseur de code 'lint',
 * `python.linting.enabled` : on autorise le lint (analyse syntaxique du code),
-* `python.formatting.provider` : le code est formatté en utilisant ce formatteur,
-* `editor.formatOnPaste` : est-ce qu'on formatte le code lors d'un copy/paste,
-* `editor.formatOnSave` : est-ce qu'on formatte avant sauvegarde,
-* `editor.formatOnType` : est-ce qu'on formatte lors de la frappe du texte,
+* `python.formatting.provider` : le code est formaté en utilisant ce formateur,
+* `editor.formatOnPaste` : est-ce qu'on formate le code lors d'un copy/paste,
+* `editor.formatOnSave` : est-ce qu'on formate avant sauvegarde,
+* `editor.formatOnType` : est-ce qu'on formate lors de la frappe du texte,
 * `files.trimTrailingWhitespace` : est-ce qu'on supprime les blancs en trop.
 
 La plupart des **options sont nécessaires pour pouvoir prétendre pousser du code à l'équipe Core Home Assistant** qui ne le regardera même pas si le code n'est pas propre. Donc le mieux, c'est de les utiliser tout de suite et de s'y habituer. A l'usage, les valeurs par défaut proposées sont agréables et utiles.
@@ -267,15 +269,15 @@ Pour les ajouter, il faut ajouter le bloc suivant dans le fichier `devcontainer.
 }
 ```
 
-Profitez en pour donner un nom à votre container dans le champ `name`.
+Profitez-en pour donner un nom à votre container dans le champ `name`.
 
 #### Exposer le port de Home Assistant
 
 Home assistant de dev utilise le même port que le vrai : 8123. On va devoir se connecter dessus pour tester notre intégration. Pour éviter la confusion avec votre éventuel "vrai" HA, j'utilise le port 9123.
 
-Donc on va indiquer à Dev Container d'exposer le port 9123 et de le router sur le port 8123 du container.
+Donc, on va indiquer à Dev Container d'exposer le port 9123 et de le router sur le port 8123 du container.
 
-Ca se fait en ajoutant la ligne suivante dans le fichier `devcontainer.json` :
+Cela se fait en ajoutant la ligne suivante dans le fichier `devcontainer.json` :
 
 ```
 "appPort": [
@@ -285,7 +287,7 @@ Ca se fait en ajoutant la ligne suivante dans le fichier `devcontainer.json` :
 
 #### Le fichier devcontainer.json complet
 
-A ce stade tu devrais avoir un fichier `devcontainer.json` qui ressemble à ça (sans les commentaires) :
+À ce stade, tu devrais avoir un fichier `devcontainer.json` qui ressemble à ça (sans les commentaires) :
 
 ```json
 {
@@ -329,7 +331,7 @@ A ce stade tu devrais avoir un fichier `devcontainer.json` qui ressemble à ça 
 }
 ```
 
-Lorsque tu sauvegardes le fichier (Command + S sur Mac), Dev Container propose de rebuilder le container avec le message suivant :
+Lorsque tu sauvegardes le fichier (Command + S sur Mac), Dev Container propose de "rebuilder" le container avec le message suivant :
 
 ![](img/rebuilt-container.png)
 
@@ -367,7 +369,8 @@ $ pip install -r requirements.txt
 >
 > * comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
-Le déroulement de la commande pip install est en gros le suivant:
+Le déroulement de la commande pip install est en gros le suivant :
+
 
 ```bash
 vscode ➜ /workspaces/python $ pip install -r requirements.txt 
@@ -415,13 +418,13 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 >
 > * la commande hass -c ./config ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus. Arrêter le processus (ctrl+c) stoppe Home Assistant.
 
-Pour vérifier que Home Assistant tourne bien, connectes toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
+Pour vérifier que Home Assistant tourne bien, connecte-toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
 
 ![Accueil Home Assistant](img/accueil-ha.png)
 
 Saisis alors un premier compte et attend la fin de l'installation.
 
-Conseil : normalement les réseaux sont séparés et cette instance Home Assistant de dev ne devrait pas trouver tes équipements. Si il les trouve (ça peut dépendre de ta configuration réseau), ne les ajoute pas. Ca pourrait les perturber.
+Conseil : normalement les réseaux sont séparés et cette instance Home Assistant de dev ne devrait pas trouver tes équipements. S'il les trouve (ça peut dépendre de ta configuration réseau), ne les ajoute pas. Ça pourrait les perturber.
 
 > **En cas de pépin :**
 >
@@ -448,7 +451,7 @@ On va apprendre juste en dessous, une méthode un peu plus pratique.
 
 ### Configurer l'installation automatique au démarrage
 
-A chaque démarrage de VSC, le container est reconstruit. Donc toutes les installations qu'on a pu faire à la main `pip install ...` sont perdues. Pour pallier à ça, on va ajouter la commande d'installation dans notre `devcontainer.json` :
+A chaque démarrage de VSC, le container est reconstruit. Donc toutes les installations qu'on a pu faire à la main `pip install ...` sont perdues. Pour éviter cela, on va ajouter la commande d'installation dans notre `devcontainer.json` :
 
 `"postCreateCommand": "pip install -r requirements.txt"`
 
@@ -457,15 +460,15 @@ Un arrêt / relance complet de VSC te permettra de vérifier que l'installation 
 ### Ajouter des tâches Dev-Container
 
 Arrêter et démarrer Home Assistant en mode ligne de commande dans le Terminal n'est pas très pratique. On va maintenant configurer des tâches Dev-Containers pour faire ça.
-Ca se passe en ouvrant le menu des taches "Command+Shitf+P" (Mac). Ca ouvre un menu qui ressemble à ça :
+Ca se passe en ouvrant le menu des taches "Command+Shitf+P" (Mac). Ça ouvre un menu qui ressemble à ça :
 
 ![](img/executer-taches.png)
 
-Choisis "Executer la tâche", puis "Configurer une tâches", puis "Créer le fichier tasks.json à partir d'un modèle", puis
+Choisis "Executer la tâche", puis "Configurer une tâche", puis "Créer le fichier tasks.json à partir d'un modèle", puis
 
 ![](img/task-others.png)
 
-Ca vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine de ton projet. Mets les lignes suivantes :
+Ça vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine de ton projet. Mets les lignes suivantes :
 
 ```json
 {
@@ -503,7 +506,7 @@ avec possibilité d'arrêter directement en cliquant sur la poubelle.
 
 En synthèse, à travers cet article, tu as appris à **installer un environnement de développement complet**, à **le configurer** et **à démarrer Home Assistant** dans cet environnement.
 
-On en a profité pour faire un tour rapide des **fonctionnalités de Visual Studio Code** et du **plugin Dev-Containers** qui est au coeur du développement pour Home Assistant.
+On en a profité pour faire un tour rapide des **fonctionnalités de Visual Studio Code** et du **plugin Dev-Containers** qui est au cœur du développement pour Home Assistant.
 
 Comme sur un environnement classique Home Assistant, tu peux modifier le fichier `configuration.yaml`, installer des `intégrations`, ou des intégrations custom dans `config/custom-components`.
 
