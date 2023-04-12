@@ -511,4 +511,4 @@ On en a profité pour faire un tour rapide des **fonctionnalités de Visual Stud
 
 Comme sur un environnement classique Home Assistant, tu peux modifier le fichier `configuration.yaml`, installer des `intégrations`, ou des intégrations custom dans `config/custom-components`.
 
-C'est ce qu'on fera dans le prochain article : **Créer une intégration et une entité simple**.
+C'est ce que l'on fera dans le prochain article : **Créer une intégration et une entité simple**.
