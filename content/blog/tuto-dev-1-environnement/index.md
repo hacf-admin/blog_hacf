@@ -58,7 +58,7 @@ et valide avec le bouton
 
 Si tu as bien suivi les instructions ci-dessus, tu arrives sur une fenêtre qui ressemble à ça:
 
-![Ouvrir un répertoire](img/ouvrir.png)
+![Ouvrir un répertoire](img/vsc-repertoire.png)
 
 Tu peux fermer la fenêtre de bienvenue en cliquant sur la croix.
 
@@ -68,7 +68,7 @@ Ca se présente comme ça :
 
 On va ajouter quelques plugins pour faciliter notre développement. Pour cela, il faut se mettre sur la vue Extensions en cliquant sur l'icone
 
-[Plan de travail VSC](/img/bouton-extension.png)
+![](img/bouton-extension.png)
 
 de la barre d'outils tout à gauche.
 
@@ -100,7 +100,7 @@ et celle-là pour nous aider à organiser nos imports :
 
 Une fois toutes les extensions installées, vous devriez les voir la liste des extensions installées
 
-![Extension installées](/img/extension-installees.png)
+![Extension installées](img/extension-installees.png)
 
 > ![Tip](/images/tips.png?raw=true)
 > Voilà, Visual Studio Code est prêt ! Passons à l'installation et à la préparation du container.
@@ -165,7 +165,7 @@ On ira plus tard ajouter des options dans le fichier `devcontainer.json`.
 
 Ouvrez le terminal (Command + `sur Mac) et explores un peu la machine sur laquelle tu es avec les quelques commandes de base (`pwd`,`ls`,`df -h`) :
 
-> ![devcontainer.json](/img/container-terminal.png)
+![devcontainer.json](/img/container-terminal.png)
 
 Tu devrais constater qu'apparement tu n'es plus sur ton PC (ou Mac). Les répertoires ne sont plus les mêmes, tu ne vois plus tes fichiers mais que ceux qui sont dans VSC, ...
 
@@ -175,7 +175,7 @@ C'est clair, tu n'es plus tout à fait sur ton PC mais dans un container.
 
 Pour quitter le container, il faut cliquer sur le bouton vert en bas à gauche et choisir l'option `Fermer la connexion à distance` :
 
-![devcontainer.json](/img/dev-container-menu.png)
+![devcontainer.json](img/dev-container-menu.png)
 
 >  Après un redémarrage de VSC, tu vas revenir comme avant, en mode "dit" local (donc pas dans le container qui est dit mode distant ; même si il tourne sur ton PC en local). Ca peut être perturbant au début.
 
@@ -335,7 +335,7 @@ A ce stade tu devrais avoir un fichier `devcontainer.json` qui ressemble à ça 
 
 Lorsque tu sauvegardes le fichier (Command + S sur Mac), Dev Container propose de rebuilder le container avec le message suivant :
 
-![rebuilt devcontainer](/img/rebuilt-container.png).
+![](img/rebuilt-container.png)
 
 Appuies sur Rebuild et VSC va redémarrer avec un container mis à jour avec ces options.
 A chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
@@ -366,10 +366,11 @@ $ pip install -r requirements.txt
 >
 > * tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
 > * si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
-
-![nouveau terminal](/img/nouveau-terminal.png)
-
-et en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
+>
+> ![nouveau terminal](img/nouveau-terminal.png)
+>
+> et en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
+>
 > * comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
 Le déroulement de la commande pip install est en gros le suivant:
@@ -396,7 +397,7 @@ Les messages de type notice indiquant qu'une nouvelle version de pip est disponi
 
 ### Démarrer Home Assistant
 
-Une fois la package installé, les commandes suivantes permettent de terminer l'installation et la configuration de Home Assistant. Ces commandes sont à taper dans le terminal du container toujours:
+Une fois la package installé, les commandes suivantes permettent de terminer l'installation et la configuration de Home Assistant. Ces commandes sont à taper dans le terminal du container toujours :
 
 ```bash
 ## Donne la version couramment installée
@@ -411,17 +412,22 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 ...
 ```
 
-> ![Tip](/images/tips.png?raw=true)
+![Tip](/images/tips.png?raw=true)
+
 > Notes:
 >
 > * le message, `Fatal Error: Specified configuration directory /workspaces/python/config does not exist` indique que le répertoire `config` n'existe pas. Il faut le créer à la racine du projet avec clic droit dans le navigateur de fichiers :
->   ![Créer répertoire](/images/creer-repertoire.png?raw=true)
+>
+
+![Créer répertoire](img/creer-repertoire.png)
+
+>
 >   "Nouveau dossier". Donnes lui le nom `config`.
 > * la commande hass -c ./config ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus. Arrêter le processus (ctrl+c) stoppe Home Assistant.
 
 Pour vérifier que Home Assistant tourne bien, connectes toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
 
-> ![Tip](/images/accueil-ha.png?raw=true)
+![Tip](img/accueil-ha.png)
 
 Saisis alors un premier compte et attend la fin de l'installation.
 
@@ -432,11 +438,15 @@ Conseil : normalement les réseaux sont séparés et cette instance Home Assista
 >
 > * si le navigateur ne trouve rien sur http://localhost:9123, vérifie les choses suivantes :
 > * dans l'onglet Port à coté de Terminal, tu dois voir ton port 9123 ouvert
->   ![Tip](/images/port-ouvert.png?raw=true)
+
+![Tip](/img/port-ouvert.png)
+
 > * si ce n'est pas le cas, soit le port n'est pas le bon et vérifie ta config dans le fichier `devcontainer.json`, soit Home Assistant est arrêté et vérifie dans le terminal où il a été lancé si il est toujours actif.
 
 Quand tout se passe bien, on arrive sur le dashboard par défaut suivant :
-![Tip](/images/dahsboard-defaut.png?raw=true).
+
+![Tip](/img/dahsboard-defaut.png)
+
 Si tel n'est pas le cas, n'hésites pas à revoir les étapes précédentes et à demander de l'aide dans le forum (une page spéciale va être créée pour ça).
 
 On peut voir aussi que le répertoire `config` a été initialisé avec du contenu bien connu : le fichier `configuration.yaml`, le `home-assistant.log`, ...
@@ -459,9 +469,12 @@ Un arrêt / relance complet de VSC te permettra de vérifier que l'installation 
 
 Arrêter et démarrer Home Assistant en mode ligne de commande dans le Terminal n'est pas très pratique. On va maintenant configurer des tâches Dev-Containers pour faire ça.
 Ca se passe en ouvrant le menu des taches "Command+Shitf+P" (Mac). Ca ouvre un menu qui ressemble à ça :
-![Tâches](/images/executer-taches.png?raw=true).
+
+![Tâches](/img/executer-taches.png).
+
 Choisis "Executer la tâche", puis "Configurer une tâches", puis "Créer le fichier tasks.json à partir d'un modèle", puis
-![Tâches others](/images/task-others.png?raw=true).
+
+![Tâches others](/img/task-others.png).
 
 Ca vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine de ton projet. Mets les lignes suivantes :
 
@@ -486,7 +499,8 @@ Ca vous ouvre un fichier `tasks.json` dans le répertoire `.vscode` à la racine
 ```
 
 Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu tâches accessibles via `Command+Shift+P` (Mac). Vérifies que ça marche, en tapant "Command+Shift+P", puis "Tâches: Executer une tâche". Tu dois voir les 2 tâches qu'on a créées juste au-dessus :
-![Tâches HA](/images/taches-ha.png?raw=true).
+
+![Tâches HA](/img/taches-ha.png).
 
 Testes les 2 options pour vérifier qu'elles fonctionnent comme prévu.
 
