@@ -334,7 +334,7 @@ Lorsque tu sauvegardes le fichier (`Command + S` sur Mac), Dev Container propose
 
 ![](img/rebuilt-container.png)
 
-Appuies sur `Rebuild `et VSC va redémarrer avec un container mis à jour avec ces options.
+Appuies sur `Rebuild`et VSC va redémarrer avec un container mis à jour avec ces options.
 À chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
 
 > En cas de soucis, si le container ne démarre pas ou si des erreurs apparaissent, tu peux afficher la console Dev Container pour voir ce qui ne va pas :
@@ -357,15 +357,16 @@ Il est installé via le terminal avec la commande suivante :
 $ pip install -r requirements.txt
 ```
 
-> **Note 1 :** tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
-> * si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
+> **Note** - tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
+
+Si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
 
 ![nouveau terminal](img/nouveau-terminal.png)
 
-> **Note 2 :** en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
+> **Note** - en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
 > comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
-Le déroulement de la commande pip install est en gros le suivant :
+Le déroulement de la commande `pip install `est globalement le suivant :
 
 ```bash
 vscode ➜ /workspaces/python $ pip install -r requirements.txt 
@@ -382,13 +383,15 @@ Building wheels for collected packages: ...
 Successfully installed ...
 ```
 
-Les messages de type notice indiquant qu'une nouvelle version de pip est disponible peuvent être ignorés sans danger. De temps en temps, fait la mise à jour comme indiqué.
+Les messages de type "notice" indiquant qu'une nouvelle version de pip est disponible peuvent être ignorés sans danger. De temps en temps, fais la mise à jour comme indiqué.
 
-> Voilà Home Assistant est installé, on va pouvoir le configurer et le démarrer.
+> Voilà **Home Assistant est installé**, on va pouvoir le configurer et le démarrer.
 
 ### Démarrer Home Assistant
 
-Une fois la package installé, les commandes suivantes permettent de terminer l'installation et la configuration de Home Assistant. Ces commandes sont à taper dans le terminal du container toujours :
+Une fois la package installé, les commandes suivantes permettent de terminer l'installation et la configuration de Home Assistant.
+
+Ces commandes sont à taper dans le terminal du container toujours :
 
 ```bash
 ## Donne la version couramment installée
@@ -403,17 +406,16 @@ Unable to find configuration. Creating default one in /workspaces/python/config 
 ...
 ```
 
-> Notes:
->
-> * le message, `Fatal Error: Specified configuration directory /workspaces/python/config does not exist` indique que le répertoire `config` n'existe pas. Il faut le créer à la racine du projet avec clic droit dans le navigateur de fichiers :
+> **Note** - le message, `Fatal Error: Specified configuration directory /workspaces/python/config does not exist` indique que le répertoire `config` n'existe pas. Il faut le créer à la racine du projet avec clic droit dans le navigateur de fichiers comme indiqué ci-dessous.
 
 ![Créer répertoire](img/creer-repertoire.png)
 
->   "Nouveau dossier". Donnes lui le nom `config`.
->
-> * la commande hass -c ./config ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus. Arrêter le processus (ctrl+c) stoppe Home Assistant.
+ "Nouveau dossier", puis donnes lui le nom `config`.
 
-Pour vérifier que Home Assistant tourne bien, connecte-toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
+**Notes** 
+* La commande `hass -c ./config `ne rend pas la main. C'est normal, Home Assistant tourne dans ce processus.
+* Arrêter le processus (ctrl+c) stoppe Home Assistant.
+* Pour vérifier que Home Assistant tourne bien, connecte-toi avec un navigateur l'adresse suivante : http://localhost:9123 et la page d'accueil de Home Assistant doit s'afficher :
 
 ![Accueil Home Assistant](img/accueil-ha.png)
 
