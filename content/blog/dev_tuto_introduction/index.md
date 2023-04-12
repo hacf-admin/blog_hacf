@@ -52,7 +52,7 @@ Pour démarrer, je ne peux que conseiller de démarrer avec une intégration HAC
 
 **Un peu de lecture :** la doc officielle est [ici](https://developers.home-assistant.io/). Elle est en anglais, pas super à jour tout le temps, n'est pas faite pour développer une intégration HACS et n'est pas très didactique. Si tu n'y connais rien, tu ne comprendras pas grand-chose. Par contre, s'y référer de temps en temps pour étendre le champ de sa connaissance une fois qu'on a compris les concepts est une super bonne idée. Gardes bien ça en tête.
 
-> ![](blob:https://hacf.fr/e4d82d14-9be6-4dd2-91ea-d40aa1d31df6)**Tu es prêt ? Fébrile ? Ca va aller, on te dit...**
+> **Tu es prêt ? Fébrile ? Ca va aller, on te dit...**
 
 ## Liste des tutos
 
