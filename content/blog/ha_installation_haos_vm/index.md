@@ -4,8 +4,9 @@ title: Installer Home Assistant OS avec Proxmox (VM).
 type: post
 visibleInCMS: true
 draft: true
-date: 2023-04-10
-lastmod: 2023-04-10
+date: 2023-04-12
+lastmod: 2023-04-12
+images: img/ha_os_proxmox.png
 description: >-
   Vous avez une machine avec un peu de puissance comme un mini PC, et vous
   voulez faire tourner dessus Home Assistant, mais pas seulement.
@@ -19,7 +20,13 @@ type_install:
 version_ha: 2023.4.0
 categories:
   - Installation
-author: default
+tags:
+  - haos
+  - superviseur
+  - proxmox
+  - vm
+  - ""
+author: jrvrcd
 authors: []
 ---
 Vous avez une machine avec un peu de puissance, comme un mini PC, et vous souhaitez faire tourner Home Assistant, mais pas que ?
