@@ -41,11 +41,16 @@ Si c'est la première fois que tu le démarres tu vas avoir une fenêtre qui res
 ![Tip](img/vsc-splash-screen.png)
 
 Cliques sur
-![Ouvrir](img/ouvrir.png?raw=true)
+
+![Ouvrir](img/ouvrir.png)
+
 puis va chercher le répertoire créé ci-dessus
-![Répertoire](/img/ouvrir-repertoire.png?raw=true)
+
+![Répertoire](/img/ouvrir-repertoire.png)
+
 et valide avec le bouton
-![Ouvrir](/img/ouvrir-bouton.png?raw=true)
+
+![Ouvrir](/img/ouvrir-bouton.png)
 
 *Les copies d'écran sont pour Mac, tu dois adapter à ton OS (Windows, Linux, ...).*
 
@@ -53,35 +58,49 @@ et valide avec le bouton
 
 Si tu as bien suivi les instructions ci-dessus, tu arrives sur une fenêtre qui ressemble à ça:
 
-> ![Ouvrir un répertoire](/images/vsc-repertoire.png?raw=true)
+![Ouvrir un répertoire](img/ouvrir.png)
 
 Tu peux fermer la fenêtre de bienvenue en cliquant sur la croix.
 
 Ca se présente comme ça :
 
-> ![Plan de travail VSC](/images/vsc-plan-travail.png?raw=true)
+![Plan de travail VSC](/img/vsc-plan-travail.png)
 
 On va ajouter quelques plugins pour faciliter notre développement. Pour cela, il faut se mettre sur la vue Extensions en cliquant sur l'icone
-![Plan de travail VSC](/images/bouton-extension.png?raw=true)
+
+[Plan de travail VSC](/img/bouton-extension.png)
+
 de la barre d'outils tout à gauche.
 
 Ajouter les extensions suivantes:
 
 * on va faire du Python donc il va nous falloir
-  ![Extension Python](/images/extension-python.png?raw=true),
-  et celle-là pour nous aider à organiser nos imports :
-  ![Extension Python 1](/images/extension-python1.png?raw=true)
+
+![Extension Python](/images/extension-python.png)
+
+et celle-là pour nous aider à organiser nos imports :
+
+![Extension Python 1](/img/extension-python1.png)
+
 * on va utiliser des containers pour développer donc il nous faut :
-  ![Extension Containers](/images/extension-container.png?raw=true)
+
+![Extension Containers](/img/extension-container.png)
+
 * celle-là va nous aider à coder en nous faisant des suggestions :
-  ![Extension Intellicode](/images/extension-intellicode.png?raw=true)
+
+![Extension Intellicode](/img/extension-intellicode.png)
+
 * celle-là pour aider à faire du yaml :
-  ![Extension Yaml](/images/extension-yaml.png?raw=true)
+
+![Extension Yaml](/img/extension-yaml.png)
+
 * et celles-là pour avoir une interface en Français et quelques aides sur Git :
-  ![Extension French](/images/extension-french.png?raw=true)
+
+![Extension French](/img/extension-french.png)
 
 Une fois toutes les extensions installées, vous devriez les voir la liste des extensions installées
-![Extension installées](/images/extension-installees.png?raw=true)
+
+![Extension installées](/img/extension-installees.png)
 
 > ![Tip](/images/tips.png?raw=true)
 > Voilà, Visual Studio Code est prêt ! Passons à l'installation et à la préparation du container.
@@ -92,19 +111,24 @@ Comme dit plus haut, on va développer dans un container grace au plugin Dev-con
 On va maintenant basculer dans ce mode et le configurer.
 
 1. clic en bas à gauche sur le bouton vert
-   ![Bouton vert](/images/bouton-vert.png?raw=true)
+
+![Bouton vert](/img/bouton-vert.png)
+
 2. et sélectionne l'option "New Dev Container",
 
 Note: le message suivant indique Docker n'est pas démarrer. Il faut qu'il soit lancer AVANT de pouvoir basculer dans le container (forcément) :
-![Docker not started](/images/docker-not-started.png?raw=true)
+
+![Docker not started](/img/docker-not-started.png)
 
 Sur Mac, F4, "Docker - ouvrir", attendez un peu et vous devriez pouvoir ouvrir la console Docker et voir quelque-chose qui ressemble à ça :
-![Docker console](/images/docker-console.png?raw=true)
+
+![Docker console](/img/docker-console.png)
 
 ### Basculer dans le container
 
 Refait "clic sur le bouton vert" + "New Dev Container" au besoin et tu dois arriver sur quelque-chose qui ressemble à ça :
-![Dev Container image](/images/dev-container-images.png?raw=true)
+
+![Dev Container image](/img/dev-container-images.png)
 
 Ca peut faire peur mais on te demande de **choisir l'image de base** dans lequel va tourner ton environnement de dev.
 
@@ -117,20 +141,21 @@ Donc, à ce stade l'idée c'est de prendre une image de base du container qui va
 
 On va prendre celle qu'on trouve en tapant "python 3" dans le champ de recherche :
 
-![Python 3 image](/images/image-python3.png?raw=true)
+![Python 3 image](/img/image-python3.png)
 
 Cliques sur la première ligne et choisis "Create Dev Container" :
-![Create dev container](/images/create-dev-container.png?raw=true)
+
+![Create dev container](/img/create-dev-container.png)
 
 Patiente un peu que l'image se télécharge, que VSC redémarre, que VSC initialise le container. VSC redémarre mais cette fois dans le container. Vous devriez voir quelque-chose comme ça :
 
-> ![Python 3 image](/images/vsc-dans-container.png?raw=true)
+![Python 3 image](/img/vsc-dans-container.png)
 
 En bas à gauche, je vois que je suis dans Dev Container: Python 3 (donc je suis bien en mode container) et il m'a créé quelques fichiers de configuration de Dev-Container pour mémoriser mes choix.
 
 Ouvre le répertoire .devcontainer et tu dois voir ça :
 
-> ![devcontainer.json](/images/dev-container-json.png?raw=true)
+![devcontainer.json](/img/dev-container-json.png)
 
 On peut que l'image qui a été utilisé pour notre container : mcr.microsoft.com/vscode/devcontainers/python:0-3.11
 
@@ -138,9 +163,9 @@ On ira plus tard ajouter des options dans le fichier `devcontainer.json`.
 
 ### Une dernière chose
 
-Ouvrez le terminal (Command + ` sur Mac) et explores un peu la machine sur laquelle tu es avec les quelques commandes de base (`pwd`, `ls`, `df -h`) :
+Ouvrez le terminal (Command + `sur Mac) et explores un peu la machine sur laquelle tu es avec les quelques commandes de base (`pwd`,`ls`,`df -h`) :
 
-> ![devcontainer.json](/images/container-terminal.png?raw=true)
+> ![devcontainer.json](/img/container-terminal.png)
 
 Tu devrais constater qu'apparement tu n'es plus sur ton PC (ou Mac). Les répertoires ne sont plus les mêmes, tu ne vois plus tes fichiers mais que ceux qui sont dans VSC, ...
 
@@ -150,8 +175,8 @@ C'est clair, tu n'es plus tout à fait sur ton PC mais dans un container.
 
 Pour quitter le container, il faut cliquer sur le bouton vert en bas à gauche et choisir l'option `Fermer la connexion à distance` :
 
-> ![devcontainer.json](/images/dev-container-menu.png?raw=true)
->
+![devcontainer.json](/img/dev-container-menu.png)
+
 >  Après un redémarrage de VSC, tu vas revenir comme avant, en mode "dit" local (donc pas dans le container qui est dit mode distant ; même si il tourne sur ton PC en local). Ca peut être perturbant au début.
 
  D'autres options sont possibles à partir de menu, on en verra quelques-unes plus tard.
@@ -309,19 +334,22 @@ A ce stade tu devrais avoir un fichier `devcontainer.json` qui ressemble à ça 
 ```
 
 Lorsque tu sauvegardes le fichier (Command + S sur Mac), Dev Container propose de rebuilder le container avec le message suivant :
-![rebuilt devcontainer](/images/rebuilt-container.png?raw=true).
+
+![rebuilt devcontainer](/img/rebuilt-container.png).
 
 Appuies sur Rebuild et VSC va redémarrer avec un container mis à jour avec ces options.
 A chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
 
 > ![Tip](/images/tips.png?raw=true)
 > En cas de soucis, si le container ne démarre pas ou si des erreurs apparaissent, tu peux afficher la console Dev Container pour voir ce qui ne va pas :
-> ![rebuilt devcontainer](/images/console-dev-containers.png?raw=true)
+
+![rebuilt devcontainer](/img/console-dev-containers.png)
+
 > Si ca arrive, corriges l'erreur dans le fichier `devcontainer.json` et redémarre.
 
 ### Installer le package Home Assistant
 
-Le package Home Assistant s'installe comme tous les packages Python avec un fichier `requirements.txt` qui contient tous les packages à installer. Ce fichier doit êre créé à la racine de votre répertoire et doit contenir la ligne suivante :
+Le package Home Assistant s'installe comme tous les packages Python avec un fichier `requirements.txt` qui contient tous les packages à installer. Ce fichier doit être créé à la racine de votre répertoire et doit contenir la ligne suivante :
 
 ```
 homeassistant
@@ -337,7 +365,11 @@ $ pip install -r requirements.txt
 > Notes :
 >
 > * tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
-> * si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici : ![nouveau terminal](/images/nouveau-terminal.png?raw=true), et en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
+> * si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
+
+![nouveau terminal](/img/nouveau-terminal.png)
+
+et en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
 > * comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
 Le déroulement de la commande pip install est en gros le suivant:
@@ -459,7 +491,9 @@ Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu t
 Testes les 2 options pour vérifier qu'elles fonctionnent comme prévu.
 
 Une fois lancé en mode tâche, tu as accès à la tâche directement dans VSC en bas à droite :
-![Console Tache](/images/console-task.png?raw=true)
+
+![Console Tache](/img/console-task.png)
+
 avec possibilité d'arrêter directement en cliquant sur la poubelle.
 
 ## Conclusion
