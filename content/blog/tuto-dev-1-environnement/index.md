@@ -18,8 +18,7 @@ tags:
   - developpement
 author: jean-marc_collin
 ---
-> ![Tip](/images/tips.png?raw=true)
-> Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes une par une. Pour les développements suivants, il est plutot conseillé de cloner un environnement tout prêt. Pour le tuto, c'est plus intéressant de tout faire à la main pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
+Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes une par une. Pour les développements suivants, il est plutot conseillé de cloner un environnement tout prêt. Pour le tuto, c'est plus intéressant de tout faire à la main pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
 
 ## Les outils à installer
 
