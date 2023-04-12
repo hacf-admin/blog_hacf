@@ -50,9 +50,9 @@ Si vous tentez de faire une intégration officielle Home Assistant, vous devrez 
 
 Pour démarrer, je ne peux que conseiller de démarrer avec une intégration HACS. Une fois que vous avez une intégration de qualité, vous pouvez tenter de la proposer comme une intégration core, mais pas avant.
 
-**Un peu de lecture :** la doc officielle est [ici](https://developers.home-assistant.io/). Elle est en anglais, pas super à jour tout le temps, n'est pas faite pour développer une intégration HACS et n'est pas très didactique. Si tu n'y connais rien, tu ne comprendras pas grand-chose. Par contre, s'y référer de temps en temps pour étendre le champ de sa connaissance une fois qu'on a compris les concepts est une super bonne idée. Gardes bien ça en tête 
+**Un peu de lecture :** la doc officielle est [ici](https://developers.home-assistant.io/). Elle est en anglais, pas super à jour tout le temps, n'est pas faite pour développer une intégration HACS et n'est pas très didactique. Si tu n'y connais rien, tu ne comprendras pas grand-chose. Par contre, s'y référer de temps en temps pour étendre le champ de sa connaissance une fois qu'on a compris les concepts est une super bonne idée. Gardes bien ça en tête.
 
-> **Tu es prêt ? Fébrile ? Ca va aller, on te dit...**
+> ![](blob:https://hacf.fr/e4d82d14-9be6-4dd2-91ea-d40aa1d31df6)**Tu es prêt ? Fébrile ? Ca va aller, on te dit...**
 
 ## Liste des tutos
 
