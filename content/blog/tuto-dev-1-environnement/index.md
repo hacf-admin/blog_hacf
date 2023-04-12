@@ -357,16 +357,13 @@ Il est installé via le terminal avec la commande suivante :
 $ pip install -r requirements.txt
 ```
 
-> **Notes :**
->
-> * tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
+> **Note 1 :** tu dois être dans le container pour taper cette commande. Sinon tu vas installer Home Assistant en local ce qui n'est pas ce qu'on veut faire.
 > * si tu ne l'as pas déjà fait, tu dois ouvrir un terminal en cliquant ici :
->
-> ![nouveau terminal](img/nouveau-terminal.png)
->
-> et en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
->
-> * comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
+
+![nouveau terminal](img/nouveau-terminal.png)
+
+> **Note 2 :** en choisissant `Bash profile (default)` (selon la config de terminal que tu as mis dans le fichier `devcontainer.json`)
+> comme on ne précise pas la version de Home Assistant qu'on installe, il va prendre la dernière disponible.
 
 Le déroulement de la commande pip install est en gros le suivant :
 
