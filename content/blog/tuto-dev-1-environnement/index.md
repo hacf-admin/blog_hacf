@@ -150,7 +150,7 @@ Tu devrais voir quelque-chose comme ça :
 
 ![Python 3 - image](/img/vsc-dans-container.png)
 
-En bas à gauche, je vois que je suis dans `Dev Container: Python 3` (donc je suis bien en mode **container**) et il m'a créé quelques fichiers de configuration de `Dev-Containe`r pour mémoriser mes choix.
+En bas à gauche, je vois que je suis dans `Dev Container: Python 3` (ainsi je suis bien en mode **container**) et il m'a créé quelques fichiers de configuration de `Dev-Containe`r pour mémoriser mes choix.
 
 Ouvre le répertoire `.devcontainer` et tu dois voir cela :
 
@@ -217,8 +217,7 @@ On va ajouter les extensions vscode suivantes :
 
 Pour ajouter ces extensions, on ajoute simplement le bloc suivant dans le fichier `devcontainer.json` sous `customisations/vscode`:
 
-```asp
-"extensions": [
+```"extensions":
     "ms-python.python",
     "github.vscode-pull-request-github",
     "ryanluker.vscode-coverage-gutters",
@@ -228,7 +227,7 @@ Pour ajouter ces extensions, on ajoute simplement le bloc suivant dans le fichie
 
 #### Options
 
-Les options suivantes permettent de personnaliser l'environement Dev Containers. Bien que pas indispensable, ils ont fortement recommandé pour le développement sous HA afin d'uniformiser tous les développements.
+Les options suivantes permettent de personnaliser l'environnement Dev Containers. Bien que pas indispensable, ils ont fortement recommandé pour le développement sous HA afin d'uniformiser tous les développements.
 
 * `file.eol` : on utilise la forme Linux des sauts de ligne \n,
 * `editor.tabSize` : taille d'une tabulation,
@@ -273,9 +272,9 @@ Profitez-en pour donner un nom à votre container dans le champ `name`.
 
 #### Exposer le port de Home Assistant
 
-Home assistant de dev utilise le même port que le vrai : 8123. On va devoir se connecter dessus pour tester notre intégration. Pour éviter la confusion avec votre éventuel "vrai" HA, j'utilise le port 9123.
+La version Home assistant de dev utilise le même port que la version usuelle : 8123. On va devoir se connecter dessus pour tester notre intégration. Pour éviter la confusion avec votre éventuel "vrai" HA, j'utilise le port 9123.
 
-Donc, on va indiquer à Dev Container d'exposer le port 9123 et de le router sur le port 8123 du container.
+Ainsi, on va indiquer à Dev Container d'exposer le port 9123 et de le router sur le port 8123 du container.
 
 Cela se fait en ajoutant la ligne suivante dans le fichier `devcontainer.json` :
 
@@ -331,12 +330,12 @@ Cela se fait en ajoutant la ligne suivante dans le fichier `devcontainer.json` :
 }
 ```
 
-Lorsque tu sauvegardes le fichier (Command + S sur Mac), Dev Container propose de "rebuilder" le container avec le message suivant :
+Lorsque tu sauvegardes le fichier (`Command + S` sur Mac), Dev Container propose de "rebuilder" le container avec le message suivant :
 
 ![](img/rebuilt-container.png)
 
-Appuies sur Rebuild et VSC va redémarrer avec un container mis à jour avec ces options.
-A chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
+Appuies sur `Rebuild `et VSC va redémarrer avec un container mis à jour avec ces options.
+À chaque réouverture ou installation sur un nouveau PC de container, ces options seront rechargées.
 
 > En cas de soucis, si le container ne démarre pas ou si des erreurs apparaissent, tu peux afficher la console Dev Container pour voir ce qui ne va pas :
 
@@ -346,13 +345,13 @@ A chaque réouverture ou installation sur un nouveau PC de container, ces option
 
 ### Installer le package Home Assistant
 
-Le package Home Assistant s'installe comme tous les packages Python avec un fichier `requirements.txt` qui contient tous les packages à installer. Ce fichier doit être créé à la racine de votre répertoire et doit contenir la ligne suivante :
+Le package Home Assistant s'installe comme tous les packages Python avec un fichier `requirements.txt` qui contient tous les packages à installer. Ce fichier doit être **créé à la racine de votre répertoire** et doit contenir la ligne suivante :
 
 ```
 homeassistant
 ```
 
-Il est installé dans le terminal avec la commande suivante :
+Il est installé via le terminal avec la commande suivante :
 
 ```
 $ pip install -r requirements.txt
