@@ -1,21 +1,21 @@
 ---
-title: Awesome Francophone Home Assistant
-type: awesome
 visibleInCMS: true
 draft: false
-aliases:
-  - /awesome
 date: 22-12-14
 lastmod: 2022-09-28 23:36
-tags:
-  - awesome
 liens_utiles: []
 socialshare: true
+title: Awesome Francophone Home Assistant
+type: awesome
+tags:
+  - awesome
 image: img/awesome-ha.png
+aliases:
+  - /awesome
 description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
   sujets autour de Home Assistant et de la domotique.
 ---
-# Awesome" Francophone Home Assistant
+# "Awesome" Francophone Home Assistant
 
 ## Blogs
 
