@@ -7,13 +7,12 @@ draft: true
 date: 2023-04-12
 lastmod: 2023-04-12
 images: img/ha_os_proxmox.png
-description: >-
-  Vous avez une machine avec un peu de puissance comme un mini PC, et vous
-  voulez faire tourner dessus Home Assistant, mais pas seulement.
-
-  Vous voulez une solution à la fois simple et évolutive, et supportant l’installation clé en main « Home Assistant OS ».
-
-  Alors Proxmox est fait pour vous.
+description: >
+  Cet article décrit comment installer et utiliser la solution de virtualisation
+  Proxmox, qui permet de faire tourner plusieurs environnements en parallèle.
+  Proxmox sera pertinent pour les personnes souhaitant mutualiser une machine
+  avec un peu de puissance, un mini PC par exemple, entre Home Assistant en
+  d'autres environnements.
 level: Débutant
 type_install:
   - ha-os
@@ -33,17 +32,17 @@ Vous avez une machine avec un peu de puissance, comme un mini PC, et vous souhai
 Vous voulez une solution, à la fois simple et évolutive, supportant l’installation clé en main de Home Assistant OS ?
 Alors [Proxmox](https://www.proxmox.com/en/) est fait pour vous.
 
-### Proxmox, qu'est-ce que c'est ?
+## Proxmox, qu'est-ce que c'est ?
 
-[Proxmox](https://www.proxmox.com/en/) est un hyperviseur open source, en d'autre terme, c'est une **solution** qui permet de faire de la **virtualisation**.
+[Proxmox](https://www.proxmox.com/en/) est un **hyperviseur open source**, en d'autre terme, c'est une **solution** qui permet de faire de la **virtualisation**.
 
-C'est-à-dire, 
+Un serveur Proxmox va pouvoir : 
 
-* Faire fonctionner une ou plusieurs machines virtuelles (VM) ayant chacune son propre système d’exploitation (OS) et ses différents programmes installés. Exemple : plusieurs VM avec des OS Linux et des OS Windows
-* Utiliser les LXC (des conteneurs), utilisant les ressources matérielles de l'OS hôte dans un environnement isolé, (les puristes m'excuseront pour le raccourci, mais c'est un peu comme docker
+* Faire fonctionner une ou plusieurs **machines virtuelles** (**VM**) ayant chacune son propre **système d’exploitation** (OS) et ses différents programmes installés. Exemple : plusieurs VM avec des OS Linux et des OS Windows
+* Utiliser les **LXC** (des **conteneurs**), pour exécuter un "**service**" utilisant les ressources matérielles de l'OS hôte dans un environnement isolé, (les puristes m'excuseront pour le raccourci, mais c'est un peu comme docker
   qui d'ailleurs peut être lancé dans un conteneur ou dans un OS dédié)
 
-**Exemple :**
+**Exemple**
 Une machine physique peut faire tourner **simultanément** :
 
 * une VM avec une instance Windows,
@@ -58,43 +57,39 @@ Une machine physique peut faire tourner **simultanément** :
 
 ## Prérequis
 
-Un pc avec :
+Disposer d'une machine type PC avec :
 
-* CPU 64 bits compatible virtualisation ([Intel®](https://ark.intel.com/content/www/fr/fr/ark.html#@Processors) ou AMD)
+* Un CPU 64 bits compatible virtualisation ([Intel®](https://ark.intel.com/content/www/fr/fr/ark.html#@Processors) ou AMD)
 * 4 Go de RAM **minimum** (8 Go recommandé quand on commence à accumuler les VM et/ou les conteneurs)
   128 Go de stockage **minimum** (plus si besoin).
 
-Des micro PC d'occasion à base de I3/I5, comme les [HP EliteDesk G3 mini](https://amzn.to/41hEPwt) par exemple, font très bien l'affaire.
+> **NOTE** - Des micro PC d'occasion à base de I3/I5, comme les [HP EliteDesk G3 mini](https://amzn.to/41hEPwt) par exemple, font très bien l'affaire.
+>
+> Il y a par exemple de très bonnes affaires sur les sites qui font du recyclage de parc informatique comme [Amazon](https://amzn.to/41hEPwt), [PCPack](https://pcpack.fr/), [AFBShop](https://www.afbshop.fr/), [BlackMarket](https://www.backmarket.fr/) tout en offrant une garantie, mais aussi sur les sites de petite annonce ou Ebay.
 
-> Il y a de très bonnes affaires sur les sites qui font du recyclage de parc informatique comme [Amazon](https://amzn.to/41hEPwt), [PCPack](https://pcpack.fr/), [AFBShop](https://www.afbshop.fr/), [BlackMarket](https://www.backmarket.fr/) tout en offrant une garantie, mais aussi sur les sites de petite annonce ou Ebay.
+**Mon conseil**
 
-**Mon conseil** (*subjectif*)
-
-* 2 Go pour l'hyperviseur plus autant de Go affecté pour chacune des machines virtuelles et conteneurs.
+* Allouer 2 Go de mémoire pour l'hyperviseur et autant affectée pour chacune des machines virtuelles et conteneurs.
   Une machine virtuelle aura généralement besoin de plus de ressources  (CPU, espace disque et Mémoire) qu'un conteneur.
 
 **IMPORTANT**
 Il n'est, à ma connaissance, **PAS POSSIBLE** de partager le même périphérique (USB comme dongle Zigbee) sur plusieurs machines virtuelles simultanément.
 
-## Proxmox
+## Installation de Proxmox.
 
-### Installation de Proxmox.
+* Télécharger la dernière version de [Proxmox sur le site officiel](https://www.proxmox.com/en/downloads/category/iso-images-pve) (Version 7.4 à date).
+* Créer une clé "bootable" [Balena Etcher](https://www.balena.io/etcher) ou de [Ventoy](https://www.ventoy.net/en/index.html).
+* Démarrer votre machine dédiée sur votre clé USB, chaque machine étant spécifique, je vous laisse chercher un peu (ESC, F2, F8, F10, SUPPR).
 
-* Télécharger la dernière version de [Proxmox sur le site officiel](https://www.proxmox.com/en/downloads/category/iso-images-pve) (Version 7.4 a date).
-* Créer une clé bootable [Balena Etcher](https://www.balena.io/etcher) ou de [Ventoy](https://www.ventoy.net/en/index.html).
-* Booter votre machine dédiée sur votre clé USB, chaque machine étant spécifique, je vous laisse chercher un peu (ESC, F2, F8, F10, SUPPR).
-
-Au boot, vous devriez avoir ceci
-
-**PEUT ÊTRE REMPLACER PAR UNE SEULE IMAGE**
+Au démarrage, vous devriez avoir ceci :
 
 ![Écran accueil de l'installation de Proxmox](img/01-promox-installation.png "Écran accueil de l'installation de Proxmox")
 
-* Cliquez sur  **install proxmox**, (*ça va brasser un peu en mode terminal*),
-* Cliquer sur **I agree**,
-* Selectionner le disque dur ou sera installé Proxmox.
+* Cliquez sur  **"install proxmox**", (*exécution un peu longue en mode terminal*),
+* Cliquer sur "***I agree***",
+* Sélectionner le disque dur où sera installé Proxmox.
 
-> **ATTENTION** Si votre machine à plusieurs disques dur, choisissez le bon, c'est **irréversible** !
+> **ATTENTION** Si votre machine a plusieurs disques dur, choisissez le bon, c'est **irréversible** !
 >
 > (*Personnellement, je choisis le mode automatique*)
 
@@ -103,7 +98,7 @@ Au boot, vous devriez avoir ceci
 Donner ensuite :
 
 * un nom a votre machine,
-* le fuseau horraire,
+* le fuseau horaire,
 * la disposition de votre clavier
 
 Sur la page suivante :
@@ -112,11 +107,11 @@ Sur la page suivante :
 
 ![Fenêtre de configuration de l'utilisateur principal](img/04-proxmox-utilisateur-mot-de-passe.gif "Fenêtre de configuration de l'utilisateur principal")
 
-Passons aux réglages reseaux :
+Passons aux réglages réseau :
 
 * Sélectionner votre carte réseaux (si plusieurs, **éviter le Wi-Fi**),
 * Vérifier et noter l'adresse IP affectée à votre serveur (il est possible de la changer, mais n'oubliez pas d'affecter cette adresse sur votre routeur/box),
-* Cliquer sur **INSTALL**.
+* Cliquer sur **"INSTALL"**.
 
 ![Fenêtre de configuration du réseau](img/05-proxmox-config-reseau.gif "Fenêtre de configuration du réseau")
 
@@ -125,7 +120,7 @@ Maintenant que votre serveur Proxmox est installé, normalement tout va se passe
 
 ![Terminal Proxmox après redémarrage.](img/06-proxmox-shell.png "Terminal Proxmox après redémarrage.")
 
-### Démarrage de Proxmox.
+## Démarrage de Proxmox.
 
 Depuis votre navigateur préféré, 
 
@@ -133,7 +128,7 @@ Depuis votre navigateur préféré,
 
 > Si vous avez oublié l'adresse IP de votre serveur, pas de panique, consultez les adresses actives sur votre routeur.
 
-* Connectez-vous avec le login `root` et le mot de passe saisi lors de l'installation (*vous pouvez avant aussi choisir le français et enregistrer le nom d'utilisateur*).
+* Connectez-vous avec le login `root` et le mot de passe saisi lors de l'installation. À noter que vous pouvez aussi choisir de mettre en français et enregistrer le nom d'utilisateur.
 
 ![Écran de connexion a Proxmox](img/07-proxmox-ecran-connexion.png "Écran de connexion a Proxmox")
 
@@ -141,7 +136,7 @@ Une fois les identifiants saisis, vous devriez avoir cette boite d'information.
 
 ![Message d'erreur de Proxmox](img/07-proxmox-message-erreur.png "Message d'erreur de Proxmox")
 
-> Pas de panique, Proxmox est une solution de virtualisation opensource gratuite, mais si vous souscrivez, vous avez accès à une hotline complémentaire, c'est le prix à payer pour la gratuité.
+> Pas de panique, Proxmox est bien une solution de virtualisation opensource gratuite. Mais si vous souscrivez, vous avez accès à une hotline complémentaire, ce qui est le mode de rémunération de la société.
 
 ## Home Assistant.
 
@@ -151,9 +146,7 @@ La procédure officielle se trouve sur le [site de Home Assistant](https://www.h
 
 Rendez-vous sur le [site de tteck](https://tteck.github.io/Proxmox/).
 
-
-
-### Mis a jour de Proxmox.
+### Mise à jour de Proxmox.
 
 Pour mettre à jour Proxmox :
 
@@ -165,7 +158,7 @@ Pour mettre à jour Proxmox :
 
 * Rendez-vous dans le Shell de Proxmox,
 * Coller le code,
-* Collez la et appuyer sur **entrer**.
+* Collez-la et appuyer sur **entrer**.
 
 ![Lancement du script Post Install du site Tteck](img/09-proxmox-script-post-install.gif "Lancement du script Post Install du site Tteck")
 
@@ -188,22 +181,18 @@ Toujours dans la page de scripts du [site de tteck](https://tteck.github.io/Prox
 
 Une fois le déroulement du script terminé, retourner sur l'interface principale de Proxmox.
 
-
 Vous devez voir une machine virtuelle 100 (HAOS 9.5 à date) qui doit être créé.
 Cliquer sur cette machine virtuelle, vous pouvez soit consulter la page de résumé, soit accéder au Shell de la machine virtuelle (VM). Dans les deux cas, récupérer l'adresse IP de la VM qui est celle de votre Home Assistant.
 
 ![Récuperation de l'IP de la VM HAOS](img/11-proxmox-recuperation-ip.gif "Récuperation de l'IP de la VM HAOS")
 
-Il vous suffit de saisir cette adresse, suivie du port 8123 pour accéder au premier lancement de Home Assistant
-ex: http://192.168.1.158:8123
+Il vous suffit de saisir cette adresse, suivie du port 8123 pour accéder au premier lancement de Home Assistant ( exemple : http://192.168.1.158:8123 ).
 
-Continuer la configuration grâce a l'article [premier configuration](/ha_installation_premier_lancement)
+Continuer la configuration grâce à l'article [Premier lancement et configuration de Home Assistant](/ha_installation_premier_lancement)
 
-### Allez plus loin.
+## Connecter un périphérique USB
 
-**Périphériques USB**
-
-> **RAPPEL :** Un périphérique USB peut etre prtagé **seulement** sur **une** VM a la fois.
+> **RAPPEL :** Un périphérique USB peut etre partagé **seulement** sur **une** VM a la fois.
 >
 > L'association d'un périphérique peut être faite à n'importe quel moment, mais la prise en compte de ce dernier, n'aura lieu qu'après un redémarrage complet de la VM.
 
@@ -230,6 +219,6 @@ Brancher et inclure une clé à la fois sur votre serveur.
 **Limitation a quatre USB.**
 Une limitation de quatre périphériques peut être outrepassée via la [méthode suivante](https://forum.proxmox.com/threads/limit-for-usb-devices.89774/)
 
-### Conclusion.
+## Conclusion.
 
 L'installation de Home Assistant OS sur un serveur Proxmox vous permet de bénéficier de la version la plus complète de Home Assistant (HAOS) tout en pouvant utiliser votre matériel pour d'autres applications/services.
