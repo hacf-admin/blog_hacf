@@ -53,7 +53,7 @@ Une machine physique peut faire tourner **simultanément** :
 * un conteneur avec un service de gestion d'onduleur,
 * etc.
 
-**Nous décrivons dans cet article, l’installation de Proxmox et d’une machine virtuelle (VM) avec Home Assistant OS.**
+> **Nous décrivons dans cet article, l’installation de Proxmox et d’une machine virtuelle (VM) avec Home Assistant OS.**
 
 ## Prérequis
 
@@ -72,8 +72,7 @@ Disposer d'une machine type PC avec :
 * Allouer 2 Go de mémoire pour l'hyperviseur et autant affectée pour chacune des machines virtuelles et conteneurs.
   Une machine virtuelle aura généralement besoin de plus de ressources  (CPU, espace disque et Mémoire) qu'un conteneur.
 
-**IMPORTANT**
-Il n'est, à ma connaissance, **PAS POSSIBLE** de partager le même périphérique (USB comme dongle Zigbee) sur plusieurs machines virtuelles simultanément.
+> **Important -** Il n'est **pas possible** de partager le même périphérique (USB comme dongle Zigbee) sur plusieurs machines virtuelles simultanément.
 
 ## Installation de Proxmox.
 
@@ -120,7 +119,7 @@ Maintenant que votre serveur Proxmox est installé, normalement tout va se passe
 
 ![Terminal Proxmox après redémarrage.](img/06-proxmox-shell.png "Terminal Proxmox après redémarrage.")
 
-## Démarrage de Proxmox.
+## Démarrage de Proxmox
 
 Depuis votre navigateur préféré, 
 
@@ -138,7 +137,7 @@ Une fois les identifiants saisis, vous devriez avoir cette boite d'information.
 
 > Pas de panique, Proxmox est bien une solution de virtualisation opensource gratuite. Mais si vous souscrivez, vous avez accès à une hotline complémentaire, ce qui est le mode de rémunération de la société.
 
-## Home Assistant.
+## Home Assistant
 
 Nous voila enfin arrivé à l'installation de notre système domotique préfère (ou bientôt préfère si vous débutez).
 
@@ -146,7 +145,7 @@ La procédure officielle se trouve sur le [site de Home Assistant](https://www.h
 
 Rendez-vous sur le [site de tteck](https://tteck.github.io/Proxmox/).
 
-### Mise à jour de Proxmox.
+### Mise à jour de Proxmox
 
 Pour mettre à jour Proxmox :
 
@@ -166,7 +165,7 @@ Cette étape permet de mettre à jour les dépôts permettant de maintenir Proxm
 
 ### Installation de Home Assistant
 
-Toujours dans la page de scripts du [site de tteck](https://tteck.github.io/Proxmox/) :
+Toujours dans la page de scripts du [site de TTECK](https://tteck.github.io/Proxmox/) :
 
 * Choisir **Home Assistant**, 
 * Puis **Home Assistant OS VM**,
@@ -181,7 +180,7 @@ Toujours dans la page de scripts du [site de tteck](https://tteck.github.io/Prox
 
 Une fois le déroulement du script terminé, retourner sur l'interface principale de Proxmox.
 
-Vous devez voir une machine virtuelle 100 (HAOS 9.5 à date) qui doit être créé.
+Vous devez voir une machine virtuelle (HA OS 9.5 à ce jour) qui doit être créée.
 Cliquer sur cette machine virtuelle, vous pouvez soit consulter la page de résumé, soit accéder au Shell de la machine virtuelle (VM). Dans les deux cas, récupérer l'adresse IP de la VM qui est celle de votre Home Assistant.
 
 ![Récuperation de l'IP de la VM HAOS](img/11-proxmox-recuperation-ip.gif "Récuperation de l'IP de la VM HAOS")
@@ -190,13 +189,9 @@ Il vous suffit de saisir cette adresse, suivie du port 8123 pour accéder au pre
 
 Continuer la configuration grâce à l'article [Premier lancement et configuration de Home Assistant](/ha_installation_premier_lancement)
 
-## Connecter un périphérique USB
+## Périphériques USB
 
-> **RAPPEL :** Un périphérique USB peut etre partagé **seulement** sur **une** VM a la fois.
->
-> L'association d'un périphérique peut être faite à n'importe quel moment, mais la prise en compte de ce dernier, n'aura lieu qu'après un redémarrage complet de la VM.
-
-**Connecter votre clé USB sur votre Serveur Proxmox**
+**Pour connecter votre clé USB sur votre Serveur Proxmox** :
 Dans la barre verticale de gauche, choisissez la VM sur laquelle vous voulez affecter votre clé USB, puis : 
 
 * Aller dans matériel,
@@ -209,8 +204,13 @@ Cette opération est à faire autant de fois qu'il y a de clé à inclure
 
 ![Ajouter une clé USB a votre VM](img/20-proxmox-ajout-cles-usb.gif "Ajouter une clé USB a votre VM")
 
-**Petit conseil**
-Brancher et inclure une clé à la fois sur votre serveur.
+
+
+> **REMARQUES**
+>
+> * Un périphérique USB peut etre partagé seulement sur **une VM a la fois**.
+> * Brancher et inclure une clé à la fois sur votre serveur.
+> * L'association d'un périphérique peut être faite à n'importe quel moment, mais la prise en compte de ce dernier, n'aura lieu qu'après un redémarrage complet de la VM.
 
 **Vérifier la présence de vos devices USB dans Home Assistant.**
 
@@ -219,6 +219,8 @@ Brancher et inclure une clé à la fois sur votre serveur.
 **Limitation a quatre USB.**
 Une limitation de quatre périphériques peut être outrepassée via la [méthode suivante](https://forum.proxmox.com/threads/limit-for-usb-devices.89774/)
 
-## Conclusion.
+## Conclusion
 
-L'installation de Home Assistant OS sur un serveur Proxmox vous permet de bénéficier de la version la plus complète de Home Assistant (HAOS) tout en pouvant utiliser votre matériel pour d'autres applications/services.
+L'installation de Home Assistant OS sur un serveur Proxmox vous permet de bénéficier de la version la plus complète de Home Assistant (HA OS) tout en pouvant utiliser votre matériel pour d'autres applications/services.
+
+Vous disposez ainsi d'un système évolutif qui n'est pas dédié à Home Assistant.
