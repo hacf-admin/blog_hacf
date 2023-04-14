@@ -29,7 +29,7 @@ Les outils nécessaires pour bien démarrer sont les suivants :
 1. ***Docker*** : permet la manipulation de conteneurs ("container" en anglais). Un "container" peut être vu comme **un espace isolé à l'intérieur de votre PC** dans lequel vous faites tourner des applications. Dans notre cas, **tout notre environnement de développement va tourner dans un container** qui sera créé automatiquement au démarrage.
    Cela permet de ne pas "pourrir" sa machine avec des installations qui ne servent qu'au développement, de reproduire le même environnement sur une autre machine, d'isoler l'environnement et d'être indépendant de l'OS sur lequel ça tourne.
    Pour installer Docker ça se passe ici : <https://docs.docker.com/desktop/install/mac-install/>
-2. ***Visual Studio Code* (VSC)** : VSC est ce qu'on appelle un IDE (Environnement de développement intégré). Avec lui, on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets grâce à la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
+2. ***Visual Studio Code* (VSC)** **ou Codium**: VSC est ce qu'on appelle un IDE (Environnement de développement intégré). Avec lui, on va pouvoir taper notre code, le tester, l'exécuter, le débugger, le sauvegarder dans Github, gérer les versions de nos applications (git), ... tout ça sans quitter l'IDE. C'est devenu un des IDE les plus complets grâce à la myriade de plugins disponible. Pour installer VSC c'est ici : https://code.visualstudio.com/download
 
 Ces deux logiciels sont suffisants pour démarrer votre projet.
 
@@ -37,11 +37,11 @@ Ces deux logiciels sont suffisants pour démarrer votre projet.
 
 ### Démarrer dans un répertoire
 
-Crées un répertoire sur ton disque dur qui va contenir tes fichiers sources (`/Projects/home-assistant/hacs-tuto` par exemple) et lances VSC.
+Créé un répertoire sur ton disque dur qui va contenir tes fichiers sources (`/Projects/home-assistant/hacs-tuto` par exemple) et lances VSC.
 
 Si c'est la première fois que tu le démarres, tu vas avoir une fenêtre qui ressemble à ça :
 
-![Visual Studio](img/vsc-splash-screen.png)
+![Visual Studio](img/vsc-splash-screen.png "Ecran d'accueil de Visual Studio")
 
 Cliques sur
 
@@ -97,7 +97,7 @@ Ajouter les extensions suivantes :
 
 ![Extension French](/img/extension-french.png)
 
-Une fois toutes les extensions installées, vous devriez les voir la liste des extensions installées :
+Une fois toutes les extensions installées, vous devriez les voir dans la liste des extensions installées :
 
 ![Liste des extensions installées](img/extension-installees.png)
 
@@ -134,7 +134,7 @@ Certes, cela peut faire peur, mais on te demande de **choisir l'image de base** 
 >
 > Le gros avantage c'est que si tu changes de machines (tu passes sur Mac par exemple), l'OS du container sera le même. Donc **ton environnement de dev sera portable** sur toutes les machines, car indépendant de celle-ci.
 
-Donc, à ce stade, l'idée est de prendre une **image de base du container** qui va contenir tout ce qu'on veut : **un OS Linux** et tant qu'à faire **un environnement Python pré-installé** et ce dans la bonne version. Ainsi, on n'aura pas à le faire manuellement. Microsoft nous donne une flopée d'images de base prête à l'emploi.
+Donc, à ce stade, l'idée est de prendre une **image de base du container** qui va contenir tout ce qu'on veut : **un OS Linux** et tant qu'à faire **un environnement Python pré-installé**, et ce, dans la bonne version. Ainsi, on n'aura pas à le faire manuellement. Microsoft nous donne une flopée d'images de base prête à l'emploi.
 
 Nous allons choisir celle que l'on trouve en tapant `python 3` dans le champ de recherche :
 
@@ -154,7 +154,7 @@ En bas à gauche, je vois que je suis dans `Dev Container: Python 3` (ainsi je s
 
 Ouvre le répertoire `.devcontainer` et tu dois voir cela :
 
-![devcontainer.json](/img/dev-container-json.png)
+![devcontainer json](/img/dev-container-json.png)
 
 On peut voir l'image qui a été utilisé pour notre container : `mcr.microsoft.com/vscode/devcontainers/python:0-3.11`
 
@@ -190,7 +190,7 @@ Pour quitter le container, il faut cliquer sur le bouton vert en bas à gauche e
 >
 > Il va nous falloir **installer Home Assistant** dans ce container et le démarrer pour pouvoir commencer à développer.
 >
-> **Tant tout n'est pas correctement installé, ce n'est pas la peine d'aller plus loin. N'hésites pas à supprimer ton répertoire et recommencer si tout n'est pas nickel.**
+> **Tant que tout n'est pas correctement installé, ce n'est pas la peine d'aller plus loin. N'hésites pas à supprimer ton répertoire et recommencer si tout n'est pas nickel.**
 
 ## Installer Home Assistant
 
@@ -460,7 +460,6 @@ Un arrêt / relance complet de VSC te permettra de vérifier que l'installation 
 
 Arrêter et démarrer Home Assistant en mode ligne de commande dans le Terminal n'est pas très pratique. On va maintenant configurer des tâches Dev-Containers pour faire ça.
 
-
 Cela se passe en ouvrant le menu des taches `"Command+Shitf+P"` (Mac). Ça ouvre un menu qui ressemble à ça :
 
 ![Exécuter tâches](img/executer-taches.png)
@@ -493,11 +492,11 @@ Choisis "Exécuter la tâche", puis "Configurer une tâche", puis "Créer le fic
 
 Sauvegardes le fichier, et tu as maintenant accès à ces tâches dans le menu tâches accessibles via `Command+Shift+P` (Mac). Vérifies que ça marche, en tapant "Command+Shift+P", puis "Tâches: Exécuter une tâche".
 
-Tu dois voir les 2 tâches que l'on a créées juste au-dessus :
+Tu dois voir les deux tâches que l'on a créées juste au-dessus :
 
 ![Taches Home Assistant](img/taches-ha.png)
 
-Teste les 2 options pour vérifier qu'elles fonctionnent comme prévu.
+Teste les deux options pour vérifier qu'elles fonctionnent comme prévu.
 
 Une fois lancé en mode tâche, tu as accès à la tâche directement dans VSC en bas à droite avec possibilité d'arrêter directement en cliquant sur la poubelle. :
 
