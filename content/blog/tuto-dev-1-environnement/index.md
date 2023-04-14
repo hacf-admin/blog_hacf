@@ -1,5 +1,5 @@
 ---
-folder: tuto-dev-1-environnement
+folder: dev_tuto_1_environnement
 title: Développer pour Home Assistant - (1) Installer son environnement
 type: post
 visibleInCMS: true
