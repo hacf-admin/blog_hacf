@@ -50,11 +50,11 @@ Cliques sur
 
 puis va chercher le répertoire créé ci-dessus
 
-![Répertoire](/img/ouvrir-repertoire.png)
+![Répertoire](img/ouvrir-repertoire.png)
 
 et valide avec le bouton
 
-![Ouvrir](/img/ouvrir-bouton.png)
+![Ouvrir](img/ouvrir-bouton.png)
 
 > Les copies d'écran sont pour Mac, tu dois adapter à ton OS (Windows, Linux...).
 
@@ -86,19 +86,19 @@ Ajouter les extensions suivantes :
 
 \=> Nous allons utiliser des **containers** pour développer donc il nous faut :
 
-![Extension Containers](/img/extension-container.png)
+![Extension Containers](img/extension-container.png)
 
 * celle-là va nous aider à coder en nous faisant des suggestions :
 
-![Extension Intellicode](/img/extension-intellicode.png)
+![Extension Intellicode](img/extension-intellicode.png)
 
 \=> celle-là pour aider à faire du **yaml** :
 
-![Extension Yaml](/img/extension-yaml.png)
+![Extension Yaml](img/extension-yaml.png)
 
 \=> et celles-là pour avoir une **interface en français** et quelques **aides sur Git** :
 
-![Extension French](/img/extension-french.png)
+![Extension French](img/extension-french.png)
 
 Une fois toutes les extensions installées, vous devriez les voir dans la liste des extensions installées :
 
@@ -113,23 +113,23 @@ On va maintenant **basculer dans ce mode et le configurer**.
 
 1. Clique en bas à gauche sur le bouton vert
 
-![Bouton vert](/img/bouton-vert.png)
+![Bouton vert](img/bouton-vert.png)
 
 2. et sélectionne l'option "New Dev Container",
 
 **Note** : le message suivant indique que Docker n'est pas démarré. Il faut qu'il soit lancé **AVANT** de pouvoir basculer dans le container (forcément) :
 
-![Docker not started](/img/docker-not-started.png)
+![Docker not started](img/docker-not-started.png)
 
 Sur Mac, `F4`, `Docker - ouvrir`, attendez un peu et vous devriez pouvoir ouvrir la console Docker et voir quelque-chose qui ressemble à ça :
 
-![Docker console](/img/docker-console.png)
+![Docker console](img/docker-console.png)
 
 ### Basculer dans le container
 
 Refais *"clic sur le bouton vert*" + *"New Dev Container"* au besoin et tu dois arriver sur quelque-chose qui ressemble à ça :
 
-![Dev Container image](/img/dev-container-images.png)
+![Dev Container image](img/dev-container-images.png)
 
 Certes, cela peut faire peur, mais on te demande de **choisir l'image de base** dans lequel va tourner ton environnement de dev.
 
@@ -141,23 +141,23 @@ Donc, à ce stade, l'idée est de prendre une **image de base du container** qui
 
 Nous allons choisir celle que l'on trouve en tapant `python 3` dans le champ de recherche :
 
-![Image Python 3](/img/image-python3.png)
+![Image Python 3](img/image-python3.png)
 
 Cliques sur la première ligne et choisis `Create Dev Container` :
 
-![Create dev container](/img/create-dev-container.png)
+![Create dev container](img/create-dev-container.png)
 
 Patiente un peu que l'image se télécharge, que VSC redémarre, que VSC initialise le container. VSC redémarre, mais cette fois dans le container.
 
 Tu devrais voir quelque-chose comme ça :
 
-![VSC dans un container](/img/vsc-dans-container.png)
+![VSC dans un container](img/vsc-dans-container.png)
 
 En bas à gauche, je vois que je suis dans `Dev Container: Python 3` (ainsi je suis bien en mode **container**) et il m'a créé quelques fichiers de configuration de `Dev-Containe`r pour mémoriser mes choix.
 
 Ouvre le répertoire `.devcontainer` et tu dois voir cela :
 
-![devcontainer json](/img/dev-container-json.png)
+![devcontainer json](img/dev-container-json.png)
 
 On peut voir l'image qui a été utilisé pour notre container : `mcr.microsoft.com/vscode/devcontainers/python:0-3.11`
 
@@ -167,7 +167,7 @@ On ira plus tard ajouter des options dans le fichier `devcontainer.json`.
 
 Ouvrez le terminal (`Command +` sur Mac) et explore un peu la machine sur laquelle tu es avec les quelques commandes de base (`pwd`, `ls`, `df -h`) :
 
-![Container - terminal](/img/container-terminal.png)
+![Container - terminal](img/container-terminal.png)
 
 Tu devrais constater qu'apparemment, tu n'es plus sur ton PC (ou Mac). Les répertoires ne sont plus les mêmes, tu ne vois plus tes fichiers, mais que ceux qui sont dans Visual Studio Code (VSC)...
 
@@ -342,7 +342,7 @@ Appuies sur `Rebuild`et VSC va redémarrer avec un container mis à jour avec ce
 
 > En cas de soucis, si le container ne démarre pas ou si des erreurs apparaissent, tu peux afficher la console Dev Container pour voir ce qui ne va pas :
 
-![console devcontainer](/img/console-dev-containers.png)
+![console devcontainer](img/console-dev-containers.png)
 
 > Si ca arrive, corriges l'erreur dans le fichier `devcontainer.json` et redémarre.
 
@@ -433,13 +433,13 @@ Saisis alors un premier compte et attend la fin de l'installation.
 > * si le navigateur ne trouve rien sur http://localhost:9123, vérifie les choses suivantes :
 > * dans l'onglet Port à coté de Terminal, tu dois voir ton port 9123 ouvert
 
-![Ports ouverts](/img/port-ouvert.png)
+![Ports ouverts](img/port-ouvert.png)
 
 > * si ce n'est pas le cas, soit le port n'est pas le bon et vérifie ta config dans le fichier `devcontainer.json`, soit Home Assistant est arrêté et vérifie dans le terminal où il a été lancé si il est toujours actif.
 
 Quand tout se passe bien, on arrive sur le dashboard par défaut suivant :
 
-![Dashboard](/img/dahsboard-defaut.png)
+![Dashboard](img/dahsboard-defaut.png)
 
 Si tel n'est pas le cas, n'hésites pas à revoir les étapes précédentes et à demander de l'aide dans le forum (un sujet est disponible pour ça).
 
@@ -503,7 +503,7 @@ Teste les deux options pour vérifier qu'elles fonctionnent comme prévu.
 
 Une fois lancé en mode tâche, tu as accès à la tâche directement dans VSC en bas à droite avec possibilité d'arrêter directement en cliquant sur la poubelle. :
 
-![Console Tache](/img/console-task.png)
+![Console Tache](img/console-task.png)
 
 ## Conclusion
 
