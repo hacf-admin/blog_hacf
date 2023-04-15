@@ -4,8 +4,8 @@ title: Développer pour Home Assistant - (1) Installer son environnement
 type: post
 visibleInCMS: true
 draft: false
-date: 2023-04-11
-lastmod: 2023-04-11
+date: 2023-04-15
+lastmod: 2023-04-15
 images: img/tuto-developper-1-environnement.png
 description: "Ce premier tuto vous présente comment mettre en place votre
   environnement de développement : quels outils installer et comment les
