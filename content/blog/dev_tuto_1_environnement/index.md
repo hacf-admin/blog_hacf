@@ -220,7 +220,8 @@ On va ajouter les extensions vscode suivantes :
 
 Pour ajouter ces extensions, on ajoute simplement le bloc suivant dans le fichier `devcontainer.json` sous `customisations/vscode`:
 
-```"extensions":
+```json
+"extensions": [
     "ms-python.python",
     "github.vscode-pull-request-github",
     "ryanluker.vscode-coverage-gutters",
