@@ -68,7 +68,7 @@ Tu peux fermer la fenêtre de bienvenue en cliquant sur la croix.
 
 Ça se présente comme ça :
 
-![Plan de travail VSC](/img/vsc-plan-travail.png)
+![Plan de travail VSC](img/vsc-plan-travail.png)
 
 On va ajouter quelques plugins pour faciliter notre développement. Pour cela, il faut se mettre sur la vue Extensions en cliquant sur l'icône suivant de la barre d'outils tout à gauche.
 
@@ -78,9 +78,11 @@ Ajouter les extensions suivantes :
 
 \=> Nous allons programmer en **Python**, donc il va nous falloir
 
-![Extension Python](/images/extension-python.png)
+![Extension Python](img/extension-python.png)
 
 ... et celle-là pour nous aider à organiser nos imports :
+
+![Extension Python 2](img/extension-python1.png)
 
 \=> Nous allons utiliser des **containers** pour développer donc il nous faut :
 
