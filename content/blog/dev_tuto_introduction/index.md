@@ -56,9 +56,9 @@ Pour démarrer, je ne peux que conseiller de démarrer avec une intégration HAC
 
 ## Liste des tutos
 
-Les tutos sont en cours de rédaction. Mais le premier sera publié très prochainement !!
+Seul le premier tuto est en ligne et les autres sont en cours de rédaction. Mais patience, ils seront publiés prochainement !!
 
-* **Tuto1 :** Installer son environnement de dev.
+* [**Tuto1 :** Installer son environnement de dev.](blog/dev_tuto_1_environnement/)
 * **Tuto2 :** Créer une intégration et une entité simple
 * **Tuto3 :** Interactions avec d'autres entités (évènements, états, ...)
 * **Tuto4 :** Pages de configuration (configFlow, traductions).
