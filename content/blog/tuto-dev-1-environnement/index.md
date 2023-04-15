@@ -3,7 +3,7 @@ folder: dev_tuto_1_environnement
 title: Développer pour Home Assistant - (1) Installer son environnement
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-04-11
 lastmod: 2023-04-11
 images: img/tuto-developper-1-environnement.png
@@ -17,6 +17,7 @@ categories:
 tags:
   - developpement
 author: jean-marc_collin
+url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
 Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes de l'installation de votre environnement de développement.
 
