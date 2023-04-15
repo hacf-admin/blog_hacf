@@ -5,7 +5,7 @@ visibleInCMS: true
 date: 23-02-13
 lastmod: ""
 socialshare: true
-title: Protection des données de la communuté HACF et de son Association.
+title: Protection des données de la communauté HACF et de son Association.
 type: page
 aliases:
   - /protection-donnees
