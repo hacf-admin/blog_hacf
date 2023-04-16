@@ -1,11 +1,11 @@
 ---
 folder: ha_installation_haos_vm
-title: Installer Home Assistant OS avec Proxmox (VM).
+title: Installer Home Assistant OS avec Proxmox (VM)
 type: post
 visibleInCMS: true
-draft: true
-date: 2023-04-12
-lastmod: 2023-04-12
+draft: false
+date: 2023-04-16
+lastmod: 2023-04-16
 images: img/ha_os_proxmox.png
 description: >
   Cet article décrit comment installer et utiliser la solution de virtualisation
