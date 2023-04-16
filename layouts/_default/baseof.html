@@ -6,7 +6,9 @@
 
 
 
+        {{ if eq .Kind "404" }}{{ else }}<main id="content"> {{ end }}
         {{- block "main" . }}{{- end }}
+        {{ if eq .Kind "404" }}{{ else }}</main>{{ end }}
 
 
     
