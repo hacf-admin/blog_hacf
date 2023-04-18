@@ -81,9 +81,7 @@ Une intégration HACS est un `custom_component` et doit être installer dans le 
 
 Dans le navigateur, cliques droit sur `config`, "Nouveau dossier", "custom_components/tuto_hacs" (ou tout autre nom qui te plait). On peut créer les 2 répertoires en une seule fois.
 
-![Tip](img/tips.png)
-
-> Le choix du nom de l'intégration est important : il va rester, il sera compliqué de le changer ensuite et surtout il ne doit pas entrer en collision avec une intégration HACS déjà existante. Une petite recherche sur internet avec le nom que tu as choisi est fortement conseillé à ce niveau là.
+> 💡 Le choix du nom de l'intégration est important : il va rester, il sera compliqué de le changer ensuite et surtout il ne doit pas entrer en collision avec une intégration HACS déjà existante. Une petite recherche sur internet avec le nom que tu as choisi est fortement conseillé à ce niveau là.
 
 Tu dois avoir quelque-chose qui ressemble à ça :
 
@@ -149,8 +147,7 @@ async def async_setup(
     return True
 ```
 
-> ![Tip](/images/tips.png?raw=true)
->
+> 💡 Notes :
 > * La fonction `async_setup` est appelée par Home Assistant lors de la découverte de l'intégration. Vous pourrez y mettre tout le code nécessaire à son initialisation,
 > * L'argument config contient le `configuration.yaml`. On pourrait accéder à d'éventuels paramètre de l'intégration avec le code suivant `config.get(DOMAIN)`.
 
@@ -214,7 +211,7 @@ Tu devrais voir le log suivant :
 2023-04-09 08:10:22.372 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tuto_hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
 ```
 
-> ![Tip](/images/tips.png?raw=true) Ca montre que notre intégration est bien reconnue par Home Assistant.
+> 💡 Ca montre que notre intégration est bien reconnue par Home Assistant.
 >
 > Par contre, on ne voit pas notre log qui correspond à la ligne `_LOGGER.info("Initializing %s integration with plaforms: %s", DOMAIN, PLATFORMS)` ce qui indique que notre intégration n'est pas utilisée. On va y remedier un peu en-dessous.
 
@@ -262,7 +259,7 @@ L'idée est que cette liste soit toujour vide. Cette liste se met à jour en fur
 Les erreurs du type `import "homeassistant.core" could not be resolved` se corrige facilement en indiquant à VSC quel interpréteur Python il doit utiliser. En l'occurence, on doit lui indiquer celui du container dans lequel le package homeassistant a été installé (souviens toi de : `pip install -r requirements.txt` qui installe le package homeassistant). Pour faire ça, il faut :
 Command + Shift + P / "Python sélectionner un interpréteur" et choisir "Utiliser Python à partir du paramètre `python.defaultInterpreterPath` qu'on a renseigné dans notre `devcontainer.json`
 
-> ![Tip](/images/interpreteur-python.png?raw=true)
+> ![Interpreter Python](/images/interpreteur-python.png?raw=true)
 
 Ca devrait supprimer toutes ces erreurs.
 
@@ -270,7 +267,7 @@ Ca devrait supprimer toutes ces erreurs.
 
 Ces erreurs sont signalées lors de la déclaration de la fonction `async_setup` qui prend 2 arguments hass et config mais qui ne sont pas utilisés pour l'instant.
 
-> ![Tip](/images/unused-argument.png?raw=true)
+> ![Unused argument](/images/unused-argument.png?raw=true)
 
 Pour les faire disparaitre, 4 possibilités :
 
@@ -284,7 +281,7 @@ La 4ème méthode est de loin la plus propre si on veut garder les arguments pou
 Ma recommandation est de **garder cette liste d'erreur vide**. Ca permet de tout de suite **prendre les bonnes habitudes** et de voir instantanément, au cours de la frappe si quelque-chose ne va pas.
 Si tu as 98 erreurs et que le compteurs passe à 99, tu ne la verras pas et tu vas potentiellement louper quelque-chose et perdre du temps.
 
-> ![Tip](/images/tips.png?raw=true) A ce stade, on a :
+> 💡 A ce stade, on a :
 >
 > * une intégration reconnue par Home Assistant,
 > * instanciée et initialisée par Home Assistant
