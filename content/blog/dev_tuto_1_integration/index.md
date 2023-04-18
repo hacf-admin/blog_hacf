@@ -1,5 +1,5 @@
 ---
-folder: dev_tuto_1_integration
+folder: dev_tuto_2_integration
 title: Développer pour Home Assistant - (2) Créer une intégration et une entité
 type: post
 visibleInCMS: true
