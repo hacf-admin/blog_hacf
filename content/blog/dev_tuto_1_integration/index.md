@@ -49,7 +49,7 @@ Tu dois avoir quelque-chose qui ressemble à ça :
 ### Transformer le répertoire en package Python
 
 Le répertoire de l'intégration étant vide il ne va pas être reconnu par HA comme une intégration. Il faut le transformer en un module Python à part entière.
-Ca se fait en ajoutant notre premier fichier source Python qui se nomme `__init__.py` (attention, il y a 2 '_' devant et après `init`). Il contient le code source de l'initialisation du package et donc de notre intégration (qui est un package Python).
+Ça se fait en ajoutant notre premier fichier source Python qui se nomme `__init__.py` (attention, il y a 2 '_' devant et après `init`). Il contient le code source de l'initialisation du package et donc de notre intégration (qui est un package Python).
 
 C'est une convention de nommage de Python. Tu peux approfondir le sujet avec cette article au besoin : [les packages Python](https://docs.python.org/fr/3.5/tutorial/modules.html#packages).
 
@@ -271,7 +271,7 @@ On déclare que notre intégration utilise la plate-forme `sensor` dans le fichi
 PLATFORMS: list[Platform] = [Platform.SENSOR]
 ```
 
-Ça indique a Home Assistant qu'il doit trouver un fichier source nommé `sensor.py` dans notre package `tuto_hacs`. Ce code source est en charge d'instancier TOUS les sensors. **On ne fait pas un code source par `sensor` mais bien un code source par plate-forme** (ce qu'il y a avant le point dans sensor.mon_entite)**.**
+Ça indique a Home Assistant qu'il doit trouver un fichier source nommé `sensor.py` dans notre package `tuto_hacs`. Ce code source est en charge d'instancier TOUS les sensors. **On ne fait pas un code source par `sensor` mais bien un code source par plate-forme** (ce qu'il y a avant le point dans `sensor.mon_entite`)**.**
 
 Pour avoir un code maintenable, on va créer une classe par entité.
 
@@ -394,7 +394,7 @@ class TutoHacsElapsedSecondEntity(SensorEntity):
         return UnitOfTime.SECONDS
 ```
 
-On a déclaré la proprité `icon` en donnant le nom de l'icone a utiliser pour cet entité, la classe du device qui est ici une durée (`SensorDeviceClass.DURATION`), une classe d'état qui est ici une mesure (`SensorStateClass.MEASUREMENT`) et une unité de la mesure qui est ici des secondes (`UnitOfTime.SECONDS`).
+On a déclaré la propriété `icon` en donnant le nom de l’icône a utiliser pour cet entité, la classe du device qui est ici une durée (`SensorDeviceClass.DURATION`), une classe d'état qui est ici une mesure (`SensorStateClass.MEASUREMENT`) et une unité de la mesure qui est ici des secondes (`UnitOfTime.SECONDS`).
 
 Plein d'autres combinaisons sont possibles, la doc pour aller plus loin sur le sujet est [ici](https://developers.home-assistant.io/docs/core/entity/sensor).
 
@@ -432,7 +432,7 @@ Après pas mal de recherche, il n'est pas possible de relier une entité créée
 
 ## Debugger notre code
 
-Lorsque ça se passe mal et qu'on souhaite débugger notre code, 2 possibilités s'offre à nous :
+Lorsque ça se passe mal et qu'on souhaite debugger notre code, 2 possibilités s'offre à nous :
 
 1. **ajouter des logs**. On a vu plusieurs exemple ci-dessus. Cf Voir nos logs,
 2. **exécuter le code pas-à-pas**, inspecter les variables et comprendre ce qui se passe. C'est ce dernier point qu'on va voir ici pour terminer ce tuto
@@ -525,7 +525,7 @@ Tous les points d'arrêt sont visibles à bas à gauche dans la fenêtre "POINTS
 
 Il est possible de **désactiver, réactiver, supprimer les points d'arrêt** directement depuis cette fenêtre.
 
-Lances Home Assistant en mode débugger en appuyant sur la flêche verte :
+Lances Home Assistant en mode debugger en appuyant sur la flêche verte :
 
 ![Launch créé](img/launch-cree.png)
 
@@ -541,13 +541,13 @@ Home Assistant se lance et au bout de quelques-instants, le lancement se bloque 
 > 2. l'état des différentes variables à ce moment de l'exécution,
 > 3. la pile des appels,
 > 4. les logs de Home Assistant,
-> 5. une barre d'outil qui va nous permettre d'éxécuter pas à pas le code. Attention : cette barre est relativement invisible et pas souvent bien positionnée. Tu peux la déplacer avec la "poignée" à gauche de la barre.
+> 5. une barre d'outil qui va nous permettre d’exécuter pas à pas le code. Attention : cette barre est relativement invisible et pas souvent bien positionnée. Tu peux la déplacer avec la "poignée" à gauche de la barre.
 
 En passant la souris sur une variable, on peut inspecter sa valeur, ce qui est super pratique.
 
 Appuies sur les boutons de la d'outil du debugger pour :
 
-* "Continuer l'execution" :
+* "Continuer l’exécution" :
 
 ![Continuer](img/debugger-bouton-continue.png)
 
@@ -574,12 +574,10 @@ Plus d'informations sur le debugger [VSC](https://code.visualstudio.com/docs/edi
 Dans ce tuto, tu as appris à :
 
 1. créer une intégration et faire en sorte qu'elle soit reconnue par Home Assistant,
-2. créer une entité dans cette intégration en lui donnant quelques caractéristiques de base (unité, icone, valeur, classe),
+2. créer une entité dans cette intégration en lui donnant quelques caractéristiques de base (unité, icône, valeur, classe),
 3. debugger le code avec le debugger intégré de VSC.
 
 Dans le prochain tuto, on va apprendre à faire communiquer notre entité avec Home Assistant et avec d'autres entités.
-
-
 
 - - -
 
