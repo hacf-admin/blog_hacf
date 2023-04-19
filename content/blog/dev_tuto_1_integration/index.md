@@ -6,19 +6,22 @@ visibleInCMS: true
 draft: true
 date: 2023-04-18
 lastmod: 2023-04-18
-description: L'objectif de cet article est de créer une première intégration et
-  une première entité simple.
+images: img/developper-2.png
+description: L'objectif de ce tuto est de vous présenter comment développer une
+  première intégration et une première entité simple.
 level: Intermédiaire
 version_ha: "2023.4"
 categories:
   - Développement
 tags:
   - developpement
-  - ""
+  - python
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
 Cet article s'inscrit dans la suite des tutos dont la liste est [ici](/README.md).
+
+Vous avez installé votre environnement de développement ? Il est maintenant temps de passer au développement de votre première intégration avec une première entité.
 
 > 💡Les fichiers sources complets sont en fin d'article. Cf \[Fichiers sources du tuto]
 
@@ -32,13 +35,13 @@ Les étapes pour créer et initialiser son intégration sont les suivantes :
 
 1. créer un répertoire qui va accueillir le code de l'intégration,
 2. transformer le répertoire de package Python,
-3. déclarer l'intégration à l'aide d'un fichier manifest
+3. déclarer l'intégration à l'aide d'un fichier "manifest"
 
 ### Créer un répertoire sous custom_components
 
-Une intégration HACS est un `custom_component` et doit être installé dans le répertoire `config/custom_components`. Au démarrage, HA parcours tous les sous-répertoires de `custom_components` et créé les intégrations qu'il y trouve.
+Une intégration HACS est un `custom_component` et doit être installé dans le répertoire `config/custom_components`. Au démarrage, HA parcourt tous les sous-répertoires de `custom_components` et créé les intégrations qu'il y trouve.
 
-Dans le navigateur, cliques droit sur `config`, "Nouveau dossier", "custom_components/tuto_hacs" (ou tout autre nom qui te plait). On peut créer les 2 répertoires en une seule fois.
+Dans le navigateur, faire un clic droit sur `config`, "Nouveau dossier", "custom_components/tuto_hacs" (ou tout autre nom qui te plait). On peut créer les 2 répertoires en une seule fois.
 
 > 💡 Le choix du nom de l'intégration est important : il va rester, il sera compliqué de le changer ensuite et surtout il ne doit pas entrer en collision avec une intégration HACS déjà existante. Une petite recherche sur internet avec le nom que tu as choisi est fortement conseillé à ce niveau là.
 
@@ -48,10 +51,10 @@ Tu dois avoir quelque-chose qui ressemble à ça :
 
 ### Transformer le répertoire en package Python
 
-Le répertoire de l'intégration étant vide il ne va pas être reconnu par HA comme une intégration. Il faut le transformer en un module Python à part entière.
+Le répertoire de l'intégration étant vide, il ne va pas être reconnu par HA comme une intégration. Il faut le transformer en un module Python à part entière.
 Ça se fait en ajoutant notre premier fichier source Python qui se nomme `__init__.py` (attention, il y a 2 '_' devant et après `init`). Il contient le code source de l'initialisation du package et donc de notre intégration (qui est un package Python).
 
-C'est une convention de nommage de Python. Tu peux approfondir le sujet avec cette article au besoin : [les packages Python](https://docs.python.org/fr/3.5/tutorial/modules.html#packages).
+C'est une convention de nommage de Python. Tu peux approfondir le sujet avec cet article au besoin : [les packages Python](https://docs.python.org/fr/3.5/tutorial/modules.html#packages).
 
 On en profite pour ajouter un fichier nommé `const.py` dans lequel on va déclarer toutes nos différentes constantes qui seront nécessaires à notre intégration.
 
@@ -67,9 +70,9 @@ PLATFORM: list[Platform] = []
 ```
 
 * La première ligne est un commentaire qui explique ce que contient le fichier.
-* La ligne `from homeassistant.const import Platform` permet d'importer la définition de l'enum Platform depuis la librairie Home Assistant. Elle va nous permettre de déclarer toutes les plates-formes utilisées par notre intégration. Dans le langage HA, une plate-forme est un type d'entité (`switch`, `light`, `climate`, `sensor`, ...). C'est ce qui se trouve devant le `.` dans le nom d'une entité.
+* La ligne `from homeassistant.const import Platform` permet d'importer la définition de l'enum `Platform `depuis la librairie Home Assistant. Elle va nous permettre de déclarer toutes les plateformes utilisées par notre intégration. Dans le langage HA, une plateforme est un type d'entité (`switch`, `light`, `climate`, `sensor`, ...). C'est ce qui se trouve devant le `.` dans le nom d'une entité.
 * La ligne `DOMAIN = "tuto_hacs"` définit le domaine de notre intégration. Un domaine est un nom d'intégration. Tous les appareils et entités de notre intégration feront parties de domaine. Le domaine doit être **le même que le nom du répertoire de l'intégration** : `tuto_hacs` dans notre cas.
-* Ensuite on définit la liste des plate-formes utilisées par l'intégration avec la ligne: `PLATFORM: list[Platform] = []`. On déclare une liste de Platform (`list[Platform]`) et on l'initialise avec rien pour l'instant (`= []`)
+* Ensuite on définit la liste des plateformes utilisées par l'intégration avec la ligne : `PLATFORM: list[Platform] = []`. On déclare une liste de Platform (`list[Platform]`) et on l'initialise avec rien pour l'instant (`= []`)
 
 Le code d'initialisation dans le fichier `__init__.py` est le suivant :
 
@@ -110,11 +113,11 @@ async def async_setup(
 > 💡 Notes :
 >
 > * La fonction `async_setup` est appelée par Home Assistant lors de la découverte de l'intégration. Vous pourrez y mettre tout le code nécessaire à son initialisation,
-> * L'argument config contient le `configuration.yaml`. On pourrait accéder à d'éventuels paramètre de l'intégration avec le code suivant `config.get(DOMAIN)`.
+> * L'argument `config `contient le `configuration.yaml`. On pourrait accéder à d'éventuels paramètres de l'intégration avec le code suivant `config.get(DOMAIN)`.
 
 ### Déclarer l'intégration
 
-La déclaration de l'intégration a Home Assistant se fait via un fichier de conf nommé `manifest.json`. Les fichiers manifest sont des fichiers descriptifs qui sont utilisés au démarrage de Home Assistant dans la phase de découverte des intégrations. Il doit contenir les infos suivantes :
+La déclaration de notre intégration à Home Assistant se fait via un fichier de conf nommé `manifest.json`. Les fichiers "manifest" sont des fichiers descriptifs qui sont utilisés au démarrage de Home Assistant dans la phase de découverte des intégrations. Il doit contenir les infos suivantes :
 
 ```json
 {
@@ -137,20 +140,21 @@ Les valeurs à déclarer sont les suivantes :
 
 1. `domain` : notre domaine. Doit être égal à la constante `DOMAIN` de notre `const.yaml`,
 2. `name` : le nom de l'intégration tel qu'il s'affichera dans le menu "Ajouter une intégration",
-3. `codeowners` : les noms Github des propriétaires du code. Mettez le votre,
+3. `codeowners` : les noms Github des propriétaires du code. Mettez le vôtre,
 4. `config_flow` : présence ou non d'une interface de configuration de l'intégration. On en reparlera en détail dans un prochain tuto,
 5. `documentation` : le lien Github vers la documentation,
-6. `issue_tracker` : le lien Github vers la déclaration des report de bugs ou anomalies de fonctionnement,
-7. `integration_type` : plusieurs type d'intégration sont possibles. Le type device permet d'indiquer que l'intégration va créer des appareils (devices) et des entités,
+6. `issue_tracker` : le lien Github vers la déclaration des reports de bugs ou anomalies de fonctionnement,
+7. `integration_type` : plusieurs types d'intégration sont possibles. Le type `device `permet d'indiquer que l'intégration va créer des appareils (devices) et des entités,
 8. `iot_class` : plusieurs "IOT class" sont disponibles. Cette option définie comment notre intégration interagit avec les appareils. Les plus communs sont : `cloud_polling` (les appareils / entités se mettent à jour en interrogeant régulièrement le Cloud), `local_polling` interrogation régulière d'un appareil en local sur le réseau, `local_push` l'appareil en local envoi les nouvelles valeurs en cas de changement (pas besoin de l'interroger)
-9. `quality_scale`: le niveau de qualité de votre intégration,
-10. `version`: la version du `manifest.json`. La dernière en date doit être 3.0.0.
+9. `quality_scale`⁣ : le niveau de qualité de votre intégration,
+
+10. `version`⁣ : la version du `manifest.json`. La dernière en date doit être 3.0.0.
 
 La documentation complète est [ici](https://developers.home-assistant.io/docs/creating_integration_manifest).
 
 ### Voir nos logs
 
-Pour debugger et suivre le bon fonctionnement de votre intégration, tu vas avoir besoin de configurer les logs.
+Pour debugger et suivre le bon fonctionnement de l'intégration, tu vas avoir besoin de configurer les logs.
 Cela se fait en modifiant le fichier `configuration.yaml` de la façon suivante :
 
 ```yaml
@@ -162,19 +166,20 @@ logger:
 
 ### Redémarrer Home Assistant
 
-Lances Home Assistant en utilisant les tâches faites au tuto1 (Command + Shift + P / Tâches: exécuter la tâche / Run Home Assistant on port 9123).
-Pour rappel, tu dois avoir le port 9123 ouvert si le démarrage est bon :
+Lances Home Assistant en utilisant les tâches faites au tuto1 (`Command `+ `Shift `+ `P `/ `Tâches : exécuter la tâche `/ `Run Home Assistant on port 9123`).
+Pour rappel, **tu dois avoir le port 9123 ouvert** si le démarrage est bon :
+
 
 ![Port ouvert](img/port-ouvert.png)
 
-Regardes les logs de Home Assistant (soit dans le Terminal de la tâche "Run Home Assistant.." dans directement dans le fichier `home-assistant.log`).
+Regarde les logs de Home Assistant (soit dans le Terminal de la tâche "Run Home Assistant…" dans directement dans le fichier `home-assistant.log`).
 Tu devrais voir le log suivant :
 
 ```log
 2023-04-09 08:10:22.372 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tuto_hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
 ```
 
-> 💡 Ca montre que notre intégration est bien reconnue par Home Assistant.
+> 💡 Cela montre que notre intégration est bien reconnue par Home Assistant.
 >
 > Par contre, on ne voit pas notre log qui correspond à la ligne `_LOGGER.info("Initializing %s integration with plaforms: %s", DOMAIN, PLATFORMS)` ce qui indique que notre intégration n'est pas utilisée. On va y remédier un peu en-dessous.
 
