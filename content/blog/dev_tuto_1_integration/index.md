@@ -36,7 +36,7 @@ Les étapes pour créer et initialiser son intégration sont les suivantes :
 
 ### Créer un répertoire sous custom_components
 
-Une intégration HACS est un `custom_component` et doit être installer dans le répertoire `config/custom_components`. Au démarrage, HA parcours tous les sous-répertoires de `custom_components` et créé les intégrations qu'il y trouve.
+Une intégration HACS est un `custom_component` et doit être installé dans le répertoire `config/custom_components`. Au démarrage, HA parcours tous les sous-répertoires de `custom_components` et créé les intégrations qu'il y trouve.
 
 Dans le navigateur, cliques droit sur `config`, "Nouveau dossier", "custom_components/tuto_hacs" (ou tout autre nom qui te plait). On peut créer les 2 répertoires en une seule fois.
 
