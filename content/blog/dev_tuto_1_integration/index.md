@@ -18,9 +18,7 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
-Cet article s'inscrit dans la suite des articles dont le sommaire est [ici](/README.md).
-
-
+Cet article s'inscrit dans la suite des tutos dont la liste est [ici](/README.md).
 
 > 💡Les fichiers sources complets sont en fin d'article. Cf \[Fichiers sources du tuto]
 
@@ -51,7 +49,7 @@ Tu dois avoir quelque-chose qui ressemble à ça :
 ### Transformer le répertoire en package Python
 
 Le répertoire de l'intégration étant vide il ne va pas être reconnu par HA comme une intégration. Il faut le transformer en un module Python à part entière.
-Ca se fait en ajoutant notre premier fichier source Pyhton qui se nomme `__init__.py` (attention, il y a 2 '_' devant et après `init`). Il contient le code source de l'initialisation du package et donc de notre intégration (qui est un package Python).
+Ca se fait en ajoutant notre premier fichier source Python qui se nomme `__init__.py` (attention, il y a 2 '_' devant et après `init`). Il contient le code source de l'initialisation du package et donc de notre intégration (qui est un package Python).
 
 C'est une convention de nommage de Python. Tu peux approfondir le sujet avec cette article au besoin : [les packages Python](https://docs.python.org/fr/3.5/tutorial/modules.html#packages).
 
@@ -69,7 +67,7 @@ PLATFORM: list[Platform] = []
 ```
 
 * La première ligne est un commentaire qui explique ce que contient le fichier.
-* La ligne `from homeassistant.const import Platform` permet d'importer la définition de Platform depuis la librairie Home Assistant. Elle va nous permettre de déclarer toutes les plates-formes utilisées par notre intégration. Dans le langage HA, une plate-forme est un type d'entité (`switch`, `light`, `climate`, `sensor`, ...). C'est ce qui se trouve devant le `.` dans le nom d'une entité.
+* La ligne `from homeassistant.const import Platform` permet d'importer la définition de l'enum Platform depuis la librairie Home Assistant. Elle va nous permettre de déclarer toutes les plates-formes utilisées par notre intégration. Dans le langage HA, une plate-forme est un type d'entité (`switch`, `light`, `climate`, `sensor`, ...). C'est ce qui se trouve devant le `.` dans le nom d'une entité.
 * La ligne `DOMAIN = "tuto_hacs"` définit le domaine de notre intégration. Un domaine est un nom d'intégration. Tous les appareils et entités de notre intégration feront parties de domaine. Le domaine doit être **le même que le nom du répertoire de l'intégration** : `tuto_hacs` dans notre cas.
 * Ensuite on définit la liste des plate-formes utilisées par l'intégration avec la ligne: `PLATFORM: list[Platform] = []`. On déclare une liste de Platform (`list[Platform]`) et on l'initialise avec rien pour l'instant (`= []`)
 
@@ -99,6 +97,7 @@ async def async_setup(
     )
 
     # Mettre ici un eventuel code permettant l'initialisation de l'intégration
+    # Ca peut être une connexion sur le Cloud qui fournit les données par ex
     # (pas nécessaire pour le tuto)
 
     # L'argument config contient votre fichier configuration.yaml
@@ -143,7 +142,7 @@ Les valeurs à déclarer sont les suivantes :
 5. `documentation` : le lien Github vers la documentation,
 6. `issue_tracker` : le lien Github vers la déclaration des report de bugs ou anomalies de fonctionnement,
 7. `integration_type` : plusieurs type d'intégration sont possibles. Le type device permet d'indiquer que l'intégration va créer des appareils (devices) et des entités,
-8. `iot_class` : plusieurs "IOT class" sont disponibles. Cette option définie comment notre intégration intéragit avec les appareils. Les plus communs sont : `cloud_polling` (les appareils / entités se mettent à jour en interrogeant régulièrement le Cloud), `local_polling` intérrogation régulière d'un appareil en local sur le réseau, `local_push` l'appareil en local envoi les nouvelles valeurs en cas de changement (pas besoin de l'interroger)
+8. `iot_class` : plusieurs "IOT class" sont disponibles. Cette option définie comment notre intégration interagit avec les appareils. Les plus communs sont : `cloud_polling` (les appareils / entités se mettent à jour en interrogeant régulièrement le Cloud), `local_polling` interrogation régulière d'un appareil en local sur le réseau, `local_push` l'appareil en local envoi les nouvelles valeurs en cas de changement (pas besoin de l'interroger)
 9. `quality_scale`: le niveau de qualité de votre intégration,
 10. `version`: la version du `manifest.json`. La dernière en date doit être 3.0.0.
 
@@ -161,10 +160,12 @@ logger:
         custom_components.tuto_hacs: debug
 ```
 
-### Redemarrer Home Assistant
+### Redémarrer Home Assistant
 
 Lances Home Assistant en utilisant les tâches faites au tuto1 (Command + Shift + P / Tâches: exécuter la tâche / Run Home Assistant on port 9123).
-Pour rappel, tu dois avoir le port 9123 ouvert si le démarrage est bon : ![Port ouvert](/images/port-ouvert.png?raw=true)
+Pour rappel, tu dois avoir le port 9123 ouvert si le démarrage est bon :
+
+![Port ouvert](img/port-ouvert.png)
 
 Regardes les logs de Home Assistant (soit dans le Terminal de la tâche "Run Home Assistant.." dans directement dans le fichier `home-assistant.log`).
 Tu devrais voir le log suivant :
@@ -175,17 +176,17 @@ Tu devrais voir le log suivant :
 
 > 💡 Ca montre que notre intégration est bien reconnue par Home Assistant.
 >
-> Par contre, on ne voit pas notre log qui correspond à la ligne `_LOGGER.info("Initializing %s integration with plaforms: %s", DOMAIN, PLATFORMS)` ce qui indique que notre intégration n'est pas utilisée. On va y remedier un peu en-dessous.
+> Par contre, on ne voit pas notre log qui correspond à la ligne `_LOGGER.info("Initializing %s integration with plaforms: %s", DOMAIN, PLATFORMS)` ce qui indique que notre intégration n'est pas utilisée. On va y remédier un peu en-dessous.
 
 ### Instancier notre intégration
 
 Dans l'interface web, menu intégration, ajouter une intégration, on voit bien notre intégration :
 
-> ![Tuto HACS](/images/new-integration.png?raw=true)
+![Tuto HACS](img/new-integration.png)
 
 Si tu essaies de l'ajouter, HA prévient que l'ajout ne peut être fait qu'à la main dans le `configuration.yaml` car l'intégration n'a pas d'interface de configuration (option `"config_flow": false` du fichier `manifest.json`).
 
-> ![Tuto HACS](/images/integration-manuelle.png?raw=true)
+![Tuto HACS](img/integration-manuelle.png)
 
 C'est ce qu'on va faire. On va ajouter cette simple ligne dans notre `configuration.yaml` pour utiliser notre intégration :
 
@@ -212,35 +213,35 @@ On retrouve bien, cette fois, notre log d'initialisation !
 
 Si tu regardes dans l'onglet Problèmes, tu verras un certain nombre d'erreurs ou de warning :
 
-> ![Compilation problèmes](/images/compilation-problemes.png?raw=true)
+![Compilation problèmes](img/compilation-problemes.png)
 
-L'idée est que cette liste soit toujour vide. Cette liste se met à jour en fur et à mesure de la frappe du code et se rafraichit lors d'une sauvegarde des fichiers (Command + Shift + S sur Mac).
+L'idée est que cette liste soit toujours vide. Cette liste se met à jour en fur et à mesure de la frappe du code et se rafraichit lors d'une sauvegarde des fichiers (Command + Shift + S sur Mac).
 
 #### Could not be resolved
 
-Les erreurs du type `import "homeassistant.core" could not be resolved` se corrige facilement en indiquant à VSC quel interpréteur Python il doit utiliser. En l'occurence, on doit lui indiquer celui du container dans lequel le package homeassistant a été installé (souviens toi de : `pip install -r requirements.txt` qui installe le package homeassistant). Pour faire ça, il faut :
+Les erreurs du type `import "homeassistant.core" could not be resolved` se corrige facilement en indiquant à VSC quel interpréteur Python il doit utiliser. En l’occurrence, on doit lui indiquer celui du container dans lequel le package homeassistant a été installé (souviens toi de : `pip install -r requirements.txt` qui installe le package homeassistant). Pour faire ça, il faut :
 Command + Shift + P / "Python sélectionner un interpréteur" et choisir "Utiliser Python à partir du paramètre `python.defaultInterpreterPath` qu'on a renseigné dans notre `devcontainer.json`
 
-> ![Interpreter Python](/images/interpreteur-python.png?raw=true)
+![Interpreter Python](img/interpreteur-python.png)
 
-Ca devrait supprimer toutes ces erreurs.
+Ça devrait supprimer toutes ces erreurs.
 
 #### Unused argument
 
 Ces erreurs sont signalées lors de la déclaration de la fonction `async_setup` qui prend 2 arguments hass et config mais qui ne sont pas utilisés pour l'instant.
 
-> ![Unused argument](/images/unused-argument.png?raw=true)
+![Unused argument](img/unused-argument.png)
 
 Pour les faire disparaitre, 4 possibilités :
 
 1. on utilise les arguments dans notre fonction. Dans notre exemple, on n'a pas l'occasion,
 2. on supprime les arguments inutiles,
 3. on met en commentaires les arguments parce-qu'on pense qu'on va en avoir besoin un jour : `async def async_setup(): # hass: HomeAssistant, config: ConfigEntry ):`
-4. on met un tag qui indique au linter d'ignorer ces erreurs. Ca se fait en ajoutant le commentaire suivant sur la ligne en question : `# pylint: disable=unused-argument`
+4. on met un tag qui indique au linter d'ignorer ces erreurs. Ça se fait en ajoutant le commentaire suivant sur la ligne en question : `# pylint: disable=unused-argument`
 
 La 4ème méthode est de loin la plus propre si on veut garder les arguments pour un prochain usage.
 
-Ma recommandation est de **garder cette liste d'erreur vide**. Ca permet de tout de suite **prendre les bonnes habitudes** et de voir instantanément, au cours de la frappe si quelque-chose ne va pas.
+Ma recommandation est de **garder cette liste d'erreur vide**. Ça permet de tout de suite **prendre les bonnes habitudes** et de voir instantanément, au cours de la frappe si quelque-chose ne va pas.
 Si tu as 98 erreurs et que le compteurs passe à 99, tu ne la verras pas et tu vas potentiellement louper quelque-chose et perdre du temps.
 
 > 💡 A ce stade, on a :
@@ -248,7 +249,7 @@ Si tu as 98 erreurs et que le compteurs passe à 99, tu ne la verras pas et tu v
 > * une intégration reconnue par Home Assistant,
 > * instanciée et initialisée par Home Assistant
 >
-> **Il ne nous "reste" plus qu'à lui faire faire des 'trucs'.**
+> **Il ne nous "reste" plus qu'à lui faire faire des 'trucs'** 😁.
 
 ## Créer une première entité simple
 
@@ -256,7 +257,7 @@ On va créer une entité qui expose une valeur en secondes pour démarrer doucem
 
 La démarche pour déclarer une entité est la suivante :
 
-1. ajouter une plate-forme pour notre entité (sensor dans notre cas de test),
+1. ajouter une plate-forme pour notre entité (`sensor` dans notre cas de test),
 2. donner le code de notre entité,
 3. configurer notre entité dans le `configuration.yaml`,
 4. donner un état et des attributs à l'entité,
@@ -270,7 +271,7 @@ On déclare que notre intégration utilise la plate-forme `sensor` dans le fichi
 PLATFORMS: list[Platform] = [Platform.SENSOR]
 ```
 
-Ca indique a Home Assistant qu'il doit trouver un fichier source nommé `sensor.py` dans notre package `tuto_hacs`. Ce code source est en charge d'instancier TOUS les sensors. **On ne fait pas un code source par sensor mais bien un code source par plate-forme.**
+Ça indique a Home Assistant qu'il doit trouver un fichier source nommé `sensor.py` dans notre package `tuto_hacs`. Ce code source est en charge d'instancier TOUS les sensors. **On ne fait pas un code source par `sensor` mais bien un code source par plate-forme** (ce qu'il y a avant le point dans sensor.mon_entite)**.**
 
 Pour avoir un code maintenable, on va créer une classe par entité.
 
@@ -323,7 +324,7 @@ La fonction `async_setup_platform` est appelée par Home Assistant lorsqu'une en
 
 Elle instancie notre entité à partir de sa classe qui le représente (`TutoHacsElapsedSecondEntity`) et appelle `async_add_entities` avec un tableau des classes d'entités créées.
 
-Ce fichier contient aussi la déclaration de la classe `TutoHacsElapsedSecondEntity`, ne faisant pas grand chose mais qui représente notre entité. Elle dérive de `SensorEntity` qui est la classe de base de toutes les entités de type Sensor.
+Ce fichier contient aussi la déclaration de la classe `TutoHacsElapsedSecondEntity`, ne faisant pas grand chose mais qui représente notre entité. Elle dérive de `SensorEntity` qui est la classe de base de toutes les entités de type `Sensor`.
 
 Pour l'instant cette classe, ne fait rien d'autre qu'initialiser les 2 attributs `_attr_name` et `_att_unique_id` qui sont nécessaire à la création de l'entité. Comme a donné un nom à notre entité, on l'indique à HA (sinon il lui affecte un nom par défaut) avec la ligne: `self._attr_has_entity_name = True`.
 
@@ -331,7 +332,7 @@ On va redémarrer Home Assistant et vérifier que tout se passe bien (command + 
 
 ### Configurer une entité
 
-On ajoute le bloc suivant dans le `configuration.yaml` pour déclarer un Sensor, sur notre plate-forme `tuto_hacs` avec les 2 attributs `entity_id` et `name` :
+On ajoute le bloc suivant dans le `configuration.yaml` pour déclarer un `Sensor`, sur notre plate-forme `tuto_hacs` avec les 2 attributs `entity_id` et `name` :
 
 ```yaml
 sensor:
@@ -358,7 +359,7 @@ On redémarre Home Assistant et cette fois on voit un peu plus de log :
 
 Si on regarde sur le web [ici](http://localhost:9123/config/entities), on peut voir notre entité :
 
-> ![Tip](/images/entite-1.png?raw=true)
+![Tip](img/entite-1.png)
 
 ### Donner un état et des attributs à l'entité
 
@@ -410,7 +411,7 @@ On va lui donner une valeur d'état (ie. le `state`) en ajoutant la ligne suivan
         self._attr_native_value = 12
 ```
 
-et enfin, on indique à Home Assistant que notre entité ne doit pas être pollée puisque pour l'instant ca valeur est fixe :
+et enfin, on indique à Home Assistant que notre entité ne doit pas être "pollée" puisque pour l'instant sa valeur est fixe :
 
 ```python
     @property
@@ -421,9 +422,9 @@ et enfin, on indique à Home Assistant que notre entité ne doit pas être poll�
 
 On redémarre Home Assistant et si on regarde maintenant sur le web :
 
-![Tip](/images/entite-2.png?raw=true)
->
-> On voit bien l'icone, la valeur 12 et l'unité en secondes.
+![Tip](img/entite-2.png)
+
+> On voit bien l’icône, la valeur 12 et l'unité en secondes.
 
 ### Relier l'entité à un appareil
 
@@ -433,12 +434,12 @@ Après pas mal de recherche, il n'est pas possible de relier une entité créée
 
 Lorsque ça se passe mal et qu'on souhaite débugger notre code, 2 possibilités s'offre à nous :
 
-1. **ajouter des logs**. On a vu plusieurs exemple ci-dessus. Cf [Voir nos logs](#voir-nos-logs),
+1. **ajouter des logs**. On a vu plusieurs exemple ci-dessus. Cf Voir nos logs,
 2. **exécuter le code pas-à-pas**, inspecter les variables et comprendre ce qui se passe. C'est ce dernier point qu'on va voir ici pour terminer ce tuto
 
 ### Configurer le debugger
 
-Il faut indiquer à Home Assistant de s'éxécuter en mode debug. Pour cela, on ajoute le bloc de code suivant dans le `configuration.yaml` :
+Il faut indiquer à Home Assistant de s’exécuter en mode debug. Pour cela, on ajoute le bloc de code suivant dans le `configuration.yaml` :
 
 ```yaml
 debugpy:
@@ -456,14 +457,29 @@ Avec cette configuration, on indique :
 
 #### Ajouter une configuration de lancement dans VSC
 
-Cliques sur le bouton du debugger dans VSC : ![Debugger bouton](/images/debugger-bouton.png?raw=true).
-Appuies sur "Créer un fichier launch.json" : ![Launch.json](/images/creer-launch.png?raw=true).
+Cliques sur le bouton du debugger dans VSC :
+
+![Debugger bouton](img/debugger-bouton.png)
+
+Appuies sur "Créer un fichier launch.json" :
+
+![Launch.json](img/creer-launch.png)
 
 Un fichier `launch.json` permet de créer des configuration de lancement de nos applications. On va en créer une qui démarre Home Assistant en mode debug dans le debugger.
 
-Choisis ensuite "Suggestions" en face de Python : ![Launch.json](/images/debugger-python.png?raw=true), puis enfin "Module" : ![Debugger module](/images/debugger-module.png?raw=true).
+Choisis ensuite "Suggestions" en face de Python :
 
-Donne alors `homeassistant` comme nom de module à débugger : ![Debugger module](/images/debugger-homeassistant.png?raw=true) et appuies sur entrée.
+![Launch.json](img/debugger-python.png)
+
+puis enfin "Module" :
+
+![Debugger module](img/debugger-module.png)
+
+Donne alors `homeassistant` comme nom de module à débugger :
+
+![Debugger module](img/debugger-homeassistant.png)
+
+et appuies sur entrée.
 
 VSC t'as créé un fichier `launch.json` qui contient presque tout ce qu'on a besoin pour debugger notre intégration (et Home Assistant au passage comme on va le voir ci-dessous !).
 Modifies le fichier `launch.json` pour ajouter la ligne `args`, changes `justMyCode` en `false` pour pouvoir debugger Home Assistant. Profites en pour donner un `name` plus clair.
@@ -490,27 +506,35 @@ Le fichier `launch.json` doit maintenant contenir :
 }
 ```
 
-Notre configuration de lancement est maintenant visible en haut à gauche : ![Launch créé](/images/launch-cree.png?raw=true).
+Notre configuration de lancement est maintenant visible en haut à gauche :
+
+![Launch créé](img/launch-cree.png)
 
 ### Lancer Home Assistant en mode debug
 
 Pour vérifier que ça marche, on va mettre un point d'arrêt dans notre code.
-Sélectionne le fichier `sensor.py` et clique dans la marge en face de la ligne suivante : ![Debugger module](/images/debugger-breakpoint.png?raw=true).
+Sélectionne le fichier `sensor.py` et clique dans la marge en face de la ligne suivante :
+
+![Debugger module](img/debugger-breakpoint.png)
+
 Un point rouge s'affiche pour indiquer qu'un point d'arrêt a bien été positionné sur cette ligne.
 
 Tous les points d'arrêt sont visibles à bas à gauche dans la fenêtre "POINTS D'ARRET" :
 
-![Debugger module](/images/debugger-breakpoint2.png?raw=true)
+![Debugger module](img/debugger-breakpoint2.png)
 
 Il est possible de **désactiver, réactiver, supprimer les points d'arrêt** directement depuis cette fenêtre.
 
-Lances Home Assistant en mode débugger en appuyant sur la flêche verte : ![Launch créé](/images/launch-cree.png?raw=true).
+Lances Home Assistant en mode débugger en appuyant sur la flêche verte :
+
+![Launch créé](img/launch-cree.png)
 
 > 💡Vérifies bien que Home Assistant est stoppé avant de lancer le debugger. Comme les 2 utilises le même port, tu ne peux avoir qu'une seule instance de Home Assistant qui tourne.
 
 Home Assistant se lance et au bout de quelques-instants, le lancement se bloque sur notre point d'arrêt. On a alors l'affichage suivant :
 
-![Debugger Stop](/images/debugger-stop.png?raw=true)
+![Debugger Stop](img/debugger-stop.png)
+
 > On peut voir :
 >
 > 1. l'exécution est stoppée sur notre point d'arrêt à la ligne surlignée en jaune pale,
@@ -521,9 +545,29 @@ Home Assistant se lance et au bout de quelques-instants, le lancement se bloque 
 
 En passant la souris sur une variable, on peut inspecter sa valeur, ce qui est super pratique.
 
-Appuies sur les boutons de la d'outil du debugger pour "Continuer l'execution" ![Continuer](/images/debugger-bouton-continue.png?raw=true), "Sauter l'exécution de l'instruction courante" ![Sauter](/images/debugger-bouton-saute.png?raw=true), "Entrer dans l'appel de la fonction" ![Entrer](/images/debugger-bouton-entre.png?raw=true), "Sortir de la fonction courante" ![Sortir](/images/debugger-bouton-sort.png?raw=true), "Stopper le debugger" ![Sopper](/images/debugger-bouton-stop.png?raw=true).
+Appuies sur les boutons de la d'outil du debugger pour :
 
-Plus d'informations sur le debugger [ici (VSC)](https://code.visualstudio.com/docs/editor/debugging) et [ici (Home Assistant)](https://www.home-assistant.io/integrations/debugpy/)
+* "Continuer l'execution" :
+
+![Continuer](img/debugger-bouton-continue.png)
+
+* "Sauter l'exécution de l'instruction courante" :
+
+![Sauter](img/debugger-bouton-saute.png)
+
+* "Entrer dans l'appel de la fonction" :
+
+![Entrer](img/debugger-bouton-entre.png)
+
+* "Sortir de la fonction courante" :
+
+![Sortir](img/debugger-bouton-sort.png)
+
+* "Stopper le debugger" :
+
+![Stopper](img/debugger-bouton-stop.png)
+
+Plus d'informations sur le debugger [VSC](https://code.visualstudio.com/docs/editor/debugging) et [Home Assistant](https://www.home-assistant.io/integrations/debugpy/)
 
 ## Conclusion
 
@@ -532,6 +576,10 @@ Dans ce tuto, tu as appris à :
 1. créer une intégration et faire en sorte qu'elle soit reconnue par Home Assistant,
 2. créer une entité dans cette intégration en lui donnant quelques caractéristiques de base (unité, icone, valeur, classe),
 3. debugger le code avec le debugger intégré de VSC.
+
+Dans le prochain tuto, on va apprendre à faire communiquer notre entité avec Home Assistant et avec d'autres entités.
+
+
 
 - - -
 
