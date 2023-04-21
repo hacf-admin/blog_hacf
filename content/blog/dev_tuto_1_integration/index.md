@@ -19,7 +19,8 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
-Cet article s'inscrit dans la suite des tutos dont la liste est [ici](/blog/dev_tuto_introduction/).
+Cet article s'inscrit dans une série de tutos présentant comment développer en python sa propre intégration.
+Plus d'infos et liste des tutos sur : [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
 
 Vous avez installé votre environnement de développement ? Il est maintenant temps de passer au développement de votre première intégration avec une première entité.
 
@@ -27,7 +28,8 @@ Vous avez installé votre environnement de développement ? Il est maintenant te
 
 ## Pre-requis
 
-Avoir déroulé avec succès l'installation de l'environnement de dev décrit [ici](/blog/dev_tuto_1_environnement/).
+Avoir déroulé avec succès l'installation votre environnement de développement, décrit sur le premier tuto :
+[Développer pour Home Assistant - (1) Installer son environnement ](/blog/dev_tuto_1_environnement/)
 
 ## Créer et déclarer son intégration
 
