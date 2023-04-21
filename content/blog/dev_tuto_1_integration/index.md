@@ -8,7 +8,7 @@ date: 2023-04-18
 lastmod: 2023-04-18
 images: img/developper-2.png
 description: L'objectif de ce second tuto est de vous présenter comment
-  développer une première intégration et une première entité simple.
+  développer en python une première intégration et une première entité simple.
 level: Intermédiaire
 version_ha: "2023.4"
 categories:
@@ -27,6 +27,8 @@ Vous avez installé votre environnement de développement ? Il est maintenant te
 > 💡Les fichiers sources complets sont en fin d'article. Cf \[Fichiers sources du tuto]
 
 ## Pre-requis
+
+Satisfaire aux prérequis présentés sur [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
 
 Avoir déroulé avec succès l'installation votre environnement de développement, décrit sur le premier tuto :
 [Développer pour Home Assistant - (1) Installer son environnement ](/blog/dev_tuto_1_environnement/)
