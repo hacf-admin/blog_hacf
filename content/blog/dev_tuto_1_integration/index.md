@@ -3,7 +3,7 @@ folder: dev_tuto_2_integration
 title: Développer pour Home Assistant - (2) Créer une intégration et une entité
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-04-18
 lastmod: 2023-04-18
 images: img/developper-2.png
