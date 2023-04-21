@@ -20,7 +20,7 @@ description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
 ## Espaces collaboratifs
 
 * [Forum HACF](https://forum.hacf.fr/) - **LE** forum de la communauté francophone avec de nombreux guides et articles en français.
-* [Discord H﻿ACF](https://discord.hacf.fr) - Espace Discord de communauté francophone.
+* [Discord H﻿ACF](https://discord.hacf.fr) - Espace Discord de la communauté francophone HACF.
 * [D﻿omotique & DIY](https://discord.com/invite/DfVJZme) - Discord autour de la domotique en général sans affiliation de box ou autre.
 * [Facebook HACF](https://www.facebook.com/groups/HomeAssistantFrance/) - Groupe Facebook HACF pour les inconditionnels de ce réseau...
 
@@ -90,8 +90,4 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 
 * [Thermostat TPI](https://github.com/argonaute199/chauffage-home-assistant) - L'implémentation d'un thermostat alternatif plus performant.
 
-## Faites-le vous-même (DIY)
-
-Vous trouverez prochainement dans cette section des tutos pour des montages à faire soi-même.
-
-> Si vous avez des **remarques** sur cette page, ou souhaitez qu'un **ajout** soit fait, vous pouvez le demander ici sur le [forum HACF](https://forum.hacf.fr/t/liens-utiles-awesome-sur-le-portail-hacf/21769)
+> 😎 Si vous avez des **remarques** sur cette page, ou souhaitez qu'un **ajout** soit fait, vous pouvez le demander ici sur le [forum HACF](https://forum.hacf.fr/t/liens-utiles-awesome-sur-le-portail-hacf/21769)
