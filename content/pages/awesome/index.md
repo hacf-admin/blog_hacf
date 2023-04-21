@@ -17,21 +17,24 @@ description: Liste des Blogs, chaine Youtube, Podcast, Forum, etc traitant de
 ---
 # "Awesome" Francophone Home Assistant
 
+## Forums
+
+* [Forum HACF](https://forum.hacf.fr/) - LE forum de la communauté francophone avec de nombreux guides et articles en français.
+
 ## Blogs
 
 Blogs traitant de domotique et proposant des implémentations Home Assistant.
 
-* [Forum HACF](https://forum.hacf.fr/) - Le blog de la communauté francophone avec de nombreux guides et articles en français.
-* [Les Alexiens](https://www.lesalexiens.fr/) - Un blog qui parle d'Alexa, d'objet connecté et de domotique avec Home Assistant.
 * [Blog d'Antoine Guilbert](https://www.antoineguilbert.fr/category/domotique/) - Objects connectés et domotique.
-* [DEVOTICS](https://devotics.fr) - domotique, objets connectés, nouvelles technologies, développement.
-* [Figer](https://www.figer.com) de guide et conseil en informatique, réseau et domotique.
-* [Ça Sert À Quoi ?](https://www.ca-sert-a-quoi.com/category/domotique/) - Un Blog de mise en situation des nouvelles technologies avec une section domotique.
-* [My Canaletto](https://www.canaletto.fr/) - Blog IT et domotique traitant en particulier d'une migration Jeedom vers Home Assistant.
-* [Blog de remi81](https://domo.rem81.com/) - Bloc note sur différents sujets autour de Home Assistant.
+* [Blog de Remi81](https://domo.rem81.com/) - Bloc note sur différents sujets autour de Home Assistant.
 * [Blog de Yann](https://domotique.yann.me/) - Blog sur divers sujets autour de Home Assistant.
+* [Ça Sert À Quoi ?](https://www.ca-sert-a-quoi.com/category/domotique/) - Un Blog de mise en situation des nouvelles technologies avec une section domotique.
 * [Canaletto & friends](https://ghost.canaletto.fr/) - Blog domotique, Home-Assistant, Home Lab et DIY.
+* [DEVOTICS](https://devotics.fr) - domotique, objets connectés, nouvelles technologies, développement.
 * [Domo-blog](https://www.domo-blog.fr/) - Blog généraliste, mais proposant souvent des intégrations Home Assistant.
+* [Figer](https://www.figer.com) de guide et conseil en informatique, réseau et domotique.
+* [My Canaletto](https://www.canaletto.fr/) - Blog IT et domotique traitant en particulier d'une migration Jeedom vers Home Assistant.
+* [Les Alexiens](https://www.lesalexiens.fr/) - Un blog qui parle d'Alexa, d'objet connecté et de domotique avec Home Assistant.
 * [Zeguigui](https://www.zeguigui.com/) - Blog généraliste, mais proposant fréquemment des intégrations Home Assistant.
 
 ## Discord
@@ -44,14 +47,15 @@ Blogs traitant de domotique et proposant des implémentations Home Assistant.
 
 ## Chaines vidéos
 
-* [ArminasTV](https://www.youtube.com/channel/UCLoLYGnh66x9cMee-qBi3XQ) - Guides vidéos dont une aide au démarrage sur Home Assistant.
-* [e-2-nomy](https://www.youtube.com/channel/UCaSQ9Wl2KWUvQmTRV26O96Q) - Des vidéos DIY orientées maison autonome à base d'ESP et de Home Assistant.
-* [Journal de Thomas](https://www.youtube.com/channel/UCRJE6Yb_R3Xei-QGcy_Qwhw) - Vidéos d'un passionné sur différentes solutions domotique dont les plus récentes traitent de Home Assistant.
-* [DCJona](https://www.youtube.com/channel/UCPRsHkUnQZ4261jzwXT-tdw) - Domotique & DIY - Des tests et guides vidéos autour de Home Assistant, Node Red et autres projets DIY.
-* [La Maison Bleue](https://www.youtube.com/channel/UCOfuwHAgQnK8vORbGBSA28Q) - Une chaîne sur Home Assistant et Node-Red.
-* [Gammatroniques](https://www.youtube.com/c/GammaTroniques) - une chaine dédiée au DIY et à l'électronique, avec quelques intégrations Home Assistant.
 * [Abrège](https://www.youtube.com/c/Abr%C3%A8ge) - une chaine dédiée principalement au DIY, avec quelques intégrations Home Assistant.
+* [ArminasTV](https://www.youtube.com/channel/UCLoLYGnh66x9cMee-qBi3XQ) - Guides vidéos dont une aide au démarrage sur Home Assistant.
+* [DCJona](https://www.youtube.com/channel/UCPRsHkUnQZ4261jzwXT-tdw) - Domotique & DIY - Des tests et guides vidéos autour de Home Assistant, Node Red et autres projets DIY.
+* [Gammatroniques](https://www.youtube.com/c/GammaTroniques) - une chaine dédiée au DIY et à l'électronique, avec quelques intégrations Home Assistant.
+* [e-2-nomy](https://www.youtube.com/channel/UCaSQ9Wl2KWUvQmTRV26O96Q) - Des vidéos DIY orientées maison autonome à base d'ESP et de Home Assistant.
 * [Horizon Domotique](https://www.youtube.com/channel/UCblvKDzZ6YfG5EdyqnvWpng) - une chaine dédiée à la domotique et au DIY, avec des intégrations Home Assistant.
+* [Journal de Thomas](https://www.youtube.com/channel/UCRJE6Yb_R3Xei-QGcy_Qwhw) - Vidéos d'un passionné sur différentes solutions domotique dont les plus récentes traitent de Home Assistant.
+* [La Maison Bleue](https://www.youtube.com/channel/UCOfuwHAgQnK8vORbGBSA28Q) - Une chaîne sur Home Assistant et Node-Red.
+* [Makernix](https://www.youtube.com/@makernix7607) - Une chaine dédiée à la domotique sur Home Assistant et JEEDOM
 
 ## Podcasts audio
 
@@ -68,11 +72,11 @@ Documentations pertinentes en français.
 
 Un partage de configurations HA par des membres francophones, souvent commentées en français.
 
-* [Oncleben31](https://github.com/oncleben31/home-assistant-config) - Configuration découpée en plusieurs fichiers et documentée en français et en anglais.
+* [JournalDeThomas](https://github.com/journaldethomas/home-assistant-config) - Configuration de Thomas de la chaine ""YouTube"" Le Journal De Thomas.
 * [KaoruKanon](https://github.com/KaoruKanon/homeassistant-config) - Configuration documentée en français avec une interface graphique inspirée de Homekit.
+* [Oncleben31](https://github.com/oncleben31/home-assistant-config) - Configuration découpée en plusieurs fichiers et documentée en français et en anglais.
 * [Squale76](https://github.com/Squale76/home-assistant-configuration) - Configuration découpée en plusieurs fichiers en français si possible.
 * [Yann.me](https://github.com/yjajkiew/domotique/tree/master/home-assistant/config) - Configuration de Yann du site yann.me.
-* [JournalDeThomas](https://github.com/journaldethomas/home-assistant-config) - Configuration de Thomas de la chaine ""YouTube"" Le Journal De Thomas.
 
 ## Intégrations francophones (Custom Components)
 
