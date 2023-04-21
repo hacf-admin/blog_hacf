@@ -27,7 +27,7 @@ url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-introduction/22
 ---
 Tu veux développer une intégration pour Home Assistant ou tout simplement contribuer à une intégration existante ? Cette suite d'articles est faite pour toi et a pour but de t'aider à te lancer. Elle est conçue comme les articles que j'aurais aimé trouver lorsque je me suis moi-même lancé.
 
-## Les pré-requis
+## Les prérequis
 
 Pour pouvoir utiliser ces articles, il est préférable de :
 
