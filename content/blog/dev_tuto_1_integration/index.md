@@ -26,7 +26,7 @@ Vous avez installé votre environnement de développement ? Il est maintenant te
 
 > 💡Les fichiers sources complets sont en fin d'article. Cf \[Fichiers sources du tuto]
 
-## Pre-requis
+## Prérequis
 
 Satisfaire aux prérequis présentés sur [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
 
