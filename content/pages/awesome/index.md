@@ -73,20 +73,24 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 * [Squale76](https://github.com/Squale76/home-assistant-configuration) - Configuration découpée en plusieurs fichiers en français si possible.
 * [Yann.me](https://github.com/yjajkiew/domotique/tree/master/home-assistant/config) - Configuration de Yann du site yann.me.
 
-## Intégrations francophones (Custom Components)
+## Intégrations personnalisées
+Des intégrations (Custom Components) proposées par la communauté francophone.
 
-* [hassRenaultZE](https://github.com/hacf-fr/hassRenaultZE) - Pour accéder aux infos de votre véhicule électrique Renault ZE comme la Zoé.
 * [Livebox Orange](https://github.com/Cyr-ius/hass-livebox-component) - Une intégration pour accéder à certaines informations de votre Livebox.
-* [HA-pool_pump](https://github.com/oncleben31/ha-pool_pump) - Un moyen de piloter la pompe de filtration de sa piscine.
-* [prixCarburant](https://github.com/max5962/prixCarburant-home-assistant) - Permet de récupérer les prix du carburant depuis le site gouvernemental français.
-* [apiEnedis](https://github.com/saniho/apiEnedis) - Accéder à vos informations de consommation électrique depuis la plateforme Enedis.
+* [myEnedis](https://github.com/saniho/apiEnedis) - Accéder à vos informations de consommation électrique depuis la plateforme Enedis.
+* [Pool Pump Manager](https://github.com/oncleben31/ha-pool_pump) - Un moyen de piloter la pompe de filtration de sa piscine.
+* [Prix Carburant](https://github.com/max5962/prixCarburant-home-assistant) - Permet de récupérer les prix du carburant depuis le site gouvernemental français.
+* [Renault](https://github.com/hacf-fr/hassRenaultZE) - Pour accéder aux infos de votre véhicule électrique Renault ZE comme la Zoé.
+* [Versatile Thermostat](https://github.com/jmcollin78/versatile_thermostat) - un thermostat bien plus évolué que celui proposé par défaut par Home Assistant
 
-## Cartes Personnalisées pour l'interface (Lovelace Custom cards)
+## Cartes Personnalisées
+Des cartes pour l'interface utilisateur (dashboard) proposées par la communauté francophone.
 
 * [MétéoFrance](https://github.com/hacf-fr/lovelace-meteofrance-weather-card) - Une carte pour Lovelace vous permettant d'afficher toutes les informations disponibles avec l'intégration officielle Météo France (prévision, pluie à 1 heure, vigilance météo).
 * [Linky](https://github.com/saniho/content-card-linky) - Une carte pour afficher vos informations de consommation électrique via la plateforme Enedis.
 
-## Blueprints pour créer des automatisations simplement
+## Blueprints
+Pour créer des automatisations simplement.
 
 * [Thermostat TPI](https://github.com/argonaute199/chauffage-home-assistant) - L'implémentation d'un thermostat alternatif plus performant.
 
