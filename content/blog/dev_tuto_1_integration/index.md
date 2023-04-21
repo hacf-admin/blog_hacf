@@ -19,7 +19,7 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
-Cet article s'inscrit dans la suite des tutos dont la liste est [ici](/README.md).
+Cet article s'inscrit dans la suite des tutos dont la liste est [ici](/blog/dev_tuto_introduction/).
 
 Vous avez installé votre environnement de développement ? Il est maintenant temps de passer au développement de votre première intégration avec une première entité.
 
@@ -27,7 +27,7 @@ Vous avez installé votre environnement de développement ? Il est maintenant te
 
 ## Pre-requis
 
-Avoir déroulé avec succès l'installation de l'environnement de dev décrit [ici](/tuto1.md).
+Avoir déroulé avec succès l'installation de l'environnement de dev décrit [ici](/blog/dev_tuto_1_environnement/).
 
 ## Créer et déclarer son intégration
 
@@ -72,7 +72,7 @@ PLATFORM: list[Platform] = []
 ```
 
 * La première ligne est un commentaire qui explique ce que contient le fichier.
-* La ligne `from homeassistant.const import Platform` permet d'importer la définition de l'enum `Platform `depuis la librairie Home Assistant. Elle va nous permettre de déclarer toutes les plateformes utilisées par notre intégration. Dans le langage HA, une plateforme est un type d'entité (`switch`, `light`, `climate`, `sensor`, ...). C'est ce qui se trouve devant le `.` dans le nom d'une entité.
+* La ligne `from homeassistant.const import Platform` permet d'importer la définition de l'enum `Platform`depuis la librairie Home Assistant. Elle va nous permettre de déclarer toutes les plateformes utilisées par notre intégration. Dans le langage HA, une plateforme est un type d'entité (`switch`, `light`, `climate`, `sensor`, ...). C'est ce qui se trouve devant le `.` dans le nom d'une entité.
 * La ligne `DOMAIN = "tuto_hacs"` définit le domaine de notre intégration. Un domaine est un nom d'intégration. Tous les appareils et entités de notre intégration feront parties de domaine. Le domaine doit être **le même que le nom du répertoire de l'intégration** : `tuto_hacs` dans notre cas.
 * Ensuite on définit la liste des plateformes utilisées par l'intégration avec la ligne : `PLATFORM: list[Platform] = []`. On déclare une liste de Platform (`list[Platform]`) et on l'initialise avec rien pour l'instant (`= []`)
 
@@ -115,7 +115,7 @@ async def async_setup(
 > 💡 Notes :
 >
 > * La fonction `async_setup` est appelée par Home Assistant lors de la découverte de l'intégration. Vous pourrez y mettre tout le code nécessaire à son initialisation,
-> * L'argument `config `contient le `configuration.yaml`. On pourrait accéder à d'éventuels paramètres de l'intégration avec le code suivant `config.get(DOMAIN)`.
+> * L'argument `config`contient le `configuration.yaml`. On pourrait accéder à d'éventuels paramètres de l'intégration avec le code suivant `config.get(DOMAIN)`.
 
 ### Déclarer l'intégration
 
@@ -146,10 +146,9 @@ Les valeurs à déclarer sont les suivantes :
 4. `config_flow` : présence ou non d'une interface de configuration de l'intégration. On en reparlera en détail dans un prochain tuto,
 5. `documentation` : le lien Github vers la documentation,
 6. `issue_tracker` : le lien Github vers la déclaration des reports de bugs ou anomalies de fonctionnement,
-7. `integration_type` : plusieurs types d'intégration sont possibles. Le type `device `permet d'indiquer que l'intégration va créer des appareils (devices) et des entités,
+7. `integration_type` : plusieurs types d'intégration sont possibles. Le type `device`permet d'indiquer que l'intégration va créer des appareils (devices) et des entités,
 8. `iot_class` : plusieurs "IOT class" sont disponibles. Cette option définie comment notre intégration interagit avec les appareils. Les plus communs sont : `cloud_polling` (les appareils / entités se mettent à jour en interrogeant régulièrement le Cloud), `local_polling` interrogation régulière d'un appareil en local sur le réseau, `local_push` l'appareil en local envoi les nouvelles valeurs en cas de changement (pas besoin de l'interroger)
 9. `quality_scale`⁣ : le niveau de qualité de votre intégration,
-
 10. `version`⁣ : la version du `manifest.json`. La dernière en date à ce jour est 3.0.0.
 
 La documentation complète est [ici](https://developers.home-assistant.io/docs/creating_integration_manifest).
@@ -168,9 +167,8 @@ logger:
 
 ### Redémarrer Home Assistant
 
-Lances Home Assistant en utilisant les tâches faites au tuto1 (`Command `+ `Shift `+ `P `/ `Tâches : exécuter la tâche `/ `Run Home Assistant on port 9123`).
+Lances Home Assistant en utilisant les tâches faites au tuto1 (`Command`+ `Shift`+ `P`/ `Tâches : exécuter la tâche`/ `Run Home Assistant on port 9123`).
 Pour rappel, **tu dois avoir le port 9123 ouvert** si le démarrage est bon :
-
 
 ![Port ouvert](img/port-ouvert.png)
 
@@ -222,12 +220,12 @@ Si tu regardes dans l'onglet Problèmes, tu verras un certain nombre d'erreurs o
 
 ![Compilation problèmes](img/compilation-problemes.png)
 
-L'idée est que cette liste soit toujours vide. Cette liste se met à jour en fur et à mesure de la frappe du code et se rafraichit lors d'une sauvegarde des fichiers (`Command `+ `Shift `+ `S `sur Mac).
+L'idée est que cette liste soit toujours vide. Cette liste se met à jour en fur et à mesure de la frappe du code et se rafraichit lors d'une sauvegarde des fichiers (`Command`+ `Shift`+ `S`sur Mac).
 
 #### Erreurs "Could not be resolved"
 
 Les erreurs du type `import "homeassistant.core" could not be resolved` se corrige facilement en indiquant à VSC quel interpréteur Python il doit utiliser. En l’occurrence, on doit lui indiquer celui du container dans lequel le package Home Assistant a été installé (souviens-toi de : `pip install -r requirements.txt` qui installe le package homeassistant). Pour faire ça, il faut :
-`Command `+ `Shift `+ `P `/ "Python sélectionner un interpréteur" et choisir "Utiliser Python à partir du paramètre `python.defaultInterpreterPath` que l'on a renseigné dans notre `devcontainer.json`
+`Command`+ `Shift`+ `P`/ "Python sélectionner un interpréteur" et choisir "Utiliser Python à partir du paramètre `python.defaultInterpreterPath` que l'on a renseigné dans notre `devcontainer.json`
 
 ![Interpreter Python](img/interpreteur-python.png)
 
@@ -235,7 +233,7 @@ Cela devrait supprimer toutes ces erreurs.
 
 #### Unused argument
 
-Ces erreurs sont signalées lors de la déclaration de la fonction `async_setup` qui prend 2 arguments `hass `et `config `mais qui ne sont pas utilisés pour l'instant.
+Ces erreurs sont signalées lors de la déclaration de la fonction `async_setup` qui prend 2 arguments `hass`et `config`mais qui ne sont pas utilisés pour l'instant.
 
 ![Unused argument](img/unused-argument.png)
 
@@ -335,7 +333,7 @@ Ce fichier contient aussi la déclaration de la classe `TutoHacsElapsedSecondEnt
 
 Pour l'instant cette classe ne fait rien d'autre qu'initialiser les 2 attributs `_attr_name` et `_att_unique_id` qui sont nécessaires à la création de l'entité. Il faut donner un nom à notre entité. On l'indique à HA (sinon il lui affecte un nom par défaut) avec la ligne : `self._attr_has_entity_name = True`.
 
-On va enfin redémarrer Home Assistant et vérifier que tout se passe bien (`command `+ `Shift `+ `P`). Les logs ne montrent pas grand-chose de plus que ci-dessus. Ceci est normal car nous n'avons pas configuré d'entité dans le fichier `configuration.yaml`.
+On va enfin redémarrer Home Assistant et vérifier que tout se passe bien (`command`+ `Shift`+ `P`). Les logs ne montrent pas grand-chose de plus que ci-dessus. Ceci est normal car nous n'avons pas configuré d'entité dans le fichier `configuration.yaml`.
 
 ### Configurer une entité
 
