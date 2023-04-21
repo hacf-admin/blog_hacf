@@ -81,12 +81,13 @@ Un partage de configurations HA par des membres francophones, souvent commentée
 * [prixCarburant](https://github.com/max5962/prixCarburant-home-assistant) - Permet de récupérer les prix du carburant depuis le site gouvernemental français.
 * [apiEnedis](https://github.com/saniho/apiEnedis) - Accéder à vos informations de consommation électrique depuis la plateforme Enedis.
 
-## Cartes Personnalisées pour l'interface (Lovelace Custom cards)
+## Cartes Personnalisées pour l'interface
 
 * [MétéoFrance](https://github.com/hacf-fr/lovelace-meteofrance-weather-card) - Une carte pour Lovelace vous permettant d'afficher toutes les informations disponibles avec l'intégration officielle Météo France (prévision, pluie à 1 heure, vigilance météo).
 * [Linky](https://github.com/saniho/content-card-linky) - Une carte pour afficher vos informations de consommation électrique via la plateforme Enedis.
 
-## Blueprints pour créer des automatisations simplement
+## Blueprints
+Pour créer des automatisations simplement.
 
 * [Thermostat TPI](https://github.com/argonaute199/chauffage-home-assistant) - L'implémentation d'un thermostat alternatif plus performant.
 
