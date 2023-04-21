@@ -28,6 +28,8 @@ Vous avez installé votre environnement de développement ? Il est maintenant te
 
 ## Pre-requis
 
+Satisfaire aux prérequis présentés sur [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
+
 Avoir déroulé avec succès l'installation votre environnement de développement, décrit sur le premier tuto :
 [Développer pour Home Assistant - (1) Installer son environnement ](/blog/dev_tuto_1_environnement/)
 
