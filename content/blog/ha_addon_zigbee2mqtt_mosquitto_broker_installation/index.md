@@ -1,6 +1,6 @@
 ---
 folder: ha_addon_zigbee2mqtt_mosquitto_broker_installation
-title: Installation de Zigbee2mqtt et Broker Mosquitto
+title: Installation de Zigbee2MQTT et Broker Mosquitto
 type: post
 visibleInCMS: true
 draft: true
@@ -19,20 +19,43 @@ tags:
   - mosquitto
   - zigbee2mqtt
 author: default
+authors:
+  - mcfly
 url_hacf: https://forum.hacf.fr/t/tuto-installation-de-zigbee2mqtt-et-broker-mosquitto/23103
 ---
-Hello
-Comme on voit de nouveaux membres chaque jour et que beaucoup ont des soucis pour installer Zigbee2mqtt et le m, j’ai de ce fait procédé a une installation sur VM et en ai profité pour faire des GIF pour vous aider.mosquittoosquitto
+Suite a de nombreuses questions, sur le forum, sur l'installation de Zigbee2MQTT, nous avons profité de l'occasion pour mettre a jour l'article.
 
+**Le Zigbee**
+
+L﻿e Zigbee est un protocole quasi présent dans toutes les domotiques, c'est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant a avoir une passerelle (gateway) par constructeur.
+
+C’est là qu’interviennent les passerelles universelle.
+
+Il en existe plusieurs :
+
+* Zigate (FR) 136 125,
+  et la ZigbeeToMqtt
+  La première, la Zigate (49 euros min), marche très bien sur les autres plateforme domotique mais malheureusement, elle est mal intégrée dans Home Assistant (c’est pour cela que j’ai dû en changer). et compatible Zigbee2MQTT et ZHA donc elle est maintenant reconnu correctement sur Home Assistant (et c’est cocorico).
+* ,la Conbee II
+
+La Conbee II (40 euros), je ne connais pas mais elle est très utilisé sous Home Assistant.
+
+La dernière, ZigbeeToMQTT est composé du CC2531 (moins de 20 euros) qui permet, une fois flashée, d’avoir une passerelle Zigbee.
+
+Cette derniere entame son transfert vers les archives, même si elle suffit a la plupart des devices elle ne supporte pas « officiellement » le zigbee 3, pour cela il faudrat se tourner vers des cc26xx (environ 30 euros) ou la Sonoff (15 euros fdp compris)
+
+Nous allons voir comment flasher cette dernière et l’intégrer à Home Assistant.
+Nous allons voir la méthode de flash classique (via CC Debugger). Pour les versions alternatives rendez vous ici 71.
 
 Etape 1 , crée un user 
-![partie 0|690x348](upload://4sJ1LMNfHGSVda5ZuRHIRxtiplD.gif)
 
 Etape 2 , installé zigbee2mqtt
 Lien a inséré :
+
 ```
 https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 ```
+
 ![partie 1|690x345](upload://gz8WFu5Hqye25NAUxmZCkzL9eP4.gif)
 
 Etape 3, installé le broker mosquitto
@@ -42,16 +65,18 @@ Etape 3, installé le broker mosquitto
 Voilà, les installations sont finies, on passe aux configurations.
 
 Aller dans  le broker mosquitto est ajouté ceci dans la partie login.
-**[u][color=green]PS[/color]: 
-@WarC0zes , m'as rappelé que la création d'un user n'est plus obligatoire.[/u]**
+**\[u]PS\[/color]: 
+@WarC0zes , m'as rappelé que la création d'un user n'est plus obligatoire.\[/u]**
 La connection se fera tout seul entre les deux !
 
 Si par contre vous avez un souci alors employé la création d'un user 
-[color=yellow][u]**Cela représente l'utilsateur qu'on créé au debut**[/u][/color] 
+\[color=yellow]**Cela représente l'utilsateur qu'on créé au debut**\[/u] 
+
 ```
   - username: mqtt
     password: mqtt
 ```
+
 Cliquer sur enregistré , voilà le broker est fini  pour sa config .
 ![partie 5|690x348](upload://b64lzFoQBCTotAX4jjyIbYZvFhJ.gif)
 
@@ -59,6 +84,7 @@ ensuite, on va dans zigbee2mqtt pour sa configuration
 Aller dans sa configuration ( aussi ) :rofl:
 
 dans la partie mqtt
+
 ```
 base_topic: zigbee2mqtt
 server: mqtt://core-mosquitto
@@ -67,13 +93,14 @@ password: mqtt
 ```
 
 Dans la partie 
-Sérial [color=red]*[u]( la faite attention au modéle de cle que vous avez )[/u]*[/color]
+Sérial \[color=red]*\[u]( la faite attention au modéle de cle que vous avez )\[/u]*\[/color]
 Moi j'ai une sonoff version P donc je dois mettre ceci
 
 ```
 port: >-
   /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0
 ```
+
 ![partie 6|690x348](upload://rlUm7DpJ3aY0T40cOUABxKyvXXd.gif)
 
 Voilà vous avez fini 
@@ -81,13 +108,13 @@ Voilà vous avez fini
 Si tout se passe bien HA devrais détecté un broker 
 ![Capture d’écran 2023-04-20 225500|690x238](upload://uor5y2aR7XZfUOla30dUp6TzTQ.png)
 
-
-**[color=green]Pour ce qui on besoin d'aide pour trouvé le chemin de la clé[/color]** 
+**\[color=green]Pour ce qui on besoin d'aide pour trouvé le chemin de la clé\[/color]** 
 ![partie 7|690x348](upload://yxUXhDsJqhTjY0dhcqu0iHYwghU.gif)
 
 Edit : 21/04/2023
 
 Les informations pour une conbee II sont ( **preté attention à ajouté adapter** )
+
 ```
 serial:
   port: >-
@@ -96,6 +123,7 @@ serial:
 ```
 
 Pour la version Sonoff de **VERSION E** ( Remplacer 20XXXXXXXX-if00 ) par le numéro de votre propre clé
+
 ```
 serial:
   port: >-
