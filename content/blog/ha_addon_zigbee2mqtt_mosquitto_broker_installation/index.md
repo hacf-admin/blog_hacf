@@ -85,7 +85,6 @@ https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 
 **EST CE QU'IL FAUT LE LANCER ??????**
 
-**Si vous avez laissé la création de l'utilisateur en automatique :**
 Vous pouvez maintenant lancer Zigbee2MQTT.
 
 Au premier lancement de Z2M, il va automatiquement créer un utilisateur pour MQTT et ajouter l'adresse du broker.
@@ -98,12 +97,30 @@ mqtt:
   password: Thee8ahGhahpe4oKoe4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-**Si vous avez créé l'utilisateur vous-même :**
+### Configuration de votre clé USB.
+Dans la partie `Sérial`, du saisir le chemin de votre clé Zigbee
+>ATTENTION : La configuration est différente selon la clé utilisée.
+
+Exemple pour la clé Sonoff sur mon installation.
+```
+port: >-
+  /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0
+```
+D'autres exemples sont disponibles plus [bas](#chemin_de_votre_clé_zigbee) 
+![partie 6|690x348](upload://rlUm7DpJ3aY0T40cOUABxKyvXXd.gif)
+
+Si tout se passe bien, Home Assistant devrait détecter le broker Mosquitto, sinon il peut être ajouté en ajoutant une intégration et rechercher Mosquitto.
+
+![Capture d’écran 2023-04-20 225500|690x238](upload://uor5y2aR7XZfUOla30dUp6TzTQ.png)
+
+## Divers
+### Configuration (facultatif).
+>**ATTENTION : SEULEMENT si vous avez créé vous-même votre utilisateur**
 
 Nous devons passer à la configuration de Mosquitto et de Zigbee2MQTT.
 
-*Configuration de Mosquitto Broker*
-Aller dans  le broker mosquitto est ajouté ceci dans la partie login l'utilsateur qu'on créé au début.
+#### Configuration de Mosquitto Broker.
+Aller dans la configuration de l'add-on Mosquitto Broker et ajouter les informations de l'utilisateur, créé plus haut, dans la partie login.
 
 ```
   - username: usermqtt
@@ -114,11 +131,10 @@ Cliquer sur enregistrer, la configuration est finie.
 
 ![partie 5|690x348](upload://b64lzFoQBCTotAX4jjyIbYZvFhJ.gif)
 
-*Configuration de Zigbee2MQTT*
+#### Configuration de Zigbee2MQTT.
 Aller dans sa configuration de l'add-on.
 
 Dans la partie mqtt
-
 ```
 base_topic: zigbee2mqtt
 server: mqtt://core-mosquitto
@@ -126,28 +142,12 @@ user: usermqtt
 password: passwordmqtt
 ```
 
-Dans la partie `Sérial` saisir le chemin de votre clé Zigbee
->ATTENTION : La configuration est différente selon la clé utilisée.
 
-Exemple pour la Sonoff sur mon installation.
-```
-port: >-
-  /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0
-```
-
-![partie 6|690x348](upload://rlUm7DpJ3aY0T40cOUABxKyvXXd.gif)
-
-Si tout se passe bien, Home Assistant devrait détecter le broker Mosquitto, sinon il peut être ajouté en ajoutant une intégration et rechercher Mosquitto.
-
-![Capture d’écran 2023-04-20 225500|690x238](upload://uor5y2aR7XZfUOla30dUp6TzTQ.png)
-
-**\[color=green]Pour ce qui on besoin d'aide pour trouvé le chemin de la clé\[/color]** 
+### Chemin de votre clé Zigbee.
+Pour ce qui ont besoin d'aide pour trouver le chemin de la clé 
 ![partie 7|690x348](upload://yxUXhDsJqhTjY0dhcqu0iHYwghU.gif)
 
-Edit : 21/04/2023
-
-Les informations pour une conbee II sont ( **preté attention à ajouté adapter** )
-
+**Exemple pour une Conbee II**
 ```
 serial:
   port: >-
@@ -155,11 +155,13 @@ serial:
   adapter: deconz
 ```
 
-Pour la version Sonoff de **VERSION E** ( Remplacer 20XXXXXXXX-if00 ) par le numéro de votre propre clé
-
+**Exemple pour une Sonoff Version E** (Remplacer 20XXXXXXXX-if00 par le numéro de votre propre clé).
 ```
 serial:
   port: >-
     /dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20XXXXXXXXX-if00
   adapter: ezsp
 ```
+
+## Conclusion.
+Vous pouvez connecter une multitude d'appareils Zigbee avec **une seule** passerelle, envoyer les informations d'autres appareils via MQTT et connecter d'autre solution a votre broquer MQTT pour acceder au different appareil de votre
