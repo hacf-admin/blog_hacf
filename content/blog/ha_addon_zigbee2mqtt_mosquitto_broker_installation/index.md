@@ -150,7 +150,7 @@ Aller dans la configuration de l'add-on Mosquitto Broker et ajouter les informat
 
 Cliquer sur enregistrer, la configuration est finie.
 
-![partie 5|690x348](img/zigbee2mqtt_configuration_mosquitto_broker.gif)
+![Configuration de l'add-on Mosquitto Broker](img/zigbee2mqtt_configuration_mosquitto_broker.gif "Configuration de l'add-on Mosquitto Broker")
 
 #### Configuration de Zigbee2MQTT.
 
