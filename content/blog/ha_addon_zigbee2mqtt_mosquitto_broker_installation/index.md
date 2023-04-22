@@ -23,44 +23,86 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/tuto-installation-de-zigbee2mqtt-et-broker-mosquitto/23103
 ---
-Suite a de nombreuses questions, sur le forum, sur l'installation de Zigbee2MQTT, nous avons profité de l'occasion pour mettre a jour l'article.
+Suite à de nombreuses questions, sur le forum, sur l'installation de Zigbee2MQTT, nous avons profité de l'occasion pour mettre a jour l'article.
 
-**Le Zigbee**
+### Le Zigbee
 
-L﻿e Zigbee est un protocole quasi présent dans toutes les domotiques, c'est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant a avoir une passerelle (gateway) par constructeur.
+L﻿e Zigbee est un protocole quasi présent dans toutes les domotiques, c'est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant à avoir une passerelle (gateway) par constructeur.
 
-C’est là qu’interviennent les passerelles universelle.
+C’est là qu’interviennent les passerelles universelles.
 
-Il en existe plusieurs :
+**Les passerelles**
 
-* Zigate (FR) 136 125,
-  et la ZigbeeToMqtt
-  La première, la Zigate (49 euros min), marche très bien sur les autres plateforme domotique mais malheureusement, elle est mal intégrée dans Home Assistant (c’est pour cela que j’ai dû en changer). et compatible Zigbee2MQTT et ZHA donc elle est maintenant reconnu correctement sur Home Assistant (et c’est cocorico).
-* ,la Conbee II
+Il en existe plusieurs (les plus connues) :
+* Clés à base Texas Instruments CC2652/CC1352 (Recommandés) (Ex : Sonoff [Amazon](https://www.amazon.fr/SONOFF-EFR32MG21-Coordinator-Universelle-Passerelle/dp/B0B6P22YJC), [Instead](https://sonoff.tech/product/gateway-and-sensors/sonoff-zigbee-3-0-usb-dongle-plus-e/),
+* [Conbee II](https://www.amazon.fr/Dresden-ConBee-Electronique-II/dp/B07PZ7ZHG5),
+* [Zigate (FR)](https://zigate.fr/),
+* Clés à base Texas Instruments CC2531/2530,
+* Etc
 
-La Conbee II (40 euros), je ne connais pas mais elle est très utilisé sous Home Assistant.
+>[Liste des clés compatibles avec Zigbee2MQTT](https://www.zigbee2mqtt.io/guide/adapters/#recommended)
 
-La dernière, ZigbeeToMQTT est composé du CC2531 (moins de 20 euros) qui permet, une fois flashée, d’avoir une passerelle Zigbee.
+Les premières, a base de CC2652, sont les plus utilisées et compatibles avec Zigbee2MQTT et ZHA.
+La Zigate, marche très bien sur les autres plateformes domotique, mais n'est pas la plus fonctionnelle, malgré une compatibilité Zigbee2MQTT et ZHA.
+La Conbee II (environ 30 euros), très utilisée sous Home Assistant, elle est compatible Zigbee2MQTT, ZHA et deCONZ.
 
-Cette derniere entame son transfert vers les archives, même si elle suffit a la plupart des devices elle ne supporte pas « officiellement » le zigbee 3, pour cela il faudrat se tourner vers des cc26xx (environ 30 euros) ou la Sonoff (15 euros fdp compris)
+La dernière (CC2531/CC2530) est toujours compatible, mais entame son transfert vers les archives. Même si elle suffit à la plupart des devices, elle ne supporte pas « officiellement » le Zigbee 3.
 
-Nous allons voir comment flasher cette dernière et l’intégrer à Home Assistant.
-Nous allons voir la méthode de flash classique (via CC Debugger). Pour les versions alternatives rendez vous ici 71.
+**Les add-ons / Intégrations dans Home Assistant**
+Il existe plusieurs façons de communiquer avec vos clés universelles dans Home Assistant, chacune ayant ses avantages et inconvénients, mais aussi une quantité d'appareils (devices) compatibles.
 
-Etape 1 , crée un user 
+>[Base de données des compatibilités des appareils et des intégrations](https://zigbee.blakadder.com/)
 
-Etape 2 , installé zigbee2mqtt
-Lien a inséré :
+*[ZHA](https://www.home-assistant.io/integrations/zha/) :* C'est l'intégration native de Home Assistant pour les clés universelles Zigbee. ZHA utilise une bibliothèque Python open-source implémentant une pile Zigbee indépendante du matériel appelée zigpy. Tous les coordinateurs compatibles avec zigpy peuvent être utilisés avec ZHA
 
+*[deCONZ](https://www.home-assistant.io/integrations/deconz/) :* est le logiciel de Dresden elektronik qui communique avec les passerelles Zigbee ConBee/RaspBee.
+
+*[Zigbee2MQTT](https://www.zigbee2mqtt.io/) :* Open-source et supportant plusieurs adaptateurs Zigbee ainsi qu'un grand nombre d'appareils, Zigbee2MQTT est l'application supportant le plus grand nombre d'appareils à date.
+
+Nous allons voir comment installer ZigbeetoMQTT et le broker Mosquitto sur Home Assistant.
+
+## Création d'un utilisateur Home Assistant (facultatif)
+>Cette étape est facultative, car elle se fait automatiquement maintenant.
+
+Si vous souhaitez le créer par vous-même.
+
+[Création d'un utilisateur sur HA|690x345](upload://gz8WFu5Hqye25NAUxmZCkzL9eP4.gif)
+
+## Installer Zigbee2MQTT.
+Zigbee2MQTT est un add-on qui n'est pas directement disponible dans les modules complémentaires, il faut ajouter une source externe. Je vous laisse regarder l'[article sur l'installation d'un add-on](/ha_addons).
+
+Le lien à ajouter est le suivant
 ```
 https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 ```
+**Passer à l'étape suivante avant de lancer l'add-on Zigbee2MQTT.**
 
-![partie 1|690x345](upload://gz8WFu5Hqye25NAUxmZCkzL9eP4.gif)
+![Installer l'add-on Zigbee2MQTT](upload://gz8WFu5Hqye25NAUxmZCkzL9eP4.gif)
 
-Etape 3, installé le broker mosquitto
+## Installation du Broker Mosquitto.
 
-![partie 3|690x348](upload://zuJoQLL5wkOZ0SC2wNpJR7FS6lu.gif)
+![Installation du Broker Mosquitto](upload://zuJoQLL5wkOZ0SC2wNpJR7FS6lu.gif)
+
+**Si vous avez laissé la création de l'utilisateur en automatique :**
+Vous pouvez maintenant lancer Zigbee2MQTT.
+
+Le résultat dans le fichier `configuration.yaml` de la partie MQTT, se fait automatiquement  après le premier lancement et doit ressembler à cela.
+```
+mqtt:
+  server: mqtt://core-mosquitto:1883
+  user: addons
+  password: Thee8ahGhahpe4oKoe4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+**Si vous avez créé l'utilisateur vous-même :**
+
+
+Super tutoriel, mais on peut faire plus simple encore maintenant.
+La création d'un utilisateur ne sert plus a rien, car maintenant c'est automatique.
+Donc étape 1 , on passe. 
+étape 3, on installe mosquitto broker et c'est tout. Et dans la configuration de Z2M, on laisse vide la partie `MQTT`.
+Au premier lancement de Z2M, ca va créer un utilisateur pour mqtt automatiquement et ajoute l'adresse du broker automatiquement aussi.
+
 
 Voilà, les installations sont finies, on passe aux configurations.
 
