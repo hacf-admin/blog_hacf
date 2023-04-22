@@ -3,6 +3,9 @@ folder: ha_zigbee2mqtt_mosquitto_broker_installation
 title: Installation de Zigbee2MQTT et Broker Mosquitto
 type: post
 visibleInCMS: true
+aliases:
+  - /ha_zigbee2mqtt
+  - /ha_z2mqtt
 draft: true
 date: 2023-04-22
 lastmod: 2023-04-22
