@@ -6,6 +6,7 @@ visibleInCMS: true
 draft: true
 date: 2023-04-22
 lastmod: 2023-04-22
+images: img/ha_z2mqtt_broker_mosquitto.png
 description: Nous vous invitons à suivre ce tutoriel vous permettant d'installer
   un Broker MQTT Mosquitto et l'add-on Zigbee2MQTT sur votre Home Assistant OS
   afin de connecter tous vos appareils Zigbee a une passerelle universelle et
