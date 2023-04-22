@@ -114,7 +114,7 @@ mqtt:
 
 ### Configuration de votre clé USB.
 
-Dans la partie `Sérial`, de la configuration de l'add-on Zigbee2MQTT,  saisir le chemin de votre clé Zigbee
+Dans la partie `Sérial`, de la configuration de l'add-on Zigbee2MQTT, saisir le chemin de votre clé Zigbee
 
 > ATTENTION : La configuration est différente selon la clé utilisée.
 
@@ -125,12 +125,11 @@ port: >-
   /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0
 ```
 
-D'autres exemples sont disponibles plus [bas](#chemin_de_votre_clé_zigbee) 
-![partie 6|690x348](upload://rlUm7DpJ3aY0T40cOUABxKyvXXd.gif)
+D'autres exemples sont disponibles plus [bas](#chemin_de_votre_clé_zigbee).
+
+![Récupérer le chemin de la clé USB](img/zigbee2mqtt_chemin_cle_usb.gif "Récupérer le chemin de la clé USB")
 
 Si tout se passe bien, Home Assistant devrait détecter le broker Mosquitto, sinon il peut être ajouté en ajoutant une intégration et rechercher Mosquitto.
-
-![Capture d’écran 2023-04-20 225500|690x238](upload://uor5y2aR7XZfUOla30dUp6TzTQ.png)
 
 ## Divers
 
@@ -151,7 +150,7 @@ Aller dans la configuration de l'add-on Mosquitto Broker et ajouter les informat
 
 Cliquer sur enregistrer, la configuration est finie.
 
-![partie 5|690x348](upload://b64lzFoQBCTotAX4jjyIbYZvFhJ.gif)
+![partie 5|690x348](img/zigbee2mqtt_configuration_mosquitto_broker.gif)
 
 #### Configuration de Zigbee2MQTT.
 
