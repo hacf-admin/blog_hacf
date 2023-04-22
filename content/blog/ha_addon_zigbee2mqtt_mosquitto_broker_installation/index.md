@@ -97,7 +97,7 @@ https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 
 ![Installation du Broker Mosquitto](img/zigbee2mqtt_installation_mosquitto_broker.gif "Installation du Broker Mosquitto")
 
-**EST CE QU'IL FAUT LE LANCER ??????**
+Démarré le.
 
 Vous pouvez maintenant lancer Zigbee2MQTT.
 
@@ -120,7 +120,7 @@ Dans la partie `Sérial`, de la configuration de l'add-on Zigbee2MQTT, saisir le
 
 Exemple :
 
- pour la clé Sonoff sur mon installation.
+ Pour la clé Sonoff Dongle Plus
 
 ```
 port: >-
@@ -183,6 +183,8 @@ server: mqtt://core-mosquitto
 user: usermqtt
 password: passwordmqtt
 ```
+
+![Configuration de l'add-on Zigbee2MQTT](img/zigbee2mqtt_configuration.gif "Configuration de l'add-on Zigbee2MQTT")
 
 ## Conclusion.
 
