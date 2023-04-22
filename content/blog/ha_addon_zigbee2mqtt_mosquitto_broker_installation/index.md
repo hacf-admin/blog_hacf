@@ -83,10 +83,14 @@ https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 
 ![Installation du Broker Mosquitto](upload://zuJoQLL5wkOZ0SC2wNpJR7FS6lu.gif)
 
+**EST CE QU'IL FAUT LE LANCER ??????**
+
 **Si vous avez laissé la création de l'utilisateur en automatique :**
 Vous pouvez maintenant lancer Zigbee2MQTT.
 
-Le résultat dans le fichier `configuration.yaml` de la partie MQTT, se fait automatiquement  après le premier lancement et doit ressembler à cela.
+Au premier lancement de Z2M, il va automatiquement créer un utilisateur pour MQTT et ajouter l'adresse du broker.
+
+Le résultat du fichier `configuration.yaml` après le premier lancement doit ressembler à cela.
 ```
 mqtt:
   server: mqtt://core-mosquitto:1883
@@ -96,48 +100,36 @@ mqtt:
 
 **Si vous avez créé l'utilisateur vous-même :**
 
+Nous devons passer à la configuration de Mosquitto et de Zigbee2MQTT.
 
-Super tutoriel, mais on peut faire plus simple encore maintenant.
-La création d'un utilisateur ne sert plus a rien, car maintenant c'est automatique.
-Donc étape 1 , on passe. 
-étape 3, on installe mosquitto broker et c'est tout. Et dans la configuration de Z2M, on laisse vide la partie `MQTT`.
-Au premier lancement de Z2M, ca va créer un utilisateur pour mqtt automatiquement et ajoute l'adresse du broker automatiquement aussi.
-
-
-Voilà, les installations sont finies, on passe aux configurations.
-
-Aller dans  le broker mosquitto est ajouté ceci dans la partie login.
-**\[u]PS\[/color]: 
-@WarC0zes , m'as rappelé que la création d'un user n'est plus obligatoire.\[/u]**
-La connection se fera tout seul entre les deux !
-
-Si par contre vous avez un souci alors employé la création d'un user 
-\[color=yellow]**Cela représente l'utilsateur qu'on créé au debut**\[/u] 
+*Configuration de Mosquitto Broker*
+Aller dans  le broker mosquitto est ajouté ceci dans la partie login l'utilsateur qu'on créé au début.
 
 ```
-  - username: mqtt
-    password: mqtt
+  - username: usermqtt
+    password: passwordmqtt
 ```
 
-Cliquer sur enregistré , voilà le broker est fini  pour sa config .
+Cliquer sur enregistrer, la configuration est finie.
+
 ![partie 5|690x348](upload://b64lzFoQBCTotAX4jjyIbYZvFhJ.gif)
 
-ensuite, on va dans zigbee2mqtt pour sa configuration
-Aller dans sa configuration ( aussi ) :rofl:
+*Configuration de Zigbee2MQTT*
+Aller dans sa configuration de l'add-on.
 
-dans la partie mqtt
+Dans la partie mqtt
 
 ```
 base_topic: zigbee2mqtt
 server: mqtt://core-mosquitto
-user: mqtt
-password: mqtt
+user: usermqtt
+password: passwordmqtt
 ```
 
-Dans la partie 
-Sérial \[color=red]*\[u]( la faite attention au modéle de cle que vous avez )\[/u]*\[/color]
-Moi j'ai une sonoff version P donc je dois mettre ceci
+Dans la partie `Sérial` saisir le chemin de votre clé Zigbee
+>ATTENTION : La configuration est différente selon la clé utilisée.
 
+Exemple pour la Sonoff sur mon installation.
 ```
 port: >-
   /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0
@@ -145,9 +137,8 @@ port: >-
 
 ![partie 6|690x348](upload://rlUm7DpJ3aY0T40cOUABxKyvXXd.gif)
 
-Voilà vous avez fini 
+Si tout se passe bien, Home Assistant devrait détecter le broker Mosquitto, sinon il peut être ajouté en ajoutant une intégration et rechercher Mosquitto.
 
-Si tout se passe bien HA devrais détecté un broker 
 ![Capture d’écran 2023-04-20 225500|690x238](upload://uor5y2aR7XZfUOla30dUp6TzTQ.png)
 
 **\[color=green]Pour ce qui on besoin d'aide pour trouvé le chemin de la clé\[/color]** 
