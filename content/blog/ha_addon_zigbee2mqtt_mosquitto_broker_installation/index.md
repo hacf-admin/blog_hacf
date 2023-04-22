@@ -118,14 +118,33 @@ Dans la partie `Sérial`, de la configuration de l'add-on Zigbee2MQTT, saisir le
 
 > ATTENTION : La configuration est différente selon la clé utilisée.
 
-Exemple pour la clé Sonoff sur mon installation.
+Exemple :
+
+ pour la clé Sonoff sur mon installation.
 
 ```
 port: >-
   /dev/serial/by-id/usb-Silicon_Labs_Sonoff_Zigbee_3.0_USB_Dongle_Plus_0001-if00-port0
 ```
 
-D'autres exemples sont disponibles plus [bas](#chemin_de_votre_clé_zigbee).
+D'autres exemples :
+**Conbee II**
+
+```
+serial:
+  port: >-
+    /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2234130-if00
+  adapter: deconz
+```
+
+**Sonoff Version E** (Remplacer 20XXXXXXXX-if00 par le numéro de votre propre clé).
+
+```
+serial:
+  port: >-
+    /dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20XXXXXXXXX-if00
+  adapter: ezsp
+```
 
 ![Récupérer le chemin de la clé USB](img/zigbee2mqtt_chemin_cle_usb.gif "Récupérer le chemin de la clé USB")
 
@@ -156,36 +175,13 @@ Cliquer sur enregistrer, la configuration est finie.
 
 Aller dans sa configuration de l'add-on.
 
-Dans la partie mqtt
+Dans la partie MQTT :
 
 ```
 base_topic: zigbee2mqtt
 server: mqtt://core-mosquitto
 user: usermqtt
 password: passwordmqtt
-```
-
-### Chemin de votre clé Zigbee.
-
-Pour ce qui ont besoin d'aide pour trouver le chemin de la clé 
-![partie 7|690x348](upload://yxUXhDsJqhTjY0dhcqu0iHYwghU.gif)
-
-**Exemple pour une Conbee II**
-
-```
-serial:
-  port: >-
-    /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2234130-if00
-  adapter: deconz
-```
-
-**Exemple pour une Sonoff Version E** (Remplacer 20XXXXXXXX-if00 par le numéro de votre propre clé).
-
-```
-serial:
-  port: >-
-    /dev/serial/by-id/usb-ITEAD_SONOFF_Zigbee_3.0_USB_Dongle_Plus_V2_20XXXXXXXXX-if00
-  adapter: ezsp
 ```
 
 ## Conclusion.
