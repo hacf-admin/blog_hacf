@@ -95,7 +95,7 @@ https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 
 ## Installation du Broker Mosquitto.
 
-![Installation du Broker Mosquitto](img/zigbee2mqtt_installation_mosquitto_broker.gif)
+![Installation du Broker Mosquitto](img/zigbee2mqtt_installation_mosquitto_broker.gif "Installation du Broker Mosquitto")
 
 **EST CE QU'IL FAUT LE LANCER ??????**
 
@@ -114,7 +114,7 @@ mqtt:
 
 ### Configuration de votre clé USB.
 
-Dans la partie `Sérial`, du saisir le chemin de votre clé Zigbee
+Dans la partie `Sérial`, de la configuration de l'add-on Zigbee2MQTT,  saisir le chemin de votre clé Zigbee
 
 > ATTENTION : La configuration est différente selon la clé utilisée.
 
