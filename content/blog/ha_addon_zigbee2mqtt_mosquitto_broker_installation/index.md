@@ -10,10 +10,9 @@ draft: true
 date: 2023-04-22
 lastmod: 2023-04-22
 images: img/ha_z2mqtt_broker_mosquitto.png
-description: Nous vous invitons à suivre ce tutoriel vous permettant d'installer
-  un Broker MQTT Mosquitto et l'add-on Zigbee2MQTT sur votre Home Assistant OS
-  afin de connecter tous vos appareils Zigbee a une passerelle universelle et
-  vous débarrasser de toutes les passerelles propriétaires.
+description: Voici un tutoriel permettant d'installer un Broker MQTT Mosquitto
+  et l'add-on Zigbee2MQTT sur votre Home Assistant OS afin de connecter tous vos
+  appareils Zigbee a une passerelle universelle.
 level: Débutant
 type_install:
   - ha-os
@@ -30,26 +29,26 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/tuto-installation-de-zigbee2mqtt-et-broker-mosquitto/23103
 ---
-Suite à de nombreuses questions, sur le forum, sur l'installation de Zigbee2MQTT, nous avons profité de l'occasion pour mettre à jour l'article.
+Suite à de nombreuses questions, sur le forum, sur l'installation de Zigbee2MQTT, nous avons profité de l'occasion pour publier cet article.
+
+Cet article s'adresse aux personnes ayant la version "plug & play" appelée HA OS de Home Assistant, ou à défaut la version "supervised". Autrement, l'installation de Zigbee2mqtt et du broket Mosquito doit se faire en dehors de Home Assistant, avec docker par exemple.
 
 ## Le protocole Zigbee
 
-Zigbee est un protocole quasi omniprésent dans toutes les domotiques.
+Zigbee est un protocole quasi omniprésent dans toutes les domotiques, et qui a doucement supplémenté un autre protocole populaire : ZWave.
 
-C'est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant à avoir une passerelle (gateway) par constructeur. Mais ce problème est résolu par les passerelles universelles.
+Zigbee (version 3.0 maintenant) est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant à avoir une passerelle (gateway) par constructeur. Mais ce problème est maintenant résolu grâces aux passerelles universelles.
 
 ### Les passerelles
 
-Il en existe plusieurs (les plus connues) :
+Voici les plus connues :
 
 * Clés à base Texas Instruments CC2652/CC1352 (Recommandés). Les plus réputées sont les [Sonoff]((https://sonoff.tech/product/gateway-and-sensors/sonoff-zigbee-3-0-usb-dongle-plus-e/)) disponibles sur [Amazon](https://www.amazon.fr/SONOFF-EFR32MG21-Coordinator-Universelle-Passerelle/dp/B0B6P22YJC),
 * [Conbee II](https://www.amazon.fr/Dresden-ConBee-Electronique-II/dp/B07PZ7ZHG5), très populaire,
 * [Zigate (FR)](https://zigate.fr/),
 * Clés à base Texas Instruments CC2531/2530,
 
-Home Assistant propose également une clé compatible Zigbee et Matter également très intéressante appelée [SkyConnect](https://www.home-assistant.io/skyconnect/). 
-
-> [Liste des clés compatibles avec Zigbee2MQTT](https://www.zigbee2mqtt.io/guide/adapters/#recommended)
+[Liste des clés compatibles avec Zigbee2MQTT](https://www.zigbee2mqtt.io/guide/adapters/#recommended)
 
 Les premières, a base de CC2652, sont les plus utilisées et compatibles avec Zigbee2MQTT et ZHA.
 La Zigate, marche très bien sur les autres plateformes domotique, mais n'est pas la plus fonctionnelle, malgré une compatibilité Zigbee2MQTT et ZHA.
@@ -57,16 +56,18 @@ La Conbee II (environ 30 euros), très utilisée sous Home Assistant, elle est c
 
 La dernière (CC2531/CC2530) est toujours compatible, mais entame son transfert vers les archives. Même si elle suffit à la plupart des devices, elle ne supporte pas « officiellement » le Zigbee 3.
 
-**Les add-ons / Intégrations dans Home Assistant**
+Home Assistant propose également une clé compatible Zigbee et **Matter** également très intéressante appelée [SkyConnect](https://www.home-assistant.io/skyconnect/). Elle permet de préparer l'arrivée du protocole Matter, même si cela peut prendre quelques années.
+
+\###Les add-ons / Intégrations dans Home Assistant
 Il existe plusieurs façons de communiquer avec vos clés universelles dans Home Assistant, chacune ayant ses avantages et inconvénients, mais aussi une quantité d'appareils (devices) compatibles.
 
 > [Base de données des compatibilités des appareils et des intégrations](https://zigbee.blakadder.com/)
 
-*[ZHA](https://www.home-assistant.io/integrations/zha/) :* C'est l'intégration **native** et plug&payde Home Assistant pour les clés universelles Zigbee. ZHA utilise une bibliothèque Python open-source implémentant une pile Zigbee indépendante du matériel appelée zigpy. Tous les coordinateurs compatibles avec zigpy peuvent être utilisés avec ZHA.
+*[ZHA](https://www.home-assistant.io/integrations/zha/) :* C'est l'intégration **native** et **plug & play** de Home Assistant pour les clés universelles Zigbee. ZHA utilise une bibliothèque Python open-source implémentant une pile Zigbee indépendante du matériel appelée zigpy. Tous les coordinateurs compatibles avec zigpy peuvent être utilisés avec ZHA. ZHA est simple à utiliser, mais à ce jour plus limité par rapport à Zigbee2MQTT.
 
-*[deCONZ](https://www.home-assistant.io/integrations/deconz/) :* est le logiciel propriétaire de Dresden elektronik qui communique avec les passerelles Zigbee ConBee/RaspBee de la marque.
+*[deCONZ](https://www.home-assistant.io/integrations/deconz/) :* est le logiciel propriétaire de Dresden elektronik qui communique uniquement avec les passerelles Zigbee ConBee/RaspBee de la marque. Pas forcément beaucoup d'avantages à notre avis et interface vieillotte.
 
-*[Zigbee2MQTT](https://www.zigbee2mqtt.io/) :* Open-source et supportant plusieurs adaptateurs Zigbee ainsi qu'**un très grand nombre d'appareils**. Zigbee2MQTT est l'application supportant le plus grand nombre d'appareils à date. Elle offre également plus d'outils de gestion zigbee (cartographie, mise à jour OTA des devices zigbee, mais pas que), et une documentation très complète. Enfin l'interface MQTT pourra séduire certains utilisateurs avancés. 
+*[Zigbee2MQTT](https://www.zigbee2mqtt.io/) :* Open-source et supportant plusieurs adaptateurs Zigbee ainsi qu'**un très grand nombre d'appareils**. Zigbee2MQTT est utilisé par d'autres solutions domotique et est l'application supportant le plus grand nombre d'appareils à date. Elle offre également plus d'outils de gestion Zigbee (cartographie, mise à jour OTA des devices zigbee, mais pas que), et une documentation très complète. Enfin l'interface avec MQTT pourra séduire certains utilisateurs avancés, en particulier ceux utilisant Node-Red.
 
 Nous allons voir comment installer **Zigbee2MQTT** et le **broker MQTT Mosquitto** (indispensable à son fonctionnement) sur Home Assistant.
 
@@ -99,6 +100,8 @@ https://github.com/zigbee2mqtt/hassio-zigbee2mqtt
 ![Installer l'add-on Zigbee2MQTT](img/zigbee2mqtt_installation.gif "Installer l'add-on Zigbee2MQTT")
 
 ## Installation du Broker Mosquitto.
+
+Installer le depuis les modules complémentaires.
 
 ![Installation du Broker Mosquitto](img/zigbee2mqtt_installation_mosquitto_broker.gif "Installation du Broker Mosquitto")
 
