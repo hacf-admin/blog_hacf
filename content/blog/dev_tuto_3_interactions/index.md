@@ -6,8 +6,11 @@ visibleInCMS: true
 draft: true
 date: 2023-04-25
 lastmod: 2023-04-25
-description: Ce troisième tuto vous présente les interactions entre les entités
-  et le reste de l'écosystème Home Assistant
+images: img/developper-3.png
+description: Cet article fait partie d'une série de tutos visant à vous
+  présenter comment développer en python votre propre intégration. Ce troisième
+  tuto vous présente les interactions entre les entités et le reste de
+  l'écosystème Home Assistant
 level: Avancé
 version_ha: "2023.4"
 categories:
