@@ -70,7 +70,7 @@ On peut utiliser cet objet pour :
 1. **lire des informations** : liste des domaines, des intégrations, accès à l'entity registry ou à la device registry, accès à la configuration de Home Assistant (timezone, unité de mesure, ...),
 2. **écrire des information**. Il est fréquent de voir des intégrations qui sauvegarde leurs informations dans cet objet. Par exemple, l'intégration LocalTuya stocke tous ses devices dans `hass.data[DOMAIN][TUYA_DEVICES]`. Ca lui permet d'accéder à ses devices partout (puisque l'objet `hass` est partout). On ne va pas le faire dans ce tuto mais saches que cela existe et que c'est fréquemment utilisé.
 
-On verra dans le tuto5 [tuto5](/tuto5.md), une utilisation avancée de cet objet pour rechercher toutes des entités, même celles qui ne nous appartiennent pas.
+On verra dans le tuto5 [tuto5](/blog/dev_tuto_5_avance) une utilisation avancée de cet objet pour rechercher toutes des entités, même celles qui ne nous appartiennent pas.
 
 Plus d'informations sur cet objet voir [ici](https://developers.home-assistant.io/docs/dev_101_hass/).
 
@@ -245,7 +245,7 @@ context:
 
 On va créer **une deuxième entité qui va écouter les évènements de la première** et va stocker dans son état la date du dernier évènement reçu (ca sert à rien mais pourquoi pas après tout).
 
-> Si tu es motivé, tu peux le faire sous la forme d'un exercice. A part la réception d'un évènement, tout le reste à déjà été vu dans le [tuto2](/tuto2.md)
+> Si tu es motivé, tu peux le faire sous la forme d'un exercice. A part la réception d'un évènement, tout le reste à déjà été vu dans le [tuto2](/blog/dev_tuto_1_integration/)
 
 Voici ce qu'il faut faire :
 
@@ -314,17 +314,17 @@ class TutoHacsListenEntity(SensorEntity):
         self.async_on_remove(listener_cancel)
 ```
 
-Ca ressemble beaucoup à la classe créée dans le [tuto2](/tuto2.md), mais il y a quelques substilités :
+Ca ressemble beaucoup à la classe créée dans le [tuto2](/blog/dev_tuto_1_integration), mais il y a quelques substilités :
 
 1. dans `__init__` il faut lui donner un `name` (resp. `unique_id`) qui sera unique. Pour cela, on concatène `Ecouteur` (resp. `_ecouteur`) au `name` (resp. `unique_id`)
 2. la device class est positionnée à `TIMESTAMP` et non pas `DURATION` car notre entité représente une date absolue et pas une durée,
 3. il n'y a pas de `state_class` ni de `native_unit_of_mesurement` puisque l'état de notre entité n'est pas une mesure à proprement parler,
 4. dans la méthode `async_added_to_hass` (qui est appelé par HA quand l'entité est ajoutée), on utilise le Helper `async_track_state_change_event` qui permet de se mettre en écoute des changements d'état dont l'`entity_id` est donné en 2nd paramètre (dans un tableau car on peut en écouter plusieurs). C'est ici que se passe le lien entre les 2 entités : celle qui émet des changements d'état et notre deuxième qui les écoute.
-5. comme vu dans le [tuto2](/tuto2.md), lorsqu'on se met en écoute d'un évènement il faut se désabonner lorsque l'entité est supprimée, sinon on continue de recevoir les évents alors que l'entité a été supprimée de HA. Ca se fait avec l'appel à `async_on_remove` qui prend en paramètre le retour de `async_track_state_change_event`. La méthode appelée à chaque changement d'état reçu sera `_on_event` qu'on verra ci-dessous.
+5. comme vu dans le [tuto2](/blog/dev_tuto_1_integration), lorsqu'on se met en écoute d'un évènement il faut se désabonner lorsque l'entité est supprimée, sinon on continue de recevoir les évents alors que l'entité a été supprimée de HA. Ca se fait avec l'appel à `async_on_remove` qui prend en paramètre le retour de `async_track_state_change_event`. La méthode appelée à chaque changement d'état reçu sera `_on_event` qu'on verra ci-dessous.
 
 #### Instancier cette classe au démarrage de la plate-forme
 
-Pour cela, il faut modifier légèrement la fonction `async_setup_platform` (cf. [tuto2](/tuto2.md) au besoin) et ajouter le code suivant :
+Pour cela, il faut modifier légèrement la fonction `async_setup_platform` (cf. [tuto2](/blog/dev_tuto_1_integration) au besoin) et ajouter le code suivant :
 
 ```python
 async def async_setup_platform(
@@ -531,7 +531,7 @@ SERVICE_RAZ_COMPTEUR = "raz_compteur"
 
 #### Voluptuous
 
-Cette partie est complexe et sera abordée beaucoup plus en détail avec le [tuto4](/tuto4.md). Pour l'instant, on va juste donner une structure qui liste les paramètres "valeur_depart", donne son caractère facultatif (`vol.Optional`) et indique qu'on attend un entier positif (`cv.positive_int`).
+Cette partie est complexe et sera abordée beaucoup plus en détail avec le [tuto4](/blog/dev_tuto_4_config_flow). Pour l'instant, on va juste donner une structure qui liste les paramètres "valeur_depart", donne son caractère facultatif (`vol.Optional`) et indique qu'on attend un entier positif (`cv.positive_int`).
 
 C'est une des parties les moins bien documentée à la fois dans Home Assistant mais aussi dans le package `voluptuous` lui-même donc je ne rentre pas plus dans le détail dans ce tuto.
 
@@ -659,7 +659,7 @@ Il est impossible d'être exhaustif tellement l'écosystème Home Assistant est 
 * https://developers.home-assistant.io/docs/dev_101_services
 * https://developers.home-assistant.io/docs/dev_101_config
 
-> 💡 Dans le prochain [tuto](/tuto4.md), on va apprendre à configurer notre intégration à travers l'interface de Home Assistant et non plus à travers le fichier `configuration.yaml`.
+> 💡 Dans le prochain [tuto4](/blog/dev_tuto_4_config_flow), on va apprendre à configurer notre intégration à travers l'interface de Home Assistant et non plus à travers le fichier `configuration.yaml`.
 
 - - -
 
