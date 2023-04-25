@@ -7,10 +7,10 @@ draft: true
 date: 2023-04-25
 lastmod: 2023-04-25
 images: img/developper-3.png
-description: Cet article fait partie d'une série de tutos visant à vous
-  présenter comment développer en python votre propre intégration. Ce troisième
-  tuto vous présente les interactions entre les entités et le reste de
-  l'écosystème Home Assistant
+description: Cet article s'adresse aux développeurs et fait partie d'une série
+  de tutos visant à vous présenter comment développer en python votre propre
+  intégration. Ce troisième tuto vous présente les interactions entre les
+  entités et le reste de l'écosystème Home Assistant.
 level: Avancé
 version_ha: "2023.4"
 categories:
@@ -20,11 +20,12 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
-## L'objectif de cet article est d'enrichir fonctionnellement notre entité
+Cet article s'inscrit dans une série de tutos présentant comment développer en python sa propre intégration.
+Plus d'infos et liste des tutos sur : [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
 
-Il s'inscrit dans la suite des articles dont le sommaire est [ici](/README.md).
+L'objectif de ce troisième tuto est d'enrichir fonctionnellement notre entité créée au [tuto2](/blog/dev_tuto_1_integration/).
 
-> 💡 Les fichiers sources complets en version finales sont en fin d'article. Cf [Fichiers sources du tuto](#fichiers-sources-du-tuto)
+💡 Les fichiers sources complets en version finale sont en fin d'article.
 
 ## Prérequis
 
@@ -47,11 +48,12 @@ On va couvrir l'ensemble des flux décrit dans Home Assistant Core Architecture 
 
 ## L'objet `hass`
 
-S'il y a bien un objet important dans le développement Home Assistant, c'est l'objet `hass`. De type `HomeAssistant`, on l'a déjà rencontré dans le tuto2 sans l'expliquer, on va le faire ici.
+Si il y a bien un objet important dans le développement Home Assistant, c'est l'objet `hass`. De type `HomeAssistant`, on l'a déjà rencontré dans le tuto2 sans l'expliquer, on va le faire ici.
+
 Cet objet est partout. **Il représente l'instance Home Assistant** sur laquelle l'entité est configurée et permet d'accéder à tous les objets manipulés par Home Assistant : les configurations, les états, les entités, les bus d'évènements, ...
 
-**Comme il est indispensable**, on va le mémoriser dès qu'on peut - à la construction de l'entité - dans les attributs de l'entité ; en variable privée  et donc commençant par un `_` selon la règle de nommage Python.
-Pour cela, on définit un attribut `self._hass` dans la fonction d'init de l'entité. Et on stocke l'objet `hass` dedans :
+**Comme il est indispensable**, on va le mémoriser dès que possible, soit à la construction de l'entité et dans les attributs de l'entité. On utilisera une **variable privée**, et de ce fait commençant par un `_` selon la règle de nommage Python.
+Pour cela, on définit un attribut `self._hass` dans la fonction d'initialisation de l'entité. Puis on stocke l'objet `hass` dedans :
 
 ```python
 class TutoHacsElapsedSecondEntity(SensorEntity):
@@ -70,18 +72,20 @@ class TutoHacsElapsedSecondEntity(SensorEntity):
 
 On peut utiliser cet objet pour :
 
-1. **lire des informations** : liste des domaines, des intégrations, accès à l'entity registry ou à la device registry, accès à la configuration de Home Assistant (timezone, unité de mesure, etc),
+1. **lire des informations** : liste des domaines, des intégrations, accès à l'`entity registry` ou à la` device registry`, accès à la configuration de Home Assistant (timezone, unité de mesure, etc),
 2. **écrire des informations**. Il est fréquent de voir des intégrations qui sauvegarde leurs informations dans cet objet. Par exemple, l'intégration LocalTuya stocke tous ses devices dans `hass.data[DOMAIN][TUYA_DEVICES]`. Ça lui permet d'accéder à ses devices partout (puisque l'objet `hass` est partout). On ne va pas le faire dans ce tuto, mais sache que cela existe et que c'est fréquemment utilisé.
 
-On verra dans le tuto5 [tuto5](/blog/dev_tuto_5_avance) une utilisation avancée de cet objet pour rechercher toutes des entités, même celles qui ne nous appartiennent pas.
+On verra dans le tuto5 [](/blog/dev_tuto_5_avance)une utilisation avancée de cet objet pour rechercher toutes des entités, même celles qui ne nous appartiennent pas.
 
 Plus d'informations sur cet objet voir [ici](https://developers.home-assistant.io/docs/dev_101_hass/).
 
 ## Déclencher périodiquement la mise à jour d'une entité
 
-Pour ce faire, il faut faire générer par Home Assistant un évènement basé sur le temps et capter cet évènement. Lors de la réception de cet évènement, on incrémentera le compteur en secondes de l'entité.
+Pour ce faire, il faut faire générer par Home Assistant un évènement basé sur le temps, puis capter cet évènement. Lors de la réception de cet évènement, on incrémentera le compteur (exprimé en secondes) de l'entité.
 
-Dans notre capteur, on a besoin d'une fonction spéciale qui est appelée par Home Assistant lorsque l'entité a été prise en compte. C'est la méthode `async_added_to_hass`qui est définie dans la classe de base de toutes les entités et qu'on va surcharger pour ajouter notre comportement souhaité. On marque cette méthode avec l'annotation `@callback` pour signifier qu'on surcharge une méthode de la classe de base. Même si ce n'est pas indispensable, ça donne des indications au lecteur.
+Dans notre capteur, on a besoin d'une fonction spéciale qui est appelée par Home Assistant lorsque l'entité a été prise en compte. C'est la méthode `async_added_to_hass`qui est définie dans la classe de base de toutes les entités et que l'on va surcharger pour ajouter notre comportement souhaité.
+
+On marque cette méthode avec l'annotation `@callback` pour signifier qu'on surcharge une méthode de la classe de base. Même si ce n'est pas indispensable, ça donne des indications au lecteur.
 
 ```python
 from datetime import timedelta
@@ -107,12 +111,12 @@ class TutoHacsElapsedSecondEntity(SensorEntity):
 
 Le fonctionnement de la méthode `async_added_to_hass` est le suivant :
 
-1. on appelle la fonction helper `async_track_time_interval` qui programme un timer périodique d'intervalle égal 1 seconde dans l'exemple,
+1. on appelle la fonction helper `async_track_time_interval` qui programme un timer périodique (intervalle égal 1 seconde dans l'exemple),
 2. on donne à ce helper l'objet `hass`, la méthode de notre entité qui sera appelée à chaque échéance du timer et l'intervalle,
 3. cet appel retourne une fonction qui doit être appelée pour stopper le timer,
 4. on passe cette fonction d'annulation à la méthode de la classe `Entity` nommée `async_on_remove` qui appelle toutes les méthodes qu'on lui aura données lors de la destruction de l'entité. Si on ne le fait pas, le timer continuera de poster des évènements dans le vide.
 
-Il ne nous reste plus qu'à créer la méthode qu'on veut appeler toutes les secondes :
+Il ne nous reste plus qu'à créer la méthode que l'on veut appeler toutes les secondes :
 
 ```python
 class TutoHacsElapsedSecondEntity(SensorEntity):
@@ -123,7 +127,7 @@ class TutoHacsElapsedSecondEntity(SensorEntity):
         _LOGGER.info("Appel de incremente_secondes à %s", datetime.now())
 ```
 
-Testons pour voir si notre méthode est bien appelée toutes les secondes. Command + Shift + P / Taches...
+Testons pour voir si notre méthode est bien appelée toutes les secondes (`Command `+ `Shift `+ `P `/ `Taches`...)
 Si on regarde les logs, on voit bien que :
 
 ```log
@@ -156,9 +160,9 @@ Cela se fait en appelant la méthode `async_write_ha_state` définie dans la cla
         self.async_write_ha_state()
 ```
 
-On en profite pour initialiser la valeur du compteur à 0 et non pas 12 dans la méthode `__init__`, afin de démarrer à zéro.
+On en profite pour initialiser la valeur du compteur à 0 (et non pas 12) dans la méthode `__init__`, afin de démarrer à zéro.
 
-On redémarre, on voit toujours les logs bouger toutes les secondes et si on regarde sur le web ([ici](http://localhost:9123/lovelace/0)), on voit bien notre compteur évoluer toutes les secondes :
+On redémarre, on voit toujours les logs "bouger" toutes les secondes et si on regarde sur le web (<http://localhost:9123/lovelace/0>), on voit bien notre compteur évoluer toutes les secondes :
 
 ![Compteur](img/compteur.png)
 
@@ -190,9 +194,9 @@ On va modifier notre méthode `incremente_secondes` de notre entité vedette pou
             )
 ```
 
-Ça tient en une ligne : `self._hass.bus.fire` qui prend en argument, le type d'évènement et un json qui contient des infos sur l'événement.
+Ça tient en une ligne : `self._hass.bus.fire` qui prend en argument : le type d'évènement et un json qui contient des infos sur l'événement.
 
-On arrête et on relance Home Assistant. Si on contrôle dans le web ou dans "Outils de développement / Événement" et qu'on s'abonne à l'évènement `event_changement_etat_TutoHacsElapsedSecondEntity`, on constate ça :
+On arrête et on relance Home Assistant. Si on contrôle dans le web ou dans "Outils de développement / Événement" et qu'on s'abonne à l'évènement `event_changement_etat_TutoHacsElapsedSecondEntity`, on constate cela :
 
 ![Evènements](img/evenements.png)
 
