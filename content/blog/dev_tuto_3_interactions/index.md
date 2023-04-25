@@ -396,7 +396,7 @@ from homeassistant.const import UnitOfTime, STATE_UNAVAILABLE, STATE_UNKNOWN
 from homeassistant.core import HomeAssistant, callback, Event, State
 ```
 
-> 💡 Tu remarques que je **type mes variables ou attributs** de classe quasi systématiquement. Ca se fait avec le `: State` par exemple. Ce n'est pas obligatoire avec Python qui est un langage interprété et non typé par défaut, mais ça a plusieurs vertues de le faire quand même :
+> 💡 Tu remarques que je **type mes variables ou attributs** de classe quasi systématiquement. Cela se fait avec le `: State` par exemple. Ce n'est pas obligatoire avec Python qui est un langage interprété et non typé par défaut, mais ça a plusieurs vertues de le faire quand même :
 >
 > * VSC va vous signaler tout de suite une erreur **si les types ne correspondent pas**,
 > * En passant la souris sur le type tu vas avoir **la description de la classe**,
@@ -405,7 +405,7 @@ from homeassistant.core import HomeAssistant, callback, Event, State
 
 ![autocompletion](img/autocompletion.png)
 
-> Bref, je le conseille vivement, ça simplifie beaucoup la phase de développement et facilite la relecture du code.
+> Bref, je le conseille vivement ce typage, car il simplifie beaucoup la phase de développement et facilite la relecture du code.
 
 #### Démarrage de Home Assistant
 
@@ -413,7 +413,7 @@ Vérifies qu'il n'y a pas d'erreur :
 
 ![no probleme](img/compilation-no-probleme.png)
 
-Relance Home Assistant (Command + Shift + P) et regarde les logs. Tu dois voir quelque-chose comme ça :
+Relance Home Assistant (`Command `+ `Shift `+ `P`) et regarde les logs. Tu dois voir quelque-chose comme ça :
 
 ```log
 2023-04-15 08:10:36.889 INFO (MainThread) [custom_components.tuto_hacs.sensor] Appel de incremente_secondes à 2023-04-15 08:10:36.889856
