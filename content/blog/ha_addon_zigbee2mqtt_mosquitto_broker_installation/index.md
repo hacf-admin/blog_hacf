@@ -31,13 +31,13 @@ url_hacf: https://forum.hacf.fr/t/tuto-installation-de-zigbee2mqtt-et-broker-mos
 ---
 Suite à de nombreuses questions, sur le forum, sur l'installation de Zigbee2MQTT, nous avons profité de l'occasion pour publier cet article.
 
-Cet article s'adresse aux personnes ayant la version "plug & play" appelée HA OS de Home Assistant, ou à défaut la version "supervised". Autrement, l'installation de Zigbee2mqtt et du broket Mosquito doit se faire en dehors de Home Assistant, avec docker par exemple.
+Cet article s'adresse aux personnes ayant une installation Home Assistant OS ou HA Supervised. Autrement, l'installation de Zigbee2MQTT et du broker Mosquitto doit se faire de manière externe à Home Assistant
 
 ## Le protocole Zigbee
 
-Zigbee est un protocole quasi omniprésent dans toutes les domotiques, et qui a doucement supplémenté un autre protocole populaire : ZWave.
+Zigbee est un protocole quasi omniprésent dans toutes les domotiques, supplantant Zwave et autres. Une large gamme d'appareils sont disponibles dans ce protocole.
 
-Zigbee (version 3.0 maintenant) est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant à avoir une passerelle (gateway) par constructeur. Mais ce problème est maintenant résolu grâces aux passerelles universelles.
+Zigbee (version 3.0 maintenant) est un protocole qui se devait universel, mais qui a vu arriver une incompatibilité entre les constructeurs nous obligeant à avoir une passerelle (gateway) par constructeur. Mais ce problème est désormais résolu grâces aux passerelles universelles.
 
 ### Les passerelles
 
@@ -63,7 +63,7 @@ Il existe plusieurs façons de communiquer avec vos clés universelles dans Home
 
 > [Base de données des compatibilités des appareils et des intégrations](https://zigbee.blakadder.com/)
 
-*[ZHA](https://www.home-assistant.io/integrations/zha/) :* C'est l'intégration **native** et **plug & play** de Home Assistant pour les clés universelles Zigbee. ZHA utilise une bibliothèque Python open-source implémentant une pile Zigbee indépendante du matériel appelée zigpy. Tous les coordinateurs compatibles avec zigpy peuvent être utilisés avec ZHA. ZHA est simple à utiliser, mais à ce jour plus limité par rapport à Zigbee2MQTT.
+*[ZHA](https://www.home-assistant.io/integrations/zha/) :* C'est l'intégration **native** de Home Assistant pour les clés universelles Zigbee. ZHA utilise une bibliothèque Python open-source implémentant une pile Zigbee indépendante du matériel appelée zigpy. Tous les coordinateurs compatibles avec zigpy peuvent être utilisés avec ZHA. ZHA est simple à utiliser, mais à ce jour plus limité par rapport à Zigbee2MQTT.
 
 *[deCONZ](https://www.home-assistant.io/integrations/deconz/) :* est le logiciel propriétaire de Dresden elektronik qui communique uniquement avec les passerelles Zigbee ConBee/RaspBee de la marque. Pas forcément beaucoup d'avantages à notre avis et interface vieillotte.
 
@@ -73,7 +73,7 @@ Nous allons voir comment installer **Zigbee2MQTT** et le **broker MQTT Mosquitto
 
 ## Création d'un utilisateur Home Assistant (facultatif)
 
-> Cette étape est facultative, car elle se fait automatiquement maintenant.
+> **Cette étape est facultative, car elle se fait automatiquement maintenant.**
 
 Si vous souhaitez le créer par vous-même.
 
