@@ -76,7 +76,7 @@ Plus d'informations sur cet objet voir [ici](https://developers.home-assistant.i
 
 ## Déclencher périodiquement la mise à jour d'une entité
 
-Pour ce faire, il faut faire générer par Home Assistant un évènement basé sur le temps et capter cet évènement. Lors de la captation de cet évènement, on incrémentera le compteur en secondes de l'entité.
+Pour ce faire, il faut faire générer par Home Assistant un évènement basé sur le temps et capter cet évènement. Lors de la réception de cet évènement, on incrémentera le compteur en secondes de l'entité.
 
 Dans notre capteur, on a besoin d'une fonction spéciale qui est appelée par Home Assistant lorsque l'entité a été prise en compte. C'est la méthode `async_added_to_hass`qui est définie dans la classe de base de toutes les entités et qu'on va surcharger pour ajouter notre comportement souhaité. On marque cette méthode avec l'annotation `@callback` pour signifier qu'on surcharge une méthode de la classe de base. Même si ce n'est pas indispensable, ça donne des indications au lecteur.
 
@@ -320,7 +320,7 @@ class TutoHacsListenEntity(SensorEntity):
 2. la device class est positionnée à `TIMESTAMP` et non pas `DURATION` car notre entité représente une date absolue et pas une durée,
 3. il n'y a pas de `state_class` ni de `native_unit_of_mesurement` puisque l'état de notre entité n'est pas une mesure à proprement parler,
 4. dans la méthode `async_added_to_hass` (qui est appelé par HA quand l'entité est ajoutée), on utilise le Helper `async_track_state_change_event` qui permet de se mettre en écoute des changements d'état dont l'`entity_id` est donné en 2d paramètre (dans un tableau, car on peut en écouter plusieurs). C'est ici que se passe le lien entre les 2 entités : celle qui émet des changements d'état et notre deuxième qui les écoute,
-5. comme vu dans le [tuto2](/blog/dev_tuto_1_integration), lorsqu'on se met en écoute d'un évènement, il faut se désabonner lorsque l'entité est supprimée, sinon on continue de recevoir les évents alors que l'entité a été supprimée de HA. Ça se fait avec l'appel à `async_on_remove` qui prend en paramètre le retour de `async_track_state_change_event`. La méthode appelée à chaque changement d'état reçu sera `_on_event` qu'on verra ci-dessous.
+5. comme vu dans le [tuto2](/blog/dev_tuto_1_integration), lorsqu'on se met en écoute d'un évènement, il faut se désabonner lorsque l'entité est supprimée. Sinon, on continue de recevoir les évents alors que l'entité a été supprimée de HA. Ça se fait avec l'appel à `async_on_remove` qui prend en paramètre le retour de `async_track_state_change_event`. La méthode appelée à chaque changement d'état reçu sera `_on_event` qu'on verra ci-dessous.
 
 #### Instancier cette classe au démarrage de la plate-forme
 
