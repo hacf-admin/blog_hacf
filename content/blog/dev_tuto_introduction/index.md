@@ -10,9 +10,9 @@ date: 2023-04-11
 lastmod: 2023-04-11
 images: img/tuto-developper-intro.png
 description: >-
-  Vous souhaitez développer vos propres intégrations pour vous ou pour la
-  communauté Home Assistant ou tout simplement contribuer à une intégration
-  existante ?
+  Vous êtes développeur et souhaitez développer vos propres intégrations pour
+  vous ou pour la communauté Home Assistant ou tout simplement contribuer à une
+  intégration existante ?
 
   Alors, la série de tutoriels qui sont présentés ici est faite pour vous.
 level: Avancé
@@ -25,7 +25,7 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-introduction/22780
 ---
-Tu veux développer une intégration pour Home Assistant ou tout simplement contribuer à une intégration existante ? Cette suite d'articles est faite pour toi et a pour but de t'aider à te lancer. Elle est conçue comme les articles que j'aurais aimé trouver lorsque je me suis moi-même lancé.
+Tu as un profil développeur et tu connais python ? Tu veux développer une intégration pour Home Assistant ou tout simplement contribuer à une intégration existante ? Alors cette suite d'articles est faite pour toi et a pour but de t'aider à te lancer. Elle est conçue comme les articles que j'aurais aimé trouver lorsque je me suis moi-même lancé.
 
 ## Les prérequis
 
