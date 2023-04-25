@@ -511,7 +511,7 @@ C'est une des parties les moins bien documentée à la fois dans Home Assistant 
 Pour les curieux, la seule doc à peu près potable est [ici](https://github.com/alecthomas/voluptuous).
 
 ### Redémarrage de Home Assistant
-Tu commences à en avoir l'habitude maintenant mais je le répette encore :
+Tu commences à en avoir l'habitude maintenant, mais je le répète encore :
 - on vérifie qu'on n'a pas d'erreur dans l'onglet "PROBLEMES" de VSC,
 - on (re)démarre avec 'Command + Shift + P',
 - on ne doit pas voir d'erreur les logs, seulement notre compteur qui tourne toutes les secondes.
