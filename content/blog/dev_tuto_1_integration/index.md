@@ -7,9 +7,11 @@ draft: false
 date: 2023-04-18
 lastmod: 2023-04-18
 images: img/developper-2.png
-description: L'objectif de ce second tuto est de vous présenter comment
-  développer en python une première intégration et une première entité simple.
-level: Intermédiaire
+description: Cet article fait partie d'une série de tutos visant à vous
+  présenter comment développer en python votre propre intégration. L'objectif de
+  ce second tuto est de vous guider dans le développement d'une première
+  intégration et une première entité simple.
+level: Avancé
 version_ha: "2023.4"
 categories:
   - Développement
