@@ -7,9 +7,10 @@ draft: false
 date: 2023-04-15
 lastmod: 2023-04-15
 images: img/tuto-developper-1-environnement.png
-description: "Ce premier tuto vous présente comment mettre en place votre
-  environnement de développement : quels outils installer et comment les
-  configurer."
+description: "Cet article fait partie d'une série de tutos visant à vous
+  présenter comment développer en python votre propre intégration. Ce premier
+  tuto vous guide dans la mise en place de votre environnement de développement
+  : quels outils installer et comment les configurer."
 level: Avancé
 version_ha: "2023.4"
 categories:
