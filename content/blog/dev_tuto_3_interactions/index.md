@@ -404,9 +404,7 @@ from homeassistant.core import HomeAssistant, callback, Event, State
 
 Vérifies qu'il n'y a pas d'erreur :
 
-
-![no probleme](img/compilation-no-probleme.png?raw=true)
-
+![no probleme](img/compilation-no-probleme.png)
 
 Relance Home Assistant (Command + Shift + P) et regarde les logs. Tu dois voir quelque-chose comme ça :
 
@@ -421,7 +419,8 @@ Si on regarde dans l'"Outil de developpement / Etat" ([ici](http://localhost:912
 ![entité écouteur](img/entite-ecouteur.png?raw=true)
 
 Le dashboard aperçu (ici) affiche aussi nos 2 entités :
-![deux entités](img/deux-entites.png?raw=true)
+
+![deux entités](img/deux-entites.png)
 
 ## Implémenter un service
 
@@ -475,7 +474,7 @@ Ce fichier contient :
    5. la valeur par défaut,
    6. et un `selector` qui permet à l'utilisateur de choisir la valeur qu'il veut. Ici, on utilise un sélector de type `number` avec une valeur minimale de 0, une valeur maximale de 900, un pas de 1 et l'utilisateur pourra choisir la valeur sur un slider. On verra le rendu un peu en-dessous.
 
-Home Assistant propose un nombre de sélecteurs très impressionnant et vraiment très bien foutu. Tu trouveras la liste [ici](https://www.home-assistant.io/docs/blueprint/selectors/).
+Home Assistant propose un nombre de sélecteurs très impressionnant et vraiment très bien foutus. Tu trouveras la liste [ici](https://www.home-assistant.io/docs/blueprint/selectors/).
 
 ### Enregistrement du service au setup
 
@@ -547,10 +546,12 @@ Tu commences à en avoir l'habitude maintenant, mais je le répète encore :
 * on ne doit pas voir d'erreur les logs, seulement notre compteur qui tourne toutes les secondes.
 
 Vas ensuite dans les "Outils de développement / Services" ([ici](http://localhost:9123/developer-tools/service)) et tape 'tuto' dans la boite de recherche des services. Tu dois voir notre service :
-![Service raz_compteur](img/service-raz-compteur.png?raw=true)
+
+![Service raz_compteur](img/service-raz-compteur.png)
 
 Sélectionne le et tu vas voir apparaitre l'interface qui permet de configurer l'appel du service :
-![Service raz_compteur](img/service-raz-compteur-config.png?raw=true)
+
+![Service raz_compteur](img/service-raz-compteur-config.png)
 
 Tu peux :
 
@@ -664,7 +665,7 @@ Il est impossible d'être exhaustif tellement l'écosystème Home Assistant est 
 
 ## Listes des fichiers références de ce tuto
 
-Ne sont présents que les fichiers modifiés par rapport au tuto précédent.
+Note : ne sont présents que les fichiers modifiés par rapport au tuto précédent.
 
 ### `const.py`
 
