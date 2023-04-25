@@ -7,10 +7,11 @@ draft: false
 date: 2023-04-15
 lastmod: 2023-04-15
 images: img/tuto-developper-1-environnement.png
-description: "Cet article fait partie d'une série de tutos visant à vous
-  présenter comment développer en python votre propre intégration. Ce premier
-  tuto vous guide dans la mise en place de votre environnement de développement
-  : quels outils installer et comment les configurer."
+description: "Cet article s'adresse aux développeurs et fait partie d'une série
+  de tutos visant à vous présenter comment développer en python votre propre
+  intégration. Ce premier tuto vous guide dans la mise en place de votre
+  environnement de développement : quels outils installer et comment les
+  configurer."
 level: Avancé
 version_ha: "2023.4"
 categories:
@@ -20,7 +21,7 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
-Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes de l'installation de votre environnement de développement.
+Voilà, vous êtes développeurs et souhaitez développer en python votre propre intégration. Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes de l'installation de votre environnement de développement.
 
 Dans une majorité de cas, il sera plutôt conseillé de cloner un environnement tout prêt. Mais dans le cadre de ce tutoriel, il est plus intéressant de tout faire "à la main" pour retrouver les différents éléments, savoir à quoi ils servent et comment les modifier plus tard.
 
