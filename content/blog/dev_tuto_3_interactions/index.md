@@ -22,8 +22,8 @@ Il s'inscrit dans la suite des articles dont le sommaire est [ici](/README.md).
 
 > 💡 Les fichiers sources complets en version finales sont en fin d'article. Cf [Fichiers sources du tuto](#fichiers-sources-du-tuto)
 
-## Pre-requis
-Avoir déroulé avec succès les deux premiers articles [tuto1](/tuto1.md) et [tuto2](/tuto2.md). Vous devez donc avoir une entité avec un état qui est une mesure en secondes.
+## Prérequis
+Avoir déroulé avec succès les deux premiers articles [tuto1](/blog/dev_tuto_1_environnement/) et [tuto2](/blog/dev_tuto_1_integration/). Vous devez donc avoir une entité avec un état qui est une mesure en secondes.
 
 ## Les points abordés
 Dans cet article, tu vas apprendre à :
@@ -35,7 +35,7 @@ Dans cet article, tu vas apprendre à :
 6. implémenter un service
 
 On va couvrir l'ensemble des flux décrit dans Home Assistant Core Architecture ([ici](https://developers.home-assistant.io/docs/dev_101_hass)) :
-![ha core architecture](/images/ha-core-architecture.png)
+![ha core architecture](img/ha-core-architecture.png)
 
 ## L'objet `hass`
 
@@ -152,7 +152,7 @@ On en profite pour initialiser la valeur du compteur à 0 et non pas 12 dans la 
 
 On redémarre, on voit toujours les logs bouger toutes les secondes et si on regarde sur le web ([ici](http://localhost:9123/lovelace/0)), on voit bien notre compteur évoluer toutes les secondes :
 
-> ![Compteur](/images/compteur.png?raw=true)
+![Compteur](img/compteur.png?raw=true)
 
 ## Publier et recevoir des évènements
 Le coeur de Home Assistant est basé sur **un bus d'évènements** sur lequel on peut publier ou s'abonner. Il est fondamental de savoir s'y interfacer puisque c'est par là que va passer **toutes communications entre les différents composants** de Home Assistant.
@@ -185,7 +185,7 @@ Ca tient en une ligne : `self._hass.bus.fire` qui prend en argument, le type d'�
 
 On arrête et on relance Home Assistant. Si on contrôle dans le web ou dans "Outils de développement / Evènements" et qu'on s'abonne à l'évènement `event_changement_etat_TutoHacsElapsedSecondEntity`, on constate ça :
 
-> ![Evènements](/images/evenements.png?raw=true)
+![Evènements](img/evenements.png?raw=true)
 
 Toutes les 5 secondes, on a bien un évènement généré qui contient dans ses data, l'attribut `nb_secondes` qui s'incrémente bien de 5 en 5.
 
@@ -382,7 +382,7 @@ from homeassistant.core import HomeAssistant, callback, Event, State
 > - en maintenant 'Command (sur Mac)' enfoncée, tu vas pouvoir **ouvrir le code de la classe** et éventuellement **mettre des points d'arrêt** dans cette classe, même si c'est une classe système ou Home Assistant,
 > - tu avoir accès à **l'auto-complétion**. Dès que tu vas taper le '.' après ton attribut, la liste des méthodes et attributs utilisables s'affichent avec leur arguments.
 >
-![autocompletion](/images/autocompletion.png?raw=true)
+![autocompletion](img/autocompletion.png?raw=true)
 >
 > Bref, je le conseille vivement, ça simplifie beaucoup la phase de développement et facilite la relecture du code.
 
@@ -390,7 +390,7 @@ from homeassistant.core import HomeAssistant, callback, Event, State
 #### Démarrage de Home Assistant
 
 Vérifies qu'il n'y a pas d'erreur :
-![no probleme](/images/compilation-no-probleme.png?raw=true)
+![no probleme](img/compilation-no-probleme.png?raw=true)
 Relance Home Assistant (Command + Shift + P) et regarde les logs. Tu dois voir quelque-chose comme ça :
 
 ```log
@@ -401,10 +401,10 @@ Relance Home Assistant (Command + Shift + P) et regarde les logs. Tu dois voir q
 Ce log se répête toutes les secondes, puisque l'état de la première entité se met à jour toutes les secondes.
 
 Si on regarde dans l'"Outil de developpement / Etat" ([ici](http://localhost:9123/developer-tools/state)) de notre interface web HA et que l'on cherche "ecouteur", on voit bien notre deuxième entité avec comme état l'horodatage qui change toutes les secondes :
-![entité écouteur](/images/entite-ecouteur.png?raw=true)
+![entité écouteur](img/entite-ecouteur.png?raw=true)
 
 Le dashboard aperçu (ici) affiche aussi nos 2 entités :
-![deux entités](/images/deux-entites.png?raw=true)
+![deux entités](img/deux-entites.png?raw=true)
 
 ## Implémenter un service
 Un service est un point d'accès à notre intégration appelable depuis l'extérieur (une autre intégration, une automatisation, ...).
@@ -517,10 +517,10 @@ Tu commences à en avoir l'habitude maintenant mais je le répette encore :
 - on ne doit pas voir d'erreur les logs, seulement notre compteur qui tourne toutes les secondes.
 
 Vas ensuite dans les "Outils de développement / Services" ([ici](http://localhost:9123/developer-tools/service)) et tape 'tuto' dans la boite de recherche des services. Tu dois voir notre service :
-![Service raz_compteur](/images/service-raz-compteur.png?raw=true)
+![Service raz_compteur](img/service-raz-compteur.png?raw=true)
 
 Sélectionne le et tu vas voir apparaitre l'interface qui permet de configurer l'appel du service :
-![Service raz_compteur](/images/service-raz-compteur-config.png?raw=true)
+![Service raz_compteur](img/service-raz-compteur-config.png?raw=true)
 
 Tu peux :
 1. **sélectionner des entités** et tu constates qu'il n'y a bien que les entités de notre intégration qui sont présentées,
