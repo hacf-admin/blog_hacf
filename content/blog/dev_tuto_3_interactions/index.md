@@ -1,6 +1,6 @@
 ---
 folder: dev_tuto_3_interactions
-title: Développer pour Home Assistant - (1) Interactions
+title: Développer pour Home Assistant - (3) Interactions
 type: post
 visibleInCMS: true
 draft: true
