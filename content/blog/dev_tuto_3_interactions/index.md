@@ -72,7 +72,7 @@ class TutoHacsElapsedSecondEntity(SensorEntity):
 
 On peut utiliser cet objet pour :
 
-1. **lire des informations** : liste des domaines, des intégrations, accès à l'`entity registry` ou à la` device registry`, accès à la configuration de Home Assistant (timezone, unité de mesure, etc),
+1. **lire des informations** : liste des domaines, des intégrations, accès à l'`entity registry` ou à la`device registry`, accès à la configuration de Home Assistant (timezone, unité de mesure, etc),
 2. **écrire des informations**. Il est fréquent de voir des intégrations qui sauvegarde leurs informations dans cet objet. Par exemple, l'intégration LocalTuya stocke tous ses devices dans `hass.data[DOMAIN][TUYA_DEVICES]`. Ça lui permet d'accéder à ses devices partout (puisque l'objet `hass` est partout). On ne va pas le faire dans ce tuto, mais sache que cela existe et que c'est fréquemment utilisé.
 
 On verra dans le tuto5 [](/blog/dev_tuto_5_avance)une utilisation avancée de cet objet pour rechercher toutes des entités, même celles qui ne nous appartiennent pas.
@@ -85,7 +85,7 @@ Pour ce faire, il faut faire générer par Home Assistant un évènement basé s
 
 Dans notre capteur, on a besoin d'une fonction spéciale qui est appelée par Home Assistant lorsque l'entité a été prise en compte. C'est la méthode `async_added_to_hass`qui est définie dans la classe de base de toutes les entités et que l'on va surcharger pour ajouter notre comportement souhaité.
 
-On marque cette méthode avec l'annotation `@callback` pour signifier qu'on surcharge une méthode de la classe de base. Même si ce n'est pas indispensable, ça donne des indications au lecteur.
+On marque cette méthode avec l'annotation `@callback` pour signifier que l'on surcharge une méthode de la classe de base. Même si ce n'est pas indispensable, cela donne des indications au lecteur.
 
 ```python
 from datetime import timedelta
@@ -127,8 +127,8 @@ class TutoHacsElapsedSecondEntity(SensorEntity):
         _LOGGER.info("Appel de incremente_secondes à %s", datetime.now())
 ```
 
-Testons pour voir si notre méthode est bien appelée toutes les secondes (`Command `+ `Shift `+ `P `/ `Taches`...)
-Si on regarde les logs, on voit bien que :
+Testons pour voir si notre méthode est bien appelée toutes les secondes (`Command`+ `Shift`+ `P`/ `Taches`...)
+Si on regarde les logs, on constate bien ceci :
 
 ```log
 2023-04-10 21:20:06.027 INFO (MainThread) [custom_components.tuto_hacs.sensor] Appel de incremente_secondes à 2023-04-10 21:20:06.027870
@@ -168,7 +168,7 @@ On redémarre, on voit toujours les logs "bouger" toutes les secondes et si on r
 
 ## Publier et recevoir des évènements
 
-Le cœur de Home Assistant est basé sur **un bus d'évènements** sur lequel on peut publier ou s'abonner. Il est fondamental de savoir s'y interfacer puisque c'est par là que va passer **toutes communications entre les différents composants** de Home Assistant.
+Le cœur de Home Assistant est basé sur **un bus d'évènements** sur lequel on peut **publier** ou **s'abonner** (publish / subscribe). Il est fondamental de savoir s'y interfacer puisque c'est par là que vont passer **toutes communications entre les différents composants** de Home Assistant.
 
 ### Publication d'un évènement
 
@@ -194,7 +194,7 @@ On va modifier notre méthode `incremente_secondes` de notre entité vedette pou
             )
 ```
 
-Ça tient en une ligne : `self._hass.bus.fire` qui prend en argument : le type d'évènement et un json qui contient des infos sur l'événement.
+Ça tient en une ligne : `self._hass.bus.fire` qui prend en argument : le type d'évènement et un JSON qui contient des infos sur l'événement.
 
 On arrête et on relance Home Assistant. Si on contrôle dans le web ou dans "Outils de développement / Événement" et qu'on s'abonne à l'évènement `event_changement_etat_TutoHacsElapsedSecondEntity`, on constate cela :
 
@@ -202,7 +202,7 @@ On arrête et on relance Home Assistant. Si on contrôle dans le web ou dans "Ou
 
 Toutes les 5 secondes, on a bien un évènement généré qui contient dans ses data, l'attribut `nb_secondes` qui s'incrémente bien de 5 en 5.
 
-> 💡Si on s'abonne aux évènements de type `state_changed` on voit que toutes les secondes, notre changement d'état fait l'objet d'un évènement. La ligne `self.async_write_ha_state()` génère un évènement de type `state_changed` qui contient les informations suivantes :
+> 💡 Si on s'abonne aux évènements de type `state_changed` on voit que toutes les secondes, notre changement d'état fait l'objet d'un évènement. La ligne `self.async_write_ha_state()` génère un évènement de type `state_changed` qui contient les informations suivantes :
 
 ```yaml
 event_type: state_changed
@@ -380,11 +380,11 @@ Cela va se faire dans la méthode `_on_event` qu'il faut ajouter à notre 2d cla
 
 Ce code déroule les étapes suivantes :
 
-1. Il reçoit un `event` du type `Event` en argument. **`Event` une core classe** qu'il est important de connaitre. Un `Event` contient l'`entity_id` de l'émetteur, un champ `data` de type "dictonnary" qui contient 2 attributs : `new_state` et `old_state` avec respectivement le nouvel état et l'ancien état de l'entité,
+1. Il reçoit un `event` du type `Event` en argument. **`Event` une core classe** qu'il est important de connaitre. Un `Event` contient l'`entity_id` de l'émetteur, un champ `data` de type `dictionnary` qui contient 2 attributs : `new_state` et `old_state` avec respectivement le nouvel état et l'ancien état de l'entité,
 2. on commence par **récupérer son ancien et nouvel état** : `new_state: State = event.data.get("new_state")`. J'ai mis en commentaire le code qui permet de récupérer l'ancien état (non utilisé ici)
-3. l'objet `new_state` est de type **`State` qui est aussi une core classe** à connaitre. Elle contient : l'état dans le champ `state`, les `state_class`, `unit_of_mesurement`, `device_class` de cet état, et 2 timestamp `last_changed` (l'horodatage du changement d'état) et `last_updated` (l'horodatage de la dernière mise à jour). Ces 2 horodatages peuvent être différents dans le cas d'une entité avec polling. Dans ce cas, la date de remontée de l'état (date du poll) n'est pas forcément la date du changement d'état. Si on poll toutes les minutes, il peut y avoir jusqu'à une minute d'écart entre le changement d'état effectif et la date de sa remontée. Dans notre cas et dans la plupart des cas, on préfère utiliser la date du changement d'état effectif et donc `last_changed.`
+3. l'objet `new_state` est de type **`State` qui est aussi une core classe** à connaitre. Il contient : l'état dans le champ `state`, les `state_class`, `unit_of_mesurement`, `device_class` de cet état, et 2 "timestamp" `last_changed` (l'horodatage du changement d'état) et `last_updated` (l'horodatage de la dernière mise à jour). Ces 2 horodatages peuvent être différents dans le cas d'une entité avec "polling". Dans ce cas, la date de remontée de l'état (date du poll) n'est pas forcément la date du changement d'état. Si on poll toutes les minutes, il peut y avoir jusqu'à une minute d'écart entre le changement d'état effectif et la date de sa remontée. Dans notre cas et dans la plupart des cas, on préfère utiliser la date du changement d'état effectif et donc `last_changed.`
 4. On vérifie que **l'état est bien positionné** avec cette ligne : `if new_state is None or new_state.state in (STATE_UNAVAILABLE, STATE_UNKNOWN)`. Il faut qu'il y ait un `new_state` et que le `state` de ce `new_state` ne soit pas 'Unavailable" ni "Unknown". Si c'est le cas, on arrête ici et on ne met pas à jour notre état,
-5. s'il y a bien un état valide, **on met à jour notre propre état** avec l'horodate du dernier changement : `self._attr_native_value = new_state.last_changed`
+5. s'il y a bien un état valide, **on met à jour notre propre état** avec l'horodatage du dernier changement : `self._attr_native_value = new_state.last_changed`
 6. on sauvegarde notre nouvel état avec `self.async_write_ha_state()`
 
 Il faudra ajouter les quelques imports suivants pour que cela fonctionne (en début de fichier) :
@@ -413,7 +413,7 @@ Vérifies qu'il n'y a pas d'erreur :
 
 ![no probleme](img/compilation-no-probleme.png)
 
-Relance Home Assistant (`Command `+ `Shift `+ `P`) et regarde les logs. Tu dois voir quelque-chose comme ça :
+Relance Home Assistant (`Command`+ `Shift`+ `P`) et regarde les logs. Tu dois voir quelque-chose comme ça :
 
 ```log
 2023-04-15 08:10:36.889 INFO (MainThread) [custom_components.tuto_hacs.sensor] Appel de incremente_secondes à 2023-04-15 08:10:36.889856
