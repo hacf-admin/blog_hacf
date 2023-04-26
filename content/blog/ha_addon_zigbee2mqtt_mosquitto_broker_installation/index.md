@@ -58,7 +58,8 @@ La dernière (CC2531/CC2530) est toujours compatible, mais entame son transfert 
 
 Home Assistant propose également une clé compatible Zigbee et **Matter** également très intéressante appelée [SkyConnect](https://www.home-assistant.io/skyconnect/). Elle permet de préparer l'arrivée du protocole Matter, même si cela peut prendre quelques années.
 
-\###Les add-ons / Intégrations dans Home Assistant
+### Les add-ons / Intégrations dans Home Assistant
+
 Il existe plusieurs façons de communiquer avec vos clés universelles dans Home Assistant, chacune ayant ses avantages et inconvénients, mais aussi une quantité d'appareils (devices) compatibles.
 
 > [Base de données des compatibilités des appareils et des intégrations](https://zigbee.blakadder.com/)
@@ -73,9 +74,9 @@ Nous allons voir comment installer **Zigbee2MQTT** et le **broker MQTT Mosquitto
 
 ## Création d'un utilisateur Home Assistant (facultatif)
 
-> **Cette étape est facultative, car elle se fait automatiquement maintenant.**
+> **Cette étape est facultative, car un utilisateur Zigbee2mqtt est créé automatiquement maintenant.**
 
-Si vous souhaitez le créer par vous-même.
+Si vous souhaitez créer un utilisateur dédié a Zigbee2mqtt par vous-même :
 
 * Rendez-vous dans `paramètre`, `Personnes` puis `Ajouter une personne`,
 * Basculer le bouton `Autoriser à se connecter`,
