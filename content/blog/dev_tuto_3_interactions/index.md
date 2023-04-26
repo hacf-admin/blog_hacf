@@ -422,8 +422,9 @@ Relance Home Assistant (`Command`+ `Shift`+ `P`) et regarde les logs. Tu dois vo
 
 Ce log se répète toutes les secondes, puisque l'état de la première entité se met à jour toutes les secondes.
 
-Si on regarde dans l'"Outil de développement / État" ([ici](http://localhost:9123/developer-tools/state)) de notre interface web HA et que l'on cherche "ecouteur", on voit bien notre deuxième entité avec comme état l'horodatage qui change toutes les secondes :
-![entité écouteur](img/entite-ecouteur.png?raw=true)
+Si on regarde dans l'Outil de développement / État" (<http://localhost:9123/developer-tools/state>) de notre interface web HA et que l'on cherche "ecouteur", on voit bien notre deuxième entité avec comme état l'horodatage qui change toutes les secondes :
+
+![Entité écouteur](img/entite-ecouteur.png "Entité écouteur")
 
 Le dashboard aperçu (ici) affiche aussi nos 2 entités :
 
@@ -443,7 +444,7 @@ On va implémenter un service qui permet de remettre à zéro notre compteur pou
 
 ### Déclaration du service
 
-Home Assistant découvre les services exposés par les intégrations grâce au fichier `services.yaml` présent à la racine de l'intégration. Pour notre exemple, il va ressembler à ça :
+Home Assistant découvre les services exposés par les intégrations grâce au fichier `services.yaml` présent à la racine de l'intégration. Pour notre exemple, il va ressembler à cela :
 
 ```yaml
 raz_compteur:
@@ -479,9 +480,9 @@ Ce fichier contient :
    3. est-ce qu'il apparait seulement en mode 'Avancé' ?. Ici non puisqu'on veut le voir tout le temps,
    4. un exemple de valeur,
    5. la valeur par défaut,
-   6. et un `selector` qui permet à l'utilisateur de choisir la valeur qu'il veut. Ici, on utilise un selector de type `number` avec une valeur minimale de 0, une valeur maximale de 900, un pas de 1 et l'utilisateur pourra choisir la valeur sur un slider. On verra le rendu un peu en dessous.
+   6. et un `selector` qui permet à l'utilisateur de choisir la valeur qu'il veut. Ici, on utilise un selector de type `number` avec une valeur minimale de 0, une valeur maximale de 900, un pas de 1 et l'utilisateur pourra choisir la valeur sur un "slider". On verra le rendu un peu en dessous.
 
-Home Assistant propose un nombre de sélecteurs très impressionnants et vraiment bien foutus. Tu trouveras la liste [ici](https://www.home-assistant.io/docs/blueprint/selectors/).
+Home Assistant propose un nombre de sélecteurs très impressionnants et vraiment bien foutus. Tu trouveras la liste ici.
 
 ### Enregistrement du service au setup
 
@@ -538,7 +539,7 @@ SERVICE_RAZ_COMPTEUR = "raz_compteur"
 
 #### Voluptuous
 
-Cette partie est complexe et sera abordée beaucoup plus en détail avec le [tuto4](/blog/dev_tuto_4_config_flow). Pour l'instant, on va juste donner une structure qui liste les paramètres "valeur_depart", donne son caractère facultatif (`vol.Optional`) et indique qu'on attend un entier positif (`cv.positive_int`).
+Cette partie est complexe et sera abordée beaucoup plus en détail avec le [tuto4](/blog/dev_tuto_4_config_flow). Pour l'instant, on va juste donner une structure qui liste les paramètres `valeur_depart`, donne son caractère facultatif (`vol.Optional`) et indique qu'on attend un entier positif (`cv.positive_int`).
 
 C'est une des parties les moins bien documentée à la fois dans Home Assistant, mais aussi dans le package `voluptuous` lui-même donc je ne rentre pas plus dans le détail dans ce tuto.
 
@@ -572,7 +573,7 @@ L'appel du service provoque une erreur de type :
 AttributeError: 'TutoHacsElapsedSecondEntity' object has no attribute 'service_raz_compteur'
 ```
 
-puisqu'en effet notre classe `TutoHacsElapsedSecondEntity` n'a pas encore de méthode `service_raz_compteur`. On va y remédier tout de suite.
+Effectivement, notre classe `TutoHacsElapsedSecondEntity` n'a pas encore de méthode `service_raz_compteur`. On va y remédier tout de suite.
 
 On voit que la structure est en place, le service est bien déclaré et pris en compte par Home Assistant.
 
@@ -600,11 +601,13 @@ Pour cela, c'est très simple, il suffit d'ajouter une méthode `service_raz_com
 3. On affecte notre état avec la valeur passée ou avec 0 si elle est absente (`None`). Python permet de faire tout ça en une seule ligne avec la forme `_attr_native_value = valeur_depart if valeur_depart is not None else 0` qui se lit très bien.
 4. On sauvegarde notre nouvel état avec `self.async_write_ha_state()`
 
-Redémarres Home Assistant et vérifie que cette fois l'appel du service se passe bien. Tu dois avoir une coche verte.
+Redémarre Home Assistant et vérifie que cette fois l'appel du service se passe bien. Tu dois avoir une **coche verte**.
 
-Si tu regardes le nouvel état de ton entité ([ici](http://localhost:9123/developer-tools/state) ou [ici](http://localhost:9123/lovelace/0)), tu dois constater le redémarrage du compteur à la valeur spécifiée.
+Si tu regardes le nouvel état de ton entité (<http://localhost:9123/developer-tools/state> ou <http://localhost:9123/lovelace/0>), tu dois constater le redémarrage du compteur à la valeur spécifiée.
 
-> 💡Si tu appelles le service sur la deuxième entité, tu vas avoir une erreur car nous n'avons définit le service sur la classe de cette entité. Pour éviter ça :
+> 💡 Si tu appelles le service sur la deuxième entité, tu vas avoir une erreur car nous n'avons définit le service sur la classe de cette entité.
+>
+> Pour éviter ça :
 >
 > 1. on peut implémenter le service dans la classe `TutoHacsListenEntity` mais ça fait un appel qui ne sert à rien,
 > 2. ou limiter les entités ciblées dans le `target` de notre `services.yaml`. On peut utiliser le paramètre `device_class` du selector à `duration` puisque seule la première classe à cette `device_class`. On a alors une configuration `target` qui ressemble à ça :
