@@ -609,8 +609,8 @@ Si tu regardes le nouvel état de ton entité (<http://localhost:9123/developer-
 >
 > Pour éviter ça :
 >
-> 1. on peut implémenter le service dans la classe `TutoHacsListenEntity` mais ça fait un appel qui ne sert à rien,
-> 2. ou limiter les entités ciblées dans le `target` de notre `services.yaml`. On peut utiliser le paramètre `device_class` du selector à `duration` puisque seule la première classe à cette `device_class`. On a alors une configuration `target` qui ressemble à ça :
+> 1. on peut implémenter le service dans la classe `TutoHacsListenEntity` mais cela fera un appel qui ne sert à rien,
+> 2. ou alors limiter les entités ciblées dans le `target` de notre `services.yaml`. Pour cela, on peut utiliser le paramètre `device_class` du selector à `duration` puisque seule la première classe à cette `device_class`. On a alors une configuration `target` qui ressemble à ça :
 >
 > ```yaml
 >  target:
@@ -619,11 +619,11 @@ Si tu regardes le nouvel état de ton entité (<http://localhost:9123/developer-
 >      device_class: duration
 > ```
 >
-> Après arrêt / relance, tu ne peux plus sélectionner que la première entité dans l'interface de lancement du service.
+> Après arrêt / relance, tu ne peux plus que sélectionner la première entité dans l'interface de lancement du service.
 
 ## Intégrer notre entité dans l'écosystème Home Assistant
 
-Les services sont très utiles pour intégrer notre intégration dans l'écosystème Home Assistant. Grâce à lui, on va pouvoir faire une automatisation qui raz le compteur sur un évènement particulier ou intégrer le raz dans un script.
+Les services sont très utiles pour intégrer notre intégration dans l'écosystème Home Assistant. Grâce à eux, on va pouvoir faire une automatisation qui fait un RAZ du compteur sur un évènement particulier, ou alors intégrer le raz dans un script.
 
 Pour cela, il faut ajouter le yaml suivant (donné par "Outils de développement / Services / Passez en mode YAML") :
 
@@ -635,7 +635,9 @@ target:
   entity_id: sensor.tuto_hacs_entite_3
 ```
 
-On peut aussi utiliser notre entité comme trigger des automatisations. Un exemple complet :
+On peut aussi utiliser notre entité comme trigger des automatisations.
+
+Voici un exemple complet :
 
 ```yaml
 alias: Raz le compteur après une minute
@@ -655,19 +657,20 @@ mode: single
 ```
 
 Cette automatisation se déclenche lorsque la valeur du compteur est supérieure à 60 et remet à zéro le compteur si c'est le cas via l'utilisation du service.
-Vérifies [ici](http://localhost:9123/lovelace/0) que cela fonctionne bien.
+
+Vérifies que cela fonctionne bien en accédant <http://localhost:9123/lovelace/0>
 
 ## Conclusion
 
-Ce tuto t'a permis d'apprendre à créer des entités qui interagissent avec l'extérieur en publiant des états, écoutant les états des autres entités et en publiant des services utilisables par les automatisations et les scripts.
+Ce tuto t'a permis d'apprendre à créer des entités qui **interagissent avec l'extérieur** en **publiant des états**, **écoutant les états des autres entités** et en **publiant des services** utilisables par les automatisations et les scripts.
 
 Il est impossible d'être exhaustif tellement l'écosystème Home Assistant est riche. Pour découvrir d'autres façons d'interagir c'est le moment de faire un tour dans la documentation de référence et notamment dans les articles suivants :
 
-* https://developers.home-assistant.io/docs/integration_listen_events
-* https://developers.home-assistant.io/docs/creating_integration_manifest
-* https://developers.home-assistant.io/docs/configuration_yaml_index
-* https://developers.home-assistant.io/docs/dev_101_services
-* https://developers.home-assistant.io/docs/dev_101_config
+* [Listening for events](https://developers.home-assistant.io/docs/integration_listen_events/)
+* [Integration Manifes](https://developers.home-assistant.io/docs/creating_integration_manifest/)t
+* [Integration Configuration via YAML](https://developers.home-assistant.io/docs/configuration_yaml_index/)
+* [Integration Services](https://developers.home-assistant.io/docs/dev_101_services/)
+* [Config](https://developers.home-assistant.io/docs/dev_101_config/)
 
 > 💡 Dans le prochain [tuto4](/blog/dev_tuto_4_config_flow), on va apprendre à configurer notre intégration à travers l'interface de Home Assistant et non plus à travers le fichier `configuration.yaml`.
 
