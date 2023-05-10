@@ -179,7 +179,7 @@ Les intégrations suivantes sont désormais disponibles via l'interface utilisat
 
 **Accuweather**
 
-Les `ozone`capteurs et l' `ozone`attribut d'état de l'entité météo ont affiché des valeurs incorrectes et sont en cours de suppression. Si vous utilisez ces valeurs dans vos automatisations ou scripts, vous devez les mettre à jour.
+Les capteurs `ozone` et l'attribut d'état `ozone`  de l'entité météo ont affiché des valeurs incorrectes et sont en cours de suppression. Si vous utilisez ces valeurs dans vos automatisations ou scripts, vous devez les mettre à jour.
 
 ( [@bieniu](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bieniu) - [\#91492](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91492) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/accuweather?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
@@ -187,11 +187,11 @@ Les `ozone`capteurs et l' `ozone`attribut d'état de l'entité météo ont aff
 
 L'intégration "Android TV" a été renommée "Android Debug Bridge".
 
-Ce changement de nom est dû au fait que c'est ce qu'il a réellement contrôlé/fourni. Avec l'ajout de l'intégration d'Android TV Remote dans cette version, nous voulions réduire toute confusion possible à l'avenir.
+Ce changement de nom est dû au fait que c'est ce qu'il a réellement contrôlé/fourni. Avec l'ajout de l'intégration d'Android TV Remote dans cette version, nous voulions réduire toute confusion à venir.
 
 ( [@tronikos](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/tronikos) - [\#90657](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90657) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/androidtv?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
-**Histoire**
+**History**
 
 Toutes les options de configuration YAML pour l'intégration de l'historique ont été supprimées car elles n'étaient plus utilisées par le frontend.
 
@@ -199,29 +199,29 @@ Toutes les options de configuration YAML pour l'intégration de l'historique ont
 
 **HomeKit**
 
-Les humidités cibles min/max pour l'appareil (dés)humidificateur exposé sur HomeKit ont changé. L'interface utilisateur HomeKit affichera désormais l'humidité relative réelle. Lorsque le curseur dans HomeKit passe au-dessus ou en dessous de l'humidité max/min définie, il sera ramené à l'humidité max/min autorisée.
+Les humidités cibles min/max pour les dispositifs de (dé)humidification exposés via HomeKit ont changé. L'interface HomeKit affiche désormais l'humidité relative réelle. Lorsque le curseur dans HomeKit passe au-dessus ou en dessous de l'humidité max/min définie, il sera ramené à l'humidité max/min autorisée.
 
 ( [@stackia](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/stackia) - [\#90854](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90854) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/homekit?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
-HomeKit par défaut pour écouter sur toutes les interfaces pour correspondre au comportement de Home Assistant. Pour limiter HomeKit à des interfaces réseau spécifiques, spécifiez un `address`in `configuration.yaml`.
+Par défaut, HomeKit écoute sur toutes les interfaces pour correspondre au comportement de Home Assistant. Pour limiter HomeKit à des interfaces réseau spécifiques, spécifiez une adresse dans `configuration.yaml.`
 
 ( [@bdraco](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bdraco) - [\#91520](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91520) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/homekit?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
 **IMAP**
 
-L'utilisation de `imap_content`l'événement peut être interrompue pour les utilisateurs qui souhaitent analyser les données de messages électroniques plus volumineux à partir de la partie tronquée. Seuls les 2 048 premiers octets du corps du message (2 Kio) seront disponibles.
+L'utilisation de l'événement `imap_content` pourrait perturber les utilisateurs qui souhaitent analyser les données de messages électroniques plus volumineux à partir de la partie tronquée. Seuls les 2048 premiers octets du corps du message (2 KiB) seront disponibles.
 
 ( [@jbouwh](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/jbouwh) - [\#92066](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/92066) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/imap?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
 **Overkiz**
 
-L'option de silence pour DynamicShutter a été supprimée car elle rendait l'entité de couverture non fonctionnelle si elle ne prenait pas en charge le silence. Cette fonctionnalité sera réintroduite dans une prochaine version.
+L'option de silence pour DynamicShutter a été supprimée car elle rendait l'entité cover non fonctionnelle si elle ne prenait pas en charge la fonction "muet". Cette fonctionnalité sera réintroduite dans une prochaine version.
 
 ( [@iMicknl](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/iMicknl) - [\#91354](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91354) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/overkiz?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
 **Reolink**
 
-Pour les sonnettes Reolink, l'entité lumineuse "Status LED" est remplacée par une entité de sélection "Status LED". L' `off`état de l'interrupteur correspond à la sélection `Auto`et l' `on`état de l'interrupteur correspond à la sélection `Auto & always on at night`. Un `Stay off`état supplémentaire est maintenant disponible.
+Pour les sonnettes Reolink, l'entité lumineuse "Status LED" est remplacée par une entité de sélection "Status LED". L'état éteint correspond à la sélection Auto, et l'état allumé correspond à la sélection `Auto `& toujours allumé la nuit. Un état d'arrêt supplémentaire est désormais disponible.
 
 ( [@starkillerOG](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/starkillerOG) - [\#90469](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90469) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/reolink?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
