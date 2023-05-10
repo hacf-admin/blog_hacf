@@ -21,7 +21,7 @@ author: default
 
 **Home Assistant Core 2023.5 ! 🎉**
 
-*Quelle fabuleuse version nous avons pour vous ce mois-ci ! Cette version est entièrement consacrée à la voix (enfin, presque entièrement), et je suis super excité à l'idée que nous puissions vous livrer toutes ces choses vraiment incroyables !*
+*Quelle magnifique version nous avons pour vous ce mois-ci ! Cette version est entièrement consacrée à la voix (enfin, presque entièrement), et je suis super excité à l'idée que nous puissions vous livrer toutes ces choses vraiment incroyables !*
 
 *J'ai suivi les progrès de la construction de tout cela ce mois-ci, et sincèrement, j'ai été époustouflé plusieurs fois par semaine. Qu'est-ce qu'il y a là-dedans ? Eh bien, vous pouvez maintenant parler à Home Assistant ! 🤯*
 
@@ -102,7 +102,7 @@ Le boîtier de notre étonnant [Home Assistant Yellow](https://www-home--assista
 
 Cependant, les LED de la carte peuvent éclairer votre environnement lorsqu'il fait sombre de manière indésirable. Par exemple, lorsque vous dormez dans la même pièce que votre Home Assistant Yellow.
 
-A partir de cette version, vous pouvez configurer (activer/désactiver) le disque, le rythme cardiaque et les LEDs d'alimentation de votre Home Assistant Yellow en utilisant le bouton Configurer sur la page `Paramètres `> `Matériel`.
+A partir de cette version, vous pouvez configurer (activer/désactiver) le disque, le rythme cardiaque et les LEDs d'alimentation de votre Home Assistant Yellow en utilisant le bouton Configurer sur la page `Paramètres`> `Matériel`.
 
 ![home-assistant-yellow-led-controls](img/home-assistant-yellow-led-controls.png)
 
@@ -221,21 +221,21 @@ L'option de silence pour DynamicShutter a été supprimée car elle rendait l'en
 
 **Reolink**
 
-Pour les sonnettes Reolink, l'entité lumineuse "Status LED" est remplacée par une entité de sélection "Status LED". L'état éteint correspond à la sélection Auto, et l'état allumé correspond à la sélection `Auto `& toujours allumé la nuit. Un état d'arrêt supplémentaire est désormais disponible.
+Pour les sonnettes Reolink, l'entité lumineuse `Status LED` est remplacée par une **entité de sélection** `Status LED`. L'état `off `correspond à la sélection `Auto`, et l'état `on `correspond à la sélection `Auto & always on at night`. Un état `Stay off` supplémentaire est désormais disponible.
 
 ( [@starkillerOG](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/starkillerOG) - [\#90469](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90469) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/reolink?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
 **Snapcast**
 
 * Les groupes en sourdine avec diffusion en continu auront un état `idle`au lieu de `playing`.
-* Les clients connectés n'auront `on`plus d'état mais utiliseront les mêmes états que les groupes : `idle`et `playing`.
-* Les clients déconnectés ont un état `standby`au lieu de `off`car le serveur Snapcast accepte toujours les commandes.
+* Les clients connectés n'auront plus d'état `on `mais utiliseront les mêmes états que les groupes : `idle` et `playing`.
+* Les clients déconnectés ont un état `standby` au lieu de `off `car le serveur *Snapcast* accepte toujours les commandes.
 
-( [@luar123](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/luar123) - [\#77449](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/77449) ​​) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/snapcast?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+( [@luar123](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/luar123) - [\#77449](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/77449)) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/snapcast?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp))
 
 **DSM de Synology**
 
-La conversion d'unité pour tous les capteurs liés à la mémoire, au stockage et à l'utilisation du réseau a été corrigée de la base binaire ( *1024* ) à la base décimale ( *1000* ) pour être en ligne avec les unités de mesure utilisées ( *eq. Mo = 1.000.000 octets* ).
+La conversion d'unité pour tous les capteurs liés à la mémoire, au stockage et à l'utilisation du réseau a été passée de la base binaire (*1024*) à la base décimale (*1000*) pour être en ligne avec les unités de mesure utilisées ( *eq. Mo = 1.000.000 octets*).
 
 Vous devrez peut-être mettre à jour les unités enregistrées historiquement pour ces capteurs via la page de statistiques sous les outils de développement.
 
@@ -243,15 +243,15 @@ Vous devrez peut-être mettre à jour les unités enregistrées historiquement p
 
 **Modèles**
 
-L' `ensure_ascii`argument pour `to_json`dans les modèles Jinja est désormais par défaut `False`, ce qui nous permet d'utiliser un encodeur JSON plus rapide par défaut.
+L'argument `ensure_ascii` pour `to_json` dans les modèles Jinja est désormais défini par défaut sur False, ce qui nous permet d'utiliser un encodeur JSON plus rapide par défaut.
 
-Cela ne devrait pas être un problème pour la plupart, car les analyseurs JSON acceptent largement les entrées Unicode. Si vous avez encore besoin d'encoder des caractères Unicode dans des chaînes JSON, définissez `ensure_ascii`explicitement `True`pour restaurer l'ancien comportement.
+Cela ne devrait pas poser de problème pour la plupart des utilisateurs, car les analyseurs JSON acceptent généralement les entrées Unicode. Si vous avez toujours besoin d'encoder des caractères Unicode dans les chaînes JSON, définissez explicitement `ensure_ascii` à `True `pour rétablir l'ancien comportement.
 
 ( [@depoll](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/depoll) - [\#91253](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90863) )
 
 **Réseau UniFi**
 
-L'intégration UniFi ne fournit plus les attributs `hostname`et `host_name`pour une entité de suivi des clients. Seul `host_name`sera fourni en tant qu'attribut.
+Le service précédent `set_doorbell_message `a été supprimé. Utilisez l'entité `text `pour l'écran LCD UniFi Protect à la place.
 
 ( [@Kane610](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/Kane610) - [\#91188](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91188) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/unifi?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
@@ -261,7 +261,7 @@ Le `set_doorbell_message`service obsolète précédent a été supprimé. Util
 
 ( [@AngellusMortis](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/AngellusMortis) - [\#91523](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91523) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/unifiprotect?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
-Dispositifs universels ISY/IoX
+**Dispositifs universels ISY/IoX**
 
 La configuration YAML précédemment obsolète de l'intégration Universal Devices ISY/IoX a été supprimée.
 
@@ -269,13 +269,9 @@ Universal Devices ISY/IoX est maintenant configuré via l'interface utilisateur.
 
 ( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#91575](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91575) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
-- - -
-
-L'unité de pourcentage intégrée `%`est maintenant utilisée pour l'humidité relative et l'humidité absolue au lieu des unités personnalisées `%RH`et `%AH`, respectivement.
+L'unité de pourcentage intégrée `% `est maintenant utilisée pour l'humidité relative et l'humidité absolue au lieu des unités personnalisées `%RH` et `%AH`.
 
 ( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#90863](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90863) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
-
-- - -
 
 Les services ISY994 personnalisés suivants ont été supprimés :
 
@@ -287,27 +283,27 @@ Les services ISY994 personnalisés suivants ont été supprimés :
 * `run_network_resource`
 * `set_variable`
 
-Ces services étaient auparavant obsolètes au profit des services intégrés et des entités `number`, `select`et `button`. Veuillez mettre à jour vos automatisations et tableaux de bord pour utiliser les nouvelles entités et/ou services intégrés si vous ne l'avez pas déjà fait.
+Ces services étaient auparavant obsolètes au profit des services intégrés et des entités `number`, `select` et `button`. Veuillez mettre à jour vos automatisations et tableaux de bord pour utiliser les nouvelles entités et/ou services intégrés si vous ne l'avez pas déjà fait.
 
 ( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#91569](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91569) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
 - - -
 
-Les nœuds Crépuscule/Aube sur les capteurs de mouvement Insteon ont maintenant leurs états inversés pour afficher correctement « Lumière détectée » pendant la lumière du jour et « Pas de lumière » lorsque le capteur crépusculaire est actif.
+Les nœuds Crépuscule/Aube sur les capteurs de mouvement `Insteon `ont maintenant leurs états inversés pour afficher correctement « Lumière détectée » pendant la lumière du jour et « Pas de lumière » lorsque le capteur crépusculaire est actif.
 
 Ceci est inversé par rapport au comportement précédent. Si vous comptez sur ce capteur dans vos automatisations, ils doivent être mis à jour.
 
 ( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#92035](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/92035) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
 
-Webhooks
+**Webhooks**
 
-Deux nouvelles options de déclenchement Webhook ont ​​été ajoutées pour limiter la manière dont un webhook peut déclencher une automatisation. Une nouvelle option *allow_methods* peut être utilisée pour contrôler quelles méthodes de requête HTTP peuvent activer le déclencheur ( `GET`, `HEAD`, `POST`et `PUT`). Et l' `local_only`option est utilisée pour permettre aux appareils extérieurs à votre réseau local d'activer le déclencheur.
+Deux nouvelles options de déclenchement des webhooks ont été ajoutées pour limiter la façon dont un webhook peut déclencher une automatisation. Une nouvelle option allowed_methods peut être utilisée pour contrôler les méthodes de requête HTTP qui peuvent activer le déclencheur (`GET`, `HEAD`, `POST `et `PUT`). L'option local_only est utilisée pour permettre aux appareils situés en dehors de votre réseau local d'activer le déclencheur.
 
-Auparavant, tous les déclencheurs de webhook pouvaient être activés par les méthodes `HEAD`, `POST`et `PUT`depuis n'importe quel appareil (local ou sur Internet). Avec les nouvelles options, seuls `POST`et `PUT`sont activés par défaut.
+Auparavant, tous les déclencheurs de webhook pouvaient être activés par les méthodes `HEAD`, `POST `et `PUT `à partir de n'importe quel appareil (local ou sur internet). Avec les nouvelles options, seuls `POST `et `PUT `sont activés par défaut.
 
-Dans Home Assistant Core 2023.7, tout déclencheur de webhook qui n'est pas défini `local_only`sur false ne peut être activé que par des appareils sur le même réseau que Home Assistant.
+Dans Home Assistant Core 2023.7, tout déclencheur webhook qui ne définit pas `local_only `à `false `ne peut être activé que par des appareils sur le même réseau que Home Assistant.
 
-Cliquez sur l'icône d'engrenage/roue dentée à côté de l'ID Webhook pour mettre à jour vos déclencheurs Webhook. Sélectionnez ensuite une valeur appropriée pour **Uniquement accessible depuis le réseau local** . Il est nécessaire de désélectionner l'option pour que le bouton **Enregistrer** apparaisse. Puis resélectionnez l'option si elle doit être activée. Cela fera disparaître l'avertissement de réparation.
+Cliquez sur l'icône en forme de roue dentée à côté de l'ID du webhook pour mettre à jour vos déclencheurs de webhook. Sélectionnez ensuite une valeur appropriée pour l'option Uniquement accessible depuis le réseau local. Il est nécessaire de désélectionner l'option pour que le bouton Enregistrer apparaisse. Puis re-sélectionnez l'option si elle doit être activée. L'avertissement de réparation disparaîtra ainsi.
 
 ![breaking-change-webhook-triggers](img/breaking-change-webhook-triggers.png)
 
@@ -317,7 +313,7 @@ Consultez la [documentation du déclencheur de webhook](https://www-home--assis
 
 **Z-Wave**
 
-Avec cette version, vous devrez mettre à jour votre `zwave-js-server`instance. Vous devez utiliser `zwave-js-server`1.28.0 ou supérieur (schéma 28).
+**Avec cette version, vous devrez mettre à jour votre `zwave-js-server`instance.** Vous devez utiliser `zwave-js-server`1.28.0 ou supérieur (schéma 28).
 
 * Si vous utilisez le `Z-Wave JS`module complémentaire, vous avez besoin d'au moins la version `0.1.79`.
 * Si vous utilisez le `Z-Wave JS UI`module complémentaire, vous avez besoin d'au moins la version `1.11.2`.
