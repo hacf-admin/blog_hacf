@@ -330,7 +330,7 @@ Si vous êtes un développeur d'intégrations personnalisées et que vous souhai
 Les intégrations suivantes ne sont également plus disponibles à partir de cette version :
 
 * **Le coronavirus (COVID-19)** a été supprimé. Les données ne sont plus fournies par le fournisseur source. ([@emontnemery](https://github.com/emontnemery) - [\#90934](https://github.com/home-assistant/core/pull/90934))
-* **Xbox Live** était auparavant obsolète et a maintenant été supprimé. L' [intégration Xbox](https://www.home-assistant.io/integrations/xbox) est toujours disponible. ([@MartinHjelmare](https://github.com/MartinHjelmare) - [\#90592](https://github.com/home-assistant/core/pull/90592))
+* **Xbox Live** était auparavant obsolète et a maintenant été supprimé. L'[intégration Xbox](https://www.home-assistant.io/integrations/xbox) est toujours disponible. ([@MartinHjelmare](https://github.com/MartinHjelmare) - [\#90592](https://github.com/home-assistant/core/pull/90592))
 
 ## Toutes les modifications
 
