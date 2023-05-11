@@ -59,15 +59,15 @@ Pour vous aider à démarrer, nous nous sommes assurés que la documentation est
 * [Installer un pipeline Assist local](https://www.home-assistant.io/docs/assist/voice_remote_local_assistant/)
 * [Le petit assistant vocal basé sur ESPHome à 13$](https://www.home-assistant.io/projects/thirteen-usd-voice-remote/)
 
-Si vous avez manqué [la diffusion en direct de la semaine dernière](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://www.youtube.com/watch?v%3DTk-pnm7FY7c) , n'hésitez pas à la consulter. Elle regorge de démos en direct et d'explications détaillées de tout ce qui se trouve dans cette version. L'enregistrement du flux en direct :
+Si vous avez manqué la diffusion en direct de la semaine dernière, n'hésitez pas à la consulter. Elle regorge de démos en direct et d'explications détaillées de tout ce qui se trouve dans cette version. L'enregistrement du flux en direct :
 
 <https://www.youtube.com/watch?v=Tk-pnm7FY7c>
 
 ![](img/hqdefault2.jpg)
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#manage-what-is-exposed-to-your-voice-assistants)Gérez ce qui est exposé à vos assistants vocaux
+## )Gérez ce qui est exposé à vos assistants vocaux
 
-Un tout nouvel élément de menu intéressant se trouve dans votre menu **[Paramètres](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://my.home-assistant.io/redirect/config)** : **[assistants vocaux](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://my.home-assistant.io/redirect/voice_assistants)** !
+Un tout nouvel élément de menu intéressant se trouve dans votre menu *[Paramètres **:** assistants vocaux\*\* !
 
 ![](img/voice-assistants.png)
 
@@ -81,7 +81,7 @@ Il donne un aperçu des entités que vous avez exposées à vos assistants vocau
 
 Cela prend actuellement en charge notre [Assistant](<The $13 tiny ESPHome-based voice assistant>) Amazon Alexa et Google Assistant via Home Assistant Cloud.
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#improved-entity-setting)Paramétrage des entités amélioré.
+## Paramétrage des entités amélioré.
 
 Quelques améliorations ont été apportées à la boîte de dialogue de paramétrage des entités, afin de la rendre plus facile à utiliser et de lui donner un aspect plus épuré.
 
@@ -97,7 +97,7 @@ Et puisque nous sommes dans l'année de la voix, vous remarquerez peut-être l'o
 
 Cela vous permet de modifier rapidement les assistants vocaux auxquels l'entité est exposée, y compris ses alias, sans avoir à revenir au panneau des assistants vocaux dans l'écran principal des paramètres.
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#configuring-the-leds-of-your-home-assistant-yellow)Configurer les voyants de votre "Home Assistant Yellow"
+## Configurer les voyants de votre "Home Assistant Yellow"
 
 Le boîtier de notre étonnant [Home Assistant Yellow](https://www.home-assistant.io/yellow) vous permet de voir la magnifique carte et les pièces qu'elle contient.
 
@@ -107,7 +107,7 @@ A partir de cette version, vous pouvez configurer (activer/désactiver) le disqu
 
 ![home-assistant-yellow-led-controls](img/home-assistant-yellow-led-controls.png)
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#webhooks-trigger-options)Options de déclenchement des webhooks
+## Options de déclenchement des webhooks
 
 Les webhooks ont été étendus dans cette version. Nous prenons désormais en charge les webhooks qui utilisent la méthode **GET HTTP** !
 
@@ -115,7 +115,7 @@ Mais ce n'est pas tout. Grâce à [@esev](https://github.com/esev) , nous avo
 
 ![webhook-trigger-settings](img/webhook-trigger-settings.png)
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#new-assist-pipeline-and-language-selectors)Nouveau pipeline "Assistant" et sélecteurs de langue
+## Nouveau pipeline "Assistant" et sélecteurs de langue
 
 Si vous construisez des Blueprints d'automatisation ou de scripts, vous pouvez désormais utiliser deux nouveaux sélecteurs d'interface utilisateur avec vos Blueprints : un sélecteur de pipeline "Assistant" et un sélecteur de langue.
 
@@ -127,7 +127,7 @@ Vous pouvez, par exemple, exploiter cette possibilité dans un Blueprint de noti
 
 [Vous trouverez plus d'informations dans la documentation de nos sélecteurs](https://www.home-assistant.io/docs/blueprint/selectors) .
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#other-noteworthy-changes)Autres changements notables
+## Autres changements notables
 
 Il y a beaucoup plus de choses dans cette version ; Voici quelques-uns des autres changements notables de cette version :
 
@@ -136,12 +136,12 @@ Il y a beaucoup plus de choses dans cette version ; Voici quelques-uns des autr
 * Le processus de création de sauvegardes est désormais plus rapide 🚀, merci [@bdraco](https://github.com/bdraco) !
 * @bdraco a également amélioré l'intégration [ONVIF](https://www.home-assistant.io/integrations/openai_conversation) , ce qui devrait améliorer la stabilité de l'intégration. Top !
 * Vous pouvez désormais configurer plusieurs instances de l'intégration OpenAI Conversation avec, par exemple, différentes promps. Merci, [@balloob](https://github.com/balloob) !
-* [@rubenbe](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/rubenbe) a ajouté la prise en charge de l'orientation aux ventilateurs sous [MQTT](https://www.home-assistant.io/integrations/mqtt) !
+* @rubenbea ajouté la prise en charge de l'orientation aux ventilateurs sous [MQTT](https://www.home-assistant.io/integrations/mqtt) !
 * [BTHome](https://www.home-assistant.io/integrations/bthome) a ajouté la prise en charge des événements liés aux boutons et aux variateurs. Cela signifie qu'il prend en charge le tout nouveau [Shelly BLU Button1](https://www.shelly.cloud/en/products/shop/shelly-blu-button1?tracking=A7FsiPIfUWsFpnfKHa8SRyUYLXjr2hPq) ! Merci, [@Ernst79](https://github.com/Ernst79) !
 * Le [superviseur](https://www.home-assistant.io/integrations/hassio) peut désormais créer des suggestions de réparation pour certains des problèmes qu'il a détectés sur votre système. Génial [@mdegat01](https://github.com/mdegat01) !
-* [@mib1185](https://github.com/mib1185) a ajouté un service pour permettre le tri de la [liste d'achats](https://www-home--assistant-io.translate.goog/integrations/shopping_list?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) . Merci!
+* [@mib1185](https://github.com/mib1185) a ajouté un service pour permettre le tri de la liste d'achats. Merci !
 * [@depoll](https://github.com/depoll) a ajouté un attribut aux entités [Person ](https://www.home-assistant.io/integrations/person)qui liste les traqueurs d'appareils pour cette personne. Très utile pour les modèles ! Merci !
-* L' intégration [NextDNS](https://www.home-assistant.io/integrations/nextdns) a ajouté tout un tas de nouvelles options de contrôle parental, merci [@bieniu](https://github.com/bieniu) !
+* L'intégration [NextDNS](https://www.home-assistant.io/integrations/nextdns) a ajouté tout un tas de nouvelles options de contrôle parental, merci [@bieniu](https://github.com/bieniu) !
 * [Synology DSM](https://www.home-assistant.io/integrations/synology_dsm) peut désormais parcourir vos photos Synology dans le navigateur multimédia. Ajout cool, [@lodesmets](https://github.com/lodesmets) !
 * [Simplepush](https://www.home-assistant.io/integrations/simplepush) prend désormais en charge les pièces jointes, grâce à [@tymm](https://github.com/tymm) !
 * Certains capteurs de notification [Z-Wave](https://www.home-assistant.io/integrations/zwave_js) ne se mettent pas automatiquement en veille. Vous pouvez maintenant utiliser les nouveaux boutons de mise en veille des notifications pour les mettre en veille manuellement !
@@ -150,22 +150,22 @@ Il y a beaucoup plus de choses dans cette version ; Voici quelques-uns des autr
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-* **[Android TV Remote](https://www.home-assistant.io/integrations/androidtv_remote)** , ajouté par[ @tronikos](https://github.com/tronikos)\
+* **[Android TV Remote](https://www.home-assistant.io/integrations/androidtv_remote)**, ajouté par[ @tronikos](https://github.com/tronikos)\
   Lancez des applications et contrôlez votre appareil Android TV.
-* **[RAPT Bluetooth](https://www.home-assistant.io/integrations/rapt_ble)** , ajouté par[ @sairon](https://github.com/sairon)\
+* **[RAPT Bluetooth](https://www.home-assistant.io/integrations/rapt_ble)**, ajouté par[ @sairon](https://github.com/sairon)\
   Intègre les hydromètres *RAPT Pill* dans Home Assistant.
-* **[Voix sur IP](https://www.home-assistant.io/integrations/voip)** , ajoutée par[ @synesthesiam](https://github.com/synesthesiam)\
+* **[Voix sur IP](https://www.home-assistant.io/integrations/voip)**, ajoutée par[ @synesthesiam](https://github.com/synesthesiam)\
   Parler à[ Assist](https://www.home-assistant.io/docs/assist) à l'aide d'un téléphone analogique et d'un adaptateur VoIP.
-* **[Wyoming](https://www.home-assistant.io/integrations/wyoming)** , ajouté par[ @synesthesiam](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/synesthesiam)\
+* **[Wyoming](https://www.home-assistant.io/integrations/wyoming)**, ajouté par [@synesthesiam](https://github.com/synesthesiam)\
   Connectez-vous aux services vocaux supportant le protocole *Wyoming*.
-* **[Roborock](https://www-home--assistant-io.translate.goog/integrations/roborock?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @Lash-L](https://github.com/Lash-L)\
+* **[Roborock](https://www.home-assistant.io/integrations/roborock)**, ajouté par[ @Lash-L](https://github.com/Lash-L)\
   Contrôlez votre aspirateur RoboRock tout en gardant la prise en charge de l'application Roborock.
-* **[Anova](https://www.home-assistant.io/integrations/anova)** , ajouté par[ @Lash-L](https://github.com/Lash-L)\
+* **[Anova](https://www.home-assistant.io/integrations/anova)**, ajouté par[ @Lash-L](https://github.com/Lash-L)\
   Controller *Anova sous vides* avec capacités Wi-Fi.
 
 Cette version comporte également une **nouvelle intégration virtuelle**. Les intégrations virtuelles sont des modules qui sont gérés par d'autres intégrations (existantes) afin de faciliter la recherche. Celle-ci est nouvelle :
 
-* **[Monessen](https://www.home-assistant.io/integrations/monessen)** fourni par[ Intellifire](https://www.home-assistant.io/integrations/intellifire) , ajouté par[ @jeeftor](https://github.com/jeeftor)
+* **[Monessen](https://www.home-assistant.io/integrations/monessen)** fourni par [@Intellifire](https://www.home-assistant.io/integrations/intellifire) , ajouté par[ @jeeftor](https://github.com/jeeftor)
 
 ## Les intégrations sont maintenant disponibles pour être configurées à partir de l'interface utilisateur
 
@@ -176,7 +176,7 @@ Les intégrations suivantes sont désormais disponibles via l'interface utilisat
 * **[Snapcast](https://www.home-assistant.io/integrations/snapcast)** , réalisé par[ @luar123](https://github.com/luar123)
 * **[Journée de travail](https://www.home-assistant.io/integrations/workday)** , réalisée par[ @gjohansson-ST](https://github.com/gjohansson-ST)
 
-## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#breaking-changes)Changements de rupture
+## Changements de rupture
 
 **Accuweather**
 
@@ -202,7 +202,7 @@ Toutes les options de configuration YAML pour l'intégration de l'historique ont
 
 Les humidités cibles min/max pour les dispositifs de (dé)humidification exposés via HomeKit ont changé. L'interface HomeKit affiche désormais l'humidité relative réelle. Lorsque le curseur dans HomeKit passe au-dessus ou en dessous de l'humidité max/min définie, il sera ramené à l'humidité max/min autorisée.
 
-( [@stackia](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/stackia) - [\#90854](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90854) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/homekit?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@stackia](https://github.com/stackia) - [\#90854](https://github.com/home-assistant/core/pull/90854)) ([documentation](https://www.home-assistant.io/integrations/homekit))
 
 Par défaut, HomeKit écoute sur toutes les interfaces pour correspondre au comportement de Home Assistant. Pour limiter HomeKit à des interfaces réseau spécifiques, spécifiez une adresse dans `configuration.yaml.`
 
