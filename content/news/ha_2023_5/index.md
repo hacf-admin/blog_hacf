@@ -229,7 +229,7 @@ Pour les sonnettes Reolink, l'entité lumineuse `Status LED` est remplacée par 
 **Snapcast**
 
 * Les groupes en sourdine avec diffusion en continu auront un état `idle`au lieu de `playing`.
-* Les clients connectés n'auront plus d'état `on`mais utiliseront les mêmes états que les groupes : `idle` et `playing`.
+* Les clients connectés n'auront plus d'état `on` mais utiliseront les mêmes états que les groupes : `idle` et `playing`.
 * Les clients déconnectés ont un état `standby` au lieu de `off`car le serveur *Snapcast* accepte toujours les commandes.
 
 ([@luar123](https://github.com/luar123) - [\#77449](https://github.com/home-assistant/core/pull/77449)) ([documentation](https://www.home-assistant.io/integrations/snapcast))
@@ -252,7 +252,7 @@ Cela ne devrait pas poser de problème pour la plupart des utilisateurs, car les
 
 **Réseau UniFi**
 
-Le service précédent `set_doorbell_message`a été supprimé. Utilisez l'entité `text`pour l'écran LCD UniFi Protect à la place.
+Le service précédent `set_doorbell_message` a été supprimé. Utilisez l'entité `text` pour l'écran LCD UniFi Protect à la place.
 
 ([@Kane610](https://github.com/Kane610) - [\#91188](https://github.com/home-assistant/core/pull/91188)) ([documentation](https://www.home-assistant.io/integrations/unifi))
 
@@ -270,11 +270,11 @@ Universal Devices ISY/IoX est maintenant configuré via l'interface utilisateur.
 
 ([@shbatm](https://github.com/shbatm) - [\#91575](https://github.com/home-assistant/core/pull/91575)) ([documentation](https://www.home-assistant.io/integrations/isy994))
 
-L'unité de pourcentage intégrée `%`est maintenant utilisée pour l'humidité relative et l'humidité absolue au lieu des unités personnalisées `%RH` et `%AH`.
+L'unité de pourcentage intégrée `%` est maintenant utilisée pour l'humidité relative et l'humidité absolue au lieu des unités personnalisées `%RH` et `%AH`.
 
 ([@shbatm](https://github.com/shbatm) - [\#90863](https://github.com/home-assistant/core/pull/90863)) ([documentation](https://www.home-assistant.io/integrations/isy994))
 
-Les services ISY994 personnalisés suivants ont été supprimés :
+Les services **ISY994** personnalisés suivants ont été supprimés :
 
 * `reload`
 * `cleanup_entities`
@@ -287,8 +287,6 @@ Les services ISY994 personnalisés suivants ont été supprimés :
 Ces services étaient auparavant obsolètes au profit des services intégrés et des entités `number`, `select` et `button`. Veuillez mettre à jour vos automatisations et tableaux de bord pour utiliser les nouvelles entités et/ou services intégrés si vous ne l'avez pas déjà fait.
 
 ([@shbatm](https://github.com/shbatm) - [\#91569](https://github.com/home-assistant/core/pull/91569)) ([documentation](https://www.home-assistant.io/integrations/isy994))
-
-- - -
 
 Les nœuds Crépuscule/Aube sur les capteurs de mouvement `Insteon`ont maintenant leurs états inversés pour afficher correctement « Lumière détectée » pendant la lumière du jour et « Pas de lumière » lorsque le capteur crépusculaire est actif.
 
@@ -314,12 +312,12 @@ Consultez la [documentation du déclencheur de webhook](https://www.home-assist
 
 **Z-Wave**
 
-**Avec cette version, vous devrez mettre à jour votre `zwave-js-server`instance.** Vous devez utiliser `zwave-js-server`1.28.0 ou supérieur (schéma 28).
+**Avec cette version, vous devrez mettre à jour votre instance `zwave-js-server`.** Vous devez utiliser `zwave-js-server`1.28.0 ou supérieur (schéma 28).
 
-* Si vous utilisez le `Z-Wave JS`module complémentaire, vous avez besoin d'au moins la version `0.1.79`.
-* Si vous utilisez le `Z-Wave JS UI`module complémentaire, vous avez besoin d'au moins la version `1.11.2`.
-* Si vous utilisez le `Z-Wave JS UI`conteneur Docker, vous avez besoin d'au moins la version `8.14.2`.
-* Si vous exécutez votre propre conteneur Docker ou une autre méthode d'installation, vous devrez mettre à jour votre `zwave-js-server`instance au moins vers `1.28.0`.
+* Si vous utilisez le module complémentaire `Z-Wave JS`, vous avez besoin d'au moins la version `0.1.79`.
+* Si vous utilisez le module complémentaire `Z-Wave JS UI`, vous avez besoin d'au moins la version `1.11.2`.
+* Si vous utilisez le conteneur Docker `Z-Wave JS UI`, vous avez besoin d'au moins la version `8.14.2`.
+* Si vous exécutez votre propre conteneur Docker ou une autre méthode d'installation, vous devrez mettre à jour votre instance  `zwave-js-server` vers au moins vers `1.28.0`.
 
 ([@raman325](https://github.com/raman325) - [\#91989](https://github.com/home-assistant/core/pull/91989)) ([documentation](https://www.home-assistant.io/integrations/zwave_js))
 
@@ -336,4 +334,4 @@ Les intégrations suivantes ne sont également plus disponibles à partir de cet
 
 ## Toutes les modifications
 
-Bien sûr, il y a beaucoup plus dans cette version. Vous pouvez trouver une liste de toutes les modifications apportées ici : [Journal complet des modifications pour Home Assistant Core 2023.5](https://www.home-assistant.io/changelogs/core-2023.5)
+Bien sûr, il y a beaucoup plus de choses dans cette version. Vous pouvez trouver une liste de toutes les modifications apportées ici : [Journal complet des modifications pour Home Assistant Core 2023.5](https://www.home-assistant.io/changelogs/core-2023.5)
