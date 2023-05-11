@@ -65,7 +65,7 @@ Si vous avez manqué la diffusion en direct de la semaine dernière, n'hésitez
 
 ![](img/hqdefault2.jpg)
 
-## )Gérez ce qui est exposé à vos assistants vocaux
+## Gérez ce qui est exposé à vos assistants vocaux
 
 Un tout nouvel élément de menu intéressant se trouve dans votre menu *[Paramètres **:** assistants vocaux\*\* !
 
