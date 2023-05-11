@@ -22,11 +22,11 @@ url_haoff: https://www.home-assistant.io/blog/2023/05/03/release-20235/
 
 **Home Assistant Core 2023.5 ! 🎉**
 
-*Quelle magnifique version nous avons pour vous ce mois-ci ! Cette version est entièrement consacrée à la voix (enfin, presque entièrement), et je suis super excité à l'idée que nous puissions vous livrer toutes ces choses vraiment incroyables !*
+*Quelle magnifique version concoctée pour vous ce mois-ci ! Cette version est entièrement consacrée à la voix (enfin, presque entièrement), et je suis super enthousiaste à l'idée que nous puissions vous livrer toutes ces choses vraiment incroyables !*
 
 *J'ai suivi les progrès de la construction de tout cela ce mois-ci, et sincèrement, j'ai été époustouflé plusieurs fois par semaine. Qu'est-ce qu'il y a là-dedans ? Eh bien, vous pouvez maintenant parler à Home Assistant ! 🤯*
 
-*J'apprécie vraiment que tous ces éléments vocaux aient été conçus dans le respect de Home Assistant : pour être complètement configurables et extensibles. Vous avez maintenant des options au choix entièrement locales pour votre propre assistant vocal.*
+*J'apprécie beaucoup que tous ces éléments vocaux aient été conçus en respectant les normes de Home Assistant : pour être complètement configurables et extensibles. Vous avez maintenant le choix avec une option totalement locale pour votre propre assistant vocal.*
 
 *Cette version est pleine à craquer de belles choses ! Et nous n'en sommes même pas encore à la moitié de l'Année de la voix de Home Assistant...*
 
@@ -38,7 +38,7 @@ url_haoff: https://www.home-assistant.io/blog/2023/05/03/release-20235/
 
 Notre objectif pour 2023 est de vous permettre de contrôler Home Assistant dans votre propre langue : c'est [l'année de la voix de Home Assistant](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) ! Après [le chapitre 1](https://www.home-assistant.io/blog/2023/01/26/year-of-the-voice-chapter-1/) en janvier, [nous avons annoncé le chapitre 2](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/) de cette aventure passionnante !
 
-Cette version contient tout ce qui a été annoncé (et plus encore) ! Cela signifie qu'à partir de cette version, vous pouvez commencer à parler à Home Assistant ! 🎙️
+Cette version contient tout ce qui avait été annoncé (et plus encore) ! Cela signifie qu'à partir de cette version, vous pouvez commencer à parler à Home Assistant ! 🎙️
 
 ![Maintenant parle](img/hqdefault.jpg "Maintenant parle")
 
