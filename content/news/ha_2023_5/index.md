@@ -26,7 +26,7 @@ url_haoff: https://www.home-assistant.io/blog/2023/05/03/release-20235/
 
 *J'ai suivi les progrès de la construction de tout cela ce mois-ci, et sincèrement, j'ai été époustouflé plusieurs fois par semaine. Qu'est-ce qu'il y a là-dedans ? Eh bien, vous pouvez maintenant parler à Home Assistant ! 🤯*
 
-*J'apprécie vraiment que tous ces éléments vocaux aient été conçus à la manière de Home Assistant : pour être complètement configurables et extensibles. Vous donnez des choix, y compris des options entièrement locales pour votre propre assistant vocal.*
+*J'apprécie vraiment que tous ces éléments vocaux aient été conçus dans le respect de Home Assistant : pour être complètement configurables et extensibles. Vous avez maintenant des options au choix entièrement locales pour votre propre assistant vocal.*
 
 *Cette version est pleine à craquer de belles choses ! Et nous n'en sommes même pas encore à la moitié de l'Année de la voix de Home Assistant...*
 
@@ -42,7 +42,7 @@ Cette version contient tout ce qui a été annoncé (et plus encore) ! Cela sign
 
 ![](img/hqdefault.jpg)
 
-Voici un bref résumé de [tout ce qui a été annoncé](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/) , avec des liens vous permettant d'en savoir plus :
+Voici un bref résumé de [tout ce qui a été annoncé](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/), avec des liens vous permettant d'en savoir plus :
 
 * [Composez votre propre assistant vocal à l'aide des nouveaux pipelines d'assistance](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#composing-voice-assistants)
 * [Assistant vocal alimenté par Home Assistant Cloud](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#voice-assistant-powered-by-home-assistant-cloud)
@@ -63,15 +63,15 @@ Si vous avez manqué la diffusion en direct de la semaine dernière, n'hésitez
 
 <https://www.youtube.com/watch?v=Tk-pnm7FY7c>
 
-![](img/hqdefault2.jpg)
+![youtube chapitre 2](img/hqdefault2.jpg)
 
 ## Gérez ce qui est exposé à vos assistants vocaux
 
-Un tout nouvel élément de menu intéressant se trouve dans votre menu *[Paramètres **:** assistants vocaux\*\* !
+Un tout nouvel élément de menu intéressant se trouve dans votre menu `Paramètres` `assistants vocaux` !
 
 ![](img/voice-assistants.png)
 
-Ce nouvel élément de paramètres vous donne accès à de nombreuses nouvelles fonctionnalités vocales fantastiques. Il fournit également un nouvel onglet **Exposer** où vous pouvez gérer les entités qui sont exposées à votre Assistant, Alexa et Google Assistant.
+Ce nouveau groupe de paramètres vous donne accès à de nombreuses nouvelles fonctionnalités vocales fantastiques. Il fournit également un nouvel onglet **Exposer** où vous pouvez gérer les entités qui sont exposées à votre Assistant, Alexa et Google Assistant.
 
 ![voice-assistants-expose-entities](img/voice-assistants-expose-entities.png "Expose Entities")
 
@@ -85,7 +85,7 @@ Cela prend actuellement en charge notre [Assistant](<The $13 tiny ESPHome-based
 
 Quelques améliorations ont été apportées à la boîte de dialogue de paramétrage des entités, afin de la rendre plus facile à utiliser et de lui donner un aspect plus épuré.
 
-La boîte de dialogue de paramétrage des entités comportait une section avancée extensible, que vous pouviez développer pour accéder à des fonctionnalités telles que l'affichage/masquage/désactivation des entités, la modification de la zone, etc.
+La boîte de dialogue de paramétrage des entités comportait une section avancée extensible, que vous pouviez développer pour accéder à des fonctionnalités telles que l'affichage / masquage / désactivation des entités, la modification de la zone, etc.
 
 La section avancée a été supprimée et toutes ses fonctionnalités ont été réorganisées. Ainsi, aucune fonctionnalité n'a été perdue tout en offrant une interface beaucoup plus agréable.
 
@@ -93,7 +93,7 @@ La section avancée a été supprimée et toutes ses fonctionnalités ont été 
 
 Et puisque nous sommes dans l'année de la voix, vous remarquerez peut-être l'option **"Assistants vocaux"** dans la capture d'écran ci-dessus, qui s'affichera :
 
-![](img/entity-settings-voice-assistants.png)
+![option assistants vocaux](img/entity-settings-voice-assistants.png)
 
 Cela vous permet de modifier rapidement les assistants vocaux auxquels l'entité est exposée, y compris ses alias, sans avoir à revenir au panneau des assistants vocaux dans l'écran principal des paramètres.
 
@@ -103,7 +103,7 @@ Le boîtier de notre étonnant [Home Assistant Yellow](https://www.home-assistan
 
 Cependant, les LED de la carte peuvent éclairer votre environnement lorsqu'il fait sombre de manière indésirable. Par exemple, lorsque vous dormez dans la même pièce que votre Home Assistant Yellow.
 
-A partir de cette version, vous pouvez configurer (activer/désactiver) le disque, le heartbeat et les LEDs d'alimentation de votre Home Assistant Yellow en utilisant le bouton Configurer sur la page `Paramètres`> `Matériel`.
+A partir de cette version, vous pouvez configurer (activer/désactiver) le disque, le "heartbeat" et les LEDs d'alimentation de votre Home Assistant Yellow en utilisant le bouton Configurer sur la page `Paramètres` >  `Matériel`.
 
 ![home-assistant-yellow-led-controls](img/home-assistant-yellow-led-controls.png)
 
@@ -111,13 +111,13 @@ A partir de cette version, vous pouvez configurer (activer/désactiver) le disqu
 
 Les webhooks ont été étendus dans cette version. Nous prenons désormais en charge les webhooks qui utilisent la méthode **GET HTTP** !
 
-Mais ce n'est pas tout. Grâce à [@esev](https://github.com/esev) , nous avons également obtenu de nouvelles fonctionnalités de sécurité pour nos déclencheurs de webhooks. Vous pouvez maintenant définir les méthodes HTTP avec lesquelles votre déclencheur de webhook fonctionne et la possibilité de limiter les webhooks pour qu'ils ne fonctionnent que sur votre réseau local.
+Mais ce n'est pas tout. Grâce à [@esev](https://github.com/esev), nous avons maintenant de nouvelles fonctionnalités de sécurité pour nos déclencheurs de webhooks. Vous pouvez maintenant définir les méthodes HTTP avec lesquelles votre déclencheur de webhook fonctionne et la possibilité de limiter les webhooks pour qu'ils ne fonctionnent que sur votre réseau local.
 
 ![webhook-trigger-settings](img/webhook-trigger-settings.png)
 
 ## Nouveau pipeline "Assistant" et sélecteurs de langue
 
-Si vous construisez des Blueprints d'automatisation ou de scripts, vous pouvez désormais utiliser deux nouveaux sélecteurs d'interface utilisateur avec vos Blueprints : un sélecteur de pipeline "Assistant" et un sélecteur de langue.
+Si vous construisez des Blueprints d'automatisation ou de scripts, vous pouvez désormais utiliser deux nouveaux sélecteurs d'interface utilisateur avec vos Blueprints : un sélecteur de **pipeline "Assistant"** et un **sélecteur de langue**.
 
 ![blueprints-language-selector](img/blueprints-language-selector.png)
 
@@ -125,14 +125,14 @@ Le sélecteur de langue permet à un utilisateur de choisir parmi une liste de l
 
 Vous pouvez, par exemple, exploiter cette possibilité dans un Blueprint de notification pour permettre le réglage d'une langue différente sur une notification de synthèse vocale.
 
-[Vous trouverez plus d'informations dans la documentation de nos sélecteurs](https://www.home-assistant.io/docs/blueprint/selectors) .
+[Vous trouverez plus d'informations dans la documentation de nos sélecteurs](https://www.home-assistant.io/docs/blueprint/selectors).
 
 ## Autres changements notables
 
 Il y a beaucoup plus de choses dans cette version ; Voici quelques-uns des autres changements notables de cette version :
 
 * [Le système d'exploitation Home Assistant v10 est sorti ! ](https://www.home-assistant.io/blog/2023/04/18/home-assistant-os-release-10/)L'ODROID M-1 est désormais pris en charge, la prise en charge des disques de données et la gestion de la mémoire ont été améliorées. Corrections de bogues et améliorations de la fiabilité pour Bluetooth et Thread.
-* [Matter](https://www.home-assistant.io/integrations/matter) prend désormais en charge les ouvrants, merci [@hidaris](https://github.com/hidaris) !
+* [Matter](https://www.home-assistant.io/integrations/matter) prend désormais en charge les volets, merci [@hidaris](https://github.com/hidaris) !
 * Le processus de création de sauvegardes est désormais plus rapide 🚀, merci [@bdraco](https://github.com/bdraco) !
 * @bdraco a également amélioré l'intégration [ONVIF](https://www.home-assistant.io/integrations/openai_conversation) , ce qui devrait améliorer la stabilité de l'intégration. Top !
 * Vous pouvez désormais configurer plusieurs instances de l'intégration OpenAI Conversation avec, par exemple, différentes promps. Merci, [@balloob](https://github.com/balloob) !
@@ -159,7 +159,7 @@ Nous accueillons les nouvelles intégrations suivantes dans cette version :
 * **[Wyoming](https://www.home-assistant.io/integrations/wyoming)**, ajouté par [@synesthesiam](https://github.com/synesthesiam)\
   Connectez-vous aux services vocaux supportant le protocole *Wyoming*.
 * **[Roborock](https://www.home-assistant.io/integrations/roborock)**, ajouté par[ @Lash-L](https://github.com/Lash-L)\
-  Contrôlez votre aspirateur RoboRock tout en gardant la prise en charge de l'application Roborock.
+  Contrôlez votre aspirateur RoboRock tout en gardant la prise en charge native de l'application Roborock.
 * **[Anova](https://www.home-assistant.io/integrations/anova)**, ajouté par[ @Lash-L](https://github.com/Lash-L)\
   Controller *Anova sous vides* avec capacités Wi-Fi.
 
@@ -194,7 +194,7 @@ Ce changement de nom est dû au fait que c'est ce qu'il a réellement contrôlé
 
 **History**
 
-Toutes les options de configuration YAML pour l'intégration de l'historique ont été supprimées car elles n'étaient plus utilisées par le frontend.
+Toutes les options de configuration YAML pour l'intégration de l'historique ont été supprimées, car elles n'étaient plus utilisées par le frontend.
 
 ([@bdraco](https://github.com/bdraco) - [\#90992](https://github.com/home-assistant/core/pull/90992)) ([documentation](https://www.home-assistant.io/integrations/history))
 
@@ -236,7 +236,7 @@ Pour les sonnettes Reolink, l'entité lumineuse `Status LED` est remplacée par 
 
 **DSM de Synology**
 
-La conversion d'unité pour tous les capteurs liés à la mémoire, au stockage et à l'utilisation du réseau a été passée de la base binaire (*1024*) à la base décimale (*1000*) pour être en ligne avec les unités de mesure utilisées ( *eq. Mo = 1.000.000 octets*).
+La conversion d'unité pour tous les capteurs liés à la mémoire, au stockage et à l'utilisation du réseau a été passée de la base binaire (*1024*) à la base décimale (*1000*) pour être en ligne avec les unités de mesure utilisées (*eq. Mo = 1.000.000 octets*).
 
 Vous devrez peut-être mettre à jour les unités enregistrées historiquement pour ces capteurs via la page de statistiques sous les outils de développement.
 
@@ -300,9 +300,9 @@ Ceci est inversé par rapport au comportement précédent. Si vous comptez sur 
 
 Deux nouvelles options de déclenchement des webhooks ont été ajoutées pour limiter la façon dont un webhook peut déclencher une automatisation. Une nouvelle option allowed_methods peut être utilisée pour contrôler les méthodes de requête HTTP qui peuvent activer le déclencheur (`GET`, `HEAD`, `POST`et `PUT`). L'option local_only est utilisée pour permettre aux appareils situés en dehors de votre réseau local d'activer le déclencheur.
 
-Auparavant, tous les déclencheurs de webhook pouvaient être activés par les méthodes `HEAD`, `POST`et `PUT`à partir de n'importe quel appareil (local ou sur internet). Avec les nouvelles options, seuls `POST`et `PUT`sont activés par défaut.
+Auparavant, tous les déclencheurs de webhook pouvaient être activés par les méthodes `HEAD`, `POST`et `PUT`à partir de n'importe quel appareil (local ou sur internet). Avec les nouvelles options, seuls `POST`et `PUT` sont activés par défaut.
 
-Dans Home Assistant Core 2023.7, tout déclencheur webhook qui ne définit pas `local_only`à `false`ne peut être activé que par des appareils sur le même réseau que Home Assistant.
+Dans Home Assistant Core 2023.7, tout déclencheur webhook qui ne définit pas `local_only` à `false` ne peut être activé que par des appareils sur le même réseau que Home Assistant.
 
 Cliquez sur l'icône en forme de roue dentée à côté de l'ID du webhook pour mettre à jour vos déclencheurs de webhook. Sélectionnez ensuite une valeur appropriée pour l'option Uniquement accessible depuis le réseau local. Il est nécessaire de désélectionner l'option pour que le bouton Enregistrer apparaisse. Puis re-sélectionnez l'option si elle doit être activée. L'avertissement de réparation disparaîtra ainsi.
 
@@ -323,7 +323,7 @@ Consultez la [documentation du déclencheur de webhook](https://www.home-assist
 
 ([@raman325](https://github.com/raman325) - [\#91989](https://github.com/home-assistant/core/pull/91989)) ([documentation](https://www.home-assistant.io/integrations/zwave_js))
 
-Si vous êtes un développeur d'intégrations personnalisées et que vous souhaitez en savoir plus sur les modifications radicales et les nouvelles fonctionnalités disponibles pour votre intégration : assurez-vous de suivre notre [blog des développeurs](https://developers.home-assistant.io/blog/) . Les éléments suivants sont les plus notables pour cette version :
+Si vous êtes un développeur d'intégrations personnalisées et que vous souhaitez en savoir plus sur les modifications radicales et les nouvelles fonctionnalités disponibles pour votre intégration : assurez-vous de suivre notre [blog des développeurs](https://developers.home-assistant.io/blog/). Les éléments suivants sont les plus notables pour cette version :
 
 * [Nouvelles limites pour les modules complémentaires de superviseur](https://developers.home-assistant.io/blog/2023/04/13/new_limits_for_add_ons)
 
