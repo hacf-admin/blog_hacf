@@ -36,28 +36,28 @@ url_haoff: https://www.home-assistant.io/blog/2023/05/03/release-20235/
 
 ## Maintenant, parle !
 
-Notre objectif pour 2023 est de vous permettre de contrôler Home Assistant dans votre propre langue : c'est l' [année de la voix de Home Assistant](https://www-home--assistant-io.translate.goog/blog/2022/12/20/year-of-voice/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) ! Après [le chapitre 1](https://www-home--assistant-io.translate.goog/blog/2023/01/26/year-of-the-voice-chapter-1/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) en janvier, [nous avons annoncé le chapitre 2](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) de cette aventure passionnante !
+Notre objectif pour 2023 est de vous permettre de contrôler Home Assistant dans votre propre langue : c'est [l'année de la voix de Home Assistant](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) ! Après [le chapitre 1](https://www.home-assistant.io/blog/2023/01/26/year-of-the-voice-chapter-1/) en janvier, [nous avons annoncé le chapitre 2](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/) de cette aventure passionnante !
 
 Cette version contient tout ce qui a été annoncé (et plus encore) ! Cela signifie qu'à partir de cette version, vous pouvez commencer à parler à Home Assistant ! 🎙️
 
 ![](img/hqdefault.jpg)
 
-Voici un bref résumé de [tout ce qui a été annoncé](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) , avec des liens vous permettant d'en savoir plus :
+Voici un bref résumé de [tout ce qui a été annoncé](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/) , avec des liens vous permettant d'en savoir plus :
 
-* [Composez votre propre assistant vocal à l'aide des nouveaux pipelines d'assistance](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#composing-voice-assistants)
-* [Assistant vocal alimenté par Home Assistant Cloud](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#voice-assistant-powered-by-home-assistant-cloud)
-* [Synthèse vocale entièrement locale à l'aide de Piper](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#piper-our-new-model-for-high-quality-local-text-to-speech)
-* [Conversion parole-texte entièrement local à l'aide d'OpenAI Whisper](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#local-speech-to-text-with-openai-whisper)
-* [Le protocole et l'intégration du Wyoming](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#wyoming-the-voice-assistant-glue)
-* [Créez votre propre assistant vocal alimenté par ESPHome](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#esphome-powered-voice-assistants)
-* [L'intégration Voice-over-IP, appelez Home Assistant ☎️](https://www-home--assistant-io.translate.goog/blog/2023/04/27/year-of-the-voice-chapter-2/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#worlds-most-private-voice-assistant)
+* [Composez votre propre assistant vocal à l'aide des nouveaux pipelines d'assistance](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#composing-voice-assistants)
+* [Assistant vocal alimenté par Home Assistant Cloud](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#voice-assistant-powered-by-home-assistant-cloud)
+* [Synthèse vocale entièrement locale à l'aide de Piper](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#piper-our-new-model-for-high-quality-local-text-to-speech)
+* [Conversion parole-texte entièrement local à l'aide d'OpenAI Whisper](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#local-speech-to-text-with-openai-whisper)
+* [Le protocole et l'intégration du Wyoming](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#wyoming-the-voice-assistant-glue)
+* [Créez votre propre assistant vocal alimenté par ESPHome](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#esphome-powered-voice-assistants)
+* [L'intégration Voice-over-IP, appelez Home Assistant ☎️](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/#worlds-most-private-voice-assistant)
 
 Pour vous aider à démarrer, nous nous sommes assurés que la documentation est parfaite, y compris des didacticiels de projet sympas pour démarrer votre propre parcours d'assistant vocal privé :
 
-* [L'assistant vocal le plus privé au monde](https://www-home--assistant-io.translate.goog/projects/worlds-most-private-voice-assistant/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)
-* [Donner à votre assistant vocal une personnalité Super Mario en utilisant OpenAI](https://www-home--assistant-io.translate.goog/projects/worlds-most-private-voice-assistant/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#give-your-voice-assistant-personality-using-the-openai-integration)
-* [Installer un pipeline Assist local](https://www-home--assistant-io.translate.goog/docs/assist/voice_remote_local_assistant/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)
-* [Le petit assistant vocal basé sur ESPHome à 13 $](https://www-home--assistant-io.translate.goog/projects/thirteen-usd-voice-remote/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)
+* [L'assistant vocal le plus privé au monde](https://www.home-assistant.io/projects/worlds-most-private-voice-assistant/)
+* [Donner à votre assistant vocal une personnalité Super Mario en utilisant OpenAI](https://www.home-assistant.io/projects/worlds-most-private-voice-assistant/#give-your-voice-assistant-personality-using-the-openai-integration)
+* [Installer un pipeline Assist local](https://www.home-assistant.io/docs/assist/voice_remote_local_assistant/)
+* [Le petit assistant vocal basé sur ESPHome à 13$](https://www.home-assistant.io/projects/thirteen-usd-voice-remote/)
 
 Si vous avez manqué [la diffusion en direct de la semaine dernière](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://www.youtube.com/watch?v%3DTk-pnm7FY7c) , n'hésitez pas à la consulter. Elle regorge de démos en direct et d'explications détaillées de tout ce qui se trouve dans cette version. L'enregistrement du flux en direct :
 
@@ -79,7 +79,7 @@ Il donne un aperçu des entités que vous avez exposées à vos assistants vocau
 
 ![voice-assistants-expose-entities-settings](img/voice-assistants-expose-entities-settings.png "Expose Entities settings")
 
-Cela prend actuellement en charge notre [Assistant](https://www-home--assistant-io.translate.goog/docs/assist?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) Amazon Alexa et Google Assistant via Home Assistant Cloud.
+Cela prend actuellement en charge notre [Assistant](<The $13 tiny ESPHome-based voice assistant>) Amazon Alexa et Google Assistant via Home Assistant Cloud.
 
 ## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#improved-entity-setting)Paramétrage des entités amélioré.
 
@@ -99,7 +99,7 @@ Cela vous permet de modifier rapidement les assistants vocaux auxquels l'entité
 
 ## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#configuring-the-leds-of-your-home-assistant-yellow)Configurer les voyants de votre "Home Assistant Yellow"
 
-Le boîtier de notre étonnant [Home Assistant Yellow](https://www-home--assistant-io.translate.goog/yellow?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) vous permet de voir la magnifique carte et les pièces qu'elle contient.
+Le boîtier de notre étonnant [Home Assistant Yellow](https://www.home-assistant.io/yellow) vous permet de voir la magnifique carte et les pièces qu'elle contient.
 
 Cependant, les LED de la carte peuvent éclairer votre environnement lorsqu'il fait sombre de manière indésirable. Par exemple, lorsque vous dormez dans la même pièce que votre Home Assistant Yellow.
 
@@ -111,7 +111,7 @@ A partir de cette version, vous pouvez configurer (activer/désactiver) le disqu
 
 Les webhooks ont été étendus dans cette version. Nous prenons désormais en charge les webhooks qui utilisent la méthode **GET HTTP** !
 
-Mais ce n'est pas tout. Grâce à [@esev](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/esev) , nous avons également obtenu de nouvelles fonctionnalités de sécurité pour nos déclencheurs de webhooks. Vous pouvez maintenant définir les méthodes HTTP avec lesquelles votre déclencheur de webhook fonctionne et la possibilité de limiter les webhooks pour qu'ils ne fonctionnent que sur votre réseau local.
+Mais ce n'est pas tout. Grâce à [@esev](https://github.com/esev) , nous avons également obtenu de nouvelles fonctionnalités de sécurité pour nos déclencheurs de webhooks. Vous pouvez maintenant définir les méthodes HTTP avec lesquelles votre déclencheur de webhook fonctionne et la possibilité de limiter les webhooks pour qu'ils ne fonctionnent que sur votre réseau local.
 
 ![webhook-trigger-settings](img/webhook-trigger-settings.png)
 
@@ -125,56 +125,56 @@ Le sélecteur de langue permet à un utilisateur de choisir parmi une liste de l
 
 Vous pouvez, par exemple, exploiter cette possibilité dans un Blueprint de notification pour permettre le réglage d'une langue différente sur une notification de synthèse vocale.
 
-[Vous trouverez plus d'informations dans la documentation de nos sélecteurs](https://www-home--assistant-io.translate.goog/docs/blueprint/selectors?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) .
+[Vous trouverez plus d'informations dans la documentation de nos sélecteurs](https://www.home-assistant.io/docs/blueprint/selectors) .
 
 ## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#other-noteworthy-changes)Autres changements notables
 
 Il y a beaucoup plus de choses dans cette version ; Voici quelques-uns des autres changements notables de cette version :
 
-* [Le système d'exploitation Home Assistant v10 est sorti ! ](https://www-home--assistant-io.translate.goog/blog/2023/04/18/home-assistant-os-release-10/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)L'ODROID M-1 est désormais pris en charge, la prise en charge des disques de données et la gestion de la mémoire ont été améliorées. Corrections de bogues et améliorations de la fiabilité pour Bluetooth et Thread.
-* [Matter](https://www-home--assistant-io.translate.goog/integrations/matter?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) prend désormais en charge les ouvrants, merci [@hidaris](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/hidaris) !
-* Le processus de création de sauvegardes est désormais plus rapide 🚀, merci [@bdraco](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bdraco) !
-* [@bdraco](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bdraco) a également amélioré l'intégration [ONVIF](https://www-home--assistant-io.translate.goog/integrations/onvif?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) , ce qui devrait améliorer la stabilité de l'intégration. Top !
-* Vous pouvez désormais configurer plusieurs instances de l'intégration [OpenAI Conversation](https://www-home--assistant-io.translate.goog/integrations/openai_conversation?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) avec, par exemple, différentes promps. Merci, [@balloob](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/balloob) !
-* [@rubenbe](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/rubenbe) a ajouté la prise en charge de l'orientation aux ventilateurs sous [MQTT](https://www-home--assistant-io.translate.goog/integrations/mqtt?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) !
-* [BTHome](https://www-home--assistant-io.translate.goog/integrations/bthome?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) a ajouté la prise en charge des événements liés aux boutons et aux variateurs. Cela signifie qu'il prend en charge le tout nouveau [Shelly BLU Button1](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://www.shelly.cloud/en/products/shop/shelly-blu-button1?tracking%3DA7FsiPIfUWsFpnfKHa8SRyUYLXjr2hPq) ! Merci, [@Ernst79](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/Ernst79) !
-* Le [superviseur](https://www-home--assistant-io.translate.goog/integrations/hassio?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) peut désormais créer des suggestions de réparation pour certains des problèmes qu'il a détectés sur votre système. Génial [@mdegat01](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/mdegat01) !
-* [@mib1185](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/mib1185) a ajouté un service pour permettre le tri de la [liste d'achats](https://www-home--assistant-io.translate.goog/integrations/shopping_list?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) . Merci!
-* [@depoll](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/depoll) a ajouté un attribut aux entités Person qui liste les traqueurs d'appareils pour cette personne. Très utile pour les modèles ! Merci!
-* L' intégration [NextDNS](https://www-home--assistant-io.translate.goog/integrations/nextdns?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) a ajouté tout un tas de nouvelles options de contrôle parental, merci [@bieniu](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bieniu) !
-* [Synology DSM](https://www-home--assistant-io.translate.goog/integrations/synology_dsm?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) peut désormais parcourir vos photos Synology dans le navigateur multimédia. Ajout cool, [@lodesmets](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/lodesmets) !
-* [Simplepush](https://www-home--assistant-io.translate.goog/integrations/simplepush?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) prend désormais en charge les pièces jointes, grâce à [@tymm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/tymm) !
-* Certains capteurs de notification [Z-Wave](https://www-home--assistant-io.translate.goog/integrations/zwave_js?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) ne se mettent pas automatiquement en veille. Vous pouvez maintenant utiliser les nouveaux boutons de mise en veille des notifications pour les mettre en veille manuellement !
+* [Le système d'exploitation Home Assistant v10 est sorti ! ](https://www.home-assistant.io/blog/2023/04/18/home-assistant-os-release-10/)L'ODROID M-1 est désormais pris en charge, la prise en charge des disques de données et la gestion de la mémoire ont été améliorées. Corrections de bogues et améliorations de la fiabilité pour Bluetooth et Thread.
+* [Matter](https://www.home-assistant.io/integrations/matter) prend désormais en charge les ouvrants, merci [@hidaris](https://github.com/hidaris) !
+* Le processus de création de sauvegardes est désormais plus rapide 🚀, merci [@bdraco](https://github.com/bdraco) !
+* @bdraco a également amélioré l'intégration [ONVIF](https://www.home-assistant.io/integrations/openai_conversation) , ce qui devrait améliorer la stabilité de l'intégration. Top !
+* Vous pouvez désormais configurer plusieurs instances de l'intégration OpenAI Conversation avec, par exemple, différentes promps. Merci, [@balloob](https://github.com/balloob) !
+* [@rubenbe](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/rubenbe) a ajouté la prise en charge de l'orientation aux ventilateurs sous [MQTT](https://www.home-assistant.io/integrations/mqtt) !
+* [BTHome](https://www.home-assistant.io/integrations/bthome) a ajouté la prise en charge des événements liés aux boutons et aux variateurs. Cela signifie qu'il prend en charge le tout nouveau [Shelly BLU Button1](https://www.shelly.cloud/en/products/shop/shelly-blu-button1?tracking=A7FsiPIfUWsFpnfKHa8SRyUYLXjr2hPq) ! Merci, [@Ernst79](https://github.com/Ernst79) !
+* Le [superviseur](https://www.home-assistant.io/integrations/hassio) peut désormais créer des suggestions de réparation pour certains des problèmes qu'il a détectés sur votre système. Génial [@mdegat01](https://github.com/mdegat01) !
+* [@mib1185](https://github.com/mib1185) a ajouté un service pour permettre le tri de la [liste d'achats](https://www-home--assistant-io.translate.goog/integrations/shopping_list?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) . Merci!
+* [@depoll](https://github.com/depoll) a ajouté un attribut aux entités [Person ](https://www.home-assistant.io/integrations/person)qui liste les traqueurs d'appareils pour cette personne. Très utile pour les modèles ! Merci !
+* L' intégration [NextDNS](https://www.home-assistant.io/integrations/nextdns) a ajouté tout un tas de nouvelles options de contrôle parental, merci [@bieniu](https://github.com/bieniu) !
+* [Synology DSM](https://www.home-assistant.io/integrations/synology_dsm) peut désormais parcourir vos photos Synology dans le navigateur multimédia. Ajout cool, [@lodesmets](https://github.com/lodesmets) !
+* [Simplepush](https://www.home-assistant.io/integrations/simplepush) prend désormais en charge les pièces jointes, grâce à [@tymm](https://github.com/tymm) !
+* Certains capteurs de notification [Z-Wave](https://www.home-assistant.io/integrations/zwave_js) ne se mettent pas automatiquement en veille. Vous pouvez maintenant utiliser les nouveaux boutons de mise en veille des notifications pour les mettre en veille manuellement !
 
 ## Nouvelles intégrations
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-* **[Android TV Remote](https://www-home--assistant-io.translate.goog/integrations/androidtv_remote?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @tronikos](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/tronikos)\
+* **[Android TV Remote](https://www.home-assistant.io/integrations/androidtv_remote)** , ajouté par[ @tronikos](https://github.com/tronikos)\
   Lancez des applications et contrôlez votre appareil Android TV.
-* **[RAPT Bluetooth](https://www-home--assistant-io.translate.goog/integrations/rapt_ble?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @sairon](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/sairon)\
+* **[RAPT Bluetooth](https://www.home-assistant.io/integrations/rapt_ble)** , ajouté par[ @sairon](https://github.com/sairon)\
   Intègre les hydromètres *RAPT Pill* dans Home Assistant.
-* **[Voix sur IP](https://www-home--assistant-io.translate.goog/integrations/voip?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajoutée par[ @synesthesiam](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/synesthesiam)\
-  Parler à[ Assist](https://www-home--assistant-io.translate.goog/docs/assist?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) à l'aide d'un téléphone analogique et d'un adaptateur VoIP.
-* **[Wyoming](https://www-home--assistant-io.translate.goog/integrations/wyoming?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @synesthesiam](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/synesthesiam)\
+* **[Voix sur IP](https://www.home-assistant.io/integrations/voip)** , ajoutée par[ @synesthesiam](https://github.com/synesthesiam)\
+  Parler à[ Assist](https://www.home-assistant.io/docs/assist) à l'aide d'un téléphone analogique et d'un adaptateur VoIP.
+* **[Wyoming](https://www.home-assistant.io/integrations/wyoming)** , ajouté par[ @synesthesiam](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/synesthesiam)\
   Connectez-vous aux services vocaux supportant le protocole *Wyoming*.
-* **[Roborock](https://www-home--assistant-io.translate.goog/integrations/roborock?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @Lash-L](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/Lash-L)\
+* **[Roborock](https://www-home--assistant-io.translate.goog/integrations/roborock?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @Lash-L](https://github.com/Lash-L)\
   Contrôlez votre aspirateur RoboRock tout en gardant la prise en charge de l'application Roborock.
-* **[Anova](https://www-home--assistant-io.translate.goog/integrations/anova?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , ajouté par[ @Lash-L](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/Lash-L)\
+* **[Anova](https://www.home-assistant.io/integrations/anova)** , ajouté par[ @Lash-L](https://github.com/Lash-L)\
   Controller *Anova sous vides* avec capacités Wi-Fi.
 
 Cette version comporte également une **nouvelle intégration virtuelle**. Les intégrations virtuelles sont des modules qui sont gérés par d'autres intégrations (existantes) afin de faciliter la recherche. Celle-ci est nouvelle :
 
-* **[Monessen](https://www-home--assistant-io.translate.goog/integrations/monessen?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** fourni par[ Intellifire](https://www-home--assistant-io.translate.goog/integrations/intellifire?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) , ajouté par[ @jeeftor](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/jeeftor)
+* **[Monessen](https://www.home-assistant.io/integrations/monessen)** fourni par[ Intellifire](https://www.home-assistant.io/integrations/intellifire) , ajouté par[ @jeeftor](https://github.com/jeeftor)
 
 ## Les intégrations sont maintenant disponibles pour être configurées à partir de l'interface utilisateur
 
 Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
 
-* **[Brottsplatskartan](https://www-home--assistant-io.translate.goog/integrations/brottsplatskartan?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , réalisé par[ @gjohansson-ST](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/gjohansson-ST)
-* **[qBittorrent](https://www-home--assistant-io.translate.goog/integrations/qbittorrent?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , réalisé par[ @ chrisx8](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/chrisx8)
-* **[Snapcast](https://www-home--assistant-io.translate.goog/integrations/snapcast?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , réalisé par[ @luar123](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/luar123)
-* **[Journée de travail](https://www-home--assistant-io.translate.goog/integrations/workday?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)** , réalisée par[ @gjohansson-ST](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/gjohansson-ST)
+* **[Brottsplatskartan](https://www.home-assistant.io/integrations/brottsplatskartan)** , réalisé par[ @gjohansson-ST](https://github.com/gjohansson-ST)
+* **[qBittorrent](https://www.home-assistant.io/integrations/qbittorrent)** , réalisé par[ @ chrisx8](https://github.com/chrisx8)
+* **[Snapcast](https://www.home-assistant.io/integrations/snapcast)** , réalisé par[ @luar123](https://github.com/luar123)
+* **[Journée de travail](https://www.home-assistant.io/integrations/workday)** , réalisée par[ @gjohansson-ST](https://github.com/gjohansson-ST)
 
 ## [](https://www-home--assistant-io.translate.goog/blog/2023/05/03/release-20235/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#breaking-changes)Changements de rupture
 
@@ -182,7 +182,7 @@ Les intégrations suivantes sont désormais disponibles via l'interface utilisat
 
 Les capteurs `ozone` et l'attribut d'état `ozone`  de l'entité météo ont affiché des valeurs incorrectes et sont en cours de suppression. Si vous utilisez ces valeurs dans vos automatisations ou scripts, vous devez les mettre à jour.
 
-( [@bieniu](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bieniu) - [\#91492](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91492) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/accuweather?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@bieniu](https://github.com/bieniu) - [\#91492](https://github.com/home-assistant/core/pull/91492)) ([documentation](https://www.home-assistant.io/integrations/accuweather))
 
 **Android TV**
 
@@ -190,13 +190,13 @@ L'intégration "Android TV" a été renommée "Android Debug Bridge".
 
 Ce changement de nom est dû au fait que c'est ce qu'il a réellement contrôlé/fourni. Avec l'ajout de l'intégration d'Android TV Remote dans cette version, nous voulions réduire toute confusion à venir.
 
-( [@tronikos](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/tronikos) - [\#90657](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90657) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/androidtv?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@tronikos](https://github.com/tronikos) - [\#90657](https://github.com/home-assistant/core/pull/90657)) ([documentation](https://www.home-assistant.io/integrations/androidtv))
 
 **History**
 
 Toutes les options de configuration YAML pour l'intégration de l'historique ont été supprimées car elles n'étaient plus utilisées par le frontend.
 
-( [@bdraco](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bdraco) - [\#90992](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90992) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/history?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@bdraco](https://github.com/bdraco) - [\#90992](https://github.com/home-assistant/core/pull/90992)) ([documentation](https://www.home-assistant.io/integrations/history))
 
 **HomeKit**
 
@@ -206,25 +206,25 @@ Les humidités cibles min/max pour les dispositifs de (dé)humidification expos�
 
 Par défaut, HomeKit écoute sur toutes les interfaces pour correspondre au comportement de Home Assistant. Pour limiter HomeKit à des interfaces réseau spécifiques, spécifiez une adresse dans `configuration.yaml.`
 
-( [@bdraco](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/bdraco) - [\#91520](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91520) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/homekit?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@bdraco](https://github.com/bdraco) - [\#91520](https://github.com/home-assistant/core/pull/91520)) ([documentation](https://www.home-assistant.io/integrations/homekit))
 
 **IMAP**
 
 L'utilisation de l'événement `imap_content` pourrait perturber les utilisateurs qui souhaitent analyser les données de messages électroniques plus volumineux à partir de la partie tronquée. Seuls les 2048 premiers octets du corps du message (2 KiB) seront disponibles.
 
-( [@jbouwh](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/jbouwh) - [\#92066](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/92066) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/imap?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@jbouwh](https://github.com/jbouwh) - [\#92066](https://github.com/home-assistant/core/pull/92066)) ([documentation](https://www.home-assistant.io/integrations/imap))
 
 **Overkiz**
 
 L'option de silence pour DynamicShutter a été supprimée car elle rendait l'entité cover non fonctionnelle si elle ne prenait pas en charge la fonction "muet". Cette fonctionnalité sera réintroduite dans une prochaine version.
 
-( [@iMicknl](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/iMicknl) - [\#91354](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91354) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/overkiz?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@iMicknl](https://github.com/iMicknl) - [\#91354](https://github.com/home-assistant/core/pull/91354)) ([documentation](https://www.home-assistant.io/integrations/overkiz))
 
 **Reolink**
 
 Pour les sonnettes Reolink, l'entité lumineuse `Status LED` est remplacée par une **entité de sélection** `Status LED`. L'état `off`correspond à la sélection `Auto`, et l'état `on`correspond à la sélection `Auto & always on at night`. Un état `Stay off` supplémentaire est désormais disponible.
 
-( [@starkillerOG](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/starkillerOG) - [\#90469](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90469) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/reolink?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@starkillerOG](https://github.com/starkillerOG) - [\#90469](https://github.com/home-assistant/core/pull/90469)) ([documentation](https://www.home-assistant.io/integrations/reolink))
 
 **Snapcast**
 
@@ -232,7 +232,7 @@ Pour les sonnettes Reolink, l'entité lumineuse `Status LED` est remplacée par 
 * Les clients connectés n'auront plus d'état `on`mais utiliseront les mêmes états que les groupes : `idle` et `playing`.
 * Les clients déconnectés ont un état `standby` au lieu de `off`car le serveur *Snapcast* accepte toujours les commandes.
 
-( [@luar123](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/luar123) - [\#77449](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/77449)) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/snapcast?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp))
+([@luar123](https://github.com/luar123) - [\#77449](https://github.com/home-assistant/core/pull/77449)) ([documentation](https://www.home-assistant.io/integrations/snapcast))
 
 **DSM de Synology**
 
@@ -240,7 +240,7 @@ La conversion d'unité pour tous les capteurs liés à la mémoire, au stockage 
 
 Vous devrez peut-être mettre à jour les unités enregistrées historiquement pour ces capteurs via la page de statistiques sous les outils de développement.
 
-( [@mib1185](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/mib1185) - [\#90633](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90633) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/synology_dsm?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@mib1185](https://github.com/mib1185) - [\#90633](https://github.com/home-assistant/core/pull/90633)) ([documentation](https://www.home-assistant.io/integrations/synology_dsm))
 
 **Modèles**
 
@@ -248,19 +248,19 @@ L'argument `ensure_ascii` pour `to_json` dans les modèles Jinja est désormais 
 
 Cela ne devrait pas poser de problème pour la plupart des utilisateurs, car les analyseurs JSON acceptent généralement les entrées Unicode. Si vous avez toujours besoin d'encoder des caractères Unicode dans les chaînes JSON, définissez explicitement `ensure_ascii` à `True`pour rétablir l'ancien comportement.
 
-( [@depoll](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/depoll) - [\#91253](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90863) )
+([@depoll](https://github.com/depoll) - [\#91253](https://github.com/home-assistant/core/pull/90863))
 
 **Réseau UniFi**
 
 Le service précédent `set_doorbell_message`a été supprimé. Utilisez l'entité `text`pour l'écran LCD UniFi Protect à la place.
 
-( [@Kane610](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/Kane610) - [\#91188](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91188) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/unifi?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@Kane610](https://github.com/Kane610) - [\#91188](https://github.com/home-assistant/core/pull/91188)) ([documentation](https://www.home-assistant.io/integrations/unifi))
 
 **UniFi Protect**
 
 Le `set_doorbell_message`service obsolète précédent a été supprimé. Utilisez plutôt l'entité de texte pour l'écran LCD UniFi Protect.
 
-( [@AngellusMortis](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/AngellusMortis) - [\#91523](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91523) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/unifiprotect?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@AngellusMortis](https://github.com/AngellusMortis) - [\#91523](https://github.com/home-assistant/core/pull/91523)) ([documentation](https://www.home-assistant.io/integrations/unifiprotect))
 
 **Dispositifs universels ISY/IoX**
 
@@ -268,11 +268,11 @@ La configuration YAML précédemment obsolète de l'intégration Universal Devic
 
 Universal Devices ISY/IoX est maintenant configuré via l'interface utilisateur. Toute configuration YAML existante a été importée dans les versions précédentes et peut désormais être supprimée en toute sécurité de vos fichiers de configuration YAML.
 
-( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#91575](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91575) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@shbatm](https://github.com/shbatm) - [\#91575](https://github.com/home-assistant/core/pull/91575)) ([documentation](https://www.home-assistant.io/integrations/isy994))
 
 L'unité de pourcentage intégrée `%`est maintenant utilisée pour l'humidité relative et l'humidité absolue au lieu des unités personnalisées `%RH` et `%AH`.
 
-( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#90863](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90863) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@shbatm](https://github.com/shbatm) - [\#90863](https://github.com/home-assistant/core/pull/90863)) ([documentation](https://www.home-assistant.io/integrations/isy994))
 
 Les services ISY994 personnalisés suivants ont été supprimés :
 
@@ -286,7 +286,7 @@ Les services ISY994 personnalisés suivants ont été supprimés :
 
 Ces services étaient auparavant obsolètes au profit des services intégrés et des entités `number`, `select` et `button`. Veuillez mettre à jour vos automatisations et tableaux de bord pour utiliser les nouvelles entités et/ou services intégrés si vous ne l'avez pas déjà fait.
 
-( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#91569](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91569) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@shbatm](https://github.com/shbatm) - [\#91569](https://github.com/home-assistant/core/pull/91569)) ([documentation](https://www.home-assistant.io/integrations/isy994))
 
 - - -
 
@@ -294,7 +294,7 @@ Les nœuds Crépuscule/Aube sur les capteurs de mouvement `Insteon`ont maintenan
 
 Ceci est inversé par rapport au comportement précédent. Si vous comptez sur ce capteur dans vos automatisations, ils doivent être mis à jour.
 
-( [@shbatm](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/shbatm) - [\#92035](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/92035) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/isy994?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@shbatm](https://github.com/shbatm) - [\#92035](https://github.com/home-assistant/core/pull/92035)) ([documentation](https://www.home-assistant.io/integrations/isy994))
 
 **Webhooks**
 
@@ -308,9 +308,9 @@ Cliquez sur l'icône en forme de roue dentée à côté de l'ID du webhook pour 
 
 ![breaking-change-webhook-triggers](img/breaking-change-webhook-triggers.png)
 
-Consultez la [documentation du déclencheur de webhook](https://www-home--assistant-io.translate.goog/docs/automation/trigger/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#webhook-trigger) pour une description des nouvelles options. Et veuillez consulter la nouvelle section [Webhook Security](https://www-home--assistant-io.translate.goog/docs/automation/trigger/?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp#webhook-security) pour connaître les meilleures pratiques lors de l'utilisation des déclencheurs webhook.
+Consultez la [documentation du déclencheur de webhook](https://www.home-assistant.io/docs/automation/trigger/#webhook-trigger) pour une description des nouvelles options. Et veuillez consulter la nouvelle section [Webhook Security](https://www.home-assistant.io/docs/automation/trigger/#webhook-security) pour connaître les meilleures pratiques lors de l'utilisation des déclencheurs webhook.
 
-( [@esev](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/esev) - [\#66494](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/66494) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/webhook?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@esev](https://github.com/esev) - [\#66494](https://github.com/home-assistant/core/pull/66494)) ([documentation](https://www.home-assistant.io/integrations/webhook))
 
 **Z-Wave**
 
@@ -321,19 +321,19 @@ Consultez la [documentation du déclencheur de webhook](https://www-home--assis
 * Si vous utilisez le `Z-Wave JS UI`conteneur Docker, vous avez besoin d'au moins la version `8.14.2`.
 * Si vous exécutez votre propre conteneur Docker ou une autre méthode d'installation, vous devrez mettre à jour votre `zwave-js-server`instance au moins vers `1.28.0`.
 
-( [@raman325](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/raman325) - [\#91989](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/91989) ) ( [documentation](https://www-home--assistant-io.translate.goog/integrations/zwave_js?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) )
+([@raman325](https://github.com/raman325) - [\#91989](https://github.com/home-assistant/core/pull/91989)) ([documentation](https://www.home-assistant.io/integrations/zwave_js))
 
-Si vous êtes un développeur d'intégrations personnalisées et que vous souhaitez en savoir plus sur les modifications radicales et les nouvelles fonctionnalités disponibles pour votre intégration : assurez-vous de suivre notre [blog des développeurs](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://developers.home-assistant.io/blog/) . Les éléments suivants sont les plus notables pour cette version :
+Si vous êtes un développeur d'intégrations personnalisées et que vous souhaitez en savoir plus sur les modifications radicales et les nouvelles fonctionnalités disponibles pour votre intégration : assurez-vous de suivre notre [blog des développeurs](https://developers.home-assistant.io/blog/) . Les éléments suivants sont les plus notables pour cette version :
 
-* [Nouvelles limites pour les modules complémentaires de superviseur](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://developers.home-assistant.io/blog/2023/04/13/new_limits_for_add_ons)
+* [Nouvelles limites pour les modules complémentaires de superviseur](https://developers.home-assistant.io/blog/2023/04/13/new_limits_for_add_ons)
 
 ## Dites leur adieu
 
 Les intégrations suivantes ne sont également plus disponibles à partir de cette version :
 
-* **Le coronavirus (COVID-19)** a été supprimé. Les données ne sont plus fournies par le fournisseur source. ( [@emontnemery](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/emontnemery) - [\#90934](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90934) )
-* **Xbox Live** était auparavant obsolète et a maintenant été supprimé. L' [intégration Xbox](https://www-home--assistant-io.translate.goog/integrations/xbox?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp) est toujours disponible. ( [@MartinHjelmare](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/MartinHjelmare) - [\#90592](https://translate.google.com/website?sl=auto&tl=fr&hl=fr&client=webapp&u=https://github.com/home-assistant/core/pull/90592) )
+* **Le coronavirus (COVID-19)** a été supprimé. Les données ne sont plus fournies par le fournisseur source. ([@emontnemery](https://github.com/emontnemery) - [\#90934](https://github.com/home-assistant/core/pull/90934))
+* **Xbox Live** était auparavant obsolète et a maintenant été supprimé. L' [intégration Xbox](https://www.home-assistant.io/integrations/xbox) est toujours disponible. ([@MartinHjelmare](https://github.com/MartinHjelmare) - [\#90592](https://github.com/home-assistant/core/pull/90592))
 
 ## Toutes les modifications
 
-Bien sûr, il y a beaucoup plus dans cette version. Vous pouvez trouver une liste de toutes les modifications apportées ici : [Journal complet des modifications pour Home Assistant Core 2023.5](https://www-home--assistant-io.translate.goog/changelogs/core-2023.5?_x_tr_sl=auto&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=wapp)
+Bien sûr, il y a beaucoup plus dans cette version. Vous pouvez trouver une liste de toutes les modifications apportées ici : [Journal complet des modifications pour Home Assistant Core 2023.5](https://www.home-assistant.io/changelogs/core-2023.5)
