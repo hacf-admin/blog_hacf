@@ -40,7 +40,7 @@ Notre objectif pour 2023 est de vous permettre de contrôler Home Assistant dans
 
 Cette version contient tout ce qui a été annoncé (et plus encore) ! Cela signifie qu'à partir de cette version, vous pouvez commencer à parler à Home Assistant ! 🎙️
 
-![](img/hqdefault.jpg)
+![Maintenant parle](img/hqdefault.jpg "Maintenant parle")
 
 Voici un bref résumé de [tout ce qui a été annoncé](https://www.home-assistant.io/blog/2023/04/27/year-of-the-voice-chapter-2/), avec des liens vous permettant d'en savoir plus :
 
@@ -63,21 +63,21 @@ Si vous avez manqué la diffusion en direct de la semaine dernière, n'hésitez
 
 <https://www.youtube.com/watch?v=Tk-pnm7FY7c>
 
-![youtube chapitre 2](img/hqdefault2.jpg)
+![youtube chapitre 2](img/hqdefault2.jpg "youtube chapitre 2")
 
 ## Gérez ce qui est exposé à vos assistants vocaux
 
 Un tout nouvel élément de menu intéressant se trouve dans votre menu `Paramètres` `assistants vocaux` !
 
-![](img/voice-assistants.png)
+![Paramètre assistants vocaux](img/voice-assistants.png "Paramètre assistants vocaux")
 
 Ce nouveau groupe de paramètres vous donne accès à de nombreuses nouvelles fonctionnalités vocales fantastiques. Il fournit également un nouvel onglet **Exposer** où vous pouvez gérer les entités qui sont exposées à votre Assistant, Alexa et Google Assistant.
 
-![voice-assistants-expose-entities](img/voice-assistants-expose-entities.png "Expose Entities")
+![Assistants vocaux - Expose Entities](img/voice-assistants-expose-entities.png "Assistants vocaux - Expose Entities")
 
 Il donne un aperçu des entités que vous avez exposées à vos assistants vocaux et vous permet d'en supprimer ou d'en ajouter facilement de nouvelles. En cliquant sur une entité dans cet écran, vous ferez apparaître les paramètres de l'assistant vocal pour cette entité, ce qui vous permettra d'activer ou de désactiver l'exposition de l'entité à un assistant vocal spécifique et de gérer les alias de l'entité.
 
-![voice-assistants-expose-entities-settings](img/voice-assistants-expose-entities-settings.png "Expose Entities settings")
+![Assistants vocaux - Expose Entities settings](img/voice-assistants-expose-entities-settings.png "Assistants vocaux - Expose Entities settings")
 
 Cela prend actuellement en charge notre [Assistant](<The $13 tiny ESPHome-based voice assistant>) Amazon Alexa et Google Assistant via Home Assistant Cloud.
 
@@ -89,11 +89,11 @@ La boîte de dialogue de paramétrage des entités comportait une section avanc�
 
 La section avancée a été supprimée et toutes ses fonctionnalités ont été réorganisées. Ainsi, aucune fonctionnalité n'a été perdue tout en offrant une interface beaucoup plus agréable.
 
-![voice-assistants-expose-entities-settings](img/entity-settings.png "Expose Entities Settings")
+![Assistants vocaux - Entities Settings ](img/entity-settings.png "Assistants vocaux - Entities Settings")
 
 Et puisque nous sommes dans l'année de la voix, vous remarquerez peut-être l'option **"Assistants vocaux"** dans la capture d'écran ci-dessus, qui s'affichera :
 
-![option assistants vocaux](img/entity-settings-voice-assistants.png)
+![option assistants vocaux](img/entity-settings-voice-assistants.png "option assistants vocaux")
 
 Cela vous permet de modifier rapidement les assistants vocaux auxquels l'entité est exposée, y compris ses alias, sans avoir à revenir au panneau des assistants vocaux dans l'écran principal des paramètres.
 
@@ -105,7 +105,7 @@ Cependant, les LED de la carte peuvent éclairer votre environnement lorsqu'il f
 
 A partir de cette version, vous pouvez configurer (activer/désactiver) le disque, le "heartbeat" et les LEDs d'alimentation de votre Home Assistant Yellow en utilisant le bouton Configurer sur la page `Paramètres` >  `Matériel`.
 
-![home-assistant-yellow-led-controls](img/home-assistant-yellow-led-controls.png)
+![Home Assistant Yellow - led controls](img/home-assistant-yellow-led-controls.png "Home Assistant Yellow - led controls")
 
 ## Options de déclenchement des webhooks
 
@@ -113,13 +113,13 @@ Les webhooks ont été étendus dans cette version. Nous prenons désormais en 
 
 Mais ce n'est pas tout. Grâce à [@esev](https://github.com/esev), nous avons maintenant de nouvelles fonctionnalités de sécurité pour nos déclencheurs de webhooks. Vous pouvez maintenant définir les méthodes HTTP avec lesquelles votre déclencheur de webhook fonctionne et la possibilité de limiter les webhooks pour qu'ils ne fonctionnent que sur votre réseau local.
 
-![webhook-trigger-settings](img/webhook-trigger-settings.png)
+![Webhook - trigger settings](img/webhook-trigger-settings.png "Webhook - trigger settings")
 
 ## Nouveau pipeline "Assistant" et sélecteurs de langue
 
 Si vous construisez des Blueprints d'automatisation ou de scripts, vous pouvez désormais utiliser deux nouveaux sélecteurs d'interface utilisateur avec vos Blueprints : un sélecteur de **pipeline "Assistant"** et un **sélecteur de langue**.
 
-![blueprints-language-selector](img/blueprints-language-selector.png)
+![Blueprints - language selector](img/blueprints-language-selector.png "Blueprints - language selector")
 
 Le sélecteur de langue permet à un utilisateur de choisir parmi une liste de langues.
 
@@ -306,7 +306,7 @@ Dans Home Assistant Core 2023.7, tout déclencheur webhook qui ne définit pas `
 
 Cliquez sur l'icône en forme de roue dentée à côté de l'ID du webhook pour mettre à jour vos déclencheurs de webhook. Sélectionnez ensuite une valeur appropriée pour l'option Uniquement accessible depuis le réseau local. Il est nécessaire de désélectionner l'option pour que le bouton Enregistrer apparaisse. Puis re-sélectionnez l'option si elle doit être activée. L'avertissement de réparation disparaîtra ainsi.
 
-![breaking-change-webhook-triggers](img/breaking-change-webhook-triggers.png)
+![Breaking change - webhook triggers](img/breaking-change-webhook-triggers.png "Breaking change - webhook triggers")
 
 Consultez la [documentation du déclencheur de webhook](https://www.home-assistant.io/docs/automation/trigger/#webhook-trigger) pour une description des nouvelles options. Et veuillez consulter la nouvelle section [Webhook Security](https://www.home-assistant.io/docs/automation/trigger/#webhook-security) pour connaître les meilleures pratiques lors de l'utilisation des déclencheurs webhook.
 
