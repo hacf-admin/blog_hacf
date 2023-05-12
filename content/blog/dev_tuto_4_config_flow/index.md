@@ -3,19 +3,22 @@ folder: dev_tuto_4_config_flow
 title: Développer pour Home Assistant - (4) La configuration
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-04-29
 lastmod: 2023-04-29
-description: L'objectif de cet article est d'ajouter une IHM de paramétrage à
-  notre intégration. Il s'inscrit dans la suite des articles dont le sommaire
-  est [ici](/README.md).
+images: img/developper-4.png
+description: Cet article s'adresse aux développeurs et fait partie d'une série
+  de tutos visant à vous présenter comment développer en python votre propre
+  intégration. L'objectif de ce quatrième tutoriel est d'ajouter une IHM de
+  paramétrage à notre intégration. Il s'inscrit dans la suite des articles dont
+  le sommaire est [ici](/README.md).
 level: Avancé
 version_ha: "2023.4"
 categories:
   - Développement
 tags:
   - developpement
-  - ""
+  - python
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
@@ -28,7 +31,9 @@ Il s'inscrit dans la suite des articles dont le sommaire est [Développer pour H
 
 ## Prérequis
 
-Avoir déroulé avec succès les trois premiers articles [tuto2](/blog/dev_tuto_1_installation/), [tuto2](/blog/dev_tuto_1_integration/) et [tuto2](/blog/dev_tuto_3_interactions/). Vous devez donc avoir une entité avec un état qui est une mesure en secondes et une deuxième entité qui écoute la première et stocke dans son état la date heure du dernier changement.
+Avoir déroulé avec succès les trois premiers articles [tuto1](/blog/dev_tuto_1_installation/), [tuto2](/blog/dev_tuto_1_integration/) et [tuto3](/blog/dev_tuto_3_interactions/).
+
+Vous devez donc avoir une entité avec un état qui est une mesure en secondes et une deuxième entité qui écoute la première et stocke dans son état la date heure du dernier changement.
 
 ## Les points abordés
 
