@@ -17,6 +17,7 @@ categories:
   - Développement
 tags:
   - developpement
+  - python
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
