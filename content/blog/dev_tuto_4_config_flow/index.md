@@ -19,12 +19,11 @@ tags:
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
 ---
-> :bulb: Les fichiers sources complets en version finales sont en fin d'article. Cf [Fichiers sources du tuto](#fichiers-sources-du-tuto)
+> 💡Les fichiers sources complets en version finales sont en fin d'article. Cf [Fichiers sources du tuto](#fichiers-sources-du-tuto)
 
 # Pre-requis
 
 Avoir déroulé avec succès les trois premiers articles [tuto1](/tuto1.md), [tuto2](/tuto2.md) et [tuto3](/tuto3.md). Vous devez donc avoir une entité avec un état qui est une mesure en secondes et une deuxième entité qui écoute la première et stocke dans son état la date heure du dernier changement.
-
 
 # Contexte
 
@@ -43,7 +42,7 @@ Exemple avec le panneau de configuration de Sonoff
 
 Ces panneaux de configuration s'ouvre lorsqu'on ajoute une intégration ou lorsqu'on veut modifier la configuration d'une intégration existante.
 
-> :bulb: Une configuration se fait potentiellement en plusieurs étapes qui s'enchainent en cliquant sur `Valider`. Chaque étape peut dépendre de ce qui a été saisi à la précédente. On arrive donc à définir un parcours de configuration (le `flow`) dont **la dernière étape est la création de l'entité** elle-même.
+> 💡 Une configuration se fait potentiellement en plusieurs étapes qui s'enchainent en cliquant sur `Valider`. Chaque étape peut dépendre de ce qui a été saisi à la précédente. On arrive donc à définir un parcours de configuration (le `flow`) dont **la dernière étape est la création de l'entité** elle-même.
 
 # Activer l'IHM de configuration
 
@@ -76,7 +75,7 @@ Pour rappel, dans le tuto1, lorsqu'on avait fait l'ajout de notre intégration, 
 
 ![ConfigFlow vide](/images/integration-manuelle.png?raw=true)
 
-> :bulb: A ce stade, Home Assistant nous permet de configurer notre intégration. Mais comme aucune étape de configuration n'est codée il ne se passe rien lorsqu'on clique sur "Fermer".
+> 💡 A ce stade, Home Assistant nous permet de configurer notre intégration. Mais comme aucune étape de configuration n'est codée il ne se passe rien lorsqu'on clique sur "Fermer".
 
 # Ajouter une étape de configuration
 
@@ -85,7 +84,7 @@ Pour ajouter une étape de configuration (`step`), il faut ajouter une méthode 
 Dans notre cas, l'intégration a été ajoutée par l'utilisateur, donc la méthode qui implémente la première étape doit avoir le nom suivant : `async_step_user`.
 Si notre intégration avait été découverte automatiquement par le bluetooth par exemple, elle aurait du s'appeler, `async_step_bluetooth`.
 
-> :bulb: Cette façon de faire est assez perturbante si tu développes depuis un certain temps. Le développement dans Home Assistant fait beaucoup appel à ces noms de fichiers, de classes, de méthodes dont le nom est fixe et auquel on ne peut pas déroger. Bref, c'est comme ça et il faut faire avec. La [documentation de référence](https://developers.home-assistant.io/docs/creating_component_index) aide pour les trouver.
+> 💡 Cette façon de faire est assez perturbante si tu développes depuis un certain temps. Le développement dans Home Assistant fait beaucoup appel à ces noms de fichiers, de classes, de méthodes dont le nom est fixe et auquel on ne peut pas déroger. Bref, c'est comme ça et il faut faire avec. La [documentation de référence](https://developers.home-assistant.io/docs/creating_component_index) aide pour les trouver.
 
 On va donc ajouter une méthode nommée `async_step_user` puisque notre intégration est ajoutée manuellement par un utilisateur :
 
@@ -114,7 +113,7 @@ Saisis un nom dans le champ et appuis sur "Valider". Tu dois voir les 2 logs sui
 
 Ca fonctionne bien, notre methode `async_step_user` a bien été appelée 2 fois, une fois sans valeur et une fois avec les valeurs saisies dans le formulaire.
 
-> :bulb:
+> 💡
 >
 > 1. il n'est pas facile pour l'utilisateur de savoir ce qu'il doit saisir. On va ajouter juste en dessous des libellés pour notre formulaire pour y remédier,
 > 2. l'appui sur "Valider" se termine avec une erreur. C'est parce-que notre méthode ne retourne rien lors du 2ème passage. On va y remédier aussi un peu en dessous. A ce stade, c'est normal.
@@ -149,7 +148,7 @@ Les fichiers `strings.json` et `translations/fr.json` sont identiques. Pour une 
 
 On redémarre Home Assistant et on tente de recréer l'intégration.
 
-> :bulb: On constate que nos libellés **NE SONT PAS** pris en compte ! En effet, ils sont mis en cache dans le navigateur pour éviter de trop souvent interroger le serveur. Il va falloir vider ce cache (command-shift-suppr / "Images et fichiers en cache" sur Chrome sous Mac). Il arrive que cela ne fonctionne pas non plus après vider le cache. Dans ce cas, il faut relancer complètement le navigateur.
+> 💡 On constate que nos libellés **NE SONT PAS** pris en compte ! En effet, ils sont mis en cache dans le navigateur pour éviter de trop souvent interroger le serveur. Il va falloir vider ce cache (command-shift-suppr / "Images et fichiers en cache" sur Chrome sous Mac). Il arrive que cela ne fonctionne pas non plus après vider le cache. Dans ce cas, il faut relancer complètement le navigateur.
 
 Vides le cache, recharges la page, crées l'intégration TutoHACS et cette fois tu dois avoir ça :
 
@@ -239,7 +238,7 @@ Exemple pour sélectionner des entités :
 
 ```
 
-> :bulb: C'est très puissant mais vraiment très mal documenté. Souviens toi, en introduction de ces tutos, je disais qu'il fallait aller voir ce qu'on fait les autres (**Open Source !**), c'est primodial d'appliquer cette règle ici. Fork le repo de Home Assistant, parcours le code, fait des recherches dedans et tu vas apprendre plein de choses.
+> 💡 C'est très puissant mais vraiment très mal documenté. Souviens toi, en introduction de ces tutos, je disais qu'il fallait aller voir ce qu'on fait les autres (**Open Source !**), c'est primodial d'appliquer cette règle ici. Fork le repo de Home Assistant, parcours le code, fait des recherches dedans et tu vas apprendre plein de choses.
 
 Pour les curieux, voici le schéma complet de la prmeière page de configuration du [Versatile Thermostat](https://github.com/jmcollin78/versatile_thermostat) :
 
@@ -282,7 +281,7 @@ On constate qu'il manque quelques traductions pour notre page 2. On les ajoute d
 
 ![Config flow page 2](/images/config-flow-4.png?raw=true)
 
-> :bulb:
+> 💡
 >
 > 1. comme au-dessus, la validation de la 2ème page de configuration génère une erreur. A ce stade, c'est normal puisque notre méthode `async_step_2` ne renvoie rien,
 > 2. dans notre première méthode, lorsqu'on appelle la 2ème, **il est possible d'avoir de la logique pour router vers la page 2** ou tout autre page de notre choix. C'est comme ça qu'on va pouvoir avoir **un parcours de paramétrage différent** en fonction de la configuration que l'on veut atteindre.
@@ -433,7 +432,7 @@ Cliques sur l'appareil pour voir ses entités :
 
 ![Appareil2](/images/appareil-2.png?raw=true)
 
-> :bulb: Il est possible de créer autant d'intégration que l'on veut. Il suffit pour cela de cliquer sur "Ajouter une intégration" et de donner les éléments de configuration.
+> 💡 Il est possible de créer autant d'intégration que l'on veut. Il suffit pour cela de cliquer sur "Ajouter une intégration" et de donner les éléments de configuration.
 
 # Modifier une configuration
 
@@ -490,7 +489,7 @@ Cliques dessus et on voit apparaitre notre option flow avec les infos suivantes 
 
 Si les libellés ne s'affichent pas, n'oublies pas qu'il faut vider le cache du navigateur (command + shift + suppr) et/ou relancer le navigateur complètement si ça ne suffit pas. Oui, c'est libellés sont assez capricieux. Si après arrêt / relance du navigateur, ça ne s'affiche toujours pas, il y a certainement une erreur de syntaxe dans les fichiers `string.json` ou `fr.json`. Tu peux t'aider des fichiers complets en fin d'article.
 
-> :bulb: On constate que les valeurs précédentes ne sont pas pré-renseignées. C'est normal puisqu'on ne lui a pas dit de le faire. On verra comment faire ça plus bas.
+> 💡 On constate que les valeurs précédentes ne sont pas pré-renseignées. C'est normal puisqu'on ne lui a pas dit de le faire. On verra comment faire ça plus bas.
 
 Saisis des nouvelles valeurs pour les champs `Nom` et `Sensor` et valides le formulaire.
 
@@ -500,7 +499,7 @@ Le message de succès doit s'afficher, nous informant que la configEntry à bien
 
 Appuies sur "TERMINER" pour fermer cette popup.
 
-> :bulb: On constate que :
+> 💡 On constate que :
 >
 > 1. notre entité n'a pas été modifiée. En effet, on a seulement modifié la configEntry mais l'entité n'a pas été rechargée à partir de cette configEntry. On verra ci-dessous comment faire pour recharger automatiquement l'entité correspondante.
 > 2. si on arrête et on relance Home Assistant, on ne voit toujours pas nos modifications
