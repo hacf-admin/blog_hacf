@@ -3,7 +3,7 @@ folder: ha_2023_5
 title: "Home Assistant 2023.5 : Maintenant, parle !"
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-05-10
 lastmod: 2023-05-10
 images: img/social.png
