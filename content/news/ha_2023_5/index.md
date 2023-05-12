@@ -1,6 +1,6 @@
 ---
 folder: ha_2023_5
-title: "2023.5 : Maintenant, parle !"
+title: "Home Assistant 2023.5 : Maintenant, parle !"
 type: news
 visibleInCMS: true
 draft: true
