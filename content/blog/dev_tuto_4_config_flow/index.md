@@ -9,9 +9,8 @@ lastmod: 2023-04-29
 images: img/developper-4.png
 description: Cet article s'adresse aux développeurs et fait partie d'une série
   de tutos visant à vous présenter comment développer en python votre propre
-  intégration. L'objectif de ce quatrième tutoriel est d'ajouter une IHM de
-  paramétrage à notre intégration. Il s'inscrit dans la suite des articles dont
-  le sommaire est [ici](/README.md).
+  intégration. L'objectif de ce quatrième tutoriel est d'ajouter une interface
+  de configuration à notre intégration.
 level: Avancé
 version_ha: "2023.4"
 categories:
@@ -24,9 +23,9 @@ url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/2
 ---
 L'objectif de cet article est d'ajouter une IHM de paramétrage à notre intégration lors de son installation et paramétrage.
 
-Il s'inscrit dans la suite des articles dont le sommaire est [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
+Il s'inscrit dans la suite des articles dont le sommaire est présenté ici : [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
 
-> 💡 Les fichiers sources complets en version finales sont en fin d'article. Cf [Fichiers sources du tuto](#fichiers-sources-du-tuto)
+> 💡 Les fichiers sources complets en version finales sont en fin d'article.
 
 ## Prérequis
 
