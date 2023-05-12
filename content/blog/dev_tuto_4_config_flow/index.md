@@ -21,16 +21,16 @@ url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/2
 ---
 ## L'objectif de cet article est d'ajouter une IHM de paramétrage à notre intégration
 
-Il s'inscrit dans la suite des articles dont le sommaire est [ici](/README.md).
+Il s'inscrit dans la suite des articles dont le sommaire est [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
 
 > 💡
 > Les fichiers sources complets en version finales sont en fin d'article. Cf [Fichiers sources du tuto](#fichiers-sources-du-tuto)
 
-# Pre-requis
+## Prérequis
 
-Avoir déroulé avec succès les trois premiers articles [tuto1](/tuto1.md), [tuto2](/tuto2.md) et [tuto3](/tuto3.md). Vous devez donc avoir une entité avec un état qui est une mesure en secondes et une deuxième entité qui écoute la première et stocke dans son état la date heure du dernier changement.
+Avoir déroulé avec succès les trois premiers articles [tuto2](/blog/dev_tuto_1_installation/), [tuto2](/blog/dev_tuto_1_integration/) et [tuto2](/blog/dev_tuto_3_interactions/). Vous devez donc avoir une entité avec un état qui est une mesure en secondes et une deuxième entité qui écoute la première et stocke dans son état la date heure du dernier changement.
 
-# Les points abordés
+## Les points abordés
 
 Dans cet article, tu vas apprendre à :
 
@@ -41,26 +41,26 @@ Dans cet article, tu vas apprendre à :
 5. créer une entité à partir d'une configuration,
 6. modifier la configuration d'une entité existante
 
-# Contexte
+## Contexte
 
-Dans les tutos précédents, notre intégration et nos entités étaient paramétrées via le fichier `config/configuration.yaml` global a Home Assistant. La modification de ce fichier, se fait en yaml, est complexe et est sujette à beaucoup d'erreurs : indentation stricte, syntaxe particulière, ...
+Dans les tutos précédents, notre intégration et nos entités étaient paramétrées via le fichier `config/configuration.yaml` global à Home Assistant. La modification de ce fichier se fait en yaml, est complexe et est sujette à beaucoup d'erreurs : indentation stricte, syntaxe particulière, etc
 
-Dans Home Assistant il existe un moyen beaucoup plus "user-friendly" de paramétrer ses appareils et ses entités : le `config flow` (ou flot de configuration).
+Dans Home Assistant, il existe un moyen beaucoup plus "user-friendly" de paramétrer ses appareils et ses entités : le `config flow` (ou flot de configuration).
 
 Cela correspond à toutes les fenêtres de configuration plus ou moins complexes que l'on peut trouver dans la plupart des intégrations récentes.
 Exemple avec [Versatile Thermostat](https://github.com/jmcollin78/versatile_thermostat) :
 
 ![Versatile Thermostat](img/vtherm-config-main.png)
 
-Exemple avec le panneau de configuration de Sonoff
+Exemple avec le panneau de configuration de Sonoff :
 
 ![Sonoff](img/sonoff-config.png)
 
-Ces panneaux de configuration s'ouvre lorsqu'on ajoute une intégration ou lorsqu'on veut modifier la configuration d'une intégration existante.
+Ces panneaux de configuration s'ouvrent lorsqu'on ajoute une intégration ou lorsqu'on veut modifier la configuration d'une intégration existante.
 
 > 💡 Une configuration se fait potentiellement en plusieurs étapes qui s'enchainent en cliquant sur `Valider`. Chaque étape peut dépendre de ce qui a été saisi à la précédente. On arrive donc à définir un parcours de configuration (le `flow`) dont **la dernière étape est la création de l'entité** elle-même.
 
-# Activer l'IHM de configuration
+## Activer l'IHM de configuration
 
 Pour utiliser cette IHM de configuration, la première chose à faire est d'indiquer à Home Assistant que notre intégration possède un flot de configuration.
 Cela se passe dans le `manifest.yaml`, on indique :
@@ -69,7 +69,7 @@ Cela se passe dans le `manifest.yaml`, on indique :
    "config_flow": true,
 ```
 
-A la lecture de cet attribut, Home Assistant va chercher le code du `configFlow` dans le fichier nommé `config_flow.py` à la racine de notre intégration. Ce nom de fichier n'est pas paramétrable. Il doit impérativement s'appeler comme ça.
+À la lecture de cet attribut, Home Assistant va chercher le code du `configFlow` dans le fichier nommé `config_flow.py` à la racine de notre intégration. Ce nom de fichier n'est pas paramétrable. Il doit impérativement s'appeler comme ça.
 
 On va donc créer un fichier `config_flow.yaml` le plus simple possible pour l'instant :
 
@@ -93,28 +93,28 @@ class TutoHACSConfigFlow(ConfigFlow, domain=DOMAIN):
     VERSION = 1
 ```
 
-Vérifies les erreurs de compilation et corriges les au besoin et redémarres Home Assistant.
+Vérifies les erreurs de compilation, corriges les au besoin et redémarre Home Assistant.
 
-Lorsqu'on créé une intégration de type TutoHACS ("Paramètres / Intégrations / Ajouter une intégration") :
+Lorsqu'on crée une intégration de type TutoHACS ("Paramètres / Intégrations / Ajouter une intégration") :
 
 ![Ajout intégration](img/ajout-integration.png)
 
 on obtient la fenêtre de configuration suivante :
 
-![ConfigFlow vide](img/config-flow-vide.png)
+![ConfigFlow](img/config-flow-vide.png)
 
 Pour rappel, dans le tuto1, lorsqu'on avait fait l'ajout de notre intégration, on avait eu le message suivant :
 
-![ConfigFlow vide](img/integration-manuelle.png)
+![ConfigFlow](img/integration-manuelle.png)
 
 > 💡 A ce stade, Home Assistant nous permet de configurer notre intégration. Mais comme aucune étape de configuration n'est codée il ne se passe rien lorsqu'on clique sur "Fermer".
 
-# Ajouter une étape de configuration
+## Ajouter une étape de configuration
 
 Pour ajouter une étape de configuration (`step`), il faut ajouter une méthode par étape dans notre classe de configuration. La première étape qui va être appelée par Home Assistant doit avoir un nom fixé à l'avance qui dépend de comment a été découverte l'intégration.
 
 Dans notre cas, l'intégration a été ajoutée par l'utilisateur, donc la méthode qui implémente la première étape doit avoir le nom suivant : `async_step_user`.
-Si notre intégration avait été découverte automatiquement par le bluetooth par exemple, elle aurait du s'appeler, `async_step_bluetooth`.
+Si notre intégration avait été découverte automatiquement par le Bluetooth par exemple, elle aurait dû s'appeler, `async_step_bluetooth`.
 
 > 💡 Cette façon de faire est assez perturbante si tu développes depuis un certain temps. Le développement dans Home Assistant fait beaucoup appel à ces noms de fichiers, de classes, de méthodes dont le nom est fixe et auquel on ne peut pas déroger. Bref, c'est comme ça et il faut faire avec. La [documentation de référence](https://developers.home-assistant.io/docs/creating_component_index) aide pour les trouver.
 
@@ -147,16 +147,16 @@ On va donc ajouter une méthode nommée `async_step_user` puisque notre intégra
 
 Comme indiqué dans le commentaire, cette méthode va être appelée 2 fois :
 
-1. une première fois sans `user_input`. Home Assistant s'attend à ce qu'on lui donne alors, le formulaire a afficher à l'utilisateur,
+1. une première fois sans `user_input`. Home Assistant s'attend à ce qu'on lui donne alors le formulaire à afficher à l'utilisateur,
 2. une deuxième fois, cette fois avec des données dans `user_input`. `user_input` contient alors un dictionnaire avec les valeurs du formulaire saisies par l'utilisateur. On va voir ce qu'on fait de ses valeurs ensuite. Pour l'instant, on va juste les logger.
 
-Note : le code qui initialise le formulaire `user_form = vol.Schema({vol.Required("name"): str})`sera expliqué ci-dessous. N'y fait pas attention pour l'instant.
+Note : le code qui initialise le formulaire `user_form = vol.Schema({vol.Required("name"): str})`sera expliqué ci-dessous. N'y fais pas attention pour l'instant.
 
 Après relance de Home Assistant, si on tente de créer une intégration de type TutoHACS, on obtient cette fois cette page de configuration :
 
-![ConfigFlow vide](img/config-flow-1.png)
+![ConfigFlow](img/config-flow-1.png)
 
-On est bien rentré dans le config flow et Home Assistant nous affiche le formulaire qui contient un champ "name".
+On est bien rentré dans le configFlow et Home Assistant nous affiche le formulaire qui contient un champ "name".
 
 Saisis un nom dans le champ et appuis sur "Valider". Tu dois voir les 2 logs suivants :
 
@@ -166,14 +166,14 @@ Saisis un nom dans le champ et appuis sur "Valider". Tu dois voir les 2 logs sui
 2023-04-22 10:31:19.752 DEBUG (MainThread) [custom_components.tuto_hacs.config_flow] config_flow step user (2). On a reçu les valeurs: {'name': 'xxxxxx'}
 ```
 
-Ca fonctionne bien, notre methode `async_step_user` a bien été appelée 2 fois, une fois sans valeur et une fois avec les valeurs saisies dans le formulaire.
+Ça fonctionne bien, notre méthode `async_step_user` a bien été appelée 2 fois, une fois sans valeur et une fois avec les valeurs saisies dans le formulaire.
 
 > 💡
 >
 > 1. il n'est pas facile pour l'utilisateur de savoir ce qu'il doit saisir. On va ajouter juste en dessous des libellés pour notre formulaire pour y remédier,
 > 2. l'appui sur "Valider" se termine avec une erreur. C'est parce-que notre méthode ne retourne rien lors du 2ème passage. On va y remédier aussi un peu en dessous. A ce stade, c'est normal.
 
-## Ajout de libellés dans notre formulaire
+### Ajout de libellés dans notre formulaire
 
 On va ajouter des libellés à ce formulaire en ajoutant le fichier `strings.json` suivant à la racine de notre intégration :
 
@@ -203,14 +203,14 @@ La structure est fixe et rigide.
 Tu donnes dans ce fichier les différents libellés qui accompagnent les formulaires :
 
 * `title` est le nom de l'intégration,
-* le bloc `config` contient les libellés du config flow,
+* le bloc `config` contient les libellés du configFlow,
 * `flow_title` est le titre du flot de configuration,
 * le bloc `step` contient les libellés des étapes de la configuration,
 * le bloc `user` contient les libellés de l'étape `user`. Il y a la possibilité de mettre un titre et une description
 * le bloc `data` contient les libellés des datas du formulaire `user`. 2 libellés sont possibles : le libellé de nos champs (ici `name`)
 * le bloc `data_description` contient une description optionnelle pour chaque champ du formulaire. Dans notre exemple, il n'y a pas `name`
 
-Ensuite on va créer une copie de ce fichier dans un sous-répertoire de notre intégration nommé `translations`. Ce répertoire doit contenir, les traductions du fichier `strings.json` dans toutes les langues supportées par notre intégration. La langue par défaut affichées à l'utilisateur sera sa langue configurée dans Home Assistant.
+Ensuite, on va créer une copie de ce fichier dans un sous-répertoire de notre intégration nommé `translations`. Ce répertoire doit contenir, les traductions du fichier `strings.json` dans toutes les langues supportées par notre intégration. La langue par défaut affichée à l'utilisateur sera sa langue configurée dans Home Assistant.
 
 On doit donc avoir l'arborescence suivante :
 
@@ -222,9 +222,9 @@ On redémarre Home Assistant et on tente de recréer l'intégration.
 
 > 💡 On constate que nos libellés **NE SONT PAS** pris en compte ! En effet, ils sont mis en cache dans le navigateur pour éviter de trop souvent interroger le serveur. Il va falloir vider ce cache (command-shift-suppr / "Images et fichiers en cache" sur Chrome sous Mac). Il arrive que cela ne fonctionne pas non plus après vider le cache. Dans ce cas, il faut relancer complètement le navigateur.
 
-Vides le cache, recharges la page, crées l'intégration TutoHACS et cette fois tu dois avoir ça :
+Vides le cache, recharges la page, crées l'intégration TutoHACS et cette fois, tu dois avoir ça :
 
-![Arborescence](img/config-flow-2.png)
+![ConfigFlow](img/config-flow-2.png)
 
 > ⚠️ **Attention :** en cas d'erreur de syntaxe dans un fichier de libellés, aucune erreur ne sera signalée nul part et seule la dernière version valide sera prise en compte. Combiné avec le cache navigateur qui reste aussi sur la dernière version valide, il est parfois très compliqué de comprendre pourquoi nos modifications ne pas prisent en compte.
 
@@ -236,9 +236,9 @@ Dans le code de la fonction `async_step_user` ci-dessus, on a une ligne qui n'a 
 user_form = vol.Schema({vol.Required("name"): str})
 ```
 
-Ce petit bout de code qui n'a l'air de rien mériterait à lui tout seul un tuto complet tellement il est puissant mais complexe et mal documenté. Je vais vous donner quelques clés pour comprendre comment il marche.
+Ce petit bout de code qui n'a l'air de rien mériterait à lui tout seul un tuto complet tellement il est puissant, mais complexe et mal documenté. Je vais vous donner quelques clés pour comprendre comment il marche.
 
-## Voluptuous
+### Voluptuous
 
 Les formulaires sont créés à partir du package Python [Voluptuous](https://github.com/alecthomas/voluptuous) qui permet de créer des schémas. Un schéma est une librairie de validation des données d'un formulaire. Sa première intention est de valider syntaxiquement et sémantiquement des données reçues par un logiciel. On s'en sert ici pour décrire le formulaire qui est présenté à l'utilisateur et pour valider les données du formulaire saisies par l'utilisateur.
 
@@ -255,7 +255,7 @@ vol.Schema({
 })
 ```
 
-Chaque élement de formulaire (chaque ligne), est lui même un objet qui dit si l'élément est faculatif ou obligatoire et on lui donne un nom :
+Chaque élément de formulaire (chaque ligne), est lui-même un objet qui dit si l'élément est facultatif ou obligatoire et on lui donne un nom :
 
 ```python
 vol.Schema({
@@ -266,7 +266,7 @@ vol.Schema({
     })
 ```
 
-Dans le constructeur `Required` ou `Optional`, il est possible de donner une valeur par défaut au champ (si non saisi par l'utilisateur) ainsi qu'une valeur suggérée (valeur proposée à l'utilisateur mais qui ne sera pas retenue si l'utilisateur laisse le champ vide). **La nuance valeur par défaut / valeur suggérée** est subtile mais importante. Un champ qui a une valeur par défaut, **ne pas ne pas voir de valeur**, alors qu'en cas de valeur suggérée, l'utilisateur peut supprimer la valeur proposée et ainsi saisir la valeur vide.
+Dans le constructeur `Required` ou `Optional`, il est possible de donner une valeur par défaut au champ (si non saisi par l'utilisateur) ainsi qu'une valeur suggérée (valeur proposée à l'utilisateur, mais qui ne sera pas retenue si l'utilisateur laisse le champ vide). **La nuance valeur par défaut / valeur suggérée** est subtile, mais importante. Un champ qui a une valeur par défaut, **ne peut pas ne pas avoir de valeur**, alors qu'en cas de valeur suggérée, l'utilisateur peut supprimer la valeur proposée et ainsi saisir la valeur vide.
 
 ```python
 vol.Schema({
@@ -277,22 +277,22 @@ vol.Schema({
     })
 ```
 
-Chaque champ a un type qu'il faut mettre à la place de `<Validator>` en fonction de ce qui est attendu par l'utilisateur. Un type est une classe proposée par le package Voluptuous lui-même. Par exemple :
+Chaque champ à un type qu'il faut mettre à la place de `<Validator>` en fonction de ce qui est attendu par l'utilisateur. Un type est une classe proposée par le package Voluptuous lui-même. Par exemple :
 
 * `str` : string,
 * `Boolean` : booleen,
 
 mais aussi des classes plus complexes :
 
-* `Range` : une plage de valeur admises. Exemple : `vol.Range(min=-90, max=90)`,
-* `Coerce(type)` : permet de convertir la valeur en un type (en argument). Exemple: `vol.Coerce(float)` pour traduire le champ en `float`,
-* `Match(regexp)`: le champ est valide si l'expression régulière est vraie,
+* `Range` : une plage de valeurs admises. Exemple : `vol.Range(min=-90, max=90)`,
+* `Coerce(type)` : permet de convertir la valeur en un type (en argument). Exemple : `vol.Coerce(float)` pour traduire le champ en `float`,
+* `Match(regexp)`⁣ : le champ est valide si l'expression régulière est vraie,
 * `In([])` : la valeur doit être une des valeurs du tableau donné en argument.
 
 mais aussi des Validator qui combinent d'autres validator :
 
-* `All(list(Validator))` : est vrai si tous les `Validator` de la liste sont vérifiés. Exemple: `vol.All(vol.Coerce(float), vol.Range(min=-90, max=90)` 
-* `Any(list(Validator))` : est vrai si au moins un `Validator` de la liste est vérifié. Exemple: `vol.Any("valeur1", "valeur2")`
+* `All(list(Validator))` : est vrai si tous les `Validator` de la liste sont vérifiées. Exemple : `vol.All(vol.Coerce(float), vol.Range(min=-90, max=90)` 
+* `Any(list(Validator))` : est vrai si au moins un `Validator` de la liste est vérifiée. Exemple : `vol.Any("valeur1", "valeur2")`
 
 Exemple un peu plus complet :
 
@@ -308,7 +308,7 @@ vol.Schema({
     })
 ```
 
-## Les Helpers Home Assistant
+### Les Helpers Home Assistant
 
 Pour aider dans la rédaction des formulaires Home Assistant fournit le package `homeassistant.helpers.config_validation` qui contient des `Validator` prêts à l'emploi. Par exemple :
 
@@ -322,7 +322,7 @@ Pour aider dans la rédaction des formulaires Home Assistant fournit le package 
 
 Il serait impossible de tous les listés ici donc il est conseillé de regarder ce qui est contenu dans le package lui-même.
 
-## Les Selectors Home Assistant
+### Les Selectors Home Assistant
 
 Home Assistant permet d'utiliser les `Selector` comme des `Validators`. Pour rappel, les `Selector` sont listés [ici](https://www.home-assistant.io/docs/blueprint/selectors/).
 On va donc pouvoir très facilement demander à Home Assistant de valider le champ si le champ correspond bien à une entité d'un domaine par exemple. Et dans ce cas, le formulaire affichera que les entités du ou des domaines.
@@ -346,7 +346,7 @@ vol.Schema({
 
 > 💡 C'est très puissant mais vraiment très mal documenté. Souviens toi, en introduction de ces tutos, je disais qu'il fallait aller voir ce qu'on fait les autres (**Open Source !**), c'est primodial d'appliquer cette règle ici. Fork le repo de Home Assistant, parcours le code, fait des recherches dedans et tu vas apprendre plein de choses.
 
-Pour les curieux, voici le schéma complet de la prmeière page de configuration du [Versatile Thermostat](https://github.com/jmcollin78/versatile_thermostat) :
+Pour les curieux, voici le schéma complet de la première page de configuration du [Versatile Thermostat](https://github.com/jmcollin78/versatile_thermostat) :
 
 ```python
 vol.Schema(  # pylint: disable=invalid-name
@@ -385,7 +385,7 @@ Le résultat est le suivant :
 
 ![Versatile Thermostat](img/vtherm-config-main.png)
 
-# Ajouter une deuxième étape
+## Ajouter une deuxième étape
 
 Pour ajouter une deuxième étape de configuration, on ajoute une méthode (une méthode par étape) et on l'appelle à la fin de la première étape. Le code ressemble à ça :
 
@@ -441,7 +441,7 @@ On va corriger les erreurs et on relance Home Assistant. Si on configure une int
 
 ![Config flow page 2](img/config-flow-3.png)
 
-On constate qu'il manque quelques traductions pour notre page 2. On les ajoute dans le fichiers `strings.json` qu'on recopie dans `translations/fr.json`, on redémarre, on vide le cache du navigateur et cette fois, on a la page suivante :
+On constate qu'il manque quelques traductions pour notre page 2. On les ajoute dans le fichier `strings.json` qu'on recopie dans `translations/fr.json`, on redémarre, on vide le cache du navigateur et cette fois, on a la page suivante :
 
 ```json
 {
@@ -472,9 +472,9 @@ On constate qu'il manque quelques traductions pour notre page 2. On les ajoute d
 > 1. comme au-dessus, la validation de la 2ème page de configuration génère une erreur. A ce stade, c'est normal puisque notre méthode `async_step_2` ne renvoie rien,
 > 2. dans notre première méthode, lorsqu'on appelle la 2ème, **il est possible d'avoir de la logique pour router vers la page 2** ou tout autre page de notre choix. C'est comme ça qu'on va pouvoir avoir **un parcours de paramétrage différent** en fonction de la configuration que l'on veut atteindre.
 
-# Créer une entité à partir d'une configuration
+## Créer une entité à partir d'une configuration
 
-On a défini un parcours de configuration (le fameux `configFlow`) et maintenant il va falloir créer une entité en fin de ce parcours avec les éléments saisis.
+On a défini un parcours de configuration (le fameux `configFlow`) et maintenant, il va falloir créer une entité en fin de ce parcours avec les éléments saisis.
 
 Pour cela, il faut :
 
@@ -483,7 +483,7 @@ Pour cela, il faut :
 3. créer les entités avec l'ensemble des éléments saisis,
 4. relier les entités à un appareil (device)
 
-## Mémoriser les éléments saisis
+### Mémoriser les éléments saisis
 
 Pour mémoriser les éléments saisis, il faut ajouter un réceptacle des saisies de l'utilisateur :
 
@@ -530,7 +530,7 @@ Si on relance en l'état et qu'on ajoute une intégration Tuto HACS, on obtient 
 
 Notre objet `_user_inputs` contient bien les 2 champs des 2 formulaires de configuration.
 
-## Créer une entrée de configuration (ConfigEntry)
+### Créer une entrée de configuration (ConfigEntry)
 
 L'entrée de configuration ou ConfigEntry, est ce qui permet de rendre les configurations des intégrations persistantes dans le temps. Après une relance de Home Assistant, **toutes les entités sont créées à partir des configEntry sauvegardées sur le disque**. C'est ce qui remplace le `configuration.yaml`.
 Tu peux retrouver toutes les configEntry sur ton disque dur, dans le fichier `config/.storage/core.config_entries`.
@@ -577,7 +577,7 @@ On va ajouter une constante CONF_NAME qui définit le nom de l'élément de conf
         )
 ```
 
-On relance Home Assistant, on créé une intégration de type Tuto HACS et on doit avoir le résultat suivant :
+On relance Home Assistant, on crée une intégration de type Tuto HACS et on doit avoir le résultat suivant :
 
 ![Config flow réussi](img/config-flow-5.png)
 
@@ -635,7 +635,7 @@ Si on ouvre le fichier `config/.storage/core.config_entries` et qu'on recherche 
 
 Ce fichier contient bien notre configEntry avec nos paramètres, notamment le `title` qui prend la valeur de `data.name`.
 
-## Créer une entité à partir d'une entrée de configuration
+### Créer une entité à partir d'une entrée de configuration
 
 Au chargement ou lors d'une création d'une nouvelle configEntry, il faut indiquer à Home Assistant, comment instancier les entités et les appareils à partir de cette configEntry. Ça se fait simplement en créant une fonction `async_setup_entry` dans le fichier `__init__.py` :
 
@@ -656,7 +656,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     return True
 ```
 
-Ce code positionne le domaine par défaut comme étant notre domain, puis appel `hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)` qui comme son nom l'indique propage le configEntry à toutes les plateformes déclarées dans notre intégration.
+Ce code positionne le domaine par défaut comme étant notre domaine, puis appel `hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)` qui comme son nom l'indique propage le configEntry à toutes les plateformes déclarées dans notre intégration.
 
 Rappelle-toi que `PLATFORMS` contient la liste des plateformes des entités créées par notre intégration (si une intégration doit créer un `sensor` et un `switch`, `PLAFORMS` contiendra `['sensor', 'switch']`). Pour le tuto, `PLATFORM`est initialisé comme suit dans le `const.py` : `PLATFORMS: list[Platform] = [Platform.SENSOR]`.
 
@@ -684,7 +684,7 @@ async def async_setup_entry(
     )
 ```
 
-On constate que cette méthode est très proche de la méthode `async_setup_platform` qui initialise les entités à partir de la configuration de notre plateforme trouvée dans le fichier `configuration.yaml`. C'est bien normal puisque les deux font la même chose mais pas à partir de la même source de configuration.
+On constate que cette méthode est très proche de la méthode `async_setup_platform` qui initialise les entités à partir de la configuration de notre plateforme trouvée dans le fichier `configuration.yaml`. C'est bien normal puisque les deux font la même chose, mais pas à partir de la même source de configuration.
 
 Comme, on n'a pas mis d'élément de configuration donnant le `device_id`, il va falloir qu'on modifie la façon dont ce `device_id` est initialisé. Cf. ci-dessous pour le raccordement des entités à un device.
 
@@ -704,13 +704,13 @@ class TutoHacsListenEntity(SensorEntity):
         self._device_id = entry_infos.get(CONF_NAME)
 ```
 
-Note: on verra plus bas, que cette initialisation du `device_id` avec le nom de l'intégration n'est pas très heureuse.
+Note : on verra plus bas, que cette initialisation du `device_id` avec le nom de l'intégration n'est pas très heureuse.
 
 On peut relancer Home Assistant (après avoir corrigé les éventuelles erreurs...) et on obtient 2 entités supplémentaires ([ici](http://localhost:9123/config/entities)) :
 
 ![Config flow échec](img/entite-config-flow.png)
 
-On constate que les entités précédemment créées par le fichier `configuration.yaml` sont aussi présentes. Il est possible en effet de configurer les entités par les 2 moyens en même temps. Ca ne sert à priori à rien donc on va faire un peu de ménage et supprimer la configuration du `configuration.yaml` :
+On constate que les entités précédemment créées par le fichier `configuration.yaml` sont aussi présentes. Il est possible en effet de configurer les entités par les 2 moyens en même temps. Ça ne sert à priori à rien donc on va faire un peu de ménage et supprimer la configuration du `configuration.yaml` :
 
 On supprime tout le bloc :
 
@@ -724,15 +724,15 @@ On peut aussi supprimer les fonctions `async_setup_platform` de `__init__.py` et
 
 Après arrêt/relance de Home Assistant, on a plus que nos nouvelles entités qui sont actives.
 
-## Relier les entités à un appareil (device)
+### Relier les entités à un appareil (device)
 
 Un appareil peut être vu comme un regroupement d'entités chacune exposant une caractéristique d'un même appareil.
 
-J'ai mis longtemps à comprendre qu'un appareil n'a pas de code, ni de déclaration. Il est simplement créé automatiquement lorsqu'on déclare une entité et qu'on l'a relie à un appareil.
+J'ai mis longtemps à comprendre qu'un appareil n'a pas de code, ni de déclaration. Il est simplement créé automatiquement lorsqu'on déclare une entité et qu'on l'a relié à un appareil.
 
 Pour terminer cette partie, on va relier nos 2 entités à un même appareil (device). Pour cela, c'est très simple, il suffit de déclarer dans la classe de chacune des entités à quel device elle appartient.
 
-Ca se fait en ajoutant le code suivant dans notre classe d'entité :
+Ça se fait en ajoutant le code suivant dans notre classe d'entité :
 
 ```python
 from homeassistant.helpers.entity import DeviceInfo, DeviceEntryType
@@ -779,7 +779,7 @@ Cliques sur l'appareil pour voir ses entités :
 
 > 💡 Il est possible de créer autant d'intégration que l'on veut. Il suffit pour cela de cliquer sur "Ajouter une intégration" et de donner les éléments de configuration.
 
-# Modifier une configuration
+## Modifier une configuration
 
 Il ne nous reste plus qu'à pouvoir modifier la configuration d'une intégration et on aura fait le tour du configFlow. En imaginant qu'on veuille modifier une option sur une de nos intégrations, il serait dommage d'être obligé de la détruire et de la récréer.
 
@@ -795,7 +795,7 @@ La démarche est la suivante :
 
 Pour le tuto, on ne va faire qu'une seule étape qui reprend les 2 attributs : `name` et `sensor_id`.
 
-## Ajouter une classe "option flow"
+### Ajouter une classe "option flow"
 
 Le squelette du code est le suivant :
 
@@ -866,7 +866,7 @@ Comme on ne veut qu'un seul formulaire, on va initialiser `option_form` avec les
         )
 ```
 
-Et pour avoir les nouveaux libellés de notre section "option", on doit ajouter quelques traductions dans les fichier `strings.json` et `fr.json` :
+Et pour avoir les nouveaux libellés de notre section "option", on doit ajouter quelques traductions dans le fichier `strings.json` et `fr.json` :
 
 ```json
 {
@@ -894,7 +894,7 @@ Et pour avoir les nouveaux libellés de notre section "option", on doit ajouter 
 }
 ```
 
-## Déclarer l'optionFlow
+### Déclarer l'optionFlow
 
 Pour que cette nouvelle classe soit prise en compte, il faut la déclarer dans notre flow principal avec le code suivant :
 
@@ -927,7 +927,7 @@ Le message de succès doit s'afficher, nous informant que la configEntry a bien 
 
 ![Option succes](img/options-succes.png)
 
-Appuies sur "TERMINER" pour fermer cette popup.
+Appuies sur "TERMINER" pour fermer ce popup.
 
 > 💡 On constate que :
 >
@@ -959,7 +959,7 @@ Appuies sur "TERMINER" pour fermer cette popup.
 >
 > Nos modifictions ont été ajoutées dans un objet nommé `options` mais les `data` n'ont pas été modifiée. Le fait d'ajouter des options faculatives est peut être intéressant mais ce n'est pas tout à fait ce que nous voulions faire dans ce tuto.
 
-## Modifier la configEntry
+### Modifier la configEntry
 
 Pour dire à Home Assistant de modifier les valeurs de la configEntry et non pas d'ajouter un objet `options` dans la configEntry, il faut modifier le code de la méthode `async_end` de la façon suivante :
 
@@ -1000,7 +1000,7 @@ Après un arrêt/relance de Home Assistant et une modification des attributs de 
     }
 ```
 
-Note: l'objet `options` ajouté précédemment est toujours là, mais il ne sert plus.
+Note : l'objet `options` ajouté précédemment est toujours là, mais il ne sert plus.
 
 On constate que notre entité n'est toujours pas modifiée. Par contre, après un nouvel arrêt/relance de Home Assistant - ce qui a pour effet de forcer le rechargement de la configEntry qui a été modifiée - les modifications sont bien prises en compte :
 
@@ -1008,7 +1008,7 @@ On constate que notre entité n'est toujours pas modifiée. Par contre, après u
 
 > :warning: Par contre, ce n'est encore pas exactement ce que l'on voulait. Home Assistant a créé des nouvelles entités "Avec modification..." mais n'a pas vraiment reconfiguré la précédente "La première" qui existe toujours mais à l'état `indisponible`. On va voir dans le paragraphe suivant comment corriger ce problème.
 
-## Recharger l'entité correspondante
+### Recharger l'entité correspondante
 
 Le défaut constaté dans le paragraphe précédent vient du fait que nos entités ont un `device_id` qui est dépendant du champ `name` :
 
@@ -1080,7 +1080,7 @@ Si on relance Home Assistant et qu'on modifie l'intégration, on voit bien que c
 
 Les nouvelles entités avec le nouveau nom (Le renouveau) ont été créées, mais dans le même device. Les anciennes entités sont encore là, mais indisponible et doivent être supprimées à la main (paramètre).
 
-### Rechargement automatique d'une entité modifiée
+#### Rechargement automatique d'une entité modifiée
 
 Il nous manque encore une chose importante : après avoir modifié le configEntry, les entités ne se rechargent pas automatiquement et un arrêt / relance de Home Assistant est nécessaire.
 
@@ -1101,7 +1101,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
 On relance encore une fois et on constate cette fois que les entités sont immédiatement mises à jour après un changement de config de notre intégration.
 
-## Initialiser les valeurs par défaut
+### Initialiser les valeurs par défaut
 
 Une toute dernière chose intéressante à connaitre. On a vu que lorsque que notre option flow s'affiche, les valeurs sont vides. Il peut être intéressant d'initialiser ces valeurs avec celles déjà présentes sur notre configEntry.
 
@@ -1161,22 +1161,22 @@ class TutoHACSOptionsFlow(ConfigFlow, domain=DOMAIN):
 
 L'idée est de remplacer le schéma donné à la méthode `async_show_form` par celle qui est construite par `add_suggested_values_to_schema` et qui contient les valeurs suggérées.
 
-Après arrêt / relance et modification de l'intégration, on voit bien les valeurs précédentes avant des les modifier :
+Après arrêt / relance et modification de l'intégration, on voit bien les valeurs précédentes avant de les modifier :
 
 ![Option suggested values](img/options-suggested-values.png)
 
-# Conclusion
+## Conclusion
 
 Ce long tuto a présenté dans le détail la création des IHM de paramétrage de nos entités. Cette fonction est très puissante, mais n'est pas simple à appréhender - d'autant qu'elle est très mal documentée.
 Il resterait pas mal de choses à dire sur cette fonction, mais tu as les clés pour comprendre ce que tu pourras trouver dans les intégrations existantes. Encore une fois, il est fortement conseillé de regarder ce qui a été fait par ailleurs pour s'en inspirer. Dis-toi bien que tout ce qui te manque à forcément déjà été résolu par quelqu'un avant toi.
 
 - - -
 
-# Listes des fichiers références de ce tuto
+## Listes des fichiers références de ce tuto
 
  (que les fichiers modifiés par rapport au tuto précédent).
 
-## `__init__.py`
+### `__init__.py`
 
 ```python
 """Initialisation du package de l'intégration HACS Tuto"""
@@ -1214,7 +1214,7 @@ async def update_listener(hass: HomeAssistant, entry: ConfigEntry) -> None:
     await hass.config_entries.async_reload(entry.entry_id)
 ```
 
-## `config_flow.py` :
+### `config_flow.py` :
 
 ```python
 """ Le Config Flow """
@@ -1402,7 +1402,7 @@ class TutoHACSOptionsFlow(OptionsFlow):
         return self.async_create_entry(title=None, data=None)
 ```
 
-## `sensor.py` :
+### `sensor.py` :
 
 ```python
 """ Implements the Tuto HACS sensors component """
@@ -1642,7 +1642,7 @@ class TutoHacsListenEntity(SensorEntity):
         self.async_write_ha_state()
 ```
 
-## `strings.yaml` et `fr.yaml` :
+### `strings.yaml` et `fr.yaml` :
 
 ```yaml
 {
@@ -1692,7 +1692,7 @@ class TutoHacsListenEntity(SensorEntity):
 }
 ```
 
-## `manifest.yaml` :
+### `manifest.yaml` :
 
 ```yaml
 {
@@ -1712,7 +1712,7 @@ class TutoHacsListenEntity(SensorEntity):
 }
 ```
 
-## `configuration.yaml` :
+### `configuration.yaml` :
 
 ```yaml
 # Loads default set of integrations. Do not remove.
