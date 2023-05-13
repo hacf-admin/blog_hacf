@@ -48,6 +48,18 @@ collections:
       summary: '{{title}}'
       path: { label: 'Path', index_file: 'index' }
 
+    view_filters:
+      - label: "McFly"
+        field: author
+        pattern: 'mcfly'
+      - label: 'Posts published in 2023'
+        field: date
+        pattern: '2023'
+      - label: Drafts
+        field: draft
+        pattern: true
+
+
     fields:
 #      - label: Dossier
 #        name: folder
@@ -211,8 +223,12 @@ collections:
         name: body
         widget: markdown
 
+      - label: Body2
+        name: body2
+        widget: markdown
+
 ###############################################################################
-#                      Articles / Post
+#                      Nouvelles / News
 ###############################################################################
   - name: news
     label: Actualités
