@@ -61,5 +61,5 @@ Seuls les premiers tutos sont en ligne et les autres sont en cours de rédaction
 * [**Tuto1 :** Installer son environnement de dev.](/blog/dev_tuto_1_environnement/)
 * [**Tuto2 :** Créer une intégration et une entité simple](/blog/dev_tuto_1_integration/)
 * [**Tuto3 :** Interactions avec d'autres entités (évènements, états, ...)](/blog/dev_tuto_3_interactions)
-* **Tuto4 :** Pages de configuration (configFlow, traductions).
+* [**Tuto4 :** Pages de configuration (configFlow, traductions)](/blog/dev_tuto_4_config_flow)
 * **Tuto5 :** Aspects avancés (tests unitaires, debugging, travailler avec les sources Home Assistant).
