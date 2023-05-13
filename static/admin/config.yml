@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: netlify # Branch to update (optional; defaults to master)
+  branch: static_cms_v2 # Branch to update (optional; defaults to master)
   repo:  McFlyPartages/blog_hacf
   site_domaine: https://celadon-manatee-00d81f.netlify.app
 ##  repo:  hacf-fr/blog_hacf 
