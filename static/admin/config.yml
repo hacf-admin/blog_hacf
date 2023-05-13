@@ -18,6 +18,14 @@ local_backend: true # Permet la creation d'article en local STATIC CMS ONLY
 # These lines should *not* be indented
 media_folder: "static/images/uploads" # Chemin ou sont stocké les medias uploadés, dans Hugo par defaut c'est static/images/uploads ou assets/images/uploads pour pouvoir utiliser le resize.image.
 public_folder: "/images/uploads" # Chemin de vos images une fois le site publié /images/uploads
+media_library: #https://www.staticcms.org/docs/configuration-options#media-library
+  max_file_size: 512000
+  folder_support: true
+
+site_url: https://mcflyhacf.netlify.app
+display_url: https://mcflyhacf.netlify.app
+
+logo_url: https://hacf.fr/images/logo.webp
 
 slug:
   encoding: "ascii"
