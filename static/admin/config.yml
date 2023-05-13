@@ -178,6 +178,7 @@ collections:
         search_fields: ['pseudos']
         value_field: title
         display_fields: ['pseudos']
+        required: false
 
       - name: authors
         label: Co-Auteur(s)
@@ -187,6 +188,7 @@ collections:
         search_fields: ['pseudos']
         value_field: title
         display_fields: ['pseudos']
+        required: false
 
       - label: "Liens vers sujet du forum HACF (FR)"
         name: url_hacf
