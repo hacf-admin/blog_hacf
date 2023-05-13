@@ -4,8 +4,8 @@ title: Développer pour Home Assistant - (4) La configuration
 type: post
 visibleInCMS: true
 draft: false
-date: 2023-04-29
-lastmod: 2023-04-29
+date: 2023-05-13
+lastmod: 2023-05-13
 images: img/developper-4.png
 description: Cet article s'adresse aux développeurs et fait partie d'une série
   de tutos visant à vous présenter comment développer en python votre propre
