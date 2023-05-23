@@ -15,6 +15,10 @@ summary:
   - description: Une **association** a été créé toujours dans un **but** de
       **transparence** et de **pérennisation**.
 buttons:
+  - name: 'Forum'
+    url: "https://forum.hacf.fr"
+    icon: fab fa-discourse
+    type: ext
   - name: En savoir plus
     url: /association
     icon: null
