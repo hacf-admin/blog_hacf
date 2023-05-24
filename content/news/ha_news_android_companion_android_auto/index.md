@@ -20,6 +20,7 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/home-assistant-sur-android-auto/20051
 url_haoff: https://www.home-assistant.io/blog/2023/01/20/android-auto/
+workflow: published
 ---
 > **Cet article est une traduction de [Home Assistant coming for your car!](https://www.home-assistant.io/blog/2023/01/20/android-auto/) publié sur le site de Home Assistant.**
 

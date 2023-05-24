@@ -29,6 +29,7 @@ socialshare: true
 series:
   - Débuter avec Home Assistant
   - Les Bases de Home Assistant
+workflow: published
 ---
 Vous souhaitez commencer l'aventure Home Assistant et votre choix s'est porté sur l'installation de **Home Assistant OS**. Vous faites le choix de vous concentrer sur votre domotique plutôt que sur la gestion annexe.
 

@@ -26,6 +26,7 @@ tags:
 authors: 
   - mcfly
 url_hacf: https://forum.hacf.fr/t/installation-et-premiers-pas-avec-esphome/223
+workflow: published
 ---
 ![ESPHome - Nabu Casa](img/esphome-nabu-casa.png)
 

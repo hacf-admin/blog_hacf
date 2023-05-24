@@ -24,6 +24,7 @@ tags:
   - diy
   - energie
 url_hacf: https://forum.hacf.fr/t/cartes-energy-et-teleinformation-tic-avec-esphome/9679
+workflow: published
 ---
 ## 1.Introduction
 

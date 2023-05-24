@@ -25,6 +25,7 @@ tags:
 url_hacf: https://forum.hacf.fr/t/ajouter-une-integration-dans-home-assistant/2072
 socialshare: true
 series: null
+workflow: published
 ---
 Les intégrations vous permettent d’ajouter facilement du matériel, des capteurs, des fonctions au sein de votre système domotique.
 

@@ -25,6 +25,8 @@ tags:
 url_hacf: https://forum.hacf.fr/t/vos-premiers-projets-avec-home-assistant/21745
 series:
   - Débuter avec Home Assistant
+
+workflow: published
 ---
 Vous avez **installé Home Assistant** et il est temps pour vous de découvrir par vous-même ses possibilités. Mais vous n'avez pas forcément d'**objets connectés** compatibles ou de clés type **zigbee** permettant de les intégrer.
 Cet article vous propose de créer vos premiers projets pour commencer à appréhender les concepts, mais **sans avoir besoin d'objets connectés** à votre nouveau serveur domotique.

@@ -22,6 +22,7 @@ categories:
   - Concepts
   - Add-on/Intégration
 tags: []
+workflow: published
 ---
 Dans cet article, nous allons essayer d'aborder tous les **points important** vous permettant de vous lancer avec une base solide dans Home Assistant.
 

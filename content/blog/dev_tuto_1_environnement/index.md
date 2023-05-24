@@ -20,6 +20,7 @@ tags:
   - developpement
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
+workflow: published
 ---
 Voilà, vous êtes développeurs et souhaitez développer en python votre propre intégration. Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes de l'installation de votre environnement de développement.
 

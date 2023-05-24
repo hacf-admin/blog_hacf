@@ -28,6 +28,7 @@ tags:
 author: jrvrcd
 authors: []
 url_hacf: https://forum.hacf.fr/t/installer-home-assistant-os-avec-proxmox-vm/22940
+workflow: published
 ---
 Vous avez une machine avec un peu de puissance, comme un mini PC, et vous souhaitez faire tourner Home Assistant, mais pas que ?
 Vous voulez une solution, à la fois simple et évolutive, supportant l’installation clé en main de Home Assistant OS ?

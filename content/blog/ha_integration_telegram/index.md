@@ -24,6 +24,7 @@ author: argonaute
 authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
+workflow: published
 ---
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
 

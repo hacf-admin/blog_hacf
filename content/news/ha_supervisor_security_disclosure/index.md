@@ -22,6 +22,7 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/alerte-securite-du-superviseursur-haos-et-ha-supervised/21627
 url_haoff: https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/
+workflow: published
 ---
 Nous avons été informés d'un problème de sécurité qui a un impact sur les installations utilisant le superviseur. Un correctif pour cette question de sécurité a été lancé. 
 

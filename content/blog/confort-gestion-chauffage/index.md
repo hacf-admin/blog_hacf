@@ -25,6 +25,7 @@ tags:
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 socialshare: true
 series: null
+workflow: published
 ---
 ## Avant propos
 

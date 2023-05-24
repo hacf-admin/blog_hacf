@@ -20,6 +20,7 @@ authors:
   - argonaute
 url_hacf: https://forum.hacf.fr/t/home-assistant-2023-3-dialogues/21765
 url_haoff: ""
+workflow: published
 ---
 > Cet article est une traduction de [2023.3: Dialogs!](https://www.home-assistant.io/blog/2023/03/01/release-20233/) publié sur le site de Home Assistant.
 

@@ -28,6 +28,7 @@ url_hacf: https://forum.hacf.fr/t/premier-lancement-et-configuration-de-home-ass
 socialshare: true
 series:
   - Débuter avec Home Assistant
+workflow: published
 ---
 Vous venez d'installer Home Assistant et vous êtes rendu sur votre instance via `http://homeassistant:8123` ou `http://homeassistant.local:8123`. 
 

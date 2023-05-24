@@ -25,6 +25,7 @@ tags:
 url_hacf: https://forum.hacf.fr/t/installer-un-add-on-officiel-ou-non-officiel-sur-home-assistant/2071
 socialshare: true
 series: null
+workflow: published
 ---
 Les add-ons (ou "modules complémentaires" en français) permettent d'ajouter des services reconnus et très populaires (comme "Node-Red", "Grafana", "InfluxDB", "DuckDNS", etc.) déjà quasi configurés pour communiquer simplement avec votre système domotique.
 

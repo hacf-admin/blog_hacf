@@ -20,6 +20,7 @@ tags:
   - python
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
+workflow: published
 ---
 L'objectif de cet article est d'ajouter une IHM de paramétrage à notre intégration lors de son installation et paramétrage.
 

@@ -26,6 +26,7 @@ tags:
   - sms
   - appels
 url_hacf: https://forum.hacf.fr/t/sms-et-appels-avec-ha-sans-internet/6314
+workflow: published
 ---
 Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines sont vite **essentielles**. Il est rassurant de savoir que notre système veille sur la **sécurité** de la maison. 
 

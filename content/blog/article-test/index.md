@@ -34,6 +34,7 @@ categories:
 hacf: null
 description: Article de testessffgdfg
 url_off: null
+workflow: published
 ---
 
 Ceci est un TEST de déploiement.

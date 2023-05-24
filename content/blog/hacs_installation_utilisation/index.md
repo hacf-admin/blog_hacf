@@ -31,6 +31,7 @@ url_hacf: https://forum.hacf.fr/t/hacs-ajoutez-des-modules-et-des-cartes-personn
 socialshare: true
 series:
   - Débuter avec Home Assistant
+workflow: published
 ---
 Malgré les multitudes d'intégrations, d'add-ons ou de thèmes disponibles en natif dans Home Assistant, il y a une communauté qui en développe d'autres. Parfois, lorsqu'elles sont très utilisées et utiles, elles peuvent se retrouver intégrés dans le core de Home Assistant.
 

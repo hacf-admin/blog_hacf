@@ -20,6 +20,7 @@ tags:
   - python
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
+workflow: published
 ---
 Cet article s'inscrit dans une série de tutos présentant comment développer en python sa propre intégration.
 Plus d'infos et liste des tutos sur : [Développer pour Home Assistant - Introduction](/blog/dev_tuto_introduction/).
