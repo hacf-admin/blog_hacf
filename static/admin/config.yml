@@ -48,17 +48,40 @@ collections:
       summary: '{{title}}'
       path: { label: 'Path', index_file: 'index' }
 
-    view_filters:
-      - label: "McFly"
-        field: author
-        pattern: 'mcfly'
-      - label: 'Posts published in 2023'
+#    filter:
+#      field: visibleInCMS
+#      value: true
+
+    sortable_fields:
+      fields: ['date', 'title']
+      default:
         field: date
-        pattern: '2023'
-      - label: Drafts
+        direction: Descending
+
+    view_filters:
+      - label: Brouillons
         field: draft
         pattern: true
+      - label: A Relire
+        field: workflow
+        pattern: 'read'
+      - label: A Publier
+        field: workflow
+        pattern: 'ready'
+      - label: En écriture
+        field: workflow
+        pattern: 'write'
+      - label: Publié
+        field: workflow
+        pattern: 'published'
 
+    view_groups:
+      - label: Années
+        field: date
+        # groups items based on the value matched by the pattern
+        pattern: \d{4}
+      - label: Auteurs
+        field: author
 
     fields:
 #      - label: Dossier
@@ -71,14 +94,36 @@ collections:
         widget: string
         required: true
 
-      - {label: "Type", name: "type", widget: "hidden", default: "post"}
-      - {name: visibleInCMS, widget: hidden, default: true }
+      - label: Type
+        name: type 
+        widget: hidden
+        default: post
+
+      - label: Visible CMS
+        name: visibleInCMS
+        widget: hidden
+        default: true
 
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
         default: true
         requiered: false
+        hint: Doit rester a TRUE tant que l'article n'est pas a publier.
+
+      - name: workflow
+        label: WorkFlow
+        widget: select
+        required: false
+        options:
+          - label: En écriture
+            value: write
+          - label: A relire
+            value: read
+          - label: A Publier
+            value: ready
+          - label: Publié
+            value: published
 
       - label: "Alias"
         name: "aliases"
