@@ -223,13 +223,19 @@ collections:
           - Réseau
           - Sécurité
 
+#      - name: tags
+#        label: Tag(s)
+#        widget: list
+#        fields:
+#          - name: tag
+#            label: Tag
+#            widget: string
+
       - name: tags
         label: Tag(s)
         widget: list
-        fields:
-          - name: tag
-            label: Tag
-            widget: string
+        delimiter: ;
+        hint: Ajouter les tags separés par un point-virgule.
 
 #      - name: tags
 #        label: Tag(s)
