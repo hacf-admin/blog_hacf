@@ -1,6 +1,6 @@
 ---
 draft: true
-level: Débutant
+level: ""
 authors:
   - mcfly
   - argonaute
@@ -10,12 +10,7 @@ date: 2023-01-03
 lastmod: 2023-03-10
 author: mcfly
 socialshare: true
-#gallery:
-#  - dossier: gallerie1
-#    image_gallery: img/installation_detection_automatique_materiels.png
 title: NE PAS SUPP Article Test
-tags:
-  - argon
 image: null
 categories:
   - Concepts
@@ -24,17 +19,20 @@ categories:
   - Protocoles
   - Réseau
   - Interface UI
-  - Add-on/intégration
+  - ""
   - ESPHome/DIY
   - Automatisation
   - Node-red
   - Energie
   - Sécurité
   - Confort
+tags:
+  - argon
 hacf: null
 description: Article de testessffgdfg
 url_off: null
-workflow: published
+type: post
+workflow: archived
 ---
 
 Ceci est un TEST de déploiement.

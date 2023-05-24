@@ -62,18 +62,21 @@ collections:
       - label: Brouillons
         field: draft
         pattern: true
-      - label: A Relire
-        field: workflow
-        pattern: 'read'
-      - label: A Publier
-        field: workflow
-        pattern: 'ready'
       - label: En écriture
         field: workflow
-        pattern: 'write'
+        pattern: write
+      - label: A Relire
+        field: workflow
+        pattern: read
+      - label: A Publier
+        field: workflow
+        pattern: ready
       - label: Publié
         field: workflow
-        pattern: 'published'
+        pattern: published
+      - label: Archivé
+        field: workflow
+        pattern: archived
 
     view_groups:
       - label: Années
@@ -124,6 +127,8 @@ collections:
             value: ready
           - label: Publié
             value: published
+          - label: Archivé
+            value: archived
 
       - label: "Alias"
         name: "aliases"
