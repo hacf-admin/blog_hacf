@@ -3,8 +3,7 @@ draft: true
 folder: ha_ajouter_boitier_argon
 article_ha: true
 level: Débutant
-authors:
-  - mcfly
+author: mcfly
 keywords:
   - Argon
   - Argon One Add-on
