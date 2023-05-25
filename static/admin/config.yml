@@ -414,7 +414,7 @@ collections:
         choose_url: false
         media_folder: "/static/images/authors"
         public_folder: "images/authors"
-        default: "images/author/hacf.webp"
+        default: "images/authors/hacf.webp"
 
       - label: Réseaux Sociaux
         name: social_network
