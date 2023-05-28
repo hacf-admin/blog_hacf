@@ -8,7 +8,7 @@ visibleInCMS: true
 draft: false
 date: 2023-02-27
 lastmod: 2023-02-27
-images: img/ha-2023.2.png
+image: img/ha-2023.2.png
 description: >
   Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant
   Core est sortie.

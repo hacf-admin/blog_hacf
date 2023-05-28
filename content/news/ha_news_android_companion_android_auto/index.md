@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-14
 lastmod: 2023-03-14
-images: img/ha_android_companion_android_auto.png
+image: img/ha_android_companion_android_auto.png
 description: >-
   Home Assistant a annoncé sa nouvelle application sur Android Auto.
 

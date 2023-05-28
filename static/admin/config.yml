@@ -162,13 +162,6 @@ collections:
         required: false
         hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
 
-#      - label: Image de l'article
-#        name: thumbnail
-#        widget: image
-#        required: false
-#        hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
-
-
       - name: description
         label: Description
         widget: text
