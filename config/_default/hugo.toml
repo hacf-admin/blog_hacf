@@ -30,7 +30,7 @@ enableGitInfo = true
   # background = '/images/site/background-dark.jpg'
   noNetlifyHost = "" #Si votre site n'est pas hebergé sur Netlify mais que vous souhaitez utiliser le CMS ex: http://netlifyDomain.netlify.app
 
-  heightCode = "300px" # Recuperer la valeur a appliquer sur es blocs de code
+  heightCode = "300px" # Recuperer la valeur a appliquer sur les blocs de code
   enableTOC = true
 
   # GitHub repo du site
@@ -65,7 +65,7 @@ enableGitInfo = true
   tag = 'tags'
   category = 'categories'
   series = 'series'
-  author = 'authors'
+  author = 'author'
 
 [related]
   includeNewer = true

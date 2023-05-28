@@ -23,7 +23,7 @@ tags:
   - esp8266
   - esphome
   - DIY
-authors: 
+authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/installation-et-premiers-pas-avec-esphome/223
 workflow: published
