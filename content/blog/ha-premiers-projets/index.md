@@ -10,7 +10,7 @@ level: Débutant
 author: argonaute
 date: 2023-03-05
 lastmod: 2023-02-17
-images: img/accueil2.png
+image: img/accueil2.png
 description: "Voila, vous avez installé Home Assistant et il est temps pour vous
   d'en découvrir ses possibilités. Ce tuto vous propose une série de mini
   projets pour une première approche. "

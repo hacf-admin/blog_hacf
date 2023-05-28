@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-02-10
 lastmod: ""
-images: img/accueil2.png
+image: img/accueil2.png
 description: Une tablette centralisée dans la maison est bien, mais un petit
   afficheur tactile judicieusement placé est encore mieux. Cet article propose
   la réalisation complète DIY d'un tel afficheur pour une somme modique, ce

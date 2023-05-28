@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-18
 lastmod: 2023-04-18
-images: img/developper-2.png
+image: img/developper-2.png
 description: Cet article s'adresse aux développeurs et fait partie d'une série
   de tutos visant à vous présenter comment développer en python votre propre
   intégration. L'objectif de ce second tuto est de vous guider dans le

@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-15
 lastmod: 2023-04-15
-images: img/tuto-developper-1-environnement.png
+image: img/tuto-developper-1-environnement.png
 description: "Cet article s'adresse aux développeurs et fait partie d'une série
   de tutos visant à vous présenter comment développer en python votre propre
   intégration. Ce premier tuto vous guide dans la mise en place de votre

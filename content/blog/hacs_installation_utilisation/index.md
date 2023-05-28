@@ -10,7 +10,7 @@ level: Débutant
 author: mcfly
 date: 2023-03-08
 lastmod: 2023-03-09
-images: img/hacs_cover.png
+image: img/hacs_cover.png
 description: "Malgré la multitude d'intégrations, d'add-ons ou de thèmes
   disponibles en natif dans Home Assistant, il y a une communauté qui en
   développe d'autres. Cette communauté, c'est HACS, pour Home Assistant

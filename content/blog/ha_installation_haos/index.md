@@ -9,7 +9,7 @@ draft: false
 level: Débutant
 date: 2023-02-22
 lastmod: null
-images: img/ha_installation_haos.png
+image: img/ha_installation_haos.png
 description: Installons ensemble Home Assistant OS sur Raspberry Pi, Odroid,
   Tinkerboard, NUC ou autres, de manière simple et rapide. Commençons dans la
   domotique avec un système Open source, gratuit, international et évolutif avec

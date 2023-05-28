@@ -11,7 +11,7 @@ aliases:
   - /ha_addon
 date: 2023-03-03
 lastmod: null
-images: img/ha_addons_installation.png
+image: img/ha_addons_installation.png
 description: Dans cet article, nous allons parler des **add-ons**. Les add-ons
   sont une des forces de Home Assistant, car ils vous permettent d'y ajouter des
   services reconnus et très connus (comme Node-Red, Grafana, InfluxDB, DuckDNS,

@@ -10,7 +10,7 @@ author: argonaute
 title: Vos premiers pas avec ESPHome
 date: 2023-02-24
 lastmod: 2023-02-24
-images: img/accueil.png
+image: img/accueil.png
 description: >-
   Si la domotique vous passionne, il est tentant de créer vos propres objets
   connectés. C'est ce que propose ESPHome.

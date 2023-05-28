@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-16
 lastmod: 2023-04-16
-images: img/ha_os_proxmox.png
+image: img/ha_os_proxmox.png
 description: >
   Cet article décrit comment installer et utiliser la solution de virtualisation
   Proxmox, qui permet de faire tourner plusieurs environnements en parallèle.

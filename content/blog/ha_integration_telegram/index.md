@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-02
 lastmod: ""
-images: img/accueil.jpeg
+image: img/accueil.jpeg
 description: >-
   Cet article présente comment intégrer Telegram à Home Assistant et communiquer
   avec lui.

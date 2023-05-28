@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-29
 lastmod: 2023-04-29
-images: img/developper-3.png
+image: img/developper-3.png
 description: Cet article s'adresse aux développeurs et fait partie d'une série
   de tutos visant à vous présenter comment développer en python votre propre
   intégration. Ce troisième tuto vous présente les interactions entre les

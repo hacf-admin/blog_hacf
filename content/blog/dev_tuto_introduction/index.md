@@ -8,7 +8,7 @@ aliases:
 draft: false
 date: 2023-04-11
 lastmod: 2023-04-11
-images: img/tuto-developper-intro.png
+image: img/tuto-developper-intro.png
 description: >-
   Vous êtes développeur et souhaitez développer vos propres intégrations pour
   vous ou pour la communauté Home Assistant ou tout simplement contribuer à une

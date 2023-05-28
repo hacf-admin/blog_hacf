@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-02-08
 lastmod: ""
-images: img/accueil.png
+image: img/accueil.png
 description: >-
   Home Assistant sécurise notre maison et en permet le contrôle à distance. Mais
   que se passera-t-il si internet tombe alors que vous êtes en voyage pour deux
