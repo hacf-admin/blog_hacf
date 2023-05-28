@@ -65,7 +65,7 @@ enableGitInfo = true
   tag = 'tags'
   category = 'categories'
   series = 'series'
-  author = 'authors'
+  author = 'author'
 
 [related]
   includeNewer = true
