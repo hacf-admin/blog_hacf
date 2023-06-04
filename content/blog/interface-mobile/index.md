@@ -116,3 +116,37 @@ Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) p
 Voici en animation l'utilisation du menu est des différences sous-vues fonctionnelles.
 
 ![Utilisation des sous-vues](img/sous-vues.gif "Utilisation des sous-vues")
+
+Pour cela, on va créer étant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, modifier le tableau de bord, et dans la barre de menu appuyer sur + pour créer une nouvelle vue.
+
+Renseigner le nom de la vue, mettez un icône, mais surtout :
+
+* Renseigner une URL (ci-dessous) : elle sera à utiliser dans le menu tuile, dans le bouton qui appelle la vue
+* Activer "sous-vue". Aussi, vous aurez en haut à gauche une flèche de retour permettant de revenir en arrière (vers le menu tuile).
+
+![Configuration de la vue](img/configuration-vue.jpg "Configuration de la vue")
+
+Reste plus qu'à aller dans le menu et renseigner l'URL dans le code du bouton :
+
+```yaml
+  - type: button
+    icon: argo:meteo
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace/meteo
+    name: Météo
+    style: |
+      ha-card {
+        color: var(--text-menu-color);
+        background: var(--meteo-color);
+        font-weight: bold;
+      }
+```
+
+Reste à tester.
+
+Pour information, Lovelace est le nom de mon dashboard (nom historique....).
+
+## Supprimer les icônes du menu du haut
+
+Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera par le menu tuile. J'ai moi juste "maison" dans la barre du haut.
