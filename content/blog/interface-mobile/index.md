@@ -41,6 +41,12 @@ Rien n'empêche aussi de mettre des petits afficheurs type Nextion ou Sonof là 
 
 Mais dans tous les cas, **le mobile est la "zappette" de votre système domotique**. C'est lui qui permet d'interagir avec votre maison, et l'interface doit être traitée avec le plus grand soin. La taille de l'écran fait que l'interface de la tablette n'est pas appropriée, et il est préférable d'en recréer une.
 
-Côté UX Design, on va s'intéresser aux personnes qui utilisent le système (votre femme, les enfants, vous) et aux cas d'utilisation de chacun. Il est préférable d'afficher en premier ce qui est le plus utilisé. Les éléments techniques ou réglage seront déportés dans une sous-vue de niveau 2. Ayant pas mal d'éléments à traiter, j'ai préféré les séparer en 15 rubriques, qui est probablement le maximum acceptable : caméras
+Côté UX Design, on va s'intéresser aux personnes qui utilisent le système (votre femme, les enfants, vous) et aux cas d'utilisation de chacun. On va structurer l'interface par grand sujet. Ayant pas mal d'éléments à traiter, j'ai préféré les séparer en 15 rubriques (voir chapitre suivant) : caméras, météo, Lumières, etc 15 vues ou groupe fonctionnel est probablement le maximum.
 
-> Les pires interfaces sont les tableaux de bord de 747, comme on en voit trop souvent. Pensez-y.
+Ensuite, dans les vues accessibles par le menu en tuile, il est préférable d'afficher en premier ce qui est le plus utilisé.
+
+Les éléments techniques (niveau des piles, monitoring du CPU, etc) ou réglages seront déportés dans des sous-vues de niveau 2, accessible .
+
+> Les pires interfaces sont les tableaux de bord de 747, comme on en voit trop souvent, ou tout mélangé. Pensez-y et bannissez cela.
+
+## Le menu en tuiles
