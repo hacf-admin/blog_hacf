@@ -50,3 +50,69 @@ Les éléments techniques (niveau des piles, monitoring du CPU, etc) ou réglage
 > Les pires interfaces sont les tableaux de bord de 747, comme on en voit trop souvent, ou tout mélangé. Pensez-y et bannissez cela.
 
 ## Le menu en tuiles
+
+Voici à quoi ressemble mon menu d'accueil.
+
+![Menu en tuiles](img/menu-en-tuiles.jpg "Menu en tuiles")
+
+Pour le créer, on va utiliser une grille avec des boutons. Ci-dessous le code avec les premiers éléments...
+
+```yaml
+type: grid
+cards:
+  - type: button
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace/cameras
+    name: Caméras
+    icon: argo:camera
+    style: |
+      ha-card {
+        color: var(--text-menu-color);
+        background: var(--camera-color);
+        font-weight: bold;
+      }
+  - type: button
+    icon: argo:meteo
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace/meteo
+    name: Météo
+    style: |
+      ha-card {
+        color: var(--text-menu-color);
+        background: var(--meteo-color);
+        font-weight: bold;
+      }
+  ......
+```
+
+Les **couleurs** ont été déportées dans un thème, mais vous pouvez mettre les codes couleur directement dans la grille. 
+
+Ci-dessous différentes couleurs qui m'ont été proposées par une graphiste pour leur cohérence. 
+
+```yaml
+camera-color: '#CDC2EE'
+meteo-color: '#BAE0F1'
+lumieres-color: '#FDF4B7'
+poules-color: '#EED7BD'
+jardin-color: '#CDF0C1'
+piscine-color: '#C9FFF3'
+chauffage-color: '#FCCFDA'
+volets-color: '#F1FFFA'
+confort-color: '#FFDFAF'
+solaire-color: '#FCFFAD'
+robots-color: '#AFFFBE'
+securite-color: '#FFB8B8'
+medias-color: '#E8D7FF'
+consos-color: '#C9FFE1'
+system-color: '#D9FFFB'
+```
+
+Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes tous faits, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icones](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
+
+## Créer les sous-vues
+
+Voici en animation l'utilisation du menu est des différences sous-vues fonctionnelles.
+
+![Utilisation des sous-vues](img/sous-vues.gif "Utilisation des sous-vues")
