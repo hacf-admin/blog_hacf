@@ -18,7 +18,9 @@ version_ha: "2003.5"
 categories:
   - Interface UI
 tags:
-  - Dashboard
+  - Mobile
+  - Interface
+  - UX
 author: argonaute
 ---
 Cet article propose comment réaliser une interface conviviale pour mobile (iPhone, Android). 
