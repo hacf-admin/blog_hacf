@@ -124,7 +124,7 @@ Renseigner le nom de la vue, mettez un icône, mais surtout :
 * Renseigner une URL (ci-dessous) : elle sera à utiliser dans le menu tuile, dans le bouton qui appelle la vue
 * Activer "sous-vue". Aussi, vous aurez en haut à gauche une flèche de retour permettant de revenir en arrière (vers le menu tuile).
 
-![Configuration de la vue](img/configuration-vue.jpg "Configuration de la vue")
+![Configuration de la vue](img/configuration-vues.png "Configuration de la vue")
 
 Reste plus qu'à aller dans le menu et renseigner l'URL dans le code du bouton :
 
@@ -147,6 +147,22 @@ Reste à tester.
 
 Pour information, Lovelace est le nom de mon dashboard (nom historique....).
 
+## Maîtriser l'ordre des cartes dans les vues
+
+Pour votre dashboard "mobile", vous voudrez avoir sur votre ordinateur les cartes comme elles s'affichent sur les mobiles, et surtout avec le bon ordre.
+
+Pour cela, vous allez charger dans HACS / partie interface la [Layout Card](https://community.home-assistant.io/t/layout-card-take-control-of-where-your-cards-end-up/147805) : elle vous permet d'indiquer comment gérer vos cartes dans une vue. 
+
+ Une fois installée, vous avez 2 nouveaux champs dans la configuration des vues : Type de vue et Nombre de colonnes. 
+
+![Configuration des vues (layout)](img/configuration-vue-layout.jpg "Configuration des vues (layout)")
+
+Mettre les sous-vues en **mode "Vertical"** et **max_cols à 1** comme indiqué dans l'image précédente.
+
+Le layout du menu en tuile peut aussi être modifié pour le rendre plus performant : en spécifiant Masonry.
+
+![Config vue menu tuiles](img/config-vue-menu.jpg "Config vue menu tuiles")
+
 ## Supprimer les icônes du menu du haut
 
-Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera par le menu tuile. J'ai moi juste "maison" dans la barre du haut.
+Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. Vous pouvez juste laisser "Maison" dans la barre du haut.
