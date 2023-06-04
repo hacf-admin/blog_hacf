@@ -45,7 +45,7 @@ Côté UX Design, on va s'intéresser aux personnes qui utilisent le système (v
 
 Ensuite, dans les vues accessibles par le menu en tuile, il est préférable d'afficher en premier ce qui est le plus utilisé.
 
-Les éléments techniques (niveau des piles, monitoring du CPU, etc) ou réglages seront déportés dans des sous-vues de niveau 2, accessible .
+Les éléments techniques (niveau des piles, monitoring du CPU, etc) ou réglages seront déportés et cachés dans des sous-vues de niveau 2, accessibles depuis les différentes sous-vues fonctionnelles.
 
 > Les pires interfaces sont les tableaux de bord de 747, comme on en voit trop souvent, ou tout mélangé. Pensez-y et bannissez cela.
 
