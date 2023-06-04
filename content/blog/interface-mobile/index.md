@@ -126,7 +126,7 @@ Renseigner le nom de la vue, mettez un icône, mais surtout :
 
 ![Configuration de la vue](img/configuration-vues.png "Configuration de la vue")
 
-Reste plus qu'à aller dans le menu et renseigner l'URL dans le code du bouton :
+Reste plus qu'à aller dans le menu et renseigner l'URL dans le code du bouton, puis tester :
 
 ```yaml
   - type: button
@@ -143,9 +143,9 @@ Reste plus qu'à aller dans le menu et renseigner l'URL dans le code du bouton :
       }
 ```
 
-Reste à tester.
-
 Pour information, Lovelace est le nom de mon dashboard (nom historique....).
+
+Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. Vous pouvez juste laisser "Maison" dans la barre du haut. Cela sera automatiquement fait en mettant toutes les vues à part le menu tuile en sous-vues.
 
 ## Maîtriser l'ordre des cartes dans les vues
 
@@ -163,6 +163,108 @@ Le layout du menu en tuile peut aussi être modifié pour le rendre plus perform
 
 ![Config vue menu tuiles](img/config-vue-menu.jpg "Config vue menu tuiles")
 
-## Supprimer les icônes du menu du haut
+## Cacher les paramétrages dans des sous-vues niveau 2
 
-Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. Vous pouvez juste laisser "Maison" dans la barre du haut.
+Les sous-vues accessibles depuis le menu ne doivent contenir que des informations et fonctions **essentielles pour votre famille**. 
+
+Aussi, si vous avez des informations secondaires ou utilisées que par vous : paramétrage des heures de fermeture ou ouverture des volets, niveaux des piles,  etc, je vous conseille de créer un bouton dans la sous-vue qui accède à une autre **sous-vue niveau 2** dédiée aux informations secondaires. Cela rendra l'interface plus claire.
+
+![Sous-vue niveau 2](img/sous-vues-niveau-2.gif "Sous-vue niveau 2")
+
+## Utiliser des cartes conditionnelles
+
+Enfin, si une carte doit contenir beaucoup d'informations, vous pouvez mettre en entête des boutons avec un affichage conditionnel en fonction du bouton sélectionné. Attention, la sélection sera valable pour tous les utilisateurs.
+
+Illustration avec la sélection d'une caméra dans une maison de rêve (pas la mienne, c'est juste un exemple, dommage...).
+
+![Affichage conditionnelle](img/selection-camera.gif "Affichage conditionnelle")
+
+Je n'irai pas dans le détail dans ce tuto et donne un rapide aperçu du fonctionnement :
+
+On va créer un input_text qui contient le nom  de la caméra à afficher (plage, garage, piscine).
+
+Les boutons mettent la bonne valeur dans l'input_text quand ils sont sélectionnés. La couleur change également. Voici le code des boutons (basé sur des custom:button-card, disponible sur HACS).
+
+```yaml
+type: grid
+cards:
+  - type: custom:button-card
+    name: Plage
+    entity: input_text.selection_camera
+    show_icon: true
+    color_type: card
+    icon: mdi:beach
+    color: var(--bouton-gris)
+    state:
+      - value: Plage
+        color: var(--bouton-orange)
+    tap_action:
+      action: call-service
+      service: script.selectionne_camera
+      service_data:
+        camera: Plage
+  - type: custom:button-card
+    name: Garage
+    entity: input_text.selection_camera
+    show_icon: true
+    color_type: card
+    icon: mdi:car
+    color: var(--bouton-gris)
+    state:
+      - value: Garage
+        color: var(--bouton-orange)
+    tap_action:
+      action: call-service
+      service: script.selectionne_camera
+      service_data:
+        camera: Garage
+  - type: custom:button-card
+    name: Piscine
+    entity: input_text.selection_camera
+    show_icon: true
+    icon: mdi:pool
+    color_type: card
+    color: var(--bouton-gris)
+    state:
+      - value: Piscine
+        color: var(--bouton-orange)
+    tap_action:
+      action: call-service
+      service: script.selectionne_camera
+      service_data:
+        camera: Piscine
+columns: 3
+square: false
+```
+
+Et enfin on va créer 3 cartes (une par caméra) avec un affichage conditionnel en fonction du contenu de l'input_text.
+
+Voici le code d'une carte qui s'affiche si on clique sur plage : 
+
+```yaml
+type: conditional
+conditions:
+  - entity: input_text.selection_camera
+    state: Plage
+card:
+  type: picture
+  image: >-
+    https://www.dreamingofmaldives.com/blog-des-maldives/wp-content/uploads/plage-de-reve-maldives.jpg
+  hold_action:
+    action: none
+
+```
+
+## Un dashboard pour mobile et un autre pour tablette.
+
+Vous pouvez facilement créer un dashboard dédié à votre tablette et un dashboard dédié aux mobiles comme présenté ici.
+
+Pour cela, vous créez un utilisateur "Tablette", puis un utilisateur par personne de la famille.
+
+Dans l'application "compagnon", rendez-vous dans les paramètres de l'utilisateur : vous pouvez choisir le dashboard utilisé pour l'utilisateur connecté (tablette ou mobile).
+
+## Conclusion
+
+ Cette présentation n'est qu'une proposition d'implémentation, et chacun prendre ce qui l'arrange. Il est possible par exemple d'utiliser des éléments entités (dont je ne suis pas fan).
+
+Bien entendu, les immenses possibilités de Home Assistant font qu'il y aura autant de type d'interface que d'utilisateurs. N'hésitez pas à proposer vos implémentations et faire vos retours.
