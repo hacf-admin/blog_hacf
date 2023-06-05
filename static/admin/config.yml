@@ -52,7 +52,9 @@ collections:
 #    filter:
 #      field: visibleInCMS
 #      value: true
-
+    filter:
+      pattern: '^index.md$'
+      
     sortable_fields:
       fields: ['date', 'title']
       default:
@@ -217,14 +219,6 @@ collections:
           - Réseau
           - Sécurité
 
-#      - name: tags
-#        label: Tag(s)
-#        widget: list
-#        fields:
-#          - name: tag
-#            label: Tag
-#            widget: string
-
       - name: tags
         label: Tag(s)
         widget: list
@@ -288,12 +282,51 @@ collections:
       summary: '{{title}}'
       path: { label: 'Path', index_file: 'index' }
 
+#    filter:
+#      field: visibleInCMS
+#      value: true
+    filter:
+      pattern: '^index.md$'
+      
+    sortable_fields:
+      fields: ['date', 'title']
+      default:
+        field: date
+        direction: Descending
+
+    view_filters:
+      - label: Brouillons
+        field: draft
+        pattern: true
+      - label: En écriture
+        field: workflow
+        pattern: write
+      - label: A Relire
+        field: workflow
+        pattern: read
+      - label: A Publier
+        field: workflow
+        pattern: ready
+      - label: Publié
+        field: workflow
+        pattern: published
+      - label: Archivé
+        field: workflow
+        pattern: archived
+
+    view_groups:
+      - label: Années
+        field: date
+        # groups items based on the value matched by the pattern
+        pattern: \d{4}
+      - label: Auteurs
+        field: author
+      
     fields:
       - label: Titre
         name: title
         widget: string
         required: true
-
 
       - label: Type
         name: type 
@@ -310,7 +343,23 @@ collections:
         widget: "boolean"
         default: true
         requiered: false
-
+        
+      - name: workflow
+        label: WorkFlow
+        widget: select
+        required: false
+        options:
+          - label: En écriture
+            value: write
+          - label: A relire
+            value: read
+          - label: A Publier
+            value: ready
+          - label: Publié
+            value: published
+          - label: Archivé
+            value: archived
+            
       - label: "Alias"
         name: "aliases"
         widget: list
