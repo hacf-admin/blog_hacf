@@ -5,6 +5,16 @@ backend:
 #  site_domain: https://hacf.fr
   site_domain: https://preview-hacf.netlify.app/
 #  site_domain: https://hacf.netlify.app/
+#
+#Official Website hacf.fr
+#
+#site_url: https://hacf.fr
+#display_url: https://hacf.fr
+#logo_url: https://hacf.fr/images/logo.webp
+
+site_url: https://preview-hacf.netlify.app
+display_url: https://preview-hacf.netlify.app
+logo_url: https://preview-hacf.netlify.app/images/logo.webp
 
 local_backend: true # Permet la creation d'article en local STATIC CMS ONLY
 #  allowed_hosts: ['localhost']
@@ -16,10 +26,7 @@ media_library: #https://www.staticcms.org/docs/configuration-options#media-libra
   max_file_size: 512000
   folder_support: true
 
-site_url: https://hacf.fr
-display_url: https://hacf.fr
 
-logo_url: https://hacf.fr/images/logo.webp
 
 slug:
   encoding: "ascii"
