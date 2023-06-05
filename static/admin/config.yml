@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: static-cms # Branch to update (optional; defaults to master)
+  branch: static_cms # Branch to update (optional; defaults to master)
   repo:  hacf-fr/blog_hacf
 #  site_domain: https://hacf.fr
   site_domain: https://preview-hacf.netlify.app/
