@@ -18,3 +18,4 @@ command = "hugo --gc --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.static_cms-deploy.environment]
 HUGO_VERSION = "0.112.7"
+
