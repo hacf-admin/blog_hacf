@@ -8,14 +8,13 @@ HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-command = "hugo --gc --minify --buildDrafts -b $DEPLOY_PRIME_URL"
+command = "hugo --gc --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.112.7"
 
-[context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+[context.static_cms-deploy]
+command = "hugo --gc --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL"
 
-[context.branch-deploy.environment]
+[context.static_cms-deploy.environment]
 HUGO_VERSION = "0.112.7"
-
