@@ -1,19 +1,12 @@
 backend:
   name: git-gateway
-  branch: static_cms_v2 # Branch to update (optional; defaults to master)
-  repo:  McFlyPartages/blog_hacf
-  site_domaine: https://mcflyhacf.netlify.app
-##  repo:  hacf-fr/blog_hacf 
-#  site_domain: https://hacf.fr
+  branch: static-cms # Branch to update (optional; defaults to master)
+  repo:  hacf-fr/blog_hacf
+  site_domain: https://hacf.fr
 #  site_domain: https://hacf.netlify.app/
 
 local_backend: true # Permet la creation d'article en local STATIC CMS ONLY
 #  allowed_hosts: ['localhost']
-
-# Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
-# Peut etre desactivé en commantant la ligne ci-dessous.
-## ATTENTION non disponible en local.
-#publish_mode: editorial_workflow #SEULEMENT POUR NETLIFY
 
 # These lines should *not* be indented
 media_folder: "static/images/uploads" # Chemin ou sont stocké les medias uploadés, dans Hugo par defaut c'est static/images/uploads ou assets/images/uploads pour pouvoir utiliser le resize.image.
@@ -22,8 +15,8 @@ media_library: #https://www.staticcms.org/docs/configuration-options#media-libra
   max_file_size: 512000
   folder_support: true
 
-site_url: https://mcflyhacf.netlify.app
-display_url: https://mcflyhacf.netlify.app
+site_url: https://hacf.fr
+display_url: https://hacf.fr
 
 logo_url: https://hacf.fr/images/logo.webp
 
