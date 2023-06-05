@@ -17,6 +17,8 @@ summary:
 - description: "Une **association** a été créé toujours dans un but de **transparence** et de **pérennisation**."
 
 button:
+- name: 'Forum'
+  url: "https://forum.hacf.fr"
 - name: 'En savoir plus'
   url: a-propos
 - name: 'Association'

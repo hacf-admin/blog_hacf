@@ -8,7 +8,7 @@ level: Avancé
 author: argonaute
 date: 2022-09-30
 lastmod: null
-images: img/chauffage-chat2.jpg
+image: img/chauffage-chat2.jpg
 description: "A l'heure où le chauffage est un poste de dépense très important,
   Home Assistant ne fournit qu'un thermostat basique. Cet article propose une
   implémentation complète permettant de gérer son chauffage : thermostat plus
@@ -25,6 +25,7 @@ tags:
 url_hacf: https://forum.hacf.fr/t/gestion-de-bout-en-bout-du-chauffage/4897
 socialshare: true
 series: null
+workflow: published
 ---
 ## Avant propos
 

@@ -2,9 +2,9 @@
 {{ $heroImage := .Page.Resources.GetMatch "hero.{jpg,png,webp}" }} {{/* Supression du SVG qui pose probleme avec le watermarking */}}
 
 {{/*  if hero image is specified in the page front-matter, then use that  */}}
-{{ if .Params.images }}
+{{ if .Params.image }}
   {{/*  try to read from the page bundle  */}}
-  {{ $heroImage = .Resources.Get .Params.images }}
+  {{ $heroImage = .Resources.Get .Params.image }}
   {{/*  if the image does not exist in the page bundle,try looking in the assets folder  */}}
 {{ end }}
 {{ .Scratch.Set "heroScratch" $heroImage }}

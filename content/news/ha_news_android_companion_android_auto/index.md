@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-14
 lastmod: 2023-03-14
-images: img/ha_android_companion_android_auto.png
+image: img/ha_android_companion_android_auto.png
 description: >-
   Home Assistant a annoncé sa nouvelle application sur Android Auto.
 
@@ -20,6 +20,7 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/home-assistant-sur-android-auto/20051
 url_haoff: https://www.home-assistant.io/blog/2023/01/20/android-auto/
+workflow: published
 ---
 > **Cet article est une traduction de [Home Assistant coming for your car!](https://www.home-assistant.io/blog/2023/01/20/android-auto/) publié sur le site de Home Assistant.**
 

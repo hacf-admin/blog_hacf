@@ -1,5 +1,6 @@
-baseURL = 'https://hacf.fr'
+#baseURL = 'https://hacf.fr'
 #baseURL = 'https://hacf.netlify.app'
+baseurl = 'https://mcflypartages.github.io/blog_hacf/'
 languageCode = 'fr-fr'
 title = 'HACF'
 
@@ -22,7 +23,7 @@ enableGitInfo = true
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
   logo = "/images/logo.webp"
   favicon = true
-  images =  "images/articles/article.webp"
+  default_post_cover =  "images/articles/article.webp"
   contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
   mainSections = ["post", "news"] #https://gohugo.io/functions/where/#mainsections
   customcss = true
@@ -30,7 +31,7 @@ enableGitInfo = true
   # background = '/images/site/background-dark.jpg'
   noNetlifyHost = "" #Si votre site n'est pas hebergé sur Netlify mais que vous souhaitez utiliser le CMS ex: http://netlifyDomain.netlify.app
 
-  heightCode = "300px" # Recuperer la valeur a appliquer sur es blocs de code
+  heightCode = "300px" # Recuperer la valeur a appliquer sur les blocs de code
   enableTOC = true
 
   # GitHub repo du site
@@ -65,7 +66,7 @@ enableGitInfo = true
   tag = 'tags'
   category = 'categories'
   series = 'series'
-  author = 'authors'
+  author = 'author'
 
 [related]
   includeNewer = true

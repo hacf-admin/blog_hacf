@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-02-10
 lastmod: ""
-images: img/accueil2.png
+image: img/accueil2.png
 description: Une tablette centralisée dans la maison est bien, mais un petit
   afficheur tactile judicieusement placé est encore mieux. Cet article propose
   la réalisation complète DIY d'un tel afficheur pour une somme modique, ce
@@ -24,6 +24,7 @@ tags:
 author: argonaute
 url_hacf: https://forum.hacf.fr/t/ecran-tactile-nextion-avec-esphome-deporter-vos-commandes/10622
 url_haoff: ""
+workflow: published
 ---
 Il peut être très pratique d'installer un petit **afficheur tactile** la ou c'est utile (thermostat, pilotage d'une chaudière, météo, etc). C'est ce que j'ai fait en mettant un afficheur vers la porte d'accès ou jardin pour gérer la piscine et les éclairages extérieurs :
 

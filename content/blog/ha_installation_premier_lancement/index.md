@@ -10,7 +10,7 @@ level: Débutant
 author: mcfly
 date: 2023-02-22
 lastmod: null
-images: img/ha_premier_lancement_cover.png
+image: img/ha_premier_lancement_cover.png
 description: "Vous venez d’installer Home Assistant ? Nous allons balayer
   ensemble la première configuration. Elle vous permet de définir la position de
   votre maison, son élévation, mais aussi ajouter les intégrations
@@ -28,6 +28,7 @@ url_hacf: https://forum.hacf.fr/t/premier-lancement-et-configuration-de-home-ass
 socialshare: true
 series:
   - Débuter avec Home Assistant
+workflow: published
 ---
 Vous venez d'installer Home Assistant et vous êtes rendu sur votre instance via `http://homeassistant:8123` ou `http://homeassistant.local:8123`. 
 

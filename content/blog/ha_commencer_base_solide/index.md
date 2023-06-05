@@ -16,12 +16,13 @@ url_hacf: https://forum.hacf.fr/t/home-assistant-commencer-avec-une-base-solide/
 socialshare: true
 series: null
 title: "Home Assistant : Commencer avec une base solide."
-images: img/ha_bases_solides_cover.png
+image: img/ha_bases_solides_cover.png
 categories:
   - Installation
   - Concepts
   - Add-on/Intégration
 tags: []
+workflow: published
 ---
 Dans cet article, nous allons essayer d'aborder tous les **points important** vous permettant de vous lancer avec une base solide dans Home Assistant.
 

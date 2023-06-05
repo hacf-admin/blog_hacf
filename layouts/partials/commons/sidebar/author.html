@@ -7,7 +7,7 @@
                 <img src="{{ $author.avatar | relURL }}" class="rounded-circle p-0" alt="{{ $author.pseudos }}-avatar" width="50px">
             </div>
             <div class="col-9 p-0 text-start">
-                <a href="/authors/{{ $author.title }}" title="Voir tous les articles de {{ $author.pseudos }}">{{ $author.pseudos }}</a>
+                <a href="/author/{{ $author.title }}" title="Voir tous les articles de {{ $author.pseudos }}">{{ $author.pseudos }}</a>
                 <p class="text-secondary fs-6">{{ $author.fonction }}</p>
             </div>
         </div>

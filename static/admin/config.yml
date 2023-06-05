@@ -1,21 +1,24 @@
 backend:
   name: git-gateway
-  branch: netlify # Branch to update (optional; defaults to master)
-  repo:  hacf-fr/blog_hacf 
+  branch: static-cms # Branch to update (optional; defaults to master)
+  repo:  hacf-fr/blog_hacf
   site_domain: https://hacf.fr
 #  site_domain: https://hacf.netlify.app/
 
-local_backend: true
+local_backend: true # Permet la creation d'article en local STATIC CMS ONLY
 #  allowed_hosts: ['localhost']
-
-# Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
-# Peut etre desactivé en commantant la ligne ci-dessous.
-## ATTENTION non disponible en local.
-#publish_mode: editorial_workflow
 
 # These lines should *not* be indented
 media_folder: "static/images/uploads" # Chemin ou sont stocké les medias uploadés, dans Hugo par defaut c'est static/images/uploads ou assets/images/uploads pour pouvoir utiliser le resize.image.
 public_folder: "/images/uploads" # Chemin de vos images une fois le site publié /images/uploads
+media_library: #https://www.staticcms.org/docs/configuration-options#media-library
+  max_file_size: 512000
+  folder_support: true
+
+site_url: https://hacf.fr
+display_url: https://hacf.fr
+
+logo_url: https://hacf.fr/images/logo.webp
 
 slug:
   encoding: "ascii"
@@ -23,6 +26,9 @@ slug:
   sanitize_replacement: "_"
 
 collections:
+###############################################################################
+#                      Articles / Post
+###############################################################################
   - name: blog
     label: Articles / Tutoriels
     label_singular: Blog
@@ -35,32 +41,94 @@ collections:
       summary: '{{title}}'
       path: { label: 'Path', index_file: 'index' }
 
+#    filter:
+#      field: visibleInCMS
+#      value: true
+
+    sortable_fields:
+      fields: ['date', 'title']
+      default:
+        field: date
+        direction: Descending
+
+    view_filters:
+      - label: Brouillons
+        field: draft
+        pattern: true
+      - label: En écriture
+        field: workflow
+        pattern: write
+      - label: A Relire
+        field: workflow
+        pattern: read
+      - label: A Publier
+        field: workflow
+        pattern: ready
+      - label: Publié
+        field: workflow
+        pattern: published
+      - label: Archivé
+        field: workflow
+        pattern: archived
+
+    view_groups:
+      - label: Années
+        field: date
+        # groups items based on the value matched by the pattern
+        pattern: \d{4}
+      - label: Auteurs
+        field: author
+
     fields:
-      - label: Dossier
-        name: folder
-        widget: string
-        required: true
-        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha_integration,esphome_introduction ou ha_acces_exterieur_nginx_proxy_manager etc)"
+#      - label: Dossier
+#        name: folder
+#        widget: string
+#        required: true
+#        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha_integration,esphome_introduction ou ha_acces_exterieur_nginx_proxy_manager etc)"
       - label: Titre
         name: title
         widget: string
         required: true
 
-      - {label: "Type", name: "type", widget: "hidden", default: "post"}
-      - {name: visibleInCMS, widget: hidden, default: true }
+      - label: Type
+        name: type 
+        widget: hidden
+        default: post
+
+      - label: Visible CMS
+        name: visibleInCMS
+        widget: hidden
+        default: true
 
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
         default: true
         requiered: false
+        hint: Doit rester a TRUE tant que l'article n'est pas a publier.
+
+      - name: workflow
+        label: WorkFlow
+        widget: select
+        required: false
+        options:
+          - label: En écriture
+            value: write
+          - label: A relire
+            value: read
+          - label: A Publier
+            value: ready
+          - label: Publié
+            value: published
+          - label: Archivé
+            value: archived
 
       - label: "Alias"
         name: "aliases"
         widget: list
         allow_add: true
         required: false
-        hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias"
+        hint: "Permet d'ajouter des url redirigeant vers cette page. Ex: /mon_url"
         summary: '{{fiels.alias}}'
         fields:
           - name: alias
@@ -82,10 +150,10 @@ collections:
         format: 'yyyy-MM-dd' # e.g. 2022-12-24
 
       - label: Image de l'article
-        name: images
+        name: image
         widget: image
         required: false
-        hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp" 
+        hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
 
       - name: description
         label: Description
@@ -94,7 +162,7 @@ collections:
       - name: level
         label: Niveau
         widget: select
-        requiered: false
+        required: false
         options:
           - label: Débutant
             value: beginner
@@ -106,7 +174,7 @@ collections:
       - name: type_install
         label: Type d'installation
         widget: select
-        requiered: false
+        required: false
         options:
           - label: HA OS
             value: ha-os
@@ -141,6 +209,30 @@ collections:
           - Réseau
           - Sécurité
 
+#      - name: tags
+#        label: Tag(s)
+#        widget: list
+#        fields:
+#          - name: tag
+#            label: Tag
+#            widget: string
+
+      - name: tags
+        label: Tag(s)
+        widget: list
+        delimiter: ;
+        hint: Ajouter les tags separés par un point-virgule.
+
+#      - name: tags
+#        label: Tag(s)
+#        widget: relation
+#        multiple: true
+#        allow_add: true
+#        collection: tags
+#        search_fields: ['label']
+#        value_field: label
+#        display_fields: ['label']
+
       - name: author
         label: Auteur principal
         widget: relation
@@ -148,6 +240,17 @@ collections:
         search_fields: ['pseudos']
         value_field: title
         display_fields: ['pseudos']
+        required: false
+
+      - name: authors
+        label: Co-Auteur(s)
+        widget: relation
+        multiple: true
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
+        required: false
 
       - label: "Liens vers sujet du forum HACF (FR)"
         name: url_hacf
@@ -162,6 +265,107 @@ collections:
         name: body
         widget: markdown
 
+###############################################################################
+#                      Nouvelles / News
+###############################################################################
+  - name: news
+    label: Actualités
+    label_singular: Actualité
+    folder: content/news
+    media_folder: 'img' # Endroit ou sont stocké les images de l'article
+    public_folder: 'img'
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    nested:
+      depth: 100
+      summary: '{{title}}'
+      path: { label: 'Path', index_file: 'index' }
+
+    fields:
+      - label: Titre
+        name: title
+        widget: string
+        required: true
+
+      - {label: "Type", name: "type", widget: "hidden", default: "news"}
+      - {name: visibleInCMS, widget: hidden, default: true }
+
+      - label: "Brouillon"
+        name: "draft"
+        widget: "boolean"
+        default: true
+        requiered: false
+
+      - label: "Alias"
+        name: "aliases"
+        widget: list
+        allow_add: true
+        required: false
+        hint: "Permet d'ajouter des url redirigeant vers cette page. Ex: /mon_url"
+        summary: '{{fiels.alias}}'
+        fields:
+          - name: alias
+            label: Alias
+            widget: string
+
+      - name: 'date'
+        label: 'Date de publication'
+        widget: 'datetime'
+        date_format: 'dd.MM.yyyy' # e.g. 24.12.2022
+        time_format: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+
+      - name: 'lastmod'
+        label: 'Date de modification'
+        widget: 'datetime'
+        date_format: 'dd.MM.yyyy' # e.g. 24.12.2022
+        time_format: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+
+      - label: Image de l'article
+        name: image
+        widget: image
+        required: false
+        hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
+
+      - name: description
+        label: Description
+        widget: text
+
+      - name: tags
+        label: Tag(s)
+        widget: list
+        delimiter: ;
+        hint: Ajouter les tags separés par un point-virgule.
+
+      - name: author
+        label: Auteur principal
+        widget: relation
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
+
+      - name: authors
+        label: Co-Auteur(s)
+        widget: relation
+        multiple: true
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
+
+      - label: "Liens vers sujet du forum HACF (FR)"
+        name: url_hacf
+        widget: string
+        required: false
+      - label: "Liens vers l'annonce Officielle (EN)"
+        name: url_haoff
+        widget: string
+        required: false
+
+      - label: Body
+        name: body
+        widget: markdown
 
 ###############################################################################
 #                      Add author
@@ -175,10 +379,10 @@ collections:
     identifier_field: pseudos
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
     fields:
-      - label: "Id"
-        name: "title"
-        widget: "string"
-        hint: "pseudos en minisucule et sans espace"
+      - label: Id
+        name: title
+        widget: string
+        required: true
       - label: Pseudos
         name: pseudos
         widget: string
@@ -192,9 +396,9 @@ collections:
         name: avatar
         widget: image
         choose_url: false
-        media_folder: "/static/images/author"
-        public_folder: "images/author"
-        default: "images/author/hacf.webp"
+        media_folder: "/static/images/authors"
+        public_folder: "images/authors"
+        default: "images/authors/hacf.webp"
 
       - label: Réseaux Sociaux
         name: social_network
@@ -218,4 +422,26 @@ collections:
         name: pseudo_haoff
         widget: string
         hint: "Mettre seulement le pseudos en minuscule"   
-        required: false  
+        required: false
+
+
+###############################################################################
+#                      Add author
+###############################################################################
+  - name: tags
+    label: Les tags (non Fonctionnel)
+    label_singular: tag
+    folder: data/tags
+    extension: json
+    format: json
+    identifier_field: label
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    fields:
+      - label: Nom de tag
+        name: label
+        widget: string
+        required: true
+      - label: Description
+        name: description
+        widget: text
+        required: false

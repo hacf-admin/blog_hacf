@@ -8,11 +8,11 @@ aliases:
 draft: false
 date: 2023-04-11
 lastmod: 2023-04-11
-images: img/tuto-developper-intro.png
+image: img/tuto-developper-intro.png
 description: >-
-  Vous souhaitez développer vos propres intégrations pour vous ou pour la
-  communauté Home Assistant ou tout simplement contribuer à une intégration
-  existante ?
+  Vous êtes développeur et souhaitez développer vos propres intégrations pour
+  vous ou pour la communauté Home Assistant ou tout simplement contribuer à une
+  intégration existante ?
 
   Alors, la série de tutoriels qui sont présentés ici est faite pour vous.
 level: Avancé
@@ -21,12 +21,14 @@ categories:
   - Développement
 tags:
   - developpement
+  - python
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-introduction/22780
+workflow: published
 ---
-Tu veux développer une intégration pour Home Assistant ou tout simplement contribuer à une intégration existante ? Cette suite d'articles est faite pour toi et a pour but de t'aider à te lancer. Elle est conçue comme les articles que j'aurais aimé trouver lorsque je me suis moi-même lancé.
+Tu as un profil développeur et tu connais python ? Tu veux développer une intégration pour Home Assistant ou tout simplement contribuer à une intégration existante ? Alors cette suite d'articles est faite pour toi et a pour but de t'aider à te lancer. Elle est conçue comme les articles que j'aurais aimé trouver lorsque je me suis moi-même lancé.
 
-## Les pré-requis
+## Les prérequis
 
 Pour pouvoir utiliser ces articles, il est préférable de :
 
@@ -49,16 +51,16 @@ Si vous tentez de faire une intégration officielle Home Assistant, vous devrez 
 
 Pour démarrer, je ne peux que conseiller de démarrer avec une intégration HACS. Une fois que vous avez une intégration de qualité, vous pouvez tenter de la proposer comme une intégration core, mais pas avant.
 
-**Un peu de lecture :** la doc officielle est [ici](https://developers.home-assistant.io/). Elle est en anglais, pas super à jour tout le temps, n'est pas faite pour développer une intégration HACS et n'est pas très didactique. Si tu n'y connais rien, tu ne comprendras pas grand-chose. Par contre, s'y référer de temps en temps pour étendre le champ de sa connaissance une fois qu'on a compris les concepts est une super bonne idée. Gardes bien ça en tête 
+**Un peu de lecture :** la doc officielle est [ici](https://developers.home-assistant.io/). Elle est en anglais, pas super à jour tout le temps, n'est pas faite pour développer une intégration HACS et n'est pas très didactique. Si tu n'y connais rien, tu ne comprendras pas grand-chose. Par contre, s'y référer de temps en temps pour étendre le champ de sa connaissance une fois qu'on a compris les concepts est une super bonne idée. Gardes bien ça en tête.
 
-> **Tu es prêt ? Fébrile ? Ca va aller, on te dit...**
+> :bulb: **Tu es prêt ? Fébrile ? Ca va aller, on te dit...**
 
 ## Liste des tutos
 
-Les tutos sont en cours de rédaction. Mais le premier sera publié très prochainement !!
+Seuls les premiers tutos sont en ligne et les autres sont en cours de rédaction. Mais patience, ils seront publiés prochainement !!
 
-* **Tuto1 :** Installer son environnement de dev.
-* **Tuto2 :** Créer une intégration et une entité simple
-* **Tuto3 :** Interactions avec d'autres entités (évènements, états, ...)
-* **Tuto4 :** Pages de configuration (configFlow, traductions).
+* [**Tuto1 :** Installer son environnement de dev.](/blog/dev_tuto_1_environnement/)
+* [**Tuto2 :** Créer une intégration et une entité simple](/blog/dev_tuto_1_integration/)
+* [**Tuto3 :** Interactions avec d'autres entités (évènements, états, ...)](/blog/dev_tuto_3_interactions)
+* [**Tuto4 :** Pages de configuration (configFlow, traductions)](/blog/dev_tuto_4_config_flow)
 * **Tuto5 :** Aspects avancés (tests unitaires, debugging, travailler avec les sources Home Assistant).
