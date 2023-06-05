@@ -56,7 +56,7 @@ jobs:
         run: |
           hugo \
             --minify \
-            --baseURL "https://mcflypartages.github.io/blog_hacf/"
+            --baseURL "https://mcflypartages.github.io/blog_hacf/" \
             --buildDrafts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
