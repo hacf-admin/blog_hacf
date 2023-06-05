@@ -28,8 +28,6 @@ media_library: #https://www.staticcms.org/docs/configuration-options#media-libra
   max_file_size: 512000
   folder_support: true
 
-
-
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -296,8 +294,16 @@ collections:
         widget: string
         required: true
 
-      - {label: "Type", name: "type", widget: "hidden", default: "news"}
-      - {name: visibleInCMS, widget: hidden, default: true }
+
+      - label: Type
+        name: type 
+        widget: hidden
+        default: news
+
+      - label: Visible CMS
+        name: visibleInCMS
+        widget: hidden
+        default: true
 
       - label: "Brouillon"
         name: "draft"
