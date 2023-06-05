@@ -2,21 +2,14 @@ backend:
   name: git-gateway
   branch: static_cms # Branch to update (optional; defaults to master)
   repo:  hacf-fr/blog_hacf
-#  site_domain: https://hacf.fr
-  site_domain: https://preview-hacf.netlify.app/
+  site_domain: https://hacf.fr
 #  site_domain: https://hacf.netlify.app/
 #
 #Official Website hacf.fr
 #
-#site_url: https://hacf.fr
-#display_url: https://hacf.fr
-#logo_url: https://hacf.fr/images/logo.webp
-#
-#Preview Website preview-hacf.netlify.app
-#
-site_url: https://preview-hacf.netlify.app
-display_url: https://preview-hacf.netlify.app
-logo_url: https://preview-hacf.netlify.app/images/logo.webp
+site_url: https://hacf.fr
+display_url: https://hacf.fr
+logo_url: https://hacf.fr/images/logo.webp
 
 local_backend: true # Permet la creation d'article en local STATIC CMS ONLY
 #  allowed_hosts: ['localhost']
