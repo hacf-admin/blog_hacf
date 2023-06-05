@@ -1,6 +1,5 @@
-#baseURL = 'https://hacf.fr'
+baseURL = 'https://hacf.fr'
 #baseURL = 'https://hacf.netlify.app'
-baseurl = 'https://mcflypartages.github.io/blog_hacf/'
 languageCode = 'fr-fr'
 title = 'HACF'
 
