@@ -3,7 +3,7 @@ folder: interface-mobile
 title: Une interface pour mobile
 type: post
 visibleInCMS: true
-draft: false
+draft: true
 date: 2023-06-04
 lastmod: 2023-06-04
 images: img/accueil.png
