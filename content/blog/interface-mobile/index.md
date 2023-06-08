@@ -129,20 +129,20 @@ consos-color: '#C9FFE1'
 system-color: '#D9FFFB'
 ```
 
-Pour les **icônes**, vous pouvez utiliser des icônes _Material Design_ (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes toutes faites, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icônes](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
+Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes toutes faites, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icônes](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
 
 ## Créer les sous-vues
 
 Voici en animation l'utilisation du menu et des différentes sous-vues fonctionnelles.
 
-![Utilisation des sous-vues](img/sous-vues.gif)
+![Utilisation des sous-vues](img/sous-vues2.gif)
 
 Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, modifier le tableau de bord, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
 
 Renseigner le nom de la vue, mettez une icône, mais surtout :
 
-- Renseigner une URL (ci-dessous) : elle sera à utiliser dans le menu tuile pour le bouton qui appelle la vue
-- Activer "sous-vue". Aussi, vous aurez en haut à gauche une flèche de retour permettant de revenir en arrière (vers le menu tuile).
+* Renseigner une URL (ci-dessous) : elle sera à utiliser dans le menu tuile pour le bouton qui appelle la vue
+* Activer "sous-vue". Aussi, vous aurez en haut à gauche une flèche de retour permettant de revenir en arrière (vers le menu tuile).
 
 ![Configuration de la vue](img/configuration-vues.png)
 
