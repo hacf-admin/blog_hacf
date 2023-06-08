@@ -21,10 +21,6 @@ authors:
 ---
 Home Assistant Core 2023.6 ! 🎉
 
-
-
-
-
 Préparez-vous à une version classique, à l'ancienne et bourrée de nouveautés ! 🤯
 
 Je suis enthousiasmé par tant de choses ajoutées dans cette version qu'il est difficile de choisir un favori 😅 Cette version à tout.
@@ -71,18 +67,10 @@ Ces nouvelles pages d'intégration sont utiles à d'autres endroits dans Home As
 Récemment, nous avons introduit de nouveaux contrôles dans la boîte de dialogue de l'entité lumière, et cette version itère sur la conception en ajoutant la luminosité actuelle, de nouveaux contrôles, et en ajoutant des couleurs préférées ! 🎨
 
 ![Entité Lumiere et choix de couleur](img/light-dialog-favorite-colors.png)
+
 Chaque lumière (ou groupe de lumières) possède son propre jeu de couleurs. Ces couleurs peuvent être ajoutées, modifiées, supprimées et réorganisées par glisser-déposer. Pour passer en mode édition, sélectionnez et maintenez l'une des couleurs :
 
-
-
-
-
-**AJOUTER IMAGE FAVORITE COLOR**
-
-
-
-
-
+![Choisir et editer ses couleurs favorites](img/edit-favorite-colors.gif)
 ## Ajouté à la boîte de dialogue de l'entité la dernière modification
 
 À la demande générale, l'information sur la date de la dernière modification d'une entité a été ajoutée aux nouvelles boîtes de dialogue d'information sur les entités.
@@ -90,6 +78,7 @@ Chaque lumière (ou groupe de lumières) possède son propre jeu de couleurs. Ce
 De plus, @piitaya (HACF Power) a ajouté un easter egg très sympa ! Vous pouvez cliquer dessus pour alterner entre le format relatif et le format absolu !
 
 ![Derniere modification sur les entités](img/toggle-last-changed.gif)
+
 ## Informations connexes
 
 Quelle automatisation utilise ce Blueprint ? Et bien, Home Assistant peut maintenant vous le dire ! Sur la page `Paramètres` > `Automatisations & Scènes` > Blueprints, sélectionnez le menu à trois points sur n'importe quel blueprint pour découvrir quelles automatisations utilisent ce blueprint.
@@ -107,8 +96,7 @@ Une contribution étonnante de @karwosts dans cette version qui ajoute des capac
 
 Vous pouvez maintenant copier et coller n'importe quel déclencheur, condition et action à différents endroits de votre automatisation et même le coller dans une autre automatisation !
 
-**AJOUTER IMLAGE CUT COLL**
-
+![Couper, copier, coller un bloc dans les automatisations et scripts.](img/cut-copy-past-automations.gif)
 ## Python 3.11 et améliorations significatives des performances
 
 Cette version est livrée avec Python 3.11 ! Au cas où vous vous poseriez la question, qu'est-ce que c'est ? Eh bien, Python est le langage dans lequel est écrit le cœur de Home Assistant.
@@ -178,24 +166,19 @@ Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
 - [**Airzone Cloud**](https://www.home-assistant.io/integrations/airzone_cloud), ajouté par @Noltari    Contrôle du climat pour vos climatiseurs Aidoo, Easyzone, ou Flexa.- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325    Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.- [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili    Contrôlez votre climatiseur Electra Air depuis Home Assistant.- [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos    Un agent conversationnel alimenté par Google Generative AI.- [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley    Vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek    Ajoutez vos chaînes YouTube préférées en tant que capteurs.
 Cette version contient également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des stubs qui sont gérés par d'autres intégrations (existantes) pour faciliter la recherche. Celle-ci est nouvelle :
-
 - [**Piper**](https://www.home-assistant.io/integrations/piper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
 - [**Whisper**](https://www.home-assistant.io/integrations/whisper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
 - [**Yale Home**](https://www.home-assistant.io/integrations/yale_home) provided by [August](https://www.home-assistant.io/integrations/august), added by [@bdraco](https://github.com/bdraco)
 
-##  Intégrations désormais disponibles à partir de l'interface utilisateur
+## Intégrations désormais disponibles à partir de l'interface utilisateur
 
 Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
 
 - [**Deutscher Wetterdienst (DWD) Weather Warnings**](https://www.home-assistant.io/integrations/dwd_weather_warnings), done by [@andarotajo](https://github.com/andarotajo)
 - [**GeoJSON**](https://www.home-assistant.io/integrations/geo_json_events), done by [@exxamalte](https://github.com/exxamalte)
-- [**Last.fm**](https://www.home-assistant.io/integrations/lastfm), done by [@joostlek](https://github.com/joostlek)
+- , done by [@joostlek](https://github.com/joostlek)
 - [**Philips Dynalite**](https://www.home-assistant.io/integrations/dynalite), done by [@ziv1234](https://github.com/ziv1234)
 
 ## Breakin Changes
 
 Pour les Breaking Change c'est par [ici]([https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes))
-
-
-
-
