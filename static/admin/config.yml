@@ -34,6 +34,7 @@ collections:
     label: Articles / Tutoriels
     label_singular: Blog
     folder: content/blog
+    path: '{{path}}/index'
     media_folder: 'img' # Endroit ou sont stocké les images de l'article
     public_folder: 'img'
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
