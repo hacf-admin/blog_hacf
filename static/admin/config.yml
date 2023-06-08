@@ -180,6 +180,7 @@ collections:
         label: Type d'installation
         widget: select
         required: false
+        multiple: true
         options:
           - label: HA OS
             value: ha-os
