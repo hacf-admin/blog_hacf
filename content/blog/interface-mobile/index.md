@@ -135,7 +135,7 @@ Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) p
 
 Voici en animation l'utilisation du menu et des différentes sous-vues fonctionnelles.
 
-![Utilisation des sous-vues](img/sous-vue.webp)
+![Utilisation des sous-vues](img/sous-vues.gif)
 
 Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, modifier le tableau de bord, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
 
