@@ -88,6 +88,7 @@ collections:
         widget: string
         required: true
         hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha_integration,esphome_introduction ou ha_acces_exterieur_nginx_proxy_manager etc)"
+        
       - label: Titre
         name: title
         widget: string
@@ -316,6 +317,12 @@ collections:
         field: author
       
     fields:
+      - label: Dossier
+        name: path
+        widget: string
+        required: true
+        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha_integration,esphome_introduction ou ha_acces_exterieur_nginx_proxy_manager etc)"
+        
       - label: Titre
         name: title
         widget: string
