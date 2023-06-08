@@ -1,5 +1,5 @@
 ---
-path: ha 2023.4
+path: ha 2023.6
 title: "Home Assistant 2023.6 : Stockage réseau, Couleurs favorites depuis vos
   lumières, nouveau tableau de bord pour les intégrations."
 type: news
