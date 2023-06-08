@@ -181,7 +181,7 @@ Mettre les sous-vues en **mode "Vertical"** et **max_cols à 1** comme indiqué 
 
 > Le layout du menu en tuile peut aussi être modifié pour le rendre plus performant : en spécifiant son mode  Masonry.
 
-![Config vue menu tuiles](img/config-vue-menu.jpg)
+![Config vue menu tuiles](img/sous-vues.gif)
 
 ## Cacher les paramétrages dans des sous-vues niveau 2
 
