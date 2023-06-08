@@ -1,13 +1,21 @@
 ---
 folder: interface-mobile
-title: Une interface pour mobile
+title: Une interface mobile pour votre domotique Home Assistant
 type: post
 visibleInCMS: true
 draft: false
 date: 2023-06-04
 lastmod: 2023-06-04
 images: img/accueil.png
-workflow: read
+level: beginner
+type_install: ""
+version_ha: "2023.5"
+tags:
+  - Interface
+  - UX
+  - Smartphone
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/une-interface-mobile-pour-votre-domotique-home-assistant/24698
 image: img/accueil.png
 description: >-
   Afficher une centaine d'informations, commandes, images et graphiques sur un
@@ -15,16 +23,9 @@ description: >-
   veut que l'expérience d'utilisation reste bonne pour toute la famille. 
 
   Cet article vous propose de réaliser une interface conviviale pour mobile avec Home Assistant.  
-level: beginner
-type_install: ""
-version_ha: "2023.5"
 categories:
   - Interface UI
-tags:
-  - Mobile
-  - Interface
-  - UX
-author: argonaute
+workflow: read
 ---
 Cet article propose comment réaliser une interface conviviale pour mobile (iPhone, Android).
 
@@ -273,7 +274,6 @@ card:
     https://www.dreamingofmaldives.com/blog-des-maldives/wp-content/uploads/plage-de-reve-maldives.jpg
   hold_action:
     action: none
-
 ```
 
 ## Un dashboard pour mobile et un autre pour tablette.
