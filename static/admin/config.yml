@@ -41,7 +41,7 @@ collections:
     nested:
       depth: 100
       summary: '{{title}}'
-      path: { widget: string, index_file: 'index' }
+#      path: { widget: string, index_file: 'index' }
 
 #    filter:
 #      field: visibleInCMS
