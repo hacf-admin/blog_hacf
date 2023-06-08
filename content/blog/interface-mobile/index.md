@@ -11,10 +11,11 @@ level: beginner
 type_install: ""
 version_ha: "2023.5"
 tags:
-  - Mobile
   - Interface
   - UX
+  - Smartphone
 author: argonaute
+url_hacf: https://forum.hacf.fr/t/une-interface-mobile-pour-votre-domotique-home-assistant/24698
 image: img/accueil.png
 description: >-
   Afficher une centaine d'informations, commandes, images et graphiques sur un
