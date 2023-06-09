@@ -29,11 +29,15 @@ workflow: read
 ---
 Cet article propose comment réaliser une interface conviviale pour mobile (iPhone, Android).
 
-L**e mobile est LA "zappette" de votre système domotique**, y compris en déplacement. C'est lui qui permet d'interagir avec votre maison, et l'interface doit être traitée avec le plus grand soin. La taille de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifique. Il est assez probable qu'une belle interface sur tablette ne sera pas adaptée au mobile.
+L**e mobile est LA "zappette" de votre système domotique**. C'est lui qui permet d'interagir avec votre maison en déplacement, et l'interface doit être traitée avec le plus grand soin. La taille réduite de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifique.
 
-La proposition de cet article est de présenter comment concevoir une page d'accueil avec un menu en tuiles, donnant accès aux différentes fonctions de son système domotique. Chaque groupe de fonctions est regroupé dans une sous-vue dédiée. Le menu du haut par défaut sera supprimé, la navigation étant assurée par la page principale en tuile. Chaque sous-vue a un bouton de retour vers la vue initiale.
+Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles, donnant accès via des sous-vues aux différentes fonctions de son système domotique. 
 
-Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j'ai fait le choix de répartir les éléments importants pour la famille dans **15 sous-vues de niveau 1**, regroupées par grandes rubriques (ou cas d'usage). Les éléments non importants pour la famille sont eux "cachés" dans des sous-vues de niveau 2 accessible depuis le niveau 1. Le menu d'accueil est donc constitué de **15 tuiles** donnant accès aux 15 sous-vues de niveau 1.  15 est d'ailleurs probablement le maximum pour garantir une bonne expérience utilisateur.
+Les éléments à afficher sont regroupés par catégorie (ou cas d'usage) : sécurité, météo, électricité, lumière... Un page (une sous-vue) est dédié à chaque catégorie. Le menu du haut par défaut est supprimé, la navigation étant assurée par la page d'accueil avec son menu en tuiles. Enfin, chaque page relative à une catégorie a un bouton de retour vers le menu d'accueil.
+
+Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j'ai fait le choix de répartir les éléments importants pour ma famille dans **15 pages dédiés**, regroupées par principaux cas d'usage. Les éléments non importants pour la famille sont eux "cachés" dans des pages annexes (de niveau 2) accessibles depuis les pages principales. Le menu d'accueil est donc constitué de **15 tuiles** donnant accès à 15 pages principales de niveau 1. 15 est d'ailleurs probablement le maximum pour garantir une bonne expérience utilisateur.
+
+> **CONSEIL** Pour une bonne expérience utilisateur, les catégories doivent être logiques pour votre famille et correspondre aux grands cas d'usage. Affichez dans les pages principales (niveau 1) les éléments les plus utilisés en premier, cacher les éléments qui ne sont utilisés que par vous dans une vue système ou dans des pages annexes de niveau 2.
 
 ![Menu en tuiles](img/menu-en-tuiles.jpg)
 
@@ -99,7 +103,7 @@ cards:
 
 Vous devriez obtenir une grille basique avec 2 boutons, textes en gras et les couleurs spécifiées.
 
-![](img/boutons.jpg)
+![Premiers boutons](img/boutons.jpg)
 
 Restera à ajouter les autres boutons. Chaque bouton a une URL qui permettra de naviguer vers les sous-vues dont la création est décrite ci-après.
 
@@ -125,11 +129,13 @@ system-color: '#D9FFFB'
 
 Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes toutes faites, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icônes](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
 
-## Créer les sous-vues
+## Créer les différentes pages
 
-Voici en animation l'utilisation du menu et des différentes sous-vues fonctionnelles.
+Les différentes pages sont des vues du dashboard avec l'option "sous-vue" activée.
 
-![Utilisation des sous-vues](img/sous-vues.gif)
+Voici une illustration de l'utilisation du menu et l'accès à 2 pages ou sous-vues (catégories Météo et Electricité).
+
+![Utilisation des sous-vues](img/sous-vues.jpg)
 
 Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, mettre le tableau de bord en mode édition, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
 
@@ -179,17 +185,15 @@ Mettre les sous-vues en **mode "Vertical"** et **max_cols à 1** comme indiqué 
 
 > Le layout du menu en tuile peut aussi être modifié pour le rendre plus performant : en spécifiant son mode  Masonry.
 
-![Config vue menu tuiles](img/sous-vues.gif)
+## Cacher vos paramétrages dans des pages de niveau 2
 
-## Cacher vos paramétrages dans des sous-vues niveau 2
+Les pages principales accessibles depuis le menu ne doivent contenir que des informations et des fonctions **essentielles pour votre famille**.
 
-Les sous-vues accessibles depuis le menu ne doivent contenir que des informations et des fonctions **essentielles pour votre famille**.
-
-Aussi, si vous avez des informations secondaires ou utilisées que par vous : paramétrage des heures de fermeture ou ouverture des volets, niveaux des piles,  etc, je vous conseille de créer un bouton dans votre sous-vue qui accède à une autre **sous-vue niveau 2** dédiée aux informations secondaires. Cela rendra l'interface plus claire.
+Aussi, si vous avez des informations secondaires ou utilisées que par vous : paramétrage des heures de fermeture ou ouverture des volets, niveaux des piles,  etc, je vous conseille de créer un bouton dans votre page qui accède à une autre **page annexe, de niveau 2** dédiée aux informations secondaires. Cela rendra l'interface plus claire.
 
 Illustration en image :
 
-![Sous-vue niveau 2](img/sous-vues-niveau-2.gif)
+![Sous-vue niveau 2](img/sous-vues-niveau-2.jpg)
 
 Pour cela, créer une carte bouton dans votre sous-vue de niveau 1, créer une nouvelle sous-vue qui contiendra vos paramètres. Lier le bouton à la sous-vue en spécifiant dans la même URL dans le bouton et la sous-vue niveau 2.
 
@@ -213,9 +217,9 @@ tap_action:
 
 Enfin, si une carte doit contenir beaucoup d'informations, vous pouvez mettre en entête des boutons avec un affichage conditionnel des différentes cartes en fonction du bouton sélectionné. Attention, la sélection sera valable pour tous les utilisateurs.
 
-Illustration avec la sélection d'une caméra dans une maison de rêve (pas la mienne, c'est juste un exemple, dommage...).
+Illustration avec la sélection d'une caméra parmi 3 dans une maison de rêve (pas la mienne, c'est juste un exemple, dommage...).
 
-![Affichage conditionnelle](img/selection-camera.gif)
+![Affichage conditionnelle](img/selection-camera.jpg)
 
 Je n'irai pas dans le détail dans ce tuto et je donne un rapide aperçu du fonctionnement :
 
