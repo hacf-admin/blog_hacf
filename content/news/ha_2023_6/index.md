@@ -125,15 +125,15 @@ Toutes ces améliorations de la stabilité de la pile Matter et de notre implém
 
 Il y a eu pas mal de progrès sur le Z-Wave dans Home Assistant.
 
-Grâce à @raman325, l'intégration a atteint le niveau platine 🏆 sur notre échelle de qualité. Cela signifie que l'intégration fait à présent les choses correctement selon les meilleures pratiques, ce qui devrait signifier une meilleure expérience utilisateur en général.
+Grâce à @raman325, l'intégration a atteint le niveau platine 🏆 sur notre échelle de qualité. Cela signifie que l'intégration fait à présent les choses parfaitement et selon les meilleures pratiques, ce qui devrait signifier une meilleure expérience utilisateur en général.
 
-Avez-vous déjà allumé une lampe Z-Wave à partir de l'interface utilisateur de l'assistant domestique pour voir le bouton s'éteindre après quelques secondes, puis se rallumer quelques secondes plus tard ? Ce problème de longue date (qui a même reçu le surnom de flip/flop) pour certains dispositifs, qui sont lents à réagir à leur état, a finalement été résolu.
+Avez-vous déjà allumé une lampe Z-Wave à partir de l'interface utilisateur de Home Assistant pour voir le bouton s'éteindre après quelques secondes, puis se rallumer quelques secondes plus tard ? Ce problème de longue date (qui a même reçu le surnom de flip/flop) pour certains dispositifs, qui sont lents à réagir à leur état, a finalement été résolu.
 
 Pour ceux d'entre vous qui aiment tout automatiser, vous pouvez maintenant automatiser non seulement l'état du périphérique Z-Wave mais aussi sa configuration. Nous avons ajouté des entités de paramètres de configuration de périphérique, de sorte que presque tous les paramètres de périphérique Z-Wave sont maintenant disponibles en tant qu'entité.
 
 Nous avons également ajouté des entités pour les statistiques de connexion des périphériques, que vous pouvez utiliser pour, par exemple, créer une notification si un périphérique génère plus d'un certain nombre de messages perdus. Si vous souhaitez suivre un appareil qui se comporte mal, vous pouvez activer ces capteurs pour afficher l'historique des performances de connexion.
 
-En arrière-plan, @AlCalzone travaille sans relâche sur le pilote Z-Wave JS, qui est la base de notre intégration Z-Wave. Entre autres choses, certains appareils sont désormais plus rapides à interroger lors de l'ajout, et davantage d'appareils peuvent être configurés.
+En arrière-plan, @AlCalzone travaille sans relâche sur le pilote Z-Wave JS, qui est la base de notre intégration Z-Wave. Entre autres choses, certains appareils sont désormais plus rapides à interroger lors de l'ajout, et d'avantage d'appareils peuvent être configurés.
 
 ## Nouvelles entités ! Date, heure, date/heure
 
@@ -148,14 +148,14 @@ Merci de les avoir créées @raman325 !
 
 ## Autres changements notables
 
-Il y a beaucoup plus de lapins de Pâques dans cette version ; voici quelques-uns des autres changements notables de cette version :
+Il y a beaucoup plus de belles surprises dans cette version ; voici quelques-uns des autres changements notables de cette version :
 
 - Lors de l'utilisation de services dans l'interface utilisateur (comme dans l'éditeur d'automatisation), seuls les options et paramètres disponibles pour les appareils et entités cibles sélectionnés seront affichés. Cela rend l'interface utilisateur beaucoup plus propre ! Merci, @emontnemery et @bramkragten !
-- L'intégration de Roborock (introduite dans la version précédente) a reçu beaucoup d'amour et fournit maintenant une large gamme de nouvelles entités. Merci @Lash-L !
+- L'intégration de Roborock (introduite dans la version précédente) a reçu beaucoup d'attention et fournit maintenant une large gamme de nouvelles entités. Merci @Lash-L !
 - L'intégration de Android TV Remote fournit maintenant une entité de lecteur multimédia aussi ! Bien joué, @Drafteed !
 - KNX fournit à présent son propre panneau, vous permettant de télécharger votre fichier de projet KNX, et offre un moniteur de groupe pour les diagnostics de bus en direct. Les informations du projet sont également utilisées pour les déclenchements d'appareils. Incroyable @marvin-w et @farmio !
-- @bdraco a ajouté l'option de désactiver les Webhooks pour ONVIF dans le cas où votre caméra ne respecte pas entièrement les spécifications.
-- L'action variable est désormais également disponible dans les éditeurs d'automatisation et de script dans l'interface utilisateur. Merci, @piitaya
+- @bdraco a ajouté l'option de désactiver les “Webhooks” pour ONVIF dans le cas où votre caméra ne respecte pas entièrement les spécifications.
+- La variable "actions” est désormais également disponible dans les éditeurs d'automatisation et de script dans l'interface utilisateur. Merci, @piitaya
 - Le tableau de bord du module complémentaire dispose désormais d'une barre de recherche. Utile, @bramkragten !
 - La TV Samsung dispose maintenant d'une entité de télécommande, vous permettant d'envoyer les touches de la télécommande directement à votre TV ! Merci @peitschie !
 - Les États dans les outils de développement utilisent à présent l'ID de l'entité dans le sélecteur d'ID de l'entité. Merci, @bramkragten !
@@ -168,7 +168,13 @@ Il y a beaucoup plus de lapins de Pâques dans cette version ; voici quelques-un
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-- [**Airzone Cloud**](https://www.home-assistant.io/integrations/airzone_cloud), ajouté par @Noltari    Contrôle du climat pour vos climatiseurs Aidoo, Easyzone, ou Flexa.- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325    Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.- [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili    Contrôlez votre climatiseur Electra Air depuis Home Assistant.- [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos    Un agent conversationnel alimenté par Google Generative AI.- [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley    Vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek    Ajoutez vos chaînes YouTube préférées en tant que capteurs.
+- [**Airzone Cloud**](https://www.home-assistant.io/integrations/airzone_cloud), ajouté par @Noltari : contrôle du climat pour vos climatiseurs Aidoo, Easyzone, ou Flexa.
+- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325
+- Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.
+- [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili : contrôlez votre climatiseur Electra Air depuis Home Assistant.
+- [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos : un agent conversationnel alimenté par Google Generative AI.
+- [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley : vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.
+- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek : ajoutez vos chaînes YouTube préférées en tant que capteurs.
 Cette version contient également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des stubs qui sont gérés par d'autres intégrations (existantes) pour faciliter la recherche. Celle-ci est nouvelle :
 - [**Piper**](https://www.home-assistant.io/integrations/piper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
 - [**Whisper**](https://www.home-assistant.io/integrations/whisper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
@@ -178,11 +184,11 @@ Cette version contient également une nouvelle intégration virtuelle. Les inté
 
 Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
 
-- [**Deutscher Wetterdienst (DWD) Weather Warnings**](https://www.home-assistant.io/integrations/dwd_weather_warnings), done by [@andarotajo](https://github.com/andarotajo)
-- [**GeoJSON**](https://www.home-assistant.io/integrations/geo_json_events), done by [@exxamalte](https://github.com/exxamalte)
-- , done by [@joostlek](https://github.com/joostlek)
-- [**Philips Dynalite**](https://www.home-assistant.io/integrations/dynalite), done by [@ziv1234](https://github.com/ziv1234)
+- [**Deutscher Wetterdienst (DWD) Weather Warnings**](https://www.home-assistant.io/integrations/dwd_weather_warnings), fait par [@andarotajo](https://github.com/andarotajo)
+- [**GeoJSON**](https://www.home-assistant.io/integrations/geo_json_events), fait par [@exxamalte](https://github.com/exxamalte)
+- [**Last.fm**](https://www.home-assistant.io/integrations/lastfm), fait par [@joostlek](https://github.com/joostlek)
+- [**Philips Dynalite**](https://www.home-assistant.io/integrations/dynalite), fait par [@ziv1234](https://github.com/ziv1234)
 
-## Breakin Changes
+## Breaking Changes
 
-Pour les Breaking Change c'est par [ici]([https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes))
+Pour les “Breaking Change” c'est par [ici ]([https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes))(non traduits).
