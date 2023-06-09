@@ -41,7 +41,7 @@ Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j
 
 ## Le menu en tuiles
 
-
+Voyons ici comment créer la page d'accueil et son menu en tuiles.
 
 **Installer card-mod**
 
