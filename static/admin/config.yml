@@ -43,11 +43,11 @@ collections:
       summary: '{{title}}'
 #      path: { widget: string, index_file: 'index' }
 
-    filter:
-      field: visibleInCMS
-      value: true
 #    filter:
-#      pattern: '^index.md$'
+#      field: visibleInCMS
+#      value: true
+    filter:
+      pattern: '^index.md$'
       
     sortable_fields:
       fields: ['date', 'title']
