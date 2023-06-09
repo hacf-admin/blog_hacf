@@ -77,7 +77,7 @@ Voici à quoi ressemble le menu d'accueil.
 
 **Installer card-mod**
 
-Tout d'abord, il vous faut avoir installé [Home Assistant Community Store (HACS)](https://hacs.xyz/), puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de changer les couleurs des textes et des polices des boutons. 
+Tout d'abord, il vous faut avoir installé [Home Assistant Community Store (HACS)](https://hacs.xyz/), puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs des textes et des polices des boutons. 
 
 Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
 
@@ -89,6 +89,8 @@ Tout d'abord, créer une nouvelle vue qui sera dédiée à votre menu :
 * Renommez le dashboard en "Maison" (ou tout autre nom pertinent pour vous), en cliquant sur le symbole à droite de son nom.
 * Dans la barre d'entête de la vue, cliquer sur le bouton + tout à droite
 * Renseignez le nom de la vue (mettre "Menu") et l'URL (mettre "Home").
+
+Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quand vous lancerez votre dashboard. Pour cela, vous avez des flèches permettant de déplacer la vue active et la déplacer en premier. 
 
 **Créer la grille de boutons**
 
@@ -108,31 +110,30 @@ cards:
       action: navigate
       navigation_path: /lovelace/cameras
     name: Caméras
-    icon: mdi:camera
+    icon: mdi:video-outline
     style: |
       ha-card {
-        color: var(--text-menu-color);
-        background: '#BAE0F1;
+        background: #CDC2EE;
         font-weight: bold;
       }
   - type: button
-    icon: argo:meteo
+    icon: mdi:weather-partly-cloudy
     tap_action:
       action: navigate
       navigation_path: /lovelace/meteo
     name: Météo
     style: |
       ha-card {
-        color: var(--text-menu-color);
-        background: '#BAE0F1';
+        background: #BAE0F1;
         font-weight: bold;
       }
-  ......
 ```
 
-Les **couleurs** ont été déportées dans un thème, mais vous pouvez mettre les codes couleur directement dans la grille.
+Vous devriez obtenir une grille basique avec 2 boutons, textes en gras et les couleurs spécifiées.
 
-Ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence.
+![](img/boutons.jpg)
+
+Ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence. J'ai déporté les **couleurs**  dans un thème, mais vous pouvez mettre les codes couleur directement dans le code YAML de votre grille.
 
 ```yaml
 camera-color: '#CDC2EE'
