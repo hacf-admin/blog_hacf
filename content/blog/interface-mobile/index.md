@@ -75,7 +75,13 @@ Voici à quoi ressemble le menu d'accueil.
 
 ![Menu en tuiles](img/menu-en-tuiles.jpg)
 
-Pour le créer, on va utiliser une grille avec des boutons. 
+**Installer card-mod**
+
+Tout d'abord, il vous faut avoir installé [Home Assistant Community Store (HACS)](https://hacs.xyz/), puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de changer les couleurs des textes et des polices des boutons. 
+
+Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
+
+**Créer une vue dédiée pour le menu**
 
 Tout d'abord, créer une nouvelle vue qui sera dédiée à votre menu :
 
@@ -84,14 +90,15 @@ Tout d'abord, créer une nouvelle vue qui sera dédiée à votre menu :
 * Dans la barre d'entête de la vue, cliquer sur le bouton + tout à droite
 * Renseignez le nom de la vue (mettre "Menu") et l'URL (mettre "Home").
 
+**Créer la grille de boutons**
+
 Maintenant la vue créée, il faut créer une carte grille. 
 
 * Cliquer "Ajouter carte" en bas à droite, puis choisissez la carte Grille. Laissez coché "Rendre les cartes sous forme de carrés"
 * Laisser la valeur par défaut "Nombre de colonnes" à 3.
 * Ajouter autant de bouton que votre menu en contiendra en cliquant sur + dans le paramétrage de la grille.
 * Vous pouvez rajouter des boutons en cliquant sur + jusqu'à obtenir toutes les entrées du menu. Mais il peut être plus simple de passer la carte en mode YAML. Pour cela, cliquer sur "Afficher l'éditeur de code" dans la configuration de la carte. 
-
-Ci-dessous le code avec les premiers éléments...
+* Remplacer le code YAML par le code suivant, qui va créer 2 boutons. Vous pourrez en ajouter d'autres ultérieurement.
 
 ```yaml
 type: grid
