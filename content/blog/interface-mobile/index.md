@@ -37,7 +37,7 @@ Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j
 
 ![Menu en tuiles](img/menu-en-tuiles.jpg)
 
-> **Pré-requis** : avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté.
+> **Pré-requis** : avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté (card-mod et layout-card).
 
 ## Le menu en tuiles
 
@@ -62,7 +62,7 @@ Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quan
 
 **Créer la grille de boutons**
 
-Maintenant la vue créée, il faut créer une carte grille. 
+Maintenant la vue étant créée, il faut ajouter une carte grille. 
 
 * Cliquer "Ajouter carte" en bas à droite, puis choisissez la carte Grille. Laissez coché "Rendre les cartes sous forme de carrés"
 * Laisser la valeur par défaut "Nombre de colonnes" à 3.
