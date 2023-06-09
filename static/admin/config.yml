@@ -46,8 +46,8 @@ collections:
     filter:
       field: visibleInCMS
       value: true
-    filter:
-      pattern: '^index.md$'
+#    filter:
+#      pattern: '^index.md$'
       
     sortable_fields:
       fields: ['date', 'title']
