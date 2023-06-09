@@ -29,53 +29,19 @@ workflow: read
 ---
 Cet article propose comment réaliser une interface conviviale pour mobile (iPhone, Android).
 
-L'idée est d'avoir une page d'accueil avec un menu en tuiles, donnant accès aux différentes fonctions de son système domotique. Chaque groupe de fonctions est regroupé dans une sous-vue dédiée. Le menu du haut par défaut sera supprimé, la navigation étant assurée par la page principale en tuile. Chaque sous-vue a un bouton de retour vers la vue initiale.
+L**e mobile est LA "zappette" de votre système domotique**, y compris en déplacement. C'est lui qui permet d'interagir avec votre maison, et l'interface doit être traitée avec le plus grand soin. La taille de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifique. Il est assez probable qu'une belle interface sur tablette ne sera pas adaptée au mobile.
+
+La proposition de cet article est de présenter comment concevoir une page d'accueil avec un menu en tuiles, donnant accès aux différentes fonctions de son système domotique. Chaque groupe de fonctions est regroupé dans une sous-vue dédiée. Le menu du haut par défaut sera supprimé, la navigation étant assurée par la page principale en tuile. Chaque sous-vue a un bouton de retour vers la vue initiale.
+
+Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j'ai fait le choix de répartir les éléments importants pour la famille dans **15 sous-vues de niveau 1**, regroupées par grandes rubriques (ou cas d'usage). Les éléments non importants pour la famille sont eux "cachés" dans des sous-vues de niveau 2 accessible depuis le niveau 1. Le menu d'accueil est donc constitué de **15 tuiles** donnant accès aux 15 sous-vues de niveau 1.  15 est d'ailleurs probablement le maximum pour garantir une bonne expérience utilisateur.
+
+![Menu en tuiles](img/menu-en-tuiles.jpg)
 
 > **Pré-requis** : avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté.
 
-## Quelques considérations d'UX Design
-
-UX signifie Expérience utilisateur (User eXperience). L'idée est de réfléchir comment créer un système **convivial** et **intuitif** pour toute la famille. Il s'agit de répondre par exemple au fameux WAF (Wife Acceptance Factor), mais bon, perso, je trouve cette considération plutôt sexiste.
-
-> Remarque : UX design ne doit pas être confondu avec UI design (User Interface) qui ne traite que de l'interface, les couleurs, les formes, etc.
-
-Donc en réfléchissant UX Design, on réfléchira à tous les moyens d'interagir simplement avec sa domotique, et pas que via une interface graphique. Voici quelques éléments de réflexion qui nous conduiront naturellement à l'usage mobile.
-
-Tout d'abord, un bon système domotique **doit se faire oublier**, et on doit privilégier les **automatisations** qui rendent "intelligente" notre maison : les caméras se mettent à surveiller si on met l'alarme, le chauffage se déclenche quand on rentre ou aux bonnes heures, etc
-
-Je reste aussi persuadé que la maison doit pouvoir interagir avec les utilisateurs, en **envoyant des messages**, éventuellement avec des images,mais aussi en **proposant des commandes contextuelles**. Cela peut être réalisé avec Telegram (voir [Dialogue avec Telegram](/blog/ha_integration_telegram/)). Les notifications Home Assistant seront à réserver, à mon sens, pour des usages techniques.
-
-De même, les **assistants vocaux** sont aussi un bon moyen d'interagir avec sa domotique, d'autant qu'il est maintenant possible de se passer des GAFAM avec [Assist](https://www.home-assistant.io/voice_control/).
-
-On peut aussi mettre une **tablette** au centre de la maison avec une interface WAOU. J'adore ce que propose @griz ([mon dashboard](https://forum.hacf.fr/t/mon-dashboard-griz/4544)). Tiens, je crois me rappeler que c'est un UX designer d'ailleurs .…
-
-Rien n'empêche aussi de mettre des **petits afficheurs dédiés** type Nextion ou Sonoff là où c'est utile (voir [Ecran tactile Nextion avec ESPHome](/blog/esphome-ecran-tactile-nextion/)).
-
-Mais dans tous les cas, **le mobile est LA "zappette" de votre système domotique**, y compris en déplacement. C'est lui qui permet d'interagir avec votre maison, et l'interface doit être traitée avec le plus grand soin. La taille de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifique. C'est le sujet de cet article.
-
-Dans une démarche **UX Design** basique, on va s'intéresser aux personnes qui utilisent le système (votre femme, les enfants, vous) et aux cas d'usage de chacun ("use case").
-
-**Cachez la tuyauterie !** Les éléments techniques (niveau des piles, monitoring du CPU, etc) ou réglages seront déportés et cachés dans des sous-vues de niveau 2, accessibles depuis les différentes sous-vues fonctionnelles.
-
-**Priorisez** et mettez ce qui est le plus important / utilisé en premier.
-
-> Les pires interfaces sont les tableaux de bord de 747, comme on en voit trop souvent, ou tout est mélangé. Bannissez cela. A moins que votre conjoint(e) soit pilote de ligne, cachez ce qui n'est pas d'un usage courant.
-
-**Faites des tests** avec vos utilisateurs  : tout ce qui n'est pas ou mal compris, mal utilisé doit être modifié.
-
-Utiliser des **termes et des icônes** compréhensibles par la famille (taxonomie) et de préférence, toujours les mêmes.
-
-Faites un choix clair : **regroupement géographique** ou **regroupement par cas d'usage** (grande fonction). Je pense que pour un mobile avec un petit écran, on doit structurer par fonction.
-
 ## Le menu en tuiles
 
-Pour l'interface mobile, on va structurer les interfaces par grandes fonctions. Ayant pas mal d'éléments à traiter, j'ai préféré les séparer en 15 rubriques : caméras, météo, Lumières, etc en respectant les cas d'usage de la famille. Quinze vues ou groupes fonctionnels est, probablement, le maximum pour rester lisible.
 
-Ensuite, dans chaque sous-vue accessible par le menu en tuiles, il est préférable d'afficher en premier ce qui est le plus utilisé.
-
-Voici à quoi ressemble le menu d'accueil.
-
-![Menu en tuiles](img/menu-en-tuiles.jpg)
 
 **Installer card-mod**
 
