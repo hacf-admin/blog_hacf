@@ -206,10 +206,18 @@
         {{ end }}
       </figure>
     {{ end }}
-
+  {{ else if and $image (eq $image.MediaType.SubType "svg" "gif") }}
+    <div class="row text-center">
+      <img style="max-width: 300px;max-height: 300px;" class="mx-auto d-block" 
+      src="{{ $image.RelPermalink }}"
+      alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+      width="auto"
+      height="auto"
+      >
+    </div>
   {{ else }}
     <div class="row text-center">
-        <img class="mx-auto d-block" 
+        <img style="max-width: 300px;max-height: 300px;" class="mx-auto d-block" 
         src="{{ $image.RelPermalink }}"
         alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
         width="auto"
