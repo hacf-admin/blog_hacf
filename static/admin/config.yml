@@ -43,9 +43,9 @@ collections:
       summary: '{{title}}'
 #      path: { widget: string, index_file: 'index' }
 
-#    filter:
-#      field: visibleInCMS
-#      value: true
+    filter:
+      field: visibleInCMS
+      value: true
     filter:
       pattern: '^index.md$'
       
@@ -158,6 +158,8 @@ collections:
         name: image
         widget: image
         required: false
+        choose_url: true
+        multiple: false
         hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
 
       - name: description
