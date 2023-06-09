@@ -19,19 +19,19 @@ author: default
 authors:
   - mcfly
 ---
-Home Assistant Core 2023.6 ! 🎉
+***Home Assistant Core 2023.6 ! 🎉***
 
-Préparez-vous à une version classique, à l'ancienne et bourrée de nouveautés ! 🤯
+_Préparez-vous à une version classique, à l'ancienne et bourrée de nouveautés ! 🤯_
 
-Je suis enthousiasmé par tant de choses ajoutées dans cette version qu'il est difficile de choisir un favori 😅 Cette version à tout.
+_Je suis enthousiaste par tant de choses ajoutées dans cette version qu'il est difficile de choisir ma préférée 😅 Cette version à tout._
 
-Pouvoir utiliser et sauvegarder directement la configuration de mon Home Assistant sur mon réseau de stockage est absolument incroyable ! Mais j'apprécie aussi beaucoup le nouveau tableau de bord et les nouvelles pages d'intégration.
+_Pouvoir utiliser et sauvegarder directement la configuration de mon Home Assistant sur mon réseau de stockage est absolument incroyable ! Mais j'apprécie aussi beaucoup le nouveau tableau de bord et les nouvelles pages d'intégration._
 
-La fonctionnalité qui a grandement amélioré le facteur d'approbation de Home Assistant dans mon foyer est sans aucun doute l'ajout des nouvelles couleurs préférées dans les boîtes de dialogue lumineuses 🎨
+_La fonctionnalité qui a grandement amélioré le facteur d'approbation de Home Assistant dans mon foyer est sans aucun doute l'ajout des nouvelles couleurs favorites dans les boîtes de dialogue des lumières de couleur 🎨_
 
-Bonne lecture !
+_Bonne lecture !_
 
-../Frenck
+_../Frenck_
 
 ## Connectez et utilisez votre système de stockage en réseau existant
 
@@ -62,20 +62,21 @@ Dans l'exemple ci-dessus, la page d'intégration ESPHome affiche tous les appare
 
 Ces nouvelles pages d'intégration sont utiles à d'autres endroits dans Home Assistant. Par exemple, les pages sur les appareils peuvent maintenant renvoyer directement à l'intégration qui les a fournies.
 
-## Amélioration de la boîte de dialogue de l'entité lumineuse : couleurs préférées
+## Amélioration de la boîte de dialogue de l'entité Lumières: couleurs préférées
 
-Récemment, nous avons introduit de nouveaux contrôles dans la boîte de dialogue de l'entité lumière, et cette version itère sur la conception en ajoutant la luminosité actuelle, de nouveaux contrôles, et en ajoutant des couleurs préférées ! 🎨
+Récemment, nous avons introduit de nouveaux contrôles dans la boîte de dialogue de l'entité lumière, et cette version ajoute la luminosité actuelle, de nouveaux contrôles, et la gestion des couleurs préférées ! 🎨
 
 ![Entité Lumiere et choix de couleur](img/light-dialog-favorite-colors.png)
 
 Chaque lumière (ou groupe de lumières) possède son propre jeu de couleurs. Ces couleurs peuvent être ajoutées, modifiées, supprimées et réorganisées par glisser-déposer. Pour passer en mode édition, sélectionnez et maintenez l'une des couleurs :
 
 ![Choisir et editer ses couleurs favorites](img/edit-favorite-colors.gif)
+
 ## Ajouté à la boîte de dialogue de l'entité la dernière modification
 
 À la demande générale, l'information sur la date de la dernière modification d'une entité a été ajoutée aux nouvelles boîtes de dialogue d'information sur les entités.
 
-De plus, @piitaya (HACF Power) a ajouté un easter egg très sympa ! Vous pouvez cliquer dessus pour alterner entre le format relatif et le format absolu !
+De plus, @piitaya (HACF Power) a fait un ajout surprise très sympa ! Vous pouvez cliquer sur cette date pour alterner entre le format relatif et le format absolu !
 
 ![Derniere modification sur les entités](img/toggle-last-changed.gif)
 
@@ -85,7 +86,7 @@ Quelle automatisation utilise ce Blueprint ? Et bien, Home Assistant peut mainte
 
 De plus, si vous essayez accidentellement de supprimer un blueprint qui est encore utilisé, Home Assistant vous empêchera de le supprimer et vous indiquera les automatisations qui l'utilisent encore.
 
-Attendez, il y a encore plus de choses liées ! Les éléments connexes de la boîte de dialogue d'information sur l'entité ont également été améliorés. L'ancienne liste de liens a disparu, et une vue plus moderne de tous les éléments liés à une entité est maintenant affichée :
+Attendez, il y a encore plus de choses à ce propos ! Les éléments connexes de la boîte de dialogue d'information sur l'entité ont également été améliorés. L'ancienne liste de liens a disparu, et une vue plus moderne de tous les éléments liés à une entité est maintenant affichée :
 
 ![Informations connexes](img/related-information.png)
 Remarquez le lien vers la nouvelle page d'intégration ici aussi !
@@ -97,15 +98,16 @@ Une contribution étonnante de @karwosts dans cette version qui ajoute des capac
 Vous pouvez maintenant copier et coller n'importe quel déclencheur, condition et action à différents endroits de votre automatisation et même le coller dans une autre automatisation !
 
 ![Couper, copier, coller un bloc dans les automatisations et scripts.](img/cut-copy-past-automations.gif)
+
 ## Python 3.11 et améliorations significatives des performances
 
 Cette version est livrée avec Python 3.11 ! Au cas où vous vous poseriez la question, qu'est-ce que c'est ? Eh bien, Python est le langage dans lequel est écrit le cœur de Home Assistant.
 
 Pourquoi est-ce important ? Il est vraiment plus rapide ! 🚀
 
-Si vous utilisez le système d'exploitation Home Assistant ou le type d'installation Home Assistant Container : Vous n'aurez rien à faire, car nous gérons la mise à niveau vers Python 3.11 pour vous.
+Si vous utilisez le système d'exploitation Home Assistant ou le type d'installation Home Assistant Container : vous n'aurez rien à faire, car nous gérons la mise à niveau vers Python 3.11 pour vous.
 
-Et ce n'est pas tout en termes de performances. Nous avons également mis à jour des éléments internes, notamment une nouvelle version de SQLite qui devrait être plus rapide. Oh ! et, bien sûr, @bdraco a été partout pour optimiser beaucoup (beaucoup beaucoup) de chose.
+Et ce n'est pas tout en termes de performances. Nous avons également mis à jour des éléments internes, notamment une nouvelle version de SQLite qui devrait être plus rapide. Oh ! et, bien sûr, @bdraco a été un peu partout pour optimiser beaucoup (beaucoup beaucoup) de chose.
 
 On peut s'attendre à ce que cette version soit beaucoup plus rapide (ou moins consommatrice) de ressources à l'exécution.
 
@@ -113,9 +115,11 @@ On peut s'attendre à ce que cette version soit beaucoup plus rapide (ou moins c
 
 L'implémentation de Matter dans Home Assistant est maintenant basée sur la version 1.1 du standard Matter. Cela apporte une tonne de corrections de stabilité et d'améliorations, mais malheureusement, pas de nouvelles fonctionnalités.
 
-Grâce à @Diegorro98, nous avons maintenant un support pour les couvercles inclinables ! En outre, cette version de Home Assistant est livrée avec plusieurs corrections de bugs génériques et des optimisations ; nous avons réussi à extraire quelques performances supplémentaires pour rendre les mises à jour de l'état de vos appareils Matter rapides comme l'éclair 🚀.
+Grâce à @Diegorro98, nous avons maintenant un support pour les volets inclinables ! En outre, cette version de Home Assistant est livrée avec plusieurs corrections de bugs génériques et des optimisations ; nous avons réussi à tirer quelques performances supplémentaires pour rendre les mises à jour de l'état de vos appareils Matter rapides comme l'éclair 🚀.
 
 Toutes ces améliorations de la stabilité de la pile Matter et de notre implémentation ne sont pas passées inaperçues :
+
+[Youtube : This ACTUALLY Works Now!?](https://youtu.be/PsNdR-m5pwE)
 
 ## Mises à jour Z-Wave
 
