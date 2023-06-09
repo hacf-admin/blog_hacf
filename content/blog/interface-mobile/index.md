@@ -31,6 +31,8 @@ Cet article propose comment réaliser une interface conviviale pour mobile (iPho
 
 L'idée est d'avoir une page d'accueil avec un menu en tuiles, donnant accès aux différentes fonctions de son système domotique. Chaque groupe de fonctions est regroupé dans une sous-vue dédiée. Le menu du haut par défaut sera supprimé, la navigation étant assurée par la page principale en tuile. Chaque sous-vue a un bouton de retour vers la vue initiale.
 
+> **Pré-requis** : avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté.
+
 ## Quelques considérations d'UX Design
 
 UX signifie Expérience utilisateur (User eXperience). L'idée est de réfléchir comment créer un système **convivial** et **intuitif** pour toute la famille. Il s'agit de répondre par exemple au fameux WAF (Wife Acceptance Factor), mais bon, perso, je trouve cette considération plutôt sexiste.
@@ -77,7 +79,7 @@ Voici à quoi ressemble le menu d'accueil.
 
 **Installer card-mod**
 
-Tout d'abord, il vous faut avoir installé [Home Assistant Community Store (HACS)](https://hacs.xyz/), puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs des textes et des polices des boutons. 
+Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs des textes et des polices des boutons. 
 
 Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
 
@@ -133,6 +135,8 @@ Vous devriez obtenir une grille basique avec 2 boutons, textes en gras et les co
 
 ![](img/boutons.jpg)
 
+Restera à ajouter les autres boutons. Chaque bouton a une URL qui permettra de naviguer vers les sous-vues dont la création est décrite ci-après.
+
 Ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence. J'ai déporté les **couleurs**  dans un thème, mais vous pouvez mettre les codes couleur directement dans le code YAML de votre grille.
 
 ```yaml
@@ -161,7 +165,7 @@ Voici en animation l'utilisation du menu et des différentes sous-vues fonctionn
 
 ![Utilisation des sous-vues](img/sous-vues.gif)
 
-Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, modifier le tableau de bord, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
+Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, mettre le tableau de bord en mode édition, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
 
 Renseigner le nom de la vue, mettez une icône, mais surtout :
 
@@ -189,11 +193,15 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
 
 Pour information, Lovelace est le nom de mon dashboard (nom historique....). Vous pouvez utiliser une autre nom de dashboard.
 
-Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. **Vous pouvez juste laisser "Maison" dans la barre du haut.** Cela sera automatiquement fait en définissant toutes les vues, à part le menu tuile, comme sous-vues.
+**Ne plus avoir d'icônes dans la barre de menu.**
+
+ Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. **Vous pouvez juste laisser "Maison" dans la barre du haut.** Cela sera automatiquement fait **en définissant toutes les vues, à part le menu tuile, comme sous-vues.**
+
+> **ATTENTION** - Seule la vue "menu" doit être une vue, et toutes les autres doivent être des sous-vues pour qu'aucun icône ou texte ne s'affiche dans la barre d'entête**.** 
 
 ## Maîtriser l'ordre des cartes dans les vues
 
-Pour votre dashboard "mobile", vous voudrez avoir sur votre ordinateur les cartes dans l'ordre dans lequel elles s'affichent sur les mobiles, et en colonne.
+Pour votre dashboard "mobile", vous voudrez avoir sur votre ordinateur les cartes **dans l'ordre** dans lequel elles s'affichent sur les mobiles, et **en colonne**.
 
 Pour cela, vous allez charger dans HACS / partie interface la [Layout Card](https://community.home-assistant.io/t/layout-card-take-control-of-where-your-cards-end-up/147805) : elle vous permet d'indiquer comment gérer vos cartes dans une vue.
 
@@ -207,7 +215,7 @@ Mettre les sous-vues en **mode "Vertical"** et **max_cols à 1** comme indiqué 
 
 ![Config vue menu tuiles](img/sous-vues.gif)
 
-## Cacher les paramétrages dans des sous-vues niveau 2
+## Cacher vos paramétrages dans des sous-vues niveau 2
 
 Les sous-vues accessibles depuis le menu ne doivent contenir que des informations et des fonctions **essentielles pour votre famille**.
 
@@ -216,6 +224,24 @@ Aussi, si vous avez des informations secondaires ou utilisées que par vous : pa
 Illustration en image :
 
 ![Sous-vue niveau 2](img/sous-vues-niveau-2.gif)
+
+Pour cela, créer une carte bouton dans votre sous-vue de niveau 1, créer une nouvelle sous-vue qui contiendra vos paramètres. Lier le bouton à la sous-vue en spécifiant dans la même URL dans le bouton et la sous-vue niveau 2.
+
+Voici le code du bouton utilisé dans l'exemple précédent :
+
+```yaml
+type: custom:button-card
+name: Paramétrage des volets...
+styles:
+  card:
+    - background-color: var(--section-color)
+    - height: 50px
+  name:
+    - font-size: 18px
+tap_action:
+  action: navigate
+  navigation_path: /lovelace/volets-param
+```
 
 ## Utiliser des cartes conditionnelles
 
@@ -310,8 +336,6 @@ Dans l'application "compagnon", rendez-vous dans les paramètres de l'utilisateu
 
 ## Conclusion
 
-Cette présentation n'est qu'une proposition d'implémentation, et chacun peut prendre ce qui l'arrange. Il est possible par exemple d'utiliser des éléments entités (dont je ne suis pas fan).
-
-Elle est le fruit de deux ans d'usage familial et de corrections.
+Cette présentation n'est qu'une proposition d'implémentation, et chacun retiendra ce qui l'arrange. Il est possible par exemple d'utiliser des badges (dont je ne suis pas fan) qui s'afficheront en entête des sous-vues ou en haut du menu.
 
 Bien entendu, les immenses possibilités de Home Assistant font qu'il y aura autant de type d'interface que d'utilisateurs. N'hésitez pas à proposer vos implémentations et faire vos retours.
