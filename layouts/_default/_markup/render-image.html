@@ -206,15 +206,52 @@
         {{ end }}
       </figure>
     {{ end }}
-  {{ else if and $image (eq $image.MediaType.SubType "svg" "gif") }}
-    <div class="row text-center">
+  {{ else if and $image (eq $image.MediaType.SubType "gif") }}
+
+    {{ $XS := $image.Resize "250x gif" }}
+    {{ $SM := $image.Resize "300x gif" }}
+    {{ $MD := $image.Resize "400x gif" }}
+    {{ $LG := $image.Resize "500x gif" }}
+    {{ $XL := $image.Resize "700x gif" }}
+    {{ $XXL := $image.Resize "800x gif" }}
+    {{ $alt := .PlainText | safeHTML }}
+    {{ $caption := "" }}
+    {{ with .Title }}
+      {{ $caption = . | safeHTML }}
+    {{ end }}
+    
+    <figure>
+      <a href="{{ $image.RelPermalink }}">
+        <img class="mx-auto d-block"
+          sizes="(max-width: 400px) 250px,
+                (max-width: 500px) 300px,
+                (max-width: 768px) 400px,
+                (max-width: 992px) 500px,
+                (max-width: 1440px) 700px,
+                800px"
+          srcset="{{ $XS.RelPermalink }} 250w, 
+                  {{ $SM.RelPermalink }} 300w, 
+                  {{ $MD.RelPermalink }} 400w, 
+                  {{ $LG.RelPermalink }} 500w, 
+                  {{ $XL.RelPermalink }} 700w, 
+                  {{ $XXL.RelPermalink }} 800w"
+          src="{{ $image.RelPermalink }}"
+          alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+          >
+      </a>
+      {{ with $caption }}
+        <figcaption class="text-center">{{ . | markdownify }}</figcaption>
+      {{ end }}
+    </figure>
+
+{{/*      <div class="row text-center">
       <img style="max-height: 300px;" class="mx-auto d-block" 
       src="{{ $image.RelPermalink }}"
       alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
       width="auto"
       height="auto"
       >
-    </div>
+    </div>  */}}
   {{ else }}
     <div class="row text-center">
         <img style="max-height: 300px;" class="mx-auto d-block" 
