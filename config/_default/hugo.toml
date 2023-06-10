@@ -1,0 +1,114 @@
+baseURL = 'https://hacf.fr'
+#baseURL = 'https://hacf.netlify.app'
+
+languageCode = 'fr-fr'
+title = 'HACF'
+
+#theme =
+paginate = 6
+
+#pygmentsUseClasses = true
+#pygmentsCodefences = true
+
+
+enableRobotsTXT = true
+enableEmoji = true
+
+enableInlineShortcodes = true
+enableGitInfo = true
+
+[params]
+  title= 'HACF Communauté Francophone autour Home Assistant'
+  description = "Blog de la Communauté Francophone autour de Home Assistant et de son assocition."
+  keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
+  logo = "/images/logo.webp"
+  favicon = true
+  images =  "images/articles/article.webp"
+  contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
+  mainSections = ["post", "news"] #https://gohugo.io/functions/where/#mainsections
+  customcss = true
+  # Background image du jumbotron
+  # background = '/images/site/background-dark.jpg'
+  noNetlifyHost = "" #Si votre site n'est pas hebergé sur Netlify mais que vous souhaitez utiliser le CMS ex: http://netlifyDomain.netlify.app
+
+  heightCode = "300px" # Recuperer la valeur a appliquer sur les blocs de code
+  enableTOC = true
+
+  # GitHub repo du site
+  gitRepo = "https://github.com/McFlyPartages/hugo_with_cms"
+  gitBranch = "netlify"
+
+  gitRepoAwesome = "https://github.com/McFlyPartages/hugo_with_cms/tree/netlify/content/pages/awesome"
+  gitBranchAwesome = "main"
+
+  gitRepoGuideDev = "https://github.com/McFlyPartages/homeassistant-guide-du-developpeur"
+  gitBranchGuideDev = "main"
+  
+  sidebarPage = true
+  tocPage = true
+  authorPage = false
+  allowGitModPage = false
+  lastPostPage = false
+
+  sidebarPost = true
+  tocPost = true
+  authorPost = true
+  lastPostPost = true
+  allowGitModPost = false
+
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = ['lastmod', 'date', 'publishDate'] #['lastmod', ':git', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+  series = 'series'
+  author = 'author'
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+[[related.indices]]
+  name = 'tags'
+  weight = 100
+[[related.indices]]
+  name = 'categories'
+  weight = 60
+
+[social]
+  twitter = 'hacf_fr'
+
+[imaging]
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+#resampleFilter = "box"
+# Default JPEG or WebP quality setting. Default is 75.
+quality = 100
+#hint = "photo"
+disableDate = true
+disableLatLong = true
+
+
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+
+## Permet de supprimer les classes inutilisées dans le CSS et ainsi reduire sa taille. https://gohugo.io/hugo-pipes/postprocess/
+[build]
+  writeStats = true
