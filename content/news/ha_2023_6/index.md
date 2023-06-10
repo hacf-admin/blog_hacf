@@ -4,7 +4,7 @@ title: "Home Assistant 2023.6 : Stockage réseau, Couleurs favorites depuis vos
   lumières, nouveau tableau de bord pour les intégrations."
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 workflow: read
 date: 2023-06-08
 lastmod: 2023-06-08
@@ -52,7 +52,7 @@ La version précédente du tableau de bord des intégrations posait quelques pro
 
 Cette version apporte un tout nouveau tableau de bord des intégrations qui résout la plupart de ces problèmes, dans le but d'offrir une expérience plus propre et plus cohérente.
 
-![](img/integrations-dashboard.png)
+![Nouveau tableau de bord Intergrations](img/integrations-dashboard.png "Nouveau tableau de bord Intergrations")
 Les intégrations basées sur des appareils, comme ESPHome, sont combinées : plus de défilement. Une intégration défaillante n'étire plus la mise en page et ne la fait plus "sauter" lors des tentatives. Les intégrations personnalisées et les intégrations reposant sur le cloud sont désormais indiquées de manière plus visible.
 
 En sélectionnant l'icône en forme de roue dentée sur la carte d'intégration, vous accéderez à une toute nouvelle page d'intégration, affichant toutes les informations relatives à l'intégration :
@@ -175,8 +175,7 @@ Cette version contient également une nouvelle intégration virtuelle. Les inté
 Les intégrations suivantes sont désormais disponibles via l'interface utilisateur de Home Assistant :
 
 - [**Deutscher Wetterdienst (DWD) Weather Warnings**](https://www.home-assistant.io/integrations/dwd_weather_warnings), done by [@andarotajo](https://github.com/andarotajo)
-- [**GeoJSON**](https://www.home-assistant.io/integrations/geo_json_events), done by [@exxamalte](https://github.com/exxamalte)
-- , done by [@joostlek](https://github.com/joostlek)
+- [**GeoJSON**](https://www.home-assistant.io/integrations/geo_json_events), done by [@exxamalte](https://github.com/exxamalte)done by [@joostlek](https://github.com/joostlek)
 - [**Philips Dynalite**](https://www.home-assistant.io/integrations/dynalite), done by [@ziv1234](https://github.com/ziv1234)
 
 ## Breakin Changes
