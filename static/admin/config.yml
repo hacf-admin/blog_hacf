@@ -38,6 +38,8 @@ collections:
     media_folder: 'img' # Endroit ou sont stocké les images de l'article
     public_folder: 'img'
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    editor:
+      size: 'half'
     nested:
       depth: 100
       summary: '{{title}}'
@@ -275,7 +277,9 @@ collections:
     path: '{{path}}/index'
     media_folder: 'img' # Endroit ou sont stocké les images de l'article
     public_folder: 'img'
-    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection
+    editor:
+      size: 'half'
     nested:
       depth: 100
       summary: '{{title}}'
