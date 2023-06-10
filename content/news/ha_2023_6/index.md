@@ -1,23 +1,27 @@
 ---
+draft: false
 path: ha 2023_6
+folder: ha_2023_66
 title: "Home Assistant 2023.6 : Stockage réseau, Couleurs favorites depuis vos
   lumières, nouveau tableau de bord pour les intégrations."
 type: news
 visibleInCMS: true
-draft: true
-workflow: read
 date: 2023-06-08
 lastmod: 2023-06-08
-image: img/ha_2023_6.png
-description: Comme chaque premier mercredi du mois, une nouvelle version de Home
-  Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
-  release notes publiée par Nabu Casa.
+images: img/ha_2023_6.png
 tags:
   - release
   - traduction
 author: default
 authors:
   - mcfly
+url_hacf: https://forum.hacf.fr/t/home-assistant-2023-6-stockage-reseau-couleurs-favorites-depuis-vos-lumieres-nouveau-tableau-de-bord-pour-les-integrations/24754
+url_haoff: https://www.home-assistant.io/blog/2023/06/07/release-20236/
+image: img/ha_2023_6.png
+description: Comme chaque premier mercredi du mois, une nouvelle version de Home
+  Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
+  release notes publiée par Nabu Casa.
+workflow: read
 ---
 ***Home Assistant Core 2023.6 ! 🎉***
 
