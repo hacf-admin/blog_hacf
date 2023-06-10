@@ -164,7 +164,19 @@ Il y a beaucoup plus de lapins de Pâques dans cette version ; voici quelques-un
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-- [**Airzone Cloud**](https://www.home-assistant.io/integrations/airzone_cloud), ajouté par @Noltari    Contrôle du climat pour vos climatiseurs Aidoo, Easyzone, ou Flexa.- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325    Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.- [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili    Contrôlez votre climatiseur Electra Air depuis Home Assistant.- [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos    Un agent conversationnel alimenté par Google Generative AI.- [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley    Vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek    Ajoutez vos chaînes YouTube préférées en tant que capteurs.
+- [**Airzone Cloud**](https://www.home-assistant.io/integrations/airzone_cloud), ajouté par @Noltari   
+Contrôle du climat pour vos climatiseurs Aidoo, Easyzone, ou Flexa.
+- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325    
+Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.
+- [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili    
+Contrôlez votre climatiseur Electra Air depuis Home Assistant.
+- [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos    
+Un agent conversationnel alimenté par Google Generative AI.
+- [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley    
+Vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.
+- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek    
+Ajoutez vos chaînes YouTube préférées en tant que capteurs.
+
 Cette version contient également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des stubs qui sont gérés par d'autres intégrations (existantes) pour faciliter la recherche. Celle-ci est nouvelle :
 - [**Piper**](https://www.home-assistant.io/integrations/piper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
 - [**Whisper**](https://www.home-assistant.io/integrations/whisper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
