@@ -29,53 +29,52 @@ workflow: read
 ---
 Cet article propose comment réaliser une interface conviviale pour mobile (iPhone, Android).
 
-L'idée est d'avoir une page d'accueil avec un menu en tuiles, donnant accès aux différentes fonctions de son système domotique. Chaque groupe de fonctions est regroupé dans une sous-vue dédiée. Le menu du haut par défaut sera supprimé, la navigation étant assurée par la page principale en tuile. Chaque sous-vue a un bouton de retour vers la vue initiale.
+**Le mobile est LA "zappette" de votre système domotique**. C'est lui qui permet d'interagir avec votre maison en déplacement, et l'interface doit être traitée avec le plus grand soin. La taille réduite de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifiquement.
 
-## Quelques considérations d'UX Design
+Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles, donnant accès via des sous-vues aux différentes fonctions de son système domotique. 
 
-UX signifie Expérience utilisateur (User eXperience). L'idée est de réfléchir comment créer un système **convivial** et **intuitif** pour toute la famille. Il s'agit de répondre par exemple au fameux WAF (Wife Acceptance Factor), mais bon, perso, je trouve cette considération plutôt sexiste.
+Les éléments à afficher sont regroupés par catégorie (ou cas d'usage) : sécurité, météo, électricité, lumière... Un page (une sous-vue) est dédié à chaque catégorie. Le menu du haut par défaut est supprimé, la navigation étant assurée par la page d'accueil avec son menu en tuiles. Enfin, chaque page relative à une catégorie a un bouton de retour vers le menu d'accueil.
 
-> Remarque : UX design ne doit pas être confondu avec UI design (User Interface) qui ne traite que de l'interface, les couleurs, les formes, etc.
-
-Donc en réfléchissant UX Design, on réfléchira à tous les moyens d'interagir simplement avec sa domotique, et pas que via une interface graphique. Voici quelques éléments de réflexion qui nous conduiront naturellement à l'usage mobile.
-
-Tout d'abord, un bon système domotique **doit se faire oublier**, et on doit privilégier les **automatisations** qui rendent "intelligente" notre maison : les caméras se mettent à surveiller si on met l'alarme, le chauffage se déclenche quand on rentre ou aux bonnes heures, etc
-
-Je reste aussi persuadé que la maison doit pouvoir interagir avec les utilisateurs, en **envoyant des messages**, éventuellement avec des images,mais aussi en **proposant des commandes contextuelles**. Cela peut être réalisé avec Telegram (voir [Dialogue avec Telegram](/blog/ha_integration_telegram/)). Les notifications Home Assistant seront à réserver, à mon sens, pour des usages techniques.
-
-De même, les **assistants vocaux** sont aussi un bon moyen d'interagir avec sa domotique, d'autant qu'il est maintenant possible de se passer des GAFAM avec [Assist](https://www.home-assistant.io/voice_control/).
-
-On peut aussi mettre une **tablette** au centre de la maison avec une interface WAOU. J'adore ce que propose @griz ([mon dashboard](https://forum.hacf.fr/t/mon-dashboard-griz/4544)). Tiens, je crois me rappeler que c'est un UX designer d'ailleurs .…
-
-Rien n'empêche aussi de mettre des **petits afficheurs dédiés** type Nextion ou Sonoff là où c'est utile (voir [Ecran tactile Nextion avec ESPHome](/blog/esphome-ecran-tactile-nextion/)).
-
-Mais dans tous les cas, **le mobile est LA "zappette" de votre système domotique**, y compris en déplacement. C'est lui qui permet d'interagir avec votre maison, et l'interface doit être traitée avec le plus grand soin. La taille de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifique. C'est le sujet de cet article.
-
-Dans une démarche **UX Design** basique, on va s'intéresser aux personnes qui utilisent le système (votre femme, les enfants, vous) et aux cas d'usage de chacun ("use case").
-
-**Cachez la tuyauterie !** Les éléments techniques (niveau des piles, monitoring du CPU, etc) ou réglages seront déportés et cachés dans des sous-vues de niveau 2, accessibles depuis les différentes sous-vues fonctionnelles.
-
-**Priorisez** et mettez ce qui est le plus important / utilisé en premier.
-
-> Les pires interfaces sont les tableaux de bord de 747, comme on en voit trop souvent, ou tout est mélangé. Bannissez cela. A moins que votre conjoint(e) soit pilote de ligne, cachez ce qui n'est pas d'un usage courant.
-
-**Faites des tests** avec vos utilisateurs  : tout ce qui n'est pas ou mal compris, mal utilisé doit être modifié.
-
-Utiliser des **termes et des icônes** compréhensibles par la famille (taxonomie) et de préférence, toujours les mêmes.
-
-Faites un choix clair : **regroupement géographique** ou **regroupement par cas d'usage** (grande fonction). Je pense que pour un mobile avec un petit écran, on doit structurer par fonction.
-
-## Le menu en tuiles
-
-Pour l'interface mobile, on va structurer les interfaces par grandes fonctions. Ayant pas mal d'éléments à traiter, j'ai préféré les séparer en 15 rubriques : caméras, météo, Lumières, etc en respectant les cas d'usage de la famille. Quinze vues ou groupes fonctionnels est, probablement, le maximum pour rester lisible.
-
-Ensuite, dans chaque sous-vue accessible par le menu en tuiles, il est préférable d'afficher en premier ce qui est le plus utilisé.
-
-Voici à quoi ressemble le menu d'accueil.
+Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j'ai fait le choix de répartir les éléments importants pour ma famille dans **15 pages dédiés**, regroupées par principaux cas d'usage. Les éléments non importants pour la famille sont eux "cachés" dans des pages annexes (de niveau 2) accessibles depuis les pages principales. Le menu d'accueil est donc constitué de **15 tuiles** donnant accès à 15 pages principales de niveau 1. 15 est d'ailleurs probablement le maximum pour garantir une bonne expérience utilisateur.
 
 ![Menu en tuiles](img/menu-en-tuiles.jpg)
 
-Pour le créer, on va utiliser une grille avec des boutons. Ci-dessous le code avec les premiers éléments...
+
+
+> **CONSEIL** Pour une bonne expérience utilisateur, les catégories doivent être logiques pour votre famille et correspondre aux grands cas d'usage. Affichez dans les pages principales (niveau 1) les éléments les plus utilisés en premier, cacher les éléments qui ne sont utilisés que par vous dans une vue système ou dans des pages annexes de niveau 2.
+>
+> **Pré-requis** : avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté (card-mod et layout-card).
+
+## Le menu en tuiles
+
+Voyons ici comment créer la page d'accueil et son menu en tuiles.
+
+**Installer card-mod**
+
+Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs des textes et des polices des boutons. 
+
+Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
+
+**Créer une vue dédiée pour le menu**
+
+Tout d'abord, créer une nouvelle vue qui sera dédiée à votre menu :
+
+* Aller dans votre dashboard, puis mettez-le en mode édition, via le menu avec 3 points en haut à droite.
+* Renommez le dashboard en "Maison" (ou tout autre nom pertinent pour vous), en cliquant sur le symbole à droite de son nom.
+* Dans la barre d'entête de la vue, cliquer sur le bouton + tout à droite
+* Renseignez le nom de la vue (mettre "Menu") et l'URL (mettre "Home").
+
+Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quand vous lancerez votre dashboard. Pour cela, vous avez des flèches permettant de déplacer la vue active et la déplacer en premier. 
+
+**Créer la grille de boutons**
+
+Maintenant la vue étant créée, il faut ajouter une carte grille. 
+
+* Cliquer "Ajouter carte" en bas à droite, puis choisissez la carte Grille. Laissez coché "Rendre les cartes sous forme de carrés"
+* Laisser la valeur par défaut "Nombre de colonnes" à 3.
+* Ajouter autant de bouton que votre menu en contiendra en cliquant sur + dans le paramétrage de la grille.
+* Vous pouvez rajouter des boutons en cliquant sur + jusqu'à obtenir toutes les entrées du menu. Mais il peut être plus simple de passer la carte en mode YAML. Pour cela, cliquer sur "Afficher l'éditeur de code" dans la configuration de la carte. 
+* Remplacer le code YAML par le code suivant, qui va créer 2 boutons. Vous pourrez en ajouter d'autres ultérieurement.
 
 ```yaml
 type: grid
@@ -85,31 +84,32 @@ cards:
       action: navigate
       navigation_path: /lovelace/cameras
     name: Caméras
-    icon: argo:camera
+    icon: mdi:video-outline
     style: |
       ha-card {
-        color: var(--text-menu-color);
-        background: var(--camera-color);
+        background: #CDC2EE;
         font-weight: bold;
       }
   - type: button
-    icon: argo:meteo
+    icon: mdi:weather-partly-cloudy
     tap_action:
       action: navigate
       navigation_path: /lovelace/meteo
     name: Météo
     style: |
       ha-card {
-        color: var(--text-menu-color);
-        background: var(--meteo-color);
+        background: #BAE0F1;
         font-weight: bold;
       }
-  ......
 ```
 
-Les **couleurs** ont été déportées dans un thème, mais vous pouvez mettre les codes couleur directement dans la grille.
+Vous devriez obtenir une grille basique avec 2 boutons, textes en gras et les couleurs spécifiées.
 
-Ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence.
+![Premiers boutons](img/boutons.jpg)
+
+Restera à ajouter les autres boutons. Chaque bouton a une URL qui permettra de naviguer vers les sous-vues dont la création est décrite ci-après.
+
+Ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence. J'ai déporté les **couleurs**  dans un thème, mais vous pouvez mettre les codes couleur directement dans le code YAML de votre grille.
 
 ```yaml
 camera-color: '#CDC2EE'
@@ -131,13 +131,15 @@ system-color: '#D9FFFB'
 
 Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes toutes faites, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icônes](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
 
-## Créer les sous-vues
+## Créer les différentes pages
 
-Voici en animation l'utilisation du menu et des différentes sous-vues fonctionnelles.
+Les différentes pages sont des vues du dashboard avec l'option "sous-vue" activée.
 
-![Utilisation des sous-vues](img/sous-vues.gif)
+Voici une illustration de l'utilisation du menu et l'accès à 2 pages ou sous-vues (catégories Météo et Electricité).
 
-Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, modifier le tableau de bord, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
+![Utilisation des sous-vues](img/sous-vues.jpg)
+
+Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon cas). Pour cela, mettre le tableau de bord en mode édition, et dans la barre de menu appuyer sur `+` pour créer une nouvelle vue.
 
 Renseigner le nom de la vue, mettez une icône, mais surtout :
 
@@ -165,11 +167,15 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
 
 Pour information, Lovelace est le nom de mon dashboard (nom historique....). Vous pouvez utiliser une autre nom de dashboard.
 
-Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. **Vous pouvez juste laisser "Maison" dans la barre du haut.** Cela sera automatiquement fait en définissant toutes les vues, à part le menu tuile, comme sous-vues.
+**Ne plus avoir d'icônes dans la barre de menu.**
+
+ Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. **Vous pouvez juste laisser "Maison" dans la barre du haut.** Cela sera automatiquement fait **en définissant toutes les vues, à part le menu tuile, comme sous-vues.**
+
+> **ATTENTION** - Seule la vue "menu" doit être une vue, et toutes les autres doivent être des sous-vues pour qu'aucun icône ou texte ne s'affiche dans la barre d'entête**.** 
 
 ## Maîtriser l'ordre des cartes dans les vues
 
-Pour votre dashboard "mobile", vous voudrez avoir sur votre ordinateur les cartes dans l'ordre dans lequel elles s'affichent sur les mobiles, et en colonne.
+Pour votre dashboard "mobile", vous voudrez avoir sur votre ordinateur les cartes **dans l'ordre** dans lequel elles s'affichent sur les mobiles, et **en colonne**.
 
 Pour cela, vous allez charger dans HACS / partie interface la [Layout Card](https://community.home-assistant.io/t/layout-card-take-control-of-where-your-cards-end-up/147805) : elle vous permet d'indiquer comment gérer vos cartes dans une vue.
 
@@ -181,25 +187,41 @@ Mettre les sous-vues en **mode "Vertical"** et **max_cols à 1** comme indiqué 
 
 > Le layout du menu en tuile peut aussi être modifié pour le rendre plus performant : en spécifiant son mode  Masonry.
 
-![Config vue menu tuiles](img/sous-vues.gif)
+## Cacher vos paramétrages dans des pages de niveau 2
 
-## Cacher les paramétrages dans des sous-vues niveau 2
+Les pages principales accessibles depuis le menu ne doivent contenir que des informations et des fonctions **essentielles pour votre famille**.
 
-Les sous-vues accessibles depuis le menu ne doivent contenir que des informations et des fonctions **essentielles pour votre famille**.
+Aussi, si vous avez des informations secondaires ou utilisées que par vous : paramétrage des heures de fermeture ou ouverture des volets, niveaux des piles,  etc, je vous conseille de créer un bouton dans votre page qui accède à une autre **page annexe, de niveau 2** dédiée aux informations secondaires. Cela rendra l'interface plus claire et conviviale.
 
-Aussi, si vous avez des informations secondaires ou utilisées que par vous : paramétrage des heures de fermeture ou ouverture des volets, niveaux des piles,  etc, je vous conseille de créer un bouton dans votre sous-vue qui accède à une autre **sous-vue niveau 2** dédiée aux informations secondaires. Cela rendra l'interface plus claire.
+Voici un exemple, avec le paramétrage des volets dans une page (ou sous-vue) de niveau 2 :
 
-Illustration en image :
+![Sous-vue niveau 2](img/sous-vues-niveau-2.jpg)
 
-![Sous-vue niveau 2](img/sous-vues-niveau-2.gif)
+Pour cela, créer une carte bouton dans votre sous-vue de niveau 1, créer une nouvelle sous-vue qui contiendra vos paramètres. Lier le bouton à la sous-vue en spécifiant dans la même URL dans le bouton et la sous-vue niveau 2.
+
+Voici le code du bouton utilisé dans l'exemple précédent :
+
+```yaml
+type: custom:button-card
+name: Paramétrage des volets...
+styles:
+  card:
+    - background-color: var(--section-color)
+    - height: 50px
+  name:
+    - font-size: 18px
+tap_action:
+  action: navigate
+  navigation_path: /lovelace/volets-param
+```
 
 ## Utiliser des cartes conditionnelles
 
 Enfin, si une carte doit contenir beaucoup d'informations, vous pouvez mettre en entête des boutons avec un affichage conditionnel des différentes cartes en fonction du bouton sélectionné. Attention, la sélection sera valable pour tous les utilisateurs.
 
-Illustration avec la sélection d'une caméra dans une maison de rêve (pas la mienne, c'est juste un exemple, dommage...).
+Illustration avec la sélection d'une caméra parmi 3 dans une maison de rêve (pas la mienne, c'est juste un exemple, dommage...).
 
-![Affichage conditionnelle](img/selection-camera.gif)
+![Affichage conditionnelle](img/selection-camera.jpg)
 
 Je n'irai pas dans le détail dans ce tuto et je donne un rapide aperçu du fonctionnement :
 
@@ -286,8 +308,6 @@ Dans l'application "compagnon", rendez-vous dans les paramètres de l'utilisateu
 
 ## Conclusion
 
-Cette présentation n'est qu'une proposition d'implémentation, et chacun peut prendre ce qui l'arrange. Il est possible par exemple d'utiliser des éléments entités (dont je ne suis pas fan).
-
-Elle est le fruit de deux ans d'usage familial et de corrections.
+Cette présentation n'est qu'une proposition d'implémentation, et chacun retiendra ce qui l'arrange. Il est possible par exemple d'utiliser des badges (dont je ne suis pas fan) qui s'afficheront en entête des sous-vues ou en haut du menu.
 
 Bien entendu, les immenses possibilités de Home Assistant font qu'il y aura autant de type d'interface que d'utilisateurs. N'hésitez pas à proposer vos implémentations et faire vos retours.
