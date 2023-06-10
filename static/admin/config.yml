@@ -39,7 +39,7 @@ collections:
     public_folder: 'img'
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
     editor:
-      size: 'half'
+      size: half
     nested:
       depth: 100
       summary: '{{title}}'
@@ -279,7 +279,7 @@ collections:
     public_folder: 'img'
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection
     editor:
-      size: 'half'
+      size: half
     nested:
       depth: 100
       summary: '{{title}}'
