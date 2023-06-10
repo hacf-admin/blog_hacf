@@ -1,4 +1,5 @@
 ---
+folder: article-test
 draft: true
 level: ""
 authors:
@@ -19,7 +20,6 @@ categories:
   - Protocoles
   - Réseau
   - Interface UI
-  - ""
   - ESPHome/DIY
   - Automatisation
   - Node-red
