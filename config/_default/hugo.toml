@@ -10,7 +10,7 @@ paginate = 6
 #pygmentsUseClasses = true
 #pygmentsCodefences = true
 
-timeout = 60
+timeout = 120
 
 enableRobotsTXT = true
 enableEmoji = true
