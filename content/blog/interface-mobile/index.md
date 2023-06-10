@@ -41,9 +41,9 @@ Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j
 
 
 
-> **CONSEIL** Pour une bonne expérience utilisateur, les catégories doivent être logiques pour votre famille et correspondre aux grands cas d'usage. Affichez dans les pages principales (niveau 1) les éléments les plus utilisés en premier, cacher les éléments qui ne sont utilisés que par vous dans une vue système ou dans des pages annexes de niveau 2.
->
-> **Pré-requis** : avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté (card-mod et layout-card).
+> **Conseil : ** pour une bonne expérience utilisateur, les catégories doivent être logiques pour votre famille et correspondre aux grands cas d'usage. Affichez dans les pages principales (niveau 1) les éléments les plus utilisés en premier, cacher les éléments techniques dans une vue système ou dans des pages annexes de niveau 2.
+
+> **Pré-requis : ** avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté (card-mod et layout-card).
 
 ## Le menu en tuiles
 
