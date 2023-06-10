@@ -47,6 +47,7 @@
                     {{ $XXL.RelPermalink }} 800w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -84,6 +85,7 @@
                     {{ $XL.RelPermalink }} 700w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -117,6 +119,7 @@
                     {{ $LG.RelPermalink }} 500w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -147,6 +150,7 @@
                     {{ $MD.RelPermalink }} 400w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -174,6 +178,7 @@
                     {{ $SM.RelPermalink }} 300w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -199,6 +204,7 @@
             srcset="{{ $XS.RelPermalink }} 250w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -214,6 +220,7 @@
         alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
         width="auto"
         height="auto"
+        loading="lazy"
         >
     </div>
   {{ end }}
