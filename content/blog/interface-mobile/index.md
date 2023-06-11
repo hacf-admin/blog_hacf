@@ -33,13 +33,13 @@ Cet article propose comment réaliser une interface conviviale pour mobile (iPho
 
 **Le mobile est LA "zappette" de votre système domotique**. C'est lui qui permet d'interagir avec votre maison en déplacement, et l'interface doit être traitée avec le plus grand soin. La taille réduite de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifiquement.
 
-Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles, donnant accès via des sous-vues aux différentes fonctions de son système domotique. 
+Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles. Chaque tuile donne accès à une page dédiée à un sous-ensemble de fonctions de son système domotique. Chaque page correspond ainsi à une catégorie ou cas d'usage : sécurité, météo, électricité, lumière... 
 
-Les éléments à afficher sont regroupés par catégorie (ou cas d'usage) : sécurité, météo, électricité, lumière... Un page (une sous-vue) est dédié à chaque catégorie. Le menu du haut par défaut est supprimé, la navigation étant assurée par la page d'accueil avec son menu en tuiles. Enfin, chaque page relative à une catégorie a un bouton de retour vers le menu d'accueil.
+Le menu du haut par défaut est supprimé, la navigation étant assurée par la page d'accueil avec son menu en tuiles. Enfin, chaque page relative à une catégorie a un bouton de retour vers le menu d'accueil.
 
 Dans mon cas, ayant beaucoup, mais vraiment beaucoup d'éléments à afficher, j'ai fait le choix de répartir les éléments importants pour ma famille dans **15 pages dédiés**, regroupées par principaux cas d'usage. Les éléments non importants pour la famille sont eux "cachés" dans des pages annexes (de niveau 2) accessibles depuis les pages principales. Le menu d'accueil est donc constitué de **15 tuiles** donnant accès à 15 pages principales de niveau 1. 15 est d'ailleurs probablement le maximum pour garantir une bonne expérience utilisateur.
 
-![Menu en tuiles](img/menu-en-tuiles.jpg)
+![Menu en tuiles](img/menu-tuiles.jpg)
 
 > 💡 **Conseil** - pour une bonne expérience utilisateur, les catégories doivent être logiques pour votre famille et correspondre aux grands cas d'usage. Affichez dans les pages principales (niveau 1) les éléments les plus utilisés en premier, cacher les éléments techniques dans une vue système ou dans des pages annexes de niveau 2.
 
@@ -49,13 +49,13 @@ Voyons ici comment créer la page d'accueil et son menu en tuiles.
 
 **Installer card-mod**
 
-Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs des textes et des polices des boutons. 
+Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs de fond et des polices des boutons. 
 
 Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
 
 **Créer un nouveau tableau de bord "Mobile"**
 
-Vous pouvez soit utiliser votre **tableau de bord (dashboard) actuel**, soit **en créer un nouveau**. Pour en créer un nouveau, aller dans paramètre - tableau de bord, puis cliquer sur le bouton "Ajouter un tableau de bord". On va lui donner le nom "Mobile" et spécifier un icône.
+Vous pouvez soit utiliser votre **tableau de bord (ou "dashboard") actuel**, soit **en créer un nouveau**. Pour en créer un nouveau, aller dans paramètre - tableaux de bord, puis cliquer sur le bouton "Ajouter un tableau de bord". On va ici lui donner le nom "Mobile" et spécifier un icône.
 
 Aller dans votre tableau de bord, mettez le en modification (menu "trois point" en haut à droite puis "modifier le tableau de bord" puis cliquer sur "Commencer pas un tableau de bord vide" puis le bouton "prenez le contrôle".
 
@@ -114,9 +114,9 @@ Vous devriez obtenir une grille basique avec 2 boutons, textes en gras et les co
 
 ![Premiers boutons](img/boutons.jpg)
 
-Restera à ajouter les autres boutons. Chaque bouton a une URL qui permettra de naviguer vers les sous-vues dont la création est décrite ci-après.
+Restera à ajouter les autres boutons. Chaque bouton a une URL qui permettra de naviguer vers les sous-vues. Nous y reviendrons plus loin.
 
-Ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence. J'ai déporté les **couleurs**  dans un thème, mais vous pouvez mettre les codes couleur directement dans le code YAML de votre grille.
+Pour le choix des couleurs, ci-dessous différentes couleurs qui m'ont été proposées par un graphiste pour leur cohérence. J'ai déporté les **couleurs**  dans un thème, mais vous pouvez mettre les codes couleur directement dans le code YAML de votre grille.
 
 ```yaml
 camera-color: '#CDC2EE'
