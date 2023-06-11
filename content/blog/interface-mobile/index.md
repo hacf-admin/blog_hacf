@@ -31,8 +31,6 @@ Cet article propose comment réaliser une interface conviviale pour mobile (iPho
 
 > ⚠️**Pré-requis** - avoir installé  installé [Home Assistant Community Store (HACS)](https://hacs.xyz/). Ce tuto utilise 2 intégrations de la communauté (card-mod et layout-card).
 
-
-
 **Le mobile est LA "zappette" de votre système domotique**. C'est lui qui permet d'interagir avec votre maison en déplacement, et l'interface doit être traitée avec le plus grand soin. La taille réduite de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifiquement.
 
 Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles, donnant accès via des sous-vues aux différentes fonctions de son système domotique. 
@@ -55,16 +53,25 @@ Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-ca
 
 Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
 
+**Créer un nouveau tableau de bord "Mobile"**
+
+Vous pouvez soit utiliser votre **tableau de bord (dashboard) actuel**, soit **en créer un nouveau**. Pour en créer un nouveau, aller dans paramètre - tableau de bord, puis cliquer sur le bouton "Ajouter un tableau de bord". On va lui donner le nom "Mobile" et spécifier un icône.
+
+Aller dans votre tableau de bord, mettez le en modification (menu "trois point" en haut à droite puis "modifier le tableau de bord" puis cliquer sur "Commencer pas un tableau de bord vide" puis le bouton "prenez le contrôle".
+
+Renommer votre tableau de bord (nom en haut du bandeau) en "Maison".
+
 **Créer une vue dédiée pour le menu**
 
-Tout d'abord, créer une nouvelle vue qui sera dédiée à votre menu :
+Si vous avez un tableau de bord avec une première vue vide, renommez la juste en "Menu".
 
-* Aller dans votre dashboard, puis mettez-le en mode édition, via le menu avec 3 points en haut à droite.
-* Renommez le dashboard en "Maison" (ou tout autre nom pertinent pour vous), en cliquant sur le symbole à droite de son nom.
+Autrement, créer une nouvelle vue qui sera dédiée à votre menu :
+
+* Aller dans votre tableau de bord, puis mettez-le en mode édition, via le menu avec 3 points en haut à droite.
 * Dans la barre d'entête de la vue, cliquer sur le bouton + tout à droite
 * Renseignez le nom de la vue (mettre "Menu") et l'URL (mettre "Home").
 
-Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quand vous lancerez votre dashboard. Pour cela, vous avez des flèches permettant de déplacer la vue active et la déplacer en premier. 
+Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quand vous lancerez votre tableau de bord. Pour cela, vous avez des flèches permettant de déplacer la vue active et la déplacer en premier. 
 
 **Créer la grille de boutons**
 
@@ -82,7 +89,7 @@ cards:
   - type: button
     tap_action:
       action: navigate
-      navigation_path: /lovelace/cameras
+      navigation_path: /mobile/cameras
     name: Caméras
     icon: mdi:video-outline
     style: |
@@ -94,7 +101,7 @@ cards:
     icon: mdi:weather-partly-cloudy
     tap_action:
       action: navigate
-      navigation_path: /lovelace/meteo
+      navigation_path: /mobile/meteo
     name: Météo
     style: |
       ha-card {
@@ -133,7 +140,7 @@ Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) p
 
 ## Créer les différentes pages
 
-Les différentes pages sont des vues du dashboard avec l'option "sous-vue" activée.
+Les différentes pages sont des vues du tableau de bord avec l'option "sous-vue" activée.
 
 Voici une illustration de l'utilisation du menu et l'accès à 2 pages ou sous-vues (catégories Météo et Electricité).
 
@@ -155,7 +162,7 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
     icon: argo:meteo
     tap_action:
       action: navigate
-      navigation_path: /lovelace/meteo
+      navigation_path: /mobile/meteo
     name: Météo
     style: |
       ha-card {
@@ -165,7 +172,7 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
       }
 ```
 
-Pour information, Lovelace est le nom de mon dashboard (nom historique....). Vous pouvez utiliser une autre nom de dashboard.
+> 💡 L'URL est `/mobile/meteo` ou `mobile `est le nom du tableau de bord et `meteo `est le nom de la sous-vue. Historiquement, le nom par défaut du tableau de bord était `lovelace`. Vous pouvez retrouver le nom du tableau de bord dans paramètre - tableau de bord.
 
 **Ne plus avoir d'icônes dans la barre de menu.**
 
@@ -175,7 +182,7 @@ Pour information, Lovelace est le nom de mon dashboard (nom historique....). Vou
 
 ## Maîtriser l'ordre des cartes dans les vues
 
-Pour votre dashboard "mobile", vous voudrez avoir sur votre ordinateur les cartes **dans l'ordre** dans lequel elles s'affichent sur les mobiles, et **en colonne**.
+Pour votre tableau de bord "mobile", vous voudrez avoir sur votre ordinateur les cartes **dans l'ordre** dans lequel elles s'affichent sur les mobiles, et **en colonne**.
 
 Pour cela, vous allez charger dans HACS / partie interface la [Layout Card](https://community.home-assistant.io/t/layout-card-take-control-of-where-your-cards-end-up/147805) : elle vous permet d'indiquer comment gérer vos cartes dans une vue.
 
@@ -298,9 +305,9 @@ card:
     action: none
 ```
 
-## Un dashboard pour mobile et un autre pour tablette.
+## Un tableau de bord pour mobile et un autre pour tablette.
 
-Vous pouvez facilement créer un dashboard dédié à votre tablette et un dashboard dédié aux mobiles comme celui présenté ici.
+Vous pouvez facilement créer un tableau de bord (dashboard) dédié à votre tablette et un tableau de bord dédié aux mobiles comme celui présenté ici.
 
 Pour cela, vous devez créer un utilisateur "Tablette", puis un utilisateur par personne de la famille.
 
