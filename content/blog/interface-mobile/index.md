@@ -89,7 +89,7 @@ cards:
   - type: button
     tap_action:
       action: navigate
-      navigation_path: /mobile/cameras
+      navigation_path: /dashboard-mobile/cameras
     name: Caméras
     icon: mdi:video-outline
     style: |
@@ -101,7 +101,7 @@ cards:
     icon: mdi:weather-partly-cloudy
     tap_action:
       action: navigate
-      navigation_path: /mobile/meteo
+      navigation_path: /dashboard-mobile/meteo
     name: Météo
     style: |
       ha-card {
@@ -162,7 +162,7 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
     icon: argo:meteo
     tap_action:
       action: navigate
-      navigation_path: /mobile/meteo
+      navigation_path: /dashboard-mobile/meteo
     name: Météo
     style: |
       ha-card {
@@ -172,7 +172,7 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
       }
 ```
 
-> 💡 L'URL est `/mobile/meteo` ou `mobile `est le nom du tableau de bord et `meteo `est le nom de la sous-vue. Historiquement, le nom par défaut du tableau de bord était `lovelace`. Vous pouvez retrouver le nom du tableau de bord dans paramètre - tableau de bord.
+> 💡 L'URL est `/dashboard-mobile/meteo` ou `mobile`est le nom du tableau de bord et `meteo`est le nom de la sous-vue. Historiquement, le nom par défaut du tableau de bord initial était `lovelace` (l'URL `lovelace/meteo` fonctionne alors). Vous pouvez retrouver le nom du tableau de bord dans paramètre - tableau de bord.
 
 **Ne plus avoir d'icônes dans la barre de menu.**
 
