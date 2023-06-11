@@ -194,4 +194,4 @@ Les intégrations suivantes sont désormais disponibles via l'interface utilisat
 
 ## Breaking Changes
 
-Pour les “Breaking Change” c'est par [ici ]([https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes))(non traduits).
+Pour les “Breaking Change” c'est par [ici ](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes)(non traduits).
