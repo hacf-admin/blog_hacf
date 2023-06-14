@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-16
 lastmod: 2023-04-16
-images: img/ha_os_proxmox.png
+image: img/ha_os_proxmox.png
 description: >
   Cet article décrit comment installer et utiliser la solution de virtualisation
   Proxmox, qui permet de faire tourner plusieurs environnements en parallèle.
@@ -28,6 +28,7 @@ tags:
 author: jrvrcd
 authors: []
 url_hacf: https://forum.hacf.fr/t/installer-home-assistant-os-avec-proxmox-vm/22940
+workflow: published
 ---
 Vous avez une machine avec un peu de puissance, comme un mini PC, et vous souhaitez faire tourner Home Assistant, mais pas que ?
 Vous voulez une solution, à la fois simple et évolutive, supportant l’installation clé en main de Home Assistant OS ?

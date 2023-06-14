@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-02-08
 lastmod: ""
-images: img/accueil.png
+image: img/accueil.png
 description: >-
   Home Assistant sécurise notre maison et en permet le contrôle à distance. Mais
   que se passera-t-il si internet tombe alors que vous êtes en voyage pour deux
@@ -26,6 +26,7 @@ tags:
   - sms
   - appels
 url_hacf: https://forum.hacf.fr/t/sms-et-appels-avec-ha-sans-internet/6314
+workflow: published
 ---
 Nos systèmes domotiques gèrent de plus en plus de fonctions, dont certaines sont vite **essentielles**. Il est rassurant de savoir que notre système veille sur la **sécurité** de la maison. 
 

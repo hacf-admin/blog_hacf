@@ -1,1717 +1,521 @@
 backend:
   name: git-gateway
-  branch: netlify # Branch to update (optional; defaults to master)
-  repo:  hacf-fr/blog_hacf 
-  site_domain: https://dev.hacf.fr
+  branch: static_cms # Branch to update (optional; defaults to master)
+  repo:  hacf-fr/blog_hacf
+  site_domain: https://hacf.fr
 #  site_domain: https://hacf.netlify.app/
+#
+#Official Website hacf.fr
+#
+site_url: https://hacf.fr
+display_url: https://hacf.fr
+logo_url: https://hacf.fr/images/logo.webp
 
-#local_backend: true
-
-# Permet l'activtion d'un flux de travail (brouillon, a relire, a publier)
-# Peut etre desactivé en commantant la ligne ci-dessous.
-## ATTENTION non disponible en local.
-publish_mode: editorial_workflow
+local_backend: true # Permet la creation d'article en local STATIC CMS ONLY
+#  allowed_hosts: ['localhost']
 
 # These lines should *not* be indented
 media_folder: "static/images/uploads" # Chemin ou sont stocké les medias uploadés, dans Hugo par defaut c'est static/images/uploads ou assets/images/uploads pour pouvoir utiliser le resize.image.
 public_folder: "/images/uploads" # Chemin de vos images une fois le site publié /images/uploads
+media_library: #https://www.staticcms.org/docs/configuration-options#media-library
+  max_file_size: 5120000 #5,12mo
+  folder_support: true
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 
 collections:
-# Article en 1 fichier
-#  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-#    label: "Blog" # Used in the UI
-#    folder: "content/blog" # Chemin du dossier contenant les articles de blog.
-#    create: true # Autoriser les utilisateur a créer du contenus dans cette collection.
-#    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-
-## Articles en dossier
-#  - name: "blog2" # Used in routes, e.g., /admin/collections/post
-#    label: "Blog avec Dossier" # Used in the UI
-#    folder: "content/posts" # The path to the folder where the documents are stored
-#    path: "{{slug}}/index"
-#    media_folder: "" # Save images in the post's own folder instead of the static folder
-#    public_folder: ""
-
-###############################################
-###############################################
-# COLLECTION ARTICLE BLOG dans dossier content/blog
-###############################################
-###############################################
-  - name: "blog" # Used in routes, e.g., /admin/collections/post
-    #layout: blog  # Si layout personalisé
-    label: "Articles / Tutoriels" # Used in the UI
-    label_singular: 'Articles' # Used in the UI, ie: "New Post"
-    description: 'Ajouter un article a la communauté.'
-    folder: "content/blog" # Dossier ou sont stocké les articles
-    path: "{{folder}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
-    #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-    media_folder: "img/" # Endroit ou sont stocké les images de l'article
-    public_folder: "img/"
+###############################################################################
+#                      Articles / Post
+###############################################################################
+  - name: blog
+    label: Articles / Tutoriels
+    label_singular: Blog
+    folder: content/blog
+    path: '{{path}}/index'
+    media_folder: 'img' # Endroit ou sont stocké les images de l'article
+    public_folder: 'img'
     create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
-    filter: {field: visibleInCMS, value: true}
-    sortable_fields: ['title','date', 'lastmod']
-    ###################################
-    ## FILTRE DE L INTERFACE NETLIFYCMS
-    ###################################
+    editor:
+      size: half
+    nested:
+      depth: 100
+      summary: '{{title}}'
+#      path: { widget: string, index_file: 'index' }
+
+#    filter:
+#      field: visibleInCMS
+#      value: true
+    filter:
+      pattern: '^index.md$'
+      
+    sortable_fields:
+      fields: ['date', 'title']
+      default:
+        field: date
+        direction: Descending
+
     view_filters:
-    - label: Brouillon
-      field: draft
-      pattern: true
-    - label: Publié
-      field: draft
-      pattern: false
+      - label: Brouillons
+        field: draft
+        pattern: true
+      - label: En écriture
+        field: workflow
+        pattern: write
+      - label: A Relire
+        field: workflow
+        pattern: read
+      - label: A Publier
+        field: workflow
+        pattern: ready
+      - label: Publié
+        field: workflow
+        pattern: published
+      - label: Archivé
+        field: workflow
+        pattern: archived
+
     view_groups:
-    - label: Par années
-      field: date
-      pattern: \d{4}
-    - label: Auteur(s)
-      field: authors
-    - label: Catégories
-      field: categories
-    - label: Séries
-      field: series
-    - label: Tags
-      field: tags
-    ##########################
-    ## DEBUT REDACTION ARTICLE
-    ##########################
+      - label: Années
+        field: date
+        # groups items based on the value matched by the pattern
+        pattern: \d{4}
+      - label: Auteurs
+        field: author
+
     fields:
-      - label: "Dossier" 
-        name: "folder"
-        widget: "string" 
+      - label: Dossier
+        name: path
+        widget: string
         required: true
-        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha-integration,esphome-introduction ou ha-acces-exterieur-nginx-proxy-manager etc)"
-
-      - label: "Title" 
-        name: "title"
-        widget: "string" 
+        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha_integration,esphome_introduction ou ha_acces_exterieur_nginx_proxy_manager etc)"
+        
+      - label: Titre
+        name: title
+        widget: string
         required: true
-      - {label: "Type", name: "type", widget: "hidden", default: "post"}
-      - {name: visibleInCMS, widget: hidden, default: true }
 
-      - label: "Alias"
-        name: "aliases"
-        widget: "list"
-        allow_add: true
-        required: false
-        hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias"       
+      - label: Type
+        name: type 
+        widget: hidden
+        default: post
 
-#      - label: "Gallerie"
-#        name: "gallery"
-#        widget: 'list'
-#        fields:
-#          - label: "Dossier_gallery"
-#            name: "dossier"
-#            widget: "string"
-
-#          - label: "Images Gallerie"
-#            name: "image_gallery"
-#            widget: "image"
-#            choose_url: false
-#            allow_multiple: true
-#            media_folder: "img/{{dossier}}/"
-#            media_library:
-#              config:
-#                multiple: true
-
+      - label: Visible CMS
+        name: visibleInCMS
+        widget: hidden
+        default: true
 
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
         default: true
         requiered: false
+        hint: Doit rester a TRUE tant que l'article n'est pas a publier.
 
-      - label: 'Date de publication'
-        name: 'date'
-        widget: 'datetime'
-        date_format: 'DD-MM-YY'
-        #time_format: 'HH:mm'
-        format: 'YYYY-MM-DD'
-        requiered: true        
-
-      - label: 'Date de modification'
-        name: 'lastmod'
-        widget: 'datetime'
-        date_format: 'DD-MM-YY'
-        #time_format: 'HH:mm'
-        format: 'YYYY-MM-DD'
+      - name: workflow
+        label: WorkFlow
+        widget: select
         required: false
+        options:
+          - label: En écriture
+            value: write
+          - label: A relire
+            value: read
+          - label: A Publier
+            value: ready
+          - label: Publié
+            value: published
+          - label: Archivé
+            value: archived
 
-      - label: "Image de l'article"
-        name: "images"
-        widget: "image"
+      - label: "Alias"
+        name: "aliases"
+        widget: list
+        allow_add: true
         required: false
-        allow_multiple: false
-        choose_url: false
-        hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-        requiered: false
+        hint: "Permet d'ajouter des url redirigeant vers cette page. Ex: /mon_url"
+        summary: '{{fiels.alias}}'
+        fields:
+          - name: alias
+            label: Alias
+            widget: string
 
-      - label: "Description"
-        name: "description"
-        widget: "text"
-        hint: "Description devant faire entre x et xx caracteres"
+      - name: 'date'
+        label: 'Date de publication'
+        widget: 'datetime'
+        date_format: 'dd.MM.yyyy' # e.g. 24.12.2022
+        time_format: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
 
-      - label: 'Niveau'
-        name: 'level'
-        widget: 'select'
+      - name: 'lastmod'
+        label: 'Date de modification'
+        widget: 'datetime'
+        date_format: 'dd.MM.yyyy' # e.g. 24.12.2022
+        time_format: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+
+      - label: Image de l'article
+        name: image
+        widget: image
+        required: false
+        choose_url: true
         multiple: false
-        hint: "**Débutant :** Uniquement via l'UI, **Intermediaire :** Peut necessiter du codage a la main et/ou fait appel a des Add_ns/Intégrations externes **Avancé : Fait appel a du code; template, appDeamon, etc**"
-        options: 
-        - Débutant
-        - Intermédiaire
-        - Avancé
-        requiered: false
-        
-      - label: "Type d'installation"
-        name: 'type_install'
-        widget: 'select'
-        multiple: true
-        hint: "HA OS, HA Container, HA Core"
+        hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
+
+      - name: description
+        label: Description
+        widget: text
+
+      - name: level
+        label: Niveau
+        widget: select
         required: false
-        options: 
-        - ha-os
-        - ha-container
-        - ha-core
+        options:
+          - label: Débutant
+            value: beginner
+          - label: Intermédiaire
+            value: medium
+          - label: Avancé
+            value: advanced
+
+      - name: type_install
+        label: Type d'installation
+        widget: select
+        required: false
+        multiple: true
+        options:
+          - label: HA OS
+            value: ha-os
+          - label: HA Conteneur
+            value: ha-container
+          - label: HA Core
+            value: ha-core
 
       - label: "Version Home Assistant" 
         name: "version_ha"
         widget: "string" 
-        required: true
+        required: false
+        hint: "ex: 2024.4.0"
 
-      - label: 'Categorie(s)'
-        name: 'categories'
+      - name: 'categories'
+        label: 'Categorie(s)'
         widget: 'select'
         multiple: true
-        min: 1
         options:
-        - Add-on/Intégration
-        - Automatisation
-        - Concepts
-        - Confort
-        - Développement
-        - Energie
-        - ESPHome/DIY
-        - Installation
-        - Interface UI
-        - Matériel
-        - Node-red
-        - Protocoles
-        - Réseau
-        - Sécurité
+          - Add-on/Intégration
+          - Automatisation
+          - Concepts
+          - Confort
+          - Développement
+          - Energie
+          - ESPHome/DIY
+          - Installation
+          - Interface UI
+          - Matériel
+          - Node-red
+          - Protocoles
+          - Réseau
+          - Sécurité
 
+      - name: tags
+        label: Tag(s)
+        widget: list
+        delimiter: ;
+        hint: Ajouter les tags separés par un point-virgule.
 
-#      - label: 'Série(s)'
-#        name: 'series'
-#        widget: 'select'
+#      - name: tags
+#        label: Tag(s)
+#        widget: relation
 #        multiple: true
-#        min: 1
-#        required: false
-#        options: ['Les Bases de Home Assistant','Débuter avec Home Assistant','Débuter en Domotique']
+#        allow_add: true
+#        collection: tags
+#        search_fields: ['label']
+#        value_field: label
+#        display_fields: ['label']
 
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        allow_add: true
-        hint: "Séparer vos tags par une virgule"   
-        
-      - label: "Auteur Principal"
-        name: "author"
-        widget: "relation"
-        collection: "authors"
-        searchFields: ["title"]
-        valueField: "title"
-        required: true
-        multiple: false
-        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard, pour les traductions selectionner default"
-
-      - label: "Co-auteur(s)"
-        name: "authors"
-        widget: "relation"
-        collection: "authors"
-        searchFields: ["title"]
-        valueField: "title"
+      - name: author
+        label: Auteur principal
+        widget: relation
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
         required: false
+
+      - name: authors
+        label: Co-Auteur(s)
+        widget: relation
         multiple: true
-        hint: "Selectionner les auteurs ayants contribués"
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
+        required: false
 
       - label: "Liens vers sujet du forum HACF (FR)"
-        name: "url_hacf"
-        widget: "string"  
+        name: url_hacf
+        widget: string
         required: false
       - label: "Liens vers sujet du forum Officiel (EN)"
-        name: "url_haoff"
-        widget: "string"
+        name: url_haoff
+        widget: string
         required: false
 
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-        required: true
+      - label: Body
+        name: body
+        widget: markdown
 
-    
-###############################################
-###############################################
-# COLLECTION NEWS dans dossier content/news
-###############################################
-###############################################
+###############################################################################
+#                      Nouvelles / News
+###############################################################################
+  - name: news
+    label: Actualités
+    label_singular: Actualité
+    folder: content/news
+    path: '{{path}}/index'
+    media_folder: 'img' # Endroit ou sont stocké les images de l'article
+    public_folder: 'img'
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection
+    editor:
+      size: half
+    nested:
+      depth: 100
+      summary: '{{title}}'
+#      path: { widget: string, index_file: 'index' }
 
-  - name: "news" # Used in routes, e.g., /admin/collections/post
-    #layout: blog  # Si layout personalisé
-    label: "Actualités" # Used in the UI
-    label_singular: 'News' # Used in the UI, ie: "New Post"
-    description: 'Ajouter une News/Actualité a la communauté.'
-    folder: "content/news" # Dossier ou sont stocké les articles
-    path: "{{folder}}/index" #nom du fichier .md contenant l'article NE PAS MODIFIER
-    #summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-    media_folder: "img/" # Endroit ou sont stocké les images de l'article
-    public_folder: "img/"
-    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
-    filter: {field: visibleInCMS, value: true}
+#    filter:
+#      field: visibleInCMS
+#      value: true
+    filter:
+      pattern: '^index.md$'
+      
+    sortable_fields:
+      fields: ['date', 'title']
+      default:
+        field: date
+        direction: Descending
+
     view_filters:
-    - label: Brouillon
-      field: draft
-      pattern: true
-    - label: Publié
-      field: draft
-      pattern: false
+      - label: Brouillons
+        field: draft
+        pattern: true
+      - label: En écriture
+        field: workflow
+        pattern: write
+      - label: A Relire
+        field: workflow
+        pattern: read
+      - label: A Publier
+        field: workflow
+        pattern: ready
+      - label: Publié
+        field: workflow
+        pattern: published
+      - label: Archivé
+        field: workflow
+        pattern: archived
+
     view_groups:
-    - label: Par années
-      field: date
-      pattern: \d{4}
-    - label: Auteur(s)
-      field: authors
-    - label: Tags
-      field: tags
-    fields: 
-      - label: "Dossier" 
-        name: "folder"
-        widget: "string" 
+      - label: Années
+        field: date
+        # groups items based on the value matched by the pattern
+        pattern: \d{4}
+      - label: Auteurs
+        field: author
+      
+    fields:
+      - label: Dossier
+        name: path
+        widget: string
         required: true
-        hint: "Nommage du dossier (non visible), doit être simple, court et sans accents (exemple: ha-2023-2-3, z2m-1-2-3 ou esphome-2022-3 etc)"
-
-      - label: "Title" 
-        name: "title"
-        widget: "string" 
+        hint: "Nommage du dossier (non visible), simple, court et sans accents (ex: ha_integration,esphome_introduction ou ha_acces_exterieur_nginx_proxy_manager etc)"
+        
+      - label: Titre
+        name: title
+        widget: string
         required: true
 
-      - label: "Alias"
-        name: "aliases"
-        widget: "list"
-        allow_add: true
-        required: false
-        hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
+      - label: Type
+        name: type 
+        widget: hidden
+        default: news
 
-      - {label: "Type", name: "type", widget: "hidden", default: "news"}
-      - {name: visibleInCMS, widget: hidden, default: true }
+      - label: Visible CMS
+        name: visibleInCMS
+        widget: hidden
+        default: true
 
       - label: "Brouillon"
         name: "draft"
         widget: "boolean"
         default: true
         requiered: false
-
-      - label: 'Date de publication'
-        name: 'date'
-        widget: 'datetime'
-        date_format: 'DD-MM-YY'
-        #time_format: 'HH:mm'
-        format: 'YYYY-MM-DD'
-        requiered: true
-
-      - label: 'Date de modification'
-        name: 'lastmod'
-        widget: 'datetime'
-        date_format: 'DD-MM-YY'
-        #time_format: 'HH:mm'
-        format: 'YYYY-MM-DD'
+        
+      - name: workflow
+        label: WorkFlow
+        widget: select
         required: false
-
-      - label: "Image de l'article"
-        name: "images"
-        widget: "image"
-        required: false
-        allow_multiple: false
-        choose_url: false
-        hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-        requiered: false
-
-      - label: "Description"
-        name: "description"
-        widget: "text"
-        hint: "Description devant faire entre x et xx caracteres"
-        requiered: false
-
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
+        options:
+          - label: En écriture
+            value: write
+          - label: A relire
+            value: read
+          - label: A Publier
+            value: ready
+          - label: Publié
+            value: published
+          - label: Archivé
+            value: archived
+            
+      - label: "Alias"
+        name: "aliases"
+        widget: list
         allow_add: true
-        hint: "Séparer vos tags par une virgule"   
-        
-      - label: "Auteur Principal"
-        name: "author"
-        widget: "relation"
-        collection: "authors"
-        searchFields: ["title"]
-        valueField: "title"
-        required: true
-        multiple: false
-        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard, pour les traductions selectionner default"
-
-      - label: "Co-auteur(s)"
-        name: "authors"
-        widget: "relation"
-        collection: "authors"
-        searchFields: ["title"]
-        valueField: "title"
         required: false
+        hint: "Permet d'ajouter des url redirigeant vers cette page. Ex: /mon_url"
+        summary: '{{fiels.alias}}'
+        fields:
+          - name: alias
+            label: Alias
+            widget: string
+
+      - name: 'date'
+        label: 'Date de publication'
+        widget: 'datetime'
+        date_format: 'dd.MM.yyyy' # e.g. 24.12.2022
+        time_format: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+
+      - name: 'lastmod'
+        label: 'Date de modification'
+        widget: 'datetime'
+        date_format: 'dd.MM.yyyy' # e.g. 24.12.2022
+        time_format: false
+        format: 'yyyy-MM-dd' # e.g. 2022-12-24
+
+      - label: Image de l'article
+        name: image
+        widget: image
+        required: false
+        hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
+
+      - name: description
+        label: Description
+        widget: text
+
+      - name: tags
+        label: Tag(s)
+        widget: list
+        delimiter: ;
+        hint: Ajouter les tags separés par un point-virgule.
+
+      - name: author
+        label: Auteur principal
+        widget: relation
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
+
+      - name: authors
+        label: Co-Auteur(s)
+        widget: relation
         multiple: true
-        hint: "Selectionner les auteurs ayants contribués"
+        collection: authors
+        search_fields: ['pseudos']
+        value_field: title
+        display_fields: ['pseudos']
 
-      - label: "Liens vers sujet du forum"
-        name: "url_hacf"
-        widget: "string"  
+      - label: "Liens vers sujet du forum HACF (FR)"
+        name: url_hacf
+        widget: string
         required: false
-      - label: "Liens vers l'annonce officielle"
-        name: "url_haoff"
-        widget: "string"
+      - label: "Liens vers l'annonce Officielle (EN)"
+        name: url_haoff
+        widget: string
         required: false
 
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-
-
-###############################################
-
-# SECTIONS data/sections/xxxx.yaml
-
-###############################################
-  - name: "customize_sections"
-    #layout: blog  # Si layout personalisé
-    label: "Personnalisation / Activation des sections"
-    #label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
-    create: false
-    filter: {field: visibleInCMS, value: true}
-    files:
-      - file: "data/sections/hero.yaml"
-        label: "Section Hero"
-        format: "yaml"
-        name: "hero"
-        fields:
-          - label: "Section"
-            name: "section"
-            widget: "object"
-            fields:
-              - {label: "Name ", name: "name", widget: "string"}
-              - {label: "Id", name: "id", widget: "string"}
-              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
-              - {label: "Template", name: "template", widget: "hidden", default: "sections/hero.html"}
-              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
-          - {name: visibleInCMS, widget: hidden, default: false }
- 
-          - label: "Titre" 
-            name: "title"
-            widget: "string" 
-            required: true
- 
-          - label: "Sous-titre"
-            name: "subtitle"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-            
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-      - file: "data/sections/landing_double.yaml"
-        label: "Section Landing Double"
-        format: "yaml"
-        name: "landing_double"
-        fields:
-          - label: "Section"
-            name: "section"
-            widget: "object"
-            fields:
-              - {label: "Name ", name: "name", widget: "string"}
-              - {label: "Id", name: "id", widget: "string"}
-              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
-              - {label: "Template", name: "template", widget: "hidden", default: "sections/landing_double.html"}
-              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Titre" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: "Sous-titre"
-            name: "subtitle"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-          
-          - label: 'Paragraphes'
-            name: 'summary'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Paragraphe"
-                name: "description"
-                widget: "string"
-                required: true
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-          - label: 'Réseaux Sociaux'
-            name: 'socialLinks'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
-
-
-          - label: "Titre 2" 
-            name: "title2"
-            widget: "string" 
-            required: true
-
-          - label: "Sous-titre 2"
-            name: "subtitle2"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-          
-          - label: 'Paragraphes 2'
-            name: 'summary2'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Paragraphe"
-                name: "description"
-                widget: "string"
-                required: true
-
-          - label: 'Les boutons 2'
-            name: 'buttons2'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-          - label: 'Réseaux Sociaux 2'
-            name: 'socialLinks2'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
-
-
-      - file: "data/sections/news-articles.yaml"
-        label: "Section Derniers Articles"
-        format: "yaml"
-        name: "last_post"
-        fields:
-          - label: "Section"
-            name: "section"
-            widget: "object"
-            fields:
-              - {label: "Name ", name: "name", widget: "string"}
-              - {label: "Id", name: "id", widget: "string"}
-              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
-              - {label: "Template", name: "template", widget: "hidden", default: "sections/last_post.html"}
-              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
-              - {label: "Nombre de Post a afficher", name: "nbPost", widget: "number", default: 3, value_type: "int" }
-
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Titre" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-      - file: "data/sections/depots.yaml"
-        label: "Dépots GitHub"
-        format: "yaml"
-        name: "depots"
-        fields:
-          - label: "Section"
-            name: "section"
-            widget: "object"
-            fields:
-              - {label: "Name ", name: "name", widget: "string"}
-              - {label: "Id", name: "id", widget: "string"}
-              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
-              - {label: "Template", name: "template", widget: "hidden", default: "sections/depots.html"}
-              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
-
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Titre" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Filtre"
-                name: "filter"
-                widget: "string"
-                required: true
-
-          - label: 'Les Dépots'
-            name: 'depots'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Role"
-                name: "role"
-                widget: "string"
-                required: false
-
-              - label: "Activité"
-                name: "timeline"
-                widget: "string"
-                required: false
-                hint: "Aout 2020 - Présent"
-
-              - label: "Url du Repo"
-                name: "repo"
-                widget: "string"
-                required: true
-
-              - label: "Description"
-                name: "summary"
-                widget: "string"
-                required: true
-
-              - label: "Tags"
-                name: "tags"
-                widget: "list"
-                allow_add: true
-                hint: "Séparer vos tags par une virgule"   
-###############################################
-
-# COLLECTION ENTETE NEWS & POST Fichiers data/xxxHead.yaml
-
-###############################################
-  - name: "head_post_news_terms"
-    #layout: blog  # Si layout personalisé
-    label: "Entete des listes Articles, Actualites, Catégories ou Tags"
-    label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
-    create: false
-    filter: {field: visibleInCMS, value: true}
-    files:
-      - file: "data/head/postHead.yaml"
-        label: "Index des articles de Blog"
-        format: "yaml"
-        name: "postHead"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "post"}
-          - {name: visibleInCMS, widget: hidden, default: false }
-          
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-            required: false
-
-          - label: "Titre Bouton" 
-            name: "btnTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du Bouton" 
-            name: "btnDescription"
-            widget: "string" 
-            required: false
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-          - label: "Titre du contenu" 
-            name: "contentTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du contenu"
-            name: "contentDescription"
-            widget: "text"
-            required: false
-
-      - file: "data/head/newsHead.yaml"
-        label: "Index des Nouvelles ou Actualités"
-        format: "yaml"
-        name: "newsHead"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "news"}
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-            required: false
-
-          - label: "Titre Bouton" 
-            name: "btnTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du Bouton" 
-            name: "btnDescription"
-            widget: "string" 
-            required: false
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-          - label: "Titre du contenu" 
-            name: "contentTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du contenu"
-            name: "contentDescription"
-            widget: "text"
-            required: false
-
-      - file: "data/head/termsHead.yaml"
-        label: "Index des catégories et ou tags"
-        format: "yaml"
-        name: "termsHead"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "terms"}
-          - {name: visibleInCMS, widget: hidden, default: false }
-          
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-            required: false
-
-          - label: "Titre Bouton" 
-            name: "btnTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du Bouton" 
-            name: "btnDescription"
-            widget: "string" 
-            required: false
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-          - label: "Titre du contenu" 
-            name: "contentTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du contenu"
-            name: "contentDescription"
-            widget: "text"
-            required: false
-
-      - file: "data/head/catHead.yaml"
-        label: "Index des catégories"
-        format: "yaml"
-        name: "catHead"
-        fields:
-          - {name: visibleInCMS, widget: hidden, default: false }
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-            required: false
-
-          - label: "Section"
-            name: "taxoGen"
-            widget: "object"
-            hint: " Concernant la page DES catégories"
-            fields:
-              - {label: "Titre ", name: "title", widget: "string", required: true}
-              - {label: "Description", name: "description", widget: "text", required: true}
-              - label: "Titre du contenu" 
-                name: "contentTitle"
-                widget: "string" 
-                required: false
-
-              - label: "Description du contenu"
-                name: "contentDescription"
-                widget: "text"
-                required: false
-
-          - label: "Section"
-            name: "singleTaxo"
-            widget: "object"
-            hint: " Concernant la page DE LA catégorie"
-            fields:
-              - {label: "Titre ", name: "title", widget: "string", required: true}
-              - {label: "Description", name: "description", widget: "text", required: true}
-              - label: "Titre du contenu" 
-                name: "contentTitle"
-                widget: "string" 
-                required: false
-
-              - label: "Description du contenu"
-                name: "contentDescription"
-                widget: "text"
-                required: false
-
-
-          - label: "Titre Bouton" 
-            name: "btnTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du Bouton" 
-            name: "btnDescription"
-            widget: "string" 
-            required: false
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-      - file: "data/head/tagsHead.yaml"
-        label: "Index des Tags"
-        format: "yaml"
-        name: "tagsHead"
-        fields:
-          - {name: visibleInCMS, widget: hidden, default: false }
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-            required: false
-
-          - label: "Section"
-            name: "taxoGen"
-            widget: "object"
-            hint: " Concernant la page DES tags"
-            fields:
-              - {label: "Titre ", name: "title", widget: "string", required: true}
-              - {label: "Description", name: "description", widget: "text", required: true}
-              - label: "Titre du contenu" 
-                name: "contentTitle"
-                widget: "string" 
-                required: false
-
-              - label: "Description du contenu"
-                name: "contentDescription"
-                widget: "text"
-                required: false
-
-          - label: "Section"
-            name: "singleTaxo"
-            widget: "object"
-            hint: " Concernant la page DE UN tag"
-            fields:
-              - {label: "Titre ", name: "title", widget: "string", required: true}
-              - {label: "Description", name: "description", widget: "text", required: true}
-              - label: "Titre du contenu" 
-                name: "contentTitle"
-                widget: "string" 
-                required: false
-
-              - label: "Description du contenu"
-                name: "contentDescription"
-                widget: "text"
-                required: false
-
-
-          - label: "Titre Bouton" 
-            name: "btnTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du Bouton" 
-            name: "btnDescription"
-            widget: "string" 
-            required: false
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-      - file: "data/head/authorsHead.yaml"
-        label: "Index des Auteurs"
-        format: "yaml"
-        name: "authorsHead"
-        fields:
-          - {name: visibleInCMS, widget: hidden, default: false }
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-            required: false
-
-          - label: "Section"
-            name: "taxoGen"
-            widget: "object"
-            hint: " Concernant la page DES auteurs"
-            fields:
-              - {label: "Titre ", name: "title", widget: "string", required: true}
-              - {label: "Description", name: "description", widget: "text", required: true}
-              - label: "Titre du contenu" 
-                name: "contentTitle"
-                widget: "string" 
-                required: false
-
-              - label: "Description du contenu"
-                name: "contentDescription"
-                widget: "text"
-                required: false
-
-          - label: "Section"
-            name: "singleTaxo"
-            widget: "object"
-            hint: " Concernant la page DE l'auteur"
-            fields:
-              - {label: "Titre ", name: "title", widget: "string", required: true}
-              - {label: "Description", name: "description", widget: "text", required: true}
-              - label: "Titre du contenu" 
-                name: "contentTitle"
-                widget: "string" 
-                required: false
-
-              - label: "Description du contenu"
-                name: "contentDescription"
-                widget: "text"
-                required: false
-
-
-          - label: "Titre Bouton" 
-            name: "btnTitle"
-            widget: "string" 
-            required: false
-
-          - label: "Description du Bouton" 
-            name: "btnDescription"
-            widget: "string" 
-            required: false
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-###############################################
-
-# COLLECTION PAGES
-
-###############################################
-  - name: "pages"
-    label: "Pages"
-    label_singular: 'page'
-    create: false
-    media_folder: "img/"
-    public_folder: "img/"
-    filter: {field: visibleInCMS, value: true}
-    files:
-      - file: "content/pages/awesome/index.md"
-        label: "Liens utiles"
-        name: "awesome"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-          
-          - {label: "Type", name: "type", widget: "hidden", default: "page"}
-          - {name: visibleInCMS, widget: hidden, default: true }
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-
-          - label: "Alias"
-            name: "aliases"
-            widget: "list"
-            allow_add: true
-            required: false
-            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias"   
-
-          - label: 'Date de publication'
-            name: 'date'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-
-          - label: 'Date de modification'
-            name: 'lastmod'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-            required: false
-
-          - label: "Image de l'article"
-            name: "images"
-            widget: "image"
-            required: false
-            allow_multiple: false
-            choose_url: false
-            hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            allow_add: true
-            hint: "Séparer vos tags par une virgule"   
-              
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
-          - label: 'Liens utiles'
-            name: 'liens_utiles'
-            widget: 'list'
-            fields:
-              - label: "Nom"
-                name: "title"
-                widget: "string"
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-
-              - label: "Description"
-                name: "description"
-                widget: "text"
-
-              - label: "Logo"
-                name: "logo"
-                widget: "image"
-                choose_url: false
-                media_folder: "img"
-                public_folder: "img"
-                default: "images/author/hacf.webp"
-                media_library:
-                  config:
-                    multiple: false
-                    
-              - label: "Type de contenu"
-                name: "type_content"
-                widget: "select"
-                multiple: true
-                options:
-                - blog
-                - videos
-                - podcast
-                - documentations
-                - diy
-                - autres
-
-      - file: "content/pages/contact/index.md"
-        label: "Nous Contacter"
-        name: "contact"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-          
-          - {label: "Type", name: "type", widget: "hidden", default: "page"}
-          - {name: visibleInCMS, widget: hidden, default: true }
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-
-          - label: "Alias"
-            name: "aliases"
-            widget: "list"
-            allow_add: true
-            required: false
-            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias"   
-
-          - label: 'Date de publication'
-            name: 'date'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-
-          - label: 'Date de modification'
-            name: 'lastmod'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-            required: false
-
-          - label: "Image de l'article"
-            name: "images"
-            widget: "image"
-            required: false
-            allow_multiple: false
-            choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            allow_add: true
-            hint: "Séparer vos tags par une virgule"   
-              
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
-      - file: "content/pages/association/index.md"
-        label: "Association"
-        name: "association"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "page"}
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Alias"
-            name: "aliases"
-            widget: "list"
-            allow_add: true
-            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
-            required: false
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-
-          - label: 'Date de publication'
-            name: 'date'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-
-          - label: 'Date de modification'
-            name: 'lastmod'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-            required: false
-
-          - label: "Image de l'article"
-            name: "images"
-            widget: "image"
-            required: false
-            allow_multiple: false
-            choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            allow_add: true
-            hint: "Séparer vos tags par une virgule"   
-              
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
-      - file: "content/pages/rgpd/index.md"
-        label: "Potection des Données"
-        name: "rgpd"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "page"}
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Alias"
-            name: "aliases"
-            widget: "list"
-            allow_add: true
-            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
-            required: false
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-
-          - label: 'Date de publication'
-            name: 'date'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-
-          - label: 'Date de modification'
-            name: 'lastmod'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-            required: false
-
-          - label: "Image de l'article"
-            name: "images"
-            widget: "image"
-            required: false
-            allow_multiple: false
-            choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            allow_add: true
-            hint: "Séparer vos tags par une virgule"   
-              
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
-
-      - file: "content/pages/reglement/index.md"
-        label: "Réglement Association"
-        name: "reglement"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "page"}
-          - {name: visibleInCMS, widget: hidden, default: false }
-
-          - label: "Alias"
-            name: "aliases"
-            widget: "list"
-            allow_add: true
-            required: false
-            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-
-          - label: 'Date de publication'
-            name: 'date'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-
-          - label: 'Date de modification'
-            name: 'lastmod'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-            required: false
-
-          - label: "Image de l'article"
-            name: "images"
-            widget: "image"
-            required: false
-            allow_multiple: false
-            choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            allow_add: true
-            hint: "Séparer vos tags par une virgule"   
-              
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
-      - file: "content/pages/statuts/index.md"
-        label: "Statuts de l'association"
-        name: "statuts"
-        fields:
-        - label: "Title" 
-          name: "title"
-          widget: "string" 
-          required: true
-
-        - {label: "Type", name: "type", widget: "hidden", default: "page"}
-        - {name: visibleInCMS, widget: hidden, default: false }
-        
-        - label: "Alias"
-          name: "aliases"
-          widget: "list"
-          allow_add: true
-          required: false
-          hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
-
-        - label: "Brouillon"
-          name: "draft"
-          widget: "boolean"
-          default: true
-
-        - label: 'Date de publication'
-          name: 'date'
-          widget: 'datetime'
-          date_format: 'DD-MM-YY'
-          format: 'YY-MM-DD'
-
-        - label: 'Date de modification'
-          name: 'lastmod'
-          widget: 'datetime'
-          date_format: 'DD-MM-YY'
-          format: 'YY-MM-DD'
-          required: false
-
-        - label: "Image de l'article"
-          name: "images"
-          widget: "image"
-          required: false
-          allow_multiple: false
-          choose_url: false
-          hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-        - label: "Description"
-          name: "description"
-          widget: "text"
-          hint: "Description devant faire entre x et xx caracteres"
-
-        - label: "Tags"
-          name: "tags"
-          widget: "list"
-          allow_add: true
-          hint: "Séparer vos tags par une virgule"   
-            
-        - label: "Body"
-          name: "body"
-          widget: "markdown"
-
-      - file: "content/pages/participer/index.md"
-        label: "Participer"
-        name: "participer"
-        fields:
-          - label: "Title" 
-            name: "title"
-            widget: "string" 
-            required: true
-
-          - {label: "Type", name: "type", widget: "hidden", default: "page"}
-          - {name: visibleInCMS, widget: hidden, default: true }
-
-          - label: "Alias"
-            name: "aliases"
-            widget: "list"
-            allow_add: true
-            required: false
-            hint: "Permet d'ajouter des url redirigeant vers cette page. Séparer vos tags par une virgule ex alias /mon-alias" 
-
-          - label: "Brouillon"
-            name: "draft"
-            widget: "boolean"
-            default: true
-
-          - label: 'Date de publication'
-            name: 'date'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-
-          - label: 'Date de modification'
-            name: 'lastmod'
-            widget: 'datetime'
-            date_format: 'DD-MM-YY'
-            format: 'YY-MM-DD'
-            required: false
-
-          - label: "Image de l'article"
-            name: "images"
-            widget: "image"
-            required: false
-            allow_multiple: false
-            choose_url: false
-            hint: "Laisser vide pour prendre celle pr defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp, vous pouvez prendre l'image vierge a habiller https://cloud.hacf.fr/s/bAsnN3S5StCHG55" 
-
-          - label: "Description"
-            name: "description"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            allow_add: true
-            hint: "Séparer vos tags par une virgule"   
-              
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
-# Add author
-  - name: "authors"
-    label: "Ajouter un Auteur"
-    extension: "json"
-    format: "json"
-    folder: "data/authors"
-    create: true
-    editor:
-      preview: false
+      - label: Body
+        name: body
+        widget: markdown
+
+###############################################################################
+#                      Add author
+###############################################################################
+  - name: authors
+    label: Les auteurs
+    label_singular: auteur
+    folder: data/authors
+    extension: json
+    format: json
+    identifier_field: pseudos
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
     fields:
-      - label: "Id"
-        name: "title"
-        widget: "string"
-        hint: "pseudos en minisucule et sans espace"
-      - label: "Pseudos"
-        name: "pseudos"
-        widget: "string"
-      - label: "Fonction"
-        name: "fonction"
-        widget: "string"
-      - label: "Bio"
-        name: "bio"
-        widget: "text"
-      - label: "Avatar"
-        name: "avatar"
-        widget: "image"
+      - label: Id
+        name: title
+        widget: string
+        required: true
+      - label: Pseudos
+        name: pseudos
+        widget: string
+      - label: Fonction
+        name: fonction
+        widget: string
+      - label: Bio
+        name: bio
+        widget: text
+      - label: Avatar
+        name: avatar
+        widget: image
         choose_url: false
         media_folder: "/static/images/authors"
         public_folder: "images/authors"
         default: "images/authors/hacf.webp"
-        media_library:
-          config:
-            multiple: false
 
-      - label: "Réseaux Sociaux"
-        name: "social_network"
-        widget: "object"
+      - label: Réseaux Sociaux
+        name: social_network
+        widget: object
         fields:
-          - label: "Profil Facebook"
-            name: "facebook"
-            widget: "string"
+          - label: Profil Facebook
+            name: facebook
+            widget: string
             required: false
-          - label: "Profil Twitter"
-            name: "twitter"
-            widget: "string"
-            required: false 
-      - label: "Profil HACF"
-        name: "pseudo_hacf"
-        widget: "string"
+          - label: Profil Twitter
+            name: twitter
+            widget: string
+            required: false
+
+      - label: Pseudos sur le forum HACF
+        name: pseudo_hacf
+        widget: string
         hint: "Mettre seulement le pseudos en minuscule" 
         required: false
-      - label: "Profil HA Off"
-        name: "pseudo_haoff"
-        widget: "string"
+      - label: Pseudos sur le forum HA Officiel
+        name: pseudo_haoff
+        widget: string
         hint: "Mettre seulement le pseudos en minuscule"   
-        required: false   
+        required: false
 
-# ARCHIVE pour les sections du dossier data
-#          - {
-#              label: "Section",
-#              name: "section",
-#              widget: "object",
-#              fields:
-#                [
-#                  { label: "Heading", name: "heading", widget: string },
-#                  { label: "Text", name: "text", widget: "text" },
-#                ],
-#            }
+
+###############################################################################
+#                      Add author
+###############################################################################
+  - name: tags
+    label: Les tags (non Fonctionnel)
+    label_singular: tag
+    folder: data/tags
+    extension: json
+    format: json
+    identifier_field: label
+    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    fields:
+      - label: Nom de tag
+        name: label
+        widget: string
+        required: true
+      - label: Description
+        name: description
+        widget: text
+        required: false

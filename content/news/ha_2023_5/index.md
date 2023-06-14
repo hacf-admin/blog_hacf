@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-05-12
 lastmod: 2023-05-12
-images: img/social.png
+image: img/social.png
 description: >-
   Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant
   Core est sortie.
@@ -18,6 +18,7 @@ tags:
 author: default
 url_hacf: https://forum.hacf.fr/t/home-assistant-2023-5-maintenant-parle/23825
 url_haoff: https://www.home-assistant.io/blog/2023/05/03/release-20235/
+workflow: published
 ---
 > Cet article est une traduction de [2023.5: Let's talk!](https://www.home-assistant.io/blog/2023/05/03/release-20235/) publié sur le site de Home Assistant.
 

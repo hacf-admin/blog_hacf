@@ -10,6 +10,7 @@ paginate = 6
 #pygmentsUseClasses = true
 #pygmentsCodefences = true
 
+#timeout = 120
 
 enableRobotsTXT = true
 enableEmoji = true
@@ -23,7 +24,7 @@ enableGitInfo = true
   keywords = "Domotique, Home Assistant, Jeedom, Domoticz, Openhab, Gladys, Association HACF, Communauté Francophone"
   logo = "/images/logo.webp"
   favicon = true
-  images =  "images/articles/article.webp"
+  default_post_cover =  "images/articles/article.webp"
   contact = "https://framaforms.org/contacter-lassociation-ou-la-communaute-hacf-1630416579"
   mainSections = ["post", "news"] #https://gohugo.io/functions/where/#mainsections
   customcss = true

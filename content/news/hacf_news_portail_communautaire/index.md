@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-10
 lastmod: 2023-03-10
-images: img/hacf_news_portail_communautaire.png
+image: img/hacf_news_portail_communautaire.png
 description: Après plus d'un an d'absence, l'équipe HACF est heureuse de vous
   annoncer le retour du portail de la communauté.
 tags:
@@ -15,6 +15,7 @@ author: default
 authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/retour-du-portail-communautaire-hacf/21740
+workflow: published
 ---
 Après plus d'un an d'absence, l'équipe HACF est heureuse de vous annoncer le retour du portail de la communauté.
 

@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-13
 lastmod: 2023-03-13
-images: img/ha_acces_ext_duchdns.png
+image: img/ha_acces_ext_duchdns.png
 description: Comment accéder à Home Assistant depuis l'extérieur avec l'add-on
   DuckDNS de manière assez simple.
 level: Débutant
@@ -17,6 +17,7 @@ tags:
   - duckdns
 author: mcfly
 url_hacf: https://forum.hacf.fr/t/acceder-a-home-assistant-depuis-l-exterieur-avec-lextension-duckdns/378
+workflow: published
 ---
 Vous venez d'installer Home Assistant et **vous souhaitez y avoir accès depuis l'extérieur**. Comme expliqué dans [Home Assistant : commencer avec des bases solides](/blog/ha_commencer_base_solide/), il existe plusieurs possibilités, et voici l'une d'entre elles.
 

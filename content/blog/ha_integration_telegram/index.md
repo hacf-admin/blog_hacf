@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-02
 lastmod: ""
-images: img/accueil.jpeg
+image: img/accueil.jpeg
 description: >-
   Cet article présente comment intégrer Telegram à Home Assistant et communiquer
   avec lui.
@@ -24,6 +24,7 @@ author: argonaute
 authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/dialoguer-avec-votre-maison-via-telegram-et-integrations-ha/12597
+workflow: published
 ---
 **L'utilisation de notifications est primordiale** pour un système domotique efficient.
 

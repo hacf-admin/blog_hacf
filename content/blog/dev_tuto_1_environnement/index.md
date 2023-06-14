@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-15
 lastmod: 2023-04-15
-images: img/tuto-developper-1-environnement.png
+image: img/tuto-developper-1-environnement.png
 description: "Cet article s'adresse aux développeurs et fait partie d'une série
   de tutos visant à vous présenter comment développer en python votre propre
   intégration. Ce premier tuto vous guide dans la mise en place de votre
@@ -20,6 +20,7 @@ tags:
   - developpement
 author: jean-marc_collin
 url_hacf: https://forum.hacf.fr/t/developper-pour-home-assistant-comment-faire/22780
+workflow: published
 ---
 Voilà, vous êtes développeurs et souhaitez développer en python votre propre intégration. Histoire de bien comprendre ce qui est fait, cet article détaille toutes les étapes de l'installation de votre environnement de développement.
 

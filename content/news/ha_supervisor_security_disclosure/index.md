@@ -6,7 +6,7 @@ visibleInCMS: true
 draft: false
 date: 2023-03-08
 lastmod: 2023-03-08
-images: img/ha_vulnerabilite_superviseur.png
+image: img/ha_vulnerabilite_superviseur.png
 description: >-
   Home Assistant a annoncé la découverte d'une faille de sécurité dans les
   versions Home Assistant OS et Home Assistant Supervised.
@@ -22,6 +22,7 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/alerte-securite-du-superviseursur-haos-et-ha-supervised/21627
 url_haoff: https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/
+workflow: published
 ---
 Nous avons été informés d'un problème de sécurité qui a un impact sur les installations utilisant le superviseur. Un correctif pour cette question de sécurité a été lancé. 
 

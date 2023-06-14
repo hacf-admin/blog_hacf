@@ -1,5 +1,5 @@
 {{ if hasPrefix .Destination "http" }}
-  {{- $src := .Destination | relURL | safeURL -}}
+  {{- $src := .Destination | safeURL -}}
   {{- $alt := .PlainText | safeHTML -}}
   {{ $alt := .PlainText | safeHTML }}
     <img 
@@ -14,16 +14,17 @@
     {{ $caption = . | safeHTML }}
   {{ end }}
 
-  {{ if and $image (ne $image.MediaType.SubType "svg" "gif") }}
+  {{ if and $image (not (in (slice "gif" "svg") $image.MediaType.SubType)) }}
+
 
     {{ if ge $image.Width "800" }}
 
-      {{ $XS := $image.Resize "250x webp" }}
-      {{ $SM := $image.Resize "300x webp" }}
-      {{ $MD := $image.Resize "400x webp" }}
-      {{ $LG := $image.Resize "500x webp" }}
-      {{ $XL := $image.Resize "700x webp" }}
-      {{ $XXL := $image.Resize "800x webp" }}
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+      {{ $LG := $image.Resize "500x" }}
+      {{ $XL := $image.Resize "700x" }}
+      {{ $XXL := $image.Resize "800x" }}
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
       {{ with .Title }}
@@ -47,6 +48,7 @@
                     {{ $XXL.RelPermalink }} 800w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -57,11 +59,11 @@
 
     {{ else if ge $image.Width "700" }}
 
-      {{ $XS := $image.Resize "250x webp" }}
-      {{ $SM := $image.Resize "300x webp" }}
-      {{ $MD := $image.Resize "400x webp" }}
-      {{ $LG := $image.Resize "500x webp" }}
-      {{ $XL := $image.Resize "700x webp" }}
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+      {{ $LG := $image.Resize "500x" }}
+      {{ $XL := $image.Resize "700x" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -84,6 +86,7 @@
                     {{ $XL.RelPermalink }} 700w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -93,10 +96,10 @@
 
     {{ else if ge $image.Width "500" }}
 
-      {{ $XS := $image.Resize "250x webp" }}
-      {{ $SM := $image.Resize "300x webp" }}
-      {{ $MD := $image.Resize "400x webp" }}
-      {{ $LG := $image.Resize "500x webp" }}
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
+      {{ $LG := $image.Resize "500x" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -117,6 +120,7 @@
                     {{ $LG.RelPermalink }} 500w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -126,9 +130,9 @@
 
     {{ else if ge $image.Width "400" }}
 
-      {{ $XS := $image.Resize "250x webp" }}
-      {{ $SM := $image.Resize "300x webp" }}
-      {{ $MD := $image.Resize "400x webp" }}
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
+      {{ $MD := $image.Resize "400x" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -147,6 +151,7 @@
                     {{ $MD.RelPermalink }} 400w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -156,8 +161,8 @@
 
     {{ else if ge $image.Width "300" }}
 
-      {{ $XS := $image.Resize "250x webp" }}
-      {{ $SM := $image.Resize "300x webp" }}
+      {{ $XS := $image.Resize "250x" }}
+      {{ $SM := $image.Resize "300x" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -174,6 +179,7 @@
                     {{ $SM.RelPermalink }} 300w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -184,7 +190,7 @@
 
     {{ else if ge $image.Width "250" }}
 
-      {{ $XS := $image.Resize "250x webp" }}
+      {{ $XS := $image.Resize "250x" }}
 
       {{ $alt := .PlainText | safeHTML }}
       {{ $caption := "" }}
@@ -199,6 +205,7 @@
             srcset="{{ $XS.RelPermalink }} 250w"
             src="{{ $image.RelPermalink }}"
             alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+            loading="lazy"
             >
         </a>
         {{ with $caption }}
@@ -214,6 +221,7 @@
         alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
         width="auto"
         height="auto"
+        loading="lazy"
         >
     </div>
   {{ end }}

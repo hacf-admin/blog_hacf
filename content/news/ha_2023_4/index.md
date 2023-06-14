@@ -7,7 +7,7 @@ visibleInCMS: true
 draft: false
 date: 2023-04-08
 lastmod: 2023-04-08
-images: img/social.png
+image: img/social.png
 description: >-
   Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant
   Core est sortie.
@@ -20,6 +20,7 @@ author: default
 authors:
   - argonaute
 url_haoff: https://www.home-assistant.io/blog/2023/04/05/release-20234/
+workflow: published
 ---
 > Cet article est une traduction de [2023.4: Custom template macros, and many more new entity dialogs!](https://www.home-assistant.io/blog/2023/04/05/release-20234/) publié sur le site de Home Assistant.
 

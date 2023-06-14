@@ -7,19 +7,24 @@ draft: false
 date: 2023-03-14
 lastmod: 2023-03-14
 images: img/accueil.png
+image: img/accueil.png
+thumbnail: img/accueil.png
 description: >-
   L'indisponibilité non détectée d'un périphérique Zigbee peut avoir de graves
   conséquences pour nos systèmes domotiques.
 
   Cet article vous explique comment fiabiliser Zigbee2MQTT en gérant correctement la surveillance des objets connectés. 
-level: Intermédiaire
+level: ""
 categories:
   - Protocoles
 tags:
   - zigbee2mqtt
   - zigbee
 author: argonaute
+authors:
+  - argonaute
 url_hacf: https://forum.hacf.fr/t/zigbee2mqtt-bien-gerer-les-disponibilites-de-ses-devices/21905
+workflow: published
 ---
 Une grande majorité des adeptes de Home Assistant ont actuellement intégré le protocole **Zigbee**. Cela permet d'intégrer des objets connectés à la fois **fiables** et **à bon prix**.
 

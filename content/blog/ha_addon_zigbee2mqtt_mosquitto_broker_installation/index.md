@@ -3,17 +3,18 @@ folder: ha_zigbee2mqtt_mosquitto_broker_installation
 title: Installation de Zigbee2MQTT et Broker Mosquitto
 type: post
 visibleInCMS: true
+draft: true
 aliases:
   - /ha_zigbee2mqtt
   - /ha_z2mqtt
-draft: true
 date: 2023-04-22
 lastmod: 2023-04-22
 images: img/ha_z2mqtt_broker_mosquitto.png
+workflow: write
 description: Voici un tutoriel permettant d'installer un Broker MQTT Mosquitto
   et l'add-on Zigbee2MQTT sur votre Home Assistant OS afin de connecter tous vos
   appareils Zigbee a une passerelle universelle.
-level: Débutant
+level: beginner
 type_install:
   - ha-os
 version_ha: 2024.4.0
