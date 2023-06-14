@@ -62,7 +62,7 @@ url = "/about"
 name = "Protection des données"
 url = "/rgpd"
 [[footer]]
-name = "Nous-contacter"
+name = "Nous contacter"
 url = "/contact"
 [[footer]]
 name = "Gestion"

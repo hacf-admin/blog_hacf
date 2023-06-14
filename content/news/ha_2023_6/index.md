@@ -1,23 +1,27 @@
 ---
+draft: false
 path: ha 2023_6
+folder: ha_2023_66
 title: "Home Assistant 2023.6 : Stockage réseau, Couleurs favorites depuis vos
   lumières, nouveau tableau de bord pour les intégrations."
 type: news
 visibleInCMS: true
-draft: true
-workflow: read
 date: 2023-06-08
 lastmod: 2023-06-08
-image: img/ha_2023_6.png
-description: Comme chaque premier mercredi du mois, une nouvelle version de Home
-  Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
-  release notes publiée par Nabu Casa.
+images: img/ha_2023_6.png
 tags:
   - release
   - traduction
 author: default
 authors:
   - mcfly
+url_hacf: https://forum.hacf.fr/t/home-assistant-2023-6-stockage-reseau-couleurs-favorites-depuis-vos-lumieres-nouveau-tableau-de-bord-pour-les-integrations/24754
+url_haoff: https://www.home-assistant.io/blog/2023/06/07/release-20236/
+image: img/ha_2023_6.png
+description: Comme chaque premier mercredi du mois, une nouvelle version de Home
+  Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
+  release notes publiée par Nabu Casa.
+workflow: read
 ---
 ***Home Assistant Core 2023.6 ! 🎉***
 
@@ -169,8 +173,7 @@ Il y a beaucoup plus de belles surprises dans cette version ; voici quelques-uns
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
 - [**Airzone Cloud**](https://www.home-assistant.io/integrations/airzone_cloud), ajouté par @Noltari : contrôle du climat pour vos climatiseurs Aidoo, Easyzone, ou Flexa.
-- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325
-- Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.
+- [**Date**](https://www.home-assistant.io/integrations/date), [**Time**](https://www.home-assistant.io/integrations/time), and [**Date/Time**](https://www.home-assistant.io/integrations/date_time), ajouté par @raman325 : Nouveaux types d'entités qui permettent aux intégrations de fournir des contrôles de la date et de l'heure.
 - [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili : contrôlez votre climatiseur Electra Air depuis Home Assistant.
 - [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos : un agent conversationnel alimenté par Google Generative AI.
 - [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley : vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.
@@ -191,4 +194,4 @@ Les intégrations suivantes sont désormais disponibles via l'interface utilisat
 
 ## Breaking Changes
 
-Pour les “Breaking Change” c'est par [ici ]([https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes))(non traduits).
+Pour les “Breaking Change” c'est par [ici ](https://www.home-assistant.io/blog/2023/06/07/release-20236/#breaking-changes)(non traduits).
