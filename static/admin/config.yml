@@ -579,162 +579,162 @@ collections:
                 required: false
                 hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
-      - file: "data/sections/landing_double.yaml"
-        label: "Section Landing Double"
-        format: "yaml"
-        name: "landing_double"
-        fields:
-          - label: "Section"
-            name: "section"
-            widget: "object"
-            fields:
-              - {label: "Name ", name: "name", widget: "string"}
-              - {label: "Id", name: "id", widget: "string"}
-              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
-              - {label: "Template", name: "template", widget: "hidden", default: "sections/landing_double.html"}
-              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+      # - file: "data/sections/landing_double.yaml"
+      #   label: "Section Landing Double"
+      #   format: "yaml"
+      #   name: "landing_double"
+      #   fields:
+      #     - label: "Section"
+      #       name: "section"
+      #       widget: "object"
+      #       fields:
+      #         - {label: "Name ", name: "name", widget: "string"}
+      #         - {label: "Id", name: "id", widget: "string"}
+      #         - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+      #         - {label: "Template", name: "template", widget: "hidden", default: "sections/landing_double.html"}
+      #         - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
 
-          - {name: visibleInCMS, widget: hidden, default: false }
+      #     - {name: visibleInCMS, widget: hidden, default: false }
 
-          - label: "Titre" 
-            name: "title"
-            widget: "string" 
-            required: true
+      #     - label: "Titre" 
+      #       name: "title"
+      #       widget: "string" 
+      #       required: true
 
-          - label: "Sous-titre"
-            name: "subtitle"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
+      #     - label: "Sous-titre"
+      #       name: "subtitle"
+      #       widget: "text"
+      #       hint: "Description devant faire entre x et xx caracteres"
+      #       required: true
 
-          # - label: Paragraphes
-          #   name: summary
-          #   widget: 'list'
-          #   allow_add: true
-          #   fields:
-          #     - label: Paragraphe
-          #       name: description
-          #       widget: string
-          #       required: true
-
-
-          - label: 'Les boutons'
-            name: 'buttons'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
-
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
-
-          - label: 'Réseaux Sociaux'
-            name: 'socialLinks'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
-
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
-
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
+      #     # - label: Paragraphes
+      #     #   name: summary
+      #     #   widget: 'list'
+      #     #   allow_add: true
+      #     #   fields:
+      #     #     - label: Paragraphe
+      #     #       name: description
+      #     #       widget: string
+      #     #       required: true
 
 
-          - label: "Titre 2" 
-            name: "title2"
-            widget: "string" 
-            required: true
+      #     - label: 'Les boutons'
+      #       name: 'buttons'
+      #       widget: 'list'
+      #       allow_add: true
+      #       fields:
+      #         - label: "Nom"
+      #           name: "name"
+      #           widget: "string"
+      #           required: true
 
-          - label: "Sous-titre 2"
-            name: "subtitle2"
-            widget: "text"
-            hint: "Description devant faire entre x et xx caracteres"
-            required: true
+      #         - label: "Url"
+      #           name: "url"
+      #           widget: "string"
+      #           required: true
+
+      #         - label: "Icone"
+      #           name: "icon"
+      #           widget: "string"
+      #           required: false
+      #           hint: 'format "fa-solid fa-server"'
+
+      #         - label: "Interne / Externe"
+      #           name: "type"
+      #           widget: "string"
+      #           required: false
+      #           hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
+      #     - label: 'Réseaux Sociaux'
+      #       name: 'socialLinks'
+      #       widget: 'list'
+      #       allow_add: true
+      #       fields:
+      #         - label: "Nom"
+      #           name: "name"
+      #           widget: "string"
+      #           required: true
+
+      #         - label: "Url"
+      #           name: "url"
+      #           widget: "string"
+      #           required: true
+
+      #         - label: "Icone"
+      #           name: "icon"
+      #           widget: "string"
+      #           required: false
+      #           hint: 'format "fa-solid fa-server"'
+
+
+      #     - label: "Titre 2" 
+      #       name: "title2"
+      #       widget: "string" 
+      #       required: true
+
+      #     - label: "Sous-titre 2"
+      #       name: "subtitle2"
+      #       widget: "text"
+      #       hint: "Description devant faire entre x et xx caracteres"
+      #       required: true
           
-          # - label: 'Paragraphes 2'
-          #   name: 'summary2'
-          #   widget: 'list'
-          #   allow_add: true
-          #   fields:
-          #     - label: "Paragraphe"
-          #       name: "description"
-          #       widget: "string"
-          #       required: true
+      #     # - label: 'Paragraphes 2'
+      #     #   name: 'summary2'
+      #     #   widget: 'list'
+      #     #   allow_add: true
+      #     #   fields:
+      #     #     - label: "Paragraphe"
+      #     #       name: "description"
+      #     #       widget: "string"
+      #     #       required: true
 
-          - label: 'Les boutons 2'
-            name: 'buttons2'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
+      #     - label: 'Les boutons 2'
+      #       name: 'buttons2'
+      #       widget: 'list'
+      #       allow_add: true
+      #       fields:
+      #         - label: "Nom"
+      #           name: "name"
+      #           widget: "string"
+      #           required: true
 
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
+      #         - label: "Url"
+      #           name: "url"
+      #           widget: "string"
+      #           required: true
 
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
+      #         - label: "Icone"
+      #           name: "icon"
+      #           widget: "string"
+      #           required: false
+      #           hint: 'format "fa-solid fa-server"'
 
-              - label: "Interne / Externe"
-                name: "type"
-                widget: "string"
-                required: false
-                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+      #         - label: "Interne / Externe"
+      #           name: "type"
+      #           widget: "string"
+      #           required: false
+      #           hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
 
-          - label: 'Réseaux Sociaux 2'
-            name: 'socialLinks2'
-            widget: 'list'
-            allow_add: true
-            fields:
-              - label: "Nom"
-                name: "name"
-                widget: "string"
-                required: true
+      #     - label: 'Réseaux Sociaux 2'
+      #       name: 'socialLinks2'
+      #       widget: 'list'
+      #       allow_add: true
+      #       fields:
+      #         - label: "Nom"
+      #           name: "name"
+      #           widget: "string"
+      #           required: true
 
-              - label: "Url"
-                name: "url"
-                widget: "string"
-                required: true
+      #         - label: "Url"
+      #           name: "url"
+      #           widget: "string"
+      #           required: true
 
-              - label: "Icone"
-                name: "icon"
-                widget: "string"
-                required: false
-                hint: 'format "fa-solid fa-server"'
+      #         - label: "Icone"
+      #           name: "icon"
+      #           widget: "string"
+      #           required: false
+      #           hint: 'format "fa-solid fa-server"'
 
       - file: "data/sections/news-articles.yaml"
         label: "Section Derniers Articles"
