@@ -4,6 +4,7 @@ section:
   weight: 2
   active: true
   template: sections/landing_double.html
+visibleInCMS: false
 title: HACF
 subtitle: Communauté Francophone Home Assistant
 summary:
@@ -15,8 +16,8 @@ summary:
   - description: Une **association** a été créé toujours dans un **but** de
       **transparence** et de **pérennisation**.
 buttons:
-  - name: 'Forum'
-    url: "https://forum.hacf.fr"
+  - name: Forum
+    url: https://forum.hacf.fr
     icon: fab fa-discourse
     type: ext
   - name: En savoir plus
@@ -69,6 +70,9 @@ summary2:
       matériels** connus et moins connus du grand public.
   - description: Avec plus de **1700 intégrations** prises en charge, Home Assistant
       est une **solution** domotique **évolutive** et **pérenne**.
+paragraphes:
+  summary:
+    - cvvdsfv
 buttons2:
   - name: Découvrez Home Assistant
     url: https://demo.home-assistant.io/#/lovelace/0

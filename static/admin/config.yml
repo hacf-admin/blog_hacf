@@ -52,7 +52,7 @@ collections:
       pattern: '^index.md$'
       
     sortable_fields:
-      fields: ['date', 'title']
+      fields: ['title', 'date', 'lastmod']
       default:
         field: date
         direction: Descending
@@ -84,6 +84,7 @@ collections:
         pattern: \d{4}
       - label: Auteurs
         field: author
+
 
     fields:
       - label: Dossier
@@ -129,6 +130,7 @@ collections:
             value: published
           - label: Archivé
             value: archived
+        hint: Etat de rédaction de l'article.
 
       - label: "Alias"
         name: "aliases"
@@ -167,6 +169,7 @@ collections:
       - name: description
         label: Description
         widget: text
+        hint: "Description devant faire entre x et xx caracteres"
 
       - name: level
         label: Niveau
@@ -243,6 +246,7 @@ collections:
         value_field: title
         display_fields: ['pseudos']
         required: false
+        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard."
 
       - name: authors
         label: Co-Auteur(s)
@@ -292,7 +296,7 @@ collections:
       pattern: '^index.md$'
       
     sortable_fields:
-      fields: ['date', 'title']
+      fields: ['title', 'date', 'lastmod']
       default:
         field: date
         direction: Descending
@@ -399,6 +403,8 @@ collections:
         name: image
         widget: image
         required: false
+        choose_url: true
+        multiple: false
         hint: "Laisser vide pour prendre celle par defaut. Sinon, votre image doit être au format .jpg, .gif, .png, webp en 800x400" 
 
       - name: description
@@ -418,6 +424,7 @@ collections:
         search_fields: ['pseudos']
         value_field: title
         display_fields: ['pseudos']
+        hint: "Vous pouvez creer votre auteur et venir le modifier plus tard, pour les traductions selectionner default"
 
       - name: authors
         label: Co-Auteur(s)
@@ -499,23 +506,432 @@ collections:
         required: false
 
 
+###############################################
+
+# SECTIONS data/sections/xxxx.yaml
+
+###############################################
+  - name: "customize_sections"
+    #layout: blog  # Si layout personalisé
+    label: "Personnalisation / Activation des sections"
+    #label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
+    create: false
+#    filter: {field: visibleInCMS, value: true}
+    files:
+      - file: "data/sections/hero.yaml"
+        label: "Section Hero"
+        format: "yaml"
+        name: "hero"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/hero.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+          - {name: visibleInCMS, widget: hidden, default: false }
+ 
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
+ 
+          - label: "Sous-titre"
+            name: "subtitle"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          - label: "Description"
+            name: "description"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+            
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            allow_add: true
+            required: false
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
+      - file: "data/sections/landing_double.yaml"
+        label: "Section Landing Double"
+        format: "yaml"
+        name: "landing_double"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/landing_double.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+
+          - {name: visibleInCMS, widget: hidden, default: false }
+
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: "Sous-titre"
+            name: "subtitle"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+
+          # - label: Paragraphes
+          #   name: summary
+          #   widget: 'list'
+          #   allow_add: true
+          #   fields:
+          #     - label: Paragraphe
+          #       name: description
+          #       widget: string
+          #       required: true
+
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
+          - label: 'Réseaux Sociaux'
+            name: 'socialLinks'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
+
+
+          - label: "Titre 2" 
+            name: "title2"
+            widget: "string" 
+            required: true
+
+          - label: "Sous-titre 2"
+            name: "subtitle2"
+            widget: "text"
+            hint: "Description devant faire entre x et xx caracteres"
+            required: true
+          
+          # - label: 'Paragraphes 2'
+          #   name: 'summary2'
+          #   widget: 'list'
+          #   allow_add: true
+          #   fields:
+          #     - label: "Paragraphe"
+          #       name: "description"
+          #       widget: "string"
+          #       required: true
+
+          - label: 'Les boutons 2'
+            name: 'buttons2'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
+
+              - label: "Interne / Externe"
+                name: "type"
+                widget: "string"
+                required: false
+                hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
+          - label: 'Réseaux Sociaux 2'
+            name: 'socialLinks2'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Url"
+                name: "url"
+                widget: "string"
+                required: true
+
+              - label: "Icone"
+                name: "icon"
+                widget: "string"
+                required: false
+                hint: 'format "fa-solid fa-server"'
+
+      - file: "data/sections/news-articles.yaml"
+        label: "Section Derniers Articles"
+        format: "yaml"
+        name: "last_post"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/last_post.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+              - {label: "Nombre de Post a afficher", name: "nbPost", widget: "number", default: 3, value_type: "int" }
+
+          - {name: visibleInCMS, widget: hidden, default: false }
+
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+      - file: "data/sections/depots.yaml"
+        label: "Dépots GitHub"
+        format: "yaml"
+        name: "depots"
+        fields:
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {label: "Name ", name: "name", widget: "string"}
+              - {label: "Id", name: "id", widget: "string"}
+              - {label: "Activer", name: "active", widget: "boolean", default: false, required: false }
+              - {label: "Template", name: "template", widget: "hidden", default: "sections/depots.html"}
+              - {label: "Ordre Affichage", name: "weight", widget: "number", default: 10, value_type: "int" }
+
+          - {name: visibleInCMS, widget: hidden, default: false }
+
+          - label: "Titre" 
+            name: "title"
+            widget: "string" 
+            required: true
+
+          - label: 'Les boutons'
+            name: 'buttons'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Filtre"
+                name: "filter"
+                widget: "string"
+                required: true
+
+          - label: 'Les Dépots'
+            name: 'depots'
+            widget: 'list'
+            allow_add: true
+            fields:
+              - label: "Nom"
+                name: "name"
+                widget: "string"
+                required: true
+
+              - label: "Role"
+                name: "role"
+                widget: "string"
+                required: false
+
+              - label: "Activité"
+                name: "timeline"
+                widget: "string"
+                required: false
+                hint: "Aout 2020 - Présent"
+
+              - label: "Url du Repo"
+                name: "repo"
+                widget: "string"
+                required: true
+
+              - label: "Description"
+                name: "summary"
+                widget: "string"
+                required: true
+
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                allow_add: true
+                hint: "Séparer vos tags par une virgule"   
+
+###############################################
+
+# COLLECTION ENTETE NEWS & POST Fichiers data/xxxHead.yaml
+
+###############################################
+  # - name: "head_post_news_terms"
+  #   #layout: blog  # Si layout personalisé
+  #   label: "Entete des listes Articles, Actualites, Catégories ou Tags"
+  #   label_singular: 'xxxHead' # Used in the UI, ie: "New Post"
+  #   create: false
+  #   filter: {field: visibleInCMS, value: true}
+  #   files:
+  #     - file: "data/head/postHead.yaml"
+  #       label: "Index des articles de Blog"
+  #       format: "yaml"
+  #       name: "postHead"
+  #       fields:
+  #         - label: "Title" 
+  #           name: "title"
+  #           widget: "string" 
+  #           required: true
+
+          # - label: "Description"
+          #   name: "description"
+          #   widget: "text"
+          #   hint: "Description devant faire entre x et xx caracteres"
+          #   required: true
+
+          # - {label: "Type", name: "type", widget: "hidden", default: "post"}
+          # - {name: visibleInCMS, widget: hidden, default: false }
+          
+          # - label: "Brouillon"
+          #   name: "draft"
+          #   widget: "boolean"
+          #   default: true
+          #   required: false
+
+          # - label: "Titre Bouton" 
+          #   name: "btnTitle"
+          #   widget: "string" 
+          #   required: false
+
+          # - label: "Description du Bouton" 
+          #   name: "btnDescription"
+          #   widget: "string" 
+          #   required: false
+
+          # - label: 'Les boutons'
+          #   name: 'buttons'
+          #   widget: 'list'
+          #   fields:
+          #     - label: "Nom"
+          #       name: "name"
+          #       widget: "string"
+          #       required: true
+
+          #     - label: "Url"
+          #       name: "url"
+          #       widget: "string"
+          #       required: true
+
+          #     - label: "Icone"
+          #       name: "icon"
+          #       widget: "string"
+          #       hint: 'format "fa-solid fa-server"'
+
+          #     - label: "Interne / Externe"
+          #       name: "type"
+          #       widget: "string"
+          #       required: false
+          #       hint: '"ext" pour ouvrir dans un nouvel onglet sinon laisser vide'
+
+          # - label: "Titre du contenu" 
+          #   name: "contentTitle"
+          #   widget: "string" 
+          #   required: false
+
+          # - label: "Description du contenu"
+          #   name: "contentDescription"
+          #   widget: "text"
+          #   required: false
+
 ###############################################################################
-#                      Add author
+#                      Add TAGS
 ###############################################################################
-  - name: tags
-    label: Les tags (non Fonctionnel)
-    label_singular: tag
-    folder: data/tags
-    extension: json
-    format: json
-    identifier_field: label
-    create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
-    fields:
-      - label: Nom de tag
-        name: label
-        widget: string
-        required: true
-      - label: Description
-        name: description
-        widget: text
-        required: false
+#  - name: tags
+#    label: Les tags (non Fonctionnel)
+#    label_singular: tag
+#    folder: data/tags
+#    extension: json
+    # format: json
+    # identifier_field: label
+    # create: true # Autoriser les utilisateurs a créer du contenus dans cette collection.
+    # fields:
+    #   - label: Nom de tag
+    #     name: label
+    #     widget: string
+    #     required: true
+    #   - label: Description
+    #     name: description
+    #     widget: text
+    #     required: false
