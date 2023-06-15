@@ -35,7 +35,7 @@ sudo apt-get install -y nodejs
 * Rendez-vous dans le dossier `cd blog_hacf`,
 * Créer une branche de travail `git switch -c votre_branche`,
 * Installer npm `sudo apt install npm`,
-* Installer les dépendances postCSS `npm install postcss-cli autoprefixer fullhuman/postcss-purgecss`,
+* Installer les dépendances npm `npm ci`
 
 *Facultatif si vous avez besoin de l'interface d'édition*
 Dans le dossier `static`-> `admin` -> `config.yml`,
