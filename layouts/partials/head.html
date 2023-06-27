@@ -25,7 +25,8 @@
 <!--
     Ajoute Bootstrap en local
 -->
-{{ $cssbootstrap := resources.Get "/css/bootstrap.min.css" | resources.PostCSS }}
+{{ $options := dict "transpiler" "libsass" "targetPath" "/css/bootstrap_custom.css" }}
+{{ $cssbootstrap := resources.Get "/scss/bootstrap_custom.scss" | toCSS $options | resources.PostCSS }}
 
 {{ if hugo.IsProduction }}
     {{ $cssbootstrap = $cssbootstrap | minify | fingerprint | resources.PostProcess }}
