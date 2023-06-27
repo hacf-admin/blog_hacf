@@ -10,10 +10,10 @@ HUGO_ENABLEGITINFO = "true"
 [context.deploy-preview]
 command = "hugo --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL"
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.113.0"
+HUGO_VERSION = "0.114.1"
 
 [context.branch-deploy]
 command = "hugo --gc --minify --buildDrafts --buildFuture -b $DEPLOY_PRIME_URL"
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.113.0"
+HUGO_VERSION = "0.114.1"
 
