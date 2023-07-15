@@ -1,21 +1,14 @@
 ---
 folder: interface-mobile
+path: Interface-mobile
 title: Une interface mobile pour votre domotique Home Assistant
 type: post
 visibleInCMS: true
 draft: false
+workflow: read
 date: 2023-06-04
 lastmod: 2023-06-04
 images: img/accueil.png
-level: beginner
-type_install: ""
-version_ha: "2023.5"
-tags:
-  - Interface
-  - UX
-  - Smartphone
-author: argonaute
-url_hacf: https://forum.hacf.fr/t/une-interface-mobile-pour-votre-domotique-home-assistant/24698
 image: img/accueil.png
 description: >-
   Afficher une centaine d'informations, commandes, images et graphiques sur un
@@ -23,9 +16,17 @@ description: >-
   veut que l'expérience d'utilisation reste bonne pour toute la famille. 
 
   Cet article vous propose de réaliser une interface conviviale pour mobile avec Home Assistant.  
+level: beginner
+type_install: ""
+version_ha: "2023.5"
 categories:
   - Interface UI
-workflow: read
+tags:
+  - Interface
+  - UX
+  - Smartphone
+author: argonaute
+url_hacf: https://forum.hacf.fr/t/une-interface-mobile-pour-votre-domotique-home-assistant/24698
 ---
 Cet article propose comment réaliser une interface conviviale pour mobile (iPhone, Android).
 
@@ -33,7 +34,7 @@ Cet article propose comment réaliser une interface conviviale pour mobile (iPho
 
 **Le mobile est LA "zappette" de votre système domotique**. C'est lui qui permet d'interagir avec votre maison en déplacement, et l'interface doit être traitée avec le plus grand soin. La taille réduite de l'écran fait que l'interface dédiée à une tablette ou un ordinateur n'est pas appropriée, et il est préférable d'en recréer une spécifiquement.
 
-Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles. Chaque tuile donne accès à une page dédiée à un sous-ensemble de fonctions de son système domotique. Chaque page correspond ainsi à une catégorie ou cas d'usage : sécurité, météo, électricité, lumière... 
+Cet article vous présente comment concevoir une page d'accueil avec un menu en tuiles. Chaque tuile donne accès à une page dédiée à un sous-ensemble de fonctions de son système domotique. Chaque page correspond ainsi à une catégorie ou cas d'usage : sécurité, météo, électricité, lumière...
 
 Le menu du haut par défaut est supprimé, la navigation étant assurée par la page d'accueil avec son menu en tuiles. Enfin, chaque page relative à une catégorie a un bouton de retour vers le menu d'accueil.
 
@@ -49,7 +50,7 @@ Voyons ici comment créer la page d'accueil et son menu en tuiles.
 
 **Installer card-mod**
 
-Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs de fond et des polices des boutons. 
+Ouvrir HACS puis installer [card-mod](https://github.com/thomasloven/lovelace-card-mod), une librairie qui permet de faire du CSS et changer les couleurs de fond et des polices des boutons.
 
 Dans HACS, cliquer sur Interface, puis bouton "Explorer et télécharger des dépôts", et enfin rechercher "card-mod" et installez-le. Pensez à faire un rafraîchissement du navigateur.
 
@@ -67,21 +68,21 @@ Si vous avez un tableau de bord avec une première vue vide, renommez la juste e
 
 Autrement, créer une nouvelle vue qui sera dédiée à votre menu :
 
-* Aller dans votre tableau de bord, puis mettez-le en mode édition, via le menu avec 3 points en haut à droite.
-* Dans la barre d'entête de la vue, cliquer sur le bouton + tout à droite
-* Renseignez le nom de la vue (mettre "Menu") et l'URL (mettre "Home").
+- Aller dans votre tableau de bord, puis mettez-le en mode édition, via le menu avec 3 points en haut à droite.
+- Dans la barre d'entête de la vue, cliquer sur le bouton + tout à droite
+- Renseignez le nom de la vue (mettre "Menu") et l'URL (mettre "Home").
 
-Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quand vous lancerez votre tableau de bord. Pour cela, vous avez des flèches permettant de déplacer la vue active et la déplacer en premier. 
+Mettez maintenant cette vue en premier dans vos vues pour qu'elle s'affiche quand vous lancerez votre tableau de bord. Pour cela, vous avez des flèches permettant de déplacer la vue active et la déplacer en premier.
 
 **Créer la grille de boutons**
 
-Maintenant la vue étant créée, il faut ajouter une carte grille. 
+Maintenant la vue étant créée, il faut ajouter une carte grille.
 
-* Cliquer "Ajouter carte" en bas à droite, puis choisissez la carte Grille. Laissez coché "Rendre les cartes sous forme de carrés"
-* Laisser la valeur par défaut "Nombre de colonnes" à 3.
-* Ajouter autant de bouton que votre menu en contiendra en cliquant sur + dans le paramétrage de la grille.
-* Vous pouvez rajouter des boutons en cliquant sur + jusqu'à obtenir toutes les entrées du menu. Mais il peut être plus simple de passer la carte en mode YAML. Pour cela, cliquer sur "Afficher l'éditeur de code" dans la configuration de la carte. 
-* Remplacer le code YAML par le code suivant, qui va créer 2 boutons. Vous pourrez en ajouter d'autres ultérieurement.
+- Cliquer "Ajouter carte" en bas à droite, puis choisissez la carte Grille. Laissez coché "Rendre les cartes sous forme de carrés"
+- Laisser la valeur par défaut "Nombre de colonnes" à 3.
+- Ajouter autant de bouton que votre menu en contiendra en cliquant sur + dans le paramétrage de la grille.
+- Vous pouvez rajouter des boutons en cliquant sur + jusqu'à obtenir toutes les entrées du menu. Mais il peut être plus simple de passer la carte en mode YAML. Pour cela, cliquer sur "Afficher l'éditeur de code" dans la configuration de la carte.
+- Remplacer le code YAML par le code suivant, qui va créer 2 boutons. Vous pourrez en ajouter d'autres ultérieurement.
 
 ```yaml
 type: grid
@@ -136,7 +137,7 @@ consos-color: '#C9FFE1'
 system-color: '#D9FFFB'
 ```
 
-Pour les **icônes**, vous pouvez utiliser des icônes *Material Design* (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes toutes faites, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icônes](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
+Pour les **icônes**, vous pouvez utiliser des icônes _Material Design_ (MDI) par défaut. Mais je vous conseille de créer vos propres icônes, ou récupérer des icônes toutes faites, en suivant l'excellent tuto de @clemalex ([Ajouter ou créer des icônes](https://forum.hacf.fr/t/ajouter-creer-des-icones/4190)).
 
 ## Créer les différentes pages
 
@@ -150,8 +151,8 @@ Pour cela, on va créer autant de vues que l'on a de boutons (15 vues dans mon c
 
 Renseigner le nom de la vue, mettez une icône, mais surtout :
 
-* Renseigner une URL (ci-dessous) : elle sera à utiliser dans le menu tuile pour le bouton qui appelle la vue
-* Activer "sous-vue". Aussi, vous aurez en haut à gauche une flèche de retour permettant de revenir en arrière (vers le menu tuile).
+- Renseigner une URL (ci-dessous) : elle sera à utiliser dans le menu tuile pour le bouton qui appelle la vue
+- Activer "sous-vue". Aussi, vous aurez en haut à gauche une flèche de retour permettant de revenir en arrière (vers le menu tuile).
 
 ![Configuration de la vue](img/configuration-vues.png)
 
@@ -176,9 +177,9 @@ Reste plus qu'à aller dans le menu tuile et renseigner l'URL dans le code du bo
 
 **Ne plus avoir d'icônes dans la barre de menu.**
 
- Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. **Vous pouvez juste laisser "Maison" dans la barre du haut.** Cela sera automatiquement fait **en définissant toutes les vues, à part le menu tuile, comme sous-vues.**
+Forcément avec plus de 15 vues, vous ne voudrez pas laisser les icônes de la barre de menu. La navigation se fera maintenant par le menu tuile. **Vous pouvez juste laisser "Maison" dans la barre du haut.** Cela sera automatiquement fait **en définissant toutes les vues, à part le menu tuile, comme sous-vues.**
 
-> ⚠️ **Attention** - Seule la vue "menu" doit être une vue, et toutes les autres doivent être des sous-vues pour qu'aucun icône ou texte ne s'affiche dans la barre d'entête**.** 
+> ⚠️ **Attention** - Seule la vue "menu" doit être une vue, et toutes les autres doivent être des sous-vues pour qu'aucun icône ou texte ne s'affiche dans la barre d'entête**.**
 
 ## Maîtriser l'ordre des cartes dans les vues
 
@@ -251,9 +252,11 @@ cards:
         color: var(--bouton-orange)
     tap_action:
       action: call-service
-      service: script.selectionne_camera
-      service_data:
-        camera: Plage
+      service: input_text.set_value
+      target:
+        entity_id: input_text.selection_camera
+      data_template:
+        value: "Plage"
   - type: custom:button-card
     name: Garage
     entity: input_text.selection_camera
@@ -266,9 +269,11 @@ cards:
         color: var(--bouton-orange)
     tap_action:
       action: call-service
-      service: script.selectionne_camera
-      service_data:
-        camera: Garage
+      service: input_text.set_value
+      target:
+        entity_id: input_text.selection_camera
+      data_template:
+        value: "Garage"
   - type: custom:button-card
     name: Piscine
     entity: input_text.selection_camera
@@ -281,9 +286,11 @@ cards:
         color: var(--bouton-orange)
     tap_action:
       action: call-service
-      service: script.selectionne_camera
-      service_data:
-        camera: Piscine
+      service: input_text.set_value
+      target:
+        entity_id: input_text.selection_camera
+      data_template:
+        value: "piscine"
 columns: 3
 square: false
 ```
