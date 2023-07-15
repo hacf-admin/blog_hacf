@@ -253,9 +253,8 @@ cards:
     tap_action:
       action: call-service
       service: input_text.set_value
-      target:
+      service_data:
         entity_id: input_text.selection_camera
-      data_template:
         value: "Plage"
   - type: custom:button-card
     name: Garage
@@ -270,9 +269,8 @@ cards:
     tap_action:
       action: call-service
       service: input_text.set_value
-      target:
+      service_data:
         entity_id: input_text.selection_camera
-      data_template:
         value: "Garage"
   - type: custom:button-card
     name: Piscine
@@ -287,9 +285,8 @@ cards:
     tap_action:
       action: call-service
       service: input_text.set_value
-      target:
+      service_data:
         entity_id: input_text.selection_camera
-      data_template:
         value: "Piscine"
 columns: 3
 square: false
