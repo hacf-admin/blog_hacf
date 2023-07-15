@@ -7,7 +7,7 @@ visibleInCMS: true
 draft: false
 workflow: read
 date: 2023-06-04
-lastmod: 2023-06-04
+lastmod: 2023-07-15
 images: img/accueil.png
 image: img/accueil.png
 description: >-
@@ -290,7 +290,7 @@ cards:
       target:
         entity_id: input_text.selection_camera
       data_template:
-        value: "piscine"
+        value: "Piscine"
 columns: 3
 square: false
 ```
