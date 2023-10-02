@@ -113,7 +113,6 @@ Cliquer sur votre Groupe en haut puis `Ajouter des membres`. **Important : n'oub
 
 1. Récupérer votre ID du groupe en invitant `@getids bot` à votre groupe. Une fois ajouté, vous pouvez voir votre ID qui s'affiche dans le fil de discussion.> Notez bien cet ID référençant le groupe qui recevra les messages.
 
-
 Une fois l'ID noté, vous pouvez éjecter `GetIds Bot` du groupe en cliquant sur les 3 points en haut à droite, puis `Gérer le groupe`.
 
 ![Récupérer BotId d'un groupe sur Telegram](img/recuperer-id-groupe.png)
@@ -248,6 +247,10 @@ action:
     data: {}
 ```
 
+> **En cas de problème avec les callbacks**, vous pouvez vous rendre dans l'outil de développement, rubrique Evènements.  
+> Vous pouvez déclencher un événement qui simulera l'appui sur le bouton de télégram (Type d'évènement : `telegram_callback` et donnée `command: /piscine_ferme` par exemple).   
+> Vous pouvez aussi vous mettre à l'écoute des événements de type `telegram_callback` et écouter l'événement déclenché par l'appui sur un bouton dans telegram.
+
 ## 6. Confirmation que l'action a été bien effectuée
 
 Une fois le bouton cliqué, il ne reste plus qu'à supprimer la barre de boutons, et confirmer à l'utilisateur que la demande d'action a été bien prise en compte.
@@ -308,8 +311,7 @@ action:
 mode: single
 ```
 
-> Il est intéressant de personnaliser votre bot dans Telegram, en particulier :- Modifier le logo par défaut et mettre celui de Home Assistant.
-> - Paramétrer une purge des messages de plus de 8 jours. Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
+> Il est intéressant de personnaliser votre bot dans Telegram, en particulier :- Modifier le logo par défaut et mettre celui de Home Assistant.- Paramétrer une purge des messages de plus de 8 jours. Pour cela, depuis l'écran du fil de discussion, cliquer sur le logo de votre bot, en haut à droite, puis cliquer sur `modifier`.
 
 ## C﻿onclusion
 
