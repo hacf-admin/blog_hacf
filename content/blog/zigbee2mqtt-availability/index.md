@@ -144,4 +144,4 @@ Voilà, vous pouvez **vérifier rapidement dans l'interface Zigbee2MQTT la dispo
 
 Vous pouvez également **gérer cette indisponibilité dans Home Assistant comme un "cas fonctionnel"** : par exemple limiter le fonctionnement d'un chauffage qui se base sur une température plus valide.
 
-Prochainement, je vous indiquerai comment, via un Blueprint, automatiser une alerte qui se déclenchera quand un de vos périphériques n'est plus disponible.
+Un blueprint est proposé par la communauté anglophone pour générer une alerte si un device Z2M est offline. Il utilise les entités last_seen générées précédement pour tout device Z2M. Pour plus d'information, voir [Offline detection for Z2M devices with last_seen](https://community.home-assistant.io/t/offline-detection-for-z2m-devices-with-last-seen/310138).
