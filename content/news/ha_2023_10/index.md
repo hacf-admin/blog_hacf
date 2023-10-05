@@ -1,10 +1,11 @@
 ---
 path: ha_2023_10
-title: "2023.10 : Nouveau look et plus de fonctionnalités pour la carte tuile !"
+title: "Home Assistant 2023.10 : Nouveau look et plus de fonctionnalités pour la
+  carte tuile !"
 type: news
 visibleInCMS: true
 draft: false
-workflow: ready
+workflow: published
 aliases:
   - ""
 date: 2023-10-05
