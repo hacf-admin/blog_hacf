@@ -4,7 +4,7 @@ title: "Home Assistant 2023.10 : Nouveau look et plus de fonctionnalités pour l
   carte tuile !"
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 workflow: published
 aliases:
   - ""
