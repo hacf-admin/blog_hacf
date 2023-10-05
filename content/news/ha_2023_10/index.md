@@ -3,7 +3,7 @@ path: ha_2023_10
 title: "2023.10 : Nouveau look et plus de fonctionnalités pour la carte tuile !"
 type: news
 visibleInCMS: true
-draft: false
+draft: true
 workflow: ready
 aliases:
   - ""
@@ -20,6 +20,7 @@ tags:
   - traduction
 author: default
 authors:
+  - default
 url_haoff: https://www.home-assistant.io/blog/2023/10/04/release-202310/
 ---
 
