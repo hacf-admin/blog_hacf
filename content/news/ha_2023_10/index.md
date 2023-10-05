@@ -3,7 +3,7 @@ path: ha_2023_10
 title: "2023.10 : Nouveau look et plus de fonctionnalités pour la carte tuile !"
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 workflow: ready
 aliases:
   - ""
@@ -20,36 +20,23 @@ tags:
   - traduction
 author: default
 authors:
-  - argonaute
 url_haoff: https://www.home-assistant.io/blog/2023/10/04/release-202310/
 ---
 
+**Home Assistant Core 2023.10 !** 🎉
 
+_Octobre ! 🎃 Cela signifie que nous venons de fêter notre anniversaire ; nous avons maintenant 10 ans ! 🎂 Au cas où vous auriez manqué notre [diffusion YouTube d’anniversaire](https://www.youtube.com/watch?v=EmLV6lJLzSU) avec toutes les annonces intéressantes, nous avons tout résumé dans notre article de blog sur les [10 ans de Home Assistant.](https://www.home-assistant.io/blog/2023/09/17/10-years-home-assistant/)_
 
+_Encore plus de nouvelles excitantes, car c’est [l’année de la voix pour Home Assistant](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) : le chapitre 4 de ce projet a été annoncé et sera [diffusé en direct sur YouTube](https://www.youtube.com/watch?v=YzgYYkOrnhQ) le 12 octobre 2023, à 21h00 CEST (Europe) ! Assurez-vous d’être à l’écoute ! J’ai vu quelques démos préliminaires… Tout ce que je vais dire, c’est : C’est époustouflant ! 🤯_
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+_Quant à cette version, à cause de tout ce qui est indiqué ci-dessus, elle est un peu plus petite que d’habitude en termes de fonctionnalités. Je promets que le chapitre 4 en vaudra la peine. Pourtant, elle contient des tonnes de mises à jour, des corrections de bugs, et quelques nouvelles fonctionnalités magnifiques pour la carte de tuiles ! 🤩_
 
 _Bonne lecture !_
 
 _…/Frenck_
 
+
 ## Un superbe logo actualisé !
-
-
 
 ![](blob:https://hacf.fr/089e0a52-3524-4e65-92db-a4280807ec15)
 
@@ -57,8 +44,6 @@ Cela a été fait pour le [10ème anniversaire de Home Assistant](https://www.h
 
 ![](img/logo2.png)
 ## De nouveaux boutons pour My Home Assistant
-
-
 
 ![](img/logo2.svg)
 
@@ -92,10 +77,6 @@ L’utilisation d’un gestionnaire de mots de passe est sans doute l’une des 
 
 Si vous avez utilisé l’un de ces gestionnaires de mots de passe qui avaient des problèmes avec Home Assistant, vous serez heureux de savoir que cette version corrige cela ! Par exemple, 1Password fonctionne maintenant !
 
-
-
-
-
 ## Options pour les marqueurs d’entités sur la carte
 
 La [carte](https://www.home-assistant.io/dashboards/map/) a reçu de nouvelles options (merci @karwosts !) pour vos marqueurs d’entités qui sont affichés sur la carte.
@@ -124,52 +105,37 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-- 
-[Apple WeatherKit](https://www.home-assistant.io/integrations/weatherkit), ajouté par @ tjhorner
+- [Apple WeatherKit](https://www.home-assistant.io/integrations/weatherkit), ajouté par @ tjhorner
 Suivez la météo en utilisant l’API WeatherKit d’Apple.
-- 
-[Ecoforest](https://www.home-assistant.io/integrations/ecoforest), ajouté par @ pjanuario
+- [Ecoforest](https://www.home-assistant.io/integrations/ecoforest), ajouté par @ pjanuario
 Surveillez et contrôlez votre cheminée Ecoforest.
-- 
-[IKEA IDÅSEN Desk](https://www.home-assistant.io/integrations/idasen_desk), ajouté par @ abmantis
+- [IKEA IDÅSEN Desk](https://www.home-assistant.io/integrations/idasen_desk), ajouté par @ abmantis
 Connectez-vous et contrôlez la hauteur de votre bureau motorisé IKEA IDÅSEN.
-- 
-[Medcom Bluetooth](https://www.home-assistant.io/integrations/medcom_ble), ajouté par @ elafargue
+- [Medcom Bluetooth](https://www.home-assistant.io/integrations/medcom_ble), ajouté par @ elafargue
 Intégrez vos moniteurs de radiation Medcom.
-- 
-[Private BLE Device](https://www.home-assistant.io/integrations/private_ble_device), ajouté par @ Jc2k
+- [Private BLE Device](https://www.home-assistant.io/integrations/private_ble_device), ajouté par @ Jc2k
 Suivez vos appareils BLE qui changent fréquemment d’adresse MAC.
-- 
-[SwitchBot Cloud](https://www.home-assistant.io/integrations/switchbot_cloud), ajouté par @ SeraphicRav
+- [SwitchBot Cloud](https://www.home-assistant.io/integrations/switchbot_cloud), ajouté par @ SeraphicRav
 Contrôlez vos appareils SwitchBot en utilisant l’API SwitchBot Cloud.
-- 
-[WeatherFlow](https://www.home-assistant.io/integrations/weatherflow), ajouté par @ jeeftor
+- [WeatherFlow](https://www.home-assistant.io/integrations/weatherflow), ajouté par @ jeeftor
 Intégrez votre système météo WeatherFlow Tempest.
 
 Cette version a également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des ébauches qui sont gérées par d’autres intégrations (existantes) pour aider à la recherche. La nouvelle intégration virtuelle suivante a été ajoutée :
 
-- 
-[Enmax Energy](https://www.home-assistant.io/integrations/enmax) fourni par [Opower](https://www.home-assistant.io/integrations/opower)
+- [Enmax Energy](https://www.home-assistant.io/integrations/enmax) fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
 
 ## Intégrations désormais disponibles à partir de l’interface utilisateur (UI)
 
 Les intégrations suivantes sont désormais disponibles via l’interface utilisateur de Home Assistant :
 
-- 
-[AfterShip](https://www.home-assistant.io/integrations/aftership), réalisé par @ joostlek
-- 
-[Extracteur de couleur](https://www.home-assistant.io/integrations/color_extractor), réalisé par @ joostlek
-- 
-[Hunter Hydrawise](https://www.home-assistant.io/integrations/hydrawise), réalisé par @ dknowles2
-- 
-[NextBus](https://www.home-assistant.io/integrations/nextbus), réalisé par @ ViViDboarder
-- 
-[Todoist](https://www.home-assistant.io/integrations/todoist), réalisé par @ allenporter
-- 
-[Twitch](https://www.home-assistant.io/integrations/twitch), réalisé par @ joostlek
-- 
-[Indice de qualité de l’air mondial (WAQI)](https://www.home-assistant.io/integrations/waqi), réalisé par @ joostlek
+- [AfterShip](https://www.home-assistant.io/integrations/aftership), réalisé par @ joostlek
+- [Extracteur de couleur](https://www.home-assistant.io/integrations/color_extractor), réalisé par @ joostlek
+- [Hunter Hydrawise](https://www.home-assistant.io/integrations/hydrawise), réalisé par @ dknowles2
+- [NextBus](https://www.home-assistant.io/integrations/nextbus), réalisé par @ ViViDboarder
+- [Todoist](https://www.home-assistant.io/integrations/todoist), réalisé par @ allenporter
+- [Twitch](https://www.home-assistant.io/integrations/twitch), réalisé par @ joostlek
+- [Indice de qualité de l’air mondial (WAQI)](https://www.home-assistant.io/integrations/waqi), réalisé par @ joostlek
 
 ## Breaking Changes
 
