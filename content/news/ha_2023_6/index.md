@@ -1,14 +1,19 @@
 ---
-draft: false
 path: ha 2023_6
-folder: ha_2023_66
 title: "Home Assistant 2023.6 : Stockage réseau, Couleurs favorites depuis vos
   lumières, nouveau tableau de bord pour les intégrations."
 type: news
+draft: false
+folder: ha_2023_66
 visibleInCMS: true
 date: 2023-06-08
 lastmod: 2023-06-08
 images: img/ha_2023_6.png
+workflow: read
+image: img/ha_2023_6.png
+description: Comme chaque premier mercredi du mois, une nouvelle version de Home
+  Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
+  release notes publiée par Nabu Casa.
 tags:
   - release
   - traduction
@@ -17,11 +22,6 @@ authors:
   - mcfly
 url_hacf: https://forum.hacf.fr/t/home-assistant-2023-6-stockage-reseau-couleurs-favorites-depuis-vos-lumieres-nouveau-tableau-de-bord-pour-les-integrations/24754
 url_haoff: https://www.home-assistant.io/blog/2023/06/07/release-20236/
-image: img/ha_2023_6.png
-description: Comme chaque premier mercredi du mois, une nouvelle version de Home
-  Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
-  release notes publiée par Nabu Casa.
-workflow: read
 ---
 ***Home Assistant Core 2023.6 ! 🎉***
 
@@ -43,8 +43,7 @@ Avez-vous un système de stockage en réseau chez vous ? Comme un NAS QNAP ou Sy
 
 Cette fonctionnalité, très demandée, est maintenant disponible lorsque vous utilisez le système d'exploitation Home Assistant. Dans le menu `Paramètres` > `Système` > `Stockage`, vous pouvez désormais trouver un tout nouvel ensemble de contrôles pour vous connecter à votre stockage et l'utiliser, par exemple, pour utiliser votre partage de réseau comme source de média dans Home Assistant.
 
-![](img/network-storage.png)
-Mieux encore, vous pouvez l'utiliser comme cible pour vos sauvegardes, de sorte que lorsque Home Assistant crée une sauvegarde pour vous, il la stocke directement sur votre stockage réseau.
+![](img/network-storage.png) Mieux encore, vous pouvez l'utiliser comme cible pour vos sauvegardes, de sorte que lorsque Home Assistant crée une sauvegarde pour vous, il la stocke directement sur votre stockage réseau.
 
 Plusieurs stockages réseau sont également pris en charge ; si vous le souhaitez, vous pouvez facilement en ajouter d'autres.
 
@@ -56,13 +55,11 @@ La version précédente du tableau de bord des intégrations posait quelques pro
 
 Cette version apporte un tout nouveau tableau de bord des intégrations qui résout la plupart de ces problèmes, dans le but d'offrir une expérience plus propre et plus cohérente.
 
-![](img/integrations-dashboard.png)
-Les intégrations basées sur des appareils, comme ESPHome, sont combinées : plus de défilement. Une intégration défaillante n'étire plus la mise en page et ne la fait plus "sauter" lors des tentatives. Les intégrations personnalisées et les intégrations reposant sur le cloud sont désormais indiquées de manière plus visible.
+![](img/integrations-dashboard.png) Les intégrations basées sur des appareils, comme ESPHome, sont combinées : plus de défilement. Une intégration défaillante n'étire plus la mise en page et ne la fait plus "sauter" lors des tentatives. Les intégrations personnalisées et les intégrations reposant sur le cloud sont désormais indiquées de manière plus visible.
 
 En sélectionnant l'icône en forme de roue dentée sur la carte d'intégration, vous accéderez à une toute nouvelle page d'intégration, affichant toutes les informations relatives à l'intégration :
 
-![](img/integration-page.png)
-Dans l'exemple ci-dessus, la page d'intégration ESPHome affiche tous les appareils dont dispose cette intégration. Toutes les informations et les options, qui se trouvaient auparavant dans le tableau de bord de l'intégration, sont dorénavant disponibles ici.
+![](img/integration-page.png) Dans l'exemple ci-dessus, la page d'intégration ESPHome affiche tous les appareils dont dispose cette intégration. Toutes les informations et les options, qui se trouvaient auparavant dans le tableau de bord de l'intégration, sont dorénavant disponibles ici.
 
 Ces nouvelles pages d'intégration sont utiles à d'autres endroits dans Home Assistant. Par exemple, les pages sur les appareils peuvent maintenant renvoyer directement à l'intégration qui les a fournies.
 
@@ -86,14 +83,13 @@ De plus, @piitaya (HACF Power) a fait un ajout surprise très sympa ! Vous pouve
 
 ## Informations connexes
 
-Quelle automatisation utilise ce Blueprint ? Et bien, Home Assistant peut maintenant vous le dire ! Sur la page `Paramètres` > `Automatisations & Scènes` > Blueprints, sélectionnez le menu à trois points sur n'importe quel blueprint pour découvrir quelles automatisations utilisent ce blueprint.
+Quelle automatisation utilise ce Blueprint ? Et bien, Home Assistant peut maintenant vous le dire ! Sur la page `Paramètres` > `Automatisations & Scènes` > `Blueprints`, sélectionnez le menu à trois points sur n'importe quel blueprint pour découvrir quelles automatisations utilisent ce blueprint.
 
 De plus, si vous essayez accidentellement de supprimer un blueprint qui est encore utilisé, Home Assistant vous empêchera de le supprimer et vous indiquera les automatisations qui l'utilisent encore.
 
 Attendez, il y a encore plus de choses à ce propos ! Les éléments connexes de la boîte de dialogue d'information sur l'entité ont également été améliorés. L'ancienne liste de liens a disparu, et une vue plus moderne de tous les éléments liés à une entité est maintenant affichée :
 
-![Informations connexes](img/related-information.png)
-Remarquez le lien vers la nouvelle page d'intégration ici aussi !
+![Informations connexes](img/related-information.png) Remarquez le lien vers la nouvelle page d'intégration ici aussi !
 
 ## Support du copier-coller dans l'éditeur d'automatisation
 
@@ -141,12 +137,11 @@ En arrière-plan, @AlCalzone travaille sans relâche sur le pilote Z-Wave JS, qu
 
 ## Nouvelles entités ! Date, heure, date/heure
 
-Nous accueillons trois nouveaux types d'entités dans cette version : `date`, `heure` et `datetime`.
+Nous accueillons trois nouveaux types d'entités dans cette version : `date`, `time` et `datetime`.
 
-Ces entités permettent aux intégrations de fournir des contrôles de saisie de date, d'heure ou de date/heure à partir de l'interface utilisateur. Elles sont très similaires au `helpers` `datetime` mais sont disponibles pour les intégrations.
+Ces entités permettent aux intégrations de fournir des contrôles de saisie de date, d'heure ou de date/heure à partir de l'interface utilisateur. Elles sont très similaires au `input_datetime` mais sont disponibles pour les intégrations.
 
-![Nouveau Helpers Date, Time et DateTime](img/new-date-time-entities.png)
-Ils sont si nouveaux qu'aucune intégration ne les utilise encore, mais vous pouvez vous attendre à ce qu'ils soient bientôt utilisés dans des intégrations (custom) !
+![Nouveau Helpers Date, Time et DateTime](img/new-date-time-entities.png) Ils sont si nouveaux qu'aucune intégration ne les utilise encore, mais vous pouvez vous attendre à ce qu'ils soient bientôt utilisés dans des intégrations (custom) !
 
 Merci de les avoir créées @raman325 !
 
@@ -177,8 +172,7 @@ Nous accueillons les nouvelles intégrations suivantes dans cette version :
 - [**Electra Smart**](https://www.home-assistant.io/integrations/electrasmart), ajouté par @jafar-atili : contrôlez votre climatiseur Electra Air depuis Home Assistant.
 - [**Google Generative AI Conversation**](https://www.home-assistant.io/integrations/google_generative_ai_conversation), ajouté par @tronikos : un agent conversationnel alimenté par Google Generative AI.
 - [**JVC Projector**](https://www.home-assistant.io/integrations/jvc_projector), ajouté par @SteveEasley : vous pouvez désormais automatiser votre projecteur JVC contrôlable en réseau.
-- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek : ajoutez vos chaînes YouTube préférées en tant que capteurs.
-Cette version contient également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des stubs qui sont gérés par d'autres intégrations (existantes) pour faciliter la recherche. Celle-ci est nouvelle :
+- [**YouTube**](https://www.home-assistant.io/integrations/youtube), ajouté par @joostlek : ajoutez vos chaînes YouTube préférées en tant que capteurs. Cette version contient également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des stubs qui sont gérés par d'autres intégrations (existantes) pour faciliter la recherche. Celle-ci est nouvelle :
 - [**Piper**](https://www.home-assistant.io/integrations/piper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
 - [**Whisper**](https://www.home-assistant.io/integrations/whisper) provided by [Wyoming](https://www.home-assistant.io/integrations/wyoming), added by [@frenck](https://github.com/frenck)
 - [**Yale Home**](https://www.home-assistant.io/integrations/yale_home) provided by [August](https://www.home-assistant.io/integrations/august), added by [@bdraco](https://github.com/bdraco)
