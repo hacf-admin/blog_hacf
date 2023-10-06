@@ -80,9 +80,10 @@ Cette fonctionnalité peut être utilisée pour n’importe quelle entité de s�
 
 L’utilisation d’un gestionnaire de mots de passe est sans doute l’une des meilleures choses que vous pouvez faire pour améliorer votre sécurité en ligne. Mais les utiliser avec Home Assistant, en fonction de celui que vous avez utilisé, a été un peu pénible.
 
-Si vous avez utilisé l’un de ces gestionnaires de mots de passe qui avaient des problèmes avec Home Assistant, vous serez heureux de savoir que cette version corrige cela ! Par exemple, 1Password fonctionne maintenant !-
+Si vous avez utilisé l’un de ces gestionnaires de mots de passe qui avaient des problèmes avec Home Assistant, vous serez heureux de savoir que cette version corrige cela ! Par exemple, 1Password fonctionne maintenant !
 
-![](img/climate.png)
+![](img/mdp.png)
+
 ## Options pour les marqueurs d’entités sur la carte
 
 La [carte](https://www.home-assistant.io/dashboards/map/) a reçu de nouvelles options (merci @karwosts !) pour vos marqueurs d’entités qui sont affichés sur la carte.
