@@ -22,6 +22,7 @@ tags:
 author: default
 authors:
   - default
+url_hacf: https://forum.hacf.fr/t/home-assistant-2023-10-nouveau-look-et-plus-de-fonctionnalites-pour-la-carte-tuile/28956
 url_haoff: https://www.home-assistant.io/blog/2023/10/04/release-202310/
 ---
 **Home Assistant Core 2023.10 !** 🎉
