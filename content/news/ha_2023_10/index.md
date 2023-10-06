@@ -26,7 +26,7 @@ url_haoff: https://www.home-assistant.io/blog/2023/10/04/release-202310/
 ---
 **Home Assistant Core 2023.10 !** 🎉
 
-_Octobre ! 🎃 Cela signifie que nous venons de fêter notre anniversaire ; nous avons maintenant 10 ans ! 🎂 Au cas où vous auriez manqué notre  avec toutes les annonces intéressantes, nous avons tout résumé dans notre article de blog sur les_ 
+_Octobre ! 🎃 Cela signifie que nous venons de fêter notre anniversaire ; nous avons maintenant 10 ans ! 🎂 Au cas où vous auriez manqué notre  avec toutes les annonces intéressantes, nous avons tout résumé dans notre article de blog sur les_
 
 _Encore plus de nouvelles excitantes, car c’est  : le chapitre 4 de ce projet a été annoncé et sera  le 12 octobre 2023, à 21h00 CEST (Europe) ! Assurez-vous d’être à l’écoute ! J’ai vu quelques démos préliminaires… Tout ce que je vais dire, c’est : C’est époustouflant ! 🤯_
 
@@ -38,7 +38,7 @@ _…/Frenck_
 
 ## Un superbe logo actualisé !
 
-![Nouveau logo Home Assistant](https://hacf.fr/089e0a52-3524-4e65-92db-a4280807ec15)
+![Nouveau logo Home Assistant](img/logo.png)
 
 Cela a été fait pour le [10ème anniversaire de Home Assistant](https://www.home-assistant.io/blog/2023/09/17/10-years-home-assistant/), et vous pouvez [tout lire sur cette itération dans cet article de blog](https://www.home-assistant.io/blog/2023/09/17/a-refreshed-logo-for-home-assistant/). Vous commencerez à voir ce logo dans beaucoup plus d’endroits dans les semaines à venir, mais il est déjà inclus dans cette version !
 
@@ -91,8 +91,6 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 - Si vous utilisez [ESPHome](https://esphome.io/), vous remarquerez des sauvegardes Home Assistant beaucoup plus petites lorsque vous avez installé [la dernière version](https://esphome.io/changelog/2023.9.0.html#esphome-2023-9-0-27th-september-2023) !
 - L’intégration du [pont HomeKit](https://www.home-assistant.io/integrations/homekit) prend désormais en charge les récepteurs multimédias ! Merci, @ bdraco !
 - @ Lash-L continue à étendre l’intégration [Roborock](https://www.home-assistant.io/integrations/roborock). Dans cette version, des capteurs d’eau et de dernière nettoyage ont été ajoutés. Génial !
-- 
-
 
 [Withings](https://www.home-assistant.io/integrations/withings) a reçu beaucoup d’amour dans cette version, merci @ joostlek ! Il est maintenant plus facile à configurer et fonctionne maintenant avec les webhooks du [Cloud Home Assistant](https://www.nabucasa.com/) pour les mises à jour push !
 
