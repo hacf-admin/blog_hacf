@@ -82,8 +82,7 @@ L’utilisation d’un gestionnaire de mots de passe est sans doute l’une des 
 
 Si vous avez utilisé l’un de ces gestionnaires de mots de passe qui avaient des problèmes avec Home Assistant, vous serez heureux de savoir que cette version corrige cela ! Par exemple, 1Password fonctionne maintenant !
 
-![](img/gestionnaire [mdp.png](mdp.png))
-
+![](img/gestionnaire mdp.png)
 ## Options pour les marqueurs d’entités sur la carte
 
 La [carte](https://www.home-assistant.io/dashboards/map/) a reçu de nouvelles options (merci @karwosts !) pour vos marqueurs d’entités qui sont affichés sur la carte.
