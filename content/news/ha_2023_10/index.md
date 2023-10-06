@@ -26,9 +26,9 @@ url_haoff: https://www.home-assistant.io/blog/2023/10/04/release-202310/
 ---
 **Home Assistant Core 2023.10 !** 🎉
 
-_Octobre ! 🎃 Cela signifie que nous venons de fêter notre anniversaire ; nous avons maintenant 10 ans ! 🎂 Au cas où vous auriez manqué notre  avec toutes les annonces intéressantes, nous avons tout résumé dans notre article de blog sur les_
+_Octobre ! 🎃 Cela signifie que nous venons de fêter notre anniversaire ; nous avons maintenant 10 ans ! 🎂 Au cas où vous auriez manqué notre_ [_diffusion YouTube d’anniversaire_](https://www.youtube.com/watch?v=EmLV6lJLzSU) _avec toutes les annonces intéressantes, nous avons tout résumé dans notre article de blog sur_ [_les 10 ans de Home Assistant_](https://www.home-assistant.io/blog/2023/09/17/10-years-home-assistant/)_._
 
-_Encore plus de nouvelles excitantes, car c’est  : le chapitre 4 de ce projet a été annoncé et sera  le 12 octobre 2023, à 21h00 CEST (Europe) ! Assurez-vous d’être à l’écoute ! J’ai vu quelques démos préliminaires… Tout ce que je vais dire, c’est : C’est époustouflant ! 🤯_
+_Encore plus de nouvelles excitantes, car c’est_ [_l’année de la voix pour Home Assistant_](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) _: le chapitre 4 de ce projet a été annoncé et sera_ [_diffusé en direct sur YouTube_](https://www.youtube.com/watch?v=YzgYYkOrnhQ) _le 12 octobre 2023, à 21h00 CEST (Europe) ! Assurez-vous d’être à l’écoute ! J’ai vu quelques démos préliminaires… Tout ce que je vais dire, c’est : C’est époustouflant !🤯_
 
 _Quant à cette version, à cause de tout ce qui est indiqué ci-dessus, elle est un peu plus petite que d’habitude en termes de fonctionnalités. Je promets que le chapitre 4 en vaudra la peine. Pourtant, elle contient des tonnes de mises à jour, des corrections de bugs, et quelques nouvelles fonctionnalités magnifiques pour la carte de tuiles ! 🤩_
 
@@ -38,6 +38,8 @@ _…/Frenck_
 
 ## Un superbe logo actualisé !
 
+Au cas où vous l’auriez manqué, nous avons rafraîchi le logo de Home Assistant ! _🤩_
+
 ![Nouveau logo Home Assistant](img/logo.png)
 
 Cela a été fait pour le [10ème anniversaire de Home Assistant](https://www.home-assistant.io/blog/2023/09/17/10-years-home-assistant/), et vous pouvez [tout lire sur cette itération dans cet article de blog](https://www.home-assistant.io/blog/2023/09/17/a-refreshed-logo-for-home-assistant/). Vous commencerez à voir ce logo dans beaucoup plus d’endroits dans les semaines à venir, mais il est déjà inclus dans cette version !
@@ -46,11 +48,15 @@ Cela a été fait pour le [10ème anniversaire de Home Assistant](https://www.h
 
 ## De nouveaux boutons pour My Home Assistant
 
-![](img/logo2.svg)
+Ce n’est pas seulement le logo qui a été relooké ; nous avons aussi de beaux nouveaux boutons pour My Home Assistant _🤩_ 
+
+![](img/logo3.png)
 
 Si vous ne connaissez pas My Home Assistant, c’est un outil en ligne gratuit qui permet aux sites web, aux documentations, aux plateformes de chat et aux blogs de lier des endroits sur votre serveur Home Assistant sans connaître son adresse ou être exposé à internet. Cela garantit votre vie privée tout en permettant une expérience fluide.
 
-![](img/logo3.svg) Donc, si vous voyez ces boutons apparaître quelque part, vous savez maintenant ce qu’ils font ! Vous pouvez facilement créer vos propres boutons et liens à partager sur la page [créer un lien](https://my.home-assistant.io/create-link/).
+Dans notre documentation, vous trouverez ces boutons pour, par exemple, ajouter une nouvelle intégration à votre Home Assistant en un seul clic ! Essayez-le vous-même ! Ce bouton ci-dessous ouvrira l’interface de votre Home Assistant et montrera les intégrations que vous avez installées :
+
+![](img/logo4.png)
 
 ## Nouvelles fonctionnalités pour les entités climatiques sur la carte de tuiles
 
