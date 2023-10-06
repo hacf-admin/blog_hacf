@@ -48,15 +48,15 @@ Cela a été fait pour le [10ème anniversaire de Home Assistant](https://www.h
 
 ## De nouveaux boutons pour My Home Assistant
 
-Ce n’est pas seulement le logo qui a été relooké ; nous avons aussi de beaux nouveaux boutons pour My Home Assistant _🤩_ 
+Ce n’est pas seulement le logo qui a été relooké ; nous avons aussi de beaux nouveaux boutons pour My Home Assistant _🤩_
 
-![](img/logo3.png)
+![](img/logo3.jpg)
 
 Si vous ne connaissez pas My Home Assistant, c’est un outil en ligne gratuit qui permet aux sites web, aux documentations, aux plateformes de chat et aux blogs de lier des endroits sur votre serveur Home Assistant sans connaître son adresse ou être exposé à internet. Cela garantit votre vie privée tout en permettant une expérience fluide.
 
 Dans notre documentation, vous trouverez ces boutons pour, par exemple, ajouter une nouvelle intégration à votre Home Assistant en un seul clic ! Essayez-le vous-même ! Ce bouton ci-dessous ouvrira l’interface de votre Home Assistant et montrera les intégrations que vous avez installées :
 
-![](img/logo4.png)
+![](img/logo4.jpg)
 
 ## Nouvelles fonctionnalités pour les entités climatiques sur la carte de tuiles
 
@@ -82,11 +82,17 @@ L’utilisation d’un gestionnaire de mots de passe est sans doute l’une des 
 
 Si vous avez utilisé l’un de ces gestionnaires de mots de passe qui avaient des problèmes avec Home Assistant, vous serez heureux de savoir que cette version corrige cela ! Par exemple, 1Password fonctionne maintenant !
 
+![](img/gestionnaire [mdp.png](mdp.png))
+
 ## Options pour les marqueurs d’entités sur la carte
 
 La [carte](https://www.home-assistant.io/dashboards/map/) a reçu de nouvelles options (merci @karwosts !) pour vos marqueurs d’entités qui sont affichés sur la carte.
 
-![](img/marqueur.png) Lors du centrage de la carte, toutes les entités sur la carte sont prises en compte. Cependant, vous pouvez également exclure certaines entités (par exemple, des valeurs aberrantes connues) qui ne doivent pas être prises en compte lors de cette opération.
+Vous pouvez maintenant choisir si vous voulez que le nom de l’entité soit rendu sur la carte ou l’état de l’entité, mais vous pouvez aussi remplacer le nom complètement. Vous pourriez, par exemple, montrer les valeurs d’état, au lieu du nom, pour les entités fournissant les prix du carburant, afin que vous puissiez voir où se trouve le carburant le moins cher.
+
+![](img/marqueur.png)
+
+Lors du centrage de la carte, toutes les entités sur la carte sont prises en compte. Cependant, vous pouvez également exclure certaines entités (par exemple, des valeurs aberrantes connues) qui ne doivent pas être prises en compte lors de cette opération.
 
 Ceci n’est actuellement disponible que dans la configuration YAML de la carte. Consultez [notre documentation pour la carte](https://www.home-assistant.io/dashboards/map/#label_mode) pour plus d’informations.
 
@@ -97,9 +103,7 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 - Si vous utilisez [ESPHome](https://esphome.io/), vous remarquerez des sauvegardes Home Assistant beaucoup plus petites lorsque vous avez installé [la dernière version](https://esphome.io/changelog/2023.9.0.html#esphome-2023-9-0-27th-september-2023) !
 - L’intégration du [pont HomeKit](https://www.home-assistant.io/integrations/homekit) prend désormais en charge les récepteurs multimédias ! Merci, @ bdraco !
 - @ Lash-L continue à étendre l’intégration [Roborock](https://www.home-assistant.io/integrations/roborock). Dans cette version, des capteurs d’eau et de dernière nettoyage ont été ajoutés. Génial !
-
-[Withings](https://www.home-assistant.io/integrations/withings) a reçu beaucoup d’amour dans cette version, merci @ joostlek ! Il est maintenant plus facile à configurer et fonctionne maintenant avec les webhooks du [Cloud Home Assistant](https://www.nabucasa.com/) pour les mises à jour push !
-
+- [Withings](https://www.home-assistant.io/integrations/withings) a reçu beaucoup d’amour dans cette version, merci @ joostlek ! Il est maintenant plus facile à configurer et fonctionne maintenant avec les webhooks du [Cloud Home Assistant](https://www.nabucasa.com/) pour les mises à jour push !
 - @ allenporter a ajouté un support calendrier à l’intégration [Rain Bird](https://www.home-assistant.io/integrations/rainbird), vous permettant de voir votre programme d’irrigation dans Home Assistant ! Sympa !
 - L’intégration [System Bridge](https://www.home-assistant.io/integrations/system_bridge) prend désormais en charge les notifications ! Merci, @ timmo001 !
 - @ alexyao2015 a ajouté un bouton à [Life360](https://www.home-assistant.io/integrations/life360) pour déclencher un sondage pour mettre à jour les informations de localisation. Cool !
