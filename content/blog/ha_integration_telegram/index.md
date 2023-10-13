@@ -33,13 +33,13 @@ url_hacf: https://forum.hacf.fr/t/dialoguer-avec-votre-maison-via-telegram-et-in
 Exemple de notifications :
 
 - "Vous partez alors que la fenêtre du salon est restée ouverte"
-- "Le taux de CO2 est trop fort et il faut aérer le salon"
+- "Le taux de CO2 est trop fort, il faut aérer le salon"
 - "Une consommation anormale d'eau a été détectée cette nuit"
 - "La température du congélateur est trop élevée."
 - "Pas de consommation électrique de la pompe de la piscine. Vérifier son bon fonctionnement"
 - ....
 
-Home Assistant intègre un système de notification, mais qui a ses limites. Il est souvent préférable de le réserver aux notifications techniques, comme les demandes mises à jour. 
+Home Assistant intègre un système de notification, mais qui a ses limites. Il est souvent préférable de le réserver aux notifications techniques, comme les demandes mises à jour.
 
 **Telegram** est alors une **solution de choix** pour permettre à toute la famille de recevoir des notifications sur la maison.
 
@@ -138,7 +138,7 @@ notify:
     chat_id: !secret id_telegram_maison
 ```
 
-> Il peut être pertinent à terme de déplacer ce code dans un package [[notification.yaml](notification.yaml)](notification.yaml) qui est ensuite inclut dans le fichier configuration.
+> Il peut être pertinent à terme de déplacer ce code dans un package [[[notification.yaml](notification.yaml)](notification.yaml)]([notification.yaml](notification.yaml)) qui est ensuite inclut dans le fichier configuration.
 
 ID et token fournis par Telegram sont à mettre dans le fichier `secret.yaml`et pas directement dans `configuration.yaml`.
 
