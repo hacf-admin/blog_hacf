@@ -3,7 +3,7 @@ path: essai1_2_3
 title: essai
 type: post
 visibleInCMS: true
-draft: true
+draft: false
 workflow: write
 date: 2023-10-13
 lastmod: 2023-10-13
@@ -26,14 +26,12 @@ scdjhkgbsdihcvskoiudcvsloduihosz
 
 
 
-
-
-
-
+![](img/1611871156la-princesse-des-glaces.jpg)
 sdlkjchsoplcihjposdlihvupszd
 
 
 
 
 
+![](img/1503358260chateau-forteresse.jpg)
 skdiphcvosdficvpoesfihveo
