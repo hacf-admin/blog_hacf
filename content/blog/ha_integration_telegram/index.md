@@ -39,7 +39,7 @@ Exemple de notifications :
 - "Pas de consommation électrique de la pompe de la piscine. Vérifier son bon fonctionnement"
 - ....
 
-Home Assistant intègre un système de notification, mais qui a ses limites. Il est souvent préférable de le réserver aux notifications techniques, comme les demandes mises à jour.
+Home Assistant intègre un système de notification, mais qui a ses limites. Il est souvent préférable de le réserver aux notifications techniques, comme les demandes mises à jour. 
 
 **Telegram** est alors une **solution de choix** pour permettre à toute la famille de recevoir des notifications sur la maison.
 
@@ -138,7 +138,7 @@ notify:
     chat_id: !secret id_telegram_maison
 ```
 
-> Il peut être pertinent à terme de déplacer ce code dans un package [notification.yaml](notification.yaml) qui est ensuite inclut dans le fichier configuration.
+> Il peut être pertinent à terme de déplacer ce code dans un package [[notification.yaml](notification.yaml)](notification.yaml) qui est ensuite inclut dans le fichier configuration.
 
 ID et token fournis par Telegram sont à mettre dans le fichier `secret.yaml`et pas directement dans `configuration.yaml`.
 
@@ -247,9 +247,7 @@ action:
     data: {}
 ```
 
-> **En cas de problème avec les callbacks**, vous pouvez vous rendre dans l'outil de développement, rubrique Evènements.  
-> Vous pouvez déclencher un événement qui simulera l'appui sur le bouton de télégram (Type d'évènement : `telegram_callback` et donnée `command: /piscine_ferme` par exemple).   
-> Vous pouvez aussi vous mettre à l'écoute des événements de type `telegram_callback` et écouter l'événement déclenché par l'appui sur un bouton dans telegram.
+> **En cas de problème avec les callbacks**, vous pouvez vous rendre dans l'outil de développement, rubrique Evènements.Vous pouvez déclencher un événement qui simulera l'appui sur le bouton de télégram (Type d'évènement : `telegram_callback` et donnée `command: /piscine_ferme` par exemple).Vous pouvez aussi vous mettre à l'écoute des événements de type `telegram_callback` et écouter l'événement déclenché par l'appui sur un bouton dans telegram.
 
 ## 6. Confirmation que l'action a été bien effectuée
 
