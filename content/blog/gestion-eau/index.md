@@ -50,15 +50,15 @@ Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible
 
 On ne plaisante pas avec l'eau, donc j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25l dans mon cas (mais il existe aussi en 1l / impulsion).
 
+> `C'est la solution que j'ai testée et que je recommande.`
+
 ![](img/compteur-gioanola.jpg)
 
 Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
 [GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/litre) - 3/4p](https://www.domotique-store.fr/domotique/modules-domotiques/detecteurs-capteurs-mesure/mesure-de-consommation-d-eau/434-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-34p-1-implitre.html)
 
-Il y a assez peu de compteurs connectés sur le marché.
-
-Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenter en 5v par contre, ce qui n'est pas forcément un problème. N'ayant pas moi même testé cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix.
+Il y a assez peu de compteurs connectés sur le marché. Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenté en 5v par contre, ce qui n'est pas forcément un problème. N'ayant pas moi même testé cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix non CE acheté en Chine.
 
 ![Compteur effet hall](img/compteur-effet-hall.jpg)
 
@@ -66,7 +66,13 @@ Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aur
 
 Beaucoup ne pourront ou voudrons un nouveau compteur. Voici quelques solutions et références de personnes qui les ont implémentées :
 
--  
+- Installer un capteur effet hall de type LJ18A3 au dessus de la petite roue qui tourne.
+- Capter les impultions radios pour certains type de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
+- Mettre une caméra ESPCam avec de l'IA pour lire le compteur, proposé par GammaTronniques : [Suivre sa consommation d'eau avec Home Assistant](https://www.youtube.com/watch?v=1uwoAWvP6f8)
+
+
+
+
 
 
 
