@@ -81,21 +81,58 @@ Le raccordement est simple :
 
 En prérequis, il faut avoir installé ESPHome et télécharger le code qui suit. Pour cela, je vous renvoie à l'article sur ESPHome : [Vos premiers pas avec ESPHome](https://hacf.fr/blog/esphome-introduction/).
 
+Ensuite téléverser le code suivant :
 
+```
+esphome:
+  name: esp-eau
+  friendly_name: esp-eau
 
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
 
+# Enable logging
+logger:
+  level: debug
 
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
+switch:
+  - platform: restart
+    name: "esp_eau_reboot"
 
+sensor:
 
-
-
-
-
-
-
-
-
+# Débit d'eau instantané (0 après 10s)
+  - platform: pulse_meter
+    name: "Debit eau froide"
+    pin:
+      number: GPIO25
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    internal_filter: 50ms
+    icon: mdi:water
+    timeout: 4s
+    unit_of_measurement: 'l/mn'
+    filters:
+      - multiply: 0.25
+# Consommation Totale d'Eau depuis démarrage
+    total:
+      name: "Consommation eau froide"
+      icon: mdi:water
+      device_class: water   
+      state_class: total_increasing
+      unit_of_measurement: 'm³'
+      accuracy_decimals: 5
+      filters:
+        - multiply: 0.00025
+```
 
 
 
