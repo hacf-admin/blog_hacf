@@ -134,7 +134,7 @@ sensor:
         - multiply: 0.00025
 ```
 
-2 entités vont être créeés dans Home Assistant : 
+2 entités vont être créeés dans Home Assistant :
 
 - debit_eau_froide : mesure le débit instantané. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix et le débit faibles seront mesurés en faisant des différences de compteur sur de longues période, pas avec le débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
 - consommation_eau_froide : est une compteur em m3 qui calcul la consommation  depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
@@ -146,6 +146,31 @@ sensor:
 > **Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
+
+## Traitement sous Home Assitant
+
+### Gestion du compteur
+
+Le compteur ramené par ESPHome sera remis à 0 chaque fois que l'ESP redémarre. Pour éviter cela et avoir un compteur qui s'incrémente toujours, nous devont utiliser un [utility meter](https://www.home-assistant.io/integrations/utility_meter/). 
+
+Certes, il peut être créé dans le fichier de configuration YAML, mais Home Assistant permet l'utilisation de helper : aller dans `Paramètres` - `Appareils` et `Services` - `Entrées` puis créer un `Compteur de Services` appelé `eau_froide_annuel.`
+
+- ID de l'entité : `eau_froide_annuel`
+- Le capteur d'entrée est l'entité fournie par ESPHome `consommation_eau_froide.`
+- Le compteur sera remis à 0 chaque début d'année. Le cycle de remise à 0 est annuel.
+- Laisser les autres informations 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
