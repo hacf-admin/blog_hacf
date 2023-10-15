@@ -81,26 +81,9 @@ Le raccordement est simple :
 
 En prérequis, il faut avoir installé ESPHome et télécharger le code qui suit. Pour cela, je vous renvoie à l'article sur ESPHome : [Vos premiers pas avec ESPHome](https://hacf.fr/blog/esphome-introduction/).
 
-Ensuite téléverser le code suivant :
+Ensuite créer un nouveau device esp-eau, rajoutez le code suivant et téléversé le sur votre ESP :
 
 ```
-esphome:
-  name: esp-eau
-  friendly_name: esp-eau
-
-esp32:
-  board: esp32dev
-  framework:
-    type: arduino
-
-# Enable logging
-logger:
-  level: debug
-
-wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
 switch:
   - platform: restart
     name: "esp_eau_reboot"
@@ -136,29 +119,52 @@ sensor:
 
 2 entités vont être créeés dans Home Assistant :
 
-- debit_eau_froide : mesure le débit instantané. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix et le débit faibles seront mesurés en faisant des différences de compteur sur de longues période, pas avec le débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
-- consommation_eau_froide : est une compteur em m3 qui calcul la consommation  depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
-
-
-
-
+- esp_eau_debit_eau_froide : mesure le débit instantané. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix et le débit faibles seront mesurés en faisant des différences de compteur sur de longues période, pas avec le débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
+- esp_eau_consommation_eau_froide : est une compteur em m3 qui calcul la consommation  depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
 
 > **Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
 
-## Traitement sous Home Assitant
+Pour tester notre compteur, afficher les 2 entités debit_eau_froide et consommation_eau_froide dans un dashboard de test sous Home Assistant. Le débit doit augmener quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter. Essayez de tirer un litre d'eau et vérifier que le compte s'incrémente correctement. 
 
-### Gestion du compteur
+## Gestion de la consommation sous HA
 
-Le compteur ramené par ESPHome sera remis à 0 chaque fois que l'ESP redémarre. Pour éviter cela et avoir un compteur qui s'incrémente toujours, nous devont utiliser un [utility meter](https://www.home-assistant.io/integrations/utility_meter/). 
+### Compteur de la consommation annuelle
+
+Le compteur ramené par ESPHome sera remis à 0 chaque fois que l'ESP redémarre. Pour éviter cela et avoir un compteur qui s'incrémente toujours, nous devons utiliser un [utility meter](https://www.home-assistant.io/integrations/utility_meter/).
 
 Certes, il peut être créé dans le fichier de configuration YAML, mais Home Assistant permet l'utilisation de helper : aller dans `Paramètres` - `Appareils` et `Services` - `Entrées` puis créer un `Compteur de Services` appelé `eau_froide_annuel.`
 
 - ID de l'entité : `eau_froide_annuel`
+- `Nom : consommation eau froide annuelle`
 - Le capteur d'entrée est l'entité fournie par ESPHome `consommation_eau_froide.`
 - Le compteur sera remis à 0 chaque début d'année. Le cycle de remise à 0 est annuel.
-- Laisser les autres informations 
+- Laisser les autres informations par défaut
+
+### Affichage dans un graphique
+
+Idéalement créer une vue dédiée à la gestion de l'eau. Pour cela, nous proposons d'utiliser le module energie, qui gère aussi l'eau.
+
+Aller dans le menu sous Paramètres - Tableaux de Bord - Energie puis renseigner une source d'eau dans consommation d'eau. Préciser l'entité de consommation esp_eau_consommation_eau_froide et rensignez un tarif (par exemple 4.2 €/m3).
+
+Ensuite, insérer dans votre vue les cartes suivantes :
+
+```
+type: energy-date-selection
+type: energy-water-graph
+type: energy-sources-table
+```
+
+
+
+
+
+```
+undefined
+```
+
+Bizaremment Home Assistant mélange les consommations d'eau et d'énergie. Pour avoir un grapA noter que nous devrons plus loins personnaliser dans notre dashboard 
 
 
 
