@@ -46,13 +46,23 @@ La solution sera différente suivant si vous être propriétaire ou locataire, s
 
 ### Installer un compteur connecté
 
-Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur. On ne présente pas avec l'eau, donc j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25l dans mon cas (mais il existe aussi en 1l / impulsion).
+Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur. On ne plaisante pas avec l'eau, donc j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25l dans mon cas (mais il existe aussi en 1l / impulsion).
 
 ![](img/compteur-gioanola.jpg)
 
-Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo : 
+Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
 [GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/litre) - 3/4p](https://www.domotique-store.fr/domotique/modules-domotiques/detecteurs-capteurs-mesure/mesure-de-consommation-d-eau/434-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-34p-1-implitre.html)
+
+L'alternative est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenter en 5v par contre, ce qui n'est pas forcément un problème. N'ayant pas moi même tester cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix.
+
+
+
+
+
+
+
+
 
 ### Se connecteur à un compteur existant
 
