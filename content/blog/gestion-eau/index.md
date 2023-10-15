@@ -56,12 +56,17 @@ Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
 [GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/litre) - 3/4p](https://www.domotique-store.fr/domotique/modules-domotiques/detecteurs-capteurs-mesure/mesure-de-consommation-d-eau/434-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-34p-1-implitre.html)
 
-Il y a assez peu de compteurs connectés sur le marché. 
+Il y a assez peu de compteurs connectés sur le marché.
 
 Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenter en 5v par contre, ce qui n'est pas forcément un problème. N'ayant pas moi même testé cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix.
 
 ![Compteur effet hall](img/compteur-effet-hall.jpg)
+
 ### Se connecteur à un compteur existant
+
+Beaucoup ne pourront ou voudrons un nouveau compteur. Voici quelques solutions et références de personnes qui les ont implémentées :
+
+-  
 
 
 
