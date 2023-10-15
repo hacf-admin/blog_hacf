@@ -69,3 +69,34 @@ Beaucoup ne pourront ou voudrons un nouveau compteur. Voici quelques solutions e
 - Installer un capteur effet hall de type LJ18A3 au dessus de la petite roue qui tourne.
 - Capter les impultions radios pour certains type de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
 - Mettre une caméra ESPCam avec de l'IA pour lire le compteur, proposé par GammaTronniques : [Suivre sa consommation d'eau avec Home Assistant](https://www.youtube.com/watch?v=1uwoAWvP6f8)
+
+## Intégration avec ESPHome
+
+Le compteur fourni des impulsions (1 tous les 0.25 litres dans notre cas), et il faut maintenant les traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
+
+Le raccordement est simple :
+
+- GPIO25 connecté à une entrée du compteur
+- GND connecté à l'autre entrée
+
+En prérequis, il faut avoir installé ESPHome et télécharger le code qui suit. Pour cela, je vous renvoie à l'article sur ESPHome : [Vos premiers pas avec ESPHome](https://hacf.fr/blog/esphome-introduction/).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
