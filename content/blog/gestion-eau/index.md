@@ -126,7 +126,7 @@ sensor:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
 
-Pour tester notre compteur, afficher les 2 entités debit_eau_froide et consommation_eau_froide dans un dashboard de test sous Home Assistant. Le débit doit augmener quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter. Essayez de tirer un litre d'eau et vérifier que le compte s'incrémente correctement. 
+Pour tester notre compteur, afficher les 2 entités debit_eau_froide et consommation_eau_froide dans un dashboard de test sous Home Assistant. Le débit doit augmener quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter. Essayez de tirer un litre d'eau et vérifier que le compte s'incrémente correctement.
 
 ## Gestion de la consommation sous HA
 
@@ -156,28 +156,6 @@ type: energy-water-graph
 type: energy-sources-table
 ```
 
+Vous devez alors obtenir un graphique qui vous donne la gestion de l'eau. 
 
-
-
-
-```
-undefined
-```
-
-Bizaremment Home Assistant mélange les consommations d'eau et d'énergie. Pour avoir un grapA noter que nous devrons plus loins personnaliser dans notre dashboard 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la source-tab
