@@ -102,7 +102,7 @@ Le thermostat prend en charge la fenêtre et il coupe le radiateur quand cette d
 ### 3.2 Code du thermostat
 
 Le code du thermostat est dans un **Blueprint** qui peut être téléchargé via cette url :
-[[[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml)](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml)]([https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458))
+[[[[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml)](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml)]([https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/thermostat_tpi.yaml))]([[https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)](https://community.home-assistant.io/t/scheduler-card-custom-component/217458))
 
 Pour le charger dans Home Assistant, aller dans `configuration`, `blueprints`puis cliquer sur le bouton `importer un blueprint` en bas à droite et recopier l'URL précédente.
 Ensuite une automatisation  `thermostat` peut être facilement créée pour chaque radiateur (j’en ai 8 à la maison) en cliquant sur le  bouton "créer une automatisation".
@@ -138,9 +138,9 @@ Une solution simple pour définir les températures du mode ECO sera de prendre 
 - **Mode « absent » :** n’est pas censé être sélectionné manuellement, mais automatiquement mis quand une personne est absente et que le chauffage était en CONFORT, le chauffage passe en mode ECO. Le fait d’avoir un état dédié permet de remettre en CONFORT quand la pièce est de nouveau occupée.
 
 La carte utilise plusieurs cartes de la communauté, qu’il faut installer au préalable : button-card, hui-element et number-box.
-[[[https://www.home-assistant.io/lovelace/button/](https://www.home-assistant.io/lovelace/button/)](https://www.home-assistant.io/lovelace/button/)]([https://www.home-assistant.io/lovelace/button/](https://www.home-assistant.io/lovelace/button/))
-[[[https://github.com/thomasloven/lovelace-hui-element](https://github.com/thomasloven/lovelace-hui-element)](https://github.com/thomasloven/lovelace-hui-element)]([https://github.com/thomasloven/lovelace-hui-element](https://github.com/thomasloven/lovelace-hui-element))
-[Input Number - Home Assistant ([[home-assistant.io](home-assistant.io)](home-assistant.io))]([https://www.home-assistant.io/integrations/input_number/](https://www.home-assistant.io/integrations/input_number/))
+[[[[https://www.home-assistant.io/lovelace/button/](https://www.home-assistant.io/lovelace/button/)](https://www.home-assistant.io/lovelace/button/)]([https://www.home-assistant.io/lovelace/button/](https://www.home-assistant.io/lovelace/button/))]([[https://www.home-assistant.io/lovelace/button/](https://www.home-assistant.io/lovelace/button/)](https://www.home-assistant.io/lovelace/button/))
+[[[[https://github.com/thomasloven/lovelace-hui-element](https://github.com/thomasloven/lovelace-hui-element)](https://github.com/thomasloven/lovelace-hui-element)]([https://github.com/thomasloven/lovelace-hui-element](https://github.com/thomasloven/lovelace-hui-element))]([[https://github.com/thomasloven/lovelace-hui-element](https://github.com/thomasloven/lovelace-hui-element)](https://github.com/thomasloven/lovelace-hui-element))
+[Input Number - Home Assistant ([[[home-assistant.io](home-assistant.io)](home-assistant.io)]([home-assistant.io](home-assistant.io)))]([[https://www.home-assistant.io/integrations/input_number/](https://www.home-assistant.io/integrations/input_number/)](https://www.home-assistant.io/integrations/input_number/))
 
 Voici le code de la carte
 
@@ -188,7 +188,7 @@ entities:
 ## 5. La planification (scheduler)
 
 La planification est basée sur le Scheduler proposé dans HACS, composé d'un composant et une carte.
-[[[https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)]([https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458))
+[[[[https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)]([https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458))]([[https://community.home-assistant.io/t/scheduler-card-custom-component/217458](https://community.home-assistant.io/t/scheduler-card-custom-component/217458)](https://community.home-assistant.io/t/scheduler-card-custom-component/217458))
 
 Une vue principale permet de voir les différents thermostats. L’interface présentée ici est pour un mobile. L’entête de la vue a une icône « outils » à sa droite qui permet d’accéder à une deuxième vue de réglages des radiateurs, qui contiendra alors la Scheduler card.
 
@@ -239,7 +239,7 @@ La consigne est changée pour une valeur en dure si le mode n’est pas auto-eco
 Pour ce faire, une dernière automatisation, codée également dans un Blueprint, permet de prendre en charge cette sélection du mode pour chaque radiateur. Elle prend en entrée le mode de chauffage désiré, la consigne et les trois automatisations à piloter (thermostat, auto-confort et auto-eco).
 
 Le code du Blueprint de gestion des modes peut être téléchargé via cette URL :
-[[[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml)](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml)]([https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml))
+[[[[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml)](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml)]([https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml))]([[https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml)](https://github.com/argonaute199/chauffage-home-assistant/blob/main/blueprint/chauffage_pilotage.yaml))
 
 Pour le charger dans Home Assistant, comme précédemment, aller dans configuration, Blueprint puis cliquer sur le bouton "importer un blueprint" en bas à droite et recopier l'URL précédente.
 
