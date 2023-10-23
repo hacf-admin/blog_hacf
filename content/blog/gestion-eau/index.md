@@ -165,14 +165,11 @@ Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans l
 
 ![](img/historique-avec-electricite.jpg)
 
-
-
-
 Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installer HACS, la bibliothèque de composants de la communauté HACS.
 
 Si vous n'avez pas déja card-mod, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher `card-mod` et télécharger le. Raffraichissez ensuite votre navigateur.
 
- `card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter le code javascript suivant :
+`card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter le code javascript suivant :
 
 ```
 type: vertical-stack
@@ -206,7 +203,74 @@ Le paramètre tr:nth-child(1) indique la ligne à supprimer. Dans mon cas, j'ai 
 Au final, nous nous retrouvons bien avec un graphique ne présentant que la consommation d'eau.
 
 ![](img/graphique-final.jpg)
+
 > IMPORTANT - Si vous avez une autre vue avec l'électricité et que vous ne vouliez pas mélanger avec l'eau, il faudra appliquer le même principe.
+
+## Afficher les 50 derniers tirages
+
+Il est maintenant trés intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une liste avec les derniers tirages d'eau.
+
+Le principe est le suivant : un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. Il suffit alors de faire la différence entre la valeur du compteurt courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
+
+Créer un capteur de seuil eau_froide_tirage_actif  qui sera vrai (activé) quand de l'eau sera tirée et faux quand le débit d'eau sera à 0.
+
+Aller dans paramètres - appareils et services - entrées, puis renseigner les infos suivantes : 
+
+- Nom : eau_froide_tirage_actif
+- Capteur d'entrée : sensor.esp_eau_debit_eau_froide
+- Hysteresis : 0
+- Type : upper
+- Upper : 0.2 
+
+Créer ensuite un input_text appelé `eau_froide_tirage` pour mémoriser la valeur du compteur entre chaque tirage.
+
+Créer ensuite une automatisation (sous paramètres - automatisations et scène) avec le code YAML suivant :
+
+```
+alias: Eau froide - enregistrement tirages
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - binary_sensor.eau_froide_tirage_actif
+    from: "on"
+    to: "off"
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 2
+condition: []
+action:
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.eau_froide_tirage
+    data:
+      value: >-
+        {% set vol = states('sensor.eau_froide_annuel')|float(0)*1000 -
+        states('input_text.eau_froide_memo')|float(0) %} {%- if vol < 100 -%}
+          {{ vol | round(2) }} L
+        {%- else -%}
+          {{ vol | round(0) }} L
+        {%- endif -%}
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.eau_froide_memo
+    data:
+      value: "{{ states('sensor.eau_froide_annuel')|float(0)*1000|round(2) }}"
+mode: single
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
