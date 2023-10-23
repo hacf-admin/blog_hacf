@@ -216,7 +216,7 @@ Nous utiliser un capteur de seuil pour savoir si il y a tirage ou non, et 2 vari
 
 Créer un capteur de seuil **eau_froide_tirage_actif** qui sera vrai (activé) quand de l'eau sera tirée et faux quand le débit d'eau sera à 0.
 
-Aller dans paramètres - appareils et services - entrées, puis renseigner les infos suivantes :
+Aller dans paramètres - appareils et services - entrées, créer un capteur de seuil,puis renseigner les infos suivantes :
 
 - Nom : eau_froide_tirage_actif
 - Capteur d'entrée : sensor.esp_eau_debit_eau_froide
@@ -284,6 +284,37 @@ show:
 title: Derniers tirages
 no_event: Aucun
 ```
+
+Vous obtiendrez ainsi la liste de vos tirages d'eau, et mieux comprendre ce qui consomme.
+
+## Les détections de fuites importantes
+
+Si une chasse d'eau coule constamment par exemple, il est important d'être alerté. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constament. Un usage de 0% signifie que l'eau ne coule pas (ou infiniement peu).
+
+Aller dans paramètres - appareils et services - entrées, créer un **capteur de dérivée**, puis renseigner les infos suivantes :
+
+- Nom :
+- Capteur d'entrée :
+- Précision :
+- Période :
+- Préfixe : none
+- Unité de temps : heures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
