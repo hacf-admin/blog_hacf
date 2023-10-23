@@ -268,17 +268,22 @@ Si vous testez, vous devriez avoir dans le champs `**eau_froide_tirage**` un tex
 
 Il ne reste plus qu'à afficher la liste des tirages. Pour cela, nous allons télécharger un nouveau composant sous HACS appelé [Logbook Card](http://192.168.5.30:8123/hacs/repository/216008446).
 
+Insérer ensuite cette carte dans votre vue de gestion d'eau :
 
-
-
-
-
-
-
-
-
-
-
+```
+type: custom:logbook-card
+entity: input_text.eau_froide_tirage
+max_items: 50
+show:
+  state: true
+  duration: false
+  start_date: true
+  end_date: false
+  icon: true
+  separator: false
+title: Derniers tirages
+no_event: Aucun
+```
 
 
 
