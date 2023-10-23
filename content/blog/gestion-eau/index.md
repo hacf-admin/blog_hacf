@@ -62,7 +62,7 @@ Il y a assez peu de compteurs connectés sur le marché. Une alternative assez c
 
 ![Compteur effet hall](img/compteur-effet-hall.jpg)
 
-### Se connecteur à un compteur existant
+### Se connecter à un compteur existant
 
 Beaucoup ne pourront ou voudrons un nouveau compteur. Voici quelques solutions et références de personnes qui les ont implémentées :
 
@@ -117,7 +117,7 @@ sensor:
         - multiply: 0.00025
 ```
 
-2 entités vont être créeés dans Home Assistant :
+2 entités vont être créées dans Home Assistant :
 
 - esp_eau_debit_eau_froide : mesure le débit instantané. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix et le débit faibles seront mesurés en faisant des différences de compteur sur de longues période, pas avec le débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
 - esp_eau_consommation_eau_froide : est une compteur em m3 qui calcul la consommation  depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
@@ -146,16 +146,31 @@ Certes, il peut être créé dans le fichier de configuration YAML, mais Home As
 
 Idéalement créer une vue dédiée à la gestion de l'eau. Pour cela, nous proposons d'utiliser le module energie, qui gère aussi l'eau.
 
-Aller dans le menu sous Paramètres - Tableaux de Bord - Energie puis renseigner une source d'eau dans consommation d'eau. Préciser l'entité de consommation esp_eau_consommation_eau_froide et rensignez un tarif (par exemple 4.2 €/m3).
+Aller dans le menu sous Paramètres - Tableaux de Bord - Energie puis renseigner une source d'eau dans consommation d'eau. Préciser l'entité de consommation esp_eau_consommation_eau_froide et renseignez un tarif (par exemple 4.2 €/m3).
 
-Ensuite, insérer dans votre vue les cartes suivantes :
+Ensuite, insérer dans votre vue les cartes suivantes dans une `vertical card` :
 
 ```
-type: energy-date-selection
-type: energy-water-graph
-type: energy-sources-table
+type: vertical-stack
+title: Historique
+cards:
+  - type: energy-date-selection
+  - type: energy-water-graph
+  - type: energy-sources-table
 ```
 
-Vous devez alors obtenir un graphique qui vous donne la gestion de l'eau. 
+Vous devez alors obtenir un graphique qui vous donne la gestion de l'eau.
 
-Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la source-tab
+Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la troisième carte (source-tab), si vous utilisez le module Energy pour l'électricité, vous aurez aussi les données relatives à l'électricité.
+
+
+
+
+
+
+
+
+
+
+
+
