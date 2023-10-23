@@ -210,19 +210,23 @@ Au final, nous nous retrouvons bien avec un graphique ne présentant que la cons
 
 Il est maintenant trés intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une liste avec les derniers tirages d'eau.
 
-Le principe est le suivant : un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. Il suffit alors de faire la différence entre la valeur du compteurt courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
+Le principe est le suivant : un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. Il suffit alors de faire la différence entre la valeur du compteur courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
 
-Créer un capteur de seuil eau_froide_tirage_actif  qui sera vrai (activé) quand de l'eau sera tirée et faux quand le débit d'eau sera à 0.
+Nous utiliser un capteur de seuil pour savoir si il y a tirage ou non, et 2 variables (des `input_text`) pour mémoriser la valeur du compteur à chaque fin de tirage, et la valeur du dernier tirage.
 
-Aller dans paramètres - appareils et services - entrées, puis renseigner les infos suivantes : 
+Créer un capteur de seuil **eau_froide_tirage_actif** qui sera vrai (activé) quand de l'eau sera tirée et faux quand le débit d'eau sera à 0.
+
+Aller dans paramètres - appareils et services - entrées, puis renseigner les infos suivantes :
 
 - Nom : eau_froide_tirage_actif
 - Capteur d'entrée : sensor.esp_eau_debit_eau_froide
 - Hysteresis : 0
 - Type : upper
-- Upper : 0.2 
+- Upper : 0.2
 
-Créer ensuite un input_text appelé `eau_froide_tirage` pour mémoriser la valeur du compteur entre chaque tirage.
+Créer ensuite un input_text appelé `**eau_froide_memo**` pour mémoriser la valeur du compteur entre chaque tirage.
+
+Enfin, créer un deuxième input_text appelé `**eau_froide_tirage**``` pour mémoriser la valeur du dernier tirage.
 
 Créer ensuite une automatisation (sous paramètres - automatisations et scène) avec le code YAML suivant :
 
@@ -260,13 +264,9 @@ action:
 mode: single
 ```
 
+Si vous testez, vous devriez avoir dans le champs `**eau_froide_tirage**` un texte avec la valeur du dernier tirage.
 
-
-
-
-
-
-
+Il ne reste plus qu'à afficher la liste des tirages. Pour cela, nous allons télécharger un nouveau composant sous HACS appelé [Logbook Card](http://192.168.5.30:8123/hacs/repository/216008446).
 
 
 
