@@ -163,6 +163,51 @@ Vous devez alors obtenir un graphique qui vous donne la gestion de l'eau.
 
 Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la troisième carte (source-tab), si vous utilisez le module Energy pour l'électricité, vous aurez aussi les données relatives à l'électricité.
 
+![](img/historique-avec-electricite.jpg)
+
+
+
+
+Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installer HACS, la bibliothèque de composants de la communauté HACS.
+
+Si vous n'avez pas déja card-mod, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher `card-mod` et télécharger le. Raffraichissez ensuite votre navigateur.
+
+ `card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter le code javascript suivant :
+
+```
+type: vertical-stack
+title: Historique
+cards:
+  - type: energy-date-selection
+  - type: energy-water-graph
+  - type: energy-sources-table
+    card_mod:
+      style: |
+        ha-card > div > div > table > tbody > tr:nth-child(1) {
+          display: none
+        }
+        ha-card > div > div > table > tbody > tr:nth-child(2) {
+          display: none
+        }
+        ha-card > div > div > table > tbody > tr:nth-child(3) {
+          display: none
+        }
+        ha-card > div > div > table > tbody > tr:nth-child(5) {
+          display: none
+        }
+        ha-card > div > div > table > tbody > tr:nth-child(6) {
+          display: none
+        }
+
+```
+
+Le paramètre tr:nth-child(1) indique la ligne à supprimer. Dans mon cas, j'ai supprimé la ligne 1, 2, 3, 5 et 6.
+
+Au final, nous nous retrouvons bien avec un graphique ne présentant que la consommation d'eau.
+
+![](img/graphique-final.jpg)
+> IMPORTANT - Si vous avez une autre vue avec l'électricité et que vous ne vouliez pas mélanger avec l'eau, il faudra appliquer le même principe.
+
 
 
 
