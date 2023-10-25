@@ -23,22 +23,6 @@ tags:
   - esphome
 author: argonaute
 ---
-alias: Eau froide - conso nuit - enregistrement debut
-
-description: ""
-
-trigger:
-
-- platform: timeat: "01:00:00"
-
-condition: []
-
-action:
-
-- service: input_text.set_valuetarget:entity_id: input_text.eau_froide_compteur_debut_nuitdata:value: "{{ states('sensor.eau_froide_annuel')|float(0) }}"
-
-mode: single
-
 Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connection de son compteur par la prise téléinformation, des prises ou modules connectées ou tout être dispositif.
 
 Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'est qui coule des jours, peut d'avérer très génant.
