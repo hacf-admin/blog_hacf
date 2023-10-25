@@ -52,7 +52,7 @@ On ne plaisante pas avec l'eau, donc j'ai préféré une marque italienne reconn
 
 > `C'est la solution que j'ai testée et que je recommande.`
 
-![](img/compteur-gioanola.jpg)
+![](img/compteur-gianola.jpg)
 
 Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
@@ -442,16 +442,6 @@ Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant
 
 ## En conclusion
 
-Cet article permet de traiter au mieux l'important sujet de sa maîtrise de consommation d'eau. Vous cevriez en particulier pouvoir détecter un appareil qui a une consommation trop importante, et être averti d'une fuite comme une chasse d'eau ou le robinet extérieur qui est resté ouvert. 
+Cet article permet de traiter au mieux l'important sujet de sa maîtrise de consommation d'eau. Vous cevriez en particulier pouvoir détecter un appareil qui a une consommation trop importante, et être averti d'une fuite comme une chasse d'eau ou le robinet extérieur qui est resté ouvert.
 
 N'hésitez pas à faire vos commentaires ou suggestions d'améliorations.
-
-
-
-
-
- 
-
-
-
-
