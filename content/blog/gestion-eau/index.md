@@ -29,23 +29,13 @@ description: ""
 
 trigger:
 
-  - platform: time
-
-    at: "01:00:00"
+- platform: timeat: "01:00:00"
 
 condition: []
 
 action:
 
-  - service: input_text.set_value
-
-    target:
-
-      entity_id: input_text.eau_froide_compteur_debut_nuit
-
-    data:
-
-      value: "{{ states('sensor.eau_froide_annuel')|float(0) }}"
+- service: input_text.set_valuetarget:entity_id: input_text.eau_froide_compteur_debut_nuitdata:value: "{{ states('sensor.eau_froide_annuel')|float(0) }}"
 
 mode: single
 
@@ -314,6 +304,7 @@ no_event: Aucun
 Vous obtiendrez ainsi la liste de vos tirages d'eau, et mieux comprendre quelle est la source et le volume de consommation.
 
 ![](img/tirages-eau.jpg)
+
 ## Détecter les fuites importantes
 
 Si une chasse d'eau coule constamment par exemple, il est important d'être alerté. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constament. Un usage de 0% signifie que l'eau ne coule pas (ou infiniement peu).
@@ -356,6 +347,31 @@ mode: single
 ```
 
 J'ai choisi d'utiliser une notification sur telegram. Voir l'article [Dialogue avec telegram](https://hacf.fr/blog/ha_integration_telegram/) pour mettre en place ce type de notifications. A défaut, vous pouvez utiliser les [notifications de home assistant.](https://www.home-assistant.io/integrations/notify/)
+
+Il est pratique d'afficher dans le dashboard, en début de vue, une carte qui présente le débit instantané et l'usage :
+
+![](img/debit-usage.jpg)
+Voici le code de la carte :
+
+```
+type: horizontal-stack
+cards:
+  - type: gauge
+    min: 0
+    max: 83
+    severity:
+      green: 0
+      yellow: 45
+      red: 63
+    needle: true
+    entity: sensor.esp_eau_debit_eau_froide
+  - graph: line
+    type: sensor
+    detail: 1
+    entity: sensor.ratio_usage_eau_froide
+    name: Usage / 1h
+    hours_to_show: 6
+```
 
 ## Détecter les micro fuites
 
@@ -413,6 +429,10 @@ mode: single
 
 Reste ensuite à afficher cette valeur dans le dashboard pour contrôle. On en profite pour afficher ici également le compteur qui permettra de vérifier que Home Assistant reporte bien la valeur du compteur d'eau.
 
+![](img/consommation.jpg)
+
+Voici le code de la carte :
+
 ```
 type: entities
 entities:
@@ -423,11 +443,6 @@ entities:
     name: Consommation totale sur l'année
     secondary_info: none
 ```
-
-Ce qui devrait vous donner ce 
-
-![](img/consommation.jpg)
-Attention, si vous avez un chauffe-eau électrique, il est normal d'avoir un léger écoulement sur la soupape de sécurité. qui est de l'ordre de 0.25L à 0.5L. Et bien entendu, si quelqu'un tire la chasse d'eau ou va boire un coup, la mesure sera immédiatement faussée.
 
 
 
