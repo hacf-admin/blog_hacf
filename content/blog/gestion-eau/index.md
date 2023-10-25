@@ -3,7 +3,7 @@ path: gestion-eau
 title: Gestion de sa consommation d'eau
 type: post
 visibleInCMS: true
-draft: false
+draft: true
 workflow: read
 date: 2023-10-15
 lastmod: 2023-10-15
