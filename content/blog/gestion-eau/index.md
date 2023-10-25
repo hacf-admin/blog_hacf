@@ -448,13 +448,15 @@ entities:
 
 Nous avons vu comme avoir la liste des tirages. Pour aller plus loin, il serait possible d'identifier quel appareil a tiré de l'eau en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
 
+Certes, on pourrait utiliser le l'IA. Mais Home Assistant fournit un sensor extrémement puissant, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
 
+Le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/) permet de spécifier une liste d'événements (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes de quelque chose : le tirage d'eau d'une douche ou d'une chasse d'eau. Pour ceux qui ont fait un peu de math et de statistiques, il utilise le principe de l'inférence bayésienne.
 
+[https://fr.wikipedia.org/wiki/Inf%C3%A9rence_bay%C3%A9sienne](https://fr.wikipedia.org/wiki/Inf%C3%A9rence_bay%C3%A9sienne)
 
+Ainsi, il serait possible de créer autant de bayesian sesor que l'on a 
 
-
-
-
+calculer les probabilités de diverses causes hypothétiques à partir de l'observation d'événements connus. On 
 
 
 
