@@ -23,6 +23,32 @@ tags:
   - esphome
 author: argonaute
 ---
+alias: Eau froide - conso nuit - enregistrement debut
+
+description: ""
+
+trigger:
+
+  - platform: time
+
+    at: "01:00:00"
+
+condition: []
+
+action:
+
+  - service: input_text.set_value
+
+    target:
+
+      entity_id: input_text.eau_froide_compteur_debut_nuit
+
+    data:
+
+      value: "{{ states('sensor.eau_froide_annuel')|float(0) }}"
+
+mode: single
+
 Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connection de son compteur par la prise téléinformation, des prises ou modules connectées ou tout être dispositif.
 
 Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'est qui coule des jours, peut d'avérer très génant.
@@ -64,9 +90,9 @@ Il y a assez peu de compteurs connectés sur le marché. Une alternative assez c
 
 ### Se connecter à un compteur existant
 
-Beaucoup ne pourront ou voudrons un nouveau compteur. Voici quelques solutions et références de personnes qui les ont implémentées :
+Beaucoup ne pourront ou voudront un nouveau compteur. Voici quelques solutions et références de personnes qui les ont implémentées :
 
-- Installer un capteur effet hall de type LJ18A3 au dessus de la petite roue qui tourne.
+- Installer un capteur de proximité type LJ18A3 au dessus de la petite roue qui tourne (si celle ci est bien métallique) : c'est ce qui est proposé dans le [blog de Bujarra](https://www.bujarra.com/leyendo-el-contador-de-agua-de-casa-con-esphome-y-home-assistant/?lang=fr) (blog traduit en français)
 - Capter les impultions radios pour certains type de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
 - Mettre une caméra ESPCam avec de l'IA pour lire le compteur, proposé par GammaTronniques : [Suivre sa consommation d'eau avec Home Assistant](https://www.youtube.com/watch?v=1uwoAWvP6f8)
 
@@ -83,7 +109,7 @@ En prérequis, il faut avoir installé ESPHome et télécharger le code qui suit
 
 Ensuite créer un nouveau device esp-eau, rajoutez le code suivant et téléversé le sur votre ESP :
 
-```
+```q
 switch:
   - platform: restart
     name: "esp_eau_reboot"
@@ -285,36 +311,123 @@ title: Derniers tirages
 no_event: Aucun
 ```
 
-Vous obtiendrez ainsi la liste de vos tirages d'eau, et mieux comprendre ce qui consomme.
+Vous obtiendrez ainsi la liste de vos tirages d'eau, et mieux comprendre quelle est la source et le volume de consommation.
 
-## Les détections de fuites importantes
+![](img/tirages-eau.jpg)
+## Détecter les fuites importantes
 
 Si une chasse d'eau coule constamment par exemple, il est important d'être alerté. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constament. Un usage de 0% signifie que l'eau ne coule pas (ou infiniement peu).
 
-Aller dans paramètres - appareils et services - entrées, créer un **capteur de dérivée**, puis renseigner les infos suivantes :
+Rajouter dans votre fichier YAML un sensor de type history_stats, avec le code suivant, puis redémarrer Home Assistant
 
-- Nom :
-- Capteur d'entrée :
-- Précision :
-- Période :
-- Préfixe : none
-- Unité de temps : heures
+```
+sensor:
+# Ratio d'usage de l'eau sur la dernière heure
+  - platform: history_stats
+    name: Ratio usage eau froide
+    unique_id: "eau_froide_ratio_usage"
+    entity_id: binary_sensor.eau_froide_tirage_actif
+    state: "on"
+    type: ratio
+    start: "{{ now() - timedelta(hours=1) }}"
+    end: "{{ now() }}"
 
+```
 
+Vous aurez ainsi une entité `eau_froide_ratio_usage` vous donnant le % de temps pendant lequel de l'eau a coulée sur la dernière heure. Reste à créer une automatisation qui enverra une notification si  de l'eau a coulée pendant plus de 80% du temps sur la dernière heure.
 
+Voici le code YAML de cette automatisation :
 
+```
+alias: Eau froide - alerte fuite
+description: ""
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.ratio_usage_eau_froide
+    above: 80
+condition: []
+action:
+  - service: notify.telegram_maison
+    data:
+      message: ALERTE - usage d'eau supérieur a la normale. Fuite possible !
+    alias: Envoyer un message dans telegram "Alerte fuite d'eau"
+mode: single
 
+```
 
+J'ai choisi d'utiliser une notification sur telegram. Voir l'article [Dialogue avec telegram](https://hacf.fr/blog/ha_integration_telegram/) pour mettre en place ce type de notifications. A défaut, vous pouvez utiliser les [notifications de home assistant.](https://www.home-assistant.io/integrations/notify/)
 
+## Détecter les micro fuites
 
+Un robinet qui goutte est difficile à détecter. Le plus simple est de faire cette détection la nuit, quand on n'est pas censé tirer de l'eau : la nuit ou durant une absence.
 
+Personellement, je fais une mesure systématique la nuit. Pour cela, on mémorise la valeur du compteur d'eau en début de nuit (dans un input_text), et en fin de nuit on enregistre (dans un autre input_text) la différence entre la valeur courante du compteur et  la valeur en début de nuit.
 
+Pour cela, on créée 2 input_text :
 
+- input_text.eau_froide_compteur_debut_nuit
+- input_text.eau_froide_conso_fin_nuit
 
+On crée une première automatisation pour mémoriser la valeur du compteur en début de nuit (ici à 1h du matin), et le stocker dans `input_text.eau_froide_compteur_debut_nuit` :
 
+```
+alias: Eau froide - conso nuit - enregistrement debut
+description: ""
+trigger:
+  - platform: time
+    at: "01:00:00"
+condition: []
+action:
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.eau_froide_compteur_debut_nuit
+    data:
+      value: "{{ states('sensor.eau_froide_annuel')|float(0) }}"
+mode: single
+```
 
+Et une deuxième automatisation pour effectuer le calcul de consommation nocturne et le stocker dans `input_text.eau_froide_conso_fin_nuit` (ici à 7h du matin) :
 
+```
+alias: Eau froide - conso nuit - calcul fin
+description: ""
+trigger:
+  - platform: time
+    at: "07:00:00"
+condition: []
+action:
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.eau_froide_conso_fin_nuit
+    data:
+      value: >-
+        {% set vol = (states('sensor.eau_froide_annuel')|float(0) -
+        states('input_text.eau_froide_compteur_debut_nuit')|float(0)) * 1000 %}
+        {%- if vol < 100 -%}
+          {{ vol | round(2) }}
+        {%- else -%}
+          {{ vol | round(0) }}
+        {%- endif -%}
+mode: single
+```
 
+Reste ensuite à afficher cette valeur dans le dashboard pour contrôle. On en profite pour afficher ici également le compteur qui permettra de vérifier que Home Assistant reporte bien la valeur du compteur d'eau.
+
+```
+type: entities
+entities:
+  - entity: sensor.eau_froide_conso_nuit
+    name: Consommation nuit dernière
+    icon: mdi:faucet
+  - entity: sensor.eau_froide_annuel
+    name: Consommation totale sur l'année
+    secondary_info: none
+```
+
+Ce qui devrait vous donner ce 
+
+![](img/consommation.jpg)
+Attention, si vous avez un chauffe-eau électrique, il est normal d'avoir un léger écoulement sur la soupape de sécurité. qui est de l'ordre de 0.25L à 0.5L. Et bien entendu, si quelqu'un tire la chasse d'eau ou va boire un coup, la mesure sera immédiatement faussée.
 
 
 
