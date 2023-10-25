@@ -444,6 +444,18 @@ entities:
     secondary_info: none
 ```
 
+## Pour aller plus loin
+
+Nous avons vu comme avoir la liste des tirages. Pour aller plus loin, il serait possible d'identifier quel appareil a tiré de l'eau en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
+
+
+
+
+
+
+
+
+
 
 
 
