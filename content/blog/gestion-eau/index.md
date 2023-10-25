@@ -434,8 +434,24 @@ Nous avons vu comme avoir la liste des tirages. Pour aller plus loin, il serait 
 
 Certes, on pourrait utiliser le l'IA. Mais Home Assistant fournit un sensor extrémement puissant, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
 
-Le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/) permet de spécifier une liste d'événements (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes de quelque chose : le tirage d'eau d'une douche ou d'une chasse d'eau.
+Le bayesian sensor permet de spécifier une liste d'états (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes d'un évenement : le tirage d'eau d'une douche ou d'une chasse d'eau typiquement.
 
-Ainsi, il serait possible de créer autant de bayesian sesor que l'on a
+Ainsi, il serait possible de créer autant de bayesian sensor que de source de tirage (douche, toilettes…). Chaque baysian sensor deviendrait vrai en fonction des pondérations sur les entités mises en entrées.
 
-calculer les probabilités de diverses causes hypothétiques à partir de l'observation d'événements connus. On
+Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant de maîtriser cette fonction à la fois puissance et méconnie de Home Assistant.
+
+## En conclusion
+
+Cet article permet de traiter au mieux l'important sujet de sa maîtrise de consommation d'eau. Vous cevriez en particulier pouvoir détecter un appareil qui a une consommation trop importante, et être averti d'une fuite comme une chasse d'eau ou le robinet extérieur qui est resté ouvert. 
+
+N'hésitez pas à faire vos commentaires ou suggestions d'améliorations.
+
+
+
+
+
+ 
+
+
+
+
