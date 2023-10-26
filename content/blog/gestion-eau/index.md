@@ -4,7 +4,7 @@ title: Gestion de sa consommation d'eau
 type: post
 visibleInCMS: true
 draft: false
-workflow: read
+workflow: published
 date: 2023-10-15
 lastmod: 2023-10-15
 image: img/accueil-eau.png
