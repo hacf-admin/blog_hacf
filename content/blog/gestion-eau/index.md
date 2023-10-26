@@ -7,10 +7,11 @@ draft: true
 workflow: read
 date: 2023-10-15
 lastmod: 2023-10-15
+image: img/accueil-eau.png
 description: >
   Maîtriser sa consommation d'eau est essentiel, d'autant dans le contexte de
-  pénurie. Cet article explore les solutions pour mettre en place un compteur
-  connecté, afficher les consommations et les coûts associés dans Home
+  pénurie actuel. Cet article explore les solutions pour mettre en place un
+  compteur connecté, afficher les consommations et les coûts associés dans Home
   Assistant, et détecter les éventuelles fuites.
 level: medium
 type_install: ""
@@ -430,7 +431,9 @@ entities:
 
 ## Pour aller plus loin
 
-Nous avons vu comme avoir la liste des tirages. Pour aller plus loin, il serait possible d'identifier quel appareil a tiré de l'eau en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
+Bien entendu, la suite logique serait de gèrer sa consommation d'eau chaude.
+
+Nous avons vu comme avoir la liste des tirages. Après le graal serait d'identifier quel appareil a tiré de l'eau en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
 
 Certes, on pourrait utiliser le l'IA. Mais Home Assistant fournit un sensor extrémement puissant, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
 
