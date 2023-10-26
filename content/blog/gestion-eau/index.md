@@ -24,7 +24,7 @@ tags:
   - esphome
 author: argonaute
 ---
-Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connection de son compteur par la prise téléinformation, des prises ou modules connectées ou tout être dispositif.
+Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connexion de son compteur par la prise télé-information, des prises ou modules connectées ou tout être dispositif.
 
 Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'est qui coule des jours, un robinet extérieur mal fermé, peut d'avérer lourd de conséquences.
 
@@ -32,7 +32,7 @@ Cet article explore les solutions pour connecter et exploiter un compteur d'eau.
 
 L'interface qui est implémentée permet de voir :
 
-- Le débit d'eau instantanné
+- Le débit d'eau instantané
 - Le pourcentage d'usage sur la dernière heure (100% si l'eau coule en permanence)
 - Les consommations et coûts par jours / mois / année
 - La consommation la nuit dernière
@@ -43,13 +43,13 @@ L'interface qui est implémentée permet de voir :
 
 ## Connecter son compteur
 
-La solution sera bien entendu différente suivant si vous être propriétaire ou locataire, suivant ou se situe le compteur de votre fournisseur, quel est son type, et ou arrive la conduite d'eau dans votre logement.
+La solution sera bien entendu différente suivant si vous êtes propriétaire ou locataire, suivant où se situe le compteur de votre fournisseur, quel est son type, et où arrive la conduite d'eau dans votre logement.
 
 ### Installer un compteur connecté
 
 Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur à l'intérieur de la maison, en aval de celui du fournisseur d'eau, mais avant le réducteur de pression.
 
-On ne plaisante pas avec l'eau, donc j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25l dans mon cas (mais il existe aussi en 1l / impulsion).
+On ne plaisante pas avec l'eau, ainsi, j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25 l dans mon cas (mais il existe aussi en 1l / impulsion).
 
 > ❣️ `C'est la solution que j'ai testée et que je recommande.`
 
@@ -57,7 +57,7 @@ On ne plaisante pas avec l'eau, donc j'ai préféré une marque italienne reconn
 
 Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
-[GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/ 0.25l) - 3/4p](https://www.domotique-store.fr/domotique/usages/mesure-de-consommation-energetique-domotique/mesure-de-consommation-d-eau/1009-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-1-imp-025-litre-34p.html)
+[GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/ 0.25 l) - 3/4p](https://www.domotique-store.fr/domotique/usages/mesure-de-consommation-energetique-domotique/mesure-de-consommation-d-eau/1009-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-1-imp-025-litre-34p.html)
 
 Il y a assez peu de compteurs connectés sur le marché. Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenté en 5v par contre, ce qui n'est pas forcément un problème car cette tension est disponible sur l'ESP.
 
@@ -67,15 +67,15 @@ Il y a assez peu de compteurs connectés sur le marché. Une alternative assez c
 
 ### Se connecter à un compteur existant
 
-Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques solutions de connextion à un compteur existant et références de personnes qui les ont implémentées :
+Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques solutions de connexion à un compteur existant et références de personnes qui les ont implémentées :
 
-- **Installer un capteur de proximité type LJ18A3** au dessus de la petite roue qui tourne (si celle ci est bien métallique) : c'est ce qui est proposé dans le [blog de Bujarra](https://www.bujarra.com/leyendo-el-contador-de-agua-de-casa-con-esphome-y-home-assistant/?lang=fr) (blog traduit en français)
-- **Capter les impultions radios** pour certains type de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
+- **Installer un capteur de proximité type LJ18A3** au-dessus de la petite roue qui tourne (si celle-ci est bien métallique) : c'est ce qui est proposé dans le [blog de Bujarra](https://www.bujarra.com/leyendo-el-contador-de-agua-de-casa-con-esphome-y-home-assistant/?lang=fr) (blog traduit en français)
+- **Capter les impultions radios** pour certains types de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
 - **Mettre une caméra ESPCam avec de l'IA** pour lire le compteur, proposé par GammaTronniques : [Suivre sa consommation d'eau avec Home Assistant](https://www.youtube.com/watch?v=1uwoAWvP6f8)
 
 ## Intégration avec ESPHome
 
-Le compteur fourni des impulsions (1 tous les 0.25 litres dans notre cas) qu'il faut maintenant traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
+Le compteur fourni des impulsions (1 tous les 0.25 litre dans notre cas) qu'il faut maintenant traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
 
 ![](img/esp32.jpg)
 Ci-dessus l'ESP32 soudé sur une plaque de prototypage, avec un connecteur pour relier le compteur, et dans un boitier à imprimer en 3D que vous pouvez retrouver sur [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266).
@@ -125,14 +125,14 @@ sensor:
 
 2 entités vont être créées dans Home Assistant :
 
-- ***esp_eau_debit_eau_froide*** : mesure le **débit instantané**. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix : les débits faibles seront mesurés en effectuant des différences de compteurs sur de longues période, et donc pas avec l'entité débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
-- ***esp_eau_consommation_eau_froide*** : est une compteur em m3 qui calcul la consommation depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
+- ***esp_eau_debit_eau_froide*** : mesure le **débit instantané**. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix : les débits faibles seront mesurés en effectuant des différences de compteurs sur de longues périodes, et donc pas avec l'entité débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
+- ***esp_eau_consommation_eau_froide*** : est un compteur en m3 qui calcul la consommation depuis le dernier démarrage de l'ESP. Le filter là encore permet de faire la conversion.
 
 > **ℹ️ Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
 
-Pour tester notre compteur, je conseille d'afficher les 2 entités ***debit_eau_froide*** et ***consommation_eau_froide*** dans un dashboard de test sous Home Assistant. Le débit doit augmener quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter.
+Pour tester notre compteur, je conseille d'afficher les 2 entités ***debit_eau_froide*** et ***consommation_eau_froide*** dans un dashboard de test sous Home Assistant. Le débit doit augmenter quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter.
 
 Essayez de tirer un litre d'eau et vérifier que le compte s'incrémente correctement.
 
@@ -154,9 +154,9 @@ Certes, il peut être créé dans le fichier de configuration YAML, mais Home As
 
 Idéalement, je conseille de créer une vue dédiée à la gestion de l'eau.
 
-Ensuite, je propose d'utiliser le module **Energie**, qui gère aussi l'eau. Nous afficherons ensuite les très jolies cartes du modules Energie, mais en restraignant l'affichage à l'eau.
+Ensuite, je propose d'utiliser le module **Energie**, qui gère aussi l'eau. Nous afficherons ensuite les très jolies cartes du module Energie, mais en restraignant l'affichage à l'eau.
 
-Aller dans le menu sous `Paramètres` - `Tableaux de Bord` - `Energie` puis renseigner une source d'eau dans consommation d'eau. Préciser l'entité de consommation ***esp_eau_consommation_eau_froide*** (ou ***eau_froide_annuel***`` qui marche aussi) et renseignez un tarif (par exemple 4.2 €/m3, qui est le tarif ici à Annecy).
+Aller dans le menu sous `Paramètres` - `Tableaux de Bord` - `Energie` puis renseigner une source d'eau dans “consommation d'eau”. Préciser l'entité de consommation ***esp_eau_consommation_eau_froide*** (ou ***eau_froide_annuel***`` qui marche aussi) et renseignez un tarif (par exemple 4.2 €/m3, qui est le tarif ici à Annecy).
 
 Ensuite, insérer dans votre vue les cartes suivantes dans une `vertical card` :
 
@@ -175,7 +175,7 @@ Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans l
 
 ![](img/historique-avec-electricite.jpg)
 
-Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installer HACS, la bibliothèque de composants de la communauté HACS.
+Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installé HACS, la bibliothèque de composants de la communauté HACS.
 
 Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher **card-mod** et télécharger le. Raffraichissez ensuite votre navigateur.
 
@@ -218,15 +218,15 @@ Au final, nous nous retrouvons bien avec un graphique ne présentant que la cons
 
 ## Afficher les 50 derniers tirages
 
-Il est maintenant trés intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une l**iste avec les derniers tirages d'eau**.
+Il est maintenant très intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une l**iste avec les derniers tirages d'eau**.
 
 **Le principe est le suivant :** un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. A chaque passage du débit à 0 (fin d'un tirage), nous enregistrons la valeur du compteur. Puis quand le compteur repasse à 0 une nouvelle fois (fin d'un nouveau tirage), il suffit alors de faire la différence entre la valeur du compteur courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
 
-Nous allons utiliser un **capteur de seuil** pour savoir si il y a tirage ou non, et 2 variables (des `input_text`) pour mémoriser la valeur du compteur à chaque fin de tirage, ainsi que la valeur du dernier tirage.
+Nous allons utiliser un **capteur de seuil** pour savoir s'il y a tirage ou non, et 2 variables (des `input_text`) pour mémoriser la valeur du compteur à chaque fin de tirage, ainsi que la valeur du dernier tirage.
 
 Créer un capteur de seuil **eau_froide_tirage_actif** qui sera vrai (activé) quand de l'eau sera tirée et faux quand le débit d'eau sera à 0.
 
-Aller dans paramètres - appareils et services - entrées, créer un capteur de seuil,puis renseigner les infos suivantes :
+Aller dans paramètres - appareils et services - entrées, créer un capteur de seuil, puis renseigner les infos suivantes :
 
 - Nom : eau_froide_tirage_actif
 - Capteur d'entrée : sensor.esp_eau_debit_eau_froide
@@ -274,7 +274,7 @@ action:
 mode: single
 ```
 
-Si vous testez, vous devriez avoir dans le champs ***eau_froide_tirage*** un texte avec la valeur du dernier tirage en litres.
+Si vous testez, vous devriez avoir dans le champ ***eau_froide_tirage*** un texte avec la valeur du dernier tirage en litres.
 
 Il ne reste plus qu'à afficher la liste des tirages. Pour cela, nous allons télécharger un nouveau composant sous HACS appelé [Logbook Card](http://192.168.5.30:8123/hacs/repository/216008446).
 
@@ -301,7 +301,7 @@ Vous obtiendrez ainsi la liste de vos tirages d'eau, et pourrez mieux comprendre
 
 ## Détecter les fuites importantes
 
-**Si une chasse d'eau coule constamment par exemple, il est important d'être alerté**. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constament. Un usage de 0% signifie que l'eau ne coule pas (ou infiniement peu).
+**Si une chasse d'eau coule constamment par exemple, il est important d'être alerté**. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constamment. Un usage de 0% signifie que l'eau ne coule pas (ou infiniment peu).
 
 Rajouter dans votre fichier YAML un sensor ***eau_froide_ratio_usage*** de type history_stats, avec le code suivant, puis redémarrer Home Assistant
 
@@ -319,9 +319,9 @@ sensor:
 
 ```
 
-Vous aurez ainsi une entité ***eau_froide_ratio_usage*** vous donnant le % de temps pendant lequel de l'eau a coulée sur la dernière heure.
+Vous aurez ainsi une entité ***eau_froide_ratio_usage*** vous donnant le % de temps pendant lequel de l'eau a coulé sur la dernière heure.
 
-Reste à créer une automatisation qui enverra une notification si de l'eau a coulée pendant plus de 80% du temps sur la dernière heure (on peut mettre plus ou moins).
+Reste à créer une automatisation qui enverra une notification si de l'eau a coulé durant plus de 80% du temps sur la dernière heure (on peut mettre plus ou moins).
 
 Voici le code YAML de cette automatisation :
 
@@ -342,7 +342,7 @@ mode: single
 
 ```
 
-J'ai choisi d'utiliser une notification sur telegram. Voir l'article [Dialogue avec telegram](https://hacf.fr/blog/ha_integration_telegram/) pour mettre en place ce type de notifications. A défaut, vous pouvez utiliser les [notifications de home assistant.](https://www.home-assistant.io/integrations/notify/)
+J'ai choisi d'utiliser une notification sur Telegram. Voir l'article [Dialogue avec telegram](https://hacf.fr/blog/ha_integration_telegram/) pour mettre en place ce type de notifications. À défaut, vous pouvez utiliser les [notifications de home assistant.](https://www.home-assistant.io/integrations/notify/)
 
 Il est pratique d'afficher dans le dashboard, en début de la vue de gestion de l'eau, une carte qui présente le débit instantané et l'usage :
 
@@ -370,11 +370,11 @@ cards:
 
 ## Détecter les micro fuites
 
-Un robinet qui goutte est difficile à détecter. Le plus simple est de faire cette détection à un moment ou on n'est pas censé tirer de l'eau : **la nuit ou durant une absence**.
+Un robinet qui goutte est difficile à détecter. Le plus simple est de faire cette détection à un moment où on n'est pas censé tirer de l'eau : **la nuit ou durant une absence**.
 
-Personellement, je fais une mesure systématique la nuit. Pour cela, on mémorise la valeur du compteur d'eau en début de nuit (dans un input_text), et en fin de nuit on enregistre (dans un autre input_text) la différence entre la valeur courante du compteur et la valeur en début de nuit.
+Personnellement, je fais une mesure systématique la nuit. Pour cela, on mémorise la valeur du compteur d'eau en début de nuit (dans un input_text), et en fin de nuit, on enregistre (dans un autre input_text) la différence entre la valeur courante du compteur et la valeur en début de nuit.
 
-Pour cela, on créée 2 input_text :
+Pour cela, ont créé 2 input_text :
 
 - ***input_text.eau_froide_compteur_debut_nuit***
 - ***input_text.eau_froide_conso_fin_nuit***
@@ -443,17 +443,17 @@ entities:
 
 ## Pour aller plus loin
 
-Bien entendu, la suite logique serait de gèrer sa **consommation d'eau chaude**.
+Bien entendu, la suite logique serait de gérer sa **consommation d'eau chaude**.
 
-Nous avons vu comme avoir la liste des tirages. Après le graal serait **d'identifier et nommer quel appareil a tiré de l'eau** en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
+Nous avons vu comme avoir la liste des tirages. Après le Graal serait **d'identifier et nommer quel appareil a tiré de l'eau** en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
 
-Certes, on pourrait utiliser le l'IA avec une phase d'apprentissage. Mais Home Assistant fournit un sensor extrémement puissant et relativement méconnu, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
+Certes, on pourrait utiliser de l'IA avec une phase d'apprentissage. Mais Home Assistant fournit un sensor extrêmement puissant et relativement méconnu, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
 
-Le **bayesian sensor** permet de spécifier une liste d'états constatés (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes d'un évenement : le tirage d'eau d'une douche ou d'une chasse d'eau typiquement.
+Le **bayesian sensor** permet de spécifier une liste d'états constatés (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes d'un événement : le tirage d'eau d'une douche ou d'une chasse d'eau typiquement.
 
 Ainsi, il serait possible de créer autant de bayesian sensor que de source de tirage (douche, toilettes…). Chaque baysian sensor deviendrait vrai en fonction des pondérations sur les entités mises en entrées.
 
-Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant de maîtriser cette fonction à la fois puissance et méconnie de Home Assistant. Avis à ceux qui voudraient tester cela 😊
+Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant de maîtriser cette fonction à la fois puissante et méconnue de Home Assistant. Avis à ceux qui voudraient tester cela 😊
 
 ## En conclusion
 
