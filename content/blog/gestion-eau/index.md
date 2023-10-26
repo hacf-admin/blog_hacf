@@ -77,7 +77,10 @@ Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques s
 
 Le compteur fourni des impulsions (1 tous les 0.25 litres dans notre cas) qu'il faut maintenant traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
 
-Le raccordement est simple :
+![](img/esp32.jpg)
+Ci-dessus l'ESP32 soudé sur une plaque de prototypage, avec un connecteur pour relier le compteur, et dans un boitier à imprimer en 3D que vous pouvez retrouver sur [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266).
+
+Le raccordement est très simple :
 
 - GPIO25 connecté à une entrée du compteur
 - GND connecté à l'autre entrée
@@ -419,7 +422,7 @@ action:
 mode: single
 ```
 
-Reste ensuite à afficher la valeur contenue dans ***input_text.eau_froide_conso_fin_nuit*** dans le dashboard pour contrôle. 
+Reste ensuite à afficher la valeur contenue dans ***input_text.eau_froide_conso_fin_nuit*** dans le dashboard pour contrôle.
 
 On en profite pour afficher ici également le compteur ***sensor.eau_froide_annuel*** qui permettra de vérifier que Home Assistant reporte bien la valeur du compteur d'eau.
 
