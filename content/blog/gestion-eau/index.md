@@ -84,7 +84,7 @@ En prérequis, il faut avoir installé ESPHome et télécharger le code qui suit
 
 Ensuite créer un nouveau device esp-eau, rajoutez le code suivant et téléversé le sur votre ESP :
 
-```q
+```yaml
 switch:
   - platform: restart
     name: "esp_eau_reboot"
@@ -151,7 +151,7 @@ Aller dans le menu sous Paramètres - Tableaux de Bord - Energie puis renseigner
 
 Ensuite, insérer dans votre vue les cartes suivantes dans une `vertical card` :
 
-```
+```yaml
 type: vertical-stack
 title: Historique
 cards:
@@ -172,7 +172,7 @@ Si vous n'avez pas déja card-mod, allez sous HACS, cliquer “explorer et tél�
 
 `card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter le code javascript suivant :
 
-```
+```yaml
 type: vertical-stack
 title: Historique
 cards:
@@ -231,7 +231,7 @@ Enfin, créer un deuxième input_text appelé `**eau_froide_tirage**``` pour mé
 
 Créer ensuite une automatisation (sous paramètres - automatisations et scène) avec le code YAML suivant :
 
-```
+```yaml
 alias: Eau froide - enregistrement tirages
 description: ""
 trigger:
@@ -271,7 +271,7 @@ Il ne reste plus qu'à afficher la liste des tirages. Pour cela, nous allons té
 
 Insérer ensuite cette carte dans votre vue de gestion d'eau :
 
-```
+```yaml
 type: custom:logbook-card
 entity: input_text.eau_froide_tirage
 max_items: 50
@@ -296,7 +296,7 @@ Si une chasse d'eau coule constamment par exemple, il est important d'être aler
 
 Rajouter dans votre fichier YAML un sensor de type history_stats, avec le code suivant, puis redémarrer Home Assistant
 
-```
+```yaml
 sensor:
 # Ratio d'usage de l'eau sur la dernière heure
   - platform: history_stats
@@ -314,7 +314,7 @@ Vous aurez ainsi une entité `eau_froide_ratio_usage` vous donnant le % de temps
 
 Voici le code YAML de cette automatisation :
 
-```
+```yaml
 alias: Eau froide - alerte fuite
 description: ""
 trigger:
@@ -338,7 +338,7 @@ Il est pratique d'afficher dans le dashboard, en début de vue, une carte qui pr
 ![](img/debit-usage.jpg)
 Voici le code de la carte :
 
-```
+```yaml
 type: horizontal-stack
 cards:
   - type: gauge
@@ -371,7 +371,7 @@ Pour cela, on créée 2 input_text :
 
 On crée une première automatisation pour mémoriser la valeur du compteur en début de nuit (ici à 1h du matin), et le stocker dans `input_text.eau_froide_compteur_debut_nuit` :
 
-```
+```yaml
 alias: Eau froide - conso nuit - enregistrement debut
 description: ""
 trigger:
@@ -389,7 +389,7 @@ mode: single
 
 Et une deuxième automatisation pour effectuer le calcul de consommation nocturne et le stocker dans `input_text.eau_froide_conso_fin_nuit` (ici à 7h du matin) :
 
-```
+```yaml
 alias: Eau froide - conso nuit - calcul fin
 description: ""
 trigger:
@@ -418,7 +418,7 @@ Reste ensuite à afficher cette valeur dans le dashboard pour contrôle. On en p
 
 Voici le code de la carte :
 
-```
+```yaml
 type: entities
 entities:
   - entity: sensor.eau_froide_conso_nuit
