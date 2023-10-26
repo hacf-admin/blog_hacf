@@ -3,16 +3,16 @@ path: gestion-eau
 title: Gestion de sa consommation d'eau
 type: post
 visibleInCMS: true
-draft: false
-workflow: published
+draft: true
+workflow: read
 date: 2023-10-15
 lastmod: 2023-10-15
 image: img/accueil-eau.png
 description: >
   Maîtriser sa consommation d'eau est essentiel, et d'autant plus dans le
-  contexte de pénurie actuel et d'inflation. Cet article explore les solutions
-  pour mettre en place un compteur connecté, afficher les consommations et les
-  coûts associés dans Home Assistant, et détecter les éventuelles fuites.
+  contexte de pénurie actuel et d'inflation. Cet article présente des solutions
+  pour mettre en place un compteur connecté, afficher ses consommations d'eau et
+  coûts associés dans Home Assistant, et enfin détecter les éventuelles fuites.
 level: medium
 type_install: ""
 categories:
@@ -26,7 +26,7 @@ author: argonaute
 ---
 Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connexion de son compteur par la prise télé-information, des prises ou modules connectées ou tout être dispositif.
 
-Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'est qui coule des jours, un robinet extérieur mal fermé, peut d'avérer lourd de conséquences.
+Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'eau qui coule des jours, un robinet extérieur mal fermé, peut d'avérer lourd de conséquences.
 
 Cet article explore les solutions pour connecter et exploiter un compteur d'eau. Nous détaillerons une solution avec un compteur à impulsion **Gianola** et un **ESP32**. Enfin, nous verrons comment afficher les **consommations et les coûts** associés, comprendre les **origines des tirages d'eau**, et **détecter les éventuelles fuites**.
 
@@ -179,7 +179,7 @@ Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes
 
 Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher **card-mod** et télécharger le. Raffraichissez ensuite votre navigateur.
 
-`**card-mod**` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter alors le code javascript suivant :
+`card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter alors le code javascript suivant :
 
 ```yaml
 type: vertical-stack
