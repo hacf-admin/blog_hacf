@@ -9,10 +9,10 @@ date: 2023-10-15
 lastmod: 2023-10-15
 image: img/accueil-eau.png
 description: >
-  Maîtriser sa consommation d'eau est essentiel, d'autant dans le contexte de
-  pénurie actuel. Cet article explore les solutions pour mettre en place un
-  compteur connecté, afficher les consommations et les coûts associés dans Home
-  Assistant, et détecter les éventuelles fuites.
+  Maîtriser sa consommation d'eau est essentiel, et d'autant plus dans le
+  contexte de pénurie actuel et d'inflation. Cet article explore les solutions
+  pour mettre en place un compteur connecté, afficher les consommations et les
+  coûts associés dans Home Assistant, et détecter les éventuelles fuites.
 level: medium
 type_install: ""
 categories:
@@ -26,9 +26,9 @@ author: argonaute
 ---
 Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connection de son compteur par la prise téléinformation, des prises ou modules connectées ou tout être dispositif.
 
-Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'est qui coule des jours, peut d'avérer très génant.
+Mais **maîtriser sa consommation d'eau** est bien autant essentiel, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'est qui coule des jours, un robinet extérieur mal fermé, peut d'avérer lourd de conséquences.
 
-Cet article explore les solutions pour mettre en place un compteur connecté. Nous détaillerons une solution avec un compteur à impulsion **Gianola** et un **ESP32**. Enfin, nous verrons comment afficher les consommations et les coûts associés, et **détecter les éventuelles fuites**.
+Cet article explore les solutions pour connecter et exploiter un compteur d'eau. Nous détaillerons une solution avec un compteur à impulsion **Gianola** et un **ESP32**. Enfin, nous verrons comment afficher les **consommations et les coûts** associés, comprendre les **origines des tirages d'eau**, et **détecter les éventuelles fuites**.
 
 L'interface qui est implémentée permet de voir :
 
@@ -43,33 +43,39 @@ L'interface qui est implémentée permet de voir :
 
 ## Connecter son compteur
 
-La solution sera différente suivant si vous être propriétaire ou locataire, suivant ou se situe le compteur de votre fournisseur, quel est son type, et ou arrive la conduite d'eau.
+La solution sera bien entendu différente suivant si vous être propriétaire ou locataire, suivant ou se situe le compteur de votre fournisseur, quel est son type, et ou arrive la conduite d'eau dans votre logement.
 
 ### Installer un compteur connecté
 
-Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur à l'intérieur de la maison, en aval de celui du fournisseur d'eau.
+Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur à l'intérieur de la maison, en aval de celui du fournisseur d'eau, mais avant le réducteur de pression.
 
 On ne plaisante pas avec l'eau, donc j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25l dans mon cas (mais il existe aussi en 1l / impulsion).
 
-> `C'est la solution que j'ai testée et que je recommande.`
+> ❣️ `C'est la solution que j'ai testée et que je recommande.`
 
 ![](img/compteur-gianola.jpg)
 
 Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
-[GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/litre) - 3/4p](https://www.domotique-store.fr/domotique/modules-domotiques/detecteurs-capteurs-mesure/mesure-de-consommation-d-eau/434-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-34p-1-implitre.html)
+[GIOANOLA - Compteur d'eau avec sortie contact sec pour comptage d'impulsion (1 imp/ 0.25l) - 3/4p](https://www.domotique-store.fr/domotique/usages/mesure-de-consommation-energetique-domotique/mesure-de-consommation-d-eau/1009-gioanola-compteur-d-eau-avec-sortie-contact-sec-pour-comptage-d-impulsion-1-imp-025-litre-34p.html)
 
-Il y a assez peu de compteurs connectés sur le marché. Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenté en 5v par contre, ce qui n'est pas forcément un problème. N'ayant pas moi même testé cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix non CE acheté en Chine.
+Il y a assez peu de compteurs connectés sur le marché. Une alternative assez courante est d'utiliser un compteur à effet hall. Lui aura besoin d'être alimenté en 5v par contre, ce qui n'est pas forcément un problème car cette tension est disponible sur l'ESP.
+
+> ⚠️ N'ayant pas moi même testé cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix non CE acheté en Chine.
+
+
+
+
 
 ![Compteur effet hall](img/compteur-effet-hall.jpg)
 
 ### Se connecter à un compteur existant
 
-Beaucoup ne pourront ou voudront un nouveau compteur. Voici quelques solutions et références de personnes qui les ont implémentées :
+Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques solutions de connextion à un compteur existant et références de personnes qui les ont implémentées :
 
-- Installer un capteur de proximité type LJ18A3 au dessus de la petite roue qui tourne (si celle ci est bien métallique) : c'est ce qui est proposé dans le [blog de Bujarra](https://www.bujarra.com/leyendo-el-contador-de-agua-de-casa-con-esphome-y-home-assistant/?lang=fr) (blog traduit en français)
-- Capter les impultions radios pour certains type de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
-- Mettre une caméra ESPCam avec de l'IA pour lire le compteur, proposé par GammaTronniques : [Suivre sa consommation d'eau avec Home Assistant](https://www.youtube.com/watch?v=1uwoAWvP6f8)
+- **Installer un capteur de proximité type LJ18A3** au dessus de la petite roue qui tourne (si celle ci est bien métallique) : c'est ce qui est proposé dans le [blog de Bujarra](https://www.bujarra.com/leyendo-el-contador-de-agua-de-casa-con-esphome-y-home-assistant/?lang=fr) (blog traduit en français)
+- **Capter les impultions radios** pour certains type de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
+- **Mettre une caméra ESPCam avec de l'IA** pour lire le compteur, proposé par GammaTronniques : [Suivre sa consommation d'eau avec Home Assistant](https://www.youtube.com/watch?v=1uwoAWvP6f8)
 
 ## Intégration avec ESPHome
 
@@ -80,9 +86,9 @@ Le raccordement est simple :
 - GPIO25 connecté à une entrée du compteur
 - GND connecté à l'autre entrée
 
-En prérequis, il faut avoir installé ESPHome et télécharger le code qui suit. Pour cela, je vous renvoie à l'article sur ESPHome : [Vos premiers pas avec ESPHome](https://hacf.fr/blog/esphome-introduction/).
+En prérequis, il faut avoir installé ESPHome et téléchargé le code qui suit. Pour cela, je vous renvoie à l'article sur ESPHome : [Vos premiers pas avec ESPHome](https://hacf.fr/blog/esphome-introduction/).
 
-Ensuite créer un nouveau device esp-eau, rajoutez le code suivant et téléversé le sur votre ESP :
+Ensuite créer un nouveau device `esp-eau`, rajoutez le code suivant et téléversé le sur votre ESP :
 
 ```yaml
 switch:
