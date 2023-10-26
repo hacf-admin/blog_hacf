@@ -63,10 +63,6 @@ Il y a assez peu de compteurs connectés sur le marché. Une alternative assez c
 
 > ⚠️ N'ayant pas moi même testé cette solution, je ne peux conseiller un modèle, mais évitez un modèle premier prix non CE acheté en Chine.
 
-
-
-
-
 ![Compteur effet hall](img/compteur-effet-hall.jpg)
 
 ### Se connecter à un compteur existant
@@ -79,7 +75,7 @@ Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques s
 
 ## Intégration avec ESPHome
 
-Le compteur fourni des impulsions (1 tous les 0.25 litres dans notre cas), et il faut maintenant les traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
+Le compteur fourni des impulsions (1 tous les 0.25 litres dans notre cas) qu'il faut maintenant traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
 
 Le raccordement est simple :
 
@@ -88,7 +84,7 @@ Le raccordement est simple :
 
 En prérequis, il faut avoir installé ESPHome et téléchargé le code qui suit. Pour cela, je vous renvoie à l'article sur ESPHome : [Vos premiers pas avec ESPHome](https://hacf.fr/blog/esphome-introduction/).
 
-Ensuite créer un nouveau device `esp-eau`, rajoutez le code suivant et téléversé le sur votre ESP :
+Ensuite créer un nouveau device ***esp-eau***, rajoutez le code suivant et téléversé le sur votre ESP :
 
 ```yaml
 switch:
@@ -126,22 +122,28 @@ sensor:
 
 2 entités vont être créées dans Home Assistant :
 
-- esp_eau_debit_eau_froide : mesure le débit instantané. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix et le débit faibles seront mesurés en faisant des différences de compteur sur de longues période, pas avec le débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
-- esp_eau_consommation_eau_froide : est une compteur em m3 qui calcul la consommation  depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
+- ***esp_eau_debit_eau_froide*** : mesure le **débit instantané**. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix : les débits faibles seront mesurés en effectuant des différences de compteurs sur de longues période, et donc pas avec l'entité débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
+- ***esp_eau_consommation_eau_froide*** : est une compteur em m3 qui calcul la consommation depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
 
-> **Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
+
+
+
+
+> **ℹ️ Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
 
-Pour tester notre compteur, afficher les 2 entités debit_eau_froide et consommation_eau_froide dans un dashboard de test sous Home Assistant. Le débit doit augmener quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter. Essayez de tirer un litre d'eau et vérifier que le compte s'incrémente correctement.
+Pour tester notre compteur, je conseille d'afficher les 2 entités ***debit_eau_froide*** et ***consommation_eau_froide*** dans un dashboard de test sous Home Assistant. Le débit doit augmener quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter.
+
+Essayez de tirer un litre d'eau et vérifier que le compte s'incrémente correctement.
 
 ## Gestion de la consommation sous HA
 
 ### Compteur de la consommation annuelle
 
-Le compteur ramené par ESPHome sera remis à 0 chaque fois que l'ESP redémarre. Pour éviter cela et avoir un compteur qui s'incrémente toujours, nous devons utiliser un [utility meter](https://www.home-assistant.io/integrations/utility_meter/).
+Le compteur exposé par ESPHome sous Home Assistant sera remis à 0 chaque fois que l'ESP redémarre. Pour éviter cela et avoir un compteur qui s'incrémente toujours, nous devons utiliser un [utility meter](https://www.home-assistant.io/integrations/utility_meter/).
 
-Certes, il peut être créé dans le fichier de configuration YAML, mais Home Assistant permet l'utilisation de helper : aller dans `Paramètres` - `Appareils` et `Services` - `Entrées` puis créer un `Compteur de Services` appelé `eau_froide_annuel.`
+Certes, il peut être créé dans le fichier de configuration YAML, mais Home Assistant permet l'utilisation de helper : aller dans `Paramètres` - `Appareils` et `Services` - `Entrées` puis créer un `Compteur de Services` appelé ***eau_froide_annuel***`.`
 
 - ID de l'entité : `eau_froide_annuel`
 - `Nom : consommation eau froide annuelle`
@@ -151,9 +153,11 @@ Certes, il peut être créé dans le fichier de configuration YAML, mais Home As
 
 ### Affichage dans un graphique
 
-Idéalement créer une vue dédiée à la gestion de l'eau. Pour cela, nous proposons d'utiliser le module energie, qui gère aussi l'eau.
+Idéalement, je conseille de créer une vue dédiée à la gestion de l'eau.
 
-Aller dans le menu sous Paramètres - Tableaux de Bord - Energie puis renseigner une source d'eau dans consommation d'eau. Préciser l'entité de consommation esp_eau_consommation_eau_froide et renseignez un tarif (par exemple 4.2 €/m3).
+Ensuite, je propose d'utiliser le module **Energie**, qui gère aussi l'eau. Nous afficherons ensuite les très jolies cartes du modules Energie, mais en restraignant l'affichage à l'eau.
+
+Aller dans le menu sous `Paramètres` - `Tableaux de Bord` - `Energie` puis renseigner une source d'eau dans consommation d'eau. Préciser l'entité de consommation ***esp_eau_consommation_eau_froide*** (ou ***eau_froide_annuel***`` qui marche aussi) et renseignez un tarif (par exemple 4.2 €/m3, qui est le tarif ici à Annecy).
 
 Ensuite, insérer dans votre vue les cartes suivantes dans une `vertical card` :
 
@@ -168,15 +172,15 @@ cards:
 
 Vous devez alors obtenir un graphique qui vous donne la gestion de l'eau.
 
-Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la troisième carte (source-tab), si vous utilisez le module Energy pour l'électricité, vous aurez aussi les données relatives à l'électricité.
+Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la troisième carte (`source-tab`), si vous utilisez le module Energie pour l'électricité, vous aurez aussi les données relatives à l'électricité.
 
 ![](img/historique-avec-electricite.jpg)
 
 Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installer HACS, la bibliothèque de composants de la communauté HACS.
 
-Si vous n'avez pas déja card-mod, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher `card-mod` et télécharger le. Raffraichissez ensuite votre navigateur.
+Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher **card-mod** et télécharger le. Raffraichissez ensuite votre navigateur.
 
-`card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter le code javascript suivant :
+`**card-mod**` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter alors le code javascript suivant :
 
 ```yaml
 type: vertical-stack
@@ -205,21 +209,21 @@ cards:
 
 ```
 
-Le paramètre tr:nth-child(1) indique la ligne à supprimer. Dans mon cas, j'ai supprimé la ligne 1, 2, 3, 5 et 6.
+**Le paramètre tr:nth-child(1) indique la ligne à supprimer**. Dans mon cas, j'ai supprimé la ligne 1, 2, 3, 5 et 6. Les lignes à supprimer peuvent être différentes chez vous.
 
 Au final, nous nous retrouvons bien avec un graphique ne présentant que la consommation d'eau.
 
 ![](img/graphique-final.jpg)
 
-> IMPORTANT - Si vous avez une autre vue avec l'électricité et que vous ne vouliez pas mélanger avec l'eau, il faudra appliquer le même principe.
+> ⚠️ **IMPORTANT** - Si vous avez une autre vue avec l'électricité et que vous ne voulez pas mélanger avec l'eau, il vous faudra appliquer le même principe.
 
 ## Afficher les 50 derniers tirages
 
-Il est maintenant trés intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une liste avec les derniers tirages d'eau.
+Il est maintenant trés intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une l**iste avec les derniers tirages d'eau**.
 
-Le principe est le suivant : un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. Il suffit alors de faire la différence entre la valeur du compteur courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
+**Le principe est le suivant :** un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. A chaque passage du débit à 0 (fin d'un tirage), nous enregistrons la valeur du compteur. Puis quand le compteur repasse à 0 une nouvelle fois (fin d'un nouveau tirage), il suffit alors de faire la différence entre la valeur du compteur courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
 
-Nous utiliser un capteur de seuil pour savoir si il y a tirage ou non, et 2 variables (des `input_text`) pour mémoriser la valeur du compteur à chaque fin de tirage, et la valeur du dernier tirage.
+Nous allons utiliser un **capteur de seuil** pour savoir si il y a tirage ou non, et 2 variables (des `input_text`) pour mémoriser la valeur du compteur à chaque fin de tirage, ainsi que la valeur du dernier tirage.
 
 Créer un capteur de seuil **eau_froide_tirage_actif** qui sera vrai (activé) quand de l'eau sera tirée et faux quand le débit d'eau sera à 0.
 
@@ -231,9 +235,9 @@ Aller dans paramètres - appareils et services - entrées, créer un capteur de 
 - Type : upper
 - Upper : 0.2
 
-Créer ensuite un input_text appelé `**eau_froide_memo**` pour mémoriser la valeur du compteur entre chaque tirage.
+Créer ensuite un input_text appelé ***eau_froide_memo*** pour mémoriser la valeur du compteur entre chaque tirage.
 
-Enfin, créer un deuxième input_text appelé `**eau_froide_tirage**``` pour mémoriser la valeur du dernier tirage.
+Enfin, créer un deuxième input_text appelé ***eau_froide_tirage*** pour mémoriser la valeur du dernier tirage.
 
 Créer ensuite une automatisation (sous paramètres - automatisations et scène) avec le code YAML suivant :
 
@@ -271,7 +275,7 @@ action:
 mode: single
 ```
 
-Si vous testez, vous devriez avoir dans le champs `**eau_froide_tirage**` un texte avec la valeur du dernier tirage.
+Si vous testez, vous devriez avoir dans le champs ***eau_froide_tirage*** un texte avec la valeur du dernier tirage en litres.
 
 Il ne reste plus qu'à afficher la liste des tirages. Pour cela, nous allons télécharger un nouveau composant sous HACS appelé [Logbook Card](http://192.168.5.30:8123/hacs/repository/216008446).
 
@@ -292,15 +296,15 @@ title: Derniers tirages
 no_event: Aucun
 ```
 
-Vous obtiendrez ainsi la liste de vos tirages d'eau, et mieux comprendre quelle est la source et le volume de consommation.
+Vous obtiendrez ainsi la liste de vos tirages d'eau, et pourrez mieux comprendre quelle est la source d'un tirage et le volume d'eau ponctuellement consommée.
 
 ![](img/tirages-eau.jpg)
 
 ## Détecter les fuites importantes
 
-Si une chasse d'eau coule constamment par exemple, il est important d'être alerté. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constament. Un usage de 0% signifie que l'eau ne coule pas (ou infiniement peu).
+**Si une chasse d'eau coule constamment par exemple, il est important d'être alerté**. Pour cela, nous allons calculer l'usage de l'eau sur la dernière heure. Un usage de 100% signifie que l'eau coule constament. Un usage de 0% signifie que l'eau ne coule pas (ou infiniement peu).
 
-Rajouter dans votre fichier YAML un sensor de type history_stats, avec le code suivant, puis redémarrer Home Assistant
+Rajouter dans votre fichier YAML un sensor ***eau_froide_ratio_usage*** de type history_stats, avec le code suivant, puis redémarrer Home Assistant
 
 ```yaml
 sensor:
@@ -316,7 +320,9 @@ sensor:
 
 ```
 
-Vous aurez ainsi une entité `eau_froide_ratio_usage` vous donnant le % de temps pendant lequel de l'eau a coulée sur la dernière heure. Reste à créer une automatisation qui enverra une notification si  de l'eau a coulée pendant plus de 80% du temps sur la dernière heure.
+Vous aurez ainsi une entité ***eau_froide_ratio_usage*** vous donnant le % de temps pendant lequel de l'eau a coulée sur la dernière heure.
+
+Reste à créer une automatisation qui enverra une notification si de l'eau a coulée pendant plus de 80% du temps sur la dernière heure (on peut mettre plus ou moins).
 
 Voici le code YAML de cette automatisation :
 
@@ -339,10 +345,9 @@ mode: single
 
 J'ai choisi d'utiliser une notification sur telegram. Voir l'article [Dialogue avec telegram](https://hacf.fr/blog/ha_integration_telegram/) pour mettre en place ce type de notifications. A défaut, vous pouvez utiliser les [notifications de home assistant.](https://www.home-assistant.io/integrations/notify/)
 
-Il est pratique d'afficher dans le dashboard, en début de vue, une carte qui présente le débit instantané et l'usage :
+Il est pratique d'afficher dans le dashboard, en début de la vue de gestion de l'eau, une carte qui présente le débit instantané et l'usage :
 
 ![](img/debit-usage.jpg)
-Voici le code de la carte :
 
 ```yaml
 type: horizontal-stack
