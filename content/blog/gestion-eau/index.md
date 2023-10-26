@@ -125,10 +125,6 @@ sensor:
 - ***esp_eau_debit_eau_froide*** : mesure le **débit instantané**. Si au bout de 4s il n'y a plus d'impulsion le débit se met à 0. C'est un choix : les débits faibles seront mesurés en effectuant des différences de compteurs sur de longues période, et donc pas avec l'entité débit. Un `filter` permet de multiplier la valeur pas 4 pour obtenir des litres/mn (nous avons 1 impulsion tous les 0.25l).
 - ***esp_eau_consommation_eau_froide*** : est une compteur em m3 qui calcul la consommation depuis le dernier démarrage de l'ESP. Le filter la encore permet de faire la conversion.
 
-
-
-
-
 > **ℹ️ Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
@@ -371,16 +367,16 @@ cards:
 
 ## Détecter les micro fuites
 
-Un robinet qui goutte est difficile à détecter. Le plus simple est de faire cette détection la nuit, quand on n'est pas censé tirer de l'eau : la nuit ou durant une absence.
+Un robinet qui goutte est difficile à détecter. Le plus simple est de faire cette détection à un moment ou on n'est pas censé tirer de l'eau : **la nuit ou durant une absence**.
 
-Personellement, je fais une mesure systématique la nuit. Pour cela, on mémorise la valeur du compteur d'eau en début de nuit (dans un input_text), et en fin de nuit on enregistre (dans un autre input_text) la différence entre la valeur courante du compteur et  la valeur en début de nuit.
+Personellement, je fais une mesure systématique la nuit. Pour cela, on mémorise la valeur du compteur d'eau en début de nuit (dans un input_text), et en fin de nuit on enregistre (dans un autre input_text) la différence entre la valeur courante du compteur et la valeur en début de nuit.
 
 Pour cela, on créée 2 input_text :
 
-- input_text.eau_froide_compteur_debut_nuit
-- input_text.eau_froide_conso_fin_nuit
+- ***input_text.eau_froide_compteur_debut_nuit***
+- ***input_text.eau_froide_conso_fin_nuit***
 
-On crée une première automatisation pour mémoriser la valeur du compteur en début de nuit (ici à 1h du matin), et le stocker dans `input_text.eau_froide_compteur_debut_nuit` :
+Créer une première automatisation pour mémoriser la valeur du compteur en début de nuit (ici à 1h du matin), et le stocker dans ***input_text.eau_froide_compteur_debut_nuit*** :
 
 ```yaml
 alias: Eau froide - conso nuit - enregistrement debut
@@ -398,7 +394,7 @@ action:
 mode: single
 ```
 
-Et une deuxième automatisation pour effectuer le calcul de consommation nocturne et le stocker dans `input_text.eau_froide_conso_fin_nuit` (ici à 7h du matin) :
+Et enfin créer une deuxième automatisation pour effectuer le calcul de consommation nocturne et le stocker dans ***input_text.eau_froide_conso_fin_nuit*** (ici à 7h du matin) :
 
 ```yaml
 alias: Eau froide - conso nuit - calcul fin
@@ -423,7 +419,9 @@ action:
 mode: single
 ```
 
-Reste ensuite à afficher cette valeur dans le dashboard pour contrôle. On en profite pour afficher ici également le compteur qui permettra de vérifier que Home Assistant reporte bien la valeur du compteur d'eau.
+Reste ensuite à afficher la valeur contenue dans ***input_text.eau_froide_conso_fin_nuit*** dans le dashboard pour contrôle. 
+
+On en profite pour afficher ici également le compteur ***sensor.eau_froide_annuel*** qui permettra de vérifier que Home Assistant reporte bien la valeur du compteur d'eau.
 
 ![](img/consommation.jpg)
 
@@ -442,20 +440,20 @@ entities:
 
 ## Pour aller plus loin
 
-Bien entendu, la suite logique serait de gèrer sa consommation d'eau chaude.
+Bien entendu, la suite logique serait de gèrer sa **consommation d'eau chaude**.
 
-Nous avons vu comme avoir la liste des tirages. Après le graal serait d'identifier quel appareil a tiré de l'eau en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
+Nous avons vu comme avoir la liste des tirages. Après le graal serait **d'identifier et nommer quel appareil a tiré de l'eau** en fonction du débit, du volume et éventuellement de capteurs supplémentaires : prise sur la machine à laver, capteur de lumière dans les toilettes, capteur de présence dans la salle de bain, heure de la journée….
 
-Certes, on pourrait utiliser le l'IA. Mais Home Assistant fournit un sensor extrémement puissant, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
+Certes, on pourrait utiliser le l'IA avec une phase d'apprentissage. Mais Home Assistant fournit un sensor extrémement puissant et relativement méconnu, le [bayesian sensor](https://www.home-assistant.io/integrations/bayesian/).
 
-Le bayesian sensor permet de spécifier une liste d'états (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes d'un évenement : le tirage d'eau d'une douche ou d'une chasse d'eau typiquement.
+Le **bayesian sensor** permet de spécifier une liste d'états constatés (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes d'un évenement : le tirage d'eau d'une douche ou d'une chasse d'eau typiquement.
 
 Ainsi, il serait possible de créer autant de bayesian sensor que de source de tirage (douche, toilettes…). Chaque baysian sensor deviendrait vrai en fonction des pondérations sur les entités mises en entrées.
 
-Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant de maîtriser cette fonction à la fois puissance et méconnie de Home Assistant.
+Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant de maîtriser cette fonction à la fois puissance et méconnie de Home Assistant. Avis à ceux qui voudraient tester cela 😊
 
 ## En conclusion
 
-Cet article permet de traiter au mieux l'important sujet de sa maîtrise de consommation d'eau. Vous cevriez en particulier pouvoir détecter un appareil qui a une consommation trop importante, et être averti d'une fuite comme une chasse d'eau ou le robinet extérieur qui est resté ouvert.
+Cet article permet de traiter au mieux l'important sujet de sa **maîtrise de consommation d'eau**. Vous devriez en particulier pouvoir détecter un appareil qui a une consommation trop importante, et être averti d'une fuite comme une chasse d'eau ou le robinet extérieur qui est resté ouvert.
 
-N'hésitez pas à faire vos commentaires ou suggestions d'améliorations.
+N'hésitez pas à faire vos commentaires ou vos suggestions d'améliorations.
