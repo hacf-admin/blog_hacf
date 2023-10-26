@@ -79,6 +79,8 @@ Le compteur fourni des impulsions (1 tous les 0.25 litre dans notre cas) qu'il f
 
 ![ESP32](img/esp32.jpg)
 
+L'ESP32 présenté ici est soudé sur une plaque de prototypage avec un connecteur pour raccorder le compteur. Le tout est installé dans un boitier imprimé en 3D, qui peut être retrouvé sur cult3d : [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266)
+
 Le raccordement est très simple :
 
 - GPIO25 connecté à une entrée du compteur
