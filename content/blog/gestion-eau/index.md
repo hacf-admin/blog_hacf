@@ -53,7 +53,7 @@ On ne plaisante pas avec l'eau, ainsi, j'ai préféré une marque italienne reco
 
 > ❣️ `C'est la solution que j'ai testée et que je recommande.`
 
-![](img/compteur-gianola.jpg)
+![](img/compteur_gianola.jpg)
 
 Vous pouvez trouver ce compteur chez des fournisseurs comme Domadoo :
 
@@ -77,8 +77,7 @@ Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques s
 
 Le compteur fourni des impulsions (1 tous les 0.25 litre dans notre cas) qu'il faut maintenant traiter. Pour cela, nous utilisons un ESP32 alimenté par sa prise USB.
 
-![](img/esp32.jpg)
-Ci-dessus l'ESP32 soudé sur une plaque de prototypage, avec un connecteur pour relier le compteur, et dans un boitier à imprimer en 3D que vous pouvez retrouver sur [Boitier ESP32 sur Cult3d](https://cults3d.com/fr/mod%C3%A8le-3d/outil/box-for-esp32-or-esp8266).
+![ESP32](img/esp32.jpg)
 
 Le raccordement est très simple :
 
