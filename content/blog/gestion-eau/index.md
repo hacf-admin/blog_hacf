@@ -127,11 +127,11 @@ sensor:
 2 entités vont être créées dans Home Assistant :
 
 - ***esp_eau_debit_eau_froide*** : mesure le **débit instantané**. Si au bout de 4s il n'y a plus d'impulsion le débit se remet à 0. C'est un choix : les débits faibles seront mesurés en effectuant des différences de mesures sur de longues périodes, et donc pas avec l'entité débit. Un `filter` permet de multiplier la valeur par 4 pour obtenir des litres/mn (pour mémoire, nous avons 1 impulsion tous les 0.25l).
-- ***esp_eau_consommation_eau_froide*** : est un compteur en m3 qui calcul la consommation depuis le dernier démarrage de l'ESP. Le filter là encore permet de faire la conversion.
+- ***esp_eau_consommation_eau_froide*** : est un compteur en m3 qui calcule la consommation depuis le dernier démarrage de l'ESP. Le filter là encore permet de faire la conversion.
 
 > **ℹ️ Remarque** : il existe sous ESPHome 2 manières de traiter les impulsions:
 > `- pulse_counter :` envoie les infos à intervale régulier.
-> `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utilisons ici.
+> `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utiliserons ici.
 
 Pour tester notre compteur, je conseille d'afficher les 2 entités ***debit_eau_froide*** et ***consommation_eau_froide*** dans un dashboard de test sous Home Assistant. Le débit doit augmenter quand on tire de l'eau puis se remettre à 0. La consommation doit augmenter.
 
