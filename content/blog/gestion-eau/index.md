@@ -5,8 +5,8 @@ type: post
 visibleInCMS: true
 draft: false
 workflow: published
-date: 2023-10-15
-lastmod: 2023-10-15
+date: 2023-10-27
+lastmod: 2023-10-27
 image: img/accueil-eau.png
 description: >
   Maîtriser sa consommation d'eau est essentielle, et d'autant plus dans le
