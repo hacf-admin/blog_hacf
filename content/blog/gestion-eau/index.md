@@ -15,6 +15,7 @@ description: >
   coûts associés dans Home Assistant, et enfin détecter les éventuelles fuites.
 level: medium
 type_install: ""
+version_ha: "2023.6"
 categories:
   - ESPHome/DIY
   - Energie
@@ -23,6 +24,7 @@ tags:
   - DIY
   - esphome
 author: argonaute
+url_hacf: https://forum.hacf.fr/t/gestion-de-sa-consommation-deau/30009
 ---
 Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connexion de son compteur via la prise télé-information, des prises ou modules connectés ou tout autre dispositif.
 
