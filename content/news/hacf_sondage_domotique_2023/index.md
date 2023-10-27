@@ -7,7 +7,7 @@ draft: false
 date: 2023-10-27
 lastmod: 2023-10-27
 image: img/banniere_generale.png
-description: La communauté relance son sondage "La Domotique est vous" pour sa
+description: La communauté relance son sondage "La Domotique et vous" pour sa
   deuxième édition. Le but est de mieux vous connaître et de prendre la
   température sur les équipements domotiques utilisés par la communauté.
 tags:
@@ -19,15 +19,7 @@ L’équipe HACF vous propose de participer à un sondage afin de mieux vous con
 
 Merci pour le temps que vous y consacrerez ; nous publierons les résultats sur nos médias à la clôture.
 
-
-
-
-
-[La domotique est vous](https://framaforms.org/la-domotique-et-vous-1696535868)
-
-
-
-
+[La domotique et vous](https://framaforms.org/la-domotique-et-vous-1696535868)
 
 Domotiquement,
 
