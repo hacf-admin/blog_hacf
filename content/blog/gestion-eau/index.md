@@ -49,9 +49,9 @@ La solution sera bien entendu différente si vous êtes propriétaire ou locatai
 
 Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur à l'intérieur de la maison, en aval de celui du fournisseur d'eau, mais avant le réducteur de pression.
 
-On ne plaisante pas avec l'eau, ainsi, j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25 l dans mon cas (mais il existe aussi en 1l / impulsion).
+On ne plaisante pas avec l'eau, ainsi, j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25 l dans mon cas (mais il existe aussi en 1l / impulsion). 
 
-> ❣️ `C'est la solution que j'ai testée et que je recommande.`
+> ❣️ C'est la solution que j'ai testée et que je recommande.
 
 ![](img/compteur_gianola.jpg)
 
