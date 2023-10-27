@@ -24,7 +24,7 @@ tags:
   - esphome
 author: argonaute
 ---
-Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connexion de son compteur par la prise télé-information, des prises ou modules connectés ou tout autre dispositif.
+Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connexion de son compteur via la prise télé-information, des prises ou modules connectés ou tout autre dispositif.
 
 Mais **maîtriser sa consommation d'eau** est bien autant essentielle, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'eau qui coule des jours, un robinet extérieur mal fermé, peut d'avérer lourd de conséquences.
 
