@@ -49,7 +49,7 @@ La solution sera bien entendu différente si vous êtes propriétaire ou locatai
 
 Dans mon cas, le compteur de la maison est à l'extérieur, très peu accessible. J'ai donc opté pour l'installation d'un nouveau compteur à l'intérieur de la maison, en aval de celui du fournisseur d'eau, mais avant le réducteur de pression.
 
-On ne plaisante pas avec l'eau, ainsi, j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25 l dans mon cas (mais il existe aussi en 1l / impulsion). 
+On ne plaisante pas avec l'eau, ainsi, j'ai préféré une marque italienne reconnue : Gianola. Il a l'avantage d'avoir un affichage de la consommation, et une sortie contact sec pour mesurer les impulsions : 1 impulsion tous les  0.25 l dans mon cas (mais il existe aussi en 1l / impulsion).
 
 > ❣️ C'est la solution que j'ai testée et que je recommande.
 
@@ -145,8 +145,8 @@ Le compteur exposé par ESPHome sous Home Assistant sera remis à 0 chaque fois 
 
 Certes, il peut être créé dans le fichier de configuration YAML, mais Home Assistant permet l'utilisation de helper : aller dans `Paramètres` - `Appareils` et `Services` - `Entrées` puis créer un `Compteur de Services` appelé ***eau_froide_annuel***`.`
 
-- ID de l'entité : `eau_froide_annuel`
-- `Nom : consommation eau froide annuelle`
+- ID de l'entité : eau_froide_annuel
+- Nom: consommation eau froide annuelle
 - Le capteur d'entrée est l'entité fournie par ESPHome `consommation_eau_froide.`
 - Le compteur sera remis à 0 chaque début d'année. Le cycle de remise à 0 est annuel.
 - Laisser les autres informations par défaut
