@@ -135,7 +135,7 @@ sensor:
 > `- pulse_counter :` envoie les infos à intervale régulier.
 > `- pulse_meter` : envoie les infos à chaque impulsion, ce qui est plus précis pour avoir le débit instantané. Pas d’infos envoyées si on ne tire pas d’eau. C'est ce que nous utiliserons ici.
 
-Pour tester notre compteur, je conseille d'afficher les 2 entités ***debit_eau_froide*** et ***consommation_eau_froide*** dans un dashboard de test sous Home Assistant. Le débit doit augmenter quand on tire de l'eau puis se remettre à 0. La consommation quand à elle, doit augmenter.
+Pour tester notre compteur, je conseille d'afficher les 2 entités ***debit_eau_froide*** et ***consommation_eau_froide*** dans un dashboard de test sous Home Assistant. Le débit doit augmenter quand on tire de l'eau puis se remettre à 0. La consommation quant à elle, doit augmenter.
 
 Essayez de tirer un litre d'eau et vérifiez que les valeurs s'incrémentent correctement.
 
@@ -180,7 +180,7 @@ Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau. Dans 
 
 Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installé HACS, la bibliothèque de composants de la communauté HACS.
 
-Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquez “explorer et télécharger des nouveaux dépôts”, recherchez **card-mod** et téléchargez le. Raffraichissez ensuite votre navigateur.
+Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquez “explorer et télécharger des nouveaux dépôts”, recherchez **card-mod** et téléchargez-le. Rafraichissez ensuite votre navigateur.
 
 `card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajoutez alors le code javascript suivant :
 
@@ -453,7 +453,7 @@ Certes, on pourrait utiliser de l'IA avec une phase d'apprentissage. Mais Home A
 
 Le **bayesian sensor** permet de spécifier une liste d'états constatés (une présence, une consommation, une heure, une plage de volume d'eau tiré, etc) et d'associer des probabilités que ces événements soient les causes d'un événement : le tirage d'eau d'une douche ou d'une chasse d'eau typiquement.
 
-Ainsi, il serait possible de créer autant de bayesian sensor que de source de tirage (douche, toilettes…). Chaque baysian sensor deviendrait vrai en fonction des pondérations sur les entités mises en entrées.
+Ainsi, il serait possible de créer autant de bayesian sensor que de source de tirage (douche, toilettes…). Chaque bayesian sensor deviendrait vrai en fonction des pondérations sur les entités mises en entrées.
 
 Je n'ai pas testé cela, mais ce serait une belle fonctionnalité, et permettant de maîtriser cette fonction à la fois puissante et méconnue de Home Assistant. Avis à ceux qui voudraient tester cela 😊
 
