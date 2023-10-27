@@ -157,7 +157,7 @@ Idéalement, je conseille de créer une vue dédiée à la gestion de l'eau.
 
 Ensuite, je propose d'utiliser le module **Energie**, qui gère aussi l'eau. Nous afficherons ensuite les très jolies cartes du module Energie, mais en restraignant l'affichage à l'eau.
 
-Aller dans le menu sous `Paramètres` - `Tableaux de Bord` - `Energie` puis renseigner une source d'eau dans “consommation d'eau”. Préciser l'entité de consommation ***esp_eau_consommation_eau_froide*** (ou ***eau_froide_annuel***`` qui marche aussi) et renseignez un tarif (par exemple 4.2 €/m3, qui est le tarif ici à Annecy).
+Aller dans le menu `Paramètres` - `Tableaux de Bord` - `Energie` puis renseigner une source d'eau dans “consommation d'eau”. Préciser l'entité de consommation ***esp_eau_consommation_eau_froide*** (ou ***eau_froide_annuel***`` qui marche aussi) et renseignez un tarif (par exemple 4.2 €/m3, qui est le tarif ici à Annecy).
 
 Ensuite, insérer dans votre vue les cartes suivantes dans une `vertical card` :
 
@@ -172,15 +172,15 @@ cards:
 
 Vous devez alors obtenir un graphique qui vous donne la gestion de l'eau.
 
-Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau Dans la troisième carte (`source-tab`), si vous utilisez le module Energie pour l'électricité, vous aurez aussi les données relatives à l'électricité.
+Bizarrement, Home Assistant mélange les énergies et la gestion de l'eau. Dans la troisième carte (`source-tab`), si vous utilisez le module Energie pour l'électricité, vous aurez aussi les données relatives à l'électricité.
 
 ![](img/historique-avec-electricite.jpg)
 
 Nous allons donc utiliser le composant HACS `card-mod` pour supprimer ces lignes. En pré-requis, il faut avoir installé HACS, la bibliothèque de composants de la communauté HACS.
 
-Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquer “explorer et télécharger des nouveaux dépôts”, rechercher **card-mod** et télécharger le. Raffraichissez ensuite votre navigateur.
+Si vous n'avez pas déja **card-mod**, allez sous HACS, cliquez “explorer et télécharger des nouveaux dépôts”, recherchez **card-mod** et téléchargez le. Raffraichissez ensuite votre navigateur.
 
-`card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajouter alors le code javascript suivant :
+`card-mod` permet de rajouter du code javascript qui va permettre de modifier une carte du dashboard. Rajoutez alors le code javascript suivant :
 
 ```yaml
 type: vertical-stack
