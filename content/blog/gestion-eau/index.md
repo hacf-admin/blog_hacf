@@ -155,7 +155,7 @@ Certes, il peut être créé dans le fichier de configuration YAML, mais Home As
 
 Idéalement, je conseille de créer une vue dédiée à la gestion de l'eau.
 
-Ensuite, je propose d'utiliser le module **Energie**, qui gère aussi l'eau. Nous afficherons ensuite les très jolies cartes du module Energie, mais en restraignant l'affichage à l'eau.
+Ensuite, je propose d'utiliser le module **Energie**, qui gère aussi l'eau. Nous afficherons ensuite les très jolies cartes du module Energie, mais en restreignant l'affichage à l'eau.
 
 Aller dans le menu `Paramètres` - `Tableaux de Bord` - `Energie` puis renseigner une source d'eau dans “consommation d'eau”. Préciser l'entité de consommation ***esp_eau_consommation_eau_froide*** (ou ***eau_froide_annuel***`` qui marche aussi) et renseignez un tarif (par exemple 4.2 €/m3, qui est le tarif ici à Annecy).
 
