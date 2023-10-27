@@ -219,7 +219,7 @@ Au final, nous nous retrouvons bien avec un graphique ne présentant que la cons
 
 ## Afficher les 50 derniers tirages
 
-Il est maintenant très intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une l**iste avec les derniers tirages d'eau**.
+Il est maintenant très intéressant de savoir quel appareil utilise de l'eau. Pour cela, nous allons afficher une **liste avec les derniers tirages d'eau**.
 
 **Le principe est le suivant :** un tirage est caractérisé par un débit qui passe de 0 à une certaine valeur, puis revient à 0. A chaque passage du débit à 0 (fin d'un tirage), nous enregistrons la valeur du compteur. Puis quand le compteur repasse à 0 une nouvelle fois (fin d'un nouveau tirage), il suffit alors de faire la différence entre la valeur du compteur courante et la valeur précédemment enregistrée pour connaitre la quantité d'eau tirée.
 
