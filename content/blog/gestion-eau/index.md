@@ -10,7 +10,7 @@ lastmod: 2023-10-15
 image: img/accueil-eau.png
 description: >
   Maîtriser sa consommation d'eau est essentielle, et d'autant plus dans le
-  contexte de pénurie actuel et d'inflation. Cet article présente des solutions
+  contexte actuel de pénurie et d'inflation. Cet article présente des solutions
   pour mettre en place un compteur connecté, afficher ses consommations d'eau et
   coûts associés dans Home Assistant, et enfin détecter les éventuelles fuites.
 level: medium
