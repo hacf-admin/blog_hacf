@@ -43,7 +43,7 @@ L'interface qui est implémentée permet de voir :
 
 ## Connecter son compteur
 
-La solution sera bien entendu différente suivant si vous êtes propriétaire ou locataire, suivant où se situe le compteur de votre fournisseur, quel est son type, et où arrive la conduite d'eau dans votre logement.
+La solution sera bien entendu différente si vous êtes propriétaire ou locataire et suivant où se situe le compteur de votre fournisseur, quel est son type et où arrive la conduite d'eau dans votre logement.
 
 ### Installer un compteur connecté
 
@@ -234,7 +234,7 @@ Aller dans paramètres - appareils et services - entrées, créer un capteur de 
 - Hysteresis : 0
 - Limite supérieure : 0.2
 
-Créer ensuite un input_text appelé ***eau_froide_memo*** pour mémoriser la valeur du compteur entre chaque tirage.
+Crée ensuite un input_text appelé ***eau_froide_memo*** pour mémoriser la valeur du compteur entre chaque tirage.
 
 Enfin, créer un deuxième input_text appelé ***eau_froide_tirage*** pour mémoriser la valeur du dernier tirage.
 
