@@ -67,7 +67,7 @@ Il y a assez peu de compteurs connectés sur le marché. Une alternative assez c
 
 ### Se connecter à un compteur existant
 
-Beaucoup ne pourront ou voudront installer un nouveau compteur. Voici quelques solutions de connexion à un compteur existant et références de personnes qui les ont implémentées :
+Beaucoup ne pourront ou ne voudront installer un nouveau compteur. Voici quelques solutions de connexion à un compteur existant et références de personnes qui les ont implémentées :
 
 - **Installer un capteur de proximité type LJ18A3** au-dessus de la petite roue qui tourne (si celle-ci est bien métallique) : c'est ce qui est proposé dans le [blog de Bujarra](https://www.bujarra.com/leyendo-el-contador-de-agua-de-casa-con-esphome-y-home-assistant/?lang=fr) (blog traduit en français)
 - **Capter les impultions radios** pour certains types de compteurs, proposé par @journaldeThomas : [Suivre sa consommation d'eau sous Home Assistant avec une simple clé USB FM TV !](https://www.youtube.com/watch?v=m5R6sfsGmvE)
