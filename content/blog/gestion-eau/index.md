@@ -26,7 +26,7 @@ author: argonaute
 ---
 Beaucoup d'entre nous mesurent les consommations d'électricité, que ce soit par la connexion de son compteur via la prise télé-information, des prises ou modules connectés ou tout autre dispositif.
 
-Mais **maîtriser sa consommation d'eau** est bien autant essentielle, d'autant dans le contexte de pénurie actuel et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même un simple chasse d'eau qui coule des jours, un robinet extérieur mal fermé, peut d'avérer lourd de conséquences.
+Mais **maîtriser sa consommation d'eau** est bien autant essentielle, d'autant dans le contexte actuel de pénurie et d'augmentation du prix de l'eau. Et les conséquences d'une fuite, ou même une simple chasse d'eau qui coule des jours, un robinet extérieur mal fermé, peut s'avérer lourd de conséquences.
 
 Cet article explore les solutions pour connecter et exploiter un compteur d'eau. Nous détaillerons une solution avec un compteur à impulsion **Gianola** et un **ESP32**. Enfin, nous verrons comment afficher les **consommations et les coûts** associés, comprendre les **origines des tirages d'eau**, et **détecter les éventuelles fuites**.
 
