@@ -232,8 +232,7 @@ Aller dans paramètres - appareils et services - entrées, créer un capteur de 
 - Nom : eau_froide_tirage_actif
 - Capteur d'entrée : sensor.esp_eau_debit_eau_froide
 - Hysteresis : 0
-- Type : upper
-- Upper : 0.2
+- Limite supérieure : 0.2
 
 Créer ensuite un input_text appelé ***eau_froide_memo*** pour mémoriser la valeur du compteur entre chaque tirage.
 
