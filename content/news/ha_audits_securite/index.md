@@ -3,7 +3,7 @@ path: ha_audits_securite
 title: Audits de sécurité de Home Assistant
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 date: 2023-11-01
 lastmod: 2023-11-01
 description: Home Assistant a subi deux audits de sécurité dans le cadre de nos
