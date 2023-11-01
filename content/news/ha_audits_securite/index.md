@@ -15,6 +15,8 @@ tags:
   - traduction
   - securite
 author: default
+url_hacf: https://forum.hacf.fr/t/audits-de-securite-de-home-assistant/30288/2
+url_haoff: https://www.home-assistant.io/blog/2023/10/19/security-audits-of-home-assistant/
 ---
 **Résumé :** _Home Assistant a subi deux audits de sécurité dans le cadre de nos évaluations de sécurité régulières. Vous êtes en sécurité. Aucune faille d’authentification n’a été trouvée. Nous avons corrigé des problèmes liés à la possibilité pour les attaquants de tromper les utilisateurs pour prendre le contrôle de leur instance. Tous les correctifs sont inclus dans Home Assistant 2023.9 (sorti le 6 septembre 2023) et les dernières applications Home Assistant pour iOS et Android. Assurez-vous d'avoir fait les mises à jour._
 
