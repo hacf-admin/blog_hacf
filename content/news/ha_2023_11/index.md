@@ -16,7 +16,7 @@ tags:
   - release
 author: default
 ---
-Cet article est une traduction de  [[2023.11 To-do: Add release](https://www.home-assistant.io/blog/2023/11/01/release-202311/)]([[https://www.home-assistant.io/blog/2023/04/05/release-20234/](https://www.home-assistant.io/blog/2023/04/05/release-20234/)](https://www.home-assistant.io/blog/2023/04/05/release-20234/)) publié sur le site de Home Assistant.
+Cet article est une traduction de [2023.11 To-do: Add release title](https://www.home-assistant.io/blog/2023/11/01/release-202311/) publié sur le site de Home Assistant.
 
 ## Home Assistant 2023.11! 🎃
 
@@ -44,9 +44,7 @@ Une entité liste de tâches représente une liste de tâches, et son état est 
 
 Outre les entités, de nouveaux services sont également disponibles pour automatiser vos listes de tâches. Utilisez les automatisations pour créer, terminer ou supprimer des tâches dans vos listes de tâches.
 
-Alors, que pouvez-vous faire avec tout cela ? Beaucoup ! Par exemple, vous pouvez créer une liste de tâches pour vos courses, automatiser une liste de tâches ménagères pour vos enfants ou d’autres membres de la famille, ou placer automatiquement une tâche sur une liste pour remplacer les piles d’un capteur lorsqu’elles sont faibles. Vous pourriez même envoyer une notification push à votre téléphone lorsque vous vous trouvez à proximité d’un magasin de bricolage et qu’il y a des articles sur une liste de tâches que vous devez y acheter.
-
-![](https://forum.hacf.fr/images/emoji/apple/heavy_check_mark.png?v=12)
+Alors, que pouvez-vous faire avec tout cela ? Beaucoup ! Par exemple, vous pouvez créer une liste de tâches pour vos courses, automatiser une liste de tâches ménagères pour vos enfants ou d’autres membres de la famille, ou placer automatiquement une tâche sur une liste pour remplacer les piles d’un capteur lorsqu’elles sont faibles. Vous pourriez même envoyer une notification push à votre téléphone lorsque vous vous trouvez à proximité d’un magasin de bricolage et qu’il y a des articles sur une liste de tâches que vous devez y acheter ✔
 
 ## Les listes de courses sont désormais aussi des listes de tâches !
 
