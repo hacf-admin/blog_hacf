@@ -20,7 +20,7 @@ Cet article est une traduction de [2023.11 To-do: Add release title](https://ww
 
 ## Home Assistant 2023.11! 🎃
 
-_Avant de nous plonger dans cette version massive, j’aimerais revenir rapidement sur deux événements extraordinaires qui se sont déroulés au cours du mois dernier. 🤔_
+_Il semble que j’ai oublié de trouver un titre pour cette version et que j’ai laissé un espace vide dans le titre. Si seulement je pouvais l’avoir sur une liste de choses à faire quelque part... 🤔_
 
 _Avant de nous plonger dans cette version massive, j’aimerais revenir rapidement sur deux événements extraordinaires qui se sont déroulés au cours du mois dernier._
 
