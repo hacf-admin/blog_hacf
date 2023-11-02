@@ -7,6 +7,7 @@ draft: true
 workflow: read
 date: 2023-11-02
 lastmod: 2023-11-02
+image: img/img_0502.png
 description: Comme chaque premier mercredi du mois, une nouvelle version de Home
   Assistant Core est sortie. Voici la traduction par l'Équipe HACF de cette
   release notes publiée par Nabu Casa.
