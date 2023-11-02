@@ -42,6 +42,7 @@ Il y a beaucoup de choses à faire dans nos vies, et c’est ce que [@allenport
 
 Une entité liste de tâches représente une liste de tâches, et son état est la quantité de tâches non terminées qui sont encore ouvertes. Vous pouvez créer une ou plusieurs listes de tâches (entièrement locales), les visualiser et les gérer en sélectionnant le nouvel élément Listes de tâches dans la barre latérale.
 
+![](img/img_0503.png)
 Outre les entités, de nouveaux services sont également disponibles pour automatiser vos listes de tâches. Utilisez les automatisations pour créer, terminer ou supprimer des tâches dans vos listes de tâches.
 
 Alors, que pouvez-vous faire avec tout cela ? Beaucoup ! Par exemple, vous pouvez créer une liste de tâches pour vos courses, automatiser une liste de tâches ménagères pour vos enfants ou d’autres membres de la famille, ou placer automatiquement une tâche sur une liste pour remplacer les piles d’un capteur lorsqu’elles sont faibles. Vous pourriez même envoyer une notification push à votre téléphone lorsque vous vous trouvez à proximité d’un magasin de bricolage et qu’il y a des articles sur une liste de tâches que vous devez y acheter.
