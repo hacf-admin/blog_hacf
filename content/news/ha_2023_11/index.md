@@ -55,8 +55,10 @@ Ces listes de tâches ressemblent beaucoup à la liste de courses, n’est-ce pa
 
 Elles se ressemblent beaucoup, et c’est pourquoi nous avons transformé la liste de courses en liste de tâches également ! Une fois que vous serez passé à cette version, votre liste de courses existante sera automatiquement convertie en liste de tâches.
 
+![](img/img_0504.png)
 Mais ce n’est pas tout ; nous avons également mis à jour la carte de la **liste d’achats** pour vos tableaux de bord, désormais judicieusement appelée **carte de la liste des tâches**, afin de prendre en charge plusieurs listes de tâches. Vous pouvez désormais sélectionner la liste de tâches que vous souhaitez afficher sur la carte que vous avez placée dans votre tableau de bord.
 
+![](img/img_0505.png)
 ## Intégrations fournissant vos tâches à faire
 
 Mais attendez ! Il n’y a pas que les listes de tâches locales et les listes d’achats. Maintenant que nous disposons d’une entité de liste de tâches, nous pouvons également commencer à l’utiliser avec d’autres intégrations qui, par exemple, peuvent obtenir vos listes de tâches à partir d’un service externe.
