@@ -59,6 +59,7 @@ Elles se ressemblent beaucoup, et c’est pourquoi nous avons transformé la lis
 Mais ce n’est pas tout ; nous avons également mis à jour la carte de la **liste d’achats** pour vos tableaux de bord, désormais judicieusement appelée **carte de la liste des tâches**, afin de prendre en charge plusieurs listes de tâches. Vous pouvez désormais sélectionner la liste de tâches que vous souhaitez afficher sur la carte que vous avez placée dans votre tableau de bord.
 
 ![](img/img_0505.png)
+
 ## Intégrations fournissant vos tâches à faire
 
 Mais attendez ! Il n’y a pas que les listes de tâches locales et les listes d’achats. Maintenant que nous disposons d’une entité de liste de tâches, nous pouvons également commencer à l’utiliser avec d’autres intégrations qui, par exemple, peuvent obtenir vos listes de tâches à partir d’un service externe.
@@ -82,6 +83,7 @@ La carte tuile affiche désormais les informations relatives à l’état de l�
 
 Vous pouvez maintenant la personnaliser à votre guise. Affichez l’état de l’entité, l’un de ses attributs ou une combinaison des deux !
 
+![](img/img_0508.png)
 Vous pouvez ajouter n’importe quel attribut de l’entité au contenu de l’état de la tuile.
 
 Cela ne fonctionne pas seulement pour les entités climatiques, mais pour toutes les entités ! Vous pouvez, par exemple, ajouter le pourcentage de luminosité d’une lampe ou le niveau de batterie d’un capteur. Il vous suffit d’ajouter l’attribut au contenu de l’état et de le glisser-déposer dans l’ordre dans lequel vous souhaitez qu’ils apparaissent.
@@ -90,6 +92,7 @@ Cela ne fonctionne pas seulement pour les entités climatiques, mais pour toutes
 
 Le tableau de bord de l’énergie vous permet désormais de sélectionner une plage de dates personnalisée. Cela vous permet de voir la consommation d’énergie de votre maison sur une période spécifique.
 
+![](img/img_0509.png)
 Un excellent ajout au tableau de bord de l’énergie. Merci, [@TillFleisch](https://github.com/TillFleisch) !
 
 ## Nouvelles conditions pour la carte conditionnelle
