@@ -107,12 +107,14 @@ Mais ce qui est encore plus intéressant, c’est que [@piitaya](https://github
 
 La condition d’utilisateur vous permet d’afficher ou de masquer les cartes en fonction de l’utilisateur qui est actuellement connecté. Utile si vous avez plusieurs utilisateurs dans votre instance de Home Assistant et que vous souhaitez afficher ou masquer les cartes en fonction de l’utilisateur qui consulte le tableau de bord.
 
+![](img/img_0510.png)
 La capture d’écran ci-dessus montre que la carte n’est affichée que lorsque l’utilisateur connecté est Frenck. Elle est cachée pour tous les autres utilisateurs.
 
 ### Numeric state condition
 
 Similar to the state condition, the numeric state condition allows you to show or hide cards based on the state of an entity, only this time, based on its numeric value. Useful if you want to show or hide cards based on temperature, humidity, or any other numeric entity.
 
+![](img/img_0511.png)
 In the screenshot above, this thermostat card will only be shown on the dashboard when the temperature outside has dropped below 18 degrees Celsius.
 
 ### Condition d’écran
@@ -121,6 +123,7 @@ Enfin, la condition d’écran vous permet d’afficher ou de masquer des cartes
 
 Par exemple, vous pouvez afficher certaines cartes uniquement lorsque vous visualisez Home Assistant sur un ordinateur de bureau ou une tablette et les masquer lorsque vous visualisez Home Assistant sur un appareil mobile.
 
+![](img/img_0512.png)
 La capture d’écran montre comment la commande de la porte de garage n’est affichée que sur mobile, car elle est le plus souvent utilisée à partir d’un mobile en arrivant à la maison.
 
 ## Redémarrage en mode sans échec
@@ -129,6 +132,7 @@ Vous pouvez maintenant redémarrer Home Assistant en mode sans échec. Ce mode d
 
 Il est utile si vous rencontrez des problèmes avec votre Home Assistant et que vous souhaitez rapidement exclure les intégrations personnalisées ou les ressources personnalisées du tableau de bord comme cause de ces problèmes.
 
+![](img/img_0513.png)
 Vous souhaitez sortir à nouveau du mode sans échec ? Il suffit de redémarrer Home Assistant une fois de plus, et tout reviendra à la normale.
 
 C’est très utile ! Merci, [@emontnemery](https://github.com/emontnemery) !
@@ -139,6 +143,7 @@ Si vous avez acheté un appareil qui supporte [Improv Wi-Fi](https://improv-wif
 
 Branchez l’alimentation de votre tout nouvel appareil, et Home Assistant le découvrira et vous aidera à le configurer en le connectant à votre réseau Wi-Fi et en l’ajoutant à Home Assistant.
 
+![](img/img_0514.png)
 [Improv Wi-Fi](https://improv-wifi.com/) est une norme entièrement ouverte qui peut être librement adoptée et mise en œuvre par tout créateur de matériel, quelle que soit sa taille. Le Wi-Fi Improv est également pris en charge par [ESPHome](https://esphome.io/components/esp32_improv#improv-via-ble).
 
 Bon travail [@emontnemery](https://github.com/emontnemery) !
@@ -153,6 +158,7 @@ Ces champs prennent en charge [nos sélecteurs d’interface utilisateur](https
 
 Mais ce n’est plus le cas ! Grâce à [@karwosts](https://github.com/karwosts), vous pouvez maintenant configurer vos champs de script dans l’interface utilisateur !
 
+![](img/img_0515.png)
 Vous pouvez trouver les champs dans l’éditeur de script en sélectionnant les trois points dans le coin supérieur droit de l’éditeur et en sélectionnant **Ajouter des champs** dans le menu déroulant.
 
 ## Autres changements notables
