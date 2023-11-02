@@ -17,7 +17,11 @@ tags:
   - deux-essais
 author: mcfly
 ---
-![essai text alt](img/screenshot_20231101-225946_fennec.png)
+Unsjs ilage maisca bug avant J'aJ'auoteJ'aJ'auoteUn ddebut d'essai de text depuis un mlbile
+
+![](img/screenshot_20231101-225946_fennec.png)
+J'aJ'auot
+
 
 
 
