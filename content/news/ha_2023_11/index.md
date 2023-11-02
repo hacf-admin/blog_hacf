@@ -4,7 +4,7 @@ title: "2023.11 A faire : ajouter le titre de la version"
 type: news
 visibleInCMS: true
 draft: true
-workflow: read
+workflow: ready
 date: 2023-11-02
 lastmod: 2023-11-02
 image: img/img_0502.png
@@ -110,12 +110,17 @@ La condition d’utilisateur vous permet d’afficher ou de masquer les cartes e
 ![](img/img_0510.png)
 La capture d’écran ci-dessus montre que la carte n’est affichée que lorsque l’utilisateur connecté est Frenck. Elle est cachée pour tous les autres utilisateurs.
 
-### Numeric state condition
+### Condition d'état numérique
 
-Similar to the state condition, the numeric state condition allows you to show or hide cards based on the state of an entity, only this time, based on its numeric value. Useful if you want to show or hide cards based on temperature, humidity, or any other numeric entity.
+Similaire à la condition d'état, la condition d'état numérique vous permet d'afficher ou de masquer des cartes en fonction de l'état d'une entité, mais cette fois-ci, en fonction de sa valeur numérique. Cette condition est utile si vous souhaitez afficher ou masquer des cartes en fonction de la température, de l'humidité ou de toute autre entité numérique.
 
 ![](img/img_0511.png)
-In the screenshot above, this thermostat card will only be shown on the dashboard when the temperature outside has dropped below 18 degrees Celsius.
+
+Dans la capture d'écran ci-dessus, cette carte de thermostat ne sera affichée sur le tableau de bord que lorsque la température extérieure sera tombée en dessous de 18 degrés Celsius.
+
+
+
+
 
 ### Condition d’écran
 
