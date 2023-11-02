@@ -66,8 +66,7 @@ C’est génial, car cela permet de rassembler toutes ces listes de tâches en u
 
 La Connectivity Standards Alliance a lancé la [version 1.2 de la spécification Matter](https://csa-iot.org/newsroom/matter-1-2-arrives-with-nine-new-device-types-improvements-across-the-board/), ainsi qu’une nouvelle version du SDK officiel Matter, qui est non seulement préparée pour de nouveaux types d’appareils, mais qui contient également toutes sortes de petites corrections de stabilité et de bogues.
 
-![](https://forum.hacf.fr/uploads/default/original/3X/9/3/938306f12425e9a4a93396eccd21e399a9a4e286.png)
-
+![](img/img_0507.jpeg)
 Bien que vous ne puissiez bénéficier des nouveaux types d’appareils qu’à leur sortie, nous avons mis à jour notre implémentation de Matter à la version 1.2 afin de bénéficier des améliorations de stabilité et être prêts pour les nouveaux types d’appareils.
 
 **Fait intéressant** : saviez-vous que Home Assistant est utilisé comme plateforme de test par de nombreux fabricants d’appareils ? Cela signifie potentiellement que les appareils seront implémentés et testés sur le contrôleur Home Assistant Matter avant les autres ; cool !
