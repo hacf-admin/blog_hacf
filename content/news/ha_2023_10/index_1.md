@@ -1,5 +1,5 @@
 ---
-path: Ha_2023_10
+path: ha_2023_10
 title: Home Assistant 2023.11
 type: news
 visibleInCMS: true
@@ -14,34 +14,25 @@ tags:
   - traduction
 author: default
 ---
-Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant Core est sortie. Voici la traduction par l’Équipe HACF de cette release notes publiée par Nabu Casa.
+Cet article est une traduction de  [[2023.11 To-do: Add release](https://www.home-assistant.io/blog/2023/11/01/release-202311/)](https://www.home-assistant.io/blog/2023/04/05/release-20234/) publié sur le site de Home Assistant.
 
-# Home Assistant 2023.11! \
-![](https://forum.hacf.fr/images/emoji/apple/jack_o_lantern.png?v=12)
+# Home Assistant 2023.11! 🎃
 
+_Avant de nous plonger dans cette version massive, j’aimerais revenir rapidement sur deux événements extraordinaires qui se sont déroulés au cours du mois dernier. 🤔_
 
+_Avant de nous plonger dans cette version massive, j’aimerais revenir rapidement sur deux événements extraordinaires qui se sont déroulés au cours du mois dernier._
 
-![](https://forum.hacf.fr/images/emoji/apple/thinking.png?v=12)
+_Premièrement, nous avons présenté le_ [_chapitre 4 de l’Année de la Voix_](https://www.home-assistant.io/blog/2023/10/12/year-of-the-voice-chapter-4-wakewords/)_, qui a introduit la nouvelle fonctionnalité de mot d’éveil dans Home Assistant. Cela porte vraiment l’expérience de l’assistant vocal à un niveau supérieur, et nous en sommes super excités ! Avez-vous vu_ [_le droïde assistant vocal basé sur R5_](https://www.youtube.com/watch?v=vQ7Hmeume9g) _? 😍_
 
-Avant de nous plonger dans cette version massive, j’aimerais revenir rapidement sur deux événements extraordinaires qui se sont déroulés au cours du mois dernier.
+_Deuxièmement, nous avons fait réaliser un audit de sécurité sur Home Assistant par l’un des meilleurs auditeurs de sécurité au monde ! Vous pouvez lire tous les détails dans_ [_l’article du blog_](https://www.home-assistant.io/blog/2023/10/19/security-audits-of-home-assistant/)_(_[_traduction sur le blog HACF_](https://hacf.fr/news/ha_audits_securite/)_). Un grand merci à tous ceux qui sont abonnés à_ [_Home Assistant Cloud_](https://www.nabucasa.com/)_, car c’est ce qui nous permet de faire tout cela ! 🥰_
 
+_Enfin, à propos de cette version ! Elle est énorme ! J’adore la carte des tuiles, et la possibilité de personnaliser facilement les informations qu’elle affiche maintenant est juste 🤩_ 
 
+_Mais surtout, je suis super excitée par les nouvelles listes de choses à faire, qui deviendront probablement un élément central de mon foyer._
 
-![](https://forum.hacf.fr/images/emoji/apple/heart_eyes.png?v=12)
+_Bonne lecture !_
 
-
-
-![](https://forum.hacf.fr/images/emoji/apple/smiling_face_with_three_hearts.png?v=12)
-
-
-
-![](https://forum.hacf.fr/images/emoji/apple/star_struck.png?v=12)
-
-
-
-Bonne lecture !
-
-…/Frenck
+_…/Frenck_
 
 # Il y a beaucoup de tâches !
 
@@ -49,20 +40,9 @@ Il y a beaucoup de choses à faire dans nos vies, et c’est ce que [@allenport
 
 Une entité liste de tâches représente une liste de tâches, et son état est la quantité de tâches non terminées qui sont encore ouvertes. Vous pouvez créer une ou plusieurs listes de tâches (entièrement locales), les visualiser et les gérer en sélectionnant le nouvel élément Listes de tâches dans la barre latérale.
 
-
-
-
-
-
-
-
-
-
 Outre les entités, de nouveaux services sont également disponibles pour automatiser vos listes de tâches. Utilisez les automatisations pour créer, terminer ou supprimer des tâches dans vos listes de tâches.
 
 Alors, que pouvez-vous faire avec tout cela ? Beaucoup ! Par exemple, vous pouvez créer une liste de tâches pour vos courses, automatiser une liste de tâches ménagères pour vos enfants ou d’autres membres de la famille, ou placer automatiquement une tâche sur une liste pour remplacer les piles d’un capteur lorsqu’elles sont faibles. Vous pourriez même envoyer une notification push à votre téléphone lorsque vous vous trouvez à proximité d’un magasin de bricolage et qu’il y a des articles sur une liste de tâches que vous devez y acheter.
-
-
 
 ![](https://forum.hacf.fr/images/emoji/apple/heavy_check_mark.png?v=12)
 
@@ -72,28 +52,7 @@ Ces listes de tâches ressemblent beaucoup à la liste de courses, n’est-ce pa
 
 Elles se ressemblent beaucoup, et c’est pourquoi nous avons transformé la liste de courses en liste de tâches également ! Une fois que vous serez passé à cette version, votre liste de courses existante sera automatiquement convertie en liste de tâches.
 
-
-
-
-
-
-
-
-
-
 Mais ce n’est pas tout ; nous avons également mis à jour la carte de la **liste d’achats** pour vos tableaux de bord, désormais judicieusement appelée **carte de la liste des tâches**, afin de prendre en charge plusieurs listes de tâches. Vous pouvez désormais sélectionner la liste de tâches que vous souhaitez afficher sur la carte que vous avez placée dans votre tableau de bord.
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Intégrations fournissant vos tâches à faire
 
@@ -107,11 +66,7 @@ C’est génial, car cela permet de rassembler toutes ces listes de tâches en u
 
 La Connectivity Standards Alliance a lancé la [version 1.2 de la spécification Matter](https://csa-iot.org/newsroom/matter-1-2-arrives-with-nine-new-device-types-improvements-across-the-board/), ainsi qu’une nouvelle version du SDK officiel Matter, qui est non seulement préparée pour de nouveaux types d’appareils, mais qui contient également toutes sortes de petites corrections de stabilité et de bogues.
 
-
 ![](https://forum.hacf.fr/uploads/default/original/3X/9/3/938306f12425e9a4a93396eccd21e399a9a4e286.png)
-
-
-
 
 Bien que vous ne puissiez bénéficier des nouveaux types d’appareils qu’à leur sortie, nous avons mis à jour notre implémentation de Matter à la version 1.2 afin de bénéficier des améliorations de stabilité et être prêts pour les nouveaux types d’appareils.
 
@@ -123,15 +78,6 @@ La carte tuile affiche désormais les informations relatives à l’état de l�
 
 Vous pouvez maintenant la personnaliser à votre guise. Affichez l’état de l’entité, l’un de ses attributs ou une combinaison des deux !
 
-
-
-
-
-
-
-
-
-
 Vous pouvez ajouter n’importe quel attribut de l’entité au contenu de l’état de la tuile.
 
 Cela ne fonctionne pas seulement pour les entités climatiques, mais pour toutes les entités ! Vous pouvez, par exemple, ajouter le pourcentage de luminosité d’une lampe ou le niveau de batterie d’un capteur. Il vous suffit d’ajouter l’attribut au contenu de l’état et de le glisser-déposer dans l’ordre dans lequel vous souhaitez qu’ils apparaissent.
@@ -139,15 +85,6 @@ Cela ne fonctionne pas seulement pour les entités climatiques, mais pour toutes
 # Sélectionner n’importe quelle plage de dates dans le tableau de bord de l’énergie
 
 Le tableau de bord de l’énergie vous permet désormais de sélectionner une plage de dates personnalisée. Cela vous permet de voir la consommation d’énergie de votre maison sur une période spécifique.
-
-
-
-
-
-
-
-
-
 
 Un excellent ajout au tableau de bord de l’énergie. Merci, [@TillFleisch](https://github.com/TillFleisch) !
 
@@ -163,32 +100,11 @@ Mais ce qui est encore plus intéressant, c’est que [@piitaya](https://github
 
 La condition d’utilisateur vous permet d’afficher ou de masquer les cartes en fonction de l’utilisateur qui est actuellement connecté. Utile si vous avez plusieurs utilisateurs dans votre instance de Home Assistant et que vous souhaitez afficher ou masquer les cartes en fonction de l’utilisateur qui consulte le tableau de bord.
 
-
-
-
-
-
-
-
-
-
-
-
-
 La capture d’écran ci-dessus montre que la carte n’est affichée que lorsque l’utilisateur connecté est Frenck. Elle est cachée pour tous les autres utilisateurs.
 
 ## Numeric state condition
 
 Similar to the state condition, the numeric state condition allows you to show or hide cards based on the state of an entity, only this time, based on its numeric value. Useful if you want to show or hide cards based on temperature, humidity, or any other numeric entity.
-
-
-
-
-
-
-
-
-
 
 In the screenshot above, this thermostat card will only be shown on the dashboard when the temperature outside has dropped below 18 degrees Celsius.
 
@@ -198,15 +114,6 @@ Enfin, la condition d’écran vous permet d’afficher ou de masquer des cartes
 
 Par exemple, vous pouvez afficher certaines cartes uniquement lorsque vous visualisez Home Assistant sur un ordinateur de bureau ou une tablette et les masquer lorsque vous visualisez Home Assistant sur un appareil mobile.
 
-
-
-
-
-
-
-
-
-
 La capture d’écran montre comment la commande de la porte de garage n’est affichée que sur mobile, car elle est le plus souvent utilisée à partir d’un mobile en arrivant à la maison.
 
 # Redémarrage en mode sans échec
@@ -214,15 +121,6 @@ La capture d’écran montre comment la commande de la porte de garage n’est a
 Vous pouvez maintenant redémarrer Home Assistant en mode sans échec. Ce mode désactivera toutes les intégrations personnalisées et les ressources de l’interface utilisateur personnalisées (par exemple, les cartes et les thèmes personnalisés).
 
 Il est utile si vous rencontrez des problèmes avec votre Home Assistant et que vous souhaitez rapidement exclure les intégrations personnalisées ou les ressources personnalisées du tableau de bord comme cause de ces problèmes.
-
-
-
-
-
-
-
-
-
 
 Vous souhaitez sortir à nouveau du mode sans échec ? Il suffit de redémarrer Home Assistant une fois de plus, et tout reviendra à la normale.
 
@@ -233,15 +131,6 @@ C’est très utile ! Merci, [@emontnemery](https://github.com/emontnemery) !
 Si vous avez acheté un appareil qui supporte [Improv Wi-Fi](https://improv-wifi.com/) via Bluetooth, et que vous utilisez le Bluetooth dans Home Assistant, vous pouvez maintenant configurer votre appareil directement à partir de Home Assistant !
 
 Branchez l’alimentation de votre tout nouvel appareil, et Home Assistant le découvrira et vous aidera à le configurer en le connectant à votre réseau Wi-Fi et en l’ajoutant à Home Assistant.
-
-
-
-
-
-
-
-
-
 
 [Improv Wi-Fi](https://improv-wifi.com/) est une norme entièrement ouverte qui peut être librement adoptée et mise en œuvre par tout créateur de matériel, quelle que soit sa taille. Le Wi-Fi Improv est également pris en charge par [ESPHome](https://esphome.io/components/esp32_improv#improv-via-ble).
 
@@ -256,15 +145,6 @@ Par exemple, vous pouvez créer un script qui envoie une notification à une per
 Ces champs prennent en charge [nos sélecteurs d’interface utilisateur](https://www.home-assistant.io/docs/blueprint/selectors/), ce qui vous permet de fournir une interface utilisateur pour les champs de votre script. Cependant, cela n’était possible que si vous créiez vos scripts au format YAML.
 
 Mais ce n’est plus le cas ! Grâce à [@karwosts](https://github.com/karwosts), vous pouvez maintenant configurer vos champs de script dans l’interface utilisateur !
-
-
-
-
-
-
-
-
-
 
 Vous pouvez trouver les champs dans l’éditeur de script en sélectionnant les trois points dans le coin supérieur droit de l’éditeur et en sélectionnant **Ajouter des champs** dans le menu déroulant.
 
