@@ -16,7 +16,7 @@ tags:
   - release
 author: default
 ---
-Cet article est une traduction de [2023.11 To-do: Add release title](https://www.home-assistant.io/blog/2023/11/01/release-202311/) publié sur le site de Home Assistant.
+> Cet article est une traduction de [2023.11 To-do: Add release title](https://www.home-assistant.io/blog/2023/11/01/release-202311/) publié sur le site de Home Assistant.
 
 ## Home Assistant 2023.11! 🎃
 
@@ -117,10 +117,6 @@ Similaire à la condition d'état, la condition d'état numérique vous permet d
 ![](img/img_0511.png)
 
 Dans la capture d'écran ci-dessus, cette carte de thermostat ne sera affichée sur le tableau de bord que lorsque la température extérieure sera tombée en dessous de 18 degrés Celsius.
-
-
-
-
 
 ### Condition d’écran
 
