@@ -3,8 +3,8 @@ path: ha_2023_11
 title: "2023.11 A faire : ajouter le titre de la version"
 type: news
 visibleInCMS: true
-draft: true
-workflow: ready
+draft: false
+workflow: published
 date: 2023-11-02
 lastmod: 2023-11-02
 image: img/img_0502.png
