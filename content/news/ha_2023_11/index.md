@@ -15,6 +15,7 @@ tags:
   - Traduction
   - release
 author: default
+url_hacf: https://forum.hacf.fr/t/nouvelle-release-2023-11-de-home-assistant/30404
 ---
 > Cet article est une traduction de [2023.11 To-do: Add release title](https://www.home-assistant.io/blog/2023/11/01/release-202311/) publié sur le site de Home Assistant.
 
