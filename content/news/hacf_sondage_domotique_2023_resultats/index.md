@@ -1,6 +1,6 @@
 ---
 path: hacf_sondage_domotique_2023_resultats
-title: Résultats du sondage "Domotique et vous"
+title: Résultats du sondage "La domotique et vous"
 type: news
 visibleInCMS: true
 draft: true
