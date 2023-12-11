@@ -21,28 +21,32 @@ authors:
   - tank
 url_haoff: https://www.home-assistant.io/blog/2023/12/06/release-202312/
 ---
-Cet article est une traduction de [2023.12: Welcome home!](https://www.home-assistant.io/blog/2023/12/06/release-202312/) publié sur le site de Home Assistant.
 
-Home Assistant Core 2023.12 ! 🎄
 
-La dernière version de 2023 est arrivée, et nous la quittons en beauté ! 🎉
 
-2023 a été l'[année de la voix](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/)
-[5ème chapitre final en direct sur notre chaîne YouTube](https://www.youtube.com/watch?v=djEkgoS5dDQ) et restez à l'écoute, car nous organiserons un [5ème chapitre final en direct sur notre chaîne YouTube](https://www.youtube.com/watch?v=djEkgoS5dDQ) le 13 décembre 2023, à 12:00 PST / 21:00 CET ! Mais ce n'est pas la fin du voyage de la voix... Ne manquez pas de nous suivre !
 
-Cette version comporte quelques améliorations de la qualité de vie, ce qui donne déjà l'impression d'être à Noël ! La carte de thermostat a été redessinée pour correspondre à la magnifique nouvelle boîte de dialogue d'entité introduite, une nouvelle fonctionnalité pour la carte de tuiles toujours améliorée, la réimportation des Blueprints, et bien d'autres choses encore !
+> Cet article est une traduction de [2023.12: Welcome home!](https://www.home-assistant.io/blog/2023/12/06/release-202312/) publié sur le site de Home Assistant.
 
-Ce qui m'enthousiasme le plus, c'est la nouvelle page de connexion que cette version apporte. Elle est belle, moderne et vous accueille littéralement dans votre propre maison ! 🏡 C'est à la maison que se trouve Home Assistant, n'est-ce pas ? 😃
+## Home Assistant Core 2023.12 ! 🎄
 
-C'est tout pour 2023 ! Quelle année nous avons eue ! J'ai juste une dernière chose à dire cette année :
+_La dernière version de 2023 est arrivée, et nous la quittons en beauté ! 🎉_
 
-Merci d'avoir utilisé Home Assistant ! ❤️
+_2023 a été l'_[_année de la voix_](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/)
+[_5ème chapitre final en direct sur notre chaîne YouTube_](https://www.youtube.com/watch?v=djEkgoS5dDQ) _et restez à l'écoute, car nous organiserons un_ [_5ème chapitre final en direct sur notre chaîne YouTube_](https://www.youtube.com/watch?v=djEkgoS5dDQ) _le 13 décembre 2023, à 12:00 PST / 21:00 CET ! Mais ce n'est pas la fin du voyage de la voix... Ne manquez pas de nous suivre !_
 
-Joyeuses fêtes et bonne lecture !
+_Cette version comporte quelques améliorations de la qualité de vie, ce qui donne déjà l'impression d'être à Noël ! La carte de thermostat a été redessinée pour correspondre à la magnifique nouvelle boîte de dialogue d'entité introduite, une nouvelle fonctionnalité pour la carte de tuiles toujours améliorée, la réimportation des Blueprints, et bien d'autres choses encore !_
 
-.../Frenck
+_Ce qui m'enthousiasme le plus, c'est la nouvelle page de connexion que cette version apporte. Elle est belle, moderne et vous accueille littéralement dans votre propre maison ! 🏡 C'est à la maison que se trouve Home Assistant, n'est-ce pas ? 😃_
 
-# Une nouvelle page de connexion
+_C'est tout pour 2023 ! Quelle année nous avons eue ! J'ai juste une dernière chose à dire cette année :_
+
+_Merci d'avoir utilisé Home Assistant ! ❤️_
+
+_Joyeuses fêtes et bonne lecture !_
+
+_.../Frenck_
+
+## Une nouvelle page de connexion
 
 La page de connexion de Home Assistant a été redessinée pour être plus moderne et correspondre à [la récente refonte de l'interface d'accueil de Home Assistant](https://www.home-assistant.io/blog/2023/09/06/release-20239/#onboarding).
 
@@ -56,7 +60,7 @@ Bien entendu, lorsque vous vous connectez en dehors de votre réseau domestique,
 
 Oh ! Et vous pouvez maintenant changer la langue directement à partir de la page de connexion ! 🌍
 
-# Nouveau design pour la carte thermostat
+## Nouveau design pour la carte thermostat
 
 [Home Assistant 2023.9 a introduit](https://www.home-assistant.io/blog/2023/09/06/release-20239/#new-climate-humidifier-and-water-heater-entity-dialogs) une nouvelle boîte de dialogue pour les entités thermostat. Suite à cela, de nombreuses personnes ont demandé un design similaire pour la carte thermostat. Et bien, le voici !
 
@@ -70,7 +74,7 @@ Le même design a été appliqué à la carte (dé)humidificateur, bien sûr, y 
 
 ![Le même style a été appliqué à la carte de l'humidificateur](https://www.home-assistant.io/images/blog/2023-12/humidifier-card.png)
 
-# Fonctionnalité de saisie numérique pour les cartes de tuiles
+## Fonctionnalité de saisie numérique pour les cartes de tuiles
 
 La [carte de tuiles](https://www.home-assistant.io/dashboards/tile/) est très puissante, et [@JosephAbbey](https://github.com/JosephAbbey) l'étend même dans cette version en ajoutant une nouvelle fonctionnalité de "saisie numérique".
 
@@ -78,7 +82,7 @@ La fonction de saisie numérique fonctionne avec toutes les entités numériques
 
 ![two tile cards, one showing the button variant, the other displaying a slider.](https://www.home-assistant.io/images/blog/2023-12/tile-card-numberic-input-feature.png)
 
-# Options pour le tableau de bord par défaut
+## Options pour le tableau de bord par défaut
 
 Le tableau de bord par défaut dispose désormais d'options qui vous permettront de modifier son comportement. Vous pouvez désormais configurer le tableau de bord par défaut de manière à masquer certaines zones, à masquer les entités qui n'appartiennent pas à une zone et à masquer la carte récapitulative de l'énergie.
 
@@ -90,7 +94,7 @@ Lors de l'ajout d'un nouveau tableau de bord, nous avons ajouté une boîte de d
 
 ![nouvelle boîte de dialogue présentée lors de la création d'un nouveau tableau de bord](https://www.home-assistant.io/images/blog/2023-12/create-new-dashboard-dialog.png)
 
-# Tableau de bord historique affichant des statistiques à long terme
+## Tableau de bord historique affichant des statistiques à long terme
 
 Le tableau de bord de l'historique a reçu un peu d'attention de la part de [@karwosts](https://github.com/karwosts) dans cette version ; il a apporté une grande amélioration à tous les graphiques qui y sont affichés.
 
@@ -102,7 +106,7 @@ Auparavant, les graphiques n'affichaient que l'historique de l'état, limité à
 
 Si vous avez modifié manuellement le [nombre de jours à conserver avant de purger](https://www.home-assistant.io/integrations/recorder#configuration-variables) l'enregistreur sur votre système, envisagez de supprimer cette personnalisation. Avec les statistiques à long terme et la nouvelle fonctionnalité, vous n'en aurez probablement plus besoin, ce qui se traduira par une base de données plus petite et, par conséquent, par des sauvegardes plus rapides et moins volumineuses.
 
-# Plus de tâches !
+## Plus de tâches !
 
 La première itération de la prise en charge des listes de tâches a été ajoutée dans [la dernière version](https://www.home-assistant.io/blog/2023/11/01/release-202311/#there-is-a-lot-to-do), et le travail sur cette fonctionnalité s'est poursuivi dans cette version.
 
@@ -112,7 +116,7 @@ Il est agréable de voir que les intégrations ajoutent un support pour la fonct
 
 De plus, lorsque vous consultez une liste de tâches à partir de l'interface de l'assistant domestique, vous pouvez copier/coller ou mettre en signet l'URL, ce qui vous ramènera toujours à la même - une petite amélioration très utile.
 
-# Réimportation de Blueprint
+## Réimportation de Blueprint
 
 Cette version ajoute la possibilité de réimporter le blueprint depuis la source à partir de laquelle vous l'avez importé à l'origine. Le nouveau plan téléchargé remplacera le plan existant, offrant ainsi une simple fonction de "mise à jour" pour les plans.
 
