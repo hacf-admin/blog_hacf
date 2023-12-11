@@ -3,7 +3,7 @@ path: ha_2023_12
 title: "2023.12 : Bienvenue à la maison !"
 type: news
 visibleInCMS: true
-draft: false
+draft: true
 workflow: published
 date: 2023-12-11
 lastmod: 2023-12-11
