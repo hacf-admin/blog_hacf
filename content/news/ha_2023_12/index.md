@@ -4,6 +4,7 @@ title: "2023.12 : Bienvenue à la maison !"
 type: news
 visibleInCMS: true
 draft: true
+workflow: ready
 date: 2023-12-11
 lastmod: 2023-12-11
 image: content/news/ha_2023_12/img/home_assistant_2023.12.png
