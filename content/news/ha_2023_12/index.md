@@ -135,7 +135,7 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 - Le navigateur média permet désormais de basculer entre la vue grille et la vue liste. Merci [@karwosts](https://github.com/karwosts) !
 - [@emontnemery](https://github.com/emontnemery) a travaillé dur pour améliorer tous les messages d'erreur provenant de la configuration YAML manuelle. Les messages devraient maintenant être plus détaillés, plus lisibles et indiquer correctement le fichier et la ligne de fichier où se trouve l'erreur. Génial !
 - [@karwosts](https://github.com/karwosts) a créé une interface utilisateur pour ajouter des sélecteurs à votre champ de script ! Très bien fait !
-- Les erreurs affichées par Home Assistant peuvent maintenant être traduites ! Bien que de nombreux endroits doivent encore l'adopter, il s'agit d'un grand pas en avant et d'une grande facilité d'utilisation ! Excellent travail [@jbouwh](https://github.com/jbouwh) !
+- Les erreurs affichées par Home Assistant peuvent maintenant être traduites ! Bien que de nombreux endroits doivent encore l'adopter, il s'agit d'un grand pas en avant et d'une grande facilité d'utilisation ! Excellent travail [@jbouwh](https://github.com/jbouwh) ! 
 
 ## Nouvelles intégrations
 
