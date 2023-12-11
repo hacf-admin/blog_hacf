@@ -17,6 +17,12 @@ tags:
   - traduction
 author: default
 ---
+Cet article est une traduction de [2023.12: Welcome home!](https://www.home-assistant.io/blog/2023/12/06/release-202312/) publié sur le site de Home Assistant.
+
+
+
+
+
 Home Assistant Core 2023.12 ! 🎄
 
 La dernière version de 2023 est arrivée, et nous la quittons en beauté ! 🎉
@@ -136,29 +142,30 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
 - [Devialet](https://www.home-assistant.io/integrations/devialet), ajouté par [@fwestenberg](https://github.com/fwestenberg). Contrôlez vos enceintes sans fil Devialet.
-
 - [Linear Garage Door](https://www.home-assistant.io/integrations/linear_garage_door), ajouté par [@IceBotYT](https://github.com/IceBotYT). Permet de contrôler et d'automatiser vos portes de garage Linear.
-
 - [MyPermobil](https://www.home-assistant.io/integrations/mypermobil), ajouté par [@IsakNyberg](https://github.com/IsakNyberg). Fournit divers capteurs pour votre fauteuil roulant Permobil.
-
 - [OurGroceries](https://www.home-assistant.io/integrations/ourgroceries), ajouté par [@OnFreund.](https://github.com/OnFreund) S'intègre aux listes de courses de OurGroceries.
-
 - [V2C](https://www.home-assistant.io/integrations/v2c), ajouté par [@dgomes.](https://github.com/dgomes) Surveillance et contrôle d'un EVSE local V2C Trydan.
 
-## Intégrations désormais disponibles à partir de l’interface utilisateur (UI) 
+## Intégrations désormais disponibles à partir de l’interface utilisateur (UI)
 
 Les intégrations suivantes sont désormais disponibles via l’interface utilisateur de Home Assistant :
 
 - 
+
+
 [CalDAV](https://www.home-assistant.io/integrations/caldav), réalisé par [@allenporter](https://github.com/allenporter)
 
 - 
+
+
 [Fast.com](https://www.home-assistant.io/integrations/fastdotcom), réalisé par [@erwindouna](https://github.com/erwindouna)
 
 - 
+
+
 [Ping](https://www.home-assistant.io/integrations/ping), réalisé par [@jpbede](https://github.com/jpbede)
 
-
-## Breaking Changes 
+## Breaking Changes
 
 Pour les “Breaking Changes” c’est par [ici](https://www.home-assistant.io/blog/2023/12/06/release-202312/#backward-incompatible-changes) (non traduits).
