@@ -23,10 +23,6 @@ url_haoff: https://www.home-assistant.io/blog/2023/12/06/release-202312/
 ---
 Cet article est une traduction de [2023.12: Welcome home!](https://www.home-assistant.io/blog/2023/12/06/release-202312/) publié sur le site de Home Assistant.
 
-
-
-
-
 Home Assistant Core 2023.12 ! 🎄
 
 La dernière version de 2023 est arrivée, et nous la quittons en beauté ! 🎉
@@ -156,19 +152,14 @@ Nous accueillons les nouvelles intégrations suivantes dans cette version :
 Les intégrations suivantes sont désormais disponibles via l’interface utilisateur de Home Assistant :
 
 - 
-
-
 [CalDAV](https://www.home-assistant.io/integrations/caldav), réalisé par [@allenporter](https://github.com/allenporter)
 
 - 
-
-
 [Fast.com](https://www.home-assistant.io/integrations/fastdotcom), réalisé par [@erwindouna](https://github.com/erwindouna)
 
 - 
-
-
 [Ping](https://www.home-assistant.io/integrations/ping), réalisé par [@jpbede](https://github.com/jpbede)
+
 
 ## Breaking Changes
 
