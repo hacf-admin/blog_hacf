@@ -7,7 +7,7 @@ draft: false
 workflow: published
 date: 2023-12-11
 lastmod: 2023-12-11
-image: content/news/ha_2023_12/img/home_assistant_2023.12.png
+image: content/news/ha_2023_12/img/ha_2012.png
 description: >-
   Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant
   Core est sortie.
