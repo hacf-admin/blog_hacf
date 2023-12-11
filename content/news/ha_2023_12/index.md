@@ -7,7 +7,7 @@ draft: false
 workflow: published
 date: 2023-12-11
 lastmod: 2023-12-11
-image: content/news/ha_2023_12/img/ha_2012.png
+image: img/ha_2012.png
 description: >-
   Comme chaque premier mercredi du mois, une nouvelle version de Home Assistant
   Core est sortie.
@@ -48,11 +48,11 @@ La page de connexion de Home Assistant a été redessinée pour être plus moder
 
 Lorsque Home Assistant détecte que vous y accédez via votre réseau domestique local, cela signifie que vous vous trouvez dans votre environnement domestique de confiance. Vous serez alors accueilli par cette magnifique nouvelle page de connexion, qui ressemble à la façon dont la plupart des plateformes, comme Windows, macOS, Netflix et d'autres, gèrent cette situation : en affichant vos profils d'utilisateur.
 
-![](https://www.home-assistant.io/images/blog/2023-12/new-login-screen.png) Il est également beaucoup plus intelligent ! Il fonctionne de manière transparente avec [les réseaux de confiance](https://www.home-assistant.io/docs/authentication/providers/#trusted-networks) et, une fois à la maison, il se souvient automatiquement de votre nom d'utilisateur. Ainsi, vous n'oublierez plus de cocher la case "Gardez-moi connecté". 👊
+![](img/new-login-screen.png) Il est également beaucoup plus intelligent ! Il fonctionne de manière transparente avec [les réseaux de confiance](https://www.home-assistant.io/docs/authentication/providers/#trusted-networks) et, une fois à la maison, il se souvient automatiquement de votre nom d'utilisateur. Ainsi, vous n'oublierez plus de cocher la case "Gardez-moi connecté". 👊
 
 Bien entendu, lorsque vous vous connectez en dehors de votre réseau domestique, nous ne pouvons pas le faire car cela reviendrait à divulguer des informations confidentielles sur votre système et sur les personnes qui s'y trouvent. Ainsi, lorsque vous êtes en dehors de votre réseau domestique, la page de connexion vous demandera votre nom d'utilisateur et votre mot de passe, comme auparavant.
 
-![](https://www.home-assistant.io/images/blog/2023-12/new-login-external-network.png)
+![](img/new-login-external-network.png)
 
 Oh ! Et vous pouvez maintenant changer la langue directement à partir de la page de connexion ! 🌍
 
@@ -60,15 +60,15 @@ Oh ! Et vous pouvez maintenant changer la langue directement à partir de la pag
 
 [Home Assistant 2023.9 a introduit](https://www.home-assistant.io/blog/2023/09/06/release-20239/#new-climate-humidifier-and-water-heater-entity-dialogs) une nouvelle boîte de dialogue pour les entités thermostat. Suite à cela, de nombreuses personnes ont demandé un design similaire pour la carte thermostat. Et bien, le voici !
 
-![Deux cartes de thermostat qui mettent en valeur leur nouvelle apparence](https://www.home-assistant.io/images/blog/2023-12/thermostat-card.png) Vous n'avez rien à faire pour utiliser cette nouvelle carte. Une fois que vous aurez effectué la mise à jour vers cette version, la carte de thermostat utilisera automatiquement ce magnifique nouveau design.
+![Deux cartes de thermostat qui mettent en valeur leur nouvelle apparence](img/thermostat-card.png) Vous n'avez rien à faire pour utiliser cette nouvelle carte. Une fois que vous aurez effectué la mise à jour vers cette version, la carte de thermostat utilisera automatiquement ce magnifique nouveau design.
 
 Nous sommes allés encore plus loin en ajoutant la prise en charge des fonctionnalités. Les caractéristiques sont des fonctionnalités supplémentaires que vous pouvez ajouter à une carte et qui n'étaient auparavant disponibles que pour la carte des tuiles. Cette version ajoute la prise en charge des fonctionnalités à la carte thermostat également !
 
-![Nouvelles fonctionnalités disponibles lors de la configuration d'une carte de thermostat](https://www.home-assistant.io/images/blog/2023-12/thermostat-card-features.png) La carte de thermostat permet d'ajouter des boutons de mode de chauffage, de ventilation et de climatisation ainsi que des préréglages. Par défaut, ces fonctionnalités sont masquées, ce qui donne à la carte un aspect le plus épuré possible.
+![Nouvelles fonctionnalités disponibles lors de la configuration d'une carte de thermostat](img/thermostat-card-features.png) La carte de thermostat permet d'ajouter des boutons de mode de chauffage, de ventilation et de climatisation ainsi que des préréglages. Par défaut, ces fonctionnalités sont masquées, ce qui donne à la carte un aspect le plus épuré possible.
 
 Le même design a été appliqué à la carte (dé)humidificateur, bien sûr, y compris ses caractéristiques de tuiles respectives 😎
 
-![Le même style a été appliqué à la carte de l'humidificateur](https://www.home-assistant.io/images/blog/2023-12/humidifier-card.png)
+![Le même style a été appliqué à la carte de l'humidificateur](img/humidifier-card.png)
 
 ## Fonctionnalité de saisie numérique pour les cartes de tuiles
 
@@ -76,19 +76,19 @@ La [carte de tuiles](https://www.home-assistant.io/dashboards/tile/) est très p
 
 La fonction de saisie numérique fonctionne avec toutes les entités numériques et les aides numériques. Elle vous permet de contrôler l'entité numérique directement à partir de la carte des tuiles et vous donne le choix de l'utiliser comme un curseur ou comme une entrée avec des boutons haut/bas.
 
-![two tile cards, one showing the button variant, the other displaying a slider.](https://www.home-assistant.io/images/blog/2023-12/tile-card-numberic-input-feature.png)
+![two tile cards, one showing the button variant, the other displaying a slider.](img/tile-card-numberic-input-feature.png)
 
 ## Options pour le tableau de bord par défaut
 
 Le tableau de bord par défaut dispose désormais d'options qui vous permettront de modifier son comportement. Vous pouvez désormais configurer le tableau de bord par défaut de manière à masquer certaines zones, à masquer les entités qui n'appartiennent pas à une zone et à masquer la carte récapitulative de l'énergie.
 
-![nouvelles options disponibles pour le tableau de bord par défaut généré](https://www.home-assistant.io/images/blog/2023-12/dashboard-options.png) Lorsque vous sélectionnez **Zones**, vous pouvez choisir de masquer les zones, mais aussi de modifier l'ordre d'affichage des zones en les faisant glisser.
+![nouvelles options disponibles pour le tableau de bord par défaut généré](img/dashboard-options.png) Lorsque vous sélectionnez **Zones**, vous pouvez choisir de masquer les zones, mais aussi de modifier l'ordre d'affichage des zones en les faisant glisser.
 
 C'est un premier pas pour rendre les tableaux de bord configurables, mais surtout, cela vous donne plus de contrôle sur le tableau de bord par défaut, surtout si vous venez de commencer à utiliser Home Assistant.
 
 Lors de l'ajout d'un nouveau tableau de bord, nous avons ajouté une boîte de dialogue similaire à celles que nous affichons lorsque vous créez de nouvelles automatisations ou de nouveaux scripts. Elle vous donne la possibilité de commencer avec un tableau de bord manuel vide ou de créer un nouveau tableau de bord par défaut.
 
-![nouvelle boîte de dialogue présentée lors de la création d'un nouveau tableau de bord](https://www.home-assistant.io/images/blog/2023-12/create-new-dashboard-dialog.png)
+![nouvelle boîte de dialogue présentée lors de la création d'un nouveau tableau de bord](img/create-new-dashboard-dialog.png)
 
 ## Tableau de bord historique affichant des statistiques à long terme
 
@@ -98,7 +98,7 @@ Auparavant, les graphiques n'affichaient que l'historique de l'état, limité à
 
 [@karwosts](https://github.com/karwosts) a trouvé une solution à ce problème, et le tableau de bord de l'historique combine désormais l'historique de l'état avec les statistiques à long terme enregistrées pour donner un aperçu du passé.
 
-![un graphique d'historique sur une longue période](https://www.home-assistant.io/images/blog/2023-12/long-term-history-dashboard.png) La partie droite et plus foncée de la ligne du graphique est fournie par l'historique de l'état (comme auparavant), et les statistiques à long terme fournissent la partie gauche et plus claire de la ligne du graphique (et sont donc des données horaires sous-échantillonnées).
+![un graphique d'historique sur une longue période](img/long-term-history-dashboard.png) La partie droite et plus foncée de la ligne du graphique est fournie par l'historique de l'état (comme auparavant), et les statistiques à long terme fournissent la partie gauche et plus claire de la ligne du graphique (et sont donc des données horaires sous-échantillonnées).
 
 Si vous avez modifié manuellement le [nombre de jours à conserver avant de purger](https://www.home-assistant.io/integrations/recorder#configuration-variables) l'enregistreur sur votre système, envisagez de supprimer cette personnalisation. Avec les statistiques à long terme et la nouvelle fonctionnalité, vous n'en aurez probablement plus besoin, ce qui se traduira par une base de données plus petite et, par conséquent, par des sauvegardes plus rapides et moins volumineuses.
 
@@ -118,7 +118,7 @@ Cette version ajoute la possibilité de réimporter le blueprint depuis la sourc
 
 Si vous utilisez des Blueprints, par exemple ceux [créés par notre incroyable communauté](https://community.home-assistant.io/c/blueprints/38), vous avez peut-être remarqué que lorsque vous importez un Blueprint, il n'est pas mis à jour lorsque l'auteur le met à jour. La seule option que vous aviez était d'ajuster manuellement le YAML du Blueprint pour qu'il corresponde à la dernière version publiée par l'auteur. Pour faciliter cette tâche, nous avons ajouté cette possibilité de réimportation.
 
-![menu de débordement d'un blueprint fournit maintenant l'option de réimporter un blueprint](https://www.home-assistant.io/images/blog/2023-12/re-import-blueprint.png) Une fonctionnalité utile qui facilitera la synchronisation de vos plans avec la dernière version publiée par l'auteur du plan.
+![menu de débordement d'un blueprint fournit maintenant l'option de réimporter un blueprint](img/re-import-blueprint.png) Une fonctionnalité utile qui facilitera la synchronisation de vos plans avec la dernière version publiée par l'auteur du plan.
 
 ## Autres changements notables
 
