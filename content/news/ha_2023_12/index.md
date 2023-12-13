@@ -19,6 +19,7 @@ tags:
 author: default
 authors:
   - tank
+url_hacf: https://forum.hacf.fr/t/nouvelle-release-2023-12-de-home-assistant/32678
 url_haoff: https://www.home-assistant.io/blog/2023/12/06/release-202312/
 ---
 > Cet article est une traduction de [2023.12: Welcome home!](https://www.home-assistant.io/blog/2023/12/06/release-202312/) publié sur le site de Home Assistant.
