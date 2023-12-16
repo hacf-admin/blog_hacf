@@ -32,6 +32,4 @@ Pour le dernier chapitre de 2023, nous avons élargi les types de commandes voca
 
 Bonnes fêtes de fin d'année !
 
-
-
-
+[![](https://markdown-videos-api.jorgenkh.no/youtube/erf7HqTwCGs)](https://youtu.be/erf7HqTwCGs)
