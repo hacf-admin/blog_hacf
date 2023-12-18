@@ -17,6 +17,14 @@ tags:
 author: tank
 url_haoff: https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/
 ---
+
+
+
+
+> Cet article est une traduction de la publication faite sur le site de Home Assistant : [https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/](https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/)
+> [Year of the Voice - Chapter 5](https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/)
+
+![](content/news/ha_yearofthevoice_chapter5/img/social.png)
 Nous avons atteint la fin de l'[Année de la Voix](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) de Home Assistant ! Notre objectif pour 2023 était de permettre aux utilisateurs de contrôler Home Assistant en parlant dans leur propre langue.
 
 Début 2023, Home Assistant disposait d'un contrôle textuel de base pour certains appareils en anglais uniquement. En cette fin d'année, les utilisateurs peuvent désormais contrôler et poser des questions à l'aide de la voix dans plus de 50 langues et sur une variété d'appareils, notamment :
@@ -70,7 +78,9 @@ Assurez-vous que vous avez [exposé](https://www.home-assistant.io/voice_control
 
 Les satellites vocaux peuvent être placés tout autour de la maison, et il est important de garder leur zone à l'esprit lorsque l'on interprète des commandes telles que "allumer les lumières". Cette commande allumera toutes les lumières dans la zone du satellite, et "éteindre les lumières" fera l'inverse. Vous pouvez toujours cibler les lumières d'une autre zone, bien sûr, en spécifiant : "allumer les lumières de la chambre".
 
-![](https://markdown-videos-api.jorgenkh.no/youtube/pvEe0kVWFNE) Il s'agit d'un premier pas vers la prise de conscience par les satellites de leur contexte et l'adaptation de leur comportement en conséquence.
+![](https://markdown-videos-api.jorgenkh.no/youtube/pvEe0kVWFNE)
+
+Il s'agit d'un premier pas vers la prise de conscience par les satellites de leur contexte et l'adaptation de leur comportement en conséquence.
 
 ## Des satellites Raspberry Pi améliorés
 
