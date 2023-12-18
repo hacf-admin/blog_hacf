@@ -20,8 +20,7 @@ url_haoff: https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapt
 > Cet article est une traduction de la publication faite sur le site de Home Assistant : [https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/](https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/)
 > [Year of the Voice - Chapter 5](https://www.home-assistant.io/blog/2023/12/13/year-of-the-voice-chapter-5/)
 
-![](content/news/ha_yearofthevoice_chapter5/img/social.png)
-Nous avons atteint la fin de l'[Année de la Voix](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) de Home Assistant ! Notre objectif pour 2023 était de permettre aux utilisateurs de contrôler Home Assistant en parlant dans leur propre langue.
+![](content/news/ha_yearofthevoice_chapter5/img/social.png) Nous avons atteint la fin de l'[Année de la Voix](https://www.home-assistant.io/blog/2022/12/20/year-of-voice/) de Home Assistant ! Notre objectif pour 2023 était de permettre aux utilisateurs de contrôler Home Assistant en parlant dans leur propre langue.
 
 Début 2023, Home Assistant disposait d'un contrôle textuel de base pour certains appareils en anglais uniquement. En cette fin d'année, les utilisateurs peuvent désormais contrôler et poser des questions à l'aide de la voix dans plus de 50 langues et sur une variété d'appareils, notamment :
 
