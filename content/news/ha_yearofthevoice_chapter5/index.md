@@ -3,8 +3,8 @@ path: ha_YearOfTheVoice_Chapter5
 title: Année de la voix - Chapitre 5
 type: news
 visibleInCMS: true
-draft: true
-workflow: write
+draft: false
+workflow: published
 date: 2023-12-18
 lastmod: 2023-12-18
 image: https://www.home-assistant.io/images/blog/2023-12-13-year-of-the-voice-chapter-5/social.png
@@ -51,17 +51,17 @@ L'équipe [ESPHome](https://esphome.io/) a travaillé dur pour ajouter le suppor
 Depuis [le chapitre 1](https://www.home-assistant.io/blog/2023/01/26/year-of-the-voice-chapter-1/), nous avons ajouté des commandes vocales pour :
 
 - Allumer et éteindre les lumières et autres appareils.
-- Ouvrir et fermer les portes, les fenêtres, etc. 
+- Ouvrir et fermer les portes, les fenêtres, etc.
 - Régler la luminosité et la couleur des lumières.
 - Ajouter des articles à une liste de courses.
-- Poser des questions, par exemple pour savoir quelles fenêtres sont ouvertes dans une zone donnée. 
+- Poser des questions, par exemple pour savoir quelles fenêtres sont ouvertes dans une zone donnée.
 
 Pour le chapitre 5, nous avons élargi cette liste pour inclure :
 
-- Ajouter des éléments à **une liste de tâches** - "ajouter la sortie des poubelles à ma liste de tâches" 
-- Obtenir la **température intérieure** - "quelle est la température ?" 
+- Ajouter des éléments à **une liste de tâches** - "ajouter la sortie des poubelles à ma liste de tâches"
+- Obtenir la **température intérieure** - "quelle est la température ?"
 - Obtenir les conditions **météo**rologiques actuelles - "Quel temps fait-il ?"
-- **Annulation** d'un réveil par satellite - "peu importe". 
+- **Annulation** d'un réveil par satellite - "peu importe".
 
 Assurez-vous que vous avez [exposé](https://www.home-assistant.io/voice_control/voice_remote_expose_devices/) les appareils auxquels vous voulez que [Assist](https://www.home-assistant.io/voice_control/) ait accès et qu'ils sont nommés correctement. Vous pouvez toujours ajouter un [alias](https://www.home-assistant.io/voice_control/aliases) lorsque vous souhaitez désigner un appareil par un nom plus pratique pour la voix. Par exemple, l'ajout d'un alias "Berlin" à une entité météo vous permettra de dire "quel temps fait-il à Berlin ?
 
@@ -79,16 +79,13 @@ Nous avons étendu [l'intégration de "Wyoming"](https://github.com/rhasspy/wyom
 
 Plusieurs modes satellites sont pris en charge, notamment:
 
-- **Diffusion en continu** - le satellite transmet tout l'audio à l'assistant domestique. 
+- **Diffusion en continu** - le satellite transmet tout l'audio à l'assistant domestique.
 - **Diffusion sur voix** - le son n'est diffusé que lorsque la parole est détectée.
 - **Mot de "clef" local** - diffusion du son uniquement lorsqu'un mot de réveil est détecté localement.
 
 Le nettoyage audio, tel que le contrôle automatique du gain et la suppression du bruit, peut être effectué dans Home Assistant ou sur le satellite. Un [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/) a plus qu'assez de puissance pour effectuer le nettoyage audio local et la détection des mots de réveil, ce qui vous permet d'avoir de nombreux satellites sans surcharger votre serveur Home Assistant. Réutilisez vos vieux Raspberry Pi, et commencez votre voyage avec le contrôle vocal de la maison intelligente !
 
 ![](https://portail.hacf.fr/content/images/2023/12/Year-of-the-Voice-Chapter-5.png)
-
-
-
 
 ## Restez à l'écoute
 
@@ -104,7 +101,6 @@ Merci à nos responsables linguistiques d'avoir étendu la prise en charge des p
 
 Bonnes fêtes de fin d'année !
 
-![](https://portail.hacf.fr/content/images/2023/12/home-assistant-merci-projet.png)
 
 
 
