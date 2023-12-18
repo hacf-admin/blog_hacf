@@ -8,7 +8,8 @@ workflow: published
 date: 2023-12-18
 lastmod: 2023-12-18
 image: https://www.home-assistant.io/images/blog/2023-12-13-year-of-the-voice-chapter-5/social.png
-description: Après une année de développement de la voix sur Home Assistant,
+description: Voici la traduction d'un nouveau post publié sur le site de Home
+  Assistant. Après une année de développement de la voix sur Home Assistant,
   nous arrivons au point d'orgue avec ce dernier chapitre.
 tags:
   - voix
