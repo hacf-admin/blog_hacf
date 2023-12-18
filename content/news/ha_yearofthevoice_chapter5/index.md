@@ -38,17 +38,17 @@ Pour le dernier chapitre de 2023, nous avons élargi les types de commandes voca
 
 Bonnes fêtes de fin d'année !
 
-[https://markdown-videos-api.jorgenkh.no/youtube/erf7HqTwCGs](https://youtu.be/erf7HqTwCGs)
+{{< youtube erf7HqTwCGs >}}
 
 ## Le S3-BOX-3
 
 Espressif a récemment sorti l'[ESP32-S3-BOX-3](https://www.espressif.com/en/news/ESP32-S3-BOX-3), une mise à jour de l'ESP32-S3-BOX (et de la variante "lite") qui n'était plus disponible. Ce kit de développement "AIoT" contient une puce ESP32-S3, deux microphones, un petit haut-parleur et un écran. Plusieurs docks sont disponibles dans la boîte, qui expose un connecteur d'alimentation USB-C et des broches GPIO pour étendre l'appareil.
 
-[https://markdown-videos-api.jorgenkh.no/youtube/73QhFefsbbc](https://youtu.be/73QhFefsbbc)
+{{< youtube 73QhFefsbbc >}}
 
 L'équipe [ESPHome](https://esphome.io/) a travaillé dur pour ajouter le support de la S3-BOX-3, y compris la possibilité de personnaliser l'affichage ! Consultez (sur le blog officiel) [le tutoriel S3-BOX-3](https://www.home-assistant.io/voice_control/s3_box_voice_assistant/) pour le découvrir.
 
-[https://markdown-videos-api.jorgenkh.no/youtube/HQQfaXTbhvc](https://youtu.be/HQQfaXTbhvc)
+{{< youtube HQQfaXTbhvc >}}
 
 ## Plus de commandes vocales
 
@@ -73,7 +73,7 @@ Assurez-vous que vous avez [exposé](https://www.home-assistant.io/voice_control
 
 Les satellites vocaux peuvent être placés tout autour de la maison, et il est important de garder leur zone à l'esprit lorsque l'on interprète des commandes telles que "allumer les lumières". Cette commande allumera toutes les lumières dans la zone du satellite, et "éteindre les lumières" fera l'inverse. Vous pouvez toujours cibler les lumières d'une autre zone, bien sûr, en spécifiant : "allumer les lumières de la chambre".
 
-[](https://markdown-videos-api.jorgenkh.no/youtube/pvEe0kVWFNE)
+{{< youtube pvEe0kVWFNE >}}
 
 Il s'agit d'un premier pas vers la prise de conscience par les satellites de leur contexte et l'adaptation de leur comportement en conséquence.
 
