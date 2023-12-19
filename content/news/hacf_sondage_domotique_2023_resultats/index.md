@@ -16,4 +16,19 @@ tags:
   - sondage
 author: default
 ---
-…. ici le texte de l'actualité…….
+Chiffres
+
+![](content/news/hacf_sondage_domotique_2023_resultats/img/28p9pqrdms.png)
+Asso
+
+![](content/news/hacf_sondage_domotique_2023_resultats/img/2aleibpfuy.png)
+Domotique
+
+![](content/news/hacf_sondage_domotique_2023_resultats/img/rm1fzuxtnn.png)
+Matos
+
+![](content/news/hacf_sondage_domotique_2023_resultats/img/drgxqkpdgd.png)
+Protocoles
+
+![](content/news/hacf_sondage_domotique_2023_resultats/img/pt2kuq81u0.png)
+Conclusion
