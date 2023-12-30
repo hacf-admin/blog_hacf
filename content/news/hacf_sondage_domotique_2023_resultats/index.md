@@ -3,7 +3,7 @@ path: hacf_sondage_domotique_2023_resultats
 title: Résultats du sondage "La domotique et vous"
 type: news
 visibleInCMS: true
-draft: true
+draft: false
 workflow: published
 date: 2023-12-06
 lastmod: 2023-12-06
