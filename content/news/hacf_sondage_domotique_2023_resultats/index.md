@@ -3,8 +3,8 @@ path: hacf_sondage_domotique_2023_resultats
 title: Résultats du sondage "La domotique et vous"
 type: news
 visibleInCMS: true
-draft: true
-workflow: read
+draft: false
+workflow: published
 date: 2023-12-06
 lastmod: 2023-12-06
 image: content/news/hacf_sondage_domotique_2023_resultats/img/sondage_domotique.png
@@ -20,7 +20,7 @@ Nous sommes heureux de vous présenter les résultats notre sondage annuel organ
 
 Tout d'abord un remerciement aux 444 participants qui ont pris le temps de répondre à nos questions autour de la communauté, de l'association, de leur domotique et de Home Assistant bien entendu.
 
-Nous vous laissons prendre connaissance des résultats exposés en fin d'article.  Mais voici quelques éléments marquants à leur sujet :
+Nous vous laissons prendre connaissance des résultats exposés en fin d'article.  Mais voici quelques éléments marquants à leurs sujets :
 
 - Un meilleur taux de participation (240 participants précédemment) dû très certainement à la croissance de nos usagers du forum,
 - La connaissance de l'association derrière nos médias reste identique (74% précédemment),
