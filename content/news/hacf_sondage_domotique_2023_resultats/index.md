@@ -20,14 +20,14 @@ Nous sommes heureux de vous présenter les résultats notre sondage annuel organ
 
 Tout d'abord un remerciement aux 444 participants qui ont pris le temps de répondre à nos questions autour de la communauté, de l'association, de leur domotique et de Home Assistant bien entendu.
 
-Nous vous laissons prendre connaissance des résultats exposés en fin d'article mais quelques éléments marquants à leur sujet :
+Nous vous laissons prendre connaissance des résultats exposés en fin d'article.  Mais voici quelques éléments marquants à leur sujet :
 
 - Un meilleur taux de participation (240 participants précédemment) dû très certainement à la croissance de nos usagers du forum,
-- La connaissance de l'assocation derrière nos médias reste identique (74% précédemment),
+- La connaissance de l'association derrière nos médias reste identique (74% précédemment),
 - Un très net recul de l'usage du groupe Facebook (~25% précédemment) mais peut-être dû à un manque de visibilité de l'annonce du sondage sur ce média,
 - Même constat bien que dans une moindre mesure pour l'usage de Discord (~8% précédemment),
 - Le passage à Home Assistant est dans 65% des cas une migration depuis un autre environnement domotique, ce qui marque l'intérêt de Home Assistant par rapport aux autres solutions,
-- Un taux de satisfaction de Home Assistant plutôt correcte (64%) compte tenu de l'aspect relativement technique de sa mise en oeuvre et de son utilisation,
+- Un taux de satisfaction de Home Assistant plutôt correcte (64%) compte tenu de l'aspect relativement technique de sa mise en œuvre et de son utilisation,
 - Et une nette prédominance du Zigbee en protocole principale dans votre domotique.
 
 On se retrouve fin 2024 pour rejouer ce sondage !
