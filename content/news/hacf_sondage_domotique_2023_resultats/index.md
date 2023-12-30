@@ -16,7 +16,7 @@ tags:
   - sondage
 author: default
 ---
-Nous sommes heureux de vous présenter lers résultats notre sondage annuel organisé sur la période du 20 octobre au 16 novembre 2023.
+Nous sommes heureux de vous présenter les résultats notre sondage annuel organisé sur la période du 20 octobre au 16 novembre 2023.
 
 Tout d'abord un remerciement aux 444 participants qui ont pris le temps de répondre à nos questions autour de la communauté, de l'association, de leur domotique et de Home Assistant bien entendu.
 
