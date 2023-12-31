@@ -5,8 +5,8 @@ type: news
 visibleInCMS: true
 draft: false
 workflow: published
-date: 2023-12-06
-lastmod: 2023-12-06
+date: 2023-12-30
+lastmod: 2023-12-30
 image: img/sondage_domotique.png
 description: La communauté a lancé fin octobre 2023 un sondage "La Domotique et
   vous". Le but est de mieux vous connaître et de prendre la température sur les
