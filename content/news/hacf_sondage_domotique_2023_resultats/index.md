@@ -7,7 +7,7 @@ draft: false
 workflow: published
 date: 2023-12-06
 lastmod: 2023-12-06
-image: content/news/hacf_sondage_domotique_2023_resultats/img/sondage_domotique.png
+image: img/sondage_domotique.png
 description: La communauté a lancé fin octobre 2023 un sondage "La Domotique et
   vous". Le but est de mieux vous connaître et de prendre la température sur les
   équipements domotiques utilisés par la communauté. En voici les résultats.
@@ -32,8 +32,8 @@ Nous vous laissons prendre connaissance des résultats exposés en fin d'article
 
 On se retrouve fin 2024 pour rejouer ce sondage !
 
-![Statistiques communauté HACF](content/news/hacf_sondage_domotique_2023_resultats/img/communaute.png)
+![Statistiques communauté HACF](img/communaute.png)
 
-![Statistiques environnement domotique](content/news/hacf_sondage_domotique_2023_resultats/img/domotique.png)
+![Statistiques environnement domotique](img/domotique.png)
 
-![Statistiques protocoles domotiques](content/news/hacf_sondage_domotique_2023_resultats/img/installation.png)
+![Statistiques protocoles domotiques](img/installation.png)
