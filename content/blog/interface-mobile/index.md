@@ -226,6 +226,283 @@ tap_action:
   navigation_path: /lovelace/volets-param
 ```
 
+## Une alternative de design pour le menu
+
+@[Rammy078](https://forum.hacf.fr/u/Rammy078) a proposé une alternative assez design et très intéressante du menu présenté précédemment.
+
+![](content/blog/interface-mobile/img/menu-design.jpg)
+Voici son code :
+
+```yaml
+square: false
+type: grid
+cards:
+  - type: custom:button-card
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/lumières
+    name: Lumières
+    icon: mdi:lightbulb-group
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(6,103,231,1) 0%, rgba(153,189,251,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }     
+  - type: custom:button-card
+    icon: mdi:weather-partly-cloudy
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/meteo
+    name: Météo
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(2,164,181,1) 0%, rgba(107,229,238,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }      
+  - type: custom:button-card
+    icon: mdi:power-socket-fr
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/prises
+    name: Prises
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(24,156,38,1) 0%, rgba(114,254,129,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }  
+  - type: custom:button-card
+    icon: mdi:multimedia
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/multimedia
+    name: Multimédia
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(130,30,255,1) 0%, rgba(189,133,254,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }   
+  - type: custom:button-card
+    icon: mdi:home-thermometer-outline
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/thermomètres
+    name: Thermomètres
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(255,28,28,1) 0%, rgba(255,166,166,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }  
+  - type: custom:button-card
+    icon: mdi:fan
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/ventilateurs
+    name: Ventilateurs
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(184,184,184,1) 0%, rgba(224,224,224,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        } 
+  - type: custom:button-card
+    icon: mdi:solar-power-variant-outline
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/solaire
+    name: Solaire
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(255,134,0,1) 0%, rgba(255,222,78,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        } 
+  - type: custom:button-card
+    icon: mdi:window-shutter
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/volets
+    name: Volets
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(124,168,189,1) 0%, rgba(187,226,242,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }
+  - type: custom:button-card
+    icon: mdi:cog-outline
+    tap_action:
+      action: navigate
+      navigation_path: /dashboard-mobile/systeme
+    name: Système
+    size: 60%
+    color: '#53759e'
+    styles:
+      icon:
+        - transform: rotate(350deg)
+        - left: 25%
+        - top: 20%
+        - color: white
+        - opacity: 0.4
+      name:
+        - color: white
+        - top: 12%
+        - left: 5%
+        - font-size: 100%
+        - font-weight: bold
+        - position: absolute
+    card_mod:
+      style: |
+        ha-card {
+          background: linear-gradient(45deg, rgba(15,15,15,1) 0%, rgba(159,159,159,1) 90%);
+          font-weight: bold;
+          color: #53759e;
+        }
+columns: 2
+
+
+```
+
 ## Utiliser des cartes conditionnelles
 
 Enfin, si une carte doit contenir beaucoup d'informations, vous pouvez mettre en entête des boutons avec un affichage conditionnel des différentes cartes en fonction du bouton sélectionné. Attention, la sélection sera valable pour tous les utilisateurs.
@@ -298,19 +575,6 @@ square: false
 Et enfin, on va créer trois cartes (une par caméra) avec un affichage conditionnel en fonction du contenu de l'`input_text`, et donc du bouton appuyé.
 
 Voici le code d'une carte qui s'affiche si on clique sur "Plage" :
-
-```yaml
-type: conditional
-conditions:
-  - entity: input_text.selection_camera
-    state: Plage
-card:
-  type: picture
-  image: >-
-    https://www.dreamingofmaldives.com/blog-des-maldives/wp-content/uploads/plage-de-reve-maldives.jpg
-  hold_action:
-    action: none
-```
 
 ## Un tableau de bord pour mobile et un autre pour tablette.
 
