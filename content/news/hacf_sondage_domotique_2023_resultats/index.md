@@ -15,6 +15,7 @@ tags:
   - hacf
   - sondage
 author: default
+url_hacf: https://forum.hacf.fr/t/sondage-la-domotique-et-vous-les-resultats/33566
 ---
 Nous sommes heureux de vous présenter les résultats notre sondage annuel organisé sur la période du 20 octobre au 16 novembre 2023.
 
