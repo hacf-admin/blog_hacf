@@ -230,8 +230,7 @@ tap_action:
 
 @[Rammy078](https://forum.hacf.fr/u/Rammy078) a proposé une alternative assez design et très intéressante du menu présenté précédemment.
 
-![](content/blog/interface-mobile/img/menu-design.jpg)
-Voici son code :
+![](/img/menu-design.jpg)
 
 ```yaml
 square: false
