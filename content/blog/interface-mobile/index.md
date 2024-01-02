@@ -226,7 +226,7 @@ tap_action:
   navigation_path: /lovelace/volets-param
 ```
 
-## Une alternative de design pour le menu
+## Un design alternatif pour le menu
 
 @[Rammy078](https://forum.hacf.fr/u/Rammy078) a proposé une alternative assez design et très intéressante du menu présenté précédemment.
 
