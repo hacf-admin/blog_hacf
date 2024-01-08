@@ -16,11 +16,8 @@ tags:
   - release
   - traduction
 author: tank
+url_hacf: https://forum.hacf.fr/t/nouvelle-release-2024-1-de-home-assistant/34132
 ---
-
-
-
-
 > Cet article est une traduction de [2024.1: Happy automating!](https://www.home-assistant.io/blog/2024/01/03/release-20241/) publié sur le site de Home Assistant.
 
 _Bonne année ! 🍾_
@@ -97,7 +94,7 @@ Si vous utilisez Home Assistant depuis un certain temps, vous êtes probablement
 
 Cette version unifie ces "appels de service" avec toutes les autres actions, ce qui signifie qu'il n'y a plus d'"appel de service" ; cette couche a été supprimée de l'interface utilisateur. Au lieu de cela, vous ajoutez une action et sélectionnez l'action que vous voulez entreprendre, par exemple, allumer une lumière.
 
-![](img/add-light-action.png) Nouvelles boites de dialogue des actions et services
+![](/img/add-light-action.png) Nouvelles boites de dialogue des actions et services
 
 Cela signifie que si vous ajoutez une action, vous verrez toutes les actions (y compris tous les appels de service), classées par catégorie, avec une description et pouvant faire l'objet d'une recherche ! Le fait de pouvoir effectuer une recherche parmi toutes les actions disponibles constitue une amélioration considérable.
 
