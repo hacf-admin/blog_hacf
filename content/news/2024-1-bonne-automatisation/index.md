@@ -72,7 +72,7 @@ La sélection de ces nouveaux boutons vous permet d'ajouter des éléments logiq
 
 Ces éléments étaient auparavant mélangés avec les conditions et les actions, mais ils ont maintenant leur propre bouton dédié. Cela permet de les trouver plus facilement et d'alléger la liste des conditions et des actions.
 
-![](img/automation-building-blocks.png) Nouvelle boite de dialogue des blocs logiques
+![](img/automation-building-blocks.png)
 
 Vous remarquez qu'une boîte de dialogue s'ouvre maintenant ? Une boîte de dialogue nous donne plus d'espace pour décrire ce que chaque bloc de construction fait et de la place pour une boîte de recherche pour trouver celui dont vous avez besoin.
 
@@ -84,7 +84,7 @@ Tous ces boutons sont utilisés pour donner une liste déroulante qui vous perme
 
 Comme pour les blocs de construction, elle décrit le rôle de chaque déclencheur, condition ou action. Ces descriptions sont importantes, car elles vous aident à comprendre ce qu'ils font.
 
-![](img/add-trigger-dialog.png) Nouvelle boite de dialogue d'ajout de déclencheur
+![](img/add-trigger-dialog.png)
 
 Si vous ajoutez un élément, nous vous montrerons d'abord les déclencheurs/conditions/actions les plus utilisés par notre communauté. Tous les autres sont maintenant regroupés de manière claire. Pour les actions, nous sommes allés plus loin en les unifiant avec les appels de service.
 
@@ -94,15 +94,15 @@ Si vous utilisez Home Assistant depuis un certain temps, vous êtes probablement
 
 Cette version unifie ces "appels de service" avec toutes les autres actions, ce qui signifie qu'il n'y a plus d'"appel de service" ; cette couche a été supprimée de l'interface utilisateur. Au lieu de cela, vous ajoutez une action et sélectionnez l'action que vous voulez entreprendre, par exemple, allumer une lumière.
 
-![](/img/add-light-action.png) Nouvelles boites de dialogue des actions et services
+![](/img/add-light-action.png)
 
 Cela signifie que si vous ajoutez une action, vous verrez toutes les actions (y compris tous les appels de service), classées par catégorie, avec une description et pouvant faire l'objet d'une recherche ! Le fait de pouvoir effectuer une recherche parmi toutes les actions disponibles constitue une amélioration considérable.
 
-![](img/add-action-search.png) Recherche d'une action dans la nouvelle boite de dialogue
+![](img/add-action-search.png)
 
 Par défaut, comme pour les déclencheurs et les conditions, nous vous montrons d'abord les actions les plus utilisées et les actions pour les entités que vous avez sur votre système. Toutes les autres actions sont regroupées par intégration dans la section Autres actions.
 
-![](img/add-action-other-integrations.png) Nouvelle boite de dialogue pour les autres actions
+![](img/add-action-other-integrations.png)
 
 ## Prise en charge de la description et de la date d'échéance pour les éléments de la liste de tâches
 
@@ -110,11 +110,11 @@ L'intégration de la liste des tâches ne cesse de s'améliorer. Cette version a
 
 Si l'intégration que vous utilisez le permet, vous pouvez désormais ajouter des descriptions à chaque tâche de votre liste. Le balisage Markdown est entièrement pris en charge pour ajouter des liens, du texte en gras, etc. Si les dates d'échéance (ou date d'échéance + heure) sont prises en charge, vous pouvez les définir.
 
-![](img/todo-dialog.png) Nouvelle boite de dialogue permettant de définir une description, et une URL
+![](img/todo-dialog.png)
 
 Comme le montre la capture d'écran ci-dessus, il existe une toute nouvelle boîte de dialogue pour ajuster votre tâche. Mais ce n'est pas le seul changement. La liste elle-même a été améliorée.
 
-![](img/todo-new-dashboard.png) Tableau de bord amélioré des tâches avec les descriptions
+![](img/todo-new-dashboard.png)
 
 Le tableau de bord est beaucoup plus propre, les grandes zones de texte ont disparu et chaque élément est joliment formaté, avec un extrait de la description et la date d'échéance. Si la date d'échéance est dépassée, elle est mise en évidence.
 
@@ -124,7 +124,7 @@ Un tout nouveau type d'entité a été ajouté à Home Assistant : Valve !
 
 Les intégrations peuvent utiliser ce type d'entité pour exposer des vannes, telles qu'une vanne sur un radiateur, une piscine, un système d'arrosage, une conduite principale de gaz ou d'eau.
 
-![](img/valve-entity-type.png) Nouvelle entité de type valve
+![](img/valve-entity-type.png)
 
 Actuellement, l'[intégration de Shelly](https://www.home-assistant.io/integrations/shelly) la prend en charge et fournit une entité de vanne `valve` pour l'addon Valve pour Shelly Gas. En outre, la prise en charge a été ajoutée à [MQTT](https://www.home-assistant.io/blog/2024/01/03/release-20241/integrations/valve.mqtt), et les entités de vanne fonctionnent également avec Amazon Alexa et Google Assistant.
 
@@ -144,11 +144,11 @@ L'année dernière, nous avons vu de nombreuses nouvelles fonctionnalités ajout
 
 [@Quentame](https://github.com/Quentame) a ajouté à la carte le mode ventilateur climatique. Cette fonctionnalité peut être utilisée à la fois avec la carte thermostat et la carte tuile :
 
-![](img/climate-fan-card-feature.png) Nouvelle fonctionnalité de la carte mode ventilateur
+![](img/climate-fan-card-feature.png)
 
 Autre nouveauté, la carte des actions de mise à jour. Cet ajout de [@piitaya](https://github.com/piitaya) vous permet d'ajouter des boutons à une carte pour déclencher des actions de mise à jour lorsqu'ils sont pressés
 
-![](img/update-card-feature.png) Nouvelle fonctionnalité de la carte de mise à jour
+![](img/update-card-feature.png)
 
 ## Autres changements notables
 
@@ -177,39 +177,27 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-
 [A. O. Smith](https://www.home-assistant.io/integrations/aosmith), ajouté par [@bdr99](https://github.com/bdr99). Intégrez et contrôlez votre chauffe-eau A. O. Smith.
-
 
 [Blue Current](https://www.home-assistant.io/integrations/blue_current), ajouté par [@Floris272](https://www.home-assistant.io/integrations/blue_current). Contrôlez les points de charge de votre chargeur Blue Current EV.
 
-
 [DROP](https://www.home-assistant.io/integrations/drop_connect), ajouté par [@pfrazer](https://www.home-assistant.io/integrations/drop_connect). Gérez votre système d'eau intelligent DROP avec Home Assistant.
-
 
 [Flexit Nordic (BACnet)](https://www.home-assistant.io/integrations/flexit_bacnet), ajouté par [@lellky](https://www.home-assistant.io/integrations/flexit_bacnet). Contrôlez et surveillez vos centrales de traitement d'air de la série Flexit Nordic.
 
-
 [Vacances,](https://www.home-assistant.io/integrations/holiday) ajouté par [@jrieger](https://www.home-assistant.io/integrations/holiday). Ajouter les calendriers de jours férié (NDT: pas les vacances scolaire) à Home Assistant pour alimenter les automatismes.
-
 
 [Midea CCM15 AC Controller](https://www.home-assistant.io/integrations/ccm15), ajouté par [@ocalvo](https://github.com/ocalvo). Utilisez votre CA connecté à un contrôleur CA Midea CCM15.
 
-
 [OSO Energy](https://github.com/ocalvo), ajouté par [@osohotwateriot](https://github.com/osohotwateriot). Utilisez votre chauffe-eau OSO Energy avec Home Assistant.
-
 
 [Sun WEG](https://github.com/osohotwateriot), ajouté par [@rokam](https://github.com/rokam). Collectez et surveillez les données de production d'énergie de votre onduleur Sun WEG.
 
-
 [Tailwind](https://www.home-assistant.io/integrations/tailwind), ajouté par [@frenck](https://www.home-assistant.io/integrations/tailwind). Commandez vos ouvre-portes de garage connectés à un contrôleur de porte de garage intelligent Tailwind.
-
 
 [Tessie](https://www.home-assistant.io/integrations/tailwind), ajouté par [@Bre77](https://www.home-assistant.io/integrations/tailwind). Intégrez, surveillez et contrôlez votre véhicule Tesla connecté à la plateforme Tessie.
 
-
 [Refoss](https://www.home-assistant.io/integrations/tailwind), ajouté par [@ashionky](https://www.home-assistant.io/integrations/tailwind). Utilisez vos appareils intelligents Refoss directement avec Home Assistant.
-
 
 [Valve](https://www.home-assistant.io/integrations/valve), ajouté par [@cibernox](https://github.com/cibernox). Un type d'entité pour les vannes, qui peut être utilisé par les intégrations pour exposer les vannes.
 
@@ -217,37 +205,21 @@ Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
 Cette version comporte également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des éléments qui sont gérés par d'autres intégrations (existantes) afin de faciliter la recherche. Les intégrations virtuelles suivantes ont été ajoutées :
 
-
 [AEP Ohio](https://www.home-assistant.io/integrations/aep_ohio), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
-
-
 
 [AEP Texas](https://www.home-assistant.io/integrations/aep_texas), fournie par [Opower](https://www.home-assistant.io/integrations/opower)
 
-
-
 [Appalachian Power](https://www.home-assistant.io/integrations/appalachianpower), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
-
-
 
 [Fujitsu anywAIR](https://www.home-assistant.io/integrations/appalachianpower), fourni par [Advantage Air](https://www.home-assistant.io/integrations/advantage_air)
 
-
-
 [Indiana Michigan Power](https://www.home-assistant.io/integrations/appalachianpower), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
-
-
 
 [Kentucky Power](https://www.home-assistant.io/integrations/advantage_air), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-
-
 [Public Service Company of Oklahoma (PSO)](https://www.home-assistant.io/integrations/psoklahoma), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-
-
 [Seattle City Light](https://www.home-assistant.io/integrations/scl), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
-
 
 [Southwestern Electric Power Company (SWEPCO)](https://www.home-assistant.io/integrations/swepco), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
@@ -255,25 +227,15 @@ Cette version comporte également une nouvelle intégration virtuelle. Les inté
 
 Les intégrations suivantes sont désormais disponibles via l’interface utilisateur de Home Assistant :
 
-
 [Netgear LTE](https://github.com/joostlek), réalisé par [@tkdrob](https://github.com/joostlek)
-
-
 
 [StreamLabs](https://github.com/joostlek), réalisé par [@joostlek](https://github.com/joostlek)
 
-
-
 [Suez Water](https://github.com/joostlek), réalisé par [@joostlek](https://github.com/joostlek)
-
-
 
 [Transports publics suisses](https://github.com/joostlek), réalisé par [@miaucl](https://github.com/joostlek)
 
-
-
 [System Monitor](https://www.home-assistant.io/integrations/systemmonitor), réalisé par [@gjohansson-ST](https://www.home-assistant.io/integrations/systemmonitor)
-
 
 [Trend](https://www.home-assistant.io/integrations/systemmonitor), réalisé par [@jpbede](https://github.com/jpbede)
 
