@@ -177,78 +177,76 @@ Il y a beaucoup plus d’améliorations dans cette version ; voici quelques-uns 
 
 Nous accueillons les nouvelles intégrations suivantes dans cette version :
 
-- 
+
+[A. O. Smith](https://www.home-assistant.io/integrations/aosmith), ajouté par [@bdr99](https://github.com/bdr99). Intégrez et contrôlez votre chauffe-eau A. O. Smith.
 
 
-## [A. O. Smith](https://www.home-assistant.io/integrations/aosmith), ajouté par [@bdr99](https://github.com/bdr99). Intégrez et contrôlez votre chauffe-eau A. O. Smith.
+[Blue Current](https://www.home-assistant.io/integrations/blue_current), ajouté par [@Floris272](https://www.home-assistant.io/integrations/blue_current). Contrôlez les points de charge de votre chargeur Blue Current EV.
 
-## [Blue Current](https://www.home-assistant.io/integrations/blue_current), ajouté par [@Floris272](https://www.home-assistant.io/integrations/blue_current). Contrôlez les points de charge de votre chargeur Blue Current EV.
 
-## [DROP](https://www.home-assistant.io/integrations/drop_connect), ajouté par [@pfrazer](https://www.home-assistant.io/integrations/drop_connect). Gérez votre système d'eau intelligent DROP avec Home Assistant.
+[DROP](https://www.home-assistant.io/integrations/drop_connect), ajouté par [@pfrazer](https://www.home-assistant.io/integrations/drop_connect). Gérez votre système d'eau intelligent DROP avec Home Assistant.
 
-## [Flexit Nordic (BACnet)](https://www.home-assistant.io/integrations/flexit_bacnet), ajouté par [@lellky](https://www.home-assistant.io/integrations/flexit_bacnet). Contrôlez et surveillez vos centrales de traitement d'air de la série Flexit Nordic.
 
-## [Vacances,](https://www.home-assistant.io/integrations/holiday) ajouté par [@jrieger](https://www.home-assistant.io/integrations/holiday). Ajouter les calendriers de jours férié (NDT: pas les vacances scolaire) à Home Assistant pour alimenter les automatismes.
+[Flexit Nordic (BACnet)](https://www.home-assistant.io/integrations/flexit_bacnet), ajouté par [@lellky](https://www.home-assistant.io/integrations/flexit_bacnet). Contrôlez et surveillez vos centrales de traitement d'air de la série Flexit Nordic.
 
-## [Midea CCM15 AC Controller](https://www.home-assistant.io/integrations/ccm15), ajouté par [@ocalvo](https://github.com/ocalvo). Utilisez votre CA connecté à un contrôleur CA Midea CCM15.
 
-## [OSO Energy](https://github.com/ocalvo), ajouté par [@osohotwateriot](https://github.com/osohotwateriot). Utilisez votre chauffe-eau OSO Energy avec Home Assistant.
+[Vacances,](https://www.home-assistant.io/integrations/holiday) ajouté par [@jrieger](https://www.home-assistant.io/integrations/holiday). Ajouter les calendriers de jours férié (NDT: pas les vacances scolaire) à Home Assistant pour alimenter les automatismes.
 
-## [Sun WEG](https://github.com/osohotwateriot), ajouté par [@rokam](https://github.com/rokam). Collectez et surveillez les données de production d'énergie de votre onduleur Sun WEG.
 
-## [Tailwind](https://www.home-assistant.io/integrations/tailwind), ajouté par [@frenck](https://www.home-assistant.io/integrations/tailwind). Commandez vos ouvre-portes de garage connectés à un contrôleur de porte de garage intelligent Tailwind.
+[Midea CCM15 AC Controller](https://www.home-assistant.io/integrations/ccm15), ajouté par [@ocalvo](https://github.com/ocalvo). Utilisez votre CA connecté à un contrôleur CA Midea CCM15.
 
-## [Tessie](https://www.home-assistant.io/integrations/tailwind), ajouté par [@Bre77](https://www.home-assistant.io/integrations/tailwind). Intégrez, surveillez et contrôlez votre véhicule Tesla connecté à la plateforme Tessie.
 
-## [Refoss](https://www.home-assistant.io/integrations/tailwind), ajouté par [@ashionky](https://www.home-assistant.io/integrations/tailwind). Utilisez vos appareils intelligents Refoss directement avec Home Assistant.
+[OSO Energy](https://github.com/ocalvo), ajouté par [@osohotwateriot](https://github.com/osohotwateriot). Utilisez votre chauffe-eau OSO Energy avec Home Assistant.
 
-## [Valve](https://www.home-assistant.io/integrations/valve), ajouté par [@cibernox](https://github.com/cibernox). Un type d'entité pour les vannes, qui peut être utilisé par les intégrations pour exposer les vannes.
+
+[Sun WEG](https://github.com/osohotwateriot), ajouté par [@rokam](https://github.com/rokam). Collectez et surveillez les données de production d'énergie de votre onduleur Sun WEG.
+
+
+[Tailwind](https://www.home-assistant.io/integrations/tailwind), ajouté par [@frenck](https://www.home-assistant.io/integrations/tailwind). Commandez vos ouvre-portes de garage connectés à un contrôleur de porte de garage intelligent Tailwind.
+
+
+[Tessie](https://www.home-assistant.io/integrations/tailwind), ajouté par [@Bre77](https://www.home-assistant.io/integrations/tailwind). Intégrez, surveillez et contrôlez votre véhicule Tesla connecté à la plateforme Tessie.
+
+
+[Refoss](https://www.home-assistant.io/integrations/tailwind), ajouté par [@ashionky](https://www.home-assistant.io/integrations/tailwind). Utilisez vos appareils intelligents Refoss directement avec Home Assistant.
+
+
+[Valve](https://www.home-assistant.io/integrations/valve), ajouté par [@cibernox](https://github.com/cibernox). Un type d'entité pour les vannes, qui peut être utilisé par les intégrations pour exposer les vannes.
 
 [MotionMount de Vogel](https://www.home-assistant.io/integrations/motionmount), ajouté par [@RJPoelstra](https://github.com/RJPoelstra). Contrôlez la position de votre support TV Vogel's MotionMount.
 
 Cette version comporte également une nouvelle intégration virtuelle. Les intégrations virtuelles sont des éléments qui sont gérés par d'autres intégrations (existantes) afin de faciliter la recherche. Les intégrations virtuelles suivantes ont été ajoutées :
 
-- 
-
 
 [AEP Ohio](https://www.home-assistant.io/integrations/aep_ohio), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-- 
 
 
 [AEP Texas](https://www.home-assistant.io/integrations/aep_texas), fournie par [Opower](https://www.home-assistant.io/integrations/opower)
 
-- 
 
 
 [Appalachian Power](https://www.home-assistant.io/integrations/appalachianpower), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-- 
 
 
 [Fujitsu anywAIR](https://www.home-assistant.io/integrations/appalachianpower), fourni par [Advantage Air](https://www.home-assistant.io/integrations/advantage_air)
 
-- 
 
 
 [Indiana Michigan Power](https://www.home-assistant.io/integrations/appalachianpower), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-- 
 
 
 [Kentucky Power](https://www.home-assistant.io/integrations/advantage_air), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-- 
 
 
 [Public Service Company of Oklahoma (PSO)](https://www.home-assistant.io/integrations/psoklahoma), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
 
-- 
 
 
 [Seattle City Light](https://www.home-assistant.io/integrations/scl), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
-
-- 
 
 
 [Southwestern Electric Power Company (SWEPCO)](https://www.home-assistant.io/integrations/swepco), fourni par [Opower](https://www.home-assistant.io/integrations/opower)
@@ -257,32 +255,24 @@ Cette version comporte également une nouvelle intégration virtuelle. Les inté
 
 Les intégrations suivantes sont désormais disponibles via l’interface utilisateur de Home Assistant :
 
-- 
-
 
 [Netgear LTE](https://github.com/joostlek), réalisé par [@tkdrob](https://github.com/joostlek)
 
-- 
 
 
 [StreamLabs](https://github.com/joostlek), réalisé par [@joostlek](https://github.com/joostlek)
 
-- 
 
 
 [Suez Water](https://github.com/joostlek), réalisé par [@joostlek](https://github.com/joostlek)
 
-- 
 
 
 [Transports publics suisses](https://github.com/joostlek), réalisé par [@miaucl](https://github.com/joostlek)
 
-- 
 
 
 [System Monitor](https://www.home-assistant.io/integrations/systemmonitor), réalisé par [@gjohansson-ST](https://www.home-assistant.io/integrations/systemmonitor)
-
-- 
 
 
 [Trend](https://www.home-assistant.io/integrations/systemmonitor), réalisé par [@jpbede](https://github.com/jpbede)
